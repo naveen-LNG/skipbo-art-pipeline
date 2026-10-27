@@ -1,0 +1,86 @@
+rabbit_0.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+rabbit_arm_l
+bounds: 490,2,512,624
+rabbit_arm_r
+bounds: 2,1338,562,628
+rabbit_boot_l
+bounds: 1395,474,150,130
+offsets: 2,2,153,152
+rabbit_boot_l_back
+bounds: 1314,1721,120,41
+offsets: 2,109,153,152
+rabbit_boot_r
+bounds: 1395,608,142,136
+offsets: 2,2,146,152
+rabbit_boot_r_back
+bounds: 1395,748,120,30
+offsets: 23,120,146,152
+rabbit_ear_l
+bounds: 1092,529,96,269
+offsets: 2,3,100,274
+rabbit_ear_r
+bounds: 1006,254,106,271
+offsets: 2,4,110,277
+rabbit_hand_l
+bounds: 1414,1293,123,203
+offsets: 23,11,180,228
+rabbit_hand_l_fist
+bounds: 1260,1293,150,210
+rabbit_hand_l_grip
+bounds: 1106,1065,150,231
+offsets: 6,7,164,244
+rabbit_hand_l_open
+bounds: 1092,802,199,259
+offsets: 6,14,219,282
+rabbit_hand_l_point
+bounds: 2,2,484,664
+offsets: 53,43,605,741
+rabbit_hand_l_thumbsup
+bounds: 1131,1535,179,224
+rabbit_hand_r
+bounds: 1295,787,124,202
+offsets: 34,12,179,228
+rabbit_hand_r_fist
+bounds: 1314,1507,150,210
+rabbit_hand_r_grip
+bounds: 1106,1300,150,231
+offsets: 8,7,164,244
+rabbit_hand_r_open
+bounds: 1192,524,199,259
+offsets: 14,14,219,282
+rabbit_hand_r_point
+bounds: 2,670,484,664
+offsets: 68,43,605,741
+rabbit_hand_r_thumbsup
+bounds: 1260,1065,179,224
+rabbit_head_angry
+bounds: 812,630,276,248
+rabbit_head_base
+bounds: 1363,254,242,216
+rabbit_head_blink
+bounds: 568,1797,277,249
+rabbit_head_happy
+bounds: 1130,1780,276,249
+rabbit_head_laugh
+bounds: 812,882,276,248
+rabbit_head_neutral
+bounds: 568,1544,278,249
+rabbit_head_sad
+bounds: 1410,2,276,248
+rabbit_head_surprised
+bounds: 1106,2,276,248
+rabbit_head_talking
+bounds: 849,1797,277,248
+rabbit_head_wink
+bounds: 1690,2,276,248
+rabbit_hips
+bounds: 850,1544,277,232
+offsets: 12,2,291,236
+rabbit_prop_flag
+bounds: 490,630,318,565
+rabbit_prop_hurdle
+bounds: 568,1199,534,341
+rabbit_torso
+bounds: 1116,254,243,266

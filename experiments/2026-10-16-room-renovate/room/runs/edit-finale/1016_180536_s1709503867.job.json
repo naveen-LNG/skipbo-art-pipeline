@@ -1,0 +1,62 @@
+{
+  "prompt_id": "87ae44f7-4fc7-4db9-bb26-77b405298231",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 1709503867,
+  "fingerprint": "d967a9141368",
+  "prompt": "Edit the attached picture, image 1. It is a room in a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Most of the room has just been renovated: the yellow-curtained window, the brass chandelier, the cream fireplace with its fire, the coral sofa and the round rug are all new. Finish the makeover by changing only these things:\n\nThe walls are freshly papered in a clean bright teal with the same wide plain vertical stripes, smooth and whole, with no torn flaps, no tears and no cracks; the skirting and the cornice are fresh warm white; the ceiling is clean smooth cream with no cracks and no cobwebs anywhere; the two loose planks leaning against the wall between the sofa and the fireplace are gone and plain wall shows there.\n\nThe room is now lived in and cosy: a soft warm golden glow from the lit chandelier and from the fire falls gently across the walls, the floor and the furniture, warmer on the side near the fire.\n\nThe window, the curtains, the chandelier, the fireplace, the picture, the plant, the sofa, the cushions, the rug and the floorboards keep exactly their shapes, sizes, places and colours; the camera, the framing, the crop and the perspective are identical to image 1. The new wallpaper is painted in exactly the same style as the rest of the picture: clean simplified masses, soft broad shading, no outlines, no texture, no fine detail, bright clean saturated colours. No characters, no text.",
+  "vars": {
+    "ASPECT": "9:16",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "PREFIX": "agent/skipbo/edit-finale",
+    "IMAGE_1": "agent/skipbo/six-fixed_3d33336f2e.png"
+  },
+  "inputs": {
+    "1": "six-fixed.png"
+  },
+  "criteria": [
+    "walls and ceiling repaired, furniture unchanged",
+    "same camera and framing"
+  ],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-16-room-renovate/room/runs/edit-finale/1016_180536_s1709503867_n2_00.png"
+  ],
+  "seconds": 32.1,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "Edit the attached picture, image 1. It is a room in a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Most of the room has just been renovated: the yellow-curtained window, the brass chandelier, the cream fireplace with its fire, the coral sofa and the round rug are all new. Finish the makeover by changing only these things:\n\nThe walls are freshly papered in a clean bright teal with the same wide plain vertical stripes, smooth and whole, with no torn flaps, no tears and no cracks; the skirting and the cornice are fresh warm white; the ceiling is clean smooth cream with no cracks and no cobwebs anywhere; the two loose planks leaning against the wall between the sofa and the fireplace are gone and plain wall shows there.\n\nThe room is now lived in and cosy: a soft warm golden glow from the lit chandelier and from the fire falls gently across the walls, the floor and the furniture, warmer on the side near the fire.\n\nThe window, the curtains, the chandelier, the fireplace, the picture, the plant, the sofa, the cushions, the rug and the floorboards keep exactly their shapes, sizes, places and colours; the camera, the framing, the crop and the perspective are identical to image 1. The new wallpaper is painted in exactly the same style as the rest of the picture: clean simplified masses, soft broad shading, no outlines, no texture, no fine detail, bright clean saturated colours. No characters, no text.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "9:16",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/six-fixed_3d33336f2e.png"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/edit-finale"
+      }
+    }
+  }
+}

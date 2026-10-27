@@ -1,0 +1,363 @@
+{"id": "fox_clean__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "fox_clean__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "fox_clean__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "fox_clean__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "fox_clean__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "fox_clean__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "fox_clean__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "fox_shift_head_up_8__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "up", "mag": 8, "shifted": "head"}
+{"id": "fox_shift_head_up_8__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_up_16__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "up", "mag": 16, "shifted": "head"}
+{"id": "fox_shift_head_up_16__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_up_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "up", "mag": 24, "shifted": "head"}
+{"id": "fox_shift_head_up_24__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_down_8__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "down", "mag": 8, "shifted": "head"}
+{"id": "fox_shift_head_down_8__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_down_16__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "down", "mag": 16, "shifted": "head"}
+{"id": "fox_shift_head_down_16__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_down_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "down", "mag": 24, "shifted": "head"}
+{"id": "fox_shift_head_down_24__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_left_8__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "left", "mag": 8, "shifted": "head"}
+{"id": "fox_shift_head_left_8__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_left_16__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "left", "mag": 16, "shifted": "head"}
+{"id": "fox_shift_head_left_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_left_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "left", "mag": 24, "shifted": "head"}
+{"id": "fox_shift_head_left_24__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_right_8__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "right", "mag": 8, "shifted": "head"}
+{"id": "fox_shift_head_right_8__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_right_16__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "right", "mag": 16, "shifted": "head"}
+{"id": "fox_shift_head_right_16__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_head_right_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "right", "mag": 24, "shifted": "head"}
+{"id": "fox_shift_head_right_24__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "fox_shift_hand_l_up_8__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 8, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_up_8__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_up_16__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 16, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_up_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_up_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 24, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_up_24__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_down_8__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 8, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_down_8__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_down_16__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 16, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_down_16__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_down_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 24, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_down_24__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_left_8__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 8, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_left_8__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_left_16__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 16, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_left_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_left_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 24, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_left_24__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_right_8__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 8, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_right_8__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_right_16__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 16, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_right_16__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_right_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 24, "shifted": "hand_l"}
+{"id": "fox_shift_hand_l_right_24__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "fox_shift_hand_r_up_8__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 8, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_up_8__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_up_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 16, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_up_16__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_up_24__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 24, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_up_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_down_8__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 8, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_down_8__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_down_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 16, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_down_16__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_down_24__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 24, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_down_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_left_8__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 8, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_left_8__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_left_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 16, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_left_16__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_left_24__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 24, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_left_24__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_right_8__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 8, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_right_8__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_right_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 16, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_right_16__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_right_24__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 24, "shifted": "hand_r"}
+{"id": "fox_shift_hand_r_right_24__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "fox_shift_hips_up_8__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "up", "mag": 8, "shifted": "hips"}
+{"id": "fox_shift_hips_up_16__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "up", "mag": 16, "shifted": "hips"}
+{"id": "fox_shift_hips_up_24__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "up", "mag": 24, "shifted": "hips"}
+{"id": "fox_shift_hips_down_8__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "down", "mag": 8, "shifted": "hips"}
+{"id": "fox_shift_hips_down_16__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "down", "mag": 16, "shifted": "hips"}
+{"id": "fox_shift_hips_down_24__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "down", "mag": 24, "shifted": "hips"}
+{"id": "fox_shift_hips_left_8__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "left", "mag": 8, "shifted": "hips"}
+{"id": "fox_shift_hips_left_16__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "left", "mag": 16, "shifted": "hips"}
+{"id": "fox_shift_hips_left_24__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "left", "mag": 24, "shifted": "hips"}
+{"id": "fox_shift_hips_right_8__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "right", "mag": 8, "shifted": "hips"}
+{"id": "fox_shift_hips_right_16__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "right", "mag": 16, "shifted": "hips"}
+{"id": "fox_shift_hips_right_24__hips", "char": "fox", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "right", "mag": 24, "shifted": "hips"}
+{"id": "fox_shift_boot_l_up_8__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "up", "mag": 8, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_up_8__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_up_16__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "up", "mag": 16, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_up_16__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_up_24__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "up", "mag": 24, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_up_24__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_down_8__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "down", "mag": 8, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_down_8__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_down_16__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "down", "mag": 16, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_down_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_down_24__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "down", "mag": 24, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_down_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_left_8__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "left", "mag": 8, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_left_8__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_left_16__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "left", "mag": 16, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_left_16__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_left_24__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "left", "mag": 24, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_left_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_right_8__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "right", "mag": 8, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_right_8__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_right_16__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "right", "mag": 16, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_right_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_right_24__boot_l", "char": "fox", "slot": "boot_l", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "right", "mag": 24, "shifted": "boot_l"}
+{"id": "fox_shift_boot_l_right_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_l"}
+{"id": "fox_shift_boot_r_up_8__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "up", "mag": 8, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_up_8__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_up_16__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "up", "mag": 16, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_up_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_up_24__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "up", "mag": 24, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_up_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_down_8__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "down", "mag": 8, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_down_8__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_down_16__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "down", "mag": 16, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_down_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_down_24__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "down", "mag": 24, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_down_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_left_8__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "left", "mag": 8, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_left_8__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_left_16__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "left", "mag": 16, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_left_16__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_left_24__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "left", "mag": 24, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_left_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_right_8__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "right", "mag": 8, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_right_8__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_right_16__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "right", "mag": 16, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_right_16__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_right_24__boot_r", "char": "fox", "slot": "boot_r", "joint": "the boot where it meets the trouser leg", "defect": true, "direction": "right", "mag": 24, "shifted": "boot_r"}
+{"id": "fox_shift_boot_r_right_24__hand_l", "char": "fox", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "boot_r"}
+{"id": "fox_shift_tail_up_8__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "up", "mag": 8, "shifted": "tail"}
+{"id": "fox_shift_tail_up_8__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_up_16__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "up", "mag": 16, "shifted": "tail"}
+{"id": "fox_shift_tail_up_16__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_up_24__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "up", "mag": 24, "shifted": "tail"}
+{"id": "fox_shift_tail_up_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_down_8__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "down", "mag": 8, "shifted": "tail"}
+{"id": "fox_shift_tail_down_8__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_down_16__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "down", "mag": 16, "shifted": "tail"}
+{"id": "fox_shift_tail_down_16__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_down_24__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "down", "mag": 24, "shifted": "tail"}
+{"id": "fox_shift_tail_down_24__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_left_8__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "left", "mag": 8, "shifted": "tail"}
+{"id": "fox_shift_tail_left_8__hand_r", "char": "fox", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_left_16__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "left", "mag": 16, "shifted": "tail"}
+{"id": "fox_shift_tail_left_16__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_left_24__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "left", "mag": 24, "shifted": "tail"}
+{"id": "fox_shift_tail_left_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_right_8__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "right", "mag": 8, "shifted": "tail"}
+{"id": "fox_shift_tail_right_8__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_right_16__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "right", "mag": 16, "shifted": "tail"}
+{"id": "fox_shift_tail_right_16__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "fox_shift_tail_right_24__tail", "char": "fox", "slot": "tail", "joint": "the tail where it attaches behind the hips", "defect": true, "direction": "right", "mag": 24, "shifted": "tail"}
+{"id": "fox_shift_tail_right_24__head", "char": "fox", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "tail"}
+{"id": "moose_clean__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "moose_clean__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "moose_clean__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "moose_clean__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "moose_clean__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "moose_clean__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "moose_clean__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "moose_clean__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "none"}
+{"id": "moose_shift_head_up_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "up", "mag": 8, "shifted": "head"}
+{"id": "moose_shift_head_up_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_up_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "up", "mag": 16, "shifted": "head"}
+{"id": "moose_shift_head_up_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_up_24__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "up", "mag": 24, "shifted": "head"}
+{"id": "moose_shift_head_up_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_down_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "down", "mag": 8, "shifted": "head"}
+{"id": "moose_shift_head_down_8__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_down_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "down", "mag": 16, "shifted": "head"}
+{"id": "moose_shift_head_down_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_down_24__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "down", "mag": 24, "shifted": "head"}
+{"id": "moose_shift_head_down_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_left_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "left", "mag": 8, "shifted": "head"}
+{"id": "moose_shift_head_left_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_left_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "left", "mag": 16, "shifted": "head"}
+{"id": "moose_shift_head_left_16__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_left_24__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "left", "mag": 24, "shifted": "head"}
+{"id": "moose_shift_head_left_24__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_right_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "right", "mag": 8, "shifted": "head"}
+{"id": "moose_shift_head_right_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_right_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "right", "mag": 16, "shifted": "head"}
+{"id": "moose_shift_head_right_16__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_head_right_24__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": true, "direction": "right", "mag": 24, "shifted": "head"}
+{"id": "moose_shift_head_right_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "head"}
+{"id": "moose_shift_hand_l_up_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 8, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_up_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_up_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 16, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_up_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_up_24__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 24, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_up_24__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_down_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 8, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_down_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_down_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 16, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_down_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_down_24__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 24, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_down_24__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_left_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 8, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_left_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_left_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 16, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_left_16__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_left_24__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 24, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_left_24__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_right_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 8, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_right_8__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_right_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 16, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_right_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_right_24__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 24, "shifted": "hand_l"}
+{"id": "moose_shift_hand_l_right_24__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_l"}
+{"id": "moose_shift_hand_r_up_8__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 8, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_up_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_up_16__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 16, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_up_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_up_24__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "up", "mag": 24, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_up_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_down_8__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 8, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_down_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_down_16__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 16, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_down_16__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_down_24__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "down", "mag": 24, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_down_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_left_8__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 8, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_left_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_left_16__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 16, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_left_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_left_24__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "left", "mag": 24, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_left_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_right_8__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 8, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_right_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_right_16__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 16, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_right_16__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_right_24__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": true, "direction": "right", "mag": 24, "shifted": "hand_r"}
+{"id": "moose_shift_hand_r_right_24__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hand_r"}
+{"id": "moose_shift_hips_up_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "up", "mag": 8, "shifted": "hips"}
+{"id": "moose_shift_hips_up_8__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_up_16__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "up", "mag": 16, "shifted": "hips"}
+{"id": "moose_shift_hips_up_16__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_up_24__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "up", "mag": 24, "shifted": "hips"}
+{"id": "moose_shift_hips_up_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_down_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "down", "mag": 8, "shifted": "hips"}
+{"id": "moose_shift_hips_down_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_down_16__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "down", "mag": 16, "shifted": "hips"}
+{"id": "moose_shift_hips_down_16__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_down_24__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "down", "mag": 24, "shifted": "hips"}
+{"id": "moose_shift_hips_down_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_left_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "left", "mag": 8, "shifted": "hips"}
+{"id": "moose_shift_hips_left_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_left_16__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "left", "mag": 16, "shifted": "hips"}
+{"id": "moose_shift_hips_left_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_left_24__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "left", "mag": 24, "shifted": "hips"}
+{"id": "moose_shift_hips_left_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_right_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "right", "mag": 8, "shifted": "hips"}
+{"id": "moose_shift_hips_right_8__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_right_16__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "right", "mag": 16, "shifted": "hips"}
+{"id": "moose_shift_hips_right_16__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hips_right_24__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": true, "direction": "right", "mag": 24, "shifted": "hips"}
+{"id": "moose_shift_hips_right_24__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hips"}
+{"id": "moose_shift_hoof_l_up_8__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "up", "mag": 8, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_up_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_up_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "up", "mag": 16, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_up_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_up_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "up", "mag": 24, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_up_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_down_8__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "down", "mag": 8, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_down_8__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_down_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "down", "mag": 16, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_down_16__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_down_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "down", "mag": 24, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_down_24__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_left_8__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "left", "mag": 8, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_left_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_left_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "left", "mag": 16, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_left_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_left_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "left", "mag": 24, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_left_24__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_right_8__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "right", "mag": 8, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_right_8__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_right_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "right", "mag": 16, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_right_16__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_right_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "right", "mag": 24, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_l_right_24__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_l"}
+{"id": "moose_shift_hoof_r_up_8__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "up", "mag": 8, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_up_8__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_up_16__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "up", "mag": 16, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_up_16__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_up_24__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "up", "mag": 24, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_up_24__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_down_8__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "down", "mag": 8, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_down_8__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_down_16__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "down", "mag": 16, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_down_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_down_24__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "down", "mag": 24, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_down_24__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_left_8__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "left", "mag": 8, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_left_8__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_left_16__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "left", "mag": 16, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_left_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_left_24__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "left", "mag": 24, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_left_24__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_right_8__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "right", "mag": 8, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_right_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_right_16__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "right", "mag": 16, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_right_16__head", "char": "moose", "slot": "head", "joint": "the head where it sits on the neck and collar", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_right_24__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": true, "direction": "right", "mag": 24, "shifted": "hoof_r"}
+{"id": "moose_shift_hoof_r_right_24__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": false, "direction": "none", "mag": 0, "shifted": "hoof_r"}
+{"id": "moose_shift_antler_l_up_8__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "up", "mag": 8, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_up_8__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_up_16__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "up", "mag": 16, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_up_16__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_up_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "up", "mag": 24, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_up_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_down_8__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "down", "mag": 8, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_down_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_down_16__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "down", "mag": 16, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_down_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_down_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "down", "mag": 24, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_down_24__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_left_8__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "left", "mag": 8, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_left_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_left_16__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "left", "mag": 16, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_left_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_left_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "left", "mag": 24, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_left_24__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_right_8__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "right", "mag": 8, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_right_8__hips", "char": "moose", "slot": "hips", "joint": "the waist where the trousers meet the torso", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_right_16__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "right", "mag": 16, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_right_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_right_24__antler_l", "char": "moose", "slot": "antler_l", "joint": "the antler where it attaches to the head", "defect": true, "direction": "right", "mag": 24, "shifted": "antler_l"}
+{"id": "moose_shift_antler_l_right_24__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_l"}
+{"id": "moose_shift_antler_r_up_8__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "up", "mag": 8, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_up_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_up_16__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "up", "mag": 16, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_up_16__hand_r", "char": "moose", "slot": "hand_r", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_up_24__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "up", "mag": 24, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_up_24__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_down_8__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "down", "mag": 8, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_down_8__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_down_16__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "down", "mag": 16, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_down_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_down_24__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "down", "mag": 24, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_down_24__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_left_8__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "left", "mag": 8, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_left_8__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_left_16__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "left", "mag": 16, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_left_16__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_left_24__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "left", "mag": 24, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_left_24__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_right_8__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "right", "mag": 8, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_right_8__hoof_r", "char": "moose", "slot": "hoof_r", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_right_16__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "right", "mag": 16, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_right_16__hoof_l", "char": "moose", "slot": "hoof_l", "joint": "the hoof where it meets the trouser leg", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_right_24__antler_r", "char": "moose", "slot": "antler_r", "joint": "the antler where it attaches to the head", "defect": true, "direction": "right", "mag": 24, "shifted": "antler_r"}
+{"id": "moose_shift_antler_r_right_24__hand_l", "char": "moose", "slot": "hand_l", "joint": "the hand where it enters the sleeve cuff", "defect": false, "direction": "none", "mag": 0, "shifted": "antler_r"}

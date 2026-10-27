@@ -1,0 +1,4 @@
+10 joints -> rig/qa/joints
+sheet: rig/qa/joints.png
+onion: rig/qa/onion.png
+motion: rig/qa/motion.png

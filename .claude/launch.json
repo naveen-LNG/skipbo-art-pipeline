@@ -1,0 +1,9 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {"name": "moose-rig", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8765", "--directory", "experiments/2026-10-11-moose-parts/moose-spine-v1/rig"], "port": 8765},
+    {"name": "fox-rig", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8766", "--directory", "experiments/2026-10-11-fox-parts/fox-spine/rig"], "port": 8766},
+    {"name": "room-renovate", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8770", "--directory", "experiments/2026-10-16-room-renovate/game"], "port": 8770},
+    {"name": "room-components", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8771", "--directory", "experiments/2026-10-20-room-components/game"], "port": 8771}
+  ]
+}

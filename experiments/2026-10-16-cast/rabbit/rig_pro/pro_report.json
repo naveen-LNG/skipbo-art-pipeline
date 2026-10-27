@@ -1,0 +1,334 @@
+{
+ "source": "experiments/2026-10-16-cast/rabbit/rig/rabbit.json",
+ "skipped": [],
+ "stages": {
+  "container": {
+   "moved": [
+    "cheer_jump: hips translate -> character (jump)",
+    "run: hips translate -> character (jump)",
+    "jump_hurdle: hips translate -> character (jump)"
+   ],
+   "width": 551.6,
+   "height": 116.6,
+   "shadow_keys": [
+    "cheer_jump",
+    "run",
+    "jump_hurdle"
+   ]
+  },
+  "tail": {
+   "skipped": "no tail bone (or already chained)"
+  },
+  "torso": {
+   "chest_at": 88.3,
+   "moved_under_chest": [
+    "head_base",
+    "upperarm_l",
+    "upperarm_r"
+   ],
+   "weights": [
+    "hips",
+    "torso",
+    "chest"
+   ],
+   "mesh": {
+    "vertices": 55,
+    "triangles": 80,
+    "padded": [
+     15,
+     9
+    ]
+   },
+   "fold_free": true,
+   "doubts": [
+    {
+     "reason": "torso_below_waist",
+     "detail": "the torso drawing reaches 141.2 units below the waist (the torso bone's own part pointed -1.0 along it); the part below the waist is weighted to hips",
+     "own_cos_after": 1.0
+    }
+   ]
+  },
+  "head": {
+   "face_at": [
+    32.8,
+    1045.9
+   ],
+   "ears": [],
+   "ear_parts": true,
+   "attachments": {
+    "rabbit_head_base": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      1,
+      2
+     ]
+    },
+    "rabbit_head_angry": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      3,
+      3
+     ]
+    },
+    "rabbit_head_blink": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      4,
+      3
+     ]
+    },
+    "rabbit_head_happy": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      4,
+      3
+     ]
+    },
+    "rabbit_head_laugh": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      3,
+      3
+     ]
+    },
+    "rabbit_head_neutral": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      3,
+      3
+     ]
+    },
+    "rabbit_head_sad": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      4,
+      3
+     ]
+    },
+    "rabbit_head_surprised": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      4,
+      3
+     ]
+    },
+    "rabbit_head_talking": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      3,
+      4
+     ]
+    },
+    "rabbit_head_wink": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      3,
+      3
+     ]
+    }
+   }
+  },
+  "feet": {
+   "feet": {
+    "boot_l": {
+     "target": "boot_l_ik",
+     "leg_ik": null
+    },
+    "boot_r": {
+     "target": "boot_r_ik",
+     "leg_ik": null
+    }
+   },
+   "baked": {
+    "walk": [
+     "boot_l",
+     "boot_r"
+    ],
+    "squat": [
+     "boot_l",
+     "boot_r"
+    ],
+    "jump_hurdle": [
+     "boot_l",
+     "boot_r"
+    ]
+   }
+  },
+  "anims": {
+   "idle": {
+    "duration": 2.0
+   },
+   "look_around": {
+    "duration": 3.2
+   },
+   "talk": {
+    "duration": 2.4,
+    "mouth": "rabbit_head_talking"
+   },
+   "breathing": [
+    "blink",
+    "wave",
+    "cheer_jump",
+    "thumbs_up",
+    "point",
+    "hold_card",
+    "emotions",
+    "walk",
+    "run",
+    "squat",
+    "jump_hurdle",
+    "wave_flag",
+    "look_around",
+    "talk"
+   ]
+  },
+  "secondary": {
+   "blink": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.0,
+    "ear_r": 0.0
+   },
+   "idle": {
+    "periodic": true,
+    "chest": 0.1,
+    "ear_l": 0.0,
+    "ear_r": 0.0
+   },
+   "wave": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.3,
+    "ear_r": 0.2
+   },
+   "cheer_jump": {
+    "periodic": true,
+    "chest": 0.3,
+    "ear_l": 1.0,
+    "ear_r": 0.7
+   },
+   "thumbs_up": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.2,
+    "ear_r": 0.2
+   },
+   "point": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.2,
+    "ear_r": 0.2
+   },
+   "hold_card": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.2,
+    "ear_r": 0.2
+   },
+   "emotions": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.0,
+    "ear_r": 0.0
+   },
+   "walk": {
+    "periodic": true,
+    "chest": 0.3,
+    "ear_l": 0.2,
+    "ear_r": 0.1
+   },
+   "run": {
+    "periodic": false,
+    "chest": 0.1,
+    "ear_l": 0.5,
+    "ear_r": 0.5
+   },
+   "squat": {
+    "periodic": true,
+    "chest": 0.2,
+    "ear_l": 0.3,
+    "ear_r": 0.4
+   },
+   "jump_hurdle": {
+    "periodic": false,
+    "chest": 0.4,
+    "ear_l": 0.5,
+    "ear_r": 0.5
+   },
+   "wave_flag": {
+    "periodic": false,
+    "chest": 0.0,
+    "ear_l": 0.2,
+    "ear_r": 0.1
+   },
+   "look_around": {
+    "periodic": false,
+    "chest": 0.1,
+    "ear_l": 0.5,
+    "ear_r": 0.5
+   },
+   "talk": {
+    "periodic": false,
+    "chest": 0.0,
+    "ear_l": 0.3,
+    "ear_r": 0.3
+   }
+  },
+  "underfill": {
+   "slots": {
+    "ear_l": 1,
+    "ear_r": 1,
+    "hips": 1,
+    "boot_l": 1,
+    "boot_r": 1,
+    "hand_l": 6,
+    "upperarm_l": 1,
+    "hand_r": 6,
+    "upperarm_r": 1,
+    "head": 10
+   },
+   "ring_units": 6.66
+  },
+  "organise": {
+   "red": 15,
+   "yellow": 3,
+   "green": 2
+  }
+ },
+ "bones": 22,
+ "slots": 26,
+ "animations": [
+  "blink",
+  "idle",
+  "wave",
+  "cheer_jump",
+  "thumbs_up",
+  "point",
+  "hold_card",
+  "emotions",
+  "walk",
+  "run",
+  "squat",
+  "jump_hurdle",
+  "wave_flag",
+  "look_around",
+  "talk"
+ ],
+ "constraints": {
+  "ik": [],
+  "transform": [
+   "boot_l_plant",
+   "boot_r_plant"
+  ]
+ }
+}

@@ -1,0 +1,203 @@
+images/rabbit_ear_l.png
+size: 200,547
+filter: Linear,Linear
+rabbit_ear_l
+bounds: 0,0,200,547
+
+images/rabbit_ear_r.png
+size: 220,554
+filter: Linear,Linear
+rabbit_ear_r
+bounds: 0,0,220,554
+
+images/rabbit_hips.png
+size: 582,473
+filter: Linear,Linear
+rabbit_hips
+bounds: 0,0,582,473
+
+images/rabbit_boot_l_back.png
+size: 306,303
+filter: Linear,Linear
+rabbit_boot_l_back
+bounds: 0,0,306,303
+
+images/rabbit_boot_l.png
+size: 306,303
+filter: Linear,Linear
+rabbit_boot_l
+bounds: 0,0,306,303
+
+images/rabbit_boot_r_back.png
+size: 293,304
+filter: Linear,Linear
+rabbit_boot_r_back
+bounds: 0,0,293,304
+
+images/rabbit_boot_r.png
+size: 293,304
+filter: Linear,Linear
+rabbit_boot_r
+bounds: 0,0,293,304
+
+images/rabbit_hand_l.png
+size: 360,456
+filter: Linear,Linear
+rabbit_hand_l
+bounds: 0,0,360,456
+
+images/rabbit_arm_l.png
+size: 1023,1248
+filter: Linear,Linear
+rabbit_arm_l
+bounds: 0,0,1023,1248
+
+images/rabbit_hand_r.png
+size: 358,456
+filter: Linear,Linear
+rabbit_hand_r
+bounds: 0,0,358,456
+
+images/rabbit_arm_r.png
+size: 1123,1255
+filter: Linear,Linear
+rabbit_arm_r
+bounds: 0,0,1123,1255
+
+images/rabbit_torso.png
+size: 486,533
+filter: Linear,Linear
+rabbit_torso
+bounds: 0,0,486,533
+
+images/rabbit_head_base.png
+size: 483,433
+filter: Linear,Linear
+rabbit_head_base
+bounds: 0,0,483,433
+
+images/rabbit_head_angry.png
+size: 553,496
+filter: Linear,Linear
+rabbit_head_angry
+bounds: 0,0,553,496
+
+images/rabbit_head_blink.png
+size: 554,498
+filter: Linear,Linear
+rabbit_head_blink
+bounds: 0,0,554,498
+
+images/rabbit_head_happy.png
+size: 553,498
+filter: Linear,Linear
+rabbit_head_happy
+bounds: 0,0,553,498
+
+images/rabbit_head_laugh.png
+size: 553,497
+filter: Linear,Linear
+rabbit_head_laugh
+bounds: 0,0,553,497
+
+images/rabbit_head_neutral.png
+size: 555,498
+filter: Linear,Linear
+rabbit_head_neutral
+bounds: 0,0,555,498
+
+images/rabbit_head_sad.png
+size: 552,497
+filter: Linear,Linear
+rabbit_head_sad
+bounds: 0,0,552,497
+
+images/rabbit_head_surprised.png
+size: 553,496
+filter: Linear,Linear
+rabbit_head_surprised
+bounds: 0,0,553,496
+
+images/rabbit_head_talking.png
+size: 554,497
+filter: Linear,Linear
+rabbit_head_talking
+bounds: 0,0,554,497
+
+images/rabbit_head_wink.png
+size: 552,496
+filter: Linear,Linear
+rabbit_head_wink
+bounds: 0,0,552,496
+
+images/rabbit_hand_l_fist.png
+size: 301,420
+filter: Linear,Linear
+rabbit_hand_l_fist
+bounds: 0,0,301,420
+
+images/rabbit_hand_l_grip.png
+size: 327,489
+filter: Linear,Linear
+rabbit_hand_l_grip
+bounds: 0,0,327,489
+
+images/rabbit_hand_l_open.png
+size: 438,565
+filter: Linear,Linear
+rabbit_hand_l_open
+bounds: 0,0,438,565
+
+images/rabbit_hand_l_point.png
+size: 1210,1482
+filter: Linear,Linear
+rabbit_hand_l_point
+bounds: 0,0,1210,1482
+
+images/rabbit_hand_l_thumbsup.png
+size: 358,448
+filter: Linear,Linear
+rabbit_hand_l_thumbsup
+bounds: 0,0,358,448
+
+images/rabbit_hand_r_fist.png
+size: 301,420
+filter: Linear,Linear
+rabbit_hand_r_fist
+bounds: 0,0,301,420
+
+images/rabbit_hand_r_grip.png
+size: 327,489
+filter: Linear,Linear
+rabbit_hand_r_grip
+bounds: 0,0,327,489
+
+images/rabbit_hand_r_open.png
+size: 438,565
+filter: Linear,Linear
+rabbit_hand_r_open
+bounds: 0,0,438,565
+
+images/rabbit_hand_r_point.png
+size: 1210,1482
+filter: Linear,Linear
+rabbit_hand_r_point
+bounds: 0,0,1210,1482
+
+images/rabbit_hand_r_thumbsup.png
+size: 358,448
+filter: Linear,Linear
+rabbit_hand_r_thumbsup
+bounds: 0,0,358,448
+
+images/rabbit_prop_flag.png
+size: 636,1130
+filter: Linear,Linear
+rabbit_prop_flag
+bounds: 0,0,636,1130
+
+images/rabbit_prop_hurdle.png
+size: 1067,682
+filter: Linear,Linear
+rabbit_prop_hurdle
+bounds: 0,0,1067,682

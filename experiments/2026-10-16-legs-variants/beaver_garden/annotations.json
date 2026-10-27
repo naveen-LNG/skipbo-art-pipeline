@@ -1,0 +1,2565 @@
+{
+ "character": "beaver",
+ "master": {
+  "hands": {
+   "l": {
+    "facing": "back",
+    "thumb_side": "medial"
+   },
+   "r": {
+    "facing": "back",
+    "thumb_side": "medial"
+   }
+  },
+  "image": "../../2026-10-15-beaver-jev-hands/beaver/beaver_master.png",
+  "layers": {
+   "upperarm": "under_torso"
+  },
+  "points": {
+   "ankle_l": [
+    0.6,
+    0.772
+   ],
+   "ankle_r": [
+    0.408,
+    0.772
+   ],
+   "elbow_l": [
+    0.745,
+    0.475
+   ],
+   "elbow_r": [
+    0.255,
+    0.475
+   ],
+   "fingertip_l": [
+    0.901,
+    0.621
+   ],
+   "fingertip_r": [
+    0.099,
+    0.621
+   ],
+   "ground": [
+    0.5,
+    0.875
+   ],
+   "hip_l": [
+    0.618,
+    0.805
+   ],
+   "hip_r": [
+    0.392,
+    0.805
+   ],
+   "neck": [
+    0.5,
+    0.355
+   ],
+   "shoulder_l": [
+    0.645,
+    0.405
+   ],
+   "shoulder_r": [
+    0.355,
+    0.405
+   ],
+   "waist": [
+    0.5,
+    0.6
+   ],
+   "wrist_l": [
+    0.842,
+    0.548
+   ],
+   "wrist_r": [
+    0.158,
+    0.548
+   ]
+  },
+  "snapped": {
+   "ankle_l": null,
+   "ankle_r": null,
+   "elbow_l": null,
+   "elbow_r": null,
+   "hip_l": null,
+   "hip_r": null,
+   "shoulder_l": null,
+   "shoulder_r": null,
+   "wrist_l": null,
+   "wrist_r": null
+  },
+  "status": "fixed"
+ },
+ "pieces": {
+  "beaver-body-parts/00": {
+   "confidence": 0.8,
+   "name": "boot",
+   "note": "toe right = outward for the left foot",
+   "outputs": [
+    {
+     "depths": {
+      "ankle": 55.65
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_boot_l.png",
+     "mirrored": false,
+     "name": "boot_l",
+     "points": {
+      "ankle": [
+       86.0,
+       14.94
+      ],
+      "ground": [
+       109.0,
+       208.55
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {
+      "ankle": 159.0
+     }
+    }
+   ],
+   "points": {
+    "ankle": {
+     "at": [
+      0.41,
+      0.1
+     ],
+     "depth": 55.65,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.3945,
+      0.0695
+     ],
+     "width": 159.0
+    },
+    "ground": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "foot",
+   "side": "l",
+   "status": "confirmed"
+  },
+  "beaver-body-parts/01": {
+   "confidence": 0.8,
+   "name": "boot",
+   "note": "toe left = outward for the right foot",
+   "outputs": [
+    {
+     "depths": {
+      "ankle": 57.05
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_boot_r.png",
+     "mirrored": false,
+     "name": "boot_r",
+     "points": {
+      "ankle": [
+       131.0,
+       14.94
+      ],
+      "ground": [
+       109.0,
+       208.55
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {
+      "ankle": 163.0
+     }
+    }
+   ],
+   "points": {
+    "ankle": {
+     "at": [
+      0.59,
+      0.1
+     ],
+     "depth": 57.05,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.6009,
+      0.0695
+     ],
+     "width": 163.0
+    },
+    "ground": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "foot",
+   "side": "r",
+   "status": "confirmed"
+  },
+  "beaver-body-parts/02": {
+   "confidence": 0.7,
+   "facing": "back",
+   "note": "mitten, thumb toward the body as in the master",
+   "outputs": [
+    {
+     "depths": {
+      "wrist": 36.4
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_hand_l.png",
+     "mirrored": false,
+     "name": "hand_l",
+     "points": {
+      "fingertip": [
+       91.68,
+       167.56
+      ],
+      "thumb_tip": [
+       11.29,
+       93.36
+      ],
+      "wrist": [
+       91.68,
+       17.43
+      ]
+     },
+     "rotated": -2.54,
+     "widths": {
+      "wrist": 104.0
+     }
+    }
+   ],
+   "points": {
+    "fingertip": {
+     "at": [
+      0.6,
+      0.97
+     ],
+     "kind": "point"
+    },
+    "thumb_tip": {
+     "at": [
+      0.05,
+      0.55
+     ],
+     "kind": "point"
+    },
+    "wrist": {
+     "at": [
+      0.55,
+      0.07
+     ],
+     "depth": 36.4,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.5562,
+      0.0773
+     ],
+     "width": 104.0
+    }
+   },
+   "role": "hand",
+   "side": "l",
+   "status": "confirmed"
+  },
+  "beaver-body-parts/03": {
+   "confidence": 0.7,
+   "facing": "back",
+   "note": "mitten, thumb toward the body as in the master",
+   "outputs": [
+    {
+     "depths": {
+      "wrist": 36.4
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_hand_r.png",
+     "mirrored": false,
+     "name": "hand_r",
+     "points": {
+      "fingertip": [
+       68.32,
+       167.56
+      ],
+      "thumb_tip": [
+       148.71,
+       93.36
+      ],
+      "wrist": [
+       68.32,
+       17.43
+      ]
+     },
+     "rotated": 2.54,
+     "widths": {
+      "wrist": 104.0
+     }
+    }
+   ],
+   "points": {
+    "fingertip": {
+     "at": [
+      0.4,
+      0.97
+     ],
+     "kind": "point"
+    },
+    "thumb_tip": {
+     "at": [
+      0.95,
+      0.55
+     ],
+     "kind": "point"
+    },
+    "wrist": {
+     "at": [
+      0.45,
+      0.07
+     ],
+     "depth": 36.4,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.4438,
+      0.0773
+     ],
+     "width": 104.0
+    }
+   },
+   "role": "hand",
+   "side": "r",
+   "status": "confirmed"
+  },
+  "beaver-body-parts/04": {
+   "confidence": 0.0,
+   "note": "the hips piece was painted as long shorts whose leg openings already reach the master's hem (the rig needed a 0.57 squash on the separate legs); the boots go under the hips' openings instead, as on the moose",
+   "outputs": [],
+   "points": {},
+   "role": "leg",
+   "side": "l",
+   "status": "ignored"
+  },
+  "beaver-body-parts/05": {
+   "confidence": 0.0,
+   "note": "the hips piece was painted as long shorts whose leg openings already reach the master's hem (the rig needed a 0.57 squash on the separate legs); the boots go under the hips' openings instead, as on the moose",
+   "outputs": [],
+   "points": {},
+   "role": "leg",
+   "side": "r",
+   "status": "ignored"
+  },
+  "beaver-body-parts/06": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-body-parts/07": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-body-parts/08": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-body-parts/09": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-body-parts/10": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-body-parts/11": {
+   "confidence": 0.0,
+   "note": "round 3 (user review + Jev joint audit against the master): whole sleeves replace the stuck-on two-piece arms, a palm-facing fist replaces the back-facing one (cheer showed the back of the fists), one trousers piece with cuffs keeps the boots under the cuffs, the tail is repainted as the master holds it: long shorts, replaced by the trousers piece",
+   "outputs": [],
+   "points": {},
+   "role": "hips",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-body-parts/12": {
+   "confidence": 0.8,
+   "note": "neck = base of the fur neck in the collar; waist = just above the sweater hem, so the hem overlaps the belt",
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_torso.png",
+     "mirrored": false,
+     "name": "torso",
+     "points": {
+      "neck": [
+       264.5,
+       106.6
+      ],
+      "waist": [
+       264.5,
+       506.35
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.2
+     ],
+     "kind": "point"
+    },
+    "waist": {
+     "at": [
+      0.5,
+      0.95
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "torso",
+   "side": "",
+   "status": "fixed"
+  },
+  "beaver-body-parts/13": {
+   "confidence": 0.6,
+   "note": "likely dropped: the expression heads include the ears",
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_ear_l.png",
+     "mirrored": false,
+     "name": "ear_l",
+     "points": {
+      "root": [
+       41.3,
+       102.85
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "root": {
+     "at": [
+      0.35,
+      0.85
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "ear",
+   "side": "l",
+   "status": "confirmed"
+  },
+  "beaver-body-parts/14": {
+   "confidence": 0.6,
+   "note": "likely dropped: the expression heads include the ears",
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_ear_r.png",
+     "mirrored": false,
+     "name": "ear_r",
+     "points": {
+      "root": [
+       76.7,
+       102.85
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "root": {
+     "at": [
+      0.65,
+      0.85
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "ear",
+   "side": "r",
+   "status": "confirmed"
+  },
+  "beaver-body-parts/15": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_head_base.png",
+     "mirrored": false,
+     "name": "head_base",
+     "points": {
+      "neck": [
+       253.0,
+       418.07
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed"
+  },
+  "beaver-face-parts/00": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/face-heads/beaver_head_angry.png",
+     "mirrored": false,
+     "name": "head_angry",
+     "points": {
+      "neck": [
+       287.5,
+       484.03
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "angry"
+  },
+  "beaver-face-parts/01": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/face-heads/beaver_head_wink.png",
+     "mirrored": false,
+     "name": "head_wink",
+     "points": {
+      "neck": [
+       287.5,
+       485.0
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "wink"
+  },
+  "beaver-face-parts/02": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/face-heads/beaver_head_talking.png",
+     "mirrored": false,
+     "name": "head_talking",
+     "points": {
+      "neck": [
+       288.0,
+       485.97
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "talking"
+  },
+  "beaver-face-parts/03": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/face-heads/beaver_head_sad.png",
+     "mirrored": false,
+     "name": "head_sad",
+     "points": {
+      "neck": [
+       287.5,
+       485.0
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "sad"
+  },
+  "beaver-face-parts/04": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/face-heads/beaver_head_surprised.png",
+     "mirrored": false,
+     "name": "head_surprised",
+     "points": {
+      "neck": [
+       288.0,
+       485.0
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "surprised"
+  },
+  "beaver-face-parts/05": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/face-heads/beaver_head_laugh.png",
+     "mirrored": false,
+     "name": "head_laugh",
+     "points": {
+      "neck": [
+       287.5,
+       484.03
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "laugh"
+  },
+  "beaver-face-parts/06": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/face-heads/beaver_head_happy.png",
+     "mirrored": false,
+     "name": "head_happy",
+     "points": {
+      "neck": [
+       287.5,
+       485.0
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "happy"
+  },
+  "beaver-face-parts/07": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/face-heads/beaver_head_blink.png",
+     "mirrored": false,
+     "name": "head_blink",
+     "points": {
+      "neck": [
+       287.5,
+       485.0
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "blink"
+  },
+  "beaver-face-parts/08": {
+   "confidence": 0.8,
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/face-heads/beaver_head_neutral.png",
+     "mirrored": false,
+     "name": "head_neutral",
+     "points": {
+      "neck": [
+       287.5,
+       485.0
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "neutral"
+  },
+  "beaver-fist-palm-parts/00": {
+   "confidence": 0.8,
+   "facing": "palm",
+   "note": "palm-facing fist; Jev cue score -0.049 (palm band), thumb to the right (Jev: right)",
+   "outputs": [
+    {
+     "depths": {
+      "wrist": 156.54
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_l_fist.png",
+     "mirrored": false,
+     "name": "hand_l_fist",
+     "points": {
+      "thumb_tip": [
+       561.85,
+       579.36
+      ],
+      "wrist": [
+       327.03,
+       28.25
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {
+      "wrist": 447.25
+     }
+    },
+    {
+     "depths": {
+      "wrist": 156.54
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_r_fist.png",
+     "mirrored": true,
+     "name": "hand_r_fist",
+     "points": {
+      "thumb_tip": [
+       99.15,
+       579.36
+      ],
+      "wrist": [
+       333.97,
+       28.25
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {
+      "wrist": 447.25
+     }
+    }
+   ],
+   "points": {
+    "thumb_tip": {
+     "at": [
+      0.85,
+      0.68
+     ],
+     "kind": "point"
+    },
+    "wrist": {
+     "at": [
+      0.5,
+      0.05
+     ],
+     "depth": 156.54,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.4947,
+      0.0332
+     ],
+     "width": 447.25
+    }
+   },
+   "role": "hand",
+   "side": "either",
+   "status": "fixed",
+   "variant": "fist"
+  },
+  "beaver-fist-palm-parts/01": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-hands-parts/00": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-hands-parts/01": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-hands-parts/02": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-hands-parts/03": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-hands-parts/04": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-hands-parts/05": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-hands-parts/06": {
+   "confidence": 0.7,
+   "facing": "palm",
+   "note": "painted with the wrist at the left side; curled fingers' fronts show",
+   "outputs": [
+    {
+     "depths": {
+      "wrist": 63.21
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_l_thumbsup.png",
+     "mirrored": false,
+     "name": "hand_l_thumbsup",
+     "points": {
+      "thumb_tip": [
+       360.0,
+       180.0
+      ],
+      "wrist": [
+       116.92,
+       21.38
+      ]
+     },
+     "rotated": -90.0,
+     "widths": {
+      "wrist": 180.61
+     }
+    },
+    {
+     "depths": {
+      "wrist": 63.21
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_r_thumbsup.png",
+     "mirrored": true,
+     "name": "hand_r_thumbsup",
+     "points": {
+      "thumb_tip": [
+       15.0,
+       180.0
+      ],
+      "wrist": [
+       258.08,
+       21.38
+      ]
+     },
+     "rotated": -90.0,
+     "widths": {
+      "wrist": 180.61
+     }
+    }
+   ],
+   "points": {
+    "thumb_tip": {
+     "at": [
+      0.5,
+      0.04
+     ],
+     "kind": "point"
+    },
+    "wrist": {
+     "at": [
+      0.04,
+      0.65
+     ],
+     "depth": 63.21,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.0594,
+      0.6882
+     ],
+     "width": 180.61
+    }
+   },
+   "role": "hand",
+   "side": "either",
+   "status": "confirmed",
+   "variant": "thumbsup"
+  },
+  "beaver-hands-parts/07": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-hands-parts/08": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-hands-parts/09": {
+   "confidence": 0.0,
+   "note": "round 2: back-facing, so the rig pointed it across the chest, where Jev read it as a grip and it hid against the sweater; replaced by the palm-facing point from beaver-point-palm-parts/02",
+   "outputs": [],
+   "points": {},
+   "role": "hand",
+   "side": "either",
+   "status": "ignored",
+   "variant": "point"
+  },
+  "beaver-hands-parts/10": {
+   "confidence": 0.4,
+   "facing": "back",
+   "note": "three-quarter view; which curl is the thumb is unclear",
+   "outputs": [
+    {
+     "depths": {
+      "wrist": 62.28
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_l_grip.png",
+     "mirrored": false,
+     "name": "hand_l_grip",
+     "points": {
+      "fingertip": [
+       107.84,
+       417.84
+      ],
+      "thumb_tip": [
+       45.57,
+       208.13
+      ],
+      "wrist": [
+       107.84,
+       32.63
+      ]
+     },
+     "rotated": 3.94,
+     "widths": {
+      "wrist": 177.95
+     }
+    },
+    {
+     "depths": {
+      "wrist": 62.28
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_r_grip.png",
+     "mirrored": true,
+     "name": "hand_r_grip",
+     "points": {
+      "fingertip": [
+       187.16,
+       417.84
+      ],
+      "thumb_tip": [
+       249.43,
+       208.13
+      ],
+      "wrist": [
+       187.16,
+       32.63
+      ]
+     },
+     "rotated": 3.94,
+     "widths": {
+      "wrist": 177.95
+     }
+    }
+   ],
+   "points": {
+    "fingertip": {
+     "at": [
+      0.3,
+      0.95
+     ],
+     "kind": "point"
+    },
+    "thumb_tip": {
+     "at": [
+      0.12,
+      0.45
+     ],
+     "kind": "point"
+    },
+    "wrist": {
+     "at": [
+      0.4,
+      0.05
+     ],
+     "depth": 62.28,
+     "kind": "opening",
+     "snap": "failed",
+     "width": 177.95
+    }
+   },
+   "role": "hand",
+   "side": "either",
+   "status": "confirmed",
+   "variant": "grip"
+  },
+  "beaver-hands-parts/11": {
+   "confidence": 0.7,
+   "facing": "palm",
+   "note": "palm pad visible; prompted palm-facing",
+   "outputs": [
+    {
+     "depths": {
+      "wrist": 67.55
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_l_open.png",
+     "mirrored": false,
+     "name": "hand_l_open",
+     "points": {
+      "fingertip": [
+       183.04,
+       446.64
+      ],
+      "thumb_tip": [
+       393.32,
+       217.02
+      ],
+      "wrist": [
+       183.04,
+       26.94
+      ]
+     },
+     "rotated": -1.79,
+     "widths": {
+      "wrist": 193.0
+     }
+    },
+    {
+     "depths": {
+      "wrist": 67.55
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_r_open.png",
+     "mirrored": true,
+     "name": "hand_r_open",
+     "points": {
+      "fingertip": [
+       236.96,
+       446.64
+      ],
+      "thumb_tip": [
+       26.68,
+       217.02
+      ],
+      "wrist": [
+       236.96,
+       26.94
+      ]
+     },
+     "rotated": -1.79,
+     "widths": {
+      "wrist": 193.0
+     }
+    }
+   ],
+   "points": {
+    "fingertip": {
+     "at": [
+      0.45,
+      0.97
+     ],
+     "kind": "point"
+    },
+    "thumb_tip": {
+     "at": [
+      0.95,
+      0.45
+     ],
+     "kind": "point"
+    },
+    "wrist": {
+     "at": [
+      0.45,
+      0.06
+     ],
+     "depth": 67.55,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.4177,
+      0.046
+     ],
+     "width": 193.0
+    }
+   },
+   "role": "hand",
+   "side": "either",
+   "status": "confirmed",
+   "variant": "open"
+  },
+  "beaver-point-palm-parts/00": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-point-palm-parts/01": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-point-palm-parts/02": {
+   "confidence": 0.8,
+   "facing": "palm",
+   "note": "palm-facing point (curled fingertips on the palm show): points outward",
+   "outputs": [
+    {
+     "depths": {
+      "wrist": 131.11
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_l_point.png",
+     "mirrored": true,
+     "name": "hand_l_point",
+     "points": {
+      "fingertip": [
+       443.1,
+       1074.1
+      ],
+      "thumb_tip": [
+       920.8,
+       593.67
+      ],
+      "wrist": [
+       443.1,
+       93.3
+      ]
+     },
+     "rotated": 14.78,
+     "widths": {
+      "wrist": 374.61
+     }
+    },
+    {
+     "depths": {
+      "wrist": 131.11
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_hand_r_point.png",
+     "mirrored": false,
+     "name": "hand_r_point",
+     "points": {
+      "fingertip": [
+       596.9,
+       1074.1
+      ],
+      "thumb_tip": [
+       119.2,
+       593.67
+      ],
+      "wrist": [
+       596.9,
+       93.3
+      ]
+     },
+     "rotated": 14.78,
+     "widths": {
+      "wrist": 374.61
+     }
+    }
+   ],
+   "points": {
+    "fingertip": {
+     "at": [
+      0.44,
+      0.98
+     ],
+     "kind": "point"
+    },
+    "thumb_tip": {
+     "at": [
+      0.02,
+      0.4
+     ],
+     "kind": "point"
+    },
+    "wrist": {
+     "at": [
+      0.68,
+      0.04
+     ],
+     "depth": 131.11,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.7496,
+      0.042
+     ],
+     "width": 374.61
+    }
+   },
+   "role": "hand",
+   "side": "either",
+   "status": "fixed",
+   "variant": "point"
+  },
+  "beaver-point-palm-parts/03": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-poses-parts/00": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-poses-parts/01": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-poses-parts/02": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-poses-parts/03": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-poses-parts/04": {
+   "confidence": 0.6,
+   "name": "boot",
+   "note": "a tilted boot rather than toe-down; toe right = left foot",
+   "outputs": [
+    {
+     "depths": {
+      "ankle": 83.44
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_boot_l_tiptoe.png",
+     "mirrored": false,
+     "name": "boot_l_tiptoe",
+     "points": {
+      "ankle": [
+       191.58,
+       61.03
+      ],
+      "ground": [
+       247.2,
+       348.23
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {
+      "ankle": 238.4
+     }
+    },
+    {
+     "depths": {
+      "ankle": 83.44
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/variants/beaver_boot_r_tiptoe.png",
+     "mirrored": true,
+     "name": "boot_r_tiptoe",
+     "points": {
+      "ankle": [
+       117.42,
+       61.03
+      ],
+      "ground": [
+       61.8,
+       348.23
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {
+      "ankle": 238.4
+     }
+    }
+   ],
+   "painted_as": "l",
+   "points": {
+    "ankle": {
+     "at": [
+      0.62,
+      0.17
+     ],
+     "depth": 83.44,
+     "kind": "opening",
+     "snap": "failed",
+     "width": 238.4
+    },
+    "ground": {
+     "at": [
+      0.8,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "foot",
+   "side": "either",
+   "status": "confirmed",
+   "variant": "tiptoe"
+  },
+  "beaver-poses-parts/05": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-poses-parts/06": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-poses-parts/07": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-poses-parts/08": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-poses-parts/09": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-sleeves3-parts/01": {
+   "confidence": 0.8,
+   "note": "whole sleeve, both sides (the right is its mirror: piece 00 fitted 118 px off the master's right sleeve); points at the measured centres of its top and cuff; elbow at the master's elbow ratio (0.495)",
+   "outputs": [
+    {
+     "depths": {
+      "wrist": 177.38
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_arm_l.png",
+     "mirrored": false,
+     "name": "arm_l",
+     "points": {
+      "elbow": [
+       522.52,
+       797.26
+      ],
+      "shoulder": [
+       496.34,
+       148.34
+      ],
+      "wrist": [
+       496.34,
+       1476.56
+      ]
+     },
+     "rotated": 5.97,
+     "widths": {
+      "shoulder": 318.07,
+      "wrist": 506.8
+     }
+    },
+    {
+     "depths": {
+      "wrist": 177.38
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_arm_r.png",
+     "mirrored": true,
+     "name": "arm_r",
+     "points": {
+      "elbow": [
+       410.48,
+       797.26
+      ],
+      "shoulder": [
+       436.66,
+       148.34
+      ],
+      "wrist": [
+       436.66,
+       1476.56
+      ]
+     },
+     "rotated": 5.97,
+     "widths": {
+      "shoulder": 318.07,
+      "wrist": 506.8
+     }
+    }
+   ],
+   "painted_as": "l",
+   "points": {
+    "elbow": {
+     "at": [
+      0.568,
+      0.52
+     ],
+     "kind": "point"
+    },
+    "shoulder": {
+     "at": [
+      0.621,
+      0.08
+     ],
+     "kind": "round_end",
+     "snap": "failed",
+     "width": 318.07
+    },
+    "wrist": {
+     "at": [
+      0.52,
+      0.97
+     ],
+     "depth": 177.38,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.4444,
+      0.9768
+     ],
+     "width": 506.8
+    }
+   },
+   "role": "arm",
+   "side": "either",
+   "status": "fixed"
+  },
+  "beaver-tail-parts/00": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/01": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/02": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/03": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/04": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/05": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/06": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/07": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/08": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/09": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/10": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/11": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/12": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/13": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/14": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/15": {
+   "confidence": 0.0,
+   "note": "spare piece from the sheet, not used by the rig (unmirrored row-2 hand, duplicate boot, whole sleeve or superseded tail)",
+   "outputs": [],
+   "points": {},
+   "role": "",
+   "side": "",
+   "status": "ignored"
+  },
+  "beaver-tail-parts/16": {
+   "confidence": 0.8,
+   "note": "repainted as the master holds it: root upper right, paddle lower left",
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_tail.png",
+     "mirrored": false,
+     "name": "tail",
+     "points": {
+      "root": [
+       554.4,
+       60.9
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "root": {
+     "at": [
+      0.9,
+      0.15
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "tail",
+   "side": "",
+   "status": "fixed"
+  },
+  "beaver-trousers-parts/00": {
+   "confidence": 0.8,
+   "note": "composite (make_trousers.py): belt-to-crotch hips over the cuffed legs; openings at the cuffs",
+   "outputs": [
+    {
+     "depths": {
+      "hip_l": 56.7,
+      "hip_r": 56.0
+     },
+     "file": "../../2026-10-15-beaver-jev-hands/beaver/body/beaver_hips.png",
+     "mirrored": false,
+     "name": "hips",
+     "points": {
+      "hip_l": [
+       407.49,
+       386.9
+      ],
+      "hip_r": [
+       153.0,
+       387.9
+      ],
+      "waist": [
+       277.5,
+       44.55
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {
+      "hip_l": 162.0,
+      "hip_r": 160.0
+     }
+    }
+   ],
+   "points": {
+    "hip_l": {
+     "at": [
+      0.743,
+      0.98
+     ],
+     "depth": 56.7,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.7342,
+      0.9553
+     ],
+     "width": 162.0
+    },
+    "hip_r": {
+     "at": [
+      0.266,
+      0.98
+     ],
+     "depth": 56.0,
+     "kind": "opening",
+     "snap": "ok",
+     "snapped": [
+      0.2757,
+      0.9578
+     ],
+     "width": 160.0
+    },
+    "waist": {
+     "at": [
+      0.5,
+      0.11
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "hips",
+   "side": "",
+   "status": "fixed"
+  },
+  "garden-heads2-parts/00": {
+   "confidence": 0.8,
+   "note": "garden: eyes glance down at the plant (pupils lower right), front view; fitted to the neutral head box",
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-16-garden-grow/garden/face-heads/beaver_head_look_happy.png",
+     "mirrored": false,
+     "name": "head_look_happy",
+     "points": {
+      "neck": [
+       287.5,
+       485.0
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "look_happy"
+  },
+  "garden-heads2-parts/01": {
+   "confidence": 0.8,
+   "note": "garden: eyes glance down at the plant (pupils lower right), front view; fitted to the neutral head box",
+   "outputs": [
+    {
+     "depths": {},
+     "file": "../../2026-10-16-garden-grow/garden/face-heads/beaver_head_look.png",
+     "mirrored": false,
+     "name": "head_look",
+     "points": {
+      "neck": [
+       287.5,
+       485.0
+      ]
+     },
+     "rotated": 0.0,
+     "widths": {}
+    }
+   ],
+   "points": {
+    "neck": {
+     "at": [
+      0.5,
+      0.97
+     ],
+     "kind": "point"
+    }
+   },
+   "role": "head",
+   "side": "",
+   "status": "confirmed",
+   "variant": "look"
+  },
+  "beaver-legs-squat-parts/00": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "squat_1",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's in-between sheet (cut_sheet.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.499,
+      0.0807
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.499,
+      0.9982
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_squat_1",
+     "file": "../../2026-10-16-keypose-refs/legs/squat_1.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       259.5,
+       44.95
+      ],
+      "ground": [
+       259.5,
+       556.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-squat-parts/01": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "squat_2",
+   "side": "",
+   "status": "ignored",
+   "confidence": 0.9,
+   "note": "as tall as drawing 1 and barely bent; kp_rig's sequence skips it too",
+   "points": {
+    "waist": {
+     "at": [
+      0.499,
+      0.0809
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.499,
+      0.9982
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": []
+  },
+  "beaver-legs-squat-parts/02": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "squat_3",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's in-between sheet (cut_sheet.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.4879,
+      0.0779
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.4879,
+      0.9982
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_squat_3",
+     "file": "../../2026-10-16-keypose-refs/legs/squat_3.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       261.0,
+       42.92
+      ],
+      "ground": [
+       261.0,
+       550.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-squat-parts/03": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "squat_4",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's in-between sheet (cut_sheet.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.4975,
+      0.0811
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.4975,
+      0.9981
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_squat_4",
+     "file": "../../2026-10-16-keypose-refs/legs/squat_4.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       298.0,
+       41.63
+      ],
+      "ground": [
+       298.0,
+       512.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-squat-parts/04": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "squat_5",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's in-between sheet (cut_sheet.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.4992,
+      0.084
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.4992,
+      0.9976
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_squat_5",
+     "file": "../../2026-10-16-keypose-refs/legs/squat_5.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       323.5,
+       35.01
+      ],
+      "ground": [
+       323.5,
+       416.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-squat-parts/05": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "squat_3-4",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's midpoint in-between (legs-midpoint.txt, cut_mid.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.4984,
+      0.0847
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.4984,
+      0.998
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_squat_3-4",
+     "file": "../../2026-10-16-keypose-refs/legs/squat_34.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       309.5,
+       42.42
+      ],
+      "ground": [
+       309.5,
+       500.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-squat-parts/06": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "squat_4-5",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's midpoint in-between (legs-midpoint.txt, cut_mid.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.4984,
+      0.0834
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.4984,
+      0.9977
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_squat_4-5",
+     "file": "../../2026-10-16-keypose-refs/legs/squat_45.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       311.0,
+       36.28
+      ],
+      "ground": [
+       311.0,
+       434.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-jump-parts/00": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "jump_1",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's in-between sheet (cut_sheet.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.5,
+      0.0932
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.5,
+      0.9986
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_jump_1",
+     "file": "../../2026-10-16-keypose-refs/legs/jump_1.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       267.0,
+       64.51
+      ],
+      "ground": [
+       267.0,
+       691.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-jump-parts/01": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "jump_2",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's in-between sheet (cut_sheet.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.5011,
+      0.0747
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.5011,
+      0.9986
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_jump_2",
+     "file": "../../2026-10-16-keypose-refs/legs/jump_2.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       236.5,
+       55.3
+      ],
+      "ground": [
+       236.5,
+       739.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-jump-parts/02": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "jump_3",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's in-between sheet (cut_sheet.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.4906,
+      0.0818
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.4906,
+      0.9985
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_jump_3",
+     "file": "../../2026-10-16-keypose-refs/legs/jump_3.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       260.5,
+       53.89
+      ],
+      "ground": [
+       260.5,
+       658.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-jump-parts/03": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "jump_4",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's in-between sheet (cut_sheet.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.4966,
+      0.0937
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.4966,
+      0.9983
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_jump_4",
+     "file": "../../2026-10-16-keypose-refs/legs/jump_4.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       295.5,
+       53.95
+      ],
+      "ground": [
+       295.5,
+       575.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-jump-parts/04": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "jump_5",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's in-between sheet (cut_sheet.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.5023,
+      0.0934
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.5023,
+      0.9983
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_jump_5",
+     "file": "../../2026-10-16-keypose-refs/legs/jump_5.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       326.0,
+       53.98
+      ],
+      "ground": [
+       326.0,
+       577.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-jump-parts/05": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "jump_2-3",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's midpoint in-between (legs-midpoint.txt, cut_mid.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.4917,
+      0.0828
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.4917,
+      0.9985
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_jump_2-3",
+     "file": "../../2026-10-16-keypose-refs/legs/jump_23.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       267.5,
+       55.54
+      ],
+      "ground": [
+       267.5,
+       670.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  },
+  "beaver-legs-jump-parts/06": {
+   "role": "legs",
+   "name": "legs",
+   "variant": "jump_3-4",
+   "side": "",
+   "status": "confirmed",
+   "confidence": 0.9,
+   "note": "the key-pose experiment's midpoint in-between (legs-midpoint.txt, cut_mid.py)",
+   "points": {
+    "waist": {
+     "at": [
+      0.4889,
+      0.0823
+     ],
+     "kind": "point"
+    },
+    "ground": {
+     "at": [
+      0.4889,
+      0.9984
+     ],
+     "kind": "point"
+    }
+   },
+   "outputs": [
+    {
+     "name": "legs_jump_3-4",
+     "file": "../../2026-10-16-keypose-refs/legs/jump_34.png",
+     "mirrored": false,
+     "rotated": 0.0,
+     "points": {
+      "waist": [
+       263.5,
+       52.89
+      ],
+      "ground": [
+       263.5,
+       642.0
+      ]
+     },
+     "widths": {},
+     "depths": {}
+    }
+   ]
+  }
+ },
+ "version": 1
+}

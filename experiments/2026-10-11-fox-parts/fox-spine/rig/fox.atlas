@@ -1,0 +1,143 @@
+images/fox_tail.png
+size: 614,419
+filter: Linear,Linear
+fox_tail
+bounds: 0,0,614,419
+
+images/fox_leg_l.png
+size: 251,272
+filter: Linear,Linear
+fox_leg_l
+bounds: 0,0,251,272
+
+images/fox_leg_r.png
+size: 276,334
+filter: Linear,Linear
+fox_leg_r
+bounds: 0,0,276,334
+
+images/fox_boot_l.png
+size: 327,389
+filter: Linear,Linear
+fox_boot_l
+bounds: 0,0,327,389
+
+images/fox_boot_r.png
+size: 327,426
+filter: Linear,Linear
+fox_boot_r
+bounds: 0,0,327,426
+
+images/fox_hips.png
+size: 585,109
+filter: Linear,Linear
+fox_hips
+bounds: 0,0,585,109
+
+images/fox_upperarm_l.png
+size: 273,322
+filter: Linear,Linear
+fox_upperarm_l
+bounds: 0,0,273,322
+
+images/fox_upperarm_r.png
+size: 267,313
+filter: Linear,Linear
+fox_upperarm_r
+bounds: 0,0,267,313
+
+images/fox_forearm_l.png
+size: 320,346
+filter: Linear,Linear
+fox_forearm_l
+bounds: 0,0,320,346
+
+images/fox_forearm_r.png
+size: 338,353
+filter: Linear,Linear
+fox_forearm_r
+bounds: 0,0,338,353
+
+images/fox_hand_l.png
+size: 247,302
+filter: Linear,Linear
+fox_hand_l
+bounds: 0,0,247,302
+
+images/fox_hand_r.png
+size: 273,341
+filter: Linear,Linear
+fox_hand_r
+bounds: 0,0,273,341
+
+images/fox_torso.png
+size: 471,642
+filter: Linear,Linear
+fox_torso
+bounds: 0,0,471,642
+
+images/fox_torso_patch.png
+size: 745,828
+filter: Linear,Linear
+fox_torso_patch
+bounds: 0,0,745,828
+
+images/fox_head_base.png
+size: 803,540
+filter: Linear,Linear
+fox_head_base
+bounds: 0,0,803,540
+
+images/fox_head_angry.png
+size: 642,554
+filter: Linear,Linear
+fox_head_angry
+bounds: 0,0,642,554
+
+images/fox_head_blink.png
+size: 646,557
+filter: Linear,Linear
+fox_head_blink
+bounds: 0,0,646,557
+
+images/fox_head_happy.png
+size: 645,557
+filter: Linear,Linear
+fox_head_happy
+bounds: 0,0,645,557
+
+images/fox_head_laugh.png
+size: 643,557
+filter: Linear,Linear
+fox_head_laugh
+bounds: 0,0,643,557
+
+images/fox_head_neutral.png
+size: 645,557
+filter: Linear,Linear
+fox_head_neutral
+bounds: 0,0,645,557
+
+images/fox_head_sad.png
+size: 644,557
+filter: Linear,Linear
+fox_head_sad
+bounds: 0,0,644,557
+
+images/fox_head_surprised.png
+size: 646,557
+filter: Linear,Linear
+fox_head_surprised
+bounds: 0,0,646,557
+
+images/fox_head_talking.png
+size: 641,555
+filter: Linear,Linear
+fox_head_talking
+bounds: 0,0,641,555
+
+images/fox_head_wink.png
+size: 642,555
+filter: Linear,Linear
+fox_head_wink
+bounds: 0,0,642,555

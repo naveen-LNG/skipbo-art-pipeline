@@ -1,0 +1,177 @@
+fox_0.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+fox_arm_l
+bounds: 1341,463,197,418
+fox_arm_l_under
+bounds: 996,464,197,418
+fox_arm_r
+bounds: 1197,885,197,418
+fox_arm_r_under
+bounds: 1398,885,197,418
+fox_boot_l
+bounds: 1197,727,130,127
+offsets: 2,2,134,138
+fox_boot_l_back
+bounds: 772,858,99,24
+offsets: 4,112,134,138
+fox_boot_l_tiptoe
+bounds: 375,1866,155,148
+offsets: 4,2,161,170
+fox_boot_l_tiptoe_back
+bounds: 499,1403,111,52
+offsets: 2,116,161,170
+fox_boot_l_under
+bounds: 1542,463,129,126
+offsets: 7,7,143,147
+fox_boot_r
+bounds: 1197,596,130,127
+offsets: 2,2,134,138
+fox_boot_r_back
+bounds: 216,2018,97,24
+offsets: 32,112,134,138
+fox_boot_r_tiptoe
+bounds: 216,1866,155,148
+offsets: 2,2,161,170
+fox_boot_r_tiptoe_back
+bounds: 1542,829,111,52
+offsets: 48,116,161,170
+fox_boot_r_tiptoe_under
+bounds: 534,1825,155,147
+offsets: 7,6,170,179
+fox_boot_r_under
+bounds: 1197,464,130,128
+offsets: 6,7,143,148
+fox_hand_l
+bounds: 1599,593,83,114
+offsets: 6,7,99,127
+fox_hand_l_fist
+bounds: 1686,2,346,448
+fox_hand_l_fist_under
+bounds: 996,2,341,458
+offsets: 17,17,375,478
+fox_hand_l_open_under
+bounds: 1758,1466,208,284
+offsets: 16,16,243,308
+fox_hand_l_point
+bounds: 2,1256,493,606
+offsets: 39,42,584,678
+fox_hand_l_point_under
+bounds: 2,2,493,624
+offsets: 57,60,620,714
+fox_hand_l_thumbsup
+bounds: 1102,1873,216,168
+fox_hand_l_thumbsup_under
+bounds: 1542,1873,212,172
+offsets: 10,9,232,184
+fox_hand_l_under
+bounds: 1514,1466,84,118
+offsets: 10,12,108,136
+fox_hand_r
+bounds: 1599,711,81,114
+offsets: 5,3,90,121
+fox_hand_r_fist
+bounds: 1686,454,346,448
+fox_hand_r_fist_under
+bounds: 1341,2,341,457
+offsets: 16,16,373,476
+fox_hand_r_open_under
+bounds: 1758,1754,208,284
+offsets: 18,15,241,306
+fox_hand_r_point
+bounds: 499,2,493,606
+offsets: 52,42,584,678
+fox_hand_r_point_under
+bounds: 2,630,493,622
+offsets: 68,58,616,710
+fox_hand_r_thumbsup
+bounds: 1322,1873,216,168
+fox_hand_r_thumbsup_under
+bounds: 2,1866,210,172
+offsets: 10,8,230,183
+fox_hand_r_under
+bounds: 1514,1307,81,119
+offsets: 10,7,100,130
+fox_head_base
+bounds: 1599,906,409,276
+fox_head_base_under
+bounds: 1599,1186,409,276
+fox_head_blink
+bounds: 1186,1307,324,279
+fox_head_blink_under
+bounds: 774,1407,324,279
+fox_head_happy
+bounds: 774,1690,324,279
+fox_head_happy_under
+bounds: 1102,1590,324,279
+fox_head_surprised
+bounds: 1430,1590,324,279
+fox_hips_under
+bounds: 499,858,269,239
+offsets: 7,7,282,248
+fox_tail
+bounds: 774,886,346,242
+fox_tail_under
+bounds: 499,612,346,242
+fox_tail_up
+bounds: 843,1132,339,271
+fox_tail_up_under
+bounds: 499,1132,340,267
+offsets: 2,7,349,281
+fox_torso
+bounds: 499,1466,271,355
+shadow
+bounds: 1599,885,48,14
+
+fox_1.webp
+size: 2048,1024
+filter: MipMapLinearLinear,Linear
+fox_boot_l_tiptoe_under
+bounds: 2,851,155,147
+offsets: 8,6,170,179
+fox_hand_l_grip
+bounds: 1584,556,184,261
+offsets: 38,23,242,308
+fox_hand_l_grip_under
+bounds: 1518,284,184,268
+offsets: 46,31,258,324
+fox_hand_l_open
+bounds: 982,2,208,277
+offsets: 7,7,226,291
+fox_hand_r_grip
+bounds: 1772,556,184,261
+offsets: 20,23,242,308
+fox_hand_r_grip_under
+bounds: 1706,284,184,268
+offsets: 27,30,256,322
+fox_hand_r_open
+bounds: 1306,284,208,277
+offsets: 11,7,226,291
+fox_head_angry
+bounds: 656,2,322,277
+fox_head_angry_under
+bounds: 655,567,322,277
+fox_head_laugh
+bounds: 329,568,322,278
+fox_head_laugh_under
+bounds: 655,285,322,278
+fox_head_neutral
+bounds: 2,285,323,279
+fox_head_neutral_under
+bounds: 2,568,323,279
+fox_head_sad
+bounds: 329,285,322,279
+fox_head_sad_under
+bounds: 330,2,322,279
+fox_head_surprised_under
+bounds: 2,2,324,279
+fox_head_talking
+bounds: 981,283,321,278
+fox_head_talking_under
+bounds: 981,565,321,278
+fox_head_wink
+bounds: 1306,2,321,278
+fox_head_wink_under
+bounds: 1631,2,321,278
+fox_hips
+bounds: 1306,565,274,240

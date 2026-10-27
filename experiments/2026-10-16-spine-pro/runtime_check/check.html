@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Runtime check</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/@esotericsoftware/spine-player@4.2.120/dist/iife/spine-player.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@esotericsoftware/spine-player@4.2.120/dist/spine-player.css">
+<style>html,body{margin:0;height:100%;background:#d6d6d6;font:13px system-ui}#p{width:100%;height:80%}pre{margin:8px}</style></head>
+<body><div id="p"></div><pre id="out">running...</pre><script>
+// ?rig=beaver/rig_pro/beaver : loads <rig>.json/.atlas in the official Spine 4.2 player and compares every pose in
+// <dir>/runtime_expected.json (written by expected.py from spine_qa's renderer). window.result holds the summary.
+const q = new URLSearchParams(location.search), rig = q.get("rig");
+const dir = rig.substring(0, rig.lastIndexOf("/"));
+window.player = new spine.SpinePlayer("p", {jsonUrl: "../" + rig + ".json", atlasUrl: "../" + rig + ".atlas",
+  premultipliedAlpha: false, backgroundColor: "#d6d6d6", showControls: false, animation: q.get("anim") || undefined,
+  success: async p => {
+    const exp = await (await fetch("../" + dir + "/runtime_expected.json")).json();
+    const sk = p.skeleton, res = {poses: 0, maxBone: 0, maxBoneAt: "", maxSlot: 0, maxSlotAt: "", attMismatch: []};
+    const tmp = new Float32Array(20000);
+    for (const [key, e] of Object.entries(exp)) {
+      sk.setToSetupPose();
+      const a = sk.data.findAnimation(e.anim);
+      a.apply(sk, 0, e.t, false, null, 1, spine.MixBlend.setup, spine.MixDirection.mixIn);
+      sk.updateWorldTransform(spine.Physics.update);
+      for (const [n, w] of Object.entries(e.bones)) {
+        const b = sk.findBone(n);
+        const d = Math.max(Math.abs(b.a - w[0]) * 100, Math.abs(b.b - w[1]) * 100, Math.abs(b.c - w[2]) * 100,
+                           Math.abs(b.d - w[3]) * 100, Math.abs(b.worldX - w[4]), Math.abs(b.worldY - w[5]));
+        if (d > res.maxBone) { res.maxBone = d; res.maxBoneAt = key + " " + n; }
+      }
+      for (const slot of sk.slots) {
+        const att = slot.getAttachment(), want = e.slots[slot.data.name];
+        const got = att ? att.name : null;
+        if ((want ? want[2] : null) !== got) { res.attMismatch.push(key + " " + slot.data.name + " " + got + " vs " + (want && want[2])); continue; }
+        if (!att) continue;
+        let cx = 0, cy = 0, n = 0;
+        if (att instanceof spine.MeshAttachment) {
+          att.computeWorldVertices(slot, 0, att.worldVerticesLength, tmp, 0, 2); n = att.worldVerticesLength / 2;
+        } else if (att instanceof spine.RegionAttachment) { att.computeWorldVertices(slot, tmp, 0, 2); n = 4; }
+        for (let i = 0; i < n; i++) { cx += tmp[2 * i]; cy += tmp[2 * i + 1]; }
+        const d = Math.hypot(cx / n - want[0], cy / n - want[1]);
+        if (d > res.maxSlot) { res.maxSlot = d; res.maxSlotAt = key + " " + slot.data.name; }
+      }
+      res.poses++;
+    }
+    res.maxBone = +res.maxBone.toFixed(4); res.maxSlot = +res.maxSlot.toFixed(4);
+    res.attMismatch = res.attMismatch.slice(0, 10);
+    window.result = res;
+    document.getElementById("out").textContent = JSON.stringify(res, null, 1);
+  },
+  error: (p, msg) => { window.result = {error: msg}; document.getElementById("out").textContent = msg; }});
+</script></body></html>

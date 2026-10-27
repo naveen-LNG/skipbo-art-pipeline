@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "engine": "",
+    "description": "Background removal -> RGBA png. MODE: BEN2 | RMBG-2.0 | RMBG-1.4 | Inspyrenet",
+    "defaults": {
+      "MODE": "BEN2"
+    }
+  },
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_1}}"
+    }
+  },
+  "2": {
+    "class_type": "easy imageRemBg",
+    "inputs": {
+      "images": [
+        "1",
+        0
+      ],
+      "rem_mode": "{{MODE}}",
+      "image_output": "Hide",
+      "save_prefix": "{{PREFIX}}"
+    }
+  },
+  "3": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}"
+    }
+  }
+}

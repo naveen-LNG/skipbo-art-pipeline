@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "engine": "nb",
+    "billed": "Gemini gemini-3-pro-image-preview",
+    "count_var": "COUNT",
+    "description": "NanoBananaAIO: prompt + up to 6 reference images (image_1..image_6) -> image(s).",
+    "defaults": {
+      "ASPECT": "1:1",
+      "SIZE": "2K",
+      "TEMP": 0.6,
+      "COUNT": 1
+    }
+  },
+  "1": {
+    "class_type": "NanoBananaAIO",
+    "inputs": {
+      "model_name": "gemini-3-pro-image-preview",
+      "prompt": "{{PROMPT}}",
+      "image_count": "{{COUNT}}",
+      "use_search": false,
+      "aspect_ratio": "{{ASPECT}}",
+      "image_size": "{{SIZE}}",
+      "temperature": "{{TEMP}}",
+      "image_1": [
+        "11",
+        0
+      ],
+      "image_2": [
+        "12",
+        0
+      ],
+      "image_3": [
+        "13",
+        0
+      ],
+      "image_4": [
+        "14",
+        0
+      ],
+      "image_5": [
+        "15",
+        0
+      ],
+      "image_6": [
+        "16",
+        0
+      ]
+    }
+  },
+  "11": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_1}}"
+    }
+  },
+  "12": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_2}}"
+    }
+  },
+  "13": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_3}}"
+    }
+  },
+  "14": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_4}}"
+    }
+  },
+  "15": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_5}}"
+    }
+  },
+  "16": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_6}}"
+    }
+  },
+  "2": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "1",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}"
+    }
+  }
+}

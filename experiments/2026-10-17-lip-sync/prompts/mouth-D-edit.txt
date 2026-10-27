@@ -1,0 +1,10 @@
+IMAGE ROLES:
+image_1 = THE HEAD to edit, finished and approved.
+
+TASK:
+Edit only the mouth of image_1. Keep everything else exactly as it is: the outline, size, fur, colours, eyes, eyebrows, nose and the cream muzzle stay pixel for pixel the same, and the painting stays the same soft airbrushed volume with no outlines.
+
+THE MOUTH:
+The mouth says "ah": keep the wide open mouth of image_1, the same size and shape, with its dark-red inside and pink tongue lying low and flat inside the mouth. Repaint the two big front teeth as two clean smooth white rounded rectangles side by side at the top of the opening, the same size as on a closed beaver mouth, not stretched, with only a thin soft gap between them and no dark cracks, jagged edges or grey lines on them.
+
+The head stands alone on the same flat plain light grey background as image_1, centred, at the same size, with no text, labels or shadows.

@@ -1,0 +1,327 @@
+{
+ "source": "../2026-10-16-cast/bear/rig/bear.json",
+ "skipped": [],
+ "stages": {
+  "container": {
+   "moved": [
+    "cheer_jump: hips translate -> character (jump)",
+    "jump_hurdle: hips translate -> character (jump)"
+   ],
+   "width": 1078.1,
+   "height": 136.0,
+   "shadow_keys": [
+    "cheer_jump",
+    "jump_hurdle"
+   ]
+  },
+  "tail": {
+   "skipped": "no tail bone (or already chained)"
+  },
+  "torso": {
+   "chest_at": 205.4,
+   "moved_under_chest": [
+    "head_base",
+    "upperarm_l",
+    "upperarm_r"
+   ],
+   "mesh": {
+    "vertices": 45,
+    "triangles": 64,
+    "padded": [
+     13,
+     11
+    ]
+   },
+   "fold_free": true
+  },
+  "head": {
+   "face_at": [
+    -1.0,
+    1678.1
+   ],
+   "ears": [
+    "ear_r",
+    "ear_l"
+   ],
+   "ear_parts": false,
+   "attachments": {
+    "bear_head_base": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      2,
+      1
+     ]
+    },
+    "bear_head_angry": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      1,
+      1
+     ]
+    },
+    "bear_head_blink": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      2,
+      2
+     ]
+    },
+    "bear_head_happy": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      2,
+      2
+     ]
+    },
+    "bear_head_laugh": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      2,
+      2
+     ]
+    },
+    "bear_head_neutral": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      2,
+      1
+     ]
+    },
+    "bear_head_sad": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      1,
+      1
+     ]
+    },
+    "bear_head_surprised": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      1,
+      2
+     ]
+    },
+    "bear_head_talking": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      2,
+      1
+     ]
+    },
+    "bear_head_wink": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      1,
+      1
+     ]
+    }
+   }
+  },
+  "feet": {
+   "feet": {
+    "clog_r": {
+     "target": "clog_r_ik",
+     "leg_ik": null
+    },
+    "clog_l": {
+     "target": "clog_l_ik",
+     "leg_ik": null
+    }
+   },
+   "baked": {
+    "walk": [
+     "clog_r",
+     "clog_l"
+    ],
+    "run": [
+     "clog_r",
+     "clog_l"
+    ],
+    "squat": [
+     "clog_r",
+     "clog_l"
+    ],
+    "jump_hurdle": [
+     "clog_r",
+     "clog_l"
+    ]
+   }
+  },
+  "anims": {
+   "idle": {
+    "duration": 2.0
+   },
+   "look_around": {
+    "duration": 3.2
+   },
+   "talk": {
+    "duration": 2.4,
+    "mouth": "bear_head_talking"
+   },
+   "breathing": [
+    "blink",
+    "wave",
+    "cheer_jump",
+    "thumbs_up",
+    "point",
+    "hold_card",
+    "emotions",
+    "walk",
+    "run",
+    "squat",
+    "jump_hurdle",
+    "wave_flag",
+    "look_around",
+    "talk"
+   ]
+  },
+  "secondary": {
+   "blink": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.0,
+    "ear_r": 0.0
+   },
+   "idle": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.1,
+    "ear_r": 0.1
+   },
+   "wave": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 1.2,
+    "ear_r": 1.4
+   },
+   "cheer_jump": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 4.0,
+    "ear_r": 1.8
+   },
+   "thumbs_up": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.8,
+    "ear_r": 0.9
+   },
+   "point": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.8,
+    "ear_r": 0.9
+   },
+   "hold_card": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.8,
+    "ear_r": 0.9
+   },
+   "emotions": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 0.0,
+    "ear_r": 0.0
+   },
+   "walk": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 1.7,
+    "ear_r": 1.1
+   },
+   "run": {
+    "periodic": false,
+    "chest": 0.2,
+    "ear_l": 3.5,
+    "ear_l_damped": 0.92,
+    "ear_r": 3.9,
+    "ear_r_damped": 0.9
+   },
+   "squat": {
+    "periodic": true,
+    "chest": 0.0,
+    "ear_l": 1.1,
+    "ear_r": 1.5
+   },
+   "jump_hurdle": {
+    "periodic": false,
+    "chest": 0.0,
+    "ear_l": 5.7,
+    "ear_r": 0.5
+   },
+   "wave_flag": {
+    "periodic": false,
+    "chest": 0.0,
+    "ear_l": 0.7,
+    "ear_r": 0.8
+   },
+   "look_around": {
+    "periodic": false,
+    "chest": 0.1,
+    "ear_l": 2.6,
+    "ear_r": 2.9
+   },
+   "talk": {
+    "periodic": false,
+    "chest": 0.0,
+    "ear_l": 1.4,
+    "ear_r": 1.6
+   }
+  },
+  "underfill": {
+   "slots": {
+    "clog_l": 1,
+    "clog_r": 1,
+    "hips": 1,
+    "upperarm_l": 1,
+    "hand_l": 6,
+    "upperarm_r": 1,
+    "hand_r": 6,
+    "head": 10
+   },
+   "ring_units": 7.77
+  },
+  "organise": {
+   "red": 15,
+   "yellow": 3,
+   "green": 2
+  }
+ },
+ "bones": 22,
+ "slots": 20,
+ "animations": [
+  "blink",
+  "idle",
+  "wave",
+  "cheer_jump",
+  "thumbs_up",
+  "point",
+  "hold_card",
+  "emotions",
+  "walk",
+  "run",
+  "squat",
+  "jump_hurdle",
+  "wave_flag",
+  "look_around",
+  "talk"
+ ],
+ "constraints": {
+  "ik": [],
+  "transform": [
+   "clog_r_plant",
+   "clog_l_plant"
+  ]
+ }
+}

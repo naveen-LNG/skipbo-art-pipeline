@@ -1,0 +1,28 @@
+global scale: 1.471 master px per part px (annotated neck-to-waist)
+  expression heads matched: err 0.0235, scale 0.82
+  head_base      err 0.0327  scale 0.95  angle 0
+  tail           err 0.1494  scale 0.90  angle 20
+  ear_r          err -0.0708  scale 0.87  angle 3  (side and root held)
+  ear_l          err -0.0304  scale 0.87  angle -78  (side and root held)
+  dropping ear_r: the expression heads already include the ears
+  dropping ear_l: the expression heads already include the ears
+  variants: beaver_boot_l_tiptoe, beaver_boot_r_tiptoe, beaver_hand_l_fist, beaver_hand_l_grip, beaver_hand_l_open, beaver_hand_l_point, beaver_hand_l_thumbsup, beaver_hand_r_fist, beaver_hand_r_grip, beaver_hand_r_open, beaver_hand_r_point, beaver_hand_r_thumbsup
+  ! variant beaver_hand_l_fist: scale 0.233 vs 0.54 for its sheet-mates; check the piece
+  ! variant beaver_hand_l_point: scale 0.278 vs 0.54 for its sheet-mates; check the piece
+  ! variant beaver_hand_r_fist: scale 0.233 vs 0.54 for its sheet-mates; check the piece
+  ! variant beaver_hand_r_point: scale 0.278 vs 0.54 for its sheet-mates; check the piece
+  ? doubt: legs_jump_1: fitting the rig's rest legs stretches the sheet x0.77 tall against its width (painted at other proportions, or its waist / ground points are off)
+  legs: jump 447 487 459 431 401 371 373, squat 447 443 427 411 372 333 units waist to soles; hides boot_l, boot_r, hips
+  prop flag: bone prop_flag on hand_l, slot prop_flag (hidden at rest)
+  prop hurdle: bone prop_hurdle on root, slot prop_hurdle (hidden at rest)
+  wave forearm angle (clear of the head through the wave): 70.0
+  wave (l): open hand, palm, wave pose, thumb at 160 deg (target 160, off 0)
+  cheer_jump pose (clear of the head, mirrored): upper arm 45.0 deg, forearm 85.0 deg
+  cheer_jump (l): fist hand, palm, cheer pose, thumb at 175 deg (target 175, off 0)
+  cheer_jump (r): fist hand, palm, cheer pose, thumb at 5 deg (target 5, off 0)
+  thumbs_up (l): thumbsup hand, palm, outward pose, thumb at 100 deg (target 90, off 10)
+  point (l): point hand, palm, outward pose, thumb at 95 deg (target 90, off 5)
+  hold_card (l): grip hand, back, hold_card pose, thumb at 80 deg (target 90, off 10)
+  upperarm_l: sleeve mesh arm_l, 27 rows, elbow -103..92 deg needed, fold-free -103..92 (weights ('smooth', -0.8, 0.8, 0.8, 0.95, ((0.5, -1.23, 0.1), (0.0, -1.2, 0.1), 1.0), None))
+  upperarm_r: sleeve mesh arm_r, 27 rows, elbow -92..32 deg needed, fold-free -92..32 (weights ('smooth', -0.8, 1.0, 0.8, 0.0, None, None))
+wrote beaver/rig/beaver.json (17 bones, 14 slots, 46 images, animations: blink, idle, wave, cheer_jump, thumbs_up, point, hold_card, emotions, walk, run, squat, jump_hurdle, wave_flag)

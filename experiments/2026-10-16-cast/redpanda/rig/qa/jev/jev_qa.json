@@ -1,0 +1,173 @@
+{
+ "rig": "experiments/2026-10-16-cast/redpanda/rig/redpanda.json",
+ "refs": [
+  "experiments/2026-10-11-rig-annotations/fox/rig/fox.json",
+  "experiments/2026-10-11-rig-annotations/moose/rig/moose.json"
+ ],
+ "prev": null,
+ "joints_sheet": "experiments/2026-10-16-cast/redpanda/rig/qa/joints.png",
+ "joints": {
+  "ankle_l": {
+   "broken": 2.32,
+   "ref_max": 1.81,
+   "verdict": "WARN worse than approved"
+  },
+  "wrist_l": {
+   "broken": 2.26,
+   "ref_max": 2.5,
+   "verdict": "within approved range"
+  },
+  "wrist_r": {
+   "broken": 2.12,
+   "ref_max": 2.5,
+   "verdict": "within approved range"
+  },
+  "ankle_r": {
+   "broken": 2.11,
+   "ref_max": 1.81,
+   "verdict": "WARN worse than approved"
+  },
+  "elbow_l": {
+   "broken": 1.89,
+   "ref_max": 2.31,
+   "verdict": "within approved range"
+  },
+  "shoulder_r": {
+   "broken": 1.87,
+   "ref_max": 1.94,
+   "verdict": "within approved range"
+  },
+  "shoulder_l": {
+   "broken": 1.76,
+   "ref_max": 1.94,
+   "verdict": "within approved range"
+  },
+  "tail": {
+   "broken": 1.72,
+   "ref_max": 1.32,
+   "verdict": "WARN worse than approved"
+  },
+  "elbow_r": {
+   "broken": 1.57,
+   "ref_max": 2.31,
+   "verdict": "within approved range"
+  },
+  "neck": {
+   "broken": 1.16,
+   "ref_max": 2.13,
+   "verdict": "within approved range"
+  },
+  "waist": {
+   "broken": 1.0,
+   "ref_max": 1.92,
+   "verdict": "within approved range"
+  }
+ },
+ "frames": {
+  "n": 78,
+  "mean": 0.688,
+  "ref_p90": 0.67,
+  "ref_mean": 0.56,
+  "above_ref_p90": 40,
+  "to_review": [
+   {
+    "anim": "jump_hurdle",
+    "t": 1.283,
+    "p_defect": 0.85
+   },
+   {
+    "anim": "jump_hurdle",
+    "t": 2.017,
+    "p_defect": 0.83
+   },
+   {
+    "anim": "thumbs_up",
+    "t": 1.8,
+    "p_defect": 0.8
+   },
+   {
+    "anim": "jump_hurdle",
+    "t": 1.65,
+    "p_defect": 0.8
+   },
+   {
+    "anim": "wave",
+    "t": 1.25,
+    "p_defect": 0.78
+   },
+   {
+    "anim": "wave",
+    "t": 2.25,
+    "p_defect": 0.78
+   },
+   {
+    "anim": "thumbs_up",
+    "t": 1.0,
+    "p_defect": 0.78
+   },
+   {
+    "anim": "point",
+    "t": 1.4,
+    "p_defect": 0.78
+   }
+  ],
+  "sheet": "experiments/2026-10-16-cast/redpanda/rig/qa/jev/frames_to_review.png"
+ },
+ "holds": {
+  "point/hand_l": {
+   "reads_as": "point",
+   "p_variant": 0.9,
+   "p_thumb_up": 0.27,
+   "finger_deg": 359,
+   "thumb_deg": 44,
+   "issues": [
+    "FAIL thumb not up"
+   ],
+   "crop": "experiments/2026-10-16-cast/redpanda/rig/qa/jev/holds/redpanda__point_hand_l.png"
+  },
+  "thumbs_up/hand_l": {
+   "reads_as": "thumbsup",
+   "p_variant": 0.95,
+   "p_thumb_up": 0.95,
+   "finger_deg": 18,
+   "thumb_deg": 91,
+   "issues": [],
+   "crop": "experiments/2026-10-16-cast/redpanda/rig/qa/jev/holds/redpanda__thumbs_up_hand_l.png"
+  },
+  "hold_card/hand_l": {
+   "reads_as": "grip",
+   "p_variant": 0.94,
+   "p_thumb_up": 0.1,
+   "finger_deg": 147,
+   "thumb_deg": 232,
+   "issues": [
+    "WARN may be drawn as the other hand (mirrored): look at it"
+   ],
+   "crop": "experiments/2026-10-16-cast/redpanda/rig/qa/jev/holds/redpanda__hold_card_hand_l.png"
+  },
+  "wave/hand_l": {
+   "reads_as": "open",
+   "p_variant": 0.87,
+   "p_thumb_up": 0.12,
+   "finger_deg": 69,
+   "thumb_deg": 163,
+   "issues": [],
+   "crop": "experiments/2026-10-16-cast/redpanda/rig/qa/jev/holds/redpanda__wave_hand_l.png"
+  },
+  "cheer_jump/hand_l": {
+   "reads_as": "fist",
+   "p_variant": 0.88,
+   "p_thumb_up": 0.21,
+   "finger_deg": 87,
+   "thumb_deg": 165,
+   "issues": [],
+   "crop": "experiments/2026-10-16-cast/redpanda/rig/qa/jev/holds/redpanda__cheer_jump_hand_l.png"
+  }
+ },
+ "fail": true,
+ "jev": {
+  "calls": 211,
+  "cached": 0,
+  "input_tokens": 415441
+ }
+}

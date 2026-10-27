@@ -1,0 +1,13 @@
+wrote ../2026-10-16-cast/rabbit/rig_pro/rabbit.json: 22 bones, 26 slots, constraints {'ik': [], 'transform': ['boot_l_plant', 'boot_r_plant']}, animations blink, idle, wave, cheer_jump, thumbs_up, point, hold_card, emotions, walk, run, squat, jump_hurdle, wave_flag, look_around, talk
+  container: {"moved": ["cheer_jump: hips translate -> character (jump)", "run: hips translate -> character (jump)", "jump_hurdle: hips translate -> character (jump)"], "width": 551.6, "height": 116.6, "shadow_keys": ["cheer_jump", "run", "jump_hurdle"]
+  tail: {"skipped": "no tail bone (or already chained)"}
+  torso: {"chest_at": 88.3, "moved_under_chest": ["head_base", "upperarm_l", "upperarm_r"], "mesh": {"vertices": 50, "triangles": 72, "padded": [15, 9]}, "fold_free": true}
+  head: {"face_at": [32.8, 1045.9], "ears": [], "ear_parts": true, "attachments": {"rabbit_head_base": {"vertices": 81, "triangles": 128, "padded": [1, 2]}, "rabbit_head_angry": {"vertices": 81, "triangles": 128, "padded": [3, 3]}, "rabbit_head_bli
+  feet: {"feet": {"boot_l": {"target": "boot_l_ik", "leg_ik": null}, "boot_r": {"target": "boot_r_ik", "leg_ik": null}}, "baked": {"walk": ["boot_l", "boot_r"], "squat": ["boot_l", "boot_r"], "jump_hurdle": ["boot_l", "boot_r"]}}
+  anims: {"idle": {"duration": 2.0}, "look_around": {"duration": 3.2}, "talk": {"duration": 2.4, "mouth": "rabbit_head_talking"}, "breathing": ["blink", "wave", "cheer_jump", "thumbs_up", "point", "hold_card", "emotions", "walk", "run", "squat", "ju
+  secondary: {"blink": {"periodic": true, "chest": 0.0, "ear_l": 0.0, "ear_r": 0.0}, "idle": {"periodic": true, "chest": 0.1, "ear_l": 0.0, "ear_r": 0.0}, "wave": {"periodic": true, "chest": 0.0, "ear_l": 0.3, "ear_r": 0.2}, "cheer_jump": {"periodic": t
+  underfill: {"slots": {"ear_l": 1, "ear_r": 1, "hips": 1, "boot_l": 1, "boot_r": 1, "hand_l": 6, "upperarm_l": 1, "hand_r": 6, "upperarm_r": 1, "head": 10}, "ring_units": 6.66}
+  organise: {"red": 15, "yellow": 3, "green": 2}
+FAIL  structure  {"reversed_bones": {"torso": "bone points away from its own part"}}
+rabbit: pro rig in ../2026-10-16-cast/rabbit/rig_pro, spine_qa FAIL
+exit 1

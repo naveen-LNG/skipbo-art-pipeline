@@ -1,0 +1,166 @@
+{
+  "prompt_id": "8f19f005-adfe-4928-922b-7a4d02436798",
+  "template": "/private/tmp/claude-501/-Users-skipbo-Dev-playground-comfy/936f78e5-be09-4638-b134-d70eecd7c50d/scratchpad/split2.api.json",
+  "engine": "",
+  "seed": 75798008,
+  "fingerprint": "685014fe73e7",
+  "prompt": null,
+  "vars": {
+    "MODE": "BEN2",
+    "DROP": 24,
+    "THRESH": 0.3,
+    "GROW": 3,
+    "PREFIX": "agent/skipbo/split2-face",
+    "IMAGE_1": "agent/skipbo/1011_145920_s1347566910_n2_00_18c2c9cc4f.png"
+  },
+  "inputs": {
+    "1": "experiments/2026-10-11-moose-parts/runs/moose-face-sheet/1011_145920_s1347566910_n2_00.png"
+  },
+  "criteria": [],
+  "outputs": [
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n12_00.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_00.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_01.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_02.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_03.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_04.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_05.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_06.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_07.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_08.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_09.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_10.png",
+    "experiments/2026-10-11-moose-parts/runs/split2-face/1011_150302_s75798008_n10_11.png"
+  ],
+  "seconds": 5.9,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/1011_145920_s1347566910_n2_00_18c2c9cc4f.png"
+      }
+    },
+    "2": {
+      "class_type": "easy imageRemBg",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "rem_mode": "BEN2",
+        "image_output": "Hide",
+        "save_prefix": "x"
+      }
+    },
+    "3": {
+      "class_type": "ThresholdMask",
+      "inputs": {
+        "mask": [
+          "2",
+          1
+        ],
+        "value": 0.3
+      }
+    },
+    "4": {
+      "class_type": "GrowMask",
+      "inputs": {
+        "mask": [
+          "3",
+          0
+        ],
+        "expand": 3,
+        "tapered_corners": true
+      }
+    },
+    "5": {
+      "class_type": "MaskToSEGS",
+      "inputs": {
+        "mask": [
+          "4",
+          0
+        ],
+        "combined": false,
+        "crop_factor": 1.0,
+        "bbox_fill": false,
+        "drop_size": 24,
+        "contour_fill": true
+      }
+    },
+    "6": {
+      "class_type": "SetDefaultImageForSEGS",
+      "inputs": {
+        "segs": [
+          "5",
+          0
+        ],
+        "image": [
+          "2",
+          0
+        ],
+        "override": true
+      }
+    },
+    "7": {
+      "class_type": "ImpactDecomposeSEGS",
+      "inputs": {
+        "segs": [
+          "6",
+          0
+        ]
+      }
+    },
+    "8": {
+      "class_type": "ImpactFrom_SEG_ELT",
+      "inputs": {
+        "seg_elt": [
+          "7",
+          1
+        ]
+      }
+    },
+    "9": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "8",
+          1
+        ],
+        "alpha": [
+          "13",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "9",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/split2-face/part"
+      }
+    },
+    "12": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "2",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/split2-face/cutout"
+      }
+    },
+    "13": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "8",
+          2
+        ]
+      }
+    }
+  }
+}

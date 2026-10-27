@@ -1,0 +1,207 @@
+{
+ "fps": 24,
+ "lead_frames": 1,
+ "duration": 5.55,
+ "cues": [
+  {
+   "frame": 0,
+   "time": 0.0,
+   "shape": "X"
+  },
+  {
+   "frame": 8,
+   "time": 0.3333,
+   "shape": "E"
+  },
+  {
+   "frame": 11,
+   "time": 0.4583,
+   "shape": "F"
+  },
+  {
+   "frame": 14,
+   "time": 0.5833,
+   "shape": "D"
+  },
+  {
+   "frame": 21,
+   "time": 0.875,
+   "shape": "F"
+  },
+  {
+   "frame": 25,
+   "time": 1.0417,
+   "shape": "B"
+  },
+  {
+   "frame": 28,
+   "time": 1.1667,
+   "shape": "C"
+  },
+  {
+   "frame": 32,
+   "time": 1.3333,
+   "shape": "B"
+  },
+  {
+   "frame": 37,
+   "time": 1.5417,
+   "shape": "X"
+  },
+  {
+   "frame": 41,
+   "time": 1.7083,
+   "shape": "B"
+  },
+  {
+   "frame": 43,
+   "time": 1.7917,
+   "shape": "A"
+  },
+  {
+   "frame": 44,
+   "time": 1.8333,
+   "shape": "C"
+  },
+  {
+   "frame": 48,
+   "time": 2.0,
+   "shape": "B"
+  },
+  {
+   "frame": 52,
+   "time": 2.1667,
+   "shape": "E"
+  },
+  {
+   "frame": 55,
+   "time": 2.2917,
+   "shape": "A"
+  },
+  {
+   "frame": 57,
+   "time": 2.375,
+   "shape": "C"
+  },
+  {
+   "frame": 59,
+   "time": 2.4583,
+   "shape": "B"
+  },
+  {
+   "frame": 61,
+   "time": 2.5417,
+   "shape": "A"
+  },
+  {
+   "frame": 62,
+   "time": 2.5833,
+   "shape": "C"
+  },
+  {
+   "frame": 64,
+   "time": 2.6667,
+   "shape": "B"
+  },
+  {
+   "frame": 66,
+   "time": 2.75,
+   "shape": "E"
+  },
+  {
+   "frame": 73,
+   "time": 3.0417,
+   "shape": "X"
+  },
+  {
+   "frame": 76,
+   "time": 3.1667,
+   "shape": "H"
+  },
+  {
+   "frame": 78,
+   "time": 3.25,
+   "shape": "B"
+  },
+  {
+   "frame": 82,
+   "time": 3.4167,
+   "shape": "A"
+  },
+  {
+   "frame": 84,
+   "time": 3.5,
+   "shape": "C"
+  },
+  {
+   "frame": 86,
+   "time": 3.5833,
+   "shape": "B"
+  },
+  {
+   "frame": 90,
+   "time": 3.75,
+   "shape": "F"
+  },
+  {
+   "frame": 92,
+   "time": 3.8333,
+   "shape": "E"
+  },
+  {
+   "frame": 97,
+   "time": 4.0417,
+   "shape": "H"
+  },
+  {
+   "frame": 99,
+   "time": 4.125,
+   "shape": "C"
+  },
+  {
+   "frame": 103,
+   "time": 4.2917,
+   "shape": "H"
+  },
+  {
+   "frame": 105,
+   "time": 4.375,
+   "shape": "C"
+  },
+  {
+   "frame": 107,
+   "time": 4.4583,
+   "shape": "G"
+  },
+  {
+   "frame": 109,
+   "time": 4.5417,
+   "shape": "B"
+  },
+  {
+   "frame": 114,
+   "time": 4.75,
+   "shape": "C"
+  },
+  {
+   "frame": 116,
+   "time": 4.8333,
+   "shape": "H"
+  },
+  {
+   "frame": 119,
+   "time": 4.9583,
+   "shape": "E"
+  },
+  {
+   "frame": 123,
+   "time": 5.125,
+   "shape": "F"
+  },
+  {
+   "frame": 127,
+   "time": 5.2917,
+   "shape": "X"
+  }
+ ]
+}

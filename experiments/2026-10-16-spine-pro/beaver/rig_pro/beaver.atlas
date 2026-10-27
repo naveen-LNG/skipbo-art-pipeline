@@ -1,0 +1,383 @@
+images/beaver_arm_l.png
+size: 933,1547
+filter: Linear,Linear
+beaver_arm_l
+bounds: 0,0,933,1547
+
+images/beaver_arm_l_under.png
+size: 933,1547
+filter: Linear,Linear
+beaver_arm_l_under
+bounds: 0,0,933,1547
+
+images/beaver_arm_r.png
+size: 933,1547
+filter: Linear,Linear
+beaver_arm_r
+bounds: 0,0,933,1547
+
+images/beaver_arm_r_under.png
+size: 933,1547
+filter: Linear,Linear
+beaver_arm_r_under
+bounds: 0,0,933,1547
+
+images/beaver_boot_l.png
+size: 218,215
+filter: Linear,Linear
+beaver_boot_l
+bounds: 0,0,218,215
+
+images/beaver_boot_l_tiptoe.png
+size: 309,359
+filter: Linear,Linear
+beaver_boot_l_tiptoe
+bounds: 0,0,309,359
+
+images/beaver_boot_l_tiptoe_under.png
+size: 331,381
+filter: Linear,Linear
+beaver_boot_l_tiptoe_under
+bounds: 0,0,331,381
+
+images/beaver_boot_l_under.png
+size: 234,231
+filter: Linear,Linear
+beaver_boot_l_under
+bounds: 0,0,234,231
+
+images/beaver_boot_r.png
+size: 218,215
+filter: Linear,Linear
+beaver_boot_r
+bounds: 0,0,218,215
+
+images/beaver_boot_r_tiptoe.png
+size: 309,359
+filter: Linear,Linear
+beaver_boot_r_tiptoe
+bounds: 0,0,309,359
+
+images/beaver_boot_r_tiptoe_under.png
+size: 331,381
+filter: Linear,Linear
+beaver_boot_r_tiptoe_under
+bounds: 0,0,331,381
+
+images/beaver_boot_r_under.png
+size: 234,231
+filter: Linear,Linear
+beaver_boot_r_under
+bounds: 0,0,234,231
+
+images/beaver_hand_l.png
+size: 160,176
+filter: Linear,Linear
+beaver_hand_l
+bounds: 0,0,160,176
+
+images/beaver_hand_l_fist.png
+size: 661,852
+filter: Linear,Linear
+beaver_hand_l_fist
+bounds: 0,0,661,852
+
+images/beaver_hand_l_fist_under.png
+size: 711,902
+filter: Linear,Linear
+beaver_hand_l_fist_under
+bounds: 0,0,711,902
+
+images/beaver_hand_l_grip.png
+size: 295,445
+filter: Linear,Linear
+beaver_hand_l_grip
+bounds: 0,0,295,445
+
+images/beaver_hand_l_grip_under.png
+size: 317,467
+filter: Linear,Linear
+beaver_hand_l_grip_under
+bounds: 0,0,317,467
+
+images/beaver_hand_l_open.png
+size: 420,468
+filter: Linear,Linear
+beaver_hand_l_open
+bounds: 0,0,420,468
+
+images/beaver_hand_l_open_under.png
+size: 444,492
+filter: Linear,Linear
+beaver_hand_l_open_under
+bounds: 0,0,444,492
+
+images/beaver_hand_l_point.png
+size: 1040,1185
+filter: Linear,Linear
+beaver_hand_l_point
+bounds: 0,0,1040,1185
+
+images/beaver_hand_l_point_under.png
+size: 1082,1227
+filter: Linear,Linear
+beaver_hand_l_point_under
+bounds: 0,0,1082,1227
+
+images/beaver_hand_l_thumbsup.png
+size: 375,360
+filter: Linear,Linear
+beaver_hand_l_thumbsup
+bounds: 0,0,375,360
+
+images/beaver_hand_l_thumbsup_under.png
+size: 399,384
+filter: Linear,Linear
+beaver_hand_l_thumbsup_under
+bounds: 0,0,399,384
+
+images/beaver_hand_l_under.png
+size: 176,192
+filter: Linear,Linear
+beaver_hand_l_under
+bounds: 0,0,176,192
+
+images/beaver_hand_r.png
+size: 160,176
+filter: Linear,Linear
+beaver_hand_r
+bounds: 0,0,160,176
+
+images/beaver_hand_r_fist.png
+size: 661,852
+filter: Linear,Linear
+beaver_hand_r_fist
+bounds: 0,0,661,852
+
+images/beaver_hand_r_fist_under.png
+size: 711,902
+filter: Linear,Linear
+beaver_hand_r_fist_under
+bounds: 0,0,711,902
+
+images/beaver_hand_r_grip.png
+size: 295,445
+filter: Linear,Linear
+beaver_hand_r_grip
+bounds: 0,0,295,445
+
+images/beaver_hand_r_grip_under.png
+size: 317,467
+filter: Linear,Linear
+beaver_hand_r_grip_under
+bounds: 0,0,317,467
+
+images/beaver_hand_r_open.png
+size: 420,468
+filter: Linear,Linear
+beaver_hand_r_open
+bounds: 0,0,420,468
+
+images/beaver_hand_r_open_under.png
+size: 444,492
+filter: Linear,Linear
+beaver_hand_r_open_under
+bounds: 0,0,444,492
+
+images/beaver_hand_r_point.png
+size: 1040,1185
+filter: Linear,Linear
+beaver_hand_r_point
+bounds: 0,0,1040,1185
+
+images/beaver_hand_r_point_under.png
+size: 1082,1227
+filter: Linear,Linear
+beaver_hand_r_point_under
+bounds: 0,0,1082,1227
+
+images/beaver_hand_r_thumbsup.png
+size: 375,360
+filter: Linear,Linear
+beaver_hand_r_thumbsup
+bounds: 0,0,375,360
+
+images/beaver_hand_r_thumbsup_under.png
+size: 399,384
+filter: Linear,Linear
+beaver_hand_r_thumbsup_under
+bounds: 0,0,399,384
+
+images/beaver_hand_r_under.png
+size: 176,192
+filter: Linear,Linear
+beaver_hand_r_under
+bounds: 0,0,176,192
+
+images/beaver_head_angry.png
+size: 582,505
+filter: Linear,Linear
+beaver_head_angry
+bounds: 0,0,582,505
+
+images/beaver_head_angry_under.png
+size: 582,505
+filter: Linear,Linear
+beaver_head_angry_under
+bounds: 0,0,582,505
+
+images/beaver_head_base.png
+size: 512,435
+filter: Linear,Linear
+beaver_head_base
+bounds: 0,0,512,435
+
+images/beaver_head_base_under.png
+size: 512,435
+filter: Linear,Linear
+beaver_head_base_under
+bounds: 0,0,512,435
+
+images/beaver_head_blink.png
+size: 581,507
+filter: Linear,Linear
+beaver_head_blink
+bounds: 0,0,581,507
+
+images/beaver_head_blink_under.png
+size: 581,507
+filter: Linear,Linear
+beaver_head_blink_under
+bounds: 0,0,581,507
+
+images/beaver_head_happy.png
+size: 583,506
+filter: Linear,Linear
+beaver_head_happy
+bounds: 0,0,583,506
+
+images/beaver_head_happy_under.png
+size: 583,506
+filter: Linear,Linear
+beaver_head_happy_under
+bounds: 0,0,583,506
+
+images/beaver_head_laugh.png
+size: 582,506
+filter: Linear,Linear
+beaver_head_laugh
+bounds: 0,0,582,506
+
+images/beaver_head_laugh_under.png
+size: 582,506
+filter: Linear,Linear
+beaver_head_laugh_under
+bounds: 0,0,582,506
+
+images/beaver_head_neutral.png
+size: 582,507
+filter: Linear,Linear
+beaver_head_neutral
+bounds: 0,0,582,507
+
+images/beaver_head_neutral_under.png
+size: 582,507
+filter: Linear,Linear
+beaver_head_neutral_under
+bounds: 0,0,582,507
+
+images/beaver_head_sad.png
+size: 582,507
+filter: Linear,Linear
+beaver_head_sad
+bounds: 0,0,582,507
+
+images/beaver_head_sad_under.png
+size: 582,507
+filter: Linear,Linear
+beaver_head_sad_under
+bounds: 0,0,582,507
+
+images/beaver_head_surprised.png
+size: 582,507
+filter: Linear,Linear
+beaver_head_surprised
+bounds: 0,0,582,507
+
+images/beaver_head_surprised_under.png
+size: 582,507
+filter: Linear,Linear
+beaver_head_surprised_under
+bounds: 0,0,582,507
+
+images/beaver_head_talking.png
+size: 582,507
+filter: Linear,Linear
+beaver_head_talking
+bounds: 0,0,582,507
+
+images/beaver_head_talking_under.png
+size: 582,507
+filter: Linear,Linear
+beaver_head_talking_under
+bounds: 0,0,582,507
+
+images/beaver_head_wink.png
+size: 581,507
+filter: Linear,Linear
+beaver_head_wink
+bounds: 0,0,581,507
+
+images/beaver_head_wink_under.png
+size: 581,507
+filter: Linear,Linear
+beaver_head_wink_under
+bounds: 0,0,581,507
+
+images/beaver_hips.png
+size: 555,405
+filter: Linear,Linear
+beaver_hips
+bounds: 0,0,555,405
+
+images/beaver_hips_under.png
+size: 569,419
+filter: Linear,Linear
+beaver_hips_under
+bounds: 0,0,569,419
+
+images/beaver_prop_flag.png
+size: 784,995
+filter: Linear,Linear
+beaver_prop_flag
+bounds: 0,0,784,995
+
+images/beaver_prop_hurdle.png
+size: 899,505
+filter: Linear,Linear
+beaver_prop_hurdle
+bounds: 0,0,899,505
+
+images/beaver_tail.png
+size: 736,565
+filter: Linear,Linear
+beaver_tail
+bounds: 0,0,736,565
+
+images/beaver_tail_under.png
+size: 736,565
+filter: Linear,Linear
+beaver_tail_under
+bounds: 0,0,736,565
+
+images/beaver_torso.png
+size: 550,552
+filter: Linear,Linear
+beaver_torso
+bounds: 0,0,550,552
+
+images/shadow.png
+size: 96,28
+filter: Linear,Linear
+shadow
+bounds: 0,0,96,28

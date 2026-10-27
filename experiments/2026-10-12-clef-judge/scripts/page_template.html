@@ -1,0 +1,474 @@
+<title>Clef Rig Judge Trial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one lab-notebook column; specimen plates (renders on their grey ground) in wrapping grids, answers beside each plate. */
+:root {
+  --bg: #eef0f3; --surface: #ffffff; --ink: #16181d; --muted: #5a6170; --line: #d4d8df;
+  --accent: #d61f69; --accent-soft: #fbe3ee; --ok: #1f7a5a; --ok-soft: #dff2ea;
+  --s1: #3563c9; --s2: #b7740a; --s3: #d61f69; --plate: #d6d6d6;
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --f-body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121418; --surface: #1b1e24; --ink: #e8eaee; --muted: #9aa1ad; --line: #2e333c;
+  --accent: #f0559a; --accent-soft: #3a1a29; --ok: #4cc39a; --ok-soft: #15302a;
+  --s1: #86a8f2; --s2: #e5a940; --s3: #f0559a; --plate: #2a2d33; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121418; --surface: #1b1e24; --ink: #e8eaee; --muted: #9aa1ad; --line: #2e333c;
+  --accent: #f0559a; --accent-soft: #3a1a29; --ok: #4cc39a; --ok-soft: #15302a;
+  --s1: #86a8f2; --s2: #e5a940; --s3: #f0559a; --plate: #2a2d33; color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--f-body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; display: grid; gap: 56px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.12; }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 1.6rem; font-weight: 700; }
+h3 { font-size: 1.12rem; font-weight: 500; }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font: 600 .74rem/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+section { display: grid; gap: 20px; min-width: 0; }
+.lede { font-size: 1.08rem; color: var(--ink); }
+.muted { color: var(--muted); }
+code, .mono { font-family: var(--f-mono); font-size: .86em; }
+b.good { color: var(--ok); } b.badtxt { color: var(--accent); }
+
+/* header + verdict */
+header { display: grid; gap: 16px; }
+.verdicts { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+.verdict { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.verdict .q { font-weight: 600; }
+.verdict .a { font: 700 1.25rem/1.2 var(--f-display); }
+.verdict.no .a { color: var(--accent); } .verdict.maybe .a { color: var(--ok); }
+.verdict p { font-size: .9rem; color: var(--muted); }
+
+/* flow */
+.flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px; }
+.step { flex: 1 1 170px; min-width: 0; border-top: 3px solid var(--line); padding-top: 10px; display: grid; gap: 4px; align-content: start; }
+.step.model { border-top-color: var(--accent); }
+.step .mono { color: var(--muted); font-size: .78rem; }
+
+/* schema table */
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: .9rem; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 600 .72rem/1.2 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.opt { display: inline-block; font: .76rem/1.5 var(--f-mono); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; margin: 0 4px 4px 0; }
+.type { font: 600 .76rem var(--f-mono); color: var(--accent); }
+details.req { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+details.req summary { cursor: pointer; font-weight: 600; }
+pre { overflow-x: auto; font: .78rem/1.5 var(--f-mono); margin: 12px 0 0; color: var(--ink); }
+
+/* condition blocks */
+.cond-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; }
+.cond-head > div { display: grid; gap: 6px; min-width: 0; }
+.toggle { display: inline-flex; align-items: center; gap: 8px; font-size: .88rem; cursor: pointer; user-select: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; }
+.toggle input { accent-color: var(--accent); width: 16px; height: 16px; }
+.toggle:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.spec, .jcard, .pairfig { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: grid; align-content: start; min-width: 0; }
+.plate { background: #d6d6d6; display: grid; place-items: center; }
+.plate img, .jcard img { display: block; width: 100%; height: auto; }
+.as-seen { display: none !important; }
+body.seen .as-seen { display: block !important; } body.seen .as-marked { display: none !important; }
+figcaption { padding: 12px 14px 14px; display: grid; gap: 8px; font-size: .88rem; }
+.truth-line { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-weight: 600; }
+.chip { font: 600 .68rem/1 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; padding: 4px 7px; border-radius: 4px; }
+.chip.bad { background: var(--accent-soft); color: var(--accent); }
+.chip.ok { background: var(--ok-soft); color: var(--ok); }
+
+/* probability bar: grey track, fill, tick at 0.5 */
+.pbar { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; }
+.plabel { font: .74rem var(--f-mono); color: var(--muted); }
+.track { position: relative; height: 8px; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.fill { position: absolute; inset: 0 auto 0 0; background: var(--s1); }
+.half { position: absolute; top: -2px; bottom: -2px; left: 50%; width: 2px; background: var(--ink); opacity: .55; }
+.pval { font: 600 .82rem var(--f-mono); font-variant-numeric: tabular-nums; }
+details summary { cursor: pointer; color: var(--muted); font-size: .82rem; }
+.mini { font: .7rem var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-top: 8px; }
+.dist { display: grid; gap: 3px; }
+.drow { display: grid; grid-template-columns: 84px 1fr 38px; gap: 6px; align-items: center; font: .74rem var(--f-mono); }
+.drow.truth .dk { color: var(--accent); font-weight: 600; }
+.drow.truth .dk::after { content: " ← true"; font-weight: 400; }
+.dtrack { height: 6px; background: var(--bg); border-radius: 3px; overflow: hidden; }
+.dfill { display: block; height: 100%; background: var(--muted); }
+.drow.truth .dfill { background: var(--accent); }
+.dv { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* reference example */
+.refrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; align-items: start; }
+.refrow .ans { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 8px; font-size: .88rem; }
+.refrow figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.refrow figure figcaption { font-size: .82rem; color: var(--muted); }
+
+.pairimgs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+.pairimgs > div { background: var(--surface); display: grid; gap: 8px; padding-bottom: 10px; align-content: start; }
+.pairimgs img { width: 100%; height: auto; display: block; background: #d6d6d6; }
+.pairimgs .chip, .pairimgs .pbar { margin-inline: 10px; justify-self: start; }
+.pairimgs .pbar { justify-self: stretch; }
+.pairgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+
+/* charts */
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 10px; min-width: 0; }
+.chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+svg .gl { stroke: var(--line); stroke-width: 1; }
+svg .g50 { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 4 4; opacity: .5; }
+svg .ax { fill: var(--muted); font: 11px var(--f-mono); }
+svg .ln { fill: none; stroke-width: 2.5; }
+svg .s1.ln { stroke: var(--s1); } svg .s2.ln { stroke: var(--s2); } svg .s3.ln { stroke: var(--s3); }
+svg .s1.dot { fill: var(--s1); } svg .s2.dot { fill: var(--s2); } svg .s3.dot { fill: var(--s3); }
+svg .dot { stroke: var(--surface); stroke-width: 2; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: .84rem; }
+.legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; background: var(--c); }
+.charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+
+/* figures row */
+.figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.fig { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 4px; }
+.fig .v { font: 700 1.6rem/1.1 var(--f-display); font-variant-numeric: tabular-nums; }
+.fig .k { font-size: .82rem; color: var(--muted); }
+
+/* ideas */
+.ideas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.idea { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 8px; align-content: start; }
+.idea .cost { font: .76rem var(--f-mono); color: var(--muted); }
+.masters { display: flex; gap: 12px; flex-wrap: wrap; }
+.masters img { width: 120px; border-radius: 8px; border: 1px solid var(--line); background: #fff; }
+footer { font-size: .84rem; color: var(--muted); display: grid; gap: 6px; }
+
+/* round 4 */
+td.best { font-weight: 700; color: var(--accent); }
+.legend-box { display: flex; flex-wrap: wrap; gap: 16px; font-size: .84rem; }
+.legend-box span::before { content: ""; display: inline-block; width: 18px; height: 12px; margin-right: 6px; vertical-align: -1px; }
+.legend-box .jev::before { border: 3px solid #e6287a; }
+.legend-box .gt::before { border: 2px dashed #00968c; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; align-items: start; }
+/* round 2 */
+.r2grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.r2card { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: grid; align-content: start; min-width: 0; }
+.r2imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+.r2imgs > div { background: var(--surface); display: grid; gap: 4px; padding-bottom: 6px; justify-items: center; }
+.r2imgs img { width: 100%; height: auto; display: block; }
+.note { font-size: .84rem; color: var(--muted); }
+td.heat { background: color-mix(in srgb, var(--accent) calc(var(--h) * 38%), transparent); }
+.r2note { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; display: grid; gap: 6px; }
+@media (prefers-reduced-motion: no-preference) { .fill, .dfill { transition: width .4s ease; } }
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Experiment · 12 Oct 2026 · rig-annotations branch</span>
+  <h1>Clef Rig Judge Trial</h1>
+  <p class="lede">Can a fast vision decision model look at a rendered rig frame and tell us whether the parts are stitched
+  correctly, which part is wrong, and which way to nudge it? We tested Cloudflare's Clef Flash (9B) on renders of the
+  approved fox and moose rigs, with defects we planted, and on the defects the human reviewer actually caught.</p>
+  <div class="verdicts">
+    <div class="verdict no"><span class="q">Spot a stitching defect in one frame?</span><span class="a">No</span>
+      <p>P(defect) stays near 0.2 for clean frames and for parts shifted 24 px. No threshold separates them.</p></div>
+    <div class="verdict no"><span class="q">Say which part, and which way to move it?</span><span class="a">No</span>
+      <p>Part and direction answers are at chance, even on joint crops with the master as reference.</p></div>
+    <div class="verdict maybe"><span class="q">Tell a rejected full-body frame from its fix?</span><span class="a">Promising</span>
+      <p>Jev 1.14 separates them one frame at a time (AUROC 0.99 on 11 + 11), and 11 of 11 as pairs. Two characters, one review: needs more rounds.</p></div>
+  </div>
+</header>
+
+<section>
+  <span class="eyebrow">How a call works</span>
+  <h2>One forward pass, typed answers</h2>
+  <p>Clef is a System One model. It does not write text. Code sends a <b>state</b> (here: a description of the rig plus the
+  rendered image) and a set of <b>typed questions</b>. The model returns a probability for every allowed answer, and our code
+  decides what to do with them.</p>
+  <div class="flow">
+    <div class="step"><b>Render</b><span>Pipeline renders a frame from the rig (spine_qa renderer)</span><span class="mono">~520×720 px PNG</span></div>
+    <div class="step"><b>Request</b><span>State text, the image as a data URI, 6 questions</span><span class="mono">~1,500 input tokens</span></div>
+    <div class="step model"><b>Clef Flash</b><span>Scores every option of every question in one pass</span><span class="mono">median {{LATENCY}}</span></div>
+    <div class="step"><b>Code decides</b><span>Thresholds the probabilities: pass, flag, or nudge a part</span><span class="mono">no parsing, no prose</span></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">The decision we asked for</span>
+  <h2>Six questions, asked together on every frame</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Question</th><th>Type</th><th>Allowed answers</th><th>What code would do with it</th></tr></thead>
+    <tbody>
+      <tr><td>Does the frame show a rigging or stitching defect: a displaced part, a gap or seam, wrong layer order, a mirrored part?</td><td class="type">noul</td><td>probability of yes</td><td>Gate: send the frame back for a fix</td></tr>
+      <tr><td>What kind of defect is most visible?</td><td class="type">choice</td><td><span class="opt">none</span><span class="opt">offset</span><span class="opt">layer_order</span><span class="opt">mirrored</span></td><td>Pick the fix routine</td></tr>
+      <tr><td>Which part is faulty?</td><td class="type">choice</td><td><span class="opt">none</span><span class="opt">head</span><span class="opt">torso</span><span class="opt">hips</span><span class="opt">arm</span><span class="opt">hand</span><span class="opt">foot</span><span class="opt">tail</span><span class="opt">antler</span><span class="opt">scarf</span></td><td>Pick the slot to adjust</td></tr>
+      <tr><td>Which side of the image is it on?</td><td class="type">choice</td><td><span class="opt">none</span><span class="opt">image-left</span><span class="opt">image-right</span><span class="opt">center</span></td><td>Pick _l or _r</td></tr>
+      <tr><td>Which way has the part moved from where it belongs?</td><td class="type">choice</td><td><span class="opt">none</span><span class="opt">up</span><span class="opt">down</span><span class="opt">left</span><span class="opt">right</span></td><td>Nudge it the opposite way</td></tr>
+      <tr><td>How far is it displaced?</td><td class="type">score</td><td><span class="opt">0 not at all</span><span class="opt">1 a few px</span><span class="opt">2 clear gap</span><span class="opt">3 detached</span></td><td>Size of the nudge</td></tr>
+    </tbody>
+  </table></div>
+  <details class="req"><summary>The request as sent (image truncated)</summary>
+<pre>POST /client/v4/accounts/…/ai/run/@cf/cloudflare/clef-flash
+{
+  "model": "clef-flash",
+  "images": ["data:image/png;base64,iVBORw0KGgo…"],
+  "state": {
+    "task": "Quality check of a 2D cutout character rig. The character was cut into separately drawn parts
+             (head, torso, hips/trousers, sleeves, hands, feet, tail or antlers, scarf) that are re-assembled
+             by a skeleton and composited on a flat grey background.",
+    "what_correct_looks_like": "The frame reads like one seamless illustration: each hand sits in its sleeve
+             cuff, each sleeve emerges from the armhole and tucks under the torso or vest at the shoulder,
+             trousers meet the hips with no gap and feet sit under the trouser legs, the head sits on the neck,
+             tail and antlers are behind the body, and hands are not mirrored.",
+    "images": "The attached image is one rendered frame of the rig."
+  },
+  "questions": {
+    "defect":    {"type": "noul",   "instructions": "Does the rendered frame show a rigging or stitching defect …"},
+    "kind":      {"type": "choice", "criteria": {"none": …, "offset": …, "layer_order": …, "mirrored": …}},
+    "part":      {"type": "choice", "criteria": {"none": …, "head": null, "torso": …, …}},
+    "side":      {"type": "choice", "criteria": {"none": …, "image-left": …, "image-right": …, "center": …}},
+    "direction": {"type": "choice", "criteria": {"none": …, "up": null, "down": null, "left": null, "right": null}},
+    "magnitude": {"type": "score",  "criteria": ["Not displaced at all.", "Slightly: a few pixels …", …]}
+  }
+}
+→ {"answers": {"defect": {"noul": 0.21}, "kind": {"choice": "none", "probabilities": {…}, "confidence": 0.35}, …},
+   "usage": {"input_tokens": 1497, "output_tokens": 0}}</pre></details>
+</section>
+
+<section>
+  <div class="cond-head">
+    <div><span class="eyebrow">Condition 1 · full frame</span>
+      <h2>Planted defects on the approved rigs</h2>
+      <p class="muted">We rendered each rig slot as its own layer and recomposited with one change. 120 frames: 38 clean,
+      82 with a part shifted 3–24 px, a sleeve over the torso, a tail in front, or a mirrored hand. Bars show
+      P(defect); the black tick marks 0.5.</p></div>
+    <label class="toggle"><input type="checkbox" id="seen-toggle"> Show exactly what the model saw</label>
+  </div>
+  <div class="grid">{{SYN_CARDS}}</div>
+  <p class="muted">The magenta box is added for this page by diffing against the clean render. The model received the plain
+  image. Every one of the 120 frames got <code>kind = none</code>.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Condition 2 · frame + approved master</span>
+  <h2>Giving it the reference to compare against</h2>
+  <p class="muted">For setup-pose frames we sent two images: the approved master illustration, then the rig's render.
+  Across every full-frame run, this was the only frame where it answered <code>offset</code>, and it still said the part had not moved.</p>
+  <div class="refrow">
+    <figure><img src="{{REF_MASTER}}" alt="Approved master illustration"><figcaption style="padding:10px 14px">Image 1: approved master</figcaption></figure>
+    <figure><div class="plate"><img class="as-marked" src="{{REF_FRAME}}" alt="Render with head shifted left 24 px, highlighted"><img class="as-seen" src="{{REF_FRAME_PLAIN}}" alt="Render with head shifted left 24 px"></div><figcaption style="padding:10px 14px">Image 2: render, head shifted left 24 px</figcaption></figure>
+    <div class="ans"><div class="truth-line"><span class="chip bad">Defect</span>Head shifted left by 24 px</div>
+      {{REF_BAR}}
+      <p class="mini">kind</p>{{REF_KIND}}
+      <p class="mini">direction</p>{{REF_DIR}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Condition 3 · joint close-ups</span>
+  <h2>Zooming in where code already knows the joint is</h2>
+  <p class="muted">Pipeline code knows every slot's position, so it can crop each joint and ask one narrow question:
+  is this part displaced where it meets its neighbour? 252 crops (52 with the shifted part), upscaled to 448 px. Even a
+  glove floating clear of its cuff scores about the same as a clean one.</p>
+  <div class="grid">{{JOINT_CARDS}}</div>
+</section>
+
+<section>
+  <span class="eyebrow">Condition 4 · real reviewed defects</span>
+  <h2>The frames the reviewer actually rejected</h2>
+  <p class="muted">19 before/after pairs sliced from the checkpoint-6 sheets (label text cropped out). Each frame alone gets
+  a near-identical P(defect). Shown both at once and asked which has the defect, it usually picks the rejected one. It
+  can't tell on sleeve-over-torso layer order.</p>
+  <div class="pairgrid">{{REAL_PAIRS}}</div>
+</section>
+
+<section id="round2">
+  <span class="eyebrow">Round 2 · 13 Oct · joint close-ups with the master as reference</span>
+  <h2>Same joint, cropped from the master and from the render</h2>
+  <p class="muted">Setup pose only, since that's the pose the master is drawn in. Each crop is a square centred on the joint the
+  rig already knows (the bone's attachment point). The same square is mapped onto the master through
+  <code>report.json</code>'s master frame. 363 crops: 180 with one part shifted 8, 16 or 24 px in each direction, 183 untouched
+  joints. Both conditions ran on the identical crops with the same two questions; only the master image differs.</p>
+  <div class="r2grid">{{R2_CARDS}}</div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>On the same 363 crops</th><th>Detection AUROC (95% CI)</th><th>Shifted joints caught at 10% false alarms</th><th>Direction right (chance 25%)</th></tr></thead>
+    <tbody>
+      <tr><td>Render crop only</td><td class="num">{{R2_NO_AUC}} ({{R2_NO_CI}})</td><td class="num">{{R2_NO_T}}</td><td class="num">{{R2_NO_D}}</td></tr>
+      <tr><td>Master crop + render crop</td><td class="num">{{R2_REF_AUC}} ({{R2_REF_CI}})</td><td class="num">{{R2_REF_T}}</td><td class="num">{{R2_REF_D}}</td></tr>
+      <tr><td>Code: phase correlation of the two crops (no model)</td><td>0.58</td><td>n/a</td><td class="num">{{R2_REG_D}}</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Where it reacts: mean P(displaced), render only, shifts of 16 px or more</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Joint</th><th>Clean</th><th>Moved up</th><th>Down</th><th>Left</th><th>Right</th></tr></thead>
+    <tbody>{{R2_HEAT}}</tbody>
+  </table></div>
+  <div class="r2note">
+    <p><b>What changed.</b> Centring the crop on the joint, rendered at twice the resolution and in the setup pose only, lifted detection from 0.52 (round 1 crops) to {{R2_NO_AUC}}, and it now rises with the
+    shift (0.58, 0.66, 0.71 for 8, 16, 24 px). This is the first sign of a real response.</p>
+    <p><b>What it sees.</b> Visible gaps: a boot sliding out of its trouser leg, a hand dropping out of its cuff. A part pushed
+    into its neighbour hides the seam and scores like a clean joint. Head, hoof and antler shifts barely register.</p>
+    <p><b>The master didn't help.</b> The clean rig already differs from the master (narrowed hips, redrawn hands and tail), so
+    "different from the master" fires on clean joints too. With the master, tail answers are a flat 0.32 whatever happened.</p>
+    <p><b>Direction stays at chance</b>: Flash answers "up" for most shifts. Crude code registration already does better
+    ({{R2_REG_D}}), and aligning the moved part's own mask would do better still.</p>
+  </div>
+</section>
+
+<section id="round3">
+  <span class="eyebrow">Round 3 · 13 Oct · Clef 27B on the same items</span>
+  <h2>The bigger model ranks pairs better and detects no better</h2>
+  <p class="muted">Every Round 1 and Round 2 condition, rerun on Cloudflare's 27B Clef with identical images, questions and
+  answer options. 982 calls, about 21k Neurons (about 6× Flash per token), median 0.8 s per call.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Condition</th><th>AUROC Flash</th><th>AUROC 27B</th><th>Direction Flash</th><th>Direction 27B</th></tr></thead>
+    <tbody>{{R3_ROWS}}
+      <tr><td>Pairwise, both orders: rejected render picked</td><td class="num">{{R3_PF}}</td><td class="num">{{R3_PC}}</td><td>n/a</td><td>n/a</td></tr>
+    </tbody>
+  </table></div>
+  <div class="chart">
+    <h3>Which of two renders has the defect? Flash <span style="color:var(--s1)">●</span> vs 27B <span style="color:var(--s3)">●</span></h3>
+    {{R3_DUMBBELL}}
+    <p class="muted">Full-body pairs: mean {{R3_BF_F}} → {{R3_BF_C}}, every fox pair now at 0.80 or above. Sleeve-over-torso
+    pairs: {{R3_SH_F}} → {{R3_SH_C}}. Most now sit on the right side, but only just. The "image 1" bias also fell from 71% to 58%.</p>
+  </div>
+  <div class="r2note">
+    <p><b>Detection did not move.</b> Joint crops stay at 0.62–0.63 with or without the master, the same as Flash. The joints it
+    reacts to changed (27B is strong on the head, 0.93, and weak on the tail without the master, 0.17), but the total didn't.</p>
+    <p><b>Direction is still at chance.</b> Flash answered "up" for most shifts; 27B answers "down".</p>
+    <p><b>Comparison got more confident.</b> Asked which of two renders of the same pose is worse, 27B is surer on the cases
+    Flash already got right. That's the one task where model size helps.</p>
+  </div>
+</section>
+
+<section id="round4">
+  <span class="eyebrow">Round 4 · 15 Oct · Jev 1.14 from TypeSafe, with the new Box question</span>
+  <h2>Jev reads the real rejected frames, and Box finds parts but not offsets</h2>
+  <p class="muted">The same images and the same question wording, sent to <code>jev-1.14.0</code> with images as assets referenced
+  from the state. Jev 1.14 adds a <b>Box</b> question: name a target, get back its four edges as fractions of the image, plus a
+  confidence. We asked Box for the moved part in the joint crops (in both the master crop and the render), and for "the part that
+  looks wrong" in full frames. 982 calls, 1.75M tokens, about $0.07, median 0.5 s per call.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Detection (AUROC) on identical items</th><th>Clef Flash</th><th>Clef 27B</th><th>Jev 1.14</th></tr></thead>
+    <tbody>{{R4_ROWS}}</tbody>
+  </table></div>
+  <div class="r2note">
+    <p><b>The real rejected frames.</b> Judged one frame at a time, Jev separates the 11 full-body frames the reviewer rejected
+    from their 11 approved fixes almost perfectly (AUROC 0.99, 95% CI 0.94–1.00). Rejected frames scored {{R4_REAL_BF}};
+    approved fixes {{R4_REAL_OK}}. Clef managed 0.73–0.76. Sleeve-over-torso is still uncertain, and it's two characters
+    from one review sheet, so this needs more real rounds before it gates anything.</p>
+    <p><b>Planted pixel shifts</b> are still mostly invisible to it in full frames (0.45). On joint crops it is level with Clef
+    once it sees the master (0.65).</p>
+  </div>
+
+  <h3>Box on the joint crops: Jev's box vs the true part</h3>
+  <div class="legend-box"><span class="jev">Jev's box</span><span class="gt">True box (from the rig layer; on the master crop it's the clean rig's box, an approximation)</span></div>
+  <div class="r2grid">{{R4_BOXES}}</div>
+  <div class="two">
+    <div class="r2note">
+      <p><b>Finding the part works roughly.</b> Mean IoU {{R4_MIOU}}; {{R4_HIT}} of boxes overlap the true part by half or more.</p>
+      <p><b>Reading the offset doesn't.</b> Subtracting the master box from the render box gives the right fix direction on
+      {{R4_DIRV}} of the {{R4_NV}} shifts a box could show. Perfect boxes get 100% on the same shifts. Jev's box edges are off by a
+      median 9% of the crop, while an 8, 16 or 24 px shift moves an edge 6%, 11% or 17%. The box would need to be about twice as
+      tight, or the crop much closer on the part.</p>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th colspan="3">Box calibration: confidence vs box right (IoU ≥ 0.5)</th></tr>
+      <tr><th>Mean confidence</th><th>Box right</th><th>Boxes</th></tr></thead>
+      <tbody>{{R4_REL_R}}</tbody>
+    </table>
+    <p class="muted" style="padding:10px 14px">With the master crop. Confidence is low everywhere (about 0.03–0.09) and doesn't
+    rank the good boxes (rank correlation {{R4_RHO_R}}; {{R4_RHO_J}} with the render alone). As a probability it is far off
+    (calibration error {{R4_ECE_R}}). Use it only after tuning a threshold on your own crops.</p></div>
+  </div>
+
+  <h3>Box on full frames: "the part that looks wrong"</h3>
+  <div class="two">
+    <figure class="spec"><div class="plate"><img src="{{R4_FHIT}}" alt="Box lands near the changed region"></div><figcaption>Tail shifted right 16 px: Jev's box sits next to the defect, and its centre falls inside the changed area.</figcaption></figure>
+    <figure class="spec"><div class="plate"><img src="{{R4_FMISS}}" alt="Box misses the changed region"></div><figcaption>Boot shifted down 16 px: Jev boxes the waist and both hands instead.</figcaption></figure>
+    <div class="r2note"><p>Across 82 defective frames, the box centre lands in the changed region {{R4_PT}} of the time. A random
+    point lands there about 7% of the time, so it is three times chance and still too weak to point a fixer at a part.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Results</span>
+  <h2>Flat on detection, a lean on comparison</h2>
+  <div class="charts">
+    <div class="chart">
+      <h3>Mean P(defect) by size of the planted shift</h3>
+      <div class="legend"><span style="--c: var(--s1)">Full frame</span><span style="--c: var(--s2)">Frame + master (no clean frames sampled)</span><span style="--c: var(--s3)">Joint close-up</span></div>
+      {{LINE_CHART}}
+      <p class="muted">A working detector would climb with the shift. These lines stay flat. Joint crops sit higher, but clean
+      joints score just as high.</p>
+    </div>
+    <div class="chart">
+      <h3>Which of two renders has the defect?</h3>
+      <p class="muted">Probability of picking the rejected render, averaged over both image orders. Right of the dashed line
+      is a correct pick.</p>
+      {{PAIR_CHART}}
+      <p class="muted">The model leans to answer "image 1" about 70% of the time. Asking both orders cancels that.</p>
+    </div>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Condition</th><th>Frames</th><th>Separation (AUROC)</th><th>At threshold 0.5</th><th>Part / direction</th></tr></thead>
+    <tbody>
+      <tr><td>Full frame, planted defects</td><td class="num">120</td><td class="num">0.38</td><td>Flags nothing</td><td class="num">19% / 24%</td></tr>
+      <tr><td>Full frame, real reviewed frames</td><td class="num">38</td><td class="num">0.61</td><td>Flags nothing</td><td>n/a</td></tr>
+      <tr><td>Frame + master (setup pose)</td><td class="num">60</td><td>n/a (no clean frames sampled)</td><td>Flags 0 of 60</td><td class="num">24% / 27%</td></tr>
+      <tr><td>Joint close-up, narrow question</td><td class="num">252</td><td class="num">0.52</td><td>Flags 73% of defects and 69% of clean</td><td class="num">n/a / 25%</td></tr>
+      <tr><td>Pairwise, both orders</td><td class="num">19 pairs</td><td class="num">15 / 19 correct</td><td>10 / 11 full body, 5 / 8 sleeves</td><td>n/a</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">AUROC: 0.5 is chance, 1.0 is perfect separation. Chance for part is about 11% (9 parts); for direction, 25%.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Cost and speed</span>
+  <h2>Cheap enough that cost is not the question</h2>
+  <div class="figs">
+    <div class="fig"><span class="v">{{CALLS}}</span><span class="k">calls, one at a time</span></div>
+    <div class="fig"><span class="v">{{TOKENS}}</span><span class="k">input tokens (output is free)</span></div>
+    <div class="fig"><span class="v">{{NEURONS}}</span><span class="k">Neurons, inside the 10k/day free tier</span></div>
+    <div class="fig"><span class="v">{{USD}}</span><span class="k">if billed at $0.038 per M tokens</span></div>
+    <div class="fig"><span class="v">{{LATENCY}}</span><span class="k">median latency per call</span></div>
+  </div>
+  <p class="muted">These figures cover the Flash runs. The 27B rerun (Round 3) added 982 calls and about 0.98M tokens, about 21k
+  Neurons or about $0.23 at list price. The local Ollama build (12 GB) would not load on the 16 GB Mac: Metal caps GPU memory at 11.8 GiB. All
+  calls ran on Cloudflare Workers AI. One contract difference: Cloudflare wants images as data URIs; Ollama wants raw base64.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Open for discussion</span>
+  <h2>Where we could take it next</h2>
+  <div class="ideas">
+    <div class="idea"><h3>Run the same set on Clef 27B</h3><p>Tests whether model size is the limit. Same harness, one flag.</p>
+      <span class="cost">~6× Flash price · core set fits one day's free tier</span></div>
+    <div class="idea"><h3>Grow the pairwise check</h3><p>Collect every fix round (round N vs N+1) from past sessions and see if 10/11 holds
+      on 50+ pairs. This is the one signal that might earn a place in the loop.</p><span class="cost">~$0.00004 per pair, both orders</span></div>
+    <div class="idea"><h3>Gap check per joint, thresholds per joint</h3><p>Round 2 shows Clef responds to visible gaps at hands and boots.
+      Ask only "is there a gap between X and Y", and calibrate one threshold per joint type, since clean boots already score 0.64.</p>
+      <span class="cost">~700 tokens per joint · ~10 joints per frame</span></div>
+    <div class="idea"><h3>Round-to-round check on 27B</h3><p>27B is the stronger comparer (17/19, full-body pairs at 0.76 mean).
+      Collect real fix rounds from past sessions and test "is round N+1 better than round N" on 50+ pairs.</p>
+      <span class="cost">~2.2k tokens per pair, both orders ≈ 50 Neurons</span></div>
+    <div class="idea"><h3>Let code find offsets</h3><p>For nudges, align each part's own mask to the master. Crude whole-crop
+      registration already beats Clef on direction ({{R2_REG_D}} vs about 25%). Keep Clef for "does this read right" questions.</p><span class="cost">no model cost</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="masters"><img src="{{MASTER_FOX}}" alt="Fox master illustration"><img src="{{MASTER_MOOSE}}" alt="Moose master illustration"></div>
+  <span>Rigs: fox and moose, approved at checkpoint 6. Raw answers, labels and scripts:
+  <code>experiments/2026-10-12-clef-judge/</code>. No pipeline code was changed.</span>
+</footer>
+</div>
+
+<script>
+(function () {
+  var t = document.getElementById('seen-toggle');
+  function apply() { document.body.classList.toggle('seen', t.checked); }
+  try { t.checked = localStorage.getItem('clef-seen') === '1'; } catch (e) {}
+  apply();
+  t.addEventListener('change', function () { apply(); try { localStorage.setItem('clef-seen', t.checked ? '1' : '0'); } catch (e) {} });
+})();
+</script>

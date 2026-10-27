@@ -1,0 +1,208 @@
+{
+  "prompt_id": "ac8ea531-8524-4d90-9d27-1cce0c0febf3",
+  "template": "/private/tmp/claude-501/-Users-skipbo-Dev-playground-comfy/936f78e5-be09-4638-b134-d70eecd7c50d/scratchpad/split3.api.json",
+  "engine": "",
+  "seed": 1785290230,
+  "fingerprint": "d3ab25be0779",
+  "prompt": null,
+  "vars": {
+    "MODE": "BEN2",
+    "DROP": 24,
+    "THRESH": 0.3,
+    "GROW": 8,
+    "PREFIX": "agent/skipbo/split3-body",
+    "IMAGE_1": "agent/skipbo/1011_150436_s1223112853_n2_00_a0f75a9060.png"
+  },
+  "inputs": {
+    "1": "experiments/2026-10-11-moose-parts/runs/moose-body-sheet/1011_150436_s1223112853_n2_00.png"
+  },
+  "criteria": [],
+  "outputs": [
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n12_00.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_00.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_01.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_02.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_03.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_04.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_05.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_06.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_07.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_08.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_09.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_10.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_11.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_12.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_13.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_14.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_15.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_16.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_17.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_18.png",
+    "experiments/2026-10-11-moose-parts/runs/split3-body/1011_150524_s1785290230_n10_19.png"
+  ],
+  "seconds": 6.9,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/1011_150436_s1223112853_n2_00_a0f75a9060.png"
+      }
+    },
+    "2": {
+      "class_type": "easy imageRemBg",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "rem_mode": "BEN2",
+        "image_output": "Hide",
+        "save_prefix": "x"
+      }
+    },
+    "3": {
+      "class_type": "ThresholdMask",
+      "inputs": {
+        "mask": [
+          "2",
+          1
+        ],
+        "value": 0.3
+      }
+    },
+    "4": {
+      "class_type": "GrowMask",
+      "inputs": {
+        "mask": [
+          "3",
+          0
+        ],
+        "expand": 8,
+        "tapered_corners": true
+      }
+    },
+    "5": {
+      "class_type": "MaskToSEGS",
+      "inputs": {
+        "mask": [
+          "4",
+          0
+        ],
+        "combined": false,
+        "crop_factor": 1.0,
+        "bbox_fill": false,
+        "drop_size": 24,
+        "contour_fill": true
+      }
+    },
+    "6": {
+      "class_type": "SetDefaultImageForSEGS",
+      "inputs": {
+        "segs": [
+          "5",
+          0
+        ],
+        "image": [
+          "2",
+          0
+        ],
+        "override": true
+      }
+    },
+    "7": {
+      "class_type": "ImpactDecomposeSEGS",
+      "inputs": {
+        "segs": [
+          "6",
+          0
+        ]
+      }
+    },
+    "8": {
+      "class_type": "ImpactFrom_SEG_ELT",
+      "inputs": {
+        "seg_elt": [
+          "7",
+          1
+        ]
+      }
+    },
+    "9": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "14",
+          0
+        ],
+        "alpha": [
+          "13",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "9",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/split3-body/part"
+      }
+    },
+    "12": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "2",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/split3-body/cutout"
+      }
+    },
+    "13": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "16",
+          0
+        ]
+      }
+    },
+    "14": {
+      "class_type": "SplitImageWithAlpha",
+      "inputs": {
+        "image": [
+          "8",
+          1
+        ]
+      }
+    },
+    "15": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "14",
+          1
+        ]
+      }
+    },
+    "16": {
+      "class_type": "MaskComposite",
+      "inputs": {
+        "destination": [
+          "15",
+          0
+        ],
+        "source": [
+          "8",
+          2
+        ],
+        "x": 0,
+        "y": 0,
+        "operation": "multiply"
+      }
+    }
+  }
+}

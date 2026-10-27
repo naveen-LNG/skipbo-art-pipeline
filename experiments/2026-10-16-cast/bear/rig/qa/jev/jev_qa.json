@@ -1,0 +1,208 @@
+{
+ "rig": "rig/bear.json",
+ "refs": [
+  "../../2026-10-11-rig-annotations/fox/rig/fox.json",
+  "../../2026-10-11-rig-annotations/moose/rig/moose.json"
+ ],
+ "prev": "/private/tmp/claude-501/-Users-skipbo-Dev-playground-comfy/d64b7711-70dd-4437-b21d-4bddd3c40fc2/scratchpad/rig9/bear.json",
+ "joints_sheet": "rig/qa/joints.png",
+ "joints": {
+  "shoulder_l": {
+   "broken": 2.17,
+   "ref_max": 1.95,
+   "verdict": "WARN worse than approved"
+  },
+  "shoulder_r": {
+   "broken": 2.13,
+   "ref_max": 1.95,
+   "verdict": "WARN worse than approved"
+  },
+  "ankle_r": {
+   "broken": 1.68,
+   "ref_max": 1.97,
+   "verdict": "within approved range"
+  },
+  "wrist_l": {
+   "broken": 1.66,
+   "ref_max": 2.46,
+   "verdict": "within approved range"
+  },
+  "ankle_l": {
+   "broken": 1.63,
+   "ref_max": 1.97,
+   "verdict": "within approved range"
+  },
+  "elbow_r": {
+   "broken": 1.49,
+   "ref_max": 2.27,
+   "verdict": "within approved range"
+  },
+  "elbow_l": {
+   "broken": 1.47,
+   "ref_max": 2.27,
+   "verdict": "within approved range"
+  },
+  "neck": {
+   "broken": 1.33,
+   "ref_max": 2.16,
+   "verdict": "within approved range"
+  },
+  "wrist_r": {
+   "broken": 1.23,
+   "ref_max": 2.46,
+   "verdict": "within approved range"
+  },
+  "waist": {
+   "broken": 1.01,
+   "ref_max": 1.88,
+   "verdict": "within approved range"
+  }
+ },
+ "pairs": {
+  "shoulder_l": {
+   "p_new_better": 0.52,
+   "verdict": "about the same"
+  },
+  "shoulder_r": {
+   "p_new_better": 0.51,
+   "verdict": "about the same"
+  },
+  "elbow_l": {
+   "p_new_better": 0.5,
+   "verdict": "about the same"
+  },
+  "elbow_r": {
+   "p_new_better": 0.53,
+   "verdict": "about the same"
+  },
+  "wrist_l": {
+   "p_new_better": 0.46,
+   "verdict": "about the same"
+  },
+  "wrist_r": {
+   "p_new_better": 0.5,
+   "verdict": "about the same"
+  },
+  "neck": {
+   "p_new_better": 0.47,
+   "verdict": "about the same"
+  },
+  "waist": {
+   "p_new_better": 0.5,
+   "verdict": "about the same"
+  },
+  "ankle_l": {
+   "p_new_better": 0.51,
+   "verdict": "about the same"
+  },
+  "ankle_r": {
+   "p_new_better": 0.48,
+   "verdict": "about the same"
+  }
+ },
+ "frames": {
+  "n": 78,
+  "mean": 0.607,
+  "ref_p90": 0.67,
+  "ref_mean": 0.558,
+  "above_ref_p90": 28,
+  "to_review": [
+   {
+    "anim": "thumbs_up",
+    "t": 1.0,
+    "p_defect": 0.89
+   },
+   {
+    "anim": "thumbs_up",
+    "t": 1.4,
+    "p_defect": 0.87
+   },
+   {
+    "anim": "run",
+    "t": 0.16,
+    "p_defect": 0.85
+   },
+   {
+    "anim": "hold_card",
+    "t": 1.0,
+    "p_defect": 0.84
+   },
+   {
+    "anim": "hold_card",
+    "t": 1.4,
+    "p_defect": 0.84
+   },
+   {
+    "anim": "hold_card",
+    "t": 1.8,
+    "p_defect": 0.83
+   },
+   {
+    "anim": "thumbs_up",
+    "t": 0.6,
+    "p_defect": 0.8
+   },
+   {
+    "anim": "thumbs_up",
+    "t": 1.8,
+    "p_defect": 0.8
+   }
+  ],
+  "sheet": "rig/qa/jev/frames_to_review.png"
+ },
+ "holds": {
+  "point/hand_l": {
+   "reads_as": "point",
+   "p_variant": 0.61,
+   "p_thumb_up": 0.74,
+   "finger_deg": 2,
+   "thumb_deg": 64,
+   "issues": [],
+   "crop": "rig/qa/jev/holds/bear__point_hand_l.png"
+  },
+  "thumbs_up/hand_l": {
+   "reads_as": "thumbsup",
+   "p_variant": 0.97,
+   "p_thumb_up": 0.93,
+   "finger_deg": 56,
+   "thumb_deg": 93,
+   "issues": [],
+   "crop": "rig/qa/jev/holds/bear__thumbs_up_hand_l.png"
+  },
+  "hold_card/hand_l": {
+   "reads_as": "grip",
+   "p_variant": 0.97,
+   "p_thumb_up": 0.28,
+   "finger_deg": 138,
+   "thumb_deg": 169,
+   "issues": [
+    "WARN may be drawn as the other hand (mirrored): look at it"
+   ],
+   "crop": "rig/qa/jev/holds/bear__hold_card_hand_l.png"
+  },
+  "wave/hand_l": {
+   "reads_as": "open",
+   "p_variant": 0.93,
+   "p_thumb_up": 0.03,
+   "finger_deg": 91,
+   "thumb_deg": 198,
+   "issues": [],
+   "crop": "rig/qa/jev/holds/bear__wave_hand_l.png"
+  },
+  "cheer_jump/hand_l": {
+   "reads_as": "fist",
+   "p_variant": 0.93,
+   "p_thumb_up": 0.15,
+   "finger_deg": 94,
+   "thumb_deg": 191,
+   "issues": [],
+   "crop": "rig/qa/jev/holds/bear__cheer_jump_hand_l.png"
+  }
+ },
+ "fail": false,
+ "jev": {
+  "calls": 230,
+  "cached": 0,
+  "input_tokens": 455996
+ }
+}

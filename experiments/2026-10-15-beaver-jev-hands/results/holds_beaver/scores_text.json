@@ -1,0 +1,97 @@
+{
+ "all": {
+  "n": 60,
+  "finger_dir": {
+   "exact_clear": 0.75,
+   "n_clear": 32,
+   "within45": 0.867,
+   "median_err_deg": 8.7,
+   "p90_err_deg": 74.5
+  },
+  "thumb_dir": {
+   "exact_clear": 0.719,
+   "n_clear": 32,
+   "within45": 0.733,
+   "median_err_deg": 22.2,
+   "p90_err_deg": 95.7
+  },
+  "facing": {
+   "acc": 0.7,
+   "auroc": 0.745,
+   "n_palm": 22,
+   "n_back": 38
+  },
+  "gesture": {
+   "acc": 0.7
+  },
+  "painted_direct": 0.483,
+  "painted_derived": 0.617,
+  "painted_derived_true_facing": 0.917,
+  "thumb_up_auroc": 0.982,
+  "thumb_up_acc": 0.833,
+  "n_thumb_up": 15,
+  "mirrored_auroc": 0.486,
+  "mirror_rule": {
+   "tpr": 0.556,
+   "fpr": 0.407,
+   "n_planted": 27,
+   "n_clean": 27
+  },
+  "mirror_rule_annotated_facing": {
+   "tpr": 1.0,
+   "fpr": 0.185
+  },
+  "gesture_thumb_check": {
+   "clean_mean_p_up": 0.469,
+   "mirrored_mean_p_up": 0.117
+  }
+ },
+ "beaver": {
+  "n": 60,
+  "finger_dir": {
+   "exact_clear": 0.75,
+   "n_clear": 32,
+   "within45": 0.867,
+   "median_err_deg": 8.7,
+   "p90_err_deg": 74.5
+  },
+  "thumb_dir": {
+   "exact_clear": 0.719,
+   "n_clear": 32,
+   "within45": 0.733,
+   "median_err_deg": 22.2,
+   "p90_err_deg": 95.7
+  },
+  "facing": {
+   "acc": 0.7,
+   "auroc": 0.745,
+   "n_palm": 22,
+   "n_back": 38
+  },
+  "gesture": {
+   "acc": 0.7
+  },
+  "painted_direct": 0.483,
+  "painted_derived": 0.617,
+  "painted_derived_true_facing": 0.917,
+  "thumb_up_auroc": 0.982,
+  "thumb_up_acc": 0.833,
+  "n_thumb_up": 15,
+  "mirrored_auroc": 0.486,
+  "mirror_rule": {
+   "tpr": 0.556,
+   "fpr": 0.407,
+   "n_planted": 27,
+   "n_clean": 27
+  },
+  "mirror_rule_annotated_facing": {
+   "tpr": 1.0,
+   "fpr": 0.185
+  },
+  "gesture_thumb_check": {
+   "clean_mean_p_up": 0.469,
+   "mirrored_mean_p_up": 0.117
+  }
+ },
+ "tokens": 113931
+}

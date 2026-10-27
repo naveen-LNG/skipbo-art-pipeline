@@ -1,0 +1,71 @@
+{
+ "global_scale": 1.0791,
+ "torso": {
+  "narrow": 0.86,
+  "piece_w_master_px": 1042,
+  "at_master_y": 0.503
+ },
+ "trousers": {
+  "box_master": [
+   0.207,
+   0.485,
+   0.794,
+   0.886
+  ],
+  "size": [
+   974,
+   892
+  ],
+  "waist": [
+   0.5,
+   0.093
+  ],
+  "hip_l": [
+   0.728,
+   0.961
+  ],
+  "hip_r": [
+   0.271,
+   0.961
+  ]
+ },
+ "arms": {
+  "00": {
+   "wrist_row": 1201,
+   "orig_h": 1618,
+   "new_h": 1205,
+   "wrist_x": 0.588,
+   "wrist_w_px": 343
+  },
+  "01": {
+   "wrist_row": 1203,
+   "orig_h": 1618,
+   "new_h": 1207,
+   "wrist_x": 0.409,
+   "wrist_w_px": 344
+  }
+ },
+ "clogs": {
+  "widen": 1.1,
+  "00": {
+   "ankle": [
+    0.77,
+    0.3
+   ],
+   "ground": [
+    null,
+    0.987
+   ]
+  },
+  "01": {
+   "ankle": [
+    0.23,
+    0.3
+   ],
+   "ground": [
+    null,
+    0.987
+   ]
+  }
+ }
+}

@@ -1,0 +1,10 @@
+wrote experiments/2026-10-16-spine-pro/beaver/rig_pro/beaver.json: 26 bones, 22 slots, constraints {'ik': [], 'transform': ['boot_l_plant', 'boot_r_plant']}, animations blink, idle, wave, cheer_jump, thumbs_up, point, hold_card, emotions, walk, run, squat, jump_hurdle, wave_flag, look_around, talk
+  container: {"moved": ["cheer_jump: hips translate -> character (jump)", "jump_hurdle: hips translate -> character (jump)"], "width": 623.3, "height": 84.6, "shadow_keys": ["cheer_jump", "jump_hurdle"]}
+  tail: {"bones": ["tail", "tail2", "tail3", "tail4"], "length": 529.4, "fractions": [0.0, 0.3, 0.56, 0.8], "attachments": {"beaver_tail": {"vertices": 64, "triangles": 90, "padded": [60, 72], "fold_free": true}}}
+  torso: {"chest_at": 159.1, "moved_under_chest": ["head_base", "upperarm_l", "upperarm_r"], "mesh": {"vertices": 50, "triangles": 72, "padded": [11, 9]}, "fold_free": true}
+  head: {"face_at": [17.4, 992.4], "ears": ["ear_r", "ear_l"], "ear_parts": false, "attachments": {"beaver_head_base": {"vertices": 81, "triangles": 128, "padded": [3, 2]}, "beaver_head_angry": {"vertices": 81, "triangles": 128, "padded": [3, 3]}, 
+  feet: {"feet": {"boot_l": {"target": "boot_l_ik", "leg_ik": null}, "boot_r": {"target": "boot_r_ik", "leg_ik": null}}, "baked": {"walk": ["boot_l", "boot_r"], "run": ["boot_l", "boot_r"], "squat": ["boot_l", "boot_r"], "jump_hurdle": ["boot_l", "
+  anims: {"idle": {"duration": 2.0}, "look_around": {"duration": 3.2}, "talk": {"duration": 2.4, "mouth": "beaver_head_talking"}, "breathing": ["blink", "wave", "cheer_jump", "thumbs_up", "point", "hold_card", "emotions", "walk", "run", "squat", "ju
+  secondary: {"tail_root_smoothed": ["cheer_jump: sigma 1.5", "jump_hurdle: sigma 1.5"], "blink": {"periodic": true, "tail": 0.0, "chest": 0.0, "ear_l": 0.1, "ear_r": 0.1}, "idle": {"periodic": true, "tail": 0.4, "chest": 0.0, "ear_l": 0.2, "ear_r": 0.3
+  underfill: {"slots": {"tail": 1, "boot_l": 2, "boot_r": 2, "hips": 1, "hand_l": 6, "upperarm_l": 1, "hand_r": 6, "upperarm_r": 1, "head": 10}, "ring_units": 4.83}
+  organise: {"red": 19, "yellow": 3, "green": 2}

@@ -1,0 +1,1848 @@
+{
+  "character": "redpanda",
+  "master": {
+    "hands": {
+      "l": {
+        "facing": "palm",
+        "thumb_side": "lateral"
+      },
+      "r": {
+        "facing": "palm",
+        "thumb_side": "lateral"
+      }
+    },
+    "image": "redpanda_master.png",
+    "layers": {
+      "upperarm": "under_torso"
+    },
+    "points": {
+      "ankle_l": [
+        0.526,
+        0.745
+      ],
+      "ankle_r": [
+        0.342,
+        0.745
+      ],
+      "elbow_l": [
+        0.635,
+        0.478
+      ],
+      "elbow_r": [
+        0.22,
+        0.478
+      ],
+      "fingertip_l": [
+        0.753,
+        0.6205
+      ],
+      "fingertip_r": [
+        0.1186,
+        0.632
+      ],
+      "ground": [
+        0.43,
+        0.93
+      ],
+      "hip_l": [
+        0.531,
+        0.79
+      ],
+      "hip_r": [
+        0.335,
+        0.79
+      ],
+      "neck": [
+        0.43,
+        0.345
+      ],
+      "shoulder_l": [
+        0.568,
+        0.408
+      ],
+      "shoulder_r": [
+        0.29,
+        0.408
+      ],
+      "waist": [
+        0.43,
+        0.57
+      ],
+      "wrist_l": [
+        0.682,
+        0.553
+      ],
+      "wrist_r": [
+        0.19,
+        0.556
+      ]
+    },
+    "snapped": {
+      "ankle_l": null,
+      "ankle_r": null,
+      "elbow_l": null,
+      "elbow_r": null,
+      "hip_l": null,
+      "hip_r": null,
+      "shoulder_l": null,
+      "shoulder_r": null,
+      "wrist_l": null,
+      "wrist_r": null
+    },
+    "status": "fixed"
+  },
+  "pieces": {
+    "redpanda-body-parts/00": {
+      "confidence": 0.0,
+      "note": "replaced by its taller-shaft copy redpanda-boots-parts/00 (make_boots.py)",
+      "outputs": [],
+      "points": {},
+      "role": "foot",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/01": {
+      "confidence": 0.0,
+      "note": "replaced by its taller-shaft copy redpanda-boots-parts/01 (make_boots.py)",
+      "outputs": [],
+      "points": {},
+      "role": "foot",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/02": {
+      "confidence": 0.0,
+      "note": "trouser leg: the hips piece already reaches the hems",
+      "outputs": [],
+      "points": {},
+      "role": "leg",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/03": {
+      "confidence": 0.0,
+      "note": "trouser leg: the hips piece already reaches the hems",
+      "outputs": [],
+      "points": {},
+      "role": "leg",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/04": {
+      "confidence": 0.0,
+      "note": "replaced by its de-fringed copy redpanda-paws-parts/00 (make_paws.py)",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/05": {
+      "confidence": 0.0,
+      "note": "replaced by its de-fringed copy redpanda-paws-parts/01 (make_paws.py)",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/06": {
+      "confidence": 0.8,
+      "note": "the ringed J as the master holds it: root at the lower left behind the trousers, tip up at the top",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/redpanda_tail.png",
+          "mirrored": false,
+          "name": "tail",
+          "points": {
+            "root": [
+              40.32,
+              538.16
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.06,
+            0.62
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "tail",
+      "side": "",
+      "status": "confirmed"
+    },
+    "redpanda-body-parts/07": {
+      "confidence": 0.0,
+      "note": "whole sleeve on the body sheet; the sleeves-pair sheet's sleeves are used",
+      "outputs": [],
+      "points": {},
+      "role": "arm",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/08": {
+      "confidence": 0.0,
+      "note": "whole sleeve on the body sheet; the sleeves-pair sheet's sleeves are used",
+      "outputs": [],
+      "points": {},
+      "role": "arm",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/09": {
+      "confidence": 0.0,
+      "note": "replaced by its crotch-cut copy redpanda-trousers-parts/00 (make_trousers.py)",
+      "outputs": [],
+      "points": {},
+      "role": "hips",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/10": {
+      "confidence": 0.8,
+      "note": "neck = base of the fur neck in the collar; waist above the jacket hem, so the hem overlaps the belt top (round 1 (onion/joints review + spine_qa): 0.95 left a weak torso/hips joint, 0.93 hid half the belt; now just above the hem, the hips reach up under it)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/redpanda_torso.png",
+          "mirrored": false,
+          "name": "torso",
+          "points": {
+            "neck": [
+              229.5,
+              96.05
+            ],
+            "waist": [
+              229.5,
+              544.83
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.17
+          ],
+          "kind": "point"
+        },
+        "waist": {
+          "at": [
+            0.5,
+            0.9643
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "torso",
+      "side": "",
+      "status": "fixed"
+    },
+    "redpanda-body-parts/11": {
+      "confidence": 0.0,
+      "note": "ear painted as a pointed horn turned ~150 deg; the master's ears are used (scripts/make_ears.py)",
+      "outputs": [],
+      "points": {},
+      "role": "ear",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/12": {
+      "confidence": 0.0,
+      "note": "ear painted as a pointed horn turned ~150 deg; the master's ears are used (scripts/make_ears.py)",
+      "outputs": [],
+      "points": {},
+      "role": "ear",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-body-parts/13": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/redpanda_head_base.png",
+          "mirrored": false,
+          "name": "head_base",
+          "points": {
+            "neck": [
+              284.0,
+              428.74
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed"
+    },
+    "redpanda-boots-parts/00": {
+      "confidence": 0.8,
+      "name": "boot",
+      "note": "toe right = outward for the left foot; ankle at the shaft rim's measured centre (round 1 (onion/joints review + spine_qa): 0.45 put the boots inward)",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 43.68
+          },
+          "file": "body/redpanda_boot_l.png",
+          "mirrored": false,
+          "name": "boot_l",
+          "points": {
+            "ankle": [
+              94.99,
+              29.99
+            ],
+            "ground": [
+              133.5,
+              393.96
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 124.8
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.345,
+            0.1058
+          ],
+          "depth": 43.68,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.3558,
+            0.0746
+          ],
+          "width": 124.8
+        },
+        "ground": {
+          "at": [
+            0.5,
+            0.98
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "l",
+      "status": "fixed"
+    },
+    "redpanda-boots-parts/01": {
+      "confidence": 0.8,
+      "name": "boot",
+      "note": "toe left = outward for the right foot; ankle at the shaft rim's measured centre",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 44.8
+          },
+          "file": "body/redpanda_boot_r.png",
+          "mirrored": false,
+          "name": "boot_r",
+          "points": {
+            "ankle": [
+              174.06,
+              31.09
+            ],
+            "ground": [
+              132.5,
+              394.94
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 128.0
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.646,
+            0.1059
+          ],
+          "depth": 44.8,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.6568,
+            0.0771
+          ],
+          "width": 128.0
+        },
+        "ground": {
+          "at": [
+            0.5,
+            0.98
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "r",
+      "status": "fixed"
+    },
+    "redpanda-boots-parts/03": {
+      "confidence": 0.7,
+      "name": "boot",
+      "note": "toe left = right foot; shaft stretched like the rest boots'",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 68.25
+          },
+          "file": "variants/redpanda_boot_r_tiptoe.png",
+          "mirrored": false,
+          "name": "boot_r_tiptoe",
+          "points": {
+            "ankle": [
+              208.8,
+              154.22
+            ],
+            "ground": [
+              87.0,
+              700.34
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 195.0
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.6,
+            0.2136
+          ],
+          "depth": 68.25,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 195.0
+        },
+        "ground": {
+          "at": [
+            0.25,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "r",
+      "status": "fixed",
+      "variant": "tiptoe"
+    },
+    "redpanda-boots-parts/04": {
+      "confidence": 0.7,
+      "name": "boot",
+      "note": "toe right = left foot; shaft stretched like the rest boots' so the area-matched swap keeps its size",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 68.25
+          },
+          "file": "variants/redpanda_boot_l_tiptoe.png",
+          "mirrored": false,
+          "name": "boot_l_tiptoe",
+          "points": {
+            "ankle": [
+              138.8,
+              154.21
+            ],
+            "ground": [
+              260.25,
+              702.28
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 195.0
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.4,
+            0.213
+          ],
+          "depth": 68.25,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 195.0
+        },
+        "ground": {
+          "at": [
+            0.75,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "l",
+      "status": "fixed",
+      "variant": "tiptoe"
+    },
+    "redpanda-ears-parts/00": {
+      "confidence": 0.8,
+      "note": "cut from the master with a band of head fur under its base",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/redpanda_ear_r.png",
+          "mirrored": false,
+          "name": "ear_r",
+          "points": {
+            "root": [
+              135.2,
+              159.98
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.518,
+            0.546
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "redpanda-ears-parts/01": {
+      "confidence": 0.8,
+      "note": "cut from the master with a band of head fur under its base",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/redpanda_ear_l.png",
+          "mirrored": false,
+          "name": "ear_l",
+          "points": {
+            "root": [
+              115.19,
+              148.74
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.484,
+            0.555
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "redpanda-face-parts/00": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/redpanda_head_wink.png",
+          "mirrored": false,
+          "name": "head_wink",
+          "points": {
+            "neck": [
+              317.5,
+              474.33
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "wink"
+    },
+    "redpanda-face-parts/01": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/redpanda_head_talking.png",
+          "mirrored": false,
+          "name": "head_talking",
+          "points": {
+            "neck": [
+              317.5,
+              475.3
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "talking"
+    },
+    "redpanda-face-parts/02": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/redpanda_head_angry.png",
+          "mirrored": false,
+          "name": "head_angry",
+          "points": {
+            "neck": [
+              317.0,
+              474.33
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "angry"
+    },
+    "redpanda-face-parts/03": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/redpanda_head_sad.png",
+          "mirrored": false,
+          "name": "head_sad",
+          "points": {
+            "neck": [
+              319.5,
+              475.3
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "sad"
+    },
+    "redpanda-face-parts/04": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/redpanda_head_surprised.png",
+          "mirrored": false,
+          "name": "head_surprised",
+          "points": {
+            "neck": [
+              319.5,
+              475.3
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "surprised"
+    },
+    "redpanda-face-parts/05": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/redpanda_head_laugh.png",
+          "mirrored": false,
+          "name": "head_laugh",
+          "points": {
+            "neck": [
+              319.0,
+              475.3
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "laugh"
+    },
+    "redpanda-face-parts/06": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/redpanda_head_happy.png",
+          "mirrored": false,
+          "name": "head_happy",
+          "points": {
+            "neck": [
+              321.0,
+              478.21
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "happy"
+    },
+    "redpanda-face-parts/07": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/redpanda_head_blink.png",
+          "mirrored": false,
+          "name": "head_blink",
+          "points": {
+            "neck": [
+              320.5,
+              478.21
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "blink"
+    },
+    "redpanda-face-parts/08": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/redpanda_head_neutral.png",
+          "mirrored": false,
+          "name": "head_neutral",
+          "points": {
+            "neck": [
+              321.0,
+              478.21
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "neutral"
+    },
+    "redpanda-hands-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/02": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/04": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/05": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/06": {
+      "confidence": 0.0,
+      "note": "replaced by its de-fringed copy redpanda-paws-parts/05 (make_paws.py)",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/07": {
+      "confidence": 0.0,
+      "note": "replaced by its de-fringed copy redpanda-paws-parts/02 (make_paws.py)",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/08": {
+      "confidence": 0.0,
+      "note": "replaced by its de-fringed copy redpanda-paws-parts/03 (make_paws.py)",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/09": {
+      "confidence": 0.0,
+      "note": "replaced by its de-fringed copy redpanda-paws-parts/04 (make_paws.py)",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/10": {
+      "confidence": 0.0,
+      "note": "point painted back-facing (smooth back, knuckles); replaced by redpanda-point-palm-parts/02",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-hands-parts/11": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-paws-parts/00": {
+      "confidence": 0.75,
+      "facing": "palm",
+      "note": "relaxed mitten, thumb out to the side (lateral) as in the master",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 28.56
+          },
+          "file": "body/redpanda_hand_l.png",
+          "mirrored": false,
+          "name": "hand_l",
+          "points": {
+            "fingertip": [
+              83.7,
+              192.0
+            ],
+            "thumb_tip": [
+              171.12,
+              64.0
+            ],
+            "wrist": [
+              83.44,
+              14.9
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 81.6
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.45,
+            0.96
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.92,
+            0.32
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.47,
+            0.05
+          ],
+          "depth": 28.56,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.4486,
+            0.0745
+          ],
+          "width": 81.6
+        }
+      },
+      "role": "hand",
+      "side": "l",
+      "status": "fixed"
+    },
+    "redpanda-paws-parts/01": {
+      "confidence": 0.75,
+      "facing": "palm",
+      "note": "relaxed mitten, thumb out to the side (lateral) as in the master",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 28.0
+          },
+          "file": "body/redpanda_hand_r.png",
+          "mirrored": false,
+          "name": "hand_r",
+          "points": {
+            "fingertip": [
+              101.75,
+              192.0
+            ],
+            "thumb_tip": [
+              14.8,
+              64.0
+            ],
+            "wrist": [
+              103.03,
+              14.88
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 80.0
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.55,
+            0.96
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.08,
+            0.32
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.53,
+            0.05
+          ],
+          "depth": 28.0,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5569,
+            0.0744
+          ],
+          "width": 80.0
+        }
+      },
+      "role": "hand",
+      "side": "r",
+      "status": "fixed"
+    },
+    "redpanda-paws-parts/02": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "palm-facing fist from the first sheet: curled fingertips across the bottom, thumb folded across from the left (de-fringed copy of redpanda-hands-parts/07, make_paws.py)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 60.62
+          },
+          "file": "variants/redpanda_hand_l_fist.png",
+          "mirrored": true,
+          "name": "hand_l_fist",
+          "points": {
+            "thumb_tip": [
+              282.48,
+              198.12
+            ],
+            "wrist": [
+              157.0,
+              19.14
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 173.2
+          }
+        },
+        {
+          "depths": {
+            "wrist": 60.62
+          },
+          "file": "variants/redpanda_hand_r_fist.png",
+          "mirrored": false,
+          "name": "hand_r_fist",
+          "points": {
+            "thumb_tip": [
+              38.52,
+              198.12
+            ],
+            "wrist": [
+              164.0,
+              19.14
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 173.2
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.12,
+            0.52
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.05
+          ],
+          "depth": 60.62,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5109,
+            0.0502
+          ],
+          "width": 173.2
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "fist"
+    },
+    "redpanda-paws-parts/03": {
+      "confidence": 0.75,
+      "facing": "palm",
+      "note": "palm with its creases shows; thumb on the image left (de-fringed copy of redpanda-hands-parts/08, make_paws.py)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 62.05
+          },
+          "file": "variants/redpanda_hand_l_open.png",
+          "mirrored": true,
+          "name": "hand_l_open",
+          "points": {
+            "fingertip": [
+              232.15,
+              450.34
+            ],
+            "thumb_tip": [
+              434.6,
+              247.05
+            ],
+            "wrist": [
+              232.15,
+              45.81
+            ]
+          },
+          "rotated": 6.83,
+          "widths": {
+            "wrist": 177.28
+          }
+        },
+        {
+          "depths": {
+            "wrist": 62.05
+          },
+          "file": "variants/redpanda_hand_r_open.png",
+          "mirrored": false,
+          "name": "hand_r_open",
+          "points": {
+            "fingertip": [
+              238.85,
+              450.34
+            ],
+            "thumb_tip": [
+              36.4,
+              247.05
+            ],
+            "wrist": [
+              238.85,
+              45.81
+            ]
+          },
+          "rotated": 6.83,
+          "widths": {
+            "wrist": 177.28
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.45,
+            0.96
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.03,
+            0.45
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.05
+          ],
+          "depth": 62.05,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5643,
+            0.0533
+          ],
+          "width": 177.28
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "open"
+    },
+    "redpanda-paws-parts/04": {
+      "confidence": 0.7,
+      "facing": "palm",
+      "note": "painted with the wrist at the left side; curled fingers' fronts show (de-fringed copy of redpanda-hands-parts/09, make_paws.py)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 58.6
+          },
+          "file": "variants/redpanda_hand_l_thumbsup.png",
+          "mirrored": false,
+          "name": "hand_l_thumbsup",
+          "points": {
+            "thumb_tip": [
+              371.51,
+              133.14
+            ],
+            "wrist": [
+              153.04,
+              19.72
+            ]
+          },
+          "rotated": -90.0,
+          "widths": {
+            "wrist": 167.43
+          }
+        },
+        {
+          "depths": {
+            "wrist": 58.6
+          },
+          "file": "variants/redpanda_hand_r_thumbsup.png",
+          "mirrored": true,
+          "name": "hand_r_thumbsup",
+          "points": {
+            "thumb_tip": [
+              11.49,
+              133.14
+            ],
+            "wrist": [
+              229.96,
+              19.72
+            ]
+          },
+          "rotated": -90.0,
+          "widths": {
+            "wrist": 167.43
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.42,
+            0.03
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.04,
+            0.55
+          ],
+          "depth": 58.6,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.0622,
+            0.6004
+          ],
+          "width": 167.43
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "thumbsup"
+    },
+    "redpanda-paws-parts/05": {
+      "confidence": 0.5,
+      "facing": "back",
+      "note": "smooth back of the hand; index curled at the left over the thumb below it (de-fringed copy of redpanda-hands-parts/06, make_paws.py)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 65.2
+          },
+          "file": "variants/redpanda_hand_l_grip.png",
+          "mirrored": true,
+          "name": "hand_l_grip",
+          "points": {
+            "fingertip": [
+              352.3,
+              336.82
+            ],
+            "thumb_tip": [
+              266.29,
+              430.42
+            ],
+            "wrist": [
+              352.3,
+              105.38
+            ]
+          },
+          "rotated": 38.09,
+          "widths": {
+            "wrist": 186.27
+          }
+        },
+        {
+          "depths": {
+            "wrist": 65.2
+          },
+          "file": "variants/redpanda_hand_r_grip.png",
+          "mirrored": false,
+          "name": "hand_r_grip",
+          "points": {
+            "fingertip": [
+              153.7,
+              336.82
+            ],
+            "thumb_tip": [
+              239.71,
+              430.42
+            ],
+            "wrist": [
+              153.7,
+              105.38
+            ]
+          },
+          "rotated": 38.09,
+          "widths": {
+            "wrist": 186.27
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.12,
+            0.5
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.15,
+            0.82
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.55,
+            0.04
+          ],
+          "depth": 65.2,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 186.27
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "grip"
+    },
+    "redpanda-point-palm-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-point-palm-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-point-palm-parts/02": {
+      "confidence": 0.0,
+      "note": "point painted back-facing again (Jev cue score -0.42, back); replaced by redpanda-point-palm2-parts/00",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-point-palm2-parts/00": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "palm pad, curled fingertips and the thumb across the palm show; index down at the right",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 156.13
+          },
+          "file": "variants/redpanda_hand_l_point.png",
+          "mirrored": false,
+          "name": "hand_l_point",
+          "points": {
+            "fingertip": [
+              493.17,
+              1156.81
+            ],
+            "thumb_tip": [
+              670.45,
+              529.12
+            ],
+            "wrist": [
+              493.17,
+              95.55
+            ]
+          },
+          "rotated": -8.7,
+          "widths": {
+            "wrist": 446.07
+          }
+        },
+        {
+          "depths": {
+            "wrist": 156.13
+          },
+          "file": "variants/redpanda_hand_r_point.png",
+          "mirrored": true,
+          "name": "hand_r_point",
+          "points": {
+            "fingertip": [
+              337.83,
+              1156.81
+            ],
+            "thumb_tip": [
+              160.55,
+              529.12
+            ],
+            "wrist": [
+              337.83,
+              95.55
+            ]
+          },
+          "rotated": -8.7,
+          "widths": {
+            "wrist": 446.07
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.74,
+            0.98
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.86,
+            0.4
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.04
+          ],
+          "depth": 156.13,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 446.07
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "point"
+    },
+    "redpanda-point-palm2-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-poses-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-poses-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-poses-parts/02": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (row-2 hand, rest boot from the poses sheet, second tail, ghosted point hand)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-poses-parts/03": {
+      "confidence": 0.0,
+      "note": "replaced by its taller-shaft copy redpanda-boots-parts/tiptoe_03 (make_boots.py)",
+      "outputs": [],
+      "points": {},
+      "role": "foot",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-poses-parts/04": {
+      "confidence": 0.0,
+      "note": "replaced by its taller-shaft copy redpanda-boots-parts/tiptoe_04 (make_boots.py)",
+      "outputs": [],
+      "points": {},
+      "role": "foot",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-sleeves-parts/00": {
+      "confidence": 0.0,
+      "note": "replaced by its widened copy redpanda-sleeves-wide-parts/00 (make_sleeve_wide.py)",
+      "outputs": [],
+      "points": {},
+      "role": "arm",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-sleeves-parts/01": {
+      "confidence": 0.0,
+      "note": "replaced by its widened copy redpanda-sleeves-wide-parts/01 (make_sleeve_wide.py)",
+      "outputs": [],
+      "points": {},
+      "role": "arm",
+      "side": "",
+      "status": "ignored"
+    },
+    "redpanda-sleeves-wide-parts/00": {
+      "confidence": 0.8,
+      "note": "whole sleeve; points on the measured centreline; elbow at the master's elbow ratio (0.525)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 220.01
+          },
+          "file": "body/redpanda_arm_l.png",
+          "mirrored": false,
+          "name": "arm_l",
+          "points": {
+            "elbow": [
+              643.22,
+              934.07
+            ],
+            "shoulder": [
+              539.63,
+              334.74
+            ],
+            "wrist": [
+              539.63,
+              1525.47
+            ]
+          },
+          "rotated": -6.54,
+          "widths": {
+            "shoulder": 561.18,
+            "wrist": 628.61
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.61,
+            0.58
+          ],
+          "kind": "point"
+        },
+        "shoulder": {
+          "at": [
+            0.412,
+            0.17
+          ],
+          "kind": "round_end",
+          "snap": "ok",
+          "snapped": [
+            0.4283,
+            0.1927
+          ],
+          "width": 561.18
+        },
+        "wrist": {
+          "at": [
+            0.564,
+            0.965
+          ],
+          "depth": 220.01,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5722,
+            0.9777
+          ],
+          "width": 628.61
+        }
+      },
+      "role": "arm",
+      "side": "l",
+      "status": "fixed"
+    },
+    "redpanda-sleeves-wide-parts/01": {
+      "confidence": 0.8,
+      "note": "whole sleeve; points on the measured centreline; elbow at the master's elbow ratio (0.53)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 220.71
+          },
+          "file": "body/redpanda_arm_r.png",
+          "mirrored": false,
+          "name": "arm_r",
+          "points": {
+            "elbow": [
+              360.34,
+              869.42
+            ],
+            "shoulder": [
+              480.74,
+              254.83
+            ],
+            "wrist": [
+              479.43,
+              1452.41
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "shoulder": 516.12,
+            "wrist": 630.6
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.419,
+            0.58
+          ],
+          "kind": "point"
+        },
+        "shoulder": {
+          "at": [
+            0.559,
+            0.17
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 516.12
+        },
+        "wrist": {
+          "at": [
+            0.501,
+            0.965
+          ],
+          "depth": 220.71,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5575,
+            0.9689
+          ],
+          "width": 630.6
+        }
+      },
+      "role": "arm",
+      "side": "r",
+      "status": "fixed"
+    },
+    "redpanda-trousers-parts/00": {
+      "confidence": 0.8,
+      "note": "the sheet's 'hips' is the whole trousers at the master's length (belt to hem), so it is used leg-less: openings at the hems, boots under them (feet under_hips, the moose layout); the master's trousers have no cuffs",
+      "outputs": [
+        {
+          "depths": {
+            "hip_l": 60.48,
+            "hip_r": 58.24
+          },
+          "file": "body/redpanda_hips.png",
+          "mirrored": false,
+          "name": "hips",
+          "points": {
+            "hip_l": [
+              376.93,
+              487.08
+            ],
+            "hip_r": [
+              108.07,
+              488.08
+            ],
+            "waist": [
+              240.0,
+              91.83
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "hip_l": 172.8,
+            "hip_r": 166.4
+          }
+        }
+      ],
+      "points": {
+        "hip_l": {
+          "at": [
+            0.76,
+            0.9383
+          ],
+          "depth": 60.48,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.7853,
+            0.9532
+          ],
+          "width": 172.8
+        },
+        "hip_r": {
+          "at": [
+            0.24,
+            0.9383
+          ],
+          "depth": 58.24,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.2252,
+            0.9551
+          ],
+          "width": 166.4
+        },
+        "waist": {
+          "at": [
+            0.5,
+            0.1797
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "hips",
+      "side": "",
+      "status": "fixed"
+    }
+  },
+  "version": 1
+}

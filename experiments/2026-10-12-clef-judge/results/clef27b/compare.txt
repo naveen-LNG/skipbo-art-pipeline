@@ -1,0 +1,11 @@
+condition                                 n |       clef-flash       |          clef         
+                                            |   AUROC @10%FA   dir  |   AUROC @10%FA   dir 
+Joint crop, render only (R2)            363 |    0.65    21%   26%  |    0.62    22%   27% 
+Joint crop + master crop (R2)           363 |    0.62    31%   21%  |    0.63     9%   29% 
+Full frame, planted (120)               120 |    0.38     9%   24%  |    0.41     7%   27% 
+Full frame + master (60, no clean)       60 | mean 0.23      -   27%  | mean 0.20      -   22% 
+Full frame, real reviewed (38)           38 |    0.61    21%     -  |    0.63    32%     - 
+pairwise clef-flash: 15/19 | full body 10/11 (mean 0.66) | sleeves 5/8 (mean 0.55) | image_1 bias 27/38
+pairwise clef      : 17/19 | full body 10/11 (mean 0.76) | sleeves 7/8 (mean 0.60) | image_1 bias 22/38
+usage clef-flash: 1234 calls, 1147k tokens, ~4.0k Neurons, median latency 0.53s
+usage clef      : 982 calls, 978k tokens, ~21.3k Neurons, median latency 0.83s

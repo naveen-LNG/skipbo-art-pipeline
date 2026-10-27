@@ -1,0 +1,202 @@
+{
+  "structure": {
+    "pass": true,
+    "pivot_off_joint": {},
+    "reversed_bones": {},
+    "weak_joints": {},
+    "slivers": {},
+    "fragments": {},
+    "draw_order": {},
+    "variant_misfit": {},
+    "mesh_fold": {}
+  },
+  "setup": {
+    "pass": true,
+    "silhouette_iou": 0.907
+  },
+  "seams": {
+    "pass": true,
+    "seams": {
+      "hips/tail": 0.0,
+      "hips/boot_l": 0.0,
+      "hips/boot_r": 0.0,
+      "upperarm_l/hand_l": 0.0,
+      "upperarm_r/hand_r": 0.0,
+      "torso/tail": 0.02,
+      "torso/hips": 0.022,
+      "torso/upperarm_l": 0.0,
+      "torso/upperarm_r": 0.0,
+      "head/torso": 0.0,
+      "hand_l/torso": 0.017,
+      "upperarm_l/torso": 0.019,
+      "hips/prop_hurdle": 0.085,
+      "mouth_patch/torso": 0.0,
+      "mouth_patch/head": 0.0
+    }
+  },
+  "blink": {
+    "pass": true,
+    "frames": 31,
+    "duration": 1.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "idle": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "wave": {
+    "pass": true,
+    "frames": 91,
+    "duration": 3.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "cheer_jump": {
+    "pass": true,
+    "frames": 58,
+    "duration": 1.9,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "thumbs_up": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "point": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "hold_card": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "emotions": {
+    "pass": true,
+    "frames": 217,
+    "duration": 7.2,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "walk": {
+    "pass": true,
+    "frames": 31,
+    "duration": 1.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "run": {
+    "pass": true,
+    "frames": 20,
+    "duration": 0.64,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "squat": {
+    "pass": true,
+    "frames": 61,
+    "duration": 2.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "jump_hurdle": {
+    "pass": true,
+    "frames": 67,
+    "duration": 2.2,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "wave_flag": {
+    "pass": true,
+    "frames": 97,
+    "duration": 3.2,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "talk_line1": {
+    "pass": true,
+    "frames": 212,
+    "duration": 7.025,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "talk_line2": {
+    "pass": true,
+    "frames": 167,
+    "duration": 5.55,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  }
+}

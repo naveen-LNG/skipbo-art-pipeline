@@ -1,0 +1,4068 @@
+{
+ "last_node_id": 411,
+ "last_link_id": 84,
+ "nodes": [
+  {
+   "id": 10,
+   "type": "LoadImage",
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      26,
+      54,
+      82
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "SKIPBO_REF_beaver_master.png",
+    "image"
+   ],
+   "title": "Approved master (rest pose)"
+  },
+  {
+   "id": 11,
+   "type": "LoadImage",
+   "pos": [
+    0,
+    360
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      27,
+      55,
+      83
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "SKIPBO_PROP_hurdle.png",
+    "image"
+   ],
+   "title": "Prop (optional: bypass if none)"
+  },
+  {
+   "id": 20,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      22,
+      50,
+      78
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "A cheerful young beaver carpenter: warm chestnut-brown fur, a cream muzzle with two big white front teeth showing under a dark-brown nose, small round ears, and a broad flat dark-brown paddle tail. A turquoise knitted long-sleeved sweater with a ribbed collar and ribbed cuffs, mustard-yellow trousers held by a brown belt with a gold buckle, and red boots. Dark-brown mitten paws."
+   ],
+   "title": "CHARACTER NOTES (edit me)"
+  },
+  {
+   "id": 21,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    450.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      6,
+      34,
+      62
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "The beaver is jumping over a small hurdle, like a child playing at a sports day. The hurdle stands on the ground right in front of its legs, about as tall as the boots plus the rolled-up trouser cuffs, and a little wider than the trousers. The beaver crouches, springs straight up and over it toward the viewer, and lands on the near side, light and bouncy, full of joy. The hurdle never moves."
+   ],
+   "title": "WHAT IS HAPPENING: the action and why (edit me)"
+  },
+  {
+   "id": 22,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    900.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2,
+      30,
+      58
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "image_2 = THE HURDLE, a prop already painted for this game: two chunky wooden posts on round feet with one thick red-and-white striped bar between them. Paint this exact hurdle, same colours and shapes; its size next to the character is given below."
+   ],
+   "title": "PROP ROLE (clear it when there is no prop)"
+  },
+  {
+   "id": 23,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    1350.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      14,
+      42,
+      70
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "The ground line is the same as in image_1. If the whole pose does not fit at image_1's scale, zoom out just enough that everything fits inside the frame with a small margin, and keep the character centred."
+   ],
+   "title": "PLACEMENT (ground line, zoom)"
+  },
+  {
+   "id": 24,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    1800
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      18,
+      46,
+      74
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "The hurdle from image_2 on the ground in front of the legs, the pose as described."
+   ],
+   "title": "CHECK: one line the frames must meet"
+  },
+  {
+   "id": 25,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    840,
+    0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      10
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "The moment before take-off, a deep spring-loaded crouch behind the hurdle, the striped bar crossing in front of the shins. Both knees are bent and spread wide apart, out to the picture's left and right, both boots flat on the ground. HOW LOW: measured from the boot soles, the belt is now only half as high as it is in image_1, at about the height where the knees are in image_1. The sweater, the arms and the head all move down together with the belt by that same amount, so there is a wide band of empty background above the ears that was not there in image_1. The character is not painted smaller: head, sweater, paws and boots keep exactly image_1's size; only the legs fold. The thighs run almost level, out to the picture's left and right from the hips to the knees, and the shins come straight down from the knees into the boots, so each leg makes a wide bent corner. Both arms swing down straight beside the body, the open paws low at the sides of the knees, ready to be thrown up. The torso is upright and square to the viewer. The head is up and the eyes look over the bar at the viewer, with a determined, excited little smile."
+   ],
+   "title": "KEY A: the pose in this frame (edit me)"
+  },
+  {
+   "id": 26,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    840,
+    450.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      38
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "The top of the jump, the beaver in mid-air above the hurdle. Both boots are tucked up high, the soles just above the striped bar, the knees bent and drawn up toward the belly and spread out to the picture's left and right, so the legs make a wide diamond shape. The hurdle stands where it stood, on the ground, below the boots, with background visible between the boots and the bar. Both arms are flung up and out to the sides above the shoulders, paws open with the fingers spread. The tail swings up behind. The mouth is wide open in a delighted shout and the eyes are wide."
+   ],
+   "title": "KEY B: the pose in this frame (edit me)"
+  },
+  {
+   "id": 27,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    840,
+    900.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      66
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "The landing, on the near side of the hurdle: both boots have just touched the ground, flat, a little wider apart than in image_1, and the hurdle now stands behind the legs, its striped bar showing behind the knees. The knees bend deeply and spread wide apart, out to the picture's left and right, to soak up the landing, the trousers bunching at the knees. HOW LOW: measured from the boot soles, the belt is now only half as high as it is in image_1, at about the height where the knees are in image_1. The sweater, the arms and the head all move down together with the belt by that same amount, so there is a wide band of empty background above the ears that was not there in image_1. The character is not painted smaller: head, sweater, paws and boots keep exactly image_1's size; only the legs fold. The thighs run almost level, out to the picture's left and right from the hips to the knees, and the shins come straight down from the knees into the boots, so each leg makes a wide bent corner. Both arms are out to the sides at about shoulder height for balance, paws open. The tail bounces down to the ground behind. A big happy laugh with the mouth open."
+   ],
+   "title": "KEY C: the pose in this frame (edit me)"
+  },
+  {
+   "id": 300,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1260.0,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 10,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved, in its rest pose. This picture shows the same character on the same canvas, at the same size and painted in exactly the same way, only in a different pose.\n"
+   ],
+   "title": "key A prompt part 1 (fixed)"
+  },
+  {
+   "id": 302,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1596.0,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 19,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      4
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint one key frame of a 2D game animation of the character from image_1: the single moment described below, held still, as the animator's target drawing for that moment. A cartoon animator would draw this frame with a clear, strong, readable pose: weight, balance and the line of action read at once from the silhouette.\n\nWHAT IS HAPPENING:\n"
+   ],
+   "title": "key A prompt part 3 (fixed)"
+  },
+  {
+   "id": 304,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1931.9999999999998,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 28,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      8
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nTHE POSE IN THIS FRAME:\n"
+   ],
+   "title": "key A prompt part 5 (fixed)"
+  },
+  {
+   "id": 306,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    2268.0,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 37,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      12
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nCAMERA AND BODY TURN: This is a 2D game character that is only ever drawn from the front, like a paper puppet, so the camera has not moved since image_1 and the character never turns. The head is painted exactly as in image_1, straight on and symmetrical: the nose sits in the exact horizontal middle of the face, both eyes are the same size, both ears show at the same height. The chest and the belt buckle face the viewer squarely, in the middle of the body, with one shoulder at each side. The head may tip a little to one side, the eyes may glance toward something, and the body may lean a little sideways, but the head, chest and hips never rotate toward either side and never show three-quarter view or profile. All movement happens in the picture's plane: arms swing out to the sides, up and down; knees bend out to the sides, toward the picture's left and right.\n\nSIZE AND PLACEMENT: Same canvas and the same scale as image_1: the head, paws, boots and sweater are exactly as big as they are in image_1, so this frame can be laid over image_1. "
+   ],
+   "title": "key A prompt part 7 (fixed)"
+  },
+  {
+   "id": 308,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    2604.0,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 46,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      16
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nThe background is one flat plain light grey, exactly as in image_1, with nothing else in it except what is named above, and no cast shadow, motion lines, speed lines, dust, text or labels.\n\nFINAL CHECK:\n1. Exactly the character of image_1: same costume, colours, proportions and size.\n2. Front view: face, chest and belt buckle face the viewer; no turn of the body.\n3. "
+   ],
+   "title": "key A prompt part 9 (fixed)"
+  },
+  {
+   "id": 310,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    2940.0,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 55,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      20
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n4. Painted like image_1: airbrushed soft volume, smooth, no outlines.\n5. Flat light grey background; one character; no text or motion lines.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+   ],
+   "title": "key A prompt part 11 (fixed)"
+  },
+  {
+   "id": 312,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    3276.0000000000005,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 64,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      24
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n"
+   ],
+   "title": "key A prompt part 13 (fixed)"
+  },
+  {
+   "id": 320,
+   "type": "StringConcatenate",
+   "pos": [
+    1260.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 1,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 2,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 321,
+   "type": "StringConcatenate",
+   "pos": [
+    1428.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 3,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 4,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 322,
+   "type": "StringConcatenate",
+   "pos": [
+    1596.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 20,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 5,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 6,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 323,
+   "type": "StringConcatenate",
+   "pos": [
+    1764.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 25,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 7,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 8,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 324,
+   "type": "StringConcatenate",
+   "pos": [
+    1931.9999999999998,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 29,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 9,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 10,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      11
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 325,
+   "type": "StringConcatenate",
+   "pos": [
+    2100.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 34,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 11,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 12,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      13
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 326,
+   "type": "StringConcatenate",
+   "pos": [
+    2268.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 38,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 13,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 14,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      15
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 327,
+   "type": "StringConcatenate",
+   "pos": [
+    2436.0000000000005,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 43,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 15,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 16,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      17
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 328,
+   "type": "StringConcatenate",
+   "pos": [
+    2604.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 47,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 17,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 18,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      19
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 329,
+   "type": "StringConcatenate",
+   "pos": [
+    2772.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 52,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 19,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 20,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      21
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 330,
+   "type": "StringConcatenate",
+   "pos": [
+    2940.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 56,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 21,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 22,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      23
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 331,
+   "type": "StringConcatenate",
+   "pos": [
+    3108.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 61,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 23,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 24,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      25
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 40,
+   "type": "NanoBananaAIO",
+   "pos": [
+    4620,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 67,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 25,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "image_1",
+     "type": "IMAGE",
+     "link": 26
+    },
+    {
+     "name": "image_2",
+     "type": "IMAGE",
+     "link": 27
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      28
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "thinking",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "grounding_sources",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "NanoBananaAIO"
+   },
+   "widgets_values": [
+    "gemini-3-pro-image-preview",
+    "",
+    1,
+    false,
+    "3:4",
+    "2K",
+    0.5
+   ],
+   "title": "Key A (Nano Banana Pro)"
+  },
+  {
+   "id": 41,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 70,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 28
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_KEYPOSES/character/key_A"
+   ]
+  },
+  {
+   "id": 340,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1260.0,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 12,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      29
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved, in its rest pose. This picture shows the same character on the same canvas, at the same size and painted in exactly the same way, only in a different pose.\n"
+   ],
+   "title": "key B prompt part 1 (fixed)"
+  },
+  {
+   "id": 342,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1596.0,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 21,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      32
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint one key frame of a 2D game animation of the character from image_1: the single moment described below, held still, as the animator's target drawing for that moment. A cartoon animator would draw this frame with a clear, strong, readable pose: weight, balance and the line of action read at once from the silhouette.\n\nWHAT IS HAPPENING:\n"
+   ],
+   "title": "key B prompt part 3 (fixed)"
+  },
+  {
+   "id": 344,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1931.9999999999998,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 30,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      36
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nTHE POSE IN THIS FRAME:\n"
+   ],
+   "title": "key B prompt part 5 (fixed)"
+  },
+  {
+   "id": 346,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    2268.0,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 39,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      40
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nCAMERA AND BODY TURN: This is a 2D game character that is only ever drawn from the front, like a paper puppet, so the camera has not moved since image_1 and the character never turns. The head is painted exactly as in image_1, straight on and symmetrical: the nose sits in the exact horizontal middle of the face, both eyes are the same size, both ears show at the same height. The chest and the belt buckle face the viewer squarely, in the middle of the body, with one shoulder at each side. The head may tip a little to one side, the eyes may glance toward something, and the body may lean a little sideways, but the head, chest and hips never rotate toward either side and never show three-quarter view or profile. All movement happens in the picture's plane: arms swing out to the sides, up and down; knees bend out to the sides, toward the picture's left and right.\n\nSIZE AND PLACEMENT: Same canvas and the same scale as image_1: the head, paws, boots and sweater are exactly as big as they are in image_1, so this frame can be laid over image_1. "
+   ],
+   "title": "key B prompt part 7 (fixed)"
+  },
+  {
+   "id": 348,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    2604.0,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 48,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      44
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nThe background is one flat plain light grey, exactly as in image_1, with nothing else in it except what is named above, and no cast shadow, motion lines, speed lines, dust, text or labels.\n\nFINAL CHECK:\n1. Exactly the character of image_1: same costume, colours, proportions and size.\n2. Front view: face, chest and belt buckle face the viewer; no turn of the body.\n3. "
+   ],
+   "title": "key B prompt part 9 (fixed)"
+  },
+  {
+   "id": 350,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    2940.0,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 57,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      48
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n4. Painted like image_1: airbrushed soft volume, smooth, no outlines.\n5. Flat light grey background; one character; no text or motion lines.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+   ],
+   "title": "key B prompt part 11 (fixed)"
+  },
+  {
+   "id": 352,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    3276.0000000000005,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 65,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      52
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n"
+   ],
+   "title": "key B prompt part 13 (fixed)"
+  },
+  {
+   "id": 360,
+   "type": "StringConcatenate",
+   "pos": [
+    1260.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 29,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 30,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      31
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 361,
+   "type": "StringConcatenate",
+   "pos": [
+    1428.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 31,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 32,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      33
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 362,
+   "type": "StringConcatenate",
+   "pos": [
+    1596.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 22,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 33,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 34,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      35
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 363,
+   "type": "StringConcatenate",
+   "pos": [
+    1764.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 26,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 35,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 36,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      37
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 364,
+   "type": "StringConcatenate",
+   "pos": [
+    1931.9999999999998,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 31,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 37,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 38,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      39
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 365,
+   "type": "StringConcatenate",
+   "pos": [
+    2100.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 35,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 39,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 40,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      41
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 366,
+   "type": "StringConcatenate",
+   "pos": [
+    2268.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 40,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 41,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 42,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      43
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 367,
+   "type": "StringConcatenate",
+   "pos": [
+    2436.0000000000005,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 44,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 43,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 44,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      45
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 368,
+   "type": "StringConcatenate",
+   "pos": [
+    2604.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 49,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 45,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 46,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      47
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 369,
+   "type": "StringConcatenate",
+   "pos": [
+    2772.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 53,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 47,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 48,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      49
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 370,
+   "type": "StringConcatenate",
+   "pos": [
+    2940.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 58,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 49,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 50,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      51
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 371,
+   "type": "StringConcatenate",
+   "pos": [
+    3108.0,
+    630.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 62,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 51,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 52,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      53
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 42,
+   "type": "NanoBananaAIO",
+   "pos": [
+    4620,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 68,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 53,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "image_1",
+     "type": "IMAGE",
+     "link": 54
+    },
+    {
+     "name": "image_2",
+     "type": "IMAGE",
+     "link": 55
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      56
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "thinking",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "grounding_sources",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "NanoBananaAIO"
+   },
+   "widgets_values": [
+    "gemini-3-pro-image-preview",
+    "",
+    1,
+    false,
+    "3:4",
+    "2K",
+    0.5
+   ],
+   "title": "Key B (Nano Banana Pro)"
+  },
+  {
+   "id": 43,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 71,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 56
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_KEYPOSES/character/key_B"
+   ]
+  },
+  {
+   "id": 380,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1260.0,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 14,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      57
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved, in its rest pose. This picture shows the same character on the same canvas, at the same size and painted in exactly the same way, only in a different pose.\n"
+   ],
+   "title": "key C prompt part 1 (fixed)"
+  },
+  {
+   "id": 382,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1596.0,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 23,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      60
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint one key frame of a 2D game animation of the character from image_1: the single moment described below, held still, as the animator's target drawing for that moment. A cartoon animator would draw this frame with a clear, strong, readable pose: weight, balance and the line of action read at once from the silhouette.\n\nWHAT IS HAPPENING:\n"
+   ],
+   "title": "key C prompt part 3 (fixed)"
+  },
+  {
+   "id": 384,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1931.9999999999998,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 32,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      64
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nTHE POSE IN THIS FRAME:\n"
+   ],
+   "title": "key C prompt part 5 (fixed)"
+  },
+  {
+   "id": 386,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    2268.0,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 41,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      68
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nCAMERA AND BODY TURN: This is a 2D game character that is only ever drawn from the front, like a paper puppet, so the camera has not moved since image_1 and the character never turns. The head is painted exactly as in image_1, straight on and symmetrical: the nose sits in the exact horizontal middle of the face, both eyes are the same size, both ears show at the same height. The chest and the belt buckle face the viewer squarely, in the middle of the body, with one shoulder at each side. The head may tip a little to one side, the eyes may glance toward something, and the body may lean a little sideways, but the head, chest and hips never rotate toward either side and never show three-quarter view or profile. All movement happens in the picture's plane: arms swing out to the sides, up and down; knees bend out to the sides, toward the picture's left and right.\n\nSIZE AND PLACEMENT: Same canvas and the same scale as image_1: the head, paws, boots and sweater are exactly as big as they are in image_1, so this frame can be laid over image_1. "
+   ],
+   "title": "key C prompt part 7 (fixed)"
+  },
+  {
+   "id": 388,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    2604.0,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 50,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      72
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nThe background is one flat plain light grey, exactly as in image_1, with nothing else in it except what is named above, and no cast shadow, motion lines, speed lines, dust, text or labels.\n\nFINAL CHECK:\n1. Exactly the character of image_1: same costume, colours, proportions and size.\n2. Front view: face, chest and belt buckle face the viewer; no turn of the body.\n3. "
+   ],
+   "title": "key C prompt part 9 (fixed)"
+  },
+  {
+   "id": 390,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    2940.0,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 59,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      76
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n4. Painted like image_1: airbrushed soft volume, smooth, no outlines.\n5. Flat light grey background; one character; no text or motion lines.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+   ],
+   "title": "key C prompt part 11 (fixed)"
+  },
+  {
+   "id": 392,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    3276.0000000000005,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 66,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      80
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n"
+   ],
+   "title": "key C prompt part 13 (fixed)"
+  },
+  {
+   "id": 400,
+   "type": "StringConcatenate",
+   "pos": [
+    1260.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 57,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 58,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      59
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 401,
+   "type": "StringConcatenate",
+   "pos": [
+    1428.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 18,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 59,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 60,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      61
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 402,
+   "type": "StringConcatenate",
+   "pos": [
+    1596.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 24,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 61,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 62,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      63
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 403,
+   "type": "StringConcatenate",
+   "pos": [
+    1764.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 27,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 63,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 64,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      65
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 404,
+   "type": "StringConcatenate",
+   "pos": [
+    1931.9999999999998,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 33,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 65,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 66,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      67
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 405,
+   "type": "StringConcatenate",
+   "pos": [
+    2100.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 36,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 67,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 68,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      69
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 406,
+   "type": "StringConcatenate",
+   "pos": [
+    2268.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 42,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 69,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 70,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      71
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 407,
+   "type": "StringConcatenate",
+   "pos": [
+    2436.0000000000005,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 45,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 71,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 72,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      73
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 408,
+   "type": "StringConcatenate",
+   "pos": [
+    2604.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 51,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 73,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 74,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      75
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 409,
+   "type": "StringConcatenate",
+   "pos": [
+    2772.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 54,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 75,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 76,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      77
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 410,
+   "type": "StringConcatenate",
+   "pos": [
+    2940.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 60,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 77,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 78,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      79
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 411,
+   "type": "StringConcatenate",
+   "pos": [
+    3108.0,
+    1080.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 63,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 79,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 80,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      81
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 44,
+   "type": "NanoBananaAIO",
+   "pos": [
+    4620,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 69,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 81,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "image_1",
+     "type": "IMAGE",
+     "link": 82
+    },
+    {
+     "name": "image_2",
+     "type": "IMAGE",
+     "link": 83
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      84
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "thinking",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "grounding_sources",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "NanoBananaAIO"
+   },
+   "widgets_values": [
+    "gemini-3-pro-image-preview",
+    "",
+    1,
+    false,
+    "3:4",
+    "2K",
+    0.5
+   ],
+   "title": "Key C (Nano Banana Pro)"
+  },
+  {
+   "id": 45,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 72,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 84
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_KEYPOSES/character/key_C"
+   ]
+  },
+  {
+   "id": 1,
+   "type": "MarkdownNote",
+   "pos": [
+    0,
+    -440
+   ],
+   "size": [
+    1240,
+    380
+   ],
+   "flags": {},
+   "order": 73,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {},
+   "title": "How to use",
+   "widgets_values": [
+    "## Master → key poses (animation targets)\n\n**In:** the approved master in its rest pose, and optionally a prop already painted for the game (a hurdle, a flag, a soil mound). **Out:** three key frames of one action, `key_A/B/C`: the same character on the same canvas, in the poses the animation must reach.\n\nThe rig only knows the rest pose. These frames show the start, middle and end of an action, so the rig can be built to hit them, and they supply drawings the rig lacks, such as bent legs for a squat or tucked legs in a jump.\n\n1. Load the master into **Approved master**. If there's a prop, load it into **Prop** and describe it in **PROP ROLE**. With no prop, bypass the Prop node (Ctrl+B) and clear **PROP ROLE**.\n2. **WHAT IS HAPPENING:** the action and its purpose. \"Crouching to plant a seed\" gives a different crouch from \"squats at the gym\".\n3. **KEY A/B/C:** one pose each.\n   - Say where the knees and elbows go: \"knees bent and spread out to the picture's left and right\".\n   - Say how low in measured terms: \"the belt is now half as high as in the master, the head moves down with it\".\n   - Say where the eyes look.\n4. Queue. That makes 3 Nano Banana Pro calls (billed), about 1–2 minutes.\n5. Check each frame:\n   - face, chest and buckle still face the viewer;\n   - knees really bend (without a measured \"how low\" the model keeps the legs straight);\n   - same character and size.\n\nLessons from the beaver: without the \"paper puppet, never turns\" camera paragraph the body turned to three-quarter view, and a crouch without a measured drop came back with straight legs. The model may also put a held prop in the other paw; mirror the frame when reading it.\nMaintained in the `comfy/` repo (`tools/build_keypose_workflow.py`, prompt `references/prompts/spine/keypose.txt`)."
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   300,
+   0,
+   320,
+   0,
+   "STRING"
+  ],
+  [
+   2,
+   22,
+   0,
+   320,
+   1,
+   "STRING"
+  ],
+  [
+   3,
+   320,
+   0,
+   321,
+   0,
+   "STRING"
+  ],
+  [
+   4,
+   302,
+   0,
+   321,
+   1,
+   "STRING"
+  ],
+  [
+   5,
+   321,
+   0,
+   322,
+   0,
+   "STRING"
+  ],
+  [
+   6,
+   21,
+   0,
+   322,
+   1,
+   "STRING"
+  ],
+  [
+   7,
+   322,
+   0,
+   323,
+   0,
+   "STRING"
+  ],
+  [
+   8,
+   304,
+   0,
+   323,
+   1,
+   "STRING"
+  ],
+  [
+   9,
+   323,
+   0,
+   324,
+   0,
+   "STRING"
+  ],
+  [
+   10,
+   25,
+   0,
+   324,
+   1,
+   "STRING"
+  ],
+  [
+   11,
+   324,
+   0,
+   325,
+   0,
+   "STRING"
+  ],
+  [
+   12,
+   306,
+   0,
+   325,
+   1,
+   "STRING"
+  ],
+  [
+   13,
+   325,
+   0,
+   326,
+   0,
+   "STRING"
+  ],
+  [
+   14,
+   23,
+   0,
+   326,
+   1,
+   "STRING"
+  ],
+  [
+   15,
+   326,
+   0,
+   327,
+   0,
+   "STRING"
+  ],
+  [
+   16,
+   308,
+   0,
+   327,
+   1,
+   "STRING"
+  ],
+  [
+   17,
+   327,
+   0,
+   328,
+   0,
+   "STRING"
+  ],
+  [
+   18,
+   24,
+   0,
+   328,
+   1,
+   "STRING"
+  ],
+  [
+   19,
+   328,
+   0,
+   329,
+   0,
+   "STRING"
+  ],
+  [
+   20,
+   310,
+   0,
+   329,
+   1,
+   "STRING"
+  ],
+  [
+   21,
+   329,
+   0,
+   330,
+   0,
+   "STRING"
+  ],
+  [
+   22,
+   20,
+   0,
+   330,
+   1,
+   "STRING"
+  ],
+  [
+   23,
+   330,
+   0,
+   331,
+   0,
+   "STRING"
+  ],
+  [
+   24,
+   312,
+   0,
+   331,
+   1,
+   "STRING"
+  ],
+  [
+   25,
+   331,
+   0,
+   40,
+   0,
+   "STRING"
+  ],
+  [
+   26,
+   10,
+   0,
+   40,
+   1,
+   "IMAGE"
+  ],
+  [
+   27,
+   11,
+   0,
+   40,
+   2,
+   "IMAGE"
+  ],
+  [
+   28,
+   40,
+   0,
+   41,
+   0,
+   "IMAGE"
+  ],
+  [
+   29,
+   340,
+   0,
+   360,
+   0,
+   "STRING"
+  ],
+  [
+   30,
+   22,
+   0,
+   360,
+   1,
+   "STRING"
+  ],
+  [
+   31,
+   360,
+   0,
+   361,
+   0,
+   "STRING"
+  ],
+  [
+   32,
+   342,
+   0,
+   361,
+   1,
+   "STRING"
+  ],
+  [
+   33,
+   361,
+   0,
+   362,
+   0,
+   "STRING"
+  ],
+  [
+   34,
+   21,
+   0,
+   362,
+   1,
+   "STRING"
+  ],
+  [
+   35,
+   362,
+   0,
+   363,
+   0,
+   "STRING"
+  ],
+  [
+   36,
+   344,
+   0,
+   363,
+   1,
+   "STRING"
+  ],
+  [
+   37,
+   363,
+   0,
+   364,
+   0,
+   "STRING"
+  ],
+  [
+   38,
+   26,
+   0,
+   364,
+   1,
+   "STRING"
+  ],
+  [
+   39,
+   364,
+   0,
+   365,
+   0,
+   "STRING"
+  ],
+  [
+   40,
+   346,
+   0,
+   365,
+   1,
+   "STRING"
+  ],
+  [
+   41,
+   365,
+   0,
+   366,
+   0,
+   "STRING"
+  ],
+  [
+   42,
+   23,
+   0,
+   366,
+   1,
+   "STRING"
+  ],
+  [
+   43,
+   366,
+   0,
+   367,
+   0,
+   "STRING"
+  ],
+  [
+   44,
+   348,
+   0,
+   367,
+   1,
+   "STRING"
+  ],
+  [
+   45,
+   367,
+   0,
+   368,
+   0,
+   "STRING"
+  ],
+  [
+   46,
+   24,
+   0,
+   368,
+   1,
+   "STRING"
+  ],
+  [
+   47,
+   368,
+   0,
+   369,
+   0,
+   "STRING"
+  ],
+  [
+   48,
+   350,
+   0,
+   369,
+   1,
+   "STRING"
+  ],
+  [
+   49,
+   369,
+   0,
+   370,
+   0,
+   "STRING"
+  ],
+  [
+   50,
+   20,
+   0,
+   370,
+   1,
+   "STRING"
+  ],
+  [
+   51,
+   370,
+   0,
+   371,
+   0,
+   "STRING"
+  ],
+  [
+   52,
+   352,
+   0,
+   371,
+   1,
+   "STRING"
+  ],
+  [
+   53,
+   371,
+   0,
+   42,
+   0,
+   "STRING"
+  ],
+  [
+   54,
+   10,
+   0,
+   42,
+   1,
+   "IMAGE"
+  ],
+  [
+   55,
+   11,
+   0,
+   42,
+   2,
+   "IMAGE"
+  ],
+  [
+   56,
+   42,
+   0,
+   43,
+   0,
+   "IMAGE"
+  ],
+  [
+   57,
+   380,
+   0,
+   400,
+   0,
+   "STRING"
+  ],
+  [
+   58,
+   22,
+   0,
+   400,
+   1,
+   "STRING"
+  ],
+  [
+   59,
+   400,
+   0,
+   401,
+   0,
+   "STRING"
+  ],
+  [
+   60,
+   382,
+   0,
+   401,
+   1,
+   "STRING"
+  ],
+  [
+   61,
+   401,
+   0,
+   402,
+   0,
+   "STRING"
+  ],
+  [
+   62,
+   21,
+   0,
+   402,
+   1,
+   "STRING"
+  ],
+  [
+   63,
+   402,
+   0,
+   403,
+   0,
+   "STRING"
+  ],
+  [
+   64,
+   384,
+   0,
+   403,
+   1,
+   "STRING"
+  ],
+  [
+   65,
+   403,
+   0,
+   404,
+   0,
+   "STRING"
+  ],
+  [
+   66,
+   27,
+   0,
+   404,
+   1,
+   "STRING"
+  ],
+  [
+   67,
+   404,
+   0,
+   405,
+   0,
+   "STRING"
+  ],
+  [
+   68,
+   386,
+   0,
+   405,
+   1,
+   "STRING"
+  ],
+  [
+   69,
+   405,
+   0,
+   406,
+   0,
+   "STRING"
+  ],
+  [
+   70,
+   23,
+   0,
+   406,
+   1,
+   "STRING"
+  ],
+  [
+   71,
+   406,
+   0,
+   407,
+   0,
+   "STRING"
+  ],
+  [
+   72,
+   388,
+   0,
+   407,
+   1,
+   "STRING"
+  ],
+  [
+   73,
+   407,
+   0,
+   408,
+   0,
+   "STRING"
+  ],
+  [
+   74,
+   24,
+   0,
+   408,
+   1,
+   "STRING"
+  ],
+  [
+   75,
+   408,
+   0,
+   409,
+   0,
+   "STRING"
+  ],
+  [
+   76,
+   390,
+   0,
+   409,
+   1,
+   "STRING"
+  ],
+  [
+   77,
+   409,
+   0,
+   410,
+   0,
+   "STRING"
+  ],
+  [
+   78,
+   20,
+   0,
+   410,
+   1,
+   "STRING"
+  ],
+  [
+   79,
+   410,
+   0,
+   411,
+   0,
+   "STRING"
+  ],
+  [
+   80,
+   392,
+   0,
+   411,
+   1,
+   "STRING"
+  ],
+  [
+   81,
+   411,
+   0,
+   44,
+   0,
+   "STRING"
+  ],
+  [
+   82,
+   10,
+   0,
+   44,
+   1,
+   "IMAGE"
+  ],
+  [
+   83,
+   11,
+   0,
+   44,
+   2,
+   "IMAGE"
+  ],
+  [
+   84,
+   44,
+   0,
+   45,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "title": "Inputs: the approved master + an optional prop",
+   "bounding": [
+    -20,
+    -60,
+    420,
+    760
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Edit per action: notes, story, prop role, placement, check",
+   "bounding": [
+    400,
+    -60,
+    420,
+    2200
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Edit per key frame: A start, B middle, C end",
+   "bounding": [
+    820,
+    -60,
+    420,
+    1480
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Fixed prompt text (collapsed, do not edit here)",
+   "bounding": [
+    1240,
+    -60,
+    3360,
+    1480
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Nano Banana Pro: three key frames",
+   "bounding": [
+    4600,
+    -60,
+    840,
+    1480
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.45,
+   "offset": [
+    60,
+    520
+   ]
+  }
+ },
+ "version": 0.4
+}

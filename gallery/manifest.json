@@ -1,0 +1,1544 @@
+{
+ "generated_at": "2026-10-16T05:32:30",
+ "builder_version": 4,
+ "options": {
+  "scale": 0.5,
+  "max_page": 2048,
+  "pad": 4,
+  "filter": "MipMapLinearLinear,Linear",
+  "format": "webp",
+  "quality": 92,
+  "trim": true
+ },
+ "characters": [
+  "fox",
+  "moose",
+  "beaver",
+  "rabbit",
+  "redpanda",
+  "bear"
+ ],
+ "rigs": [
+  {
+   "id": "fox-legacy",
+   "character": "fox",
+   "variant": "legacy",
+   "name": "fox",
+   "json": "assets/fox-legacy/fox.json",
+   "atlas": "assets/fox-legacy/fox.atlas",
+   "pages": [
+    "assets/fox-legacy/fox_0.webp"
+   ],
+   "files": [
+    "assets/fox-legacy/fox.json",
+    "assets/fox-legacy/fox.atlas",
+    "assets/fox-legacy/fox_0.webp"
+   ],
+   "bounds": {
+    "x": -495.1,
+    "y": -14.8,
+    "width": 1081.9,
+    "height": 1394.9
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.4
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 13,
+    "slots": 12,
+    "regions": 36,
+    "meshes": 2,
+    "ik": 0,
+    "transform": 0,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-spine-pro/fox/rig_legacy",
+   "source_mtime": "2026-10-16T03:20:02",
+   "built_at": "2026-10-16T03:43:59",
+   "bytes": 575242,
+   "source_image_bytes": 9976916,
+   "stamp": "6f5e6c73bb805ffe",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true
+    },
+    "source": "experiments/2026-10-16-spine-pro/fox/rig_legacy/qa/report.json"
+   }
+  },
+  {
+   "id": "fox-pro",
+   "character": "fox",
+   "variant": "pro",
+   "name": "fox",
+   "json": "assets/fox-pro/fox.json",
+   "atlas": "assets/fox-pro/fox.atlas",
+   "pages": [
+    "assets/fox-pro/fox_0.webp",
+    "assets/fox-pro/fox_1.webp"
+   ],
+   "files": [
+    "assets/fox-pro/fox.json",
+    "assets/fox-pro/fox.atlas",
+    "assets/fox-pro/fox_0.webp",
+    "assets/fox-pro/fox_1.webp"
+   ],
+   "bounds": {
+    "x": -495.1,
+    "y": -14.8,
+    "width": 1081.9,
+    "height": 1394.9
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.0
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "look_around",
+     "duration": 3.2
+    },
+    {
+     "name": "talk",
+     "duration": 2.4
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 24,
+    "slots": 22,
+    "regions": 68,
+    "meshes": 27,
+    "ik": 0,
+    "transform": 2,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-spine-pro/fox/rig_pro",
+   "source_mtime": "2026-10-16T04:28:41",
+   "built_at": "2026-10-16T05:20:04",
+   "bytes": 1357815,
+   "source_image_bytes": 20265335,
+   "stamp": "545c061230b72826",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "look_around": true,
+     "talk": true
+    },
+    "source": "experiments/2026-10-16-spine-pro/fox/rig_pro/qa/report.json"
+   }
+  },
+  {
+   "id": "moose-legacy",
+   "character": "moose",
+   "variant": "legacy",
+   "name": "moose",
+   "json": "assets/moose-legacy/moose.json",
+   "atlas": "assets/moose-legacy/moose.atlas",
+   "pages": [
+    "assets/moose-legacy/moose_0.webp"
+   ],
+   "files": [
+    "assets/moose-legacy/moose.json",
+    "assets/moose-legacy/moose.atlas",
+    "assets/moose-legacy/moose_0.webp"
+   ],
+   "bounds": {
+    "x": -575.9,
+    "y": -13.0,
+    "width": 1150.0,
+    "height": 1521.2
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.4
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 19,
+    "slots": 16,
+    "regions": 37,
+    "meshes": 2,
+    "ik": 0,
+    "transform": 0,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-spine-pro/moose/rig_legacy",
+   "source_mtime": "2026-10-16T03:20:33",
+   "built_at": "2026-10-16T03:44:09",
+   "bytes": 532847,
+   "source_image_bytes": 8848842,
+   "stamp": "435002a54eaa9e99",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true
+    },
+    "source": "experiments/2026-10-16-spine-pro/moose/rig_legacy/qa/report.json"
+   }
+  },
+  {
+   "id": "moose-pro",
+   "character": "moose",
+   "variant": "pro",
+   "name": "moose",
+   "json": "assets/moose-pro/moose.json",
+   "atlas": "assets/moose-pro/moose.atlas",
+   "pages": [
+    "assets/moose-pro/moose_0.webp",
+    "assets/moose-pro/moose_1.webp"
+   ],
+   "files": [
+    "assets/moose-pro/moose.json",
+    "assets/moose-pro/moose.atlas",
+    "assets/moose-pro/moose_0.webp",
+    "assets/moose-pro/moose_1.webp"
+   ],
+   "bounds": {
+    "x": -575.9,
+    "y": -13.0,
+    "width": 1150.0,
+    "height": 1521.2
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.0
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "look_around",
+     "duration": 3.2
+    },
+    {
+     "name": "talk",
+     "duration": 2.4
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 25,
+    "slots": 27,
+    "regions": 69,
+    "meshes": 25,
+    "ik": 0,
+    "transform": 2,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-spine-pro/moose/rig_pro",
+   "source_mtime": "2026-10-16T04:28:46",
+   "built_at": "2026-10-16T05:20:19",
+   "bytes": 1115534,
+   "source_image_bytes": 18211502,
+   "stamp": "ffd911d6c1b449b9",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "look_around": true,
+     "talk": true
+    },
+    "source": "experiments/2026-10-16-spine-pro/moose/rig_pro/qa/report.json"
+   }
+  },
+  {
+   "id": "beaver-legacy",
+   "character": "beaver",
+   "variant": "legacy",
+   "name": "beaver",
+   "json": "assets/beaver-legacy/beaver.json",
+   "atlas": "assets/beaver-legacy/beaver.atlas",
+   "pages": [
+    "assets/beaver-legacy/beaver_0.webp"
+   ],
+   "files": [
+    "assets/beaver-legacy/beaver.json",
+    "assets/beaver-legacy/beaver.atlas",
+    "assets/beaver-legacy/beaver_0.webp"
+   ],
+   "bounds": {
+    "x": -498.5,
+    "y": -8.2,
+    "width": 996.0,
+    "height": 1208.1
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.4
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "jump_hurdle",
+     "duration": 2.2
+    },
+    {
+     "name": "wave_flag",
+     "duration": 3.2
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 15,
+    "slots": 12,
+    "regions": 33,
+    "meshes": 2,
+    "ik": 0,
+    "transform": 0,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-spine-pro/beaver/rig_legacy",
+   "source_mtime": "2026-10-16T03:19:36",
+   "built_at": "2026-10-16T03:43:29",
+   "bytes": 619688,
+   "source_image_bytes": 10160875,
+   "stamp": "2c47ac6e5da154df",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "jump_hurdle": true,
+     "wave_flag": true
+    },
+    "source": "experiments/2026-10-16-spine-pro/beaver/rig_legacy/qa/report.json"
+   }
+  },
+  {
+   "id": "beaver-pro",
+   "character": "beaver",
+   "variant": "pro",
+   "name": "beaver",
+   "json": "assets/beaver-pro/beaver.json",
+   "atlas": "assets/beaver-pro/beaver.atlas",
+   "pages": [
+    "assets/beaver-pro/beaver_0.webp",
+    "assets/beaver-pro/beaver_1.webp"
+   ],
+   "files": [
+    "assets/beaver-pro/beaver.json",
+    "assets/beaver-pro/beaver.atlas",
+    "assets/beaver-pro/beaver_0.webp",
+    "assets/beaver-pro/beaver_1.webp"
+   ],
+   "bounds": {
+    "x": -498.5,
+    "y": -8.2,
+    "width": 996.0,
+    "height": 1208.1
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.0
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "jump_hurdle",
+     "duration": 2.2
+    },
+    {
+     "name": "wave_flag",
+     "duration": 3.2
+    },
+    {
+     "name": "look_around",
+     "duration": 3.2
+    },
+    {
+     "name": "talk",
+     "duration": 2.4
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 26,
+    "slots": 22,
+    "regions": 64,
+    "meshes": 27,
+    "ik": 0,
+    "transform": 2,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-spine-pro/beaver/rig_pro",
+   "source_mtime": "2026-10-16T04:28:35",
+   "built_at": "2026-10-16T05:19:48",
+   "bytes": 1410086,
+   "source_image_bytes": 20089499,
+   "stamp": "9f157eff625c358d",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "jump_hurdle": true,
+     "wave_flag": true,
+     "look_around": true,
+     "talk": true
+    },
+    "source": "experiments/2026-10-16-spine-pro/beaver/rig_pro/qa/report.json"
+   }
+  },
+  {
+   "id": "rabbit-legacy",
+   "character": "rabbit",
+   "variant": "legacy",
+   "name": "rabbit",
+   "json": "assets/rabbit-legacy/rabbit.json",
+   "atlas": "assets/rabbit-legacy/rabbit.atlas",
+   "pages": [
+    "assets/rabbit-legacy/rabbit_0.webp"
+   ],
+   "files": [
+    "assets/rabbit-legacy/rabbit.json",
+    "assets/rabbit-legacy/rabbit.atlas",
+    "assets/rabbit-legacy/rabbit_0.webp"
+   ],
+   "bounds": {
+    "x": -444.0,
+    "y": -26.1,
+    "width": 942.7,
+    "height": 1665.8
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.4
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "jump_hurdle",
+     "duration": 2.2
+    },
+    {
+     "name": "wave_flag",
+     "duration": 3.2
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 16,
+    "slots": 15,
+    "regions": 34,
+    "meshes": 2,
+    "ik": 0,
+    "transform": 0,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-cast/rabbit/rig",
+   "source_mtime": "2026-10-16T05:01:53",
+   "built_at": "2026-10-16T05:20:27",
+   "bytes": 572443,
+   "source_image_bytes": 9177115,
+   "stamp": "2379634c3afee60c",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "jump_hurdle": true,
+     "wave_flag": true
+    },
+    "source": "experiments/2026-10-16-cast/rabbit/rig/qa/report.json"
+   }
+  },
+  {
+   "id": "rabbit-pro",
+   "character": "rabbit",
+   "variant": "pro",
+   "name": "rabbit",
+   "json": "assets/rabbit-pro/rabbit.json",
+   "atlas": "assets/rabbit-pro/rabbit.atlas",
+   "pages": [
+    "assets/rabbit-pro/rabbit_0.webp",
+    "assets/rabbit-pro/rabbit_1.webp"
+   ],
+   "files": [
+    "assets/rabbit-pro/rabbit.json",
+    "assets/rabbit-pro/rabbit.atlas",
+    "assets/rabbit-pro/rabbit_0.webp",
+    "assets/rabbit-pro/rabbit_1.webp"
+   ],
+   "bounds": {
+    "x": -444.0,
+    "y": -26.1,
+    "width": 942.7,
+    "height": 1665.8
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.0
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "jump_hurdle",
+     "duration": 2.2
+    },
+    {
+     "name": "wave_flag",
+     "duration": 3.2
+    },
+    {
+     "name": "look_around",
+     "duration": 3.2
+    },
+    {
+     "name": "talk",
+     "duration": 2.4
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 22,
+    "slots": 26,
+    "regions": 64,
+    "meshes": 25,
+    "ik": 0,
+    "transform": 2,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-cast/rabbit/rig_pro",
+   "source_mtime": "2026-10-16T05:21:11",
+   "built_at": "2026-10-16T05:32:30",
+   "bytes": 1213199,
+   "source_image_bytes": 18447218,
+   "stamp": "eb49424994d0c25c",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "jump_hurdle": true,
+     "wave_flag": true,
+     "look_around": true,
+     "talk": true
+    },
+    "source": "experiments/2026-10-16-cast/rabbit/rig_pro/qa/report.json"
+   }
+  },
+  {
+   "id": "redpanda-legacy",
+   "character": "redpanda",
+   "variant": "legacy",
+   "name": "redpanda",
+   "json": "assets/redpanda-legacy/redpanda.json",
+   "atlas": "assets/redpanda-legacy/redpanda.atlas",
+   "pages": [
+    "assets/redpanda-legacy/redpanda_0.webp"
+   ],
+   "files": [
+    "assets/redpanda-legacy/redpanda.json",
+    "assets/redpanda-legacy/redpanda.atlas",
+    "assets/redpanda-legacy/redpanda_0.webp"
+   ],
+   "bounds": {
+    "x": -589.2,
+    "y": -24.7,
+    "width": 1265.7,
+    "height": 1687.1
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.4
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "jump_hurdle",
+     "duration": 2.2
+    },
+    {
+     "name": "wave_flag",
+     "duration": 3.2
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 17,
+    "slots": 14,
+    "regions": 35,
+    "meshes": 2,
+    "ik": 0,
+    "transform": 0,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-cast/redpanda/rig",
+   "source_mtime": "2026-10-16T04:44:24",
+   "built_at": "2026-10-16T05:20:51",
+   "bytes": 623709,
+   "source_image_bytes": 10188083,
+   "stamp": "961e996f29e05db2",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "jump_hurdle": true,
+     "wave_flag": true
+    },
+    "source": "experiments/2026-10-16-cast/redpanda/rig/qa/report.json"
+   }
+  },
+  {
+   "id": "redpanda-pro",
+   "character": "redpanda",
+   "variant": "pro",
+   "name": "redpanda",
+   "json": "assets/redpanda-pro/redpanda.json",
+   "atlas": "assets/redpanda-pro/redpanda.atlas",
+   "pages": [
+    "assets/redpanda-pro/redpanda_0.webp",
+    "assets/redpanda-pro/redpanda_1.webp"
+   ],
+   "files": [
+    "assets/redpanda-pro/redpanda.json",
+    "assets/redpanda-pro/redpanda.atlas",
+    "assets/redpanda-pro/redpanda_0.webp",
+    "assets/redpanda-pro/redpanda_1.webp"
+   ],
+   "bounds": {
+    "x": -589.2,
+    "y": -24.7,
+    "width": 1265.7,
+    "height": 1687.1
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.0
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "jump_hurdle",
+     "duration": 2.2
+    },
+    {
+     "name": "wave_flag",
+     "duration": 3.2
+    },
+    {
+     "name": "look_around",
+     "duration": 3.2
+    },
+    {
+     "name": "talk",
+     "duration": 2.4
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 26,
+    "slots": 26,
+    "regions": 68,
+    "meshes": 27,
+    "ik": 0,
+    "transform": 2,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-cast/redpanda/rig_pro",
+   "source_mtime": "2026-10-16T04:59:37",
+   "built_at": "2026-10-16T05:21:06",
+   "bytes": 1414254,
+   "source_image_bytes": 20103877,
+   "stamp": "daa53e03133eea45",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "jump_hurdle": true,
+     "wave_flag": true,
+     "look_around": true,
+     "talk": true
+    },
+    "source": "experiments/2026-10-16-cast/redpanda/rig_pro/qa/report.json"
+   }
+  },
+  {
+   "id": "bear-legacy",
+   "character": "bear",
+   "variant": "legacy",
+   "name": "bear",
+   "json": "assets/bear-legacy/bear.json",
+   "atlas": "assets/bear-legacy/bear.atlas",
+   "pages": [
+    "assets/bear-legacy/bear_0.webp"
+   ],
+   "files": [
+    "assets/bear-legacy/bear.json",
+    "assets/bear-legacy/bear.atlas",
+    "assets/bear-legacy/bear_0.webp"
+   ],
+   "bounds": {
+    "x": -722.1,
+    "y": -10.0,
+    "width": 1442.8,
+    "height": 1942.3
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.4
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "jump_hurdle",
+     "duration": 2.2
+    },
+    {
+     "name": "wave_flag",
+     "duration": 3.2
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 14,
+    "slots": 11,
+    "regions": 30,
+    "meshes": 2,
+    "ik": 0,
+    "transform": 0,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-cast/bear/rig",
+   "source_mtime": "2026-10-16T04:45:06",
+   "built_at": "2026-10-16T05:19:15",
+   "bytes": 595020,
+   "source_image_bytes": 10376716,
+   "stamp": "71779802ec035d12",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "jump_hurdle": true,
+     "wave_flag": true
+    },
+    "source": "experiments/2026-10-16-cast/bear/rig/qa/report.json"
+   }
+  },
+  {
+   "id": "bear-pro",
+   "character": "bear",
+   "variant": "pro",
+   "name": "bear",
+   "json": "assets/bear-pro/bear.json",
+   "atlas": "assets/bear-pro/bear.atlas",
+   "pages": [
+    "assets/bear-pro/bear_0.webp",
+    "assets/bear-pro/bear_1.webp"
+   ],
+   "files": [
+    "assets/bear-pro/bear.json",
+    "assets/bear-pro/bear.atlas",
+    "assets/bear-pro/bear_0.webp",
+    "assets/bear-pro/bear_1.webp"
+   ],
+   "bounds": {
+    "x": -722.1,
+    "y": -10.0,
+    "width": 1442.8,
+    "height": 1942.3
+   },
+   "spine": "4.2.00",
+   "animations": [
+    {
+     "name": "blink",
+     "duration": 1.0
+    },
+    {
+     "name": "idle",
+     "duration": 2.0
+    },
+    {
+     "name": "wave",
+     "duration": 3.0
+    },
+    {
+     "name": "cheer_jump",
+     "duration": 1.9
+    },
+    {
+     "name": "thumbs_up",
+     "duration": 2.4
+    },
+    {
+     "name": "point",
+     "duration": 2.4
+    },
+    {
+     "name": "hold_card",
+     "duration": 2.4
+    },
+    {
+     "name": "emotions",
+     "duration": 7.2
+    },
+    {
+     "name": "walk",
+     "duration": 1.0
+    },
+    {
+     "name": "run",
+     "duration": 0.64
+    },
+    {
+     "name": "squat",
+     "duration": 2.0
+    },
+    {
+     "name": "jump_hurdle",
+     "duration": 2.2
+    },
+    {
+     "name": "wave_flag",
+     "duration": 3.2
+    },
+    {
+     "name": "look_around",
+     "duration": 3.2
+    },
+    {
+     "name": "talk",
+     "duration": 2.4
+    }
+   ],
+   "skins": [
+    "default"
+   ],
+   "counts": {
+    "bones": 22,
+    "slots": 20,
+    "regions": 58,
+    "meshes": 25,
+    "ik": 0,
+    "transform": 2,
+    "path": 0,
+    "physics": 0
+   },
+   "missing_regions": [],
+   "source": "experiments/2026-10-16-cast/bear/rig_pro",
+   "source_mtime": "2026-10-16T04:59:37",
+   "built_at": "2026-10-16T05:19:30",
+   "bytes": 1253940,
+   "source_image_bytes": 20476092,
+   "stamp": "bc5dd1606f2601c7",
+   "qa": {
+    "status": "pass",
+    "failing": [],
+    "checks": {
+     "structure": true,
+     "setup": true,
+     "seams": true,
+     "thumbs": true,
+     "sockets": true,
+     "landmarks": true,
+     "layer_order": true,
+     "blink": true,
+     "idle": true,
+     "wave": true,
+     "cheer_jump": true,
+     "thumbs_up": true,
+     "point": true,
+     "hold_card": true,
+     "emotions": true,
+     "walk": true,
+     "run": true,
+     "squat": true,
+     "jump_hurdle": true,
+     "wave_flag": true,
+     "look_around": true,
+     "talk": true
+    },
+    "source": "experiments/2026-10-16-cast/bear/rig_pro/qa/report.json"
+   }
+  }
+ ],
+ "errors": []
+}

@@ -1,0 +1,42 @@
+# Character: Fox (dungarees)
+
+- **Design ref:** `references/characters/fox/fox_ref_from_lineup.png` (in the `comfy/` repo, not in this skill), cropped from an earlier lineup.
+- **Approved Blocks master:** (repo) `experiments/2026-10-11-fox-parts/fox_master.png` (2026-10-11). Rig from generated parts and variants: `experiments/2026-10-11-part-variants/fox/rig/`. Old-prompt variant A00, preferred by the art director over the new-prompt variants. It passes `spine_qa.py --contract`; colour contrast at the shoulders, wrists and ankles was checked by eye.
+
+## CHARACTER
+
+~~~~text
+A cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.
+~~~~
+
+## PIECES (body sheet v2, 16 pieces)
+
+~~~~text
+Row 1: head base (the furry orange fox head with cream cheeks and muzzle and the dark-brown nose, plain fur forehead and eye areas, plain cream muzzle below the nose), left ear, right ear (pointed orange ears with dark-brown tips).
+Row 2: torso (the blue dungaree bib with its two orange buttons and front pocket over the purple shirt, continuing up into a short orange fur neck; both shoulders are rounded purple shirt, and the purple shirt sides are painted down to the waist), hips (the blue dungaree trousers below the bib down to the crotch, painted whole, with two rounded leg openings).
+Row 3: left upper arm, right upper arm (purple sleeve from shoulder to elbow, rounded at both ends), left forearm, right forearm (purple sleeve from elbow to wrist with its rolled cuff at the bottom, rounded at the top).
+Row 4: left paw, right paw (orange fox paws, open and relaxed, rounded at the wrist), left leg, right leg (blue dungaree trouser leg from hip to ankle, rounded at the top), left boot, right boot (orange boots, rounded at the top), tail (the big bushy orange tail with its cream tip, with a rounded root).
+~~~~
+
+## HANDS (hands sheet: 6 poses x 2 hands)
+
+~~~~text
+relaxed (exactly the paw of image_1, open and relaxed); open (palm facing the viewer, all fingers spread wide, as in a wave); fist (fingers curled into a soft round fist); point (index finger stretched straight down, the other fingers curled); thumbs-up (fingers curled into a fist, thumb sticking straight out sideways, away from the body); grip (fingers curled loosely forward and the thumb pressed against the side of the first finger, as when pinching something thin).
+~~~~
+
+## POSES (poses sheet)
+
+Boots and tail as below. On the first run the arm row came back as whole sleeves and a diagonal raised sleeve, so the arm row was regenerated alone with the ARMS text. Use that wording for the arm row.
+
+~~~~text
+Row 1: left upper arm, then left upper arm raised (purple sleeve from shoulder to elbow; the raised one is the same sleeve as it looks on an arm lifted high overhead, painted upright the same way: its top end is a wider soft rounded shoulder with one gentle fold where the cloth bunches).
+Row 2: right upper arm, then right upper arm raised (the same two for the other arm).
+Row 3: left boot, left boot on tiptoe, right boot, right boot on tiptoe (orange boots; on tiptoe the boot is seen from the front with its toe pointing down and its sole tilted towards the viewer, as when jumping, with its rounded ankle end still at the top).
+Row 4: tail, then tail up (the big bushy orange tail with its cream tip; tail up is the same tail swept up into a happy curl with the cream tip at the top; both tails have their rounded root at the lower left, where they join the hips).
+~~~~
+
+~~~~text
+Row 1: left upper arm, left upper arm raised, right upper arm, right upper arm raised. An upper arm is only the purple sleeve from the shoulder down to the elbow, rounded at both ends, without any cuff (the cuff belongs to the forearm). A raised upper arm is the same sleeve at the same size and width as it looks on an arm lifted high above the head, but painted upright like the first one, shoulder end at the top: its shoulder end is a soft, slightly wider rounded cap with one or two gentle folds where the cloth bunches.
+~~~~
+
+Variants prepared from the sheets (2026-10-11): `experiments/2026-10-11-part-variants/fox/variants/`. The right hand set mirrors the left one; `prep.py` there (superseded by annotations) records which split piece became which part and how each was turned joint end up.

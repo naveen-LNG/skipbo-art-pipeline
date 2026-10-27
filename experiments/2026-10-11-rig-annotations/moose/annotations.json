@@ -1,0 +1,2349 @@
+{
+  "character": "moose",
+  "master": {
+    "hands": {
+      "l": {
+        "facing": "palm",
+        "thumb_side": "lateral"
+      },
+      "r": {
+        "facing": "palm",
+        "thumb_side": "lateral"
+      }
+    },
+    "image": "master.png",
+    "layers": {
+      "foot": "under_hips",
+      "hand": "under_forearm",
+      "upperarm": "under_torso"
+    },
+    "points": {
+      "ankle_l": [
+        0.61,
+        0.76
+      ],
+      "ankle_r": [
+        0.39,
+        0.76
+      ],
+      "elbow_l": [
+        0.741,
+        0.539
+      ],
+      "elbow_r": [
+        0.259,
+        0.539
+      ],
+      "fingertip_l": [
+        0.875,
+        0.695
+      ],
+      "fingertip_r": [
+        0.125,
+        0.695
+      ],
+      "ground": [
+        0.5,
+        0.935
+      ],
+      "hip_l": [
+        0.585,
+        0.86
+      ],
+      "hip_r": [
+        0.415,
+        0.86
+      ],
+      "neck": [
+        0.5,
+        0.45
+      ],
+      "shoulder_l": [
+        0.638,
+        0.439
+      ],
+      "shoulder_r": [
+        0.362,
+        0.439
+      ],
+      "waist": [
+        0.5,
+        0.69
+      ],
+      "wrist_l": [
+        0.82,
+        0.615
+      ],
+      "wrist_r": [
+        0.18,
+        0.615
+      ]
+    },
+    "snapped": {
+      "ankle_l": null,
+      "ankle_r": null,
+      "elbow_l": null,
+      "elbow_r": null,
+      "hip_l": null,
+      "hip_r": null,
+      "shoulder_l": null,
+      "shoulder_r": null,
+      "wrist_l": null,
+      "wrist_r": null
+    },
+    "status": "fixed"
+  },
+  "pieces": {
+    "face-heads/00": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/moose_head_angry.png",
+          "mirrored": false,
+          "name": "head_angry",
+          "points": {
+            "neck": [
+              235.0,
+              470.4
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "angry"
+    },
+    "face-heads/01": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/moose_head_blink.png",
+          "mirrored": false,
+          "name": "head_blink",
+          "points": {
+            "neck": [
+              235.0,
+              479.04
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "blink"
+    },
+    "face-heads/02": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/moose_head_happy.png",
+          "mirrored": false,
+          "name": "head_happy",
+          "points": {
+            "neck": [
+              235.0,
+              480.96
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "happy"
+    },
+    "face-heads/03": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/moose_head_laugh.png",
+          "mirrored": false,
+          "name": "head_laugh",
+          "points": {
+            "neck": [
+              235.0,
+              471.36
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "laugh"
+    },
+    "face-heads/04": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/moose_head_neutral.png",
+          "mirrored": false,
+          "name": "head_neutral",
+          "points": {
+            "neck": [
+              235.0,
+              479.04
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "neutral"
+    },
+    "face-heads/05": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/moose_head_sad.png",
+          "mirrored": false,
+          "name": "head_sad",
+          "points": {
+            "neck": [
+              235.0,
+              474.24
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "sad"
+    },
+    "face-heads/06": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/moose_head_surprised.png",
+          "mirrored": false,
+          "name": "head_surprised",
+          "points": {
+            "neck": [
+              235.0,
+              474.24
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "surprised"
+    },
+    "face-heads/07": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/moose_head_talking.png",
+          "mirrored": false,
+          "name": "head_talking",
+          "points": {
+            "neck": [
+              235.0,
+              472.32
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "talking"
+    },
+    "face-heads/08": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/moose_head_wink.png",
+          "mirrored": false,
+          "name": "head_wink",
+          "points": {
+            "neck": [
+              235.0,
+              472.32
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "wink"
+    },
+    "moose-body-a-parts/00": {
+      "confidence": 0.8,
+      "name": "hoof",
+      "note": "hoof with its painted trouser cuff; the cuff top is the opening",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 32.48
+          },
+          "file": "body/moose_hoof_l.png",
+          "mirrored": false,
+          "name": "hoof_l",
+          "points": {
+            "ankle": [
+              136.0,
+              14.4
+            ],
+            "ground": [
+              149.6,
+              349.2
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 92.8
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.5,
+            0.04
+          ],
+          "depth": 32.48,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 92.8
+        },
+        "ground": {
+          "at": [
+            0.55,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/01": {
+      "confidence": 0.8,
+      "name": "hoof",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 32.48
+          },
+          "file": "body/moose_hoof_r.png",
+          "mirrored": false,
+          "name": "hoof_r",
+          "points": {
+            "ankle": [
+              136.5,
+              14.4
+            ],
+            "ground": [
+              122.85,
+              349.2
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 92.8
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.5,
+            0.04
+          ],
+          "depth": 32.48,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 92.8
+        },
+        "ground": {
+          "at": [
+            0.45,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/02": {
+      "confidence": 0.0,
+      "note": "the hips piece and the hoof cuffs cover the whole trouser leg in the master, so the leg tube has no visible span: using it pokes out round the hooves (the old brown filler)",
+      "outputs": [],
+      "points": {},
+      "role": "leg",
+      "side": "l",
+      "status": "ignored"
+    },
+    "moose-body-a-parts/03": {
+      "confidence": 0.0,
+      "note": "the hips piece and the hoof cuffs cover the whole trouser leg in the master, so the leg tube has no visible span: using it pokes out round the hooves (the old brown filler)",
+      "outputs": [],
+      "points": {},
+      "role": "leg",
+      "side": "r",
+      "status": "ignored"
+    },
+    "moose-body-a-parts/04": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-a-parts/05": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "fur cuff at the wrist",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 38.64
+          },
+          "file": "body/moose_hand_l.png",
+          "mirrored": false,
+          "name": "hand_l",
+          "points": {
+            "fingertip": [
+              144.14,
+              318.99
+            ],
+            "thumb_tip": [
+              269.47,
+              198.11
+            ],
+            "wrist": [
+              144.14,
+              32.47
+            ]
+          },
+          "rotated": -9.03,
+          "widths": {
+            "wrist": 110.4
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.55,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.95,
+            0.52
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.4,
+            0.06
+          ],
+          "depth": 38.64,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.3783,
+            0.0542
+          ],
+          "width": 110.4
+        }
+      },
+      "role": "hand",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/06": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 38.92
+          },
+          "file": "body/moose_hand_r.png",
+          "mirrored": false,
+          "name": "hand_r",
+          "points": {
+            "fingertip": [
+              164.24,
+              317.99
+            ],
+            "thumb_tip": [
+              37.62,
+              191.87
+            ],
+            "wrist": [
+              164.24,
+              32.38
+            ]
+          },
+          "rotated": 9.21,
+          "widths": {
+            "wrist": 111.2
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.45,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.05,
+            0.5
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.6,
+            0.06
+          ],
+          "depth": 38.92,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.6245,
+            0.0547
+          ],
+          "width": 111.2
+        }
+      },
+      "role": "hand",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/07": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-a-parts/08": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-a-parts/09": {
+      "confidence": 0.8,
+      "name": "bell",
+      "note": "hangs from the scarf by its loop",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_bell.png",
+          "mirrored": false,
+          "name": "bell",
+          "points": {
+            "root": [
+              54.0,
+              10.32
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.5,
+            0.08
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "prop",
+      "side": "",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/10": {
+      "confidence": 0.8,
+      "note": "waist = just below the belt, so the hips' own belt hides under the vest (one buckle, the vest's); hip points = the trouser leg openings",
+      "outputs": [
+        {
+          "depths": {
+            "hip_l": 70.0,
+            "hip_r": 69.44
+          },
+          "file": "body/moose_hips.png",
+          "mirrored": false,
+          "name": "hips",
+          "points": {
+            "hip_l": [
+              398.46,
+              363.68
+            ],
+            "hip_r": [
+              130.05,
+              363.68
+            ],
+            "waist": [
+              263.5,
+              92.4
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "hip_l": 200.0,
+            "hip_r": 198.4
+          }
+        }
+      ],
+      "points": {
+        "hip_l": {
+          "at": [
+            0.79,
+            0.95
+          ],
+          "depth": 70.0,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.7561,
+            0.9446
+          ],
+          "width": 200.0
+        },
+        "hip_r": {
+          "at": [
+            0.21,
+            0.95
+          ],
+          "depth": 69.44,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.2468,
+            0.9446
+          ],
+          "width": 198.4
+        },
+        "waist": {
+          "at": [
+            0.5,
+            0.24
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "hips",
+      "side": "",
+      "status": "fixed"
+    },
+    "moose-body-a-parts/11": {
+      "confidence": 0.8,
+      "name": "scarf",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_scarf.png",
+          "mirrored": false,
+          "name": "scarf",
+          "points": {
+            "neck": [
+              201.6,
+              70.5
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.45,
+            0.25
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "neckwear",
+      "side": "",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/12": {
+      "confidence": 0.8,
+      "note": "neck = base of the neck stub; waist = centre of the belt buckle; shoulder points sit under the vest where the hidden sleeve top joins (the cream shoulder caps are painted on the torso)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_torso.png",
+          "mirrored": false,
+          "name": "torso",
+          "points": {
+            "neck": [
+              289.0,
+              115.8
+            ],
+            "shoulder_l": [
+              497.08,
+              98.43
+            ],
+            "shoulder_r": [
+              80.92,
+              98.43
+            ],
+            "waist": [
+              289.0,
+              544.26
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.2
+          ],
+          "kind": "point"
+        },
+        "shoulder_l": {
+          "at": [
+            0.86,
+            0.17
+          ],
+          "kind": "point"
+        },
+        "shoulder_r": {
+          "at": [
+            0.14,
+            0.17
+          ],
+          "kind": "point"
+        },
+        "waist": {
+          "at": [
+            0.5,
+            0.94
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "torso",
+      "side": "",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/13": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_ear_l.png",
+          "mirrored": false,
+          "name": "ear_l",
+          "points": {
+            "root": [
+              16.56,
+              56.0
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.08,
+            0.5
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/14": {
+      "confidence": 0.8,
+      "mirror": true,
+      "note": "painted pointing right like the left ear; mirrored",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_ear_r.png",
+          "mirrored": true,
+          "name": "ear_r",
+          "points": {
+            "root": [
+              191.36,
+              54.5
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.08,
+            0.5
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/15": {
+      "confidence": 0.8,
+      "name": "cap",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_cap.png",
+          "mirrored": false,
+          "name": "cap",
+          "points": {
+            "root": [
+              172.5,
+              199.5
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.5,
+            0.95
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "hat",
+      "side": "",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/16": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_head_base.png",
+          "mirrored": false,
+          "name": "head_base",
+          "points": {
+            "neck": [
+              243.0,
+              499.55
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/17": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_antler_r.png",
+          "mirrored": false,
+          "name": "antler_r",
+          "points": {
+            "root": [
+              319.92,
+              233.75
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.93,
+            0.85
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "antler",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "moose-body-a-parts/18": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_antler_l.png",
+          "mirrored": false,
+          "name": "antler_l",
+          "points": {
+            "root": [
+              17.2,
+              241.4
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.05,
+            0.85
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "antler",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "moose-body-b-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/02": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/04": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/05": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/06": {
+      "confidence": 0.8,
+      "note": "wrist = the cuff end; fur tufts below it",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 56.36
+          },
+          "file": "body/moose_forearm_l.png",
+          "mirrored": false,
+          "name": "forearm_l",
+          "points": {
+            "elbow": [
+              191.73,
+              109.05
+            ],
+            "wrist": [
+              191.73,
+              280.96
+            ]
+          },
+          "rotated": -33.26,
+          "widths": {
+            "elbow": 140.69,
+            "wrist": 161.03
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.26,
+            0.24
+          ],
+          "kind": "round_end",
+          "snap": "ok",
+          "snapped": [
+            0.2808,
+            0.2533
+          ],
+          "width": 140.69
+        },
+        "wrist": {
+          "at": [
+            0.62,
+            0.72
+          ],
+          "depth": 56.36,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 161.03
+        }
+      },
+      "role": "forearm",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "moose-body-b-parts/07": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 55.61
+          },
+          "file": "body/moose_forearm_r.png",
+          "mirrored": false,
+          "name": "forearm_r",
+          "points": {
+            "elbow": [
+              189.19,
+              109.22
+            ],
+            "wrist": [
+              189.19,
+              274.94
+            ]
+          },
+          "rotated": 27.12,
+          "widths": {
+            "elbow": 142.82,
+            "wrist": 158.89
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.7,
+            0.24
+          ],
+          "kind": "round_end",
+          "snap": "ok",
+          "snapped": [
+            0.6822,
+            0.2562
+          ],
+          "width": 142.82
+        },
+        "wrist": {
+          "at": [
+            0.38,
+            0.72
+          ],
+          "depth": 55.61,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 158.89
+        }
+      },
+      "role": "forearm",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "moose-body-b-parts/08": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/moose_upperarm_l.png",
+          "mirrored": false,
+          "name": "upperarm_l",
+          "points": {
+            "elbow": [
+              198.25,
+              335.91
+            ],
+            "shoulder": [
+              198.25,
+              111.0
+            ]
+          },
+          "rotated": -23.61,
+          "widths": {
+            "elbow": 157.46,
+            "shoulder": 127.48
+          }
+        },
+        {
+          "depths": {},
+          "file": "body/moose_upperarm_r.png",
+          "mirrored": true,
+          "name": "upperarm_r",
+          "points": {
+            "elbow": [
+              200.75,
+              335.91
+            ],
+            "shoulder": [
+              200.75,
+              111.0
+            ]
+          },
+          "rotated": -23.61,
+          "widths": {
+            "elbow": 157.46,
+            "shoulder": 127.48
+          }
+        }
+      ],
+      "painted_as": "l",
+      "points": {
+        "elbow": {
+          "at": [
+            0.66,
+            0.78
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 157.46
+        },
+        "shoulder": {
+          "at": [
+            0.33,
+            0.22
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 127.48
+        }
+      },
+      "role": "upperarm",
+      "side": "either",
+      "status": "confirmed"
+    },
+    "moose-body-b-parts/09": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/10": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/11": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/12": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/13": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/14": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/15": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/16": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/17": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-body-b-parts/18": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-hands-parts/00": {
+      "confidence": 0.5,
+      "facing": "back",
+      "note": "superseded by the palm-facing fist in moose-palm-fist-parts/00 (2026-10-12): this one is painted back-of-hand, so the raised cheer fists showed their backs",
+      "outputs": [],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.9,
+            0.6
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.04
+          ],
+          "depth": 54.32,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.4678,
+            0.0449
+          ],
+          "width": 155.2
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "ignored",
+      "variant": "fist"
+    },
+    "moose-hands-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-hands-parts/02": {
+      "confidence": 0.5,
+      "facing": "back",
+      "note": "which curl is the thumb is unclear",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 59.92
+          },
+          "file": "variants/moose_hand_l_grip.png",
+          "mirrored": false,
+          "name": "hand_l_grip",
+          "points": {
+            "fingertip": [
+              197.17,
+              432.25
+            ],
+            "thumb_tip": [
+              62.0,
+              247.74
+            ],
+            "wrist": [
+              197.17,
+              55.74
+            ]
+          },
+          "rotated": 15.55,
+          "widths": {
+            "wrist": 171.2
+          }
+        },
+        {
+          "depths": {
+            "wrist": 59.92
+          },
+          "file": "variants/moose_hand_r_grip.png",
+          "mirrored": true,
+          "name": "hand_r_grip",
+          "points": {
+            "fingertip": [
+              229.83,
+              432.25
+            ],
+            "thumb_tip": [
+              365.0,
+              247.74
+            ],
+            "wrist": [
+              229.83,
+              55.74
+            ]
+          },
+          "rotated": 15.55,
+          "widths": {
+            "wrist": 171.2
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.3,
+            0.9
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.05,
+            0.4
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.55,
+            0.04
+          ],
+          "depth": 59.92,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.6125,
+            0.0525
+          ],
+          "width": 171.2
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "grip"
+    },
+    "moose-hands-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-hands-parts/04": {
+      "confidence": 0.8,
+      "facing": "back",
+      "note": "superseded by the palm-facing point in moose-point-palm-parts/05 (2026-10-12); two point hands per side would write the same variant file",
+      "outputs": [],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.42,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.05,
+            0.57
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.04
+          ],
+          "depth": 62.79,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.582,
+            0.046
+          ],
+          "width": 179.4
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "ignored",
+      "variant": "point"
+    },
+    "moose-hands-parts/05": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "painted with the wrist at the right side",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 58.37
+          },
+          "file": "variants/moose_hand_l_thumbsup.png",
+          "mirrored": true,
+          "name": "hand_l_thumbsup",
+          "points": {
+            "thumb_tip": [
+              377.33,
+              195.52
+            ],
+            "wrist": [
+              148.09,
+              21.2
+            ]
+          },
+          "rotated": 90.0,
+          "widths": {
+            "wrist": 166.77
+          }
+        },
+        {
+          "depths": {
+            "wrist": 58.37
+          },
+          "file": "variants/moose_hand_r_thumbsup.png",
+          "mirrored": false,
+          "name": "hand_r_thumbsup",
+          "points": {
+            "thumb_tip": [
+              11.67,
+              195.52
+            ],
+            "wrist": [
+              240.91,
+              21.2
+            ]
+          },
+          "rotated": 90.0,
+          "widths": {
+            "wrist": 166.77
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.48,
+            0.03
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.97,
+            0.55
+          ],
+          "depth": 58.37,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.9436,
+            0.6193
+          ],
+          "width": 166.77
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "thumbsup"
+    },
+    "moose-hands-parts/06": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-hands-parts/07": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-hands-parts/08": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-hands-parts/09": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-hands-parts/10": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "painted wrist down",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 62.71
+          },
+          "file": "variants/moose_hand_l_open.png",
+          "mirrored": true,
+          "name": "hand_l_open",
+          "points": {
+            "fingertip": [
+              164.52,
+              421.78
+            ],
+            "thumb_tip": [
+              356.57,
+              255.87
+            ],
+            "wrist": [
+              164.52,
+              23.27
+            ]
+          },
+          "rotated": -179.23,
+          "widths": {
+            "wrist": 179.18
+          }
+        },
+        {
+          "depths": {
+            "wrist": 62.71
+          },
+          "file": "variants/moose_hand_r_open.png",
+          "mirrored": false,
+          "name": "hand_r_open",
+          "points": {
+            "fingertip": [
+              206.48,
+              421.78
+            ],
+            "thumb_tip": [
+              14.43,
+              255.87
+            ],
+            "wrist": [
+              206.48,
+              23.27
+            ]
+          },
+          "rotated": -179.23,
+          "widths": {
+            "wrist": 179.18
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.45,
+            0.03
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.97,
+            0.42
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "depth": 62.71,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.4353,
+            0.9524
+          ],
+          "width": 179.18
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "open"
+    },
+    "moose-hands-parts/11": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-palm-fist-parts/00": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "superseded by moose-palm-fist-v01-parts/00 (2026-10-12): this sheet's fur cuff is nearly as wide as the fist (fist/wrist 1.32 vs ~1.9 for the other hands), so scaled to the wrist the fist rendered ~30% small in cheer_jump",
+      "outputs": [],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.85,
+            0.62
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.42,
+            0.04
+          ],
+          "depth": 215.88,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.3738,
+            0.0331
+          ],
+          "width": 616.8
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "ignored",
+      "variant": "fist"
+    },
+    "moose-palm-fist-parts/01": {
+      "confidence": 0.0,
+      "note": "mirror twin of /00 (the other side's fist); /00 covers both sides",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-palm-fist-v01-parts/00": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "palm-facing fist from sheet v01 (2026-10-12): its fur cuff is narrower than v00's, so the fist keeps its size when scaled to the wrist; thumb_tip on the thumb mass at its outer (image-right) side",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 130.29
+          },
+          "file": "variants/moose_hand_l_fist.png",
+          "mirrored": false,
+          "name": "hand_l_fist",
+          "points": {
+            "thumb_tip": [
+              719.14,
+              563.2
+            ],
+            "wrist": [
+              397.33,
+              44.9
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 372.26
+          }
+        },
+        {
+          "depths": {
+            "wrist": 130.29
+          },
+          "file": "variants/moose_hand_r_fist.png",
+          "mirrored": true,
+          "name": "hand_r_fist",
+          "points": {
+            "thumb_tip": [
+              157.86,
+              563.2
+            ],
+            "wrist": [
+              479.67,
+              44.9
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 372.26
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.82,
+            0.55
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.48,
+            0.05
+          ],
+          "depth": 130.29,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.4531,
+            0.0439
+          ],
+          "width": 372.26
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "fist"
+    },
+    "moose-palm-fist-v01-parts/01": {
+      "confidence": 0.0,
+      "note": "mirror twin of /00; /00 covers both sides",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-point-palm-parts/00": {
+      "confidence": 0.85,
+      "facing": "palm",
+      "note": "palm-facing point (2026-10-12), re-rolled with a narrow fur cuff so the glove isn't scaled small; lets the point gesture use the outward pose",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 148.53
+          },
+          "file": "variants/moose_hand_l_point.png",
+          "mirrored": false,
+          "name": "hand_l_point",
+          "points": {
+            "fingertip": [
+              488.59,
+              1099.49
+            ],
+            "thumb_tip": [
+              994.43,
+              662.81
+            ],
+            "wrist": [
+              488.59,
+              113.01
+            ]
+          },
+          "rotated": -20.07,
+          "widths": {
+            "wrist": 424.36
+          }
+        },
+        {
+          "depths": {
+            "wrist": 148.53
+          },
+          "file": "variants/moose_hand_r_point.png",
+          "mirrored": true,
+          "name": "hand_r_point",
+          "points": {
+            "fingertip": [
+              661.41,
+              1099.49
+            ],
+            "thumb_tip": [
+              155.57,
+              662.81
+            ],
+            "wrist": [
+              661.41,
+              113.01
+            ]
+          },
+          "rotated": -20.07,
+          "widths": {
+            "wrist": 424.36
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.598,
+            0.98
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.978,
+            0.398
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.292,
+            0.04
+          ],
+          "depth": 148.53,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.2025,
+            0.0562
+          ],
+          "width": 424.36
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "point"
+    },
+    "moose-point-palm-parts/01": {
+      "confidence": 0.0,
+      "note": "mirror twin of /00 (the other side's hand); /00 covers both sides",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-poses-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-poses-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-poses-parts/02": {
+      "confidence": 0.8,
+      "name": "hoof",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 45.92
+          },
+          "file": "variants/moose_hoof_l_tiptoe.png",
+          "mirrored": false,
+          "name": "hoof_l_tiptoe",
+          "points": {
+            "ankle": [
+              145.88,
+              15.85
+            ],
+            "ground": [
+              149.6,
+              490.82
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 131.2
+          }
+        },
+        {
+          "depths": {
+            "ankle": 45.92
+          },
+          "file": "variants/moose_hoof_r_tiptoe.png",
+          "mirrored": true,
+          "name": "hoof_r_tiptoe",
+          "points": {
+            "ankle": [
+              126.12,
+              15.85
+            ],
+            "ground": [
+              122.4,
+              490.82
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 131.2
+          }
+        }
+      ],
+      "painted_as": "l",
+      "points": {
+        "ankle": {
+          "at": [
+            0.5,
+            0.04
+          ],
+          "depth": 45.92,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5363,
+            0.0313
+          ],
+          "width": 131.2
+        },
+        "ground": {
+          "at": [
+            0.55,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "tiptoe"
+    },
+    "moose-poses-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-poses-parts/04": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-poses-parts/05": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-poses-parts/06": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "variants/moose_upperarm_l_raised.png",
+          "mirrored": false,
+          "name": "upperarm_l_raised",
+          "points": {
+            "elbow": [
+              176.5,
+              542.84
+            ],
+            "shoulder": [
+              176.5,
+              145.64
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "elbow": 210.0,
+            "shoulder": 315.0
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.5,
+            0.82
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 210.0
+        },
+        "shoulder": {
+          "at": [
+            0.5,
+            0.22
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 315.0
+        }
+      },
+      "role": "upperarm",
+      "side": "l",
+      "status": "confirmed",
+      "variant": "raised"
+    },
+    "moose-poses-parts/07": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "variants/moose_upperarm_r_raised.png",
+          "mirrored": false,
+          "name": "upperarm_r_raised",
+          "points": {
+            "elbow": [
+              176.5,
+              542.84
+            ],
+            "shoulder": [
+              176.5,
+              145.64
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "elbow": 211.01,
+            "shoulder": 316.0
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.5,
+            0.82
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 211.01
+        },
+        "shoulder": {
+          "at": [
+            0.5,
+            0.22
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 316.0
+        }
+      },
+      "role": "upperarm",
+      "side": "r",
+      "status": "confirmed",
+      "variant": "raised"
+    },
+    "moose-sleeves-parts/00": {
+      "confidence": 0.0,
+      "note": "spare sleeve from the sheet",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-sleeves-parts/01": {
+      "confidence": 0.0,
+      "note": "spare sleeve from the sheet",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "moose-sleeves-parts/02": {
+      "confidence": 0.75,
+      "note": "whole sleeve; elbow at the master's elbow ratio (57%)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 117.71
+          },
+          "file": "body/moose_arm_l.png",
+          "mirrored": false,
+          "name": "arm_l",
+          "points": {
+            "elbow": [
+              346.33,
+              801.49
+            ],
+            "shoulder": [
+              367.54,
+              213.54
+            ],
+            "wrist": [
+              367.54,
+              1380.96
+            ]
+          },
+          "rotated": 4.37,
+          "widths": {
+            "shoulder": 365.2,
+            "wrist": 336.31
+          }
+        },
+        {
+          "depths": {
+            "wrist": 117.71
+          },
+          "file": "body/moose_arm_r.png",
+          "mirrored": true,
+          "name": "arm_r",
+          "points": {
+            "elbow": [
+              309.67,
+              801.49
+            ],
+            "shoulder": [
+              288.46,
+              213.54
+            ],
+            "wrist": [
+              288.46,
+              1380.96
+            ]
+          },
+          "rotated": 4.37,
+          "widths": {
+            "shoulder": 365.2,
+            "wrist": 336.31
+          }
+        }
+      ],
+      "painted_as": "l",
+      "points": {
+        "elbow": {
+          "at": [
+            0.52,
+            0.57
+          ],
+          "kind": "point"
+        },
+        "shoulder": {
+          "at": [
+            0.6395,
+            0.1442
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 365.2
+        },
+        "wrist": {
+          "at": [
+            0.4783,
+            0.992
+          ],
+          "depth": 117.71,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 336.31
+        }
+      },
+      "role": "arm",
+      "side": "either",
+      "status": "confirmed"
+    }
+  },
+  "version": 1
+}

@@ -1,0 +1,137 @@
+{
+  "_meta": {
+    "engine": "nb",
+    "billed": "Gemini gemini-3.1-flash-image-preview",
+    "count_var": "COUNT",
+    "description": "NanoBanana2AIO: prompt + up to 10 reference images (image_1..image_10) -> image(s).",
+    "defaults": {
+      "ASPECT": "1:1",
+      "SIZE": "2K",
+      "TEMP": 0.6,
+      "COUNT": 1
+    }
+  },
+  "1": {
+    "class_type": "NanoBanana2AIO",
+    "inputs": {
+      "model_name": "gemini-3.1-flash-image-preview",
+      "prompt": "{{PROMPT}}",
+      "image_count": "{{COUNT}}",
+      "use_search": false,
+      "aspect_ratio": "{{ASPECT}}",
+      "image_size": "{{SIZE}}",
+      "temperature": "{{TEMP}}",
+      "use_image_search": false,
+      "image_1": [
+        "11",
+        0
+      ],
+      "image_2": [
+        "12",
+        0
+      ],
+      "image_3": [
+        "13",
+        0
+      ],
+      "image_4": [
+        "14",
+        0
+      ],
+      "image_5": [
+        "15",
+        0
+      ],
+      "image_6": [
+        "16",
+        0
+      ],
+      "image_7": [
+        "17",
+        0
+      ],
+      "image_8": [
+        "18",
+        0
+      ],
+      "image_9": [
+        "19",
+        0
+      ],
+      "image_10": [
+        "20",
+        0
+      ]
+    }
+  },
+  "11": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_1}}"
+    }
+  },
+  "12": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_2}}"
+    }
+  },
+  "13": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_3}}"
+    }
+  },
+  "14": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_4}}"
+    }
+  },
+  "15": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_5}}"
+    }
+  },
+  "16": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_6}}"
+    }
+  },
+  "17": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_7}}"
+    }
+  },
+  "18": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_8}}"
+    }
+  },
+  "19": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_9}}"
+    }
+  },
+  "20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_10}}"
+    }
+  },
+  "2": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "1",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}"
+    }
+  }
+}

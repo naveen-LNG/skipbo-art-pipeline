@@ -1,0 +1,144 @@
+{
+ "all": {
+  "n": 120,
+  "finger_dir": {
+   "exact_clear": 0.742,
+   "n_clear": 66,
+   "within45": 0.95,
+   "median_err_deg": 10.4,
+   "p90_err_deg": 37.2
+  },
+  "thumb_dir": {
+   "exact_clear": 0.486,
+   "n_clear": 70,
+   "within45": 0.8,
+   "median_err_deg": 17.2,
+   "p90_err_deg": 71.8
+  },
+  "facing": {
+   "acc": 0.4,
+   "auroc": 0.597,
+   "n_palm": 82,
+   "n_back": 38
+  },
+  "gesture": {
+   "acc": 0.933
+  },
+  "painted_direct": 0.558,
+  "painted_derived": 0.375,
+  "painted_derived_true_facing": 0.908,
+  "thumb_up_auroc": 0.989,
+  "thumb_up_acc": 0.908,
+  "n_thumb_up": 36,
+  "mirrored_auroc": 0.438,
+  "mirror_rule": {
+   "tpr": 0.315,
+   "fpr": 0.574,
+   "n_planted": 54,
+   "n_clean": 54
+  },
+  "mirror_rule_annotated_facing": {
+   "tpr": 0.889,
+   "fpr": 0.074
+  },
+  "gesture_thumb_check": {
+   "clean_mean_p_up": 0.667,
+   "mirrored_mean_p_up": 0.078
+  }
+ },
+ "fox": {
+  "n": 60,
+  "finger_dir": {
+   "exact_clear": 0.731,
+   "n_clear": 26,
+   "within45": 0.933,
+   "median_err_deg": 10.1,
+   "p90_err_deg": 37.2
+  },
+  "thumb_dir": {
+   "exact_clear": 0.433,
+   "n_clear": 30,
+   "within45": 0.8,
+   "median_err_deg": 15.0,
+   "p90_err_deg": 59.1
+  },
+  "facing": {
+   "acc": 0.433,
+   "auroc": 0.599,
+   "n_palm": 32,
+   "n_back": 28
+  },
+  "gesture": {
+   "acc": 0.867
+  },
+  "painted_direct": 0.5,
+  "painted_derived": 0.383,
+  "painted_derived_true_facing": 0.95,
+  "thumb_up_auroc": 0.995,
+  "thumb_up_acc": 0.917,
+  "n_thumb_up": 19,
+  "mirrored_auroc": 0.456,
+  "mirror_rule": {
+   "tpr": 0.259,
+   "fpr": 0.593,
+   "n_planted": 27,
+   "n_clean": 27
+  },
+  "mirror_rule_annotated_facing": {
+   "tpr": 1.0,
+   "fpr": 0.074
+  },
+  "gesture_thumb_check": {
+   "clean_mean_p_up": 0.69,
+   "mirrored_mean_p_up": 0.069
+  }
+ },
+ "moose": {
+  "n": 60,
+  "finger_dir": {
+   "exact_clear": 0.75,
+   "n_clear": 40,
+   "within45": 0.967,
+   "median_err_deg": 11.7,
+   "p90_err_deg": 38.3
+  },
+  "thumb_dir": {
+   "exact_clear": 0.525,
+   "n_clear": 40,
+   "within45": 0.8,
+   "median_err_deg": 19.3,
+   "p90_err_deg": 74.0
+  },
+  "facing": {
+   "acc": 0.367,
+   "auroc": 0.616,
+   "n_palm": 50,
+   "n_back": 10
+  },
+  "gesture": {
+   "acc": 1.0
+  },
+  "painted_direct": 0.617,
+  "painted_derived": 0.367,
+  "painted_derived_true_facing": 0.867,
+  "thumb_up_auroc": 0.99,
+  "thumb_up_acc": 0.9,
+  "n_thumb_up": 17,
+  "mirrored_auroc": 0.403,
+  "mirror_rule": {
+   "tpr": 0.37,
+   "fpr": 0.556,
+   "n_planted": 27,
+   "n_clean": 27
+  },
+  "mirror_rule_annotated_facing": {
+   "tpr": 0.778,
+   "fpr": 0.074
+  },
+  "gesture_thumb_check": {
+   "clean_mean_p_up": 0.643,
+   "mirrored_mean_p_up": 0.087
+  }
+ },
+ "tokens": 729092
+}

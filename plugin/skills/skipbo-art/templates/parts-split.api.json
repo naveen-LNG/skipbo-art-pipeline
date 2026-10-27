@@ -1,0 +1,160 @@
+{
+  "_meta": {
+    "engine": "",
+    "description": "Parts sheet on a flat background -> one transparent PNG per separated piece (BEN2 cut-out, soft alpha).",
+    "defaults": {
+      "MODE": "BEN2"
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_1}}"
+    }
+  },
+  "100": {
+    "class_type": "easy imageRemBg",
+    "inputs": {
+      "images": [
+        "10",
+        0
+      ],
+      "rem_mode": "{{MODE}}",
+      "image_output": "Hide",
+      "save_prefix": "x"
+    }
+  },
+  "101": {
+    "class_type": "ThresholdMask",
+    "inputs": {
+      "mask": [
+        "100",
+        1
+      ],
+      "value": 0.3
+    }
+  },
+  "102": {
+    "class_type": "GrowMask",
+    "inputs": {
+      "mask": [
+        "101",
+        0
+      ],
+      "expand": 8,
+      "tapered_corners": true
+    }
+  },
+  "103": {
+    "class_type": "MaskToSEGS",
+    "inputs": {
+      "mask": [
+        "102",
+        0
+      ],
+      "combined": false,
+      "crop_factor": 1.0,
+      "bbox_fill": false,
+      "drop_size": 24,
+      "contour_fill": true
+    }
+  },
+  "104": {
+    "class_type": "SetDefaultImageForSEGS",
+    "inputs": {
+      "segs": [
+        "103",
+        0
+      ],
+      "image": [
+        "100",
+        0
+      ],
+      "override": true
+    }
+  },
+  "105": {
+    "class_type": "ImpactDecomposeSEGS",
+    "inputs": {
+      "segs": [
+        "104",
+        0
+      ]
+    }
+  },
+  "106": {
+    "class_type": "ImpactFrom_SEG_ELT",
+    "inputs": {
+      "seg_elt": [
+        "105",
+        1
+      ]
+    }
+  },
+  "107": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "106",
+        1
+      ]
+    }
+  },
+  "108": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "107",
+        1
+      ]
+    }
+  },
+  "109": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "108",
+        0
+      ],
+      "source": [
+        "106",
+        2
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "110": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "109",
+        0
+      ]
+    }
+  },
+  "111": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "107",
+        0
+      ],
+      "alpha": [
+        "110",
+        0
+      ]
+    }
+  },
+  "112": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "111",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/part"
+    }
+  }
+}

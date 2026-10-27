@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><title>redpanda rig preview</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://unpkg.com/@esotericsoftware/spine-player@4.2.*/dist/iife/spine-player.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@esotericsoftware/spine-player@4.2.*/dist/spine-player.css">
+<style>html,body{margin:0;height:100%;background:#d6d6d6;font:14px system-ui}#p{width:100%;height:100%}</style></head>
+<body><div id="p"></div><script>
+// ?anim=<name> picks the animation, &t=<seconds> freezes it at that time (for review screenshots)
+const q = new URLSearchParams(location.search), anim = q.get("anim") || "idle", t = q.get("t");
+window.player = new spine.SpinePlayer("p", {jsonUrl: "redpanda.json", atlasUrl: "redpanda.atlas",
+  animation: anim, premultipliedAlpha: false, backgroundColor: "#d6d6d6", showControls: !t,
+  debug: {bones: q.has("bones"), regions: false},
+  success: p => {
+    if (t !== null) { p.pause(); p.animationState.setAnimation(0, anim, true); p.animationState.update(parseFloat(t));
+      p.animationState.apply(p.skeleton); p.skeleton.updateWorldTransform(spine.Physics.update); }
+    window.ready = true; },
+  error: (p, msg) => { window.loadError = msg; document.body.insertAdjacentText("afterbegin", msg); }});
+</script></body></html>

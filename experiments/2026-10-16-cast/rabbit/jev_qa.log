@@ -1,0 +1,47 @@
+jev: 11 call(s), 0 cached
+jev: 10 call(s), 0 cached
+jev: 10 call(s), 0 cached
+jev: 20 call(s), 0 cached
+jev: 48 call(s), 0 cached
+jev: 48 call(s), 0 cached
+jev: 78 call(s), 0 cached
+jev: 5 call(s), 0 cached
+joints sheet: rig/qa/joints.png
+JOINTS  Jev 'broken' 0-3, worst first (approved max per joint type)
+  elbow_l     2.19  approved max 2.34  within approved range
+  shoulder_r  2.00  approved max 2.00  within approved range
+  ankle_r     1.96  approved max 1.93  WARN worse than approved
+  elbow_r     1.92  approved max 2.34  within approved range
+  ankle_l     1.87  approved max 1.93  within approved range
+  wrist_l     1.80  approved max 2.45  within approved range
+  wrist_r     1.80  approved max 2.45  within approved range
+  shoulder_l  1.78  approved max 2.00  within approved range
+  neck        1.68  approved max 2.11  within approved range
+  waist       1.13  approved max 1.90  within approved range
+PAIRS   P(new build closer to the master than the previous), both orders
+  shoulder_l  0.60  about the same
+  shoulder_r  0.45  about the same
+  elbow_l     0.61  BETTER
+  elbow_r     0.58  about the same
+  wrist_l     0.55  about the same
+  wrist_r     0.47  about the same
+  neck        0.49  about the same
+  waist       0.68  BETTER
+  ankle_l     0.45  about the same
+  ankle_r     0.49  about the same
+FRAMES  mean P(defect) 0.831 vs approved 0.559 (p90 0.67); 77 above the approved p90; look first at:
+  wave 0.25s  P=0.91
+  hold_card 0.6s  P=0.91
+  hold_card 1.8s  P=0.91
+  wave 2.75s  P=0.9
+  point 1.0s  P=0.9
+  point 1.4s  P=0.9
+  emotions 4.2s  P=0.9
+  emotions 5.4s  P=0.9
+HOLDS
+  point/hand_l         reads=point     P=0.85 P(up)=0.79 finger=   4 thumb= 105  ok
+  thumbs_up/hand_l     reads=thumbsup  P=0.88 P(up)=0.85 finger=   9 thumb= 107  ok
+  hold_card/hand_l     reads=grip      P=0.45 P(up)=0.46 finger= 160 thumb= 114  ok
+  wave/hand_l          reads=open      P=0.98 P(up)=0.07 finger=  61 thumb= 185  ok
+  cheer_jump/hand_l    reads=fist      P=0.77 P(up)=0.25 finger=  68 thumb= 175  ok
+DONE  jev_qa: 230 call(s), 0 cached

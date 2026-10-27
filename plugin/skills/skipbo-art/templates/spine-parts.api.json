@@ -1,0 +1,1103 @@
+{
+  "_meta": {
+    "engine": "nb",
+    "billed": "Gemini gemini-3-pro-image-preview x5",
+    "description": "Character ref -> Blocks master -> body, face, hands and poses sheets -> transparent parts. IMAGE_1 = character ref, IMAGE_2/3 = shipped atlases. Vars: CHARACTER, PIECES, HANDS, POSES.",
+    "defaults": {
+      "MODE": "BEN2"
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_1}}"
+    }
+  },
+  "11": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_2}}"
+    }
+  },
+  "12": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_3}}"
+    }
+  },
+  "20": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{CHARACTER}}"
+    }
+  },
+  "21": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{PIECES}}"
+    }
+  },
+  "22": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{HANDS}}"
+    }
+  },
+  "23": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{POSES}}"
+    }
+  },
+  "300": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "IMAGE ROLES:\nimage_1 = CHARACTER DESIGN. Take from it only who the character is: species, body proportions, costume, colours and accessories. If it shows several views, use them all to understand the design.\nimage_2 and image_3 = ART STYLE. Animation atlases of two characters already shipped in this game, a hippo and a raccoon, cut into separate parts. Take from them only how things are painted: shading, colour, edges, level of detail and the chunky shape language. Their species, costumes and layout are not part of this picture.\n\nTASK:\nPaint the character from image_1 as one finished full-body character in the art style of image_2 and image_3, as a clean master drawing for cutting into animation parts.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nPOSE AND FRAMING:\nFront view, facing the viewer, in a symmetrical rest pose. Both arms hang down and out at about thirty degrees from the sides, so plain background shows between each arm and the body along the whole arm. Hands open and relaxed. Legs straight, feet a little apart and flat on the ground. A tail, if the character has one, hangs to one side and stays clear of the legs, with background visible between them. Head level, looking at the viewer, with a gentle closed-mouth smile and eyes open. The whole character fits in the frame with an even margin around it and fills about eighty-five percent of its height. The background is one flat plain light grey with nothing else in it, and the character stands on it without any cast shadow.\n\nFINAL CHECK:\n1. Painted like the shipped hippo and raccoon: airbrushed soft volume, candy colours, chunky simplified shapes, smooth surfaces, no outlines.\n2. Clearly the same character as image_1: same costume pieces and colours.\n3. Front view, symmetrical, arms clear of the body, full body in frame.\n4. Flat light grey background, single character, no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+    }
+  },
+  "302": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n"
+    }
+  },
+  "310": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "300",
+        0
+      ],
+      "string_b": [
+        "20",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "311": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "310",
+        0
+      ],
+      "string_b": [
+        "302",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "320": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nRepaint the character from image_1 as a sheet of separate body pieces for 2D skeletal animation in Spine. Each piece is painted whole, including the area that is normally hidden under the piece in front of it, so that the pieces can rotate at their joints without showing gaps. Joint ends are rounded.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\n"
+    }
+  },
+  "322": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nCutting rules for every piece in the list: a piece listed separately is painted with empty background all around it and never joined to a neighbour. Each arm is in three pieces (upper arm, forearm, hand) and each leg in two (leg, foot). Every limb piece is painted straight and upright, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself, like the end of a sausage: the top of each upper arm, both ends of each forearm, the wrist end of each hand, the top of each leg, the ankle end of each foot and the root of the tail. No piece has a flat, straight or slanted cut edge. The torso is painted whole as it looks with the arms taken away: both shoulders are rounded, and the sides of the body that the arms normally cover are painted all the way down to the waist. The hips piece is painted whole, including the crotch between the legs. The head base carries only the fixed features of the head; the eyes, eyebrows and mouth belong to the face sheet and appear nowhere on this sheet.\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these pieces, with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows, each clearly cut from the character in image_1 in its colours and painting.\n2. Each arm is in three pieces and each leg in two; every head item and neck item is separate from the head and torso; no eyes, eyebrows or mouths anywhere on the sheet.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth surfaces, no outlines; every joint end fully rounded, no flat cut edges; torso sides and hips crotch painted complete.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+    }
+  },
+  "324": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n"
+    }
+  },
+  "330": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "320",
+        0
+      ],
+      "string_b": [
+        "21",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "331": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "330",
+        0
+      ],
+      "string_b": [
+        "322",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "332": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "331",
+        0
+      ],
+      "string_b": [
+        "20",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "333": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "332",
+        0
+      ],
+      "string_b": [
+        "324",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "340": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the head of the character from image_1 as a sheet of whole-face expression swaps for facial animation in Spine. Every head on the sheet is the same head at the same size, painted again with a different expression, so any one of them can replace another on the rig.\n\nTHE PIECES (nine heads, each painted exactly once), laid out in a three by three grid, left to right and top to bottom:\nEach head is the character's head base from image_1, front view, with its eyes, eyebrows, snout or beak, nostrils and mouth, and without any hat, horn, antler, ear or hair tuft, because those are separate pieces. All nine heads have exactly the same outline, size and fur, skin or feathers; only the eyes, eyebrows and mouth change, and they stay the same small size they have on the head in image_1.\n1. Neutral: eyes open, eyebrows relaxed, gentle closed smile, exactly as in image_1.\n2. Blink: the same face with both eyes closed as gentle curved eyelid lines.\n3. Happy: eyes open and bright, wide open smiling mouth with a dark-red inside and a pink tongue.\n4. Laugh: eyes squeezed shut in happy upward curves, wide open laughing mouth.\n5. Surprised: eyes wide open, eyebrows raised high, small round open mouth.\n6. Sad: eyebrows tilted up in the middle, eyes open and looking down, gentle downturned mouth.\n7. Angry: eyebrows pulled down in the middle, eyes narrowed, mouth a tight frown.\n8. Talking: eyes open, mouth half open in a relaxed oval as in mid-word.\n9. Wink: the left eye closed in a gentle curve, the right eye open, a cheeky smile.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these nine heads, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Nine heads with one identical outline and size, each the head from image_1 without hat, horns or ears, with the features as small as in image_1.\n2. Only the eyes, eyebrows and mouth change between heads; every head matches the colours and painting of image_1.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+    }
+  },
+  "342": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n"
+    }
+  },
+  "350": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "340",
+        0
+      ],
+      "string_b": [
+        "20",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "351": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "350",
+        0
+      ],
+      "string_b": [
+        "342",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "360": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the hands of the character from image_1 as a sheet of swappable hand poses for 2D skeletal animation in Spine. Every hand on the sheet is the same hand at the same size as in image_1, painted again in a different pose, so any one of them can replace another at the end of the arm.\n\nTHE PIECES (twelve hands, each painted exactly once), in two rows of six, left to right:\nRow 1: the hand at the end of the character's left arm (the arm on the right side of image_1), in these six poses: "
+    }
+  },
+  "362": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\nRow 2: the hand at the end of the character's right arm (the arm on the left side of image_1), in the same six poses in the same order.\n\nEvery hand is painted the same way up, as if hanging at the end of an arm that points straight down: the wrist end is at the top of the piece, fully rounded and as wide as the wrist, and the hand extends downwards from it. This holds for every pose, including the open hand, the fist and the thumbs-up: none of them has its wrist at the bottom or at the side. Each hand includes only the hand itself, from the wrist down, in the colours and painting of the hands in image_1; the sleeve, cuff and arm belong to other pieces and appear nowhere on this sheet. Every hand is the same chunky cartoon mitten as the hands in image_1: the same number of short, fat, rounded fingers, a simple soft-toy shape and the same flat colour, never a detailed or realistic human hand with knuckles and nails. The hands hold nothing.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Twelve hands in two rows of six, all the same size as the hands in image_1, each one clearly a different pose in the listed order.\n2. Every hand the same way up, wrist at the top, rounded wrist end, no sleeve or cuff; chunky mittens like image_1 with its number of fingers; nothing held.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+    }
+  },
+  "364": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n"
+    }
+  },
+  "370": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "360",
+        0
+      ],
+      "string_b": [
+        "22",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "371": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "370",
+        0
+      ],
+      "string_b": [
+        "362",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "372": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "371",
+        0
+      ],
+      "string_b": [
+        "20",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "373": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "372",
+        0
+      ],
+      "string_b": [
+        "364",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "380": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint pose variants of some body pieces of the character from image_1 for 2D skeletal animation in Spine. Each row starts with the piece exactly as it is on the character, followed by its variants; a variant is the same piece at the same size and width, painted again in a different pose, so it can replace the first one at the same joint.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\n"
+    }
+  },
+  "382": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nEvery limb piece is painted straight and upright, the same way up as its first piece, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself; no piece has a flat, straight or slanted cut edge. Each variant keeps exactly the colours, width and painting of its first piece; only the pose changes.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows; each variant the same size and width as the first piece of its row.\n2. Limb pieces upright with the joining end at the top, every joining end fully rounded.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+    }
+  },
+  "384": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n"
+    }
+  },
+  "390": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "380",
+        0
+      ],
+      "string_b": [
+        "23",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "391": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "390",
+        0
+      ],
+      "string_b": [
+        "382",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "392": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "391",
+        0
+      ],
+      "string_b": [
+        "20",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "393": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "392",
+        0
+      ],
+      "string_b": [
+        "384",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "40": {
+    "class_type": "NanoBananaAIO",
+    "inputs": {
+      "model_name": "gemini-3-pro-image-preview",
+      "prompt": [
+        "311",
+        0
+      ],
+      "image_count": 1,
+      "use_search": false,
+      "aspect_ratio": "3:4",
+      "image_size": "2K",
+      "temperature": 0.6,
+      "image_1": [
+        "10",
+        0
+      ],
+      "image_2": [
+        "11",
+        0
+      ],
+      "image_3": [
+        "12",
+        0
+      ]
+    }
+  },
+  "41": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "40",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/master"
+    }
+  },
+  "50": {
+    "class_type": "NanoBananaAIO",
+    "inputs": {
+      "model_name": "gemini-3-pro-image-preview",
+      "prompt": [
+        "333",
+        0
+      ],
+      "image_count": 1,
+      "use_search": false,
+      "aspect_ratio": "1:1",
+      "image_size": "2K",
+      "temperature": 0.4,
+      "image_1": [
+        "40",
+        0
+      ],
+      "image_2": [
+        "11",
+        0
+      ]
+    }
+  },
+  "51": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "50",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/body_sheet"
+    }
+  },
+  "60": {
+    "class_type": "NanoBananaAIO",
+    "inputs": {
+      "model_name": "gemini-3-pro-image-preview",
+      "prompt": [
+        "351",
+        0
+      ],
+      "image_count": 1,
+      "use_search": false,
+      "aspect_ratio": "1:1",
+      "image_size": "2K",
+      "temperature": 0.4,
+      "image_1": [
+        "40",
+        0
+      ],
+      "image_2": [
+        "11",
+        0
+      ]
+    }
+  },
+  "61": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "60",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/face_sheet"
+    }
+  },
+  "70": {
+    "class_type": "NanoBananaAIO",
+    "inputs": {
+      "model_name": "gemini-3-pro-image-preview",
+      "prompt": [
+        "373",
+        0
+      ],
+      "image_count": 1,
+      "use_search": false,
+      "aspect_ratio": "3:2",
+      "image_size": "2K",
+      "temperature": 0.4,
+      "image_1": [
+        "40",
+        0
+      ],
+      "image_2": [
+        "11",
+        0
+      ]
+    }
+  },
+  "71": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "70",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/hands_sheet"
+    }
+  },
+  "80": {
+    "class_type": "NanoBananaAIO",
+    "inputs": {
+      "model_name": "gemini-3-pro-image-preview",
+      "prompt": [
+        "393",
+        0
+      ],
+      "image_count": 1,
+      "use_search": false,
+      "aspect_ratio": "16:9",
+      "image_size": "2K",
+      "temperature": 0.4,
+      "image_1": [
+        "40",
+        0
+      ],
+      "image_2": [
+        "11",
+        0
+      ]
+    }
+  },
+  "81": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "80",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/poses_sheet"
+    }
+  },
+  "100": {
+    "class_type": "easy imageRemBg",
+    "inputs": {
+      "images": [
+        "50",
+        0
+      ],
+      "rem_mode": "{{MODE}}",
+      "image_output": "Hide",
+      "save_prefix": "x"
+    }
+  },
+  "101": {
+    "class_type": "ThresholdMask",
+    "inputs": {
+      "mask": [
+        "100",
+        1
+      ],
+      "value": 0.3
+    }
+  },
+  "102": {
+    "class_type": "GrowMask",
+    "inputs": {
+      "mask": [
+        "101",
+        0
+      ],
+      "expand": 8,
+      "tapered_corners": true
+    }
+  },
+  "103": {
+    "class_type": "MaskToSEGS",
+    "inputs": {
+      "mask": [
+        "102",
+        0
+      ],
+      "combined": false,
+      "crop_factor": 1.0,
+      "bbox_fill": false,
+      "drop_size": 24,
+      "contour_fill": true
+    }
+  },
+  "104": {
+    "class_type": "SetDefaultImageForSEGS",
+    "inputs": {
+      "segs": [
+        "103",
+        0
+      ],
+      "image": [
+        "100",
+        0
+      ],
+      "override": true
+    }
+  },
+  "105": {
+    "class_type": "ImpactDecomposeSEGS",
+    "inputs": {
+      "segs": [
+        "104",
+        0
+      ]
+    }
+  },
+  "106": {
+    "class_type": "ImpactFrom_SEG_ELT",
+    "inputs": {
+      "seg_elt": [
+        "105",
+        1
+      ]
+    }
+  },
+  "107": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "106",
+        1
+      ]
+    }
+  },
+  "108": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "107",
+        1
+      ]
+    }
+  },
+  "109": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "108",
+        0
+      ],
+      "source": [
+        "106",
+        2
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "110": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "109",
+        0
+      ]
+    }
+  },
+  "111": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "107",
+        0
+      ],
+      "alpha": [
+        "110",
+        0
+      ]
+    }
+  },
+  "112": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "111",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/body_part"
+    }
+  },
+  "200": {
+    "class_type": "easy imageRemBg",
+    "inputs": {
+      "images": [
+        "60",
+        0
+      ],
+      "rem_mode": "{{MODE}}",
+      "image_output": "Hide",
+      "save_prefix": "x"
+    }
+  },
+  "201": {
+    "class_type": "ThresholdMask",
+    "inputs": {
+      "mask": [
+        "200",
+        1
+      ],
+      "value": 0.3
+    }
+  },
+  "202": {
+    "class_type": "GrowMask",
+    "inputs": {
+      "mask": [
+        "201",
+        0
+      ],
+      "expand": 8,
+      "tapered_corners": true
+    }
+  },
+  "203": {
+    "class_type": "MaskToSEGS",
+    "inputs": {
+      "mask": [
+        "202",
+        0
+      ],
+      "combined": false,
+      "crop_factor": 1.0,
+      "bbox_fill": false,
+      "drop_size": 24,
+      "contour_fill": true
+    }
+  },
+  "204": {
+    "class_type": "SetDefaultImageForSEGS",
+    "inputs": {
+      "segs": [
+        "203",
+        0
+      ],
+      "image": [
+        "200",
+        0
+      ],
+      "override": true
+    }
+  },
+  "205": {
+    "class_type": "ImpactDecomposeSEGS",
+    "inputs": {
+      "segs": [
+        "204",
+        0
+      ]
+    }
+  },
+  "206": {
+    "class_type": "ImpactFrom_SEG_ELT",
+    "inputs": {
+      "seg_elt": [
+        "205",
+        1
+      ]
+    }
+  },
+  "207": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "206",
+        1
+      ]
+    }
+  },
+  "208": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "207",
+        1
+      ]
+    }
+  },
+  "209": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "208",
+        0
+      ],
+      "source": [
+        "206",
+        2
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "210": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "209",
+        0
+      ]
+    }
+  },
+  "211": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "207",
+        0
+      ],
+      "alpha": [
+        "210",
+        0
+      ]
+    }
+  },
+  "212": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "211",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/face_head"
+    }
+  },
+  "400": {
+    "class_type": "easy imageRemBg",
+    "inputs": {
+      "images": [
+        "70",
+        0
+      ],
+      "rem_mode": "{{MODE}}",
+      "image_output": "Hide",
+      "save_prefix": "x"
+    }
+  },
+  "401": {
+    "class_type": "ThresholdMask",
+    "inputs": {
+      "mask": [
+        "400",
+        1
+      ],
+      "value": 0.3
+    }
+  },
+  "402": {
+    "class_type": "GrowMask",
+    "inputs": {
+      "mask": [
+        "401",
+        0
+      ],
+      "expand": 8,
+      "tapered_corners": true
+    }
+  },
+  "403": {
+    "class_type": "MaskToSEGS",
+    "inputs": {
+      "mask": [
+        "402",
+        0
+      ],
+      "combined": false,
+      "crop_factor": 1.0,
+      "bbox_fill": false,
+      "drop_size": 24,
+      "contour_fill": true
+    }
+  },
+  "404": {
+    "class_type": "SetDefaultImageForSEGS",
+    "inputs": {
+      "segs": [
+        "403",
+        0
+      ],
+      "image": [
+        "400",
+        0
+      ],
+      "override": true
+    }
+  },
+  "405": {
+    "class_type": "ImpactDecomposeSEGS",
+    "inputs": {
+      "segs": [
+        "404",
+        0
+      ]
+    }
+  },
+  "406": {
+    "class_type": "ImpactFrom_SEG_ELT",
+    "inputs": {
+      "seg_elt": [
+        "405",
+        1
+      ]
+    }
+  },
+  "407": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "406",
+        1
+      ]
+    }
+  },
+  "408": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "407",
+        1
+      ]
+    }
+  },
+  "409": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "408",
+        0
+      ],
+      "source": [
+        "406",
+        2
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "410": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "409",
+        0
+      ]
+    }
+  },
+  "411": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "407",
+        0
+      ],
+      "alpha": [
+        "410",
+        0
+      ]
+    }
+  },
+  "412": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "411",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/hand_variant"
+    }
+  },
+  "500": {
+    "class_type": "easy imageRemBg",
+    "inputs": {
+      "images": [
+        "80",
+        0
+      ],
+      "rem_mode": "{{MODE}}",
+      "image_output": "Hide",
+      "save_prefix": "x"
+    }
+  },
+  "501": {
+    "class_type": "ThresholdMask",
+    "inputs": {
+      "mask": [
+        "500",
+        1
+      ],
+      "value": 0.3
+    }
+  },
+  "502": {
+    "class_type": "GrowMask",
+    "inputs": {
+      "mask": [
+        "501",
+        0
+      ],
+      "expand": 8,
+      "tapered_corners": true
+    }
+  },
+  "503": {
+    "class_type": "MaskToSEGS",
+    "inputs": {
+      "mask": [
+        "502",
+        0
+      ],
+      "combined": false,
+      "crop_factor": 1.0,
+      "bbox_fill": false,
+      "drop_size": 24,
+      "contour_fill": true
+    }
+  },
+  "504": {
+    "class_type": "SetDefaultImageForSEGS",
+    "inputs": {
+      "segs": [
+        "503",
+        0
+      ],
+      "image": [
+        "500",
+        0
+      ],
+      "override": true
+    }
+  },
+  "505": {
+    "class_type": "ImpactDecomposeSEGS",
+    "inputs": {
+      "segs": [
+        "504",
+        0
+      ]
+    }
+  },
+  "506": {
+    "class_type": "ImpactFrom_SEG_ELT",
+    "inputs": {
+      "seg_elt": [
+        "505",
+        1
+      ]
+    }
+  },
+  "507": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "506",
+        1
+      ]
+    }
+  },
+  "508": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "507",
+        1
+      ]
+    }
+  },
+  "509": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "508",
+        0
+      ],
+      "source": [
+        "506",
+        2
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "510": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "509",
+        0
+      ]
+    }
+  },
+  "511": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "507",
+        0
+      ],
+      "alpha": [
+        "510",
+        0
+      ]
+    }
+  },
+  "512": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "511",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/pose_variant"
+    }
+  }
+}

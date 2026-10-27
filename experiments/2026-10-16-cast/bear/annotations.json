@@ -1,0 +1,1607 @@
+{
+  "character": "bear",
+  "master": {
+    "hands": {
+      "l": {
+        "facing": "back",
+        "thumb_side": "medial"
+      },
+      "r": {
+        "facing": "back",
+        "thumb_side": "medial"
+      }
+    },
+    "image": "bear_master.png",
+    "layers": {
+      "foot": "under_hips",
+      "hand": "over_forearm",
+      "upperarm": "under_torso"
+    },
+    "points": {
+      "ankle_l": [
+        0.635,
+        0.849
+      ],
+      "ankle_r": [
+        0.365,
+        0.849
+      ],
+      "elbow_l": [
+        0.81,
+        0.435
+      ],
+      "elbow_r": [
+        0.19,
+        0.435
+      ],
+      "fingertip_l": [
+        0.895,
+        0.69
+      ],
+      "fingertip_r": [
+        0.105,
+        0.69
+      ],
+      "ground": [
+        0.5,
+        0.955
+      ],
+      "hip_l": [
+        0.634,
+        0.87
+      ],
+      "hip_r": [
+        0.366,
+        0.87
+      ],
+      "neck": [
+        0.5,
+        0.335
+      ],
+      "shoulder_l": [
+        0.745,
+        0.335
+      ],
+      "shoulder_r": [
+        0.255,
+        0.335
+      ],
+      "waist": [
+        0.5,
+        0.522
+      ],
+      "wrist_l": [
+        0.865,
+        0.552
+      ],
+      "wrist_r": [
+        0.135,
+        0.552
+      ]
+    },
+    "snapped": {
+      "ankle_l": null,
+      "ankle_r": null,
+      "elbow_l": null,
+      "elbow_r": null,
+      "hip_l": null,
+      "hip_r": null,
+      "shoulder_l": null,
+      "shoulder_r": null,
+      "wrist_l": null,
+      "wrist_r": null
+    },
+    "status": "confirmed"
+  },
+  "pieces": {
+    "bear-arm-parts/00": {
+      "confidence": 0.8,
+      "note": "whole arm (white sleeve, rolled cuff at the elbow, bare fur forearm) from the arms sheet, its fur paw cut off at the wrist; elbow at the master's elbow ratio (0.47), in the roll",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 132.83
+          },
+          "file": "body/bear_arm_l.png",
+          "mirrored": false,
+          "name": "arm_l",
+          "points": {
+            "elbow": [
+              421.14,
+              712.78
+            ],
+            "shoulder": [
+              442.27,
+              249.55
+            ],
+            "wrist": [
+              442.27,
+              1247.23
+            ]
+          },
+          "rotated": -13.42,
+          "widths": {
+            "shoulder": 383.84,
+            "wrist": 379.53
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.449,
+            0.548
+          ],
+          "kind": "point"
+        },
+        "shoulder": {
+          "at": [
+            0.32,
+            0.17
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 383.84
+        },
+        "wrist": {
+          "at": [
+            0.588,
+            0.97
+          ],
+          "depth": 132.83,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.6635,
+            0.9753
+          ],
+          "width": 379.53
+        }
+      },
+      "role": "arm",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "bear-arm-parts/01": {
+      "confidence": 0.8,
+      "note": "mirror twin of arm 00, painted for the right arm",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 132.58
+          },
+          "file": "body/bear_arm_r.png",
+          "mirrored": false,
+          "name": "arm_r",
+          "points": {
+            "elbow": [
+              517.56,
+              714.73
+            ],
+            "shoulder": [
+              495.09,
+              250.8
+            ],
+            "wrist": [
+              495.09,
+              1250.65
+            ]
+          },
+          "rotated": 13.58,
+          "widths": {
+            "shoulder": 382.87,
+            "wrist": 378.8
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.551,
+            0.548
+          ],
+          "kind": "point"
+        },
+        "shoulder": {
+          "at": [
+            0.68,
+            0.17
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 382.87
+        },
+        "wrist": {
+          "at": [
+            0.409,
+            0.97
+          ],
+          "depth": 132.58,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.3322,
+            0.9752
+          ],
+          "width": 378.8
+        }
+      },
+      "role": "arm",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "bear-arms-parts/00": {
+      "confidence": 0.0,
+      "note": "raw arm with a fur paw; trimmed copy in bear-arm-parts",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-arms-parts/01": {
+      "confidence": 0.0,
+      "note": "raw arm with a fur paw; trimmed copy in bear-arm-parts",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-body-parts/00": {
+      "confidence": 0.0,
+      "note": "the sheet's clog; widened copy in bear-clog-parts",
+      "outputs": [],
+      "points": {},
+      "role": "foot",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-body-parts/01": {
+      "confidence": 0.0,
+      "note": "the sheet's clog; widened copy in bear-clog-parts",
+      "outputs": [],
+      "points": {},
+      "role": "foot",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-body-parts/02": {
+      "confidence": 0.7,
+      "facing": "back",
+      "note": "mitten, thumb toward the body as in the master",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 51.52
+          },
+          "file": "body/bear_hand_l.png",
+          "mirrored": false,
+          "name": "hand_l",
+          "points": {
+            "fingertip": [
+              168.42,
+              324.56
+            ],
+            "thumb_tip": [
+              36.45,
+              216.31
+            ],
+            "wrist": [
+              168.42,
+              27.23
+            ]
+          },
+          "rotated": 3.06,
+          "widths": {
+            "wrist": 147.2
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.6,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.1,
+            0.62
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.6,
+            0.075
+          ],
+          "depth": 51.52,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.663,
+            0.0676
+          ],
+          "width": 147.2
+        }
+      },
+      "role": "hand",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "bear-body-parts/03": {
+      "confidence": 0.7,
+      "facing": "back",
+      "note": "mitten, thumb toward the body as in the master",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 52.08
+          },
+          "file": "body/bear_hand_r.png",
+          "mirrored": false,
+          "name": "hand_r",
+          "points": {
+            "fingertip": [
+              101.84,
+              325.6
+            ],
+            "thumb_tip": [
+              233.63,
+              216.74
+            ],
+            "wrist": [
+              101.84,
+              27.18
+            ]
+          },
+          "rotated": -2.95,
+          "widths": {
+            "wrist": 148.8
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.4,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.9,
+            0.62
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.4,
+            0.075
+          ],
+          "depth": 52.08,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.339,
+            0.0669
+          ],
+          "width": 148.8
+        }
+      },
+      "role": "hand",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "bear-body-parts/04": {
+      "confidence": 0.0,
+      "note": "the sheet's 'whole lower body' came back as shorts 2/3 of the master's height; replaced by the master-cut trousers piece",
+      "outputs": [],
+      "points": {},
+      "role": "hips",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-body-parts/05": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-body-parts/06": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-body-parts/07": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-body-parts/08": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-body-parts/09": {
+      "confidence": 0.0,
+      "note": "the sheet's torso, ~1.25x the master's width at the rig's scale; narrowed copy in bear-torso-parts",
+      "outputs": [],
+      "points": {},
+      "role": "torso",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-body-parts/10": {
+      "confidence": 0.6,
+      "note": "likely dropped: the expression heads include the ears",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/bear_ear_l.png",
+          "mirrored": false,
+          "name": "ear_l",
+          "points": {
+            "root": [
+              55.8,
+              167.45
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.3,
+            0.85
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "bear-body-parts/11": {
+      "confidence": 0.6,
+      "note": "likely dropped: the expression heads include the ears",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/bear_ear_r.png",
+          "mirrored": false,
+          "name": "ear_r",
+          "points": {
+            "root": [
+              130.9,
+              166.6
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.7,
+            0.85
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "bear-body-parts/12": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/bear_head_base.png",
+          "mirrored": false,
+          "name": "head_base",
+          "points": {
+            "neck": [
+              256.5,
+              437.47
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed"
+    },
+    "bear-clog-parts/00": {
+      "confidence": 0.8,
+      "name": "clog",
+      "note": "side-view clog widened 1.10 with a hidden honey-fur ankle stub above its heel (make_parts.py), toe left = outward for the right foot; ankle = the heel opening. ankle on the master 0.01 inward of the hem centre (round 3: the clogs sat 0.012 too far out)",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 63.7
+          },
+          "file": "body/bear_clog_r.png",
+          "mirrored": false,
+          "name": "clog_r",
+          "points": {
+            "ankle": [
+              332.64,
+              103.2
+            ],
+            "ground": [
+              181.44,
+              339.53
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 182.0
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.77,
+            0.3
+          ],
+          "depth": 63.7,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 182.0
+        },
+        "ground": {
+          "at": [
+            0.42,
+            0.987
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "r",
+      "status": "fixed"
+    },
+    "bear-clog-parts/01": {
+      "confidence": 0.8,
+      "name": "clog",
+      "note": "side-view clog widened 1.10, toe right = outward for the left foot. ankle on the master 0.01 inward of the hem centre (round 3: the clogs sat 0.012 too far out)",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 63.7
+          },
+          "file": "body/bear_clog_l.png",
+          "mirrored": false,
+          "name": "clog_l",
+          "points": {
+            "ankle": [
+              99.36,
+              103.2
+            ],
+            "ground": [
+              250.56,
+              339.53
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 182.0
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.23,
+            0.3
+          ],
+          "depth": 63.7,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 182.0
+        },
+        "ground": {
+          "at": [
+            0.58,
+            0.987
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "l",
+      "status": "fixed"
+    },
+    "bear-face-parts/00": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/bear_head_wink.png",
+          "mirrored": false,
+          "name": "head_wink",
+          "points": {
+            "neck": [
+              287.5,
+              509.25
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "wink"
+    },
+    "bear-face-parts/01": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/bear_head_talking.png",
+          "mirrored": false,
+          "name": "head_talking",
+          "points": {
+            "neck": [
+              287.0,
+              509.25
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "talking"
+    },
+    "bear-face-parts/02": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/bear_head_angry.png",
+          "mirrored": false,
+          "name": "head_angry",
+          "points": {
+            "neck": [
+              287.0,
+              509.25
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "angry"
+    },
+    "bear-face-parts/03": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/bear_head_surprised.png",
+          "mirrored": false,
+          "name": "head_surprised",
+          "points": {
+            "neck": [
+              287.0,
+              508.28
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "surprised"
+    },
+    "bear-face-parts/04": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/bear_head_laugh.png",
+          "mirrored": false,
+          "name": "head_laugh",
+          "points": {
+            "neck": [
+              287.0,
+              507.31
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "laugh"
+    },
+    "bear-face-parts/05": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/bear_head_sad.png",
+          "mirrored": false,
+          "name": "head_sad",
+          "points": {
+            "neck": [
+              286.5,
+              509.25
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "sad"
+    },
+    "bear-face-parts/06": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/bear_head_happy.png",
+          "mirrored": false,
+          "name": "head_happy",
+          "points": {
+            "neck": [
+              286.0,
+              509.25
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "happy"
+    },
+    "bear-face-parts/07": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/bear_head_blink.png",
+          "mirrored": false,
+          "name": "head_blink",
+          "points": {
+            "neck": [
+              287.0,
+              510.22
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "blink"
+    },
+    "bear-face-parts/08": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/bear_head_neutral.png",
+          "mirrored": false,
+          "name": "head_neutral",
+          "points": {
+            "neck": [
+              286.5,
+              509.25
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "neutral"
+    },
+    "bear-hands-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-hands-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-hands-parts/02": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-hands-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-hands-parts/04": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-hands-parts/05": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-hands-parts/06": {
+      "confidence": 0.7,
+      "facing": "palm",
+      "note": "painted with the wrist at the left side; curled fingers' fronts show",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 71.96
+          },
+          "file": "variants/bear_hand_l_thumbsup.png",
+          "mirrored": false,
+          "name": "hand_l_thumbsup",
+          "points": {
+            "thumb_tip": [
+              382.18,
+              169.0
+            ],
+            "wrist": [
+              130.98,
+              19.15
+            ]
+          },
+          "rotated": -90.0,
+          "widths": {
+            "wrist": 205.6
+          }
+        },
+        {
+          "depths": {
+            "wrist": 71.96
+          },
+          "file": "variants/bear_hand_r_thumbsup.png",
+          "mirrored": true,
+          "name": "hand_r_thumbsup",
+          "points": {
+            "thumb_tip": [
+              11.82,
+              169.0
+            ],
+            "wrist": [
+              263.02,
+              19.15
+            ]
+          },
+          "rotated": -90.0,
+          "widths": {
+            "wrist": 205.6
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.5,
+            0.03
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.04,
+            0.62
+          ],
+          "depth": 71.96,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.0566,
+            0.6676
+          ],
+          "width": 205.6
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "thumbsup"
+    },
+    "bear-hands-parts/07": {
+      "confidence": 0.5,
+      "facing": "back",
+      "note": "thumb and first finger make a ring at the lower left",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 80.37
+          },
+          "file": "variants/bear_hand_l_grip.png",
+          "mirrored": true,
+          "name": "hand_l_grip",
+          "points": {
+            "fingertip": [
+              320.75,
+              389.47
+            ],
+            "thumb_tip": [
+              222.66,
+              367.77
+            ],
+            "wrist": [
+              320.75,
+              98.04
+            ]
+          },
+          "rotated": 49.46,
+          "widths": {
+            "wrist": 229.64
+          }
+        },
+        {
+          "depths": {
+            "wrist": 80.37
+          },
+          "file": "variants/bear_hand_r_grip.png",
+          "mirrored": false,
+          "name": "hand_r_grip",
+          "points": {
+            "fingertip": [
+              194.25,
+              389.47
+            ],
+            "thumb_tip": [
+              292.34,
+              367.77
+            ],
+            "wrist": [
+              194.25,
+              98.04
+            ]
+          },
+          "rotated": 49.46,
+          "widths": {
+            "wrist": 229.64
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.05,
+            0.6
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.3,
+            0.75
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.74,
+            0.13
+          ],
+          "depth": 80.37,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 229.64
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "grip"
+    },
+    "bear-hands-parts/08": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "palm-facing fist (prompted): curled fingers toward the viewer, thumb across from the left",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 69.58
+          },
+          "file": "variants/bear_hand_l_fist.png",
+          "mirrored": true,
+          "name": "hand_l_fist",
+          "points": {
+            "thumb_tip": [
+              283.5,
+              240.12
+            ],
+            "wrist": [
+              138.06,
+              17.3
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 198.8
+          }
+        },
+        {
+          "depths": {
+            "wrist": 69.58
+          },
+          "file": "variants/bear_hand_r_fist.png",
+          "mirrored": false,
+          "name": "hand_r_fist",
+          "points": {
+            "thumb_tip": [
+              31.5,
+              240.12
+            ],
+            "wrist": [
+              176.94,
+              17.3
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 198.8
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.1,
+            0.58
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.55,
+            0.05
+          ],
+          "depth": 69.58,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5617,
+            0.0418
+          ],
+          "width": 198.8
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "fist"
+    },
+    "bear-hands-parts/09": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-hands-parts/10": {
+      "confidence": 0.7,
+      "facing": "palm",
+      "note": "palm pad and fingertip pads visible",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 76.72
+          },
+          "file": "variants/bear_hand_l_open.png",
+          "mirrored": true,
+          "name": "hand_l_open",
+          "points": {
+            "fingertip": [
+              198.17,
+              456.92
+            ],
+            "thumb_tip": [
+              393.62,
+              234.53
+            ],
+            "wrist": [
+              198.17,
+              28.72
+            ]
+          },
+          "rotated": 2.59,
+          "widths": {
+            "wrist": 219.2
+          }
+        },
+        {
+          "depths": {
+            "wrist": 76.72
+          },
+          "file": "variants/bear_hand_r_open.png",
+          "mirrored": false,
+          "name": "hand_r_open",
+          "points": {
+            "fingertip": [
+              217.83,
+              456.92
+            ],
+            "thumb_tip": [
+              22.38,
+              234.53
+            ],
+            "wrist": [
+              217.83,
+              28.72
+            ]
+          },
+          "rotated": 2.59,
+          "widths": {
+            "wrist": 219.2
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.03,
+            0.47
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.05
+          ],
+          "depth": 76.72,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5492,
+            0.0441
+          ],
+          "width": 219.2
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "open"
+    },
+    "bear-hands-parts/11": {
+      "confidence": 0.0,
+      "note": "round 10: drawn back-facing (knuckle bumps, thumb tucked behind) although prompted palm, and I labelled it palm; Jev's hold check failed the point (P(thumb up) 0.16). Replaced by bear-point-palm-parts/00",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-point-palm-parts/00": {
+      "confidence": 0.85,
+      "facing": "palm",
+      "note": "palm-facing point (hands-point-palm.txt): palm pad and curled fingertips toward the viewer, thumb out to the side",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 218.49
+          },
+          "file": "variants/bear_hand_l_point.png",
+          "mirrored": false,
+          "name": "hand_l_point",
+          "points": {
+            "fingertip": [
+              545.61,
+              1259.32
+            ],
+            "thumb_tip": [
+              1050.87,
+              815.58
+            ],
+            "wrist": [
+              545.61,
+              120.57
+            ]
+          },
+          "rotated": -14.99,
+          "widths": {
+            "wrist": 624.26
+          }
+        },
+        {
+          "depths": {
+            "wrist": 218.49
+          },
+          "file": "variants/bear_hand_r_point.png",
+          "mirrored": true,
+          "name": "hand_r_point",
+          "points": {
+            "fingertip": [
+              737.39,
+              1259.32
+            ],
+            "thumb_tip": [
+              232.13,
+              815.58
+            ],
+            "wrist": [
+              737.39,
+              120.57
+            ]
+          },
+          "rotated": -14.99,
+          "widths": {
+            "wrist": 624.26
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.55,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.92,
+            0.5
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.33,
+            0.05
+          ],
+          "depth": 218.49,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.2582,
+            0.0456
+          ],
+          "width": 624.26
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "point"
+    },
+    "bear-point-palm-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-poses-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-poses-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-poses-parts/02": {
+      "confidence": 0.0,
+      "note": "round 5: dropped. The tilted side-view tiptoe clog came out 3.2x too big in the rig (scaleX 3.17: its snapped opening, 137 px, against the rest clog's unsnapped cross width, 362 px), a giant clog in cheer_jump in the Spine player (gallery review); after the ankle stub it also failed variant_misfit. Without a tiptoe variant the swap is skipped",
+      "outputs": [],
+      "points": {},
+      "role": "foot",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-poses-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece, not used by the rig (body-sheet two-piece arms, row-2 hands, relaxed duplicate, rest clogs on the poses sheet)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "bear-torso-parts/00": {
+      "confidence": 0.8,
+      "note": "body-sheet torso narrowed 0.86 across (make_parts.py); neck = bottom of the fur V, waist just above the shirt's rounded bottom so it overlaps only the top of the waistband",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/bear_torso.png",
+          "mirrored": false,
+          "name": "torso",
+          "points": {
+            "neck": [
+              467.5,
+              156.26
+            ],
+            "waist": [
+              467.5,
+              572.15
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.26
+          ],
+          "kind": "point"
+        },
+        "waist": {
+          "at": [
+            0.5,
+            0.952
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "torso",
+      "side": "",
+      "status": "confirmed"
+    },
+    "bear-trousers-parts/00": {
+      "confidence": 0.8,
+      "note": "waistband + apron + trousers to the hems, cut from the master at the rig's scale (make_parts.py); openings at the hems, clogs under them",
+      "outputs": [
+        {
+          "depths": {
+            "hip_l": 149.45,
+            "hip_r": 149.45
+          },
+          "file": "body/bear_hips.png",
+          "mirrored": false,
+          "name": "hips",
+          "points": {
+            "hip_l": [
+              707.95,
+              858.44
+            ],
+            "hip_r": [
+              266.58,
+              858.44
+            ],
+            "waist": [
+              487.0,
+              82.96
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "hip_l": 427.0,
+            "hip_r": 427.0
+          }
+        }
+      ],
+      "points": {
+        "hip_l": {
+          "at": [
+            0.728,
+            0.961
+          ],
+          "depth": 149.45,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.7268,
+            0.9624
+          ],
+          "width": 427.0
+        },
+        "hip_r": {
+          "at": [
+            0.271,
+            0.961
+          ],
+          "depth": 149.45,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.2737,
+            0.9624
+          ],
+          "width": 427.0
+        },
+        "waist": {
+          "at": [
+            0.5,
+            0.093
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "hips",
+      "side": "",
+      "status": "fixed"
+    }
+  },
+  "version": 1
+}

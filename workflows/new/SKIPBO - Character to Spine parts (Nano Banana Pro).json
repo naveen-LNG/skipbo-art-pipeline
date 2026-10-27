@@ -1,0 +1,5369 @@
+{
+ "last_node_id": 512,
+ "last_link_id": 117,
+ "nodes": [
+  {
+   "id": 10,
+   "type": "LoadImage",
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      34
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "SKIPBO_REF_moose_turnaround.png",
+    "image"
+   ],
+   "title": "Character reference (any view, any style)"
+  },
+  {
+   "id": 11,
+   "type": "LoadImage",
+   "pos": [
+    0,
+    360
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      35,
+      40,
+      44,
+      48,
+      52
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "SKIPBO_STYLE_blocks_hippo_atlas.jpg",
+    "image"
+   ],
+   "title": "Style ref A: shipped Hippo atlas"
+  },
+  {
+   "id": 12,
+   "type": "LoadImage",
+   "pos": [
+    0,
+    720
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      36
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "SKIPBO_STYLE_blocks_raccoon_atlas.jpg",
+    "image"
+   ],
+   "title": "Style ref B: shipped Raccoon atlas"
+  },
+  {
+   "id": 20,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2,
+      10,
+      14,
+      22,
+      30
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "A kind grandpa moose train conductor: dark-brown fur, a big rounded tan muzzle with two large dark nostrils, small black eyes, bushy cream eyebrows, round ears and broad flat antlers. Navy conductor cap with a gold band and a round gold badge, red scarf with a small gold bell, navy vest with three gold buttons and a gold belt buckle over a cream long-sleeved shirt, brown trousers, dark-brown hoof hands and hooves."
+   ],
+   "title": "CHARACTER NOTES (edit me)"
+  },
+  {
+   "id": 21,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    450.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      6
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "Row 1: head base (the furry head with the big tan muzzle and its two nostrils, plain fur forehead and eye areas, plain muzzle below the nostrils), conductor cap, left antler, right antler, left ear, right ear.\nRow 2: red scarf with its knot and hanging end, small gold bell, torso (the navy vest with its buttons and buckle over the cream shirt, continuing up into a short brown neck and ending at the gold belt buckle; both shoulders are rounded cream shirt, and the cream shirt sides are painted down to the waist; no trousers, legs or hooves on it), hips (only the top of the brown trousers, from the belt down to the crotch, painted whole, with two rounded leg openings).\nRow 3: four separate sleeve pieces, each painted upright: left upper arm, right upper arm (the upper half of the cream sleeve only, from shoulder to elbow, rounded at both ends, no cuff), left forearm, right forearm (the lower half of the cream sleeve only, from elbow to wrist, rounded at the top, with the brown fur wrist at the bottom); then left hand, right hand (dark-brown hoof mittens, open and relaxed, rounded at the wrist).\nRow 4: left leg, right leg (one brown trouser leg each, from the crotch down to its hem, rounded at the top, with nothing below the hem), left hoof, right hoof (only the dark-brown hoof that shows below the trouser hem, with a rounded top and no trouser on it)."
+   ],
+   "title": "PIECES for the body sheet (edit me)"
+  },
+  {
+   "id": 22,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    900.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      18
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "relaxed (exactly the hoof hand of image_1, open and relaxed); open (palm facing the viewer, all fingers spread wide, as in a wave); fist (fingers curled into a soft round fist); point (index finger stretched straight down, the other fingers curled); thumbs-up (fingers curled into a fist, thumb sticking straight out sideways, away from the body); grip (fingers curled loosely forward and the thumb pressed against the side of the first finger, as when pinching something thin)."
+   ],
+   "title": "HANDS: 6 hand poses (edit me)"
+  },
+  {
+   "id": 23,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    1350.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      26
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "Row 1: left upper arm, left upper arm raised, right upper arm, right upper arm raised. An upper arm is only the cream sleeve from the shoulder down to the elbow, rounded at both ends, without any cuff or fur wrist (those belong to the forearm). A raised upper arm is the same sleeve at the same size and width as it looks on an arm lifted high above the head, but painted upright like the first one, shoulder end at the top: its shoulder end is a soft, slightly wider rounded cap with one or two gentle folds where the cloth bunches.\nRow 2: left hoof, left hoof on tiptoe, right hoof, right hoof on tiptoe (only the dark-brown hoof that shows below the trouser hem, with no trouser on it; on tiptoe the hoof is seen from the front with its tip pointing down and its sole tilted towards the viewer, as when jumping, with its rounded ankle end still at the top)."
+   ],
+   "title": "POSES: piece + variant rows (edit me)"
+  },
+  {
+   "id": 300,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    840.0,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 15,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "IMAGE ROLES:\nimage_1 = CHARACTER DESIGN. Take from it only who the character is: species, body proportions, costume, colours and accessories. If it shows several views, use them all to understand the design.\nimage_2 and image_3 = ART STYLE. Animation atlases of two characters already shipped in this game, a hippo and a raccoon, cut into separate parts. Take from them only how things are painted: shading, colour, edges, level of detail and the chunky shape language. Their species, costumes and layout are not part of this picture.\n\nTASK:\nPaint the character from image_1 as one finished full-body character in the art style of image_2 and image_3, as a clean master drawing for cutting into animation parts.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nPOSE AND FRAMING:\nFront view, facing the viewer, in a symmetrical rest pose. Both arms hang down and out at about thirty degrees from the sides, so plain background shows between each arm and the body along the whole arm. Hands open and relaxed. Legs straight, feet a little apart and flat on the ground. A tail, if the character has one, hangs to one side and stays clear of the legs, with background visible between them. Head level, looking at the viewer, with a gentle closed-mouth smile and eyes open. The whole character fits in the frame with an even margin around it and fills about eighty-five percent of its height. The background is one flat plain light grey with nothing else in it, and the character stands on it without any cast shadow.\n\nFINAL CHECK:\n1. Painted like the shipped hippo and raccoon: airbrushed soft volume, candy colours, chunky simplified shapes, smooth surfaces, no outlines.\n2. Clearly the same character as image_1: same costume pieces and colours.\n3. Front view, symmetrical, arms clear of the body, full body in frame.\n4. Flat light grey background, single character, no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+   ],
+   "title": "master prompt part 1 (fixed)"
+  },
+  {
+   "id": 302,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1218.0,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 24,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      4
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n"
+   ],
+   "title": "master prompt part 3 (fixed)"
+  },
+  {
+   "id": 310,
+   "type": "StringConcatenate",
+   "pos": [
+    2730.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 48,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 1,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 2,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 311,
+   "type": "StringConcatenate",
+   "pos": [
+    2919.0,
+    180.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 53,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 3,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 4,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      33
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 320,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    840.0,
+    360
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 16,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nRepaint the character from image_1 as a sheet of separate body pieces for 2D skeletal animation in Spine. Each piece is painted whole, including the area that is normally hidden under the piece in front of it, so that the pieces can rotate at their joints without showing gaps. Joint ends are rounded.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\n"
+   ],
+   "title": "body-sheet prompt part 1 (fixed)"
+  },
+  {
+   "id": 322,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1218.0,
+    360
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 25,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      8
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nCutting rules for every piece in the list: a piece listed separately is painted with empty background all around it and never joined to a neighbour. Each arm is in three pieces (upper arm, forearm, hand) and each leg in two (leg, foot). Every limb piece is painted straight and upright, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself, like the end of a sausage: the top of each upper arm, both ends of each forearm, the wrist end of each hand, the top of each leg, the ankle end of each foot and the root of the tail. No piece has a flat, straight or slanted cut edge. The torso is painted whole as it looks with the arms taken away: both shoulders are rounded, and the sides of the body that the arms normally cover are painted all the way down to the waist. The hips piece is painted whole, including the crotch between the legs. The head base carries only the fixed features of the head; the eyes, eyebrows and mouth belong to the face sheet and appear nowhere on this sheet.\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these pieces, with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows, each clearly cut from the character in image_1 in its colours and painting.\n2. Each arm is in three pieces and each leg in two; every head item and neck item is separate from the head and torso; no eyes, eyebrows or mouths anywhere on the sheet.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth surfaces, no outlines; every joint end fully rounded, no flat cut edges; torso sides and hips crotch painted complete.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+   ],
+   "title": "body-sheet prompt part 3 (fixed)"
+  },
+  {
+   "id": 324,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1596.0,
+    360
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 33,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      12
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n"
+   ],
+   "title": "body-sheet prompt part 5 (fixed)"
+  },
+  {
+   "id": 330,
+   "type": "StringConcatenate",
+   "pos": [
+    2730.0,
+    540.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 49,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 5,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 6,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 331,
+   "type": "StringConcatenate",
+   "pos": [
+    2919.0,
+    540.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 54,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 7,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 8,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 332,
+   "type": "StringConcatenate",
+   "pos": [
+    3108.0,
+    540.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 62,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 9,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 10,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      11
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 333,
+   "type": "StringConcatenate",
+   "pos": [
+    3297.0,
+    540.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 65,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 11,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 12,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      38
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 340,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    840.0,
+    720
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 17,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      13
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the head of the character from image_1 as a sheet of whole-face expression swaps for facial animation in Spine. Every head on the sheet is the same head at the same size, painted again with a different expression, so any one of them can replace another on the rig.\n\nTHE PIECES (nine heads, each painted exactly once), laid out in a three by three grid, left to right and top to bottom:\nEach head is the character's head base from image_1, front view, with its eyes, eyebrows, snout or beak, nostrils and mouth, and without any hat, horn, antler, ear or hair tuft, because those are separate pieces. All nine heads have exactly the same outline, size and fur, skin or feathers; only the eyes, eyebrows and mouth change, and they stay the same small size they have on the head in image_1.\n1. Neutral: eyes open, eyebrows relaxed, gentle closed smile, exactly as in image_1.\n2. Blink: the same face with both eyes closed as gentle curved eyelid lines.\n3. Happy: eyes open and bright, wide open smiling mouth with a dark-red inside and a pink tongue.\n4. Laugh: eyes squeezed shut in happy upward curves, wide open laughing mouth.\n5. Surprised: eyes wide open, eyebrows raised high, small round open mouth.\n6. Sad: eyebrows tilted up in the middle, eyes open and looking down, gentle downturned mouth.\n7. Angry: eyebrows pulled down in the middle, eyes narrowed, mouth a tight frown.\n8. Talking: eyes open, mouth half open in a relaxed oval as in mid-word.\n9. Wink: the left eye closed in a gentle curve, the right eye open, a cheeky smile.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these nine heads, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Nine heads with one identical outline and size, each the head from image_1 without hat, horns or ears, with the features as small as in image_1.\n2. Only the eyes, eyebrows and mouth change between heads; every head matches the colours and painting of image_1.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+   ],
+   "title": "face-sheet prompt part 1 (fixed)"
+  },
+  {
+   "id": 342,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1218.0,
+    720
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 26,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      16
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n"
+   ],
+   "title": "face-sheet prompt part 3 (fixed)"
+  },
+  {
+   "id": 350,
+   "type": "StringConcatenate",
+   "pos": [
+    2730.0,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 50,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 13,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 14,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      15
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 351,
+   "type": "StringConcatenate",
+   "pos": [
+    2919.0,
+    900.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 55,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 15,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 16,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      42
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 360,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    840.0,
+    1080
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 18,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      17
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the hands of the character from image_1 as a sheet of swappable hand poses for 2D skeletal animation in Spine. Every hand on the sheet is the same hand at the same size as in image_1, painted again in a different pose, so any one of them can replace another at the end of the arm.\n\nTHE PIECES (twelve hands, each painted exactly once), in two rows of six, left to right:\nRow 1: the hand at the end of the character's left arm (the arm on the right side of image_1), in these six poses: "
+   ],
+   "title": "hands-sheet prompt part 1 (fixed)"
+  },
+  {
+   "id": 362,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1218.0,
+    1080
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 27,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      20
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\nRow 2: the hand at the end of the character's right arm (the arm on the left side of image_1), in the same six poses in the same order.\n\nEvery hand is painted the same way up, as if hanging at the end of an arm that points straight down: the wrist end is at the top of the piece, fully rounded and as wide as the wrist, and the hand extends downwards from it. This holds for every pose, including the open hand, the fist and the thumbs-up: none of them has its wrist at the bottom or at the side. Each hand includes only the hand itself, from the wrist down, in the colours and painting of the hands in image_1; the sleeve, cuff and arm belong to other pieces and appear nowhere on this sheet. Every hand is the same chunky cartoon mitten as the hands in image_1: the same number of short, fat, rounded fingers, a simple soft-toy shape and the same flat colour, never a detailed or realistic human hand with knuckles and nails. The hands hold nothing.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Twelve hands in two rows of six, all the same size as the hands in image_1, each one clearly a different pose in the listed order.\n2. Every hand the same way up, wrist at the top, rounded wrist end, no sleeve or cuff; chunky mittens like image_1 with its number of fingers; nothing held.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+   ],
+   "title": "hands-sheet prompt part 3 (fixed)"
+  },
+  {
+   "id": 364,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1596.0,
+    1080
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 34,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      24
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n"
+   ],
+   "title": "hands-sheet prompt part 5 (fixed)"
+  },
+  {
+   "id": 370,
+   "type": "StringConcatenate",
+   "pos": [
+    2730.0,
+    1260.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 51,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 17,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 18,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      19
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 371,
+   "type": "StringConcatenate",
+   "pos": [
+    2919.0,
+    1260.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 56,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 19,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 20,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      21
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 372,
+   "type": "StringConcatenate",
+   "pos": [
+    3108.0,
+    1260.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 63,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 21,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 22,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      23
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 373,
+   "type": "StringConcatenate",
+   "pos": [
+    3297.0,
+    1260.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 66,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 23,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 24,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      46
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 380,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    840.0,
+    1440
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 19,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      25
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint pose variants of some body pieces of the character from image_1 for 2D skeletal animation in Spine. Each row starts with the piece exactly as it is on the character, followed by its variants; a variant is the same piece at the same size and width, painted again in a different pose, so it can replace the first one at the same joint.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\n"
+   ],
+   "title": "poses-sheet prompt part 1 (fixed)"
+  },
+  {
+   "id": 382,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1218.0,
+    1440
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 28,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      28
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nEvery limb piece is painted straight and upright, the same way up as its first piece, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself; no piece has a flat, straight or slanted cut edge. Each variant keeps exactly the colours, width and painting of its first piece; only the pose changes.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows; each variant the same size and width as the first piece of its row.\n2. Limb pieces upright with the joining end at the top, every joining end fully rounded.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+   ],
+   "title": "poses-sheet prompt part 3 (fixed)"
+  },
+  {
+   "id": 384,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1596.0,
+    1440
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 35,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      32
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n"
+   ],
+   "title": "poses-sheet prompt part 5 (fixed)"
+  },
+  {
+   "id": 390,
+   "type": "StringConcatenate",
+   "pos": [
+    2730.0,
+    1620.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 52,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 25,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 26,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      27
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 391,
+   "type": "StringConcatenate",
+   "pos": [
+    2919.0,
+    1620.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 57,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 27,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 28,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      29
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 392,
+   "type": "StringConcatenate",
+   "pos": [
+    3108.0,
+    1620.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 64,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 29,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 30,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      31
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 393,
+   "type": "StringConcatenate",
+   "pos": [
+    3297.0,
+    1620.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 67,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 31,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 32,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      50
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 40,
+   "type": "NanoBananaAIO",
+   "pos": [
+    4620,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 80,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 33,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "image_1",
+     "type": "IMAGE",
+     "link": 34
+    },
+    {
+     "name": "image_2",
+     "type": "IMAGE",
+     "link": 35
+    },
+    {
+     "name": "image_3",
+     "type": "IMAGE",
+     "link": 36
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      37,
+      39,
+      43,
+      47,
+      51
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "thinking",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "grounding_sources",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "NanoBananaAIO"
+   },
+   "widgets_values": [
+    "gemini-3-pro-image-preview",
+    "",
+    1,
+    false,
+    "3:4",
+    "2K",
+    0.6
+   ],
+   "title": "1 Master in Blocks style"
+  },
+  {
+   "id": 41,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 89,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 37
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_SPINE/character/master"
+   ]
+  },
+  {
+   "id": 50,
+   "type": "NanoBananaAIO",
+   "pos": [
+    4620,
+    360
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 81,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 38,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "image_1",
+     "type": "IMAGE",
+     "link": 39
+    },
+    {
+     "name": "image_2",
+     "type": "IMAGE",
+     "link": 40
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      41,
+      54
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "thinking",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "grounding_sources",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "NanoBananaAIO"
+   },
+   "widgets_values": [
+    "gemini-3-pro-image-preview",
+    "",
+    1,
+    false,
+    "1:1",
+    "2K",
+    0.4
+   ],
+   "title": "2 Body parts sheet"
+  },
+  {
+   "id": 51,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    360
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 90,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 41
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_SPINE/character/body_sheet"
+   ]
+  },
+  {
+   "id": 60,
+   "type": "NanoBananaAIO",
+   "pos": [
+    4620,
+    720
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 82,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 42,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "image_1",
+     "type": "IMAGE",
+     "link": 43
+    },
+    {
+     "name": "image_2",
+     "type": "IMAGE",
+     "link": 44
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      45,
+      70
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "thinking",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "grounding_sources",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "NanoBananaAIO"
+   },
+   "widgets_values": [
+    "gemini-3-pro-image-preview",
+    "",
+    1,
+    false,
+    "1:1",
+    "2K",
+    0.4
+   ],
+   "title": "3 Face sheet: 9 expression heads"
+  },
+  {
+   "id": 61,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    720
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 91,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 45
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_SPINE/character/face_sheet"
+   ]
+  },
+  {
+   "id": 70,
+   "type": "NanoBananaAIO",
+   "pos": [
+    4620,
+    1080
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 83,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 46,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "image_1",
+     "type": "IMAGE",
+     "link": 47
+    },
+    {
+     "name": "image_2",
+     "type": "IMAGE",
+     "link": 48
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      49,
+      86
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "thinking",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "grounding_sources",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "NanoBananaAIO"
+   },
+   "widgets_values": [
+    "gemini-3-pro-image-preview",
+    "",
+    1,
+    false,
+    "3:2",
+    "2K",
+    0.4
+   ],
+   "title": "4 Hands sheet: 6 poses x 2 hands"
+  },
+  {
+   "id": 71,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    1080
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 92,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 49
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_SPINE/character/hands_sheet"
+   ]
+  },
+  {
+   "id": 80,
+   "type": "NanoBananaAIO",
+   "pos": [
+    4620,
+    1440
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 84,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 50,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "image_1",
+     "type": "IMAGE",
+     "link": 51
+    },
+    {
+     "name": "image_2",
+     "type": "IMAGE",
+     "link": 52
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      53,
+      102
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "thinking",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "grounding_sources",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "NanoBananaAIO"
+   },
+   "widgets_values": [
+    "gemini-3-pro-image-preview",
+    "",
+    1,
+    false,
+    "16:9",
+    "2K",
+    0.4
+   ],
+   "title": "5 Poses sheet: raised sleeve, tiptoe, tail up"
+  },
+  {
+   "id": 81,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    1440
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 93,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 53
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_SPINE/character/poses_sheet"
+   ]
+  },
+  {
+   "id": 100,
+   "type": "easy imageRemBg",
+   "pos": [
+    0,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 54
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      59
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": [
+      55
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "easy imageRemBg"
+   },
+   "widgets_values": [
+    "BEN2",
+    "Hide",
+    "x",
+    false,
+    "none",
+    false
+   ]
+  },
+  {
+   "id": 101,
+   "type": "ThresholdMask",
+   "pos": [
+    420,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 55
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      56
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ThresholdMask"
+   },
+   "widgets_values": [
+    0.3
+   ]
+  },
+  {
+   "id": 102,
+   "type": "GrowMask",
+   "pos": [
+    840,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 56
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      57
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GrowMask"
+   },
+   "widgets_values": [
+    8,
+    true
+   ]
+  },
+  {
+   "id": 103,
+   "type": "MaskToSEGS",
+   "pos": [
+    1260,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 29,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 57
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS",
+     "type": "SEGS",
+     "links": [
+      58
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskToSEGS"
+   },
+   "widgets_values": [
+    false,
+    1.0,
+    false,
+    24,
+    true
+   ]
+  },
+  {
+   "id": 104,
+   "type": "SetDefaultImageForSEGS",
+   "pos": [
+    1680,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 36,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "segs",
+     "type": "SEGS",
+     "link": 58
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 59
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS",
+     "type": "SEGS",
+     "links": [
+      60
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetDefaultImageForSEGS"
+   },
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 105,
+   "type": "ImpactDecomposeSEGS",
+   "pos": [
+    2100,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 40,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "segs",
+     "type": "SEGS",
+     "link": 60
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS_HEADER",
+     "type": "SEGS_HEADER",
+     "links": [],
+     "slot_index": 0
+    },
+    {
+     "name": "SEG_ELT",
+     "type": "SEG_ELT",
+     "links": [
+      61
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImpactDecomposeSEGS"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 106,
+   "type": "ImpactFrom_SEG_ELT",
+   "pos": [
+    2520,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 44,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "seg_elt",
+     "type": "SEG_ELT",
+     "link": 61
+    }
+   ],
+   "outputs": [
+    {
+     "name": "seg_elt",
+     "type": "SEG_ELT",
+     "links": [],
+     "slot_index": 0
+    },
+    {
+     "name": "cropped_image",
+     "type": "IMAGE",
+     "links": [
+      62
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "cropped_mask",
+     "type": "MASK",
+     "links": [
+      65
+     ],
+     "slot_index": 2
+    },
+    {
+     "name": "crop_region",
+     "type": "SEG_ELT_crop_region",
+     "links": [],
+     "slot_index": 3
+    },
+    {
+     "name": "bbox",
+     "type": "SEG_ELT_bbox",
+     "links": [],
+     "slot_index": 4
+    },
+    {
+     "name": "control_net_wrapper",
+     "type": "SEG_ELT_control_net_wrapper",
+     "links": [],
+     "slot_index": 5
+    },
+    {
+     "name": "confidence",
+     "type": "FLOAT",
+     "links": [],
+     "slot_index": 6
+    },
+    {
+     "name": "label",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 7
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImpactFrom_SEG_ELT"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 107,
+   "type": "SplitImageWithAlpha",
+   "pos": [
+    2940,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 58,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 62
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      67
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      63
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SplitImageWithAlpha"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 108,
+   "type": "InvertMask",
+   "pos": [
+    3360,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 68,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 63
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      64
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "InvertMask"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 109,
+   "type": "MaskComposite",
+   "pos": [
+    3780,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 72,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "destination",
+     "type": "MASK",
+     "link": 64
+    },
+    {
+     "name": "source",
+     "type": "MASK",
+     "link": 65
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      66
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskComposite"
+   },
+   "widgets_values": [
+    0,
+    0,
+    "multiply"
+   ]
+  },
+  {
+   "id": 110,
+   "type": "InvertMask",
+   "pos": [
+    4200,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 76,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 66
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      68
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "InvertMask"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 111,
+   "type": "JoinImageWithAlpha",
+   "pos": [
+    4620,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 85,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 67
+    },
+    {
+     "name": "alpha",
+     "type": "MASK",
+     "link": 68
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      69
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "JoinImageWithAlpha"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 112,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    2160
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 94,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 69
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_SPINE/character/body_part"
+   ]
+  },
+  {
+   "id": 200,
+   "type": "easy imageRemBg",
+   "pos": [
+    0,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 70
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      75
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": [
+      71
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "easy imageRemBg"
+   },
+   "widgets_values": [
+    "BEN2",
+    "Hide",
+    "x",
+    false,
+    "none",
+    false
+   ]
+  },
+  {
+   "id": 201,
+   "type": "ThresholdMask",
+   "pos": [
+    420,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 71
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      72
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ThresholdMask"
+   },
+   "widgets_values": [
+    0.3
+   ]
+  },
+  {
+   "id": 202,
+   "type": "GrowMask",
+   "pos": [
+    840,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 21,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 72
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      73
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GrowMask"
+   },
+   "widgets_values": [
+    8,
+    true
+   ]
+  },
+  {
+   "id": 203,
+   "type": "MaskToSEGS",
+   "pos": [
+    1260,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 30,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 73
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS",
+     "type": "SEGS",
+     "links": [
+      74
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskToSEGS"
+   },
+   "widgets_values": [
+    false,
+    1.0,
+    false,
+    24,
+    true
+   ]
+  },
+  {
+   "id": 204,
+   "type": "SetDefaultImageForSEGS",
+   "pos": [
+    1680,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 37,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "segs",
+     "type": "SEGS",
+     "link": 74
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 75
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS",
+     "type": "SEGS",
+     "links": [
+      76
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetDefaultImageForSEGS"
+   },
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 205,
+   "type": "ImpactDecomposeSEGS",
+   "pos": [
+    2100,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 41,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "segs",
+     "type": "SEGS",
+     "link": 76
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS_HEADER",
+     "type": "SEGS_HEADER",
+     "links": [],
+     "slot_index": 0
+    },
+    {
+     "name": "SEG_ELT",
+     "type": "SEG_ELT",
+     "links": [
+      77
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImpactDecomposeSEGS"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 206,
+   "type": "ImpactFrom_SEG_ELT",
+   "pos": [
+    2520,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 45,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "seg_elt",
+     "type": "SEG_ELT",
+     "link": 77
+    }
+   ],
+   "outputs": [
+    {
+     "name": "seg_elt",
+     "type": "SEG_ELT",
+     "links": [],
+     "slot_index": 0
+    },
+    {
+     "name": "cropped_image",
+     "type": "IMAGE",
+     "links": [
+      78
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "cropped_mask",
+     "type": "MASK",
+     "links": [
+      81
+     ],
+     "slot_index": 2
+    },
+    {
+     "name": "crop_region",
+     "type": "SEG_ELT_crop_region",
+     "links": [],
+     "slot_index": 3
+    },
+    {
+     "name": "bbox",
+     "type": "SEG_ELT_bbox",
+     "links": [],
+     "slot_index": 4
+    },
+    {
+     "name": "control_net_wrapper",
+     "type": "SEG_ELT_control_net_wrapper",
+     "links": [],
+     "slot_index": 5
+    },
+    {
+     "name": "confidence",
+     "type": "FLOAT",
+     "links": [],
+     "slot_index": 6
+    },
+    {
+     "name": "label",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 7
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImpactFrom_SEG_ELT"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 207,
+   "type": "SplitImageWithAlpha",
+   "pos": [
+    2940,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 59,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 78
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      83
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      79
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SplitImageWithAlpha"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 208,
+   "type": "InvertMask",
+   "pos": [
+    3360,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 69,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 79
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      80
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "InvertMask"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 209,
+   "type": "MaskComposite",
+   "pos": [
+    3780,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 73,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "destination",
+     "type": "MASK",
+     "link": 80
+    },
+    {
+     "name": "source",
+     "type": "MASK",
+     "link": 81
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      82
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskComposite"
+   },
+   "widgets_values": [
+    0,
+    0,
+    "multiply"
+   ]
+  },
+  {
+   "id": 210,
+   "type": "InvertMask",
+   "pos": [
+    4200,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 77,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 82
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      84
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "InvertMask"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 211,
+   "type": "JoinImageWithAlpha",
+   "pos": [
+    4620,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 86,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 83
+    },
+    {
+     "name": "alpha",
+     "type": "MASK",
+     "link": 84
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      85
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "JoinImageWithAlpha"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 212,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    2520
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 95,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 85
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_SPINE/character/face_head"
+   ]
+  },
+  {
+   "id": 400,
+   "type": "easy imageRemBg",
+   "pos": [
+    0,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 86
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      91
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": [
+      87
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "easy imageRemBg"
+   },
+   "widgets_values": [
+    "BEN2",
+    "Hide",
+    "x",
+    false,
+    "none",
+    false
+   ]
+  },
+  {
+   "id": 401,
+   "type": "ThresholdMask",
+   "pos": [
+    420,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 87
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      88
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ThresholdMask"
+   },
+   "widgets_values": [
+    0.3
+   ]
+  },
+  {
+   "id": 402,
+   "type": "GrowMask",
+   "pos": [
+    840,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 22,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 88
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      89
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GrowMask"
+   },
+   "widgets_values": [
+    8,
+    true
+   ]
+  },
+  {
+   "id": 403,
+   "type": "MaskToSEGS",
+   "pos": [
+    1260,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 31,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 89
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS",
+     "type": "SEGS",
+     "links": [
+      90
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskToSEGS"
+   },
+   "widgets_values": [
+    false,
+    1.0,
+    false,
+    24,
+    true
+   ]
+  },
+  {
+   "id": 404,
+   "type": "SetDefaultImageForSEGS",
+   "pos": [
+    1680,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 38,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "segs",
+     "type": "SEGS",
+     "link": 90
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 91
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS",
+     "type": "SEGS",
+     "links": [
+      92
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetDefaultImageForSEGS"
+   },
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 405,
+   "type": "ImpactDecomposeSEGS",
+   "pos": [
+    2100,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 42,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "segs",
+     "type": "SEGS",
+     "link": 92
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS_HEADER",
+     "type": "SEGS_HEADER",
+     "links": [],
+     "slot_index": 0
+    },
+    {
+     "name": "SEG_ELT",
+     "type": "SEG_ELT",
+     "links": [
+      93
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImpactDecomposeSEGS"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 406,
+   "type": "ImpactFrom_SEG_ELT",
+   "pos": [
+    2520,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 46,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "seg_elt",
+     "type": "SEG_ELT",
+     "link": 93
+    }
+   ],
+   "outputs": [
+    {
+     "name": "seg_elt",
+     "type": "SEG_ELT",
+     "links": [],
+     "slot_index": 0
+    },
+    {
+     "name": "cropped_image",
+     "type": "IMAGE",
+     "links": [
+      94
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "cropped_mask",
+     "type": "MASK",
+     "links": [
+      97
+     ],
+     "slot_index": 2
+    },
+    {
+     "name": "crop_region",
+     "type": "SEG_ELT_crop_region",
+     "links": [],
+     "slot_index": 3
+    },
+    {
+     "name": "bbox",
+     "type": "SEG_ELT_bbox",
+     "links": [],
+     "slot_index": 4
+    },
+    {
+     "name": "control_net_wrapper",
+     "type": "SEG_ELT_control_net_wrapper",
+     "links": [],
+     "slot_index": 5
+    },
+    {
+     "name": "confidence",
+     "type": "FLOAT",
+     "links": [],
+     "slot_index": 6
+    },
+    {
+     "name": "label",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 7
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImpactFrom_SEG_ELT"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 407,
+   "type": "SplitImageWithAlpha",
+   "pos": [
+    2940,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 60,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 94
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      99
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      95
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SplitImageWithAlpha"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 408,
+   "type": "InvertMask",
+   "pos": [
+    3360,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 70,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 95
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      96
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "InvertMask"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 409,
+   "type": "MaskComposite",
+   "pos": [
+    3780,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 74,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "destination",
+     "type": "MASK",
+     "link": 96
+    },
+    {
+     "name": "source",
+     "type": "MASK",
+     "link": 97
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      98
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskComposite"
+   },
+   "widgets_values": [
+    0,
+    0,
+    "multiply"
+   ]
+  },
+  {
+   "id": 410,
+   "type": "InvertMask",
+   "pos": [
+    4200,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 78,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 98
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      100
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "InvertMask"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 411,
+   "type": "JoinImageWithAlpha",
+   "pos": [
+    4620,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 87,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 99
+    },
+    {
+     "name": "alpha",
+     "type": "MASK",
+     "link": 100
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      101
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "JoinImageWithAlpha"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 412,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    2880
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 96,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 101
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_SPINE/character/hand_variant"
+   ]
+  },
+  {
+   "id": 500,
+   "type": "easy imageRemBg",
+   "pos": [
+    0,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 102
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      107
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": [
+      103
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "easy imageRemBg"
+   },
+   "widgets_values": [
+    "BEN2",
+    "Hide",
+    "x",
+    false,
+    "none",
+    false
+   ]
+  },
+  {
+   "id": 501,
+   "type": "ThresholdMask",
+   "pos": [
+    420,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 103
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      104
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ThresholdMask"
+   },
+   "widgets_values": [
+    0.3
+   ]
+  },
+  {
+   "id": 502,
+   "type": "GrowMask",
+   "pos": [
+    840,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 23,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 104
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      105
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GrowMask"
+   },
+   "widgets_values": [
+    8,
+    true
+   ]
+  },
+  {
+   "id": 503,
+   "type": "MaskToSEGS",
+   "pos": [
+    1260,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 32,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 105
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS",
+     "type": "SEGS",
+     "links": [
+      106
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskToSEGS"
+   },
+   "widgets_values": [
+    false,
+    1.0,
+    false,
+    24,
+    true
+   ]
+  },
+  {
+   "id": 504,
+   "type": "SetDefaultImageForSEGS",
+   "pos": [
+    1680,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 39,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "segs",
+     "type": "SEGS",
+     "link": 106
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 107
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS",
+     "type": "SEGS",
+     "links": [
+      108
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetDefaultImageForSEGS"
+   },
+   "widgets_values": [
+    true
+   ]
+  },
+  {
+   "id": 505,
+   "type": "ImpactDecomposeSEGS",
+   "pos": [
+    2100,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 43,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "segs",
+     "type": "SEGS",
+     "link": 108
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SEGS_HEADER",
+     "type": "SEGS_HEADER",
+     "links": [],
+     "slot_index": 0
+    },
+    {
+     "name": "SEG_ELT",
+     "type": "SEG_ELT",
+     "links": [
+      109
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImpactDecomposeSEGS"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 506,
+   "type": "ImpactFrom_SEG_ELT",
+   "pos": [
+    2520,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 47,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "seg_elt",
+     "type": "SEG_ELT",
+     "link": 109
+    }
+   ],
+   "outputs": [
+    {
+     "name": "seg_elt",
+     "type": "SEG_ELT",
+     "links": [],
+     "slot_index": 0
+    },
+    {
+     "name": "cropped_image",
+     "type": "IMAGE",
+     "links": [
+      110
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "cropped_mask",
+     "type": "MASK",
+     "links": [
+      113
+     ],
+     "slot_index": 2
+    },
+    {
+     "name": "crop_region",
+     "type": "SEG_ELT_crop_region",
+     "links": [],
+     "slot_index": 3
+    },
+    {
+     "name": "bbox",
+     "type": "SEG_ELT_bbox",
+     "links": [],
+     "slot_index": 4
+    },
+    {
+     "name": "control_net_wrapper",
+     "type": "SEG_ELT_control_net_wrapper",
+     "links": [],
+     "slot_index": 5
+    },
+    {
+     "name": "confidence",
+     "type": "FLOAT",
+     "links": [],
+     "slot_index": 6
+    },
+    {
+     "name": "label",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 7
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImpactFrom_SEG_ELT"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 507,
+   "type": "SplitImageWithAlpha",
+   "pos": [
+    2940,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 61,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 110
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      115
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      111
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SplitImageWithAlpha"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 508,
+   "type": "InvertMask",
+   "pos": [
+    3360,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 71,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 111
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      112
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "InvertMask"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 509,
+   "type": "MaskComposite",
+   "pos": [
+    3780,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 75,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "destination",
+     "type": "MASK",
+     "link": 112
+    },
+    {
+     "name": "source",
+     "type": "MASK",
+     "link": 113
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      114
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskComposite"
+   },
+   "widgets_values": [
+    0,
+    0,
+    "multiply"
+   ]
+  },
+  {
+   "id": 510,
+   "type": "InvertMask",
+   "pos": [
+    4200,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 79,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 114
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      116
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "InvertMask"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 511,
+   "type": "JoinImageWithAlpha",
+   "pos": [
+    4620,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 88,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 115
+    },
+    {
+     "name": "alpha",
+     "type": "MASK",
+     "link": 116
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      117
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "JoinImageWithAlpha"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 512,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    3240
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 97,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 117
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_SPINE/character/pose_variant"
+   ]
+  },
+  {
+   "id": 1,
+   "type": "MarkdownNote",
+   "pos": [
+    0,
+    -440
+   ],
+   "size": [
+    1240,
+    380
+   ],
+   "flags": {},
+   "order": 98,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {},
+   "title": "How to use",
+   "widgets_values": [
+    "## Character reference → Spine parts (Blocks style)\n\n**In:** one image of the character (any style, any views). **Out:** a master in the shipped Blocks style and four sheets, with every piece cut out as its own transparent PNG:\n- body sheet → `body_part_*`\n- 9 expression heads → `face_head_*`\n- 12 hand poses → `hand_variant_*`\n- pose variants (raised sleeve, tiptoe foot, tail up) → `pose_variant_*`\n\n1. Load the character reference into **Character reference**. Keep the two shipped atlases, since they define the style.\n2. Fill in the four boxes; the Moose shows the format for each.\n   - **CHARACTER NOTES:** look, costume, colours.\n   - **PIECES:** every body piece named for this character, in 4 rows. Say where a piece ends when clothing hides the split (\"ending at the belt\", \"down to its hem\").\n   - **HANDS:** the 6 hand poses.\n   - **POSES:** each piece followed by its variants. Say \"an upper arm is only the sleeve from shoulder to elbow, without any cuff\".\n3. Queue. That makes 5 Nano Banana Pro calls (billed) and takes about 3–6 minutes.\n4. Check the **master** first. If it's wrong, fix the notes and re-run before using the parts.\n5. Check every sheet:\n   - **body:** upper arm and forearm separate, nothing merged;\n   - **hands:** chunky mittens like the master, wrist up;\n   - **poses:** the rest arm has no cuff.\n6. Name the parts by looking at them. Put the variants in `variants/` as `CHAR_part_variant.png`, each turned joint end up, with the right-hand set mirrored from the left. Then build the rig with `spine_rig.py --variants` (see the skill's `spine-parts.md`).\n\nBody sheet: each arm in 3 pieces, each leg in 2, every hat, ear, horn, scarf and bell separately, every joint end fully round, torso painted with the arms removed, hips including the crotch. The rig uses every piece as final art; the master only positions them.\nMaintained in the `comfy/` repo (`tools/build_spine_workflow.py`); edit there, not here."
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   300,
+   0,
+   310,
+   0,
+   "STRING"
+  ],
+  [
+   2,
+   20,
+   0,
+   310,
+   1,
+   "STRING"
+  ],
+  [
+   3,
+   310,
+   0,
+   311,
+   0,
+   "STRING"
+  ],
+  [
+   4,
+   302,
+   0,
+   311,
+   1,
+   "STRING"
+  ],
+  [
+   5,
+   320,
+   0,
+   330,
+   0,
+   "STRING"
+  ],
+  [
+   6,
+   21,
+   0,
+   330,
+   1,
+   "STRING"
+  ],
+  [
+   7,
+   330,
+   0,
+   331,
+   0,
+   "STRING"
+  ],
+  [
+   8,
+   322,
+   0,
+   331,
+   1,
+   "STRING"
+  ],
+  [
+   9,
+   331,
+   0,
+   332,
+   0,
+   "STRING"
+  ],
+  [
+   10,
+   20,
+   0,
+   332,
+   1,
+   "STRING"
+  ],
+  [
+   11,
+   332,
+   0,
+   333,
+   0,
+   "STRING"
+  ],
+  [
+   12,
+   324,
+   0,
+   333,
+   1,
+   "STRING"
+  ],
+  [
+   13,
+   340,
+   0,
+   350,
+   0,
+   "STRING"
+  ],
+  [
+   14,
+   20,
+   0,
+   350,
+   1,
+   "STRING"
+  ],
+  [
+   15,
+   350,
+   0,
+   351,
+   0,
+   "STRING"
+  ],
+  [
+   16,
+   342,
+   0,
+   351,
+   1,
+   "STRING"
+  ],
+  [
+   17,
+   360,
+   0,
+   370,
+   0,
+   "STRING"
+  ],
+  [
+   18,
+   22,
+   0,
+   370,
+   1,
+   "STRING"
+  ],
+  [
+   19,
+   370,
+   0,
+   371,
+   0,
+   "STRING"
+  ],
+  [
+   20,
+   362,
+   0,
+   371,
+   1,
+   "STRING"
+  ],
+  [
+   21,
+   371,
+   0,
+   372,
+   0,
+   "STRING"
+  ],
+  [
+   22,
+   20,
+   0,
+   372,
+   1,
+   "STRING"
+  ],
+  [
+   23,
+   372,
+   0,
+   373,
+   0,
+   "STRING"
+  ],
+  [
+   24,
+   364,
+   0,
+   373,
+   1,
+   "STRING"
+  ],
+  [
+   25,
+   380,
+   0,
+   390,
+   0,
+   "STRING"
+  ],
+  [
+   26,
+   23,
+   0,
+   390,
+   1,
+   "STRING"
+  ],
+  [
+   27,
+   390,
+   0,
+   391,
+   0,
+   "STRING"
+  ],
+  [
+   28,
+   382,
+   0,
+   391,
+   1,
+   "STRING"
+  ],
+  [
+   29,
+   391,
+   0,
+   392,
+   0,
+   "STRING"
+  ],
+  [
+   30,
+   20,
+   0,
+   392,
+   1,
+   "STRING"
+  ],
+  [
+   31,
+   392,
+   0,
+   393,
+   0,
+   "STRING"
+  ],
+  [
+   32,
+   384,
+   0,
+   393,
+   1,
+   "STRING"
+  ],
+  [
+   33,
+   311,
+   0,
+   40,
+   0,
+   "STRING"
+  ],
+  [
+   34,
+   10,
+   0,
+   40,
+   1,
+   "IMAGE"
+  ],
+  [
+   35,
+   11,
+   0,
+   40,
+   2,
+   "IMAGE"
+  ],
+  [
+   36,
+   12,
+   0,
+   40,
+   3,
+   "IMAGE"
+  ],
+  [
+   37,
+   40,
+   0,
+   41,
+   0,
+   "IMAGE"
+  ],
+  [
+   38,
+   333,
+   0,
+   50,
+   0,
+   "STRING"
+  ],
+  [
+   39,
+   40,
+   0,
+   50,
+   1,
+   "IMAGE"
+  ],
+  [
+   40,
+   11,
+   0,
+   50,
+   2,
+   "IMAGE"
+  ],
+  [
+   41,
+   50,
+   0,
+   51,
+   0,
+   "IMAGE"
+  ],
+  [
+   42,
+   351,
+   0,
+   60,
+   0,
+   "STRING"
+  ],
+  [
+   43,
+   40,
+   0,
+   60,
+   1,
+   "IMAGE"
+  ],
+  [
+   44,
+   11,
+   0,
+   60,
+   2,
+   "IMAGE"
+  ],
+  [
+   45,
+   60,
+   0,
+   61,
+   0,
+   "IMAGE"
+  ],
+  [
+   46,
+   373,
+   0,
+   70,
+   0,
+   "STRING"
+  ],
+  [
+   47,
+   40,
+   0,
+   70,
+   1,
+   "IMAGE"
+  ],
+  [
+   48,
+   11,
+   0,
+   70,
+   2,
+   "IMAGE"
+  ],
+  [
+   49,
+   70,
+   0,
+   71,
+   0,
+   "IMAGE"
+  ],
+  [
+   50,
+   393,
+   0,
+   80,
+   0,
+   "STRING"
+  ],
+  [
+   51,
+   40,
+   0,
+   80,
+   1,
+   "IMAGE"
+  ],
+  [
+   52,
+   11,
+   0,
+   80,
+   2,
+   "IMAGE"
+  ],
+  [
+   53,
+   80,
+   0,
+   81,
+   0,
+   "IMAGE"
+  ],
+  [
+   54,
+   50,
+   0,
+   100,
+   0,
+   "IMAGE"
+  ],
+  [
+   55,
+   100,
+   1,
+   101,
+   0,
+   "MASK"
+  ],
+  [
+   56,
+   101,
+   0,
+   102,
+   0,
+   "MASK"
+  ],
+  [
+   57,
+   102,
+   0,
+   103,
+   0,
+   "MASK"
+  ],
+  [
+   58,
+   103,
+   0,
+   104,
+   0,
+   "SEGS"
+  ],
+  [
+   59,
+   100,
+   0,
+   104,
+   1,
+   "IMAGE"
+  ],
+  [
+   60,
+   104,
+   0,
+   105,
+   0,
+   "SEGS"
+  ],
+  [
+   61,
+   105,
+   1,
+   106,
+   0,
+   "SEG_ELT"
+  ],
+  [
+   62,
+   106,
+   1,
+   107,
+   0,
+   "IMAGE"
+  ],
+  [
+   63,
+   107,
+   1,
+   108,
+   0,
+   "MASK"
+  ],
+  [
+   64,
+   108,
+   0,
+   109,
+   0,
+   "MASK"
+  ],
+  [
+   65,
+   106,
+   2,
+   109,
+   1,
+   "MASK"
+  ],
+  [
+   66,
+   109,
+   0,
+   110,
+   0,
+   "MASK"
+  ],
+  [
+   67,
+   107,
+   0,
+   111,
+   0,
+   "IMAGE"
+  ],
+  [
+   68,
+   110,
+   0,
+   111,
+   1,
+   "MASK"
+  ],
+  [
+   69,
+   111,
+   0,
+   112,
+   0,
+   "IMAGE"
+  ],
+  [
+   70,
+   60,
+   0,
+   200,
+   0,
+   "IMAGE"
+  ],
+  [
+   71,
+   200,
+   1,
+   201,
+   0,
+   "MASK"
+  ],
+  [
+   72,
+   201,
+   0,
+   202,
+   0,
+   "MASK"
+  ],
+  [
+   73,
+   202,
+   0,
+   203,
+   0,
+   "MASK"
+  ],
+  [
+   74,
+   203,
+   0,
+   204,
+   0,
+   "SEGS"
+  ],
+  [
+   75,
+   200,
+   0,
+   204,
+   1,
+   "IMAGE"
+  ],
+  [
+   76,
+   204,
+   0,
+   205,
+   0,
+   "SEGS"
+  ],
+  [
+   77,
+   205,
+   1,
+   206,
+   0,
+   "SEG_ELT"
+  ],
+  [
+   78,
+   206,
+   1,
+   207,
+   0,
+   "IMAGE"
+  ],
+  [
+   79,
+   207,
+   1,
+   208,
+   0,
+   "MASK"
+  ],
+  [
+   80,
+   208,
+   0,
+   209,
+   0,
+   "MASK"
+  ],
+  [
+   81,
+   206,
+   2,
+   209,
+   1,
+   "MASK"
+  ],
+  [
+   82,
+   209,
+   0,
+   210,
+   0,
+   "MASK"
+  ],
+  [
+   83,
+   207,
+   0,
+   211,
+   0,
+   "IMAGE"
+  ],
+  [
+   84,
+   210,
+   0,
+   211,
+   1,
+   "MASK"
+  ],
+  [
+   85,
+   211,
+   0,
+   212,
+   0,
+   "IMAGE"
+  ],
+  [
+   86,
+   70,
+   0,
+   400,
+   0,
+   "IMAGE"
+  ],
+  [
+   87,
+   400,
+   1,
+   401,
+   0,
+   "MASK"
+  ],
+  [
+   88,
+   401,
+   0,
+   402,
+   0,
+   "MASK"
+  ],
+  [
+   89,
+   402,
+   0,
+   403,
+   0,
+   "MASK"
+  ],
+  [
+   90,
+   403,
+   0,
+   404,
+   0,
+   "SEGS"
+  ],
+  [
+   91,
+   400,
+   0,
+   404,
+   1,
+   "IMAGE"
+  ],
+  [
+   92,
+   404,
+   0,
+   405,
+   0,
+   "SEGS"
+  ],
+  [
+   93,
+   405,
+   1,
+   406,
+   0,
+   "SEG_ELT"
+  ],
+  [
+   94,
+   406,
+   1,
+   407,
+   0,
+   "IMAGE"
+  ],
+  [
+   95,
+   407,
+   1,
+   408,
+   0,
+   "MASK"
+  ],
+  [
+   96,
+   408,
+   0,
+   409,
+   0,
+   "MASK"
+  ],
+  [
+   97,
+   406,
+   2,
+   409,
+   1,
+   "MASK"
+  ],
+  [
+   98,
+   409,
+   0,
+   410,
+   0,
+   "MASK"
+  ],
+  [
+   99,
+   407,
+   0,
+   411,
+   0,
+   "IMAGE"
+  ],
+  [
+   100,
+   410,
+   0,
+   411,
+   1,
+   "MASK"
+  ],
+  [
+   101,
+   411,
+   0,
+   412,
+   0,
+   "IMAGE"
+  ],
+  [
+   102,
+   80,
+   0,
+   500,
+   0,
+   "IMAGE"
+  ],
+  [
+   103,
+   500,
+   1,
+   501,
+   0,
+   "MASK"
+  ],
+  [
+   104,
+   501,
+   0,
+   502,
+   0,
+   "MASK"
+  ],
+  [
+   105,
+   502,
+   0,
+   503,
+   0,
+   "MASK"
+  ],
+  [
+   106,
+   503,
+   0,
+   504,
+   0,
+   "SEGS"
+  ],
+  [
+   107,
+   500,
+   0,
+   504,
+   1,
+   "IMAGE"
+  ],
+  [
+   108,
+   504,
+   0,
+   505,
+   0,
+   "SEGS"
+  ],
+  [
+   109,
+   505,
+   1,
+   506,
+   0,
+   "SEG_ELT"
+  ],
+  [
+   110,
+   506,
+   1,
+   507,
+   0,
+   "IMAGE"
+  ],
+  [
+   111,
+   507,
+   1,
+   508,
+   0,
+   "MASK"
+  ],
+  [
+   112,
+   508,
+   0,
+   509,
+   0,
+   "MASK"
+  ],
+  [
+   113,
+   506,
+   2,
+   509,
+   1,
+   "MASK"
+  ],
+  [
+   114,
+   509,
+   0,
+   510,
+   0,
+   "MASK"
+  ],
+  [
+   115,
+   507,
+   0,
+   511,
+   0,
+   "IMAGE"
+  ],
+  [
+   116,
+   510,
+   0,
+   511,
+   1,
+   "MASK"
+  ],
+  [
+   117,
+   511,
+   0,
+   512,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "title": "Inputs: character ref + shipped style atlases (keep these two)",
+   "bounding": [
+    -20,
+    -60,
+    420,
+    1120
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Edit these four boxes per character",
+   "bounding": [
+    400,
+    -60,
+    420,
+    1840
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Fixed prompt text (collapsed, do not edit here)",
+   "bounding": [
+    820,
+    -60,
+    3780,
+    1840
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Nano Banana Pro: 1 master, 2 body, 3 face, 4 hands, 5 poses",
+   "bounding": [
+    4600,
+    -60,
+    840,
+    1840
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Split sheets into transparent parts (BEN2): body, face, hands, poses",
+   "bounding": [
+    -20,
+    2100,
+    5460,
+    1480
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.45,
+   "offset": [
+    60,
+    520
+   ]
+  }
+ },
+ "version": 0.4
+}

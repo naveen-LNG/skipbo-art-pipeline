@@ -1,0 +1,22 @@
+PASS  structure  {}
+PASS  setup      {"silhouette_iou": 0.909}
+PASS  seams      {"seams": {"hips/tail": 0.0, "hips/boot_l": 0.0, "hips/boot_r": 0.0, "hand_l/tail": 0.064, "torso/hips": 0.0, "torso/upperarm_l": 0.0, "torso/upperarm_r": 0.0, "head/ear_l": 0.0, "head/ear_r": 0.0, "head/torso": 0.0, "upperarm_l/tail": 0.007, "head/tail": 0.0, "head/upperarm_r": 0.0, "hand_l/torso":
+PASS  thumbs     {"thumbs": {"point": 5.0, "thumbs_up": 10.1, "hold_card": 10.0, "wave": 9.9, "cheer_jump": 2.2}}
+PASS  sockets    {"sockets": {"redpanda_hand_l/redpanda_arm_l": {"spill": 0.009, "spill_at": "talk@1.40", "off": 0.23, "off_at": "talk@2.40"}, "redpanda_hand_r/redpanda_arm_r": {"spill": 0.018, "spill_at": "idle@1.70", "off": 0.23, "off_at": "talk@2.40"}}}
+PASS  landmarks  {"landmarks": {"shoulder_l": 0.01, "elbow_l": 0.02, "wrist_l": 20.44, "ankle_l": 0.03, "shoulder_r": 0.01, "elbow_r": 0.02, "wrist_r": 20.24, "ankle_r": 0.03}}
+PASS  layer_order {}
+PASS  blink      {"frames": 31, "duration": 1.0}
+PASS  idle       {"frames": 61, "duration": 2.0}
+PASS  wave       {"frames": 91, "duration": 3.0}
+PASS  cheer_jump {"frames": 58, "duration": 1.9}
+PASS  thumbs_up  {"frames": 73, "duration": 2.4}
+PASS  point      {"frames": 73, "duration": 2.4}
+PASS  hold_card  {"frames": 73, "duration": 2.4}
+PASS  emotions   {"frames": 217, "duration": 7.2}
+PASS  walk       {"frames": 31, "duration": 1.0}
+PASS  run        {"frames": 20, "duration": 0.64}
+PASS  squat      {"frames": 61, "duration": 2.0}
+PASS  jump_hurdle {"frames": 67, "duration": 2.2}
+PASS  wave_flag  {"frames": 97, "duration": 3.2}
+PASS  look_around {"frames": 97, "duration": 3.2}
+PASS  talk       {"frames": 73, "duration": 2.4}

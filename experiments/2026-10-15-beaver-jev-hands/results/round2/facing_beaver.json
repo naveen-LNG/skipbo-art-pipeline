@@ -1,0 +1,92 @@
+{
+ "rest_l": {
+  "score": -0.451,
+  "facing": "back",
+  "n": 16,
+  "thumb_dir_upright": "left",
+  "thumb_deg_upright": 173,
+  "finger_dir_upright": "left",
+  "reads_as": "thumbsup"
+ },
+ "rest_r": {
+  "score": -0.46,
+  "facing": "back",
+  "n": 16,
+  "thumb_dir_upright": "right",
+  "thumb_deg_upright": 360,
+  "finger_dir_upright": "right",
+  "reads_as": "thumbsup"
+ },
+ "open": {
+  "score": -0.018,
+  "facing": "palm",
+  "n": 16,
+  "thumb_dir_upright": "right",
+  "thumb_deg_upright": 2,
+  "finger_dir_upright": "down",
+  "reads_as": "relaxed"
+ },
+ "fist_back": {
+  "score": -0.404,
+  "facing": "back",
+  "n": 16,
+  "thumb_dir_upright": "right",
+  "thumb_deg_upright": 352,
+  "finger_dir_upright": "down",
+  "reads_as": "fist"
+ },
+ "fist_palm0": {
+  "score": -0.049,
+  "facing": "palm",
+  "n": 16,
+  "thumb_dir_upright": "right",
+  "thumb_deg_upright": 340,
+  "finger_dir_upright": "down",
+  "reads_as": "fist"
+ },
+ "fist_palm1": {
+  "score": -0.036,
+  "facing": "palm",
+  "n": 16,
+  "thumb_dir_upright": "down-left",
+  "thumb_deg_upright": 205,
+  "finger_dir_upright": "down",
+  "reads_as": "fist"
+ },
+ "point_back": {
+  "score": -0.524,
+  "facing": "back",
+  "n": 16,
+  "thumb_dir_upright": "right",
+  "thumb_deg_upright": 354,
+  "finger_dir_upright": "down",
+  "reads_as": "point"
+ },
+ "point_palm": {
+  "score": -0.047,
+  "facing": "palm",
+  "n": 16,
+  "thumb_dir_upright": "left",
+  "thumb_deg_upright": 178,
+  "finger_dir_upright": "down",
+  "reads_as": "point"
+ },
+ "thumbsup": {
+  "score": -0.039,
+  "facing": "palm",
+  "n": 16,
+  "thumb_dir_upright": "up",
+  "thumb_deg_upright": 83,
+  "finger_dir_upright": "up-right",
+  "reads_as": "thumbsup"
+ },
+ "grip": {
+  "score": 0.004,
+  "facing": "palm",
+  "n": 16,
+  "thumb_dir_upright": "left",
+  "thumb_deg_upright": 185,
+  "finger_dir_upright": "down-left",
+  "reads_as": "grip"
+ }
+}

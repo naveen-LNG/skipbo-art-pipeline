@@ -1,0 +1,10 @@
+IMAGE ROLES:
+image_1 = THE HEAD to edit: the character's head saying "eh", mouth open, finished and approved.
+
+TASK:
+Edit image_1 so the mouth says "L". Keep everything else exactly as it is: the outline, size, fur, colours, eyes, eyebrows, nose, the two big front teeth and the cream muzzle stay pixel for pixel the same, and the painting style stays the same soft airbrushed volume with no outlines.
+
+THE MOUTH FOR "L":
+The mouth stays open about as much as in image_1, the same shape and size. Inside the dark-red mouth, the tip of the pink tongue is raised and pressed up against the back of the two front teeth, so a small rounded pink tongue tip shows just under the teeth, in the middle of the mouth. The tongue stays entirely inside the mouth: it does not stick out, it does not cross the lips, it does not hang down or to the side, and the lower lip is fully visible below it.
+
+The head stands alone on the same flat plain light grey background as image_1, centred, at the same size, with no text, labels or shadows.

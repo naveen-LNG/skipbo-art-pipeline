@@ -1,0 +1,488 @@
+{
+  "global_scale_master_px_per_part_px": 1.4709,
+  "renamed": {},
+  "from_master": [],
+  "variants": {
+    "beaver_boot_l_tiptoe": {
+      "scale_vs_rest": 0.667,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_boot_r_tiptoe": {
+      "scale_vs_rest": 0.684,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_l_fist": {
+      "scale_vs_rest": 0.233,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_l_grip": {
+      "scale_vs_rest": 0.584,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_l_open": {
+      "scale_vs_rest": 0.539,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_l_point": {
+      "scale_vs_rest": 0.278,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_l_thumbsup": {
+      "scale_vs_rest": 0.576,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_r_fist": {
+      "scale_vs_rest": 0.233,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_r_grip": {
+      "scale_vs_rest": 0.584,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_r_open": {
+      "scale_vs_rest": 0.539,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_r_point": {
+      "scale_vs_rest": 0.278,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_hand_r_thumbsup": {
+      "scale_vs_rest": 0.576,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "beaver_legs_jump_1": {
+      "scale": [
+        0.92961,
+        0.71296
+      ],
+      "height_units": 446.66,
+      "height_vs_rest": 1.0
+    },
+    "beaver_legs_jump_2": {
+      "scale": [
+        0.92961,
+        0.71296
+      ],
+      "height_units": 487.45,
+      "height_vs_rest": 1.091
+    },
+    "beaver_legs_jump_2-3": {
+      "scale": [
+        0.92961,
+        0.74712
+      ],
+      "height_units": 459.08,
+      "height_vs_rest": 1.028,
+      "squash": 1.048
+    },
+    "beaver_legs_jump_3": {
+      "scale": [
+        0.92961,
+        0.71296
+      ],
+      "height_units": 430.7,
+      "height_vs_rest": 0.964
+    },
+    "beaver_legs_jump_3-4": {
+      "scale": [
+        0.92961,
+        0.68085
+      ],
+      "height_units": 401.09,
+      "height_vs_rest": 0.898,
+      "squash": 0.955
+    },
+    "beaver_legs_jump_4": {
+      "scale": [
+        0.92961,
+        0.71296
+      ],
+      "height_units": 371.49,
+      "height_vs_rest": 0.832
+    },
+    "beaver_legs_jump_5": {
+      "scale": [
+        0.92961,
+        0.71296
+      ],
+      "height_units": 372.89,
+      "height_vs_rest": 0.835
+    },
+    "beaver_legs_squat_1": {
+      "scale": [
+        0.94824,
+        0.874
+      ],
+      "height_units": 446.66,
+      "height_vs_rest": 1.0
+    },
+    "beaver_legs_squat_3": {
+      "scale": [
+        0.94824,
+        0.874
+      ],
+      "height_units": 443.19,
+      "height_vs_rest": 0.992
+    },
+    "beaver_legs_squat_3-4": {
+      "scale": [
+        0.94824,
+        0.93349
+      ],
+      "height_units": 427.15,
+      "height_vs_rest": 0.956,
+      "squash": 1.068
+    },
+    "beaver_legs_squat_4": {
+      "scale": [
+        0.94824,
+        0.874
+      ],
+      "height_units": 411.1,
+      "height_vs_rest": 0.92
+    },
+    "beaver_legs_squat_4-5": {
+      "scale": [
+        0.94824,
+        0.93545
+      ],
+      "height_units": 372.05,
+      "height_vs_rest": 0.833,
+      "squash": 1.07
+    },
+    "beaver_legs_squat_5": {
+      "scale": [
+        0.94824,
+        0.874
+      ],
+      "height_units": 332.99,
+      "height_vs_rest": 0.746
+    }
+  },
+  "master_frame": {
+    "width": 1792,
+    "height": 2400,
+    "mid_x": 896.25,
+    "ground_y": 2085.0,
+    "units_per_px": 0.679847
+  },
+  "parts": {
+    "torso": {
+      "method": "two_point",
+      "stretch": 1.0,
+      "narrow": null
+    },
+    "hips": {
+      "method": "two_point",
+      "stretch": 0.9757311768884901,
+      "narrow": null
+    },
+    "head_base": {
+      "method": "matcher",
+      "stretch": null,
+      "narrow": null
+    },
+    "tail": {
+      "method": "matcher",
+      "stretch": null,
+      "narrow": null
+    },
+    "boot_l": {
+      "method": "socket",
+      "stretch": null,
+      "narrow": null
+    },
+    "boot_r": {
+      "method": "socket",
+      "stretch": null,
+      "narrow": null
+    },
+    "upperarm_l": {
+      "method": "mesh",
+      "stretch": 1.020951969835799,
+      "narrow": null,
+      "width_fit": {
+        "upper": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 0
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": 1.1381,
+          "samples": 3
+        }
+      }
+    },
+    "forearm_l": {
+      "method": "mesh",
+      "stretch": 0.9799836326281034,
+      "narrow": null,
+      "wrist_trim": {
+        "trimmed_px": 0,
+        "feathered_px": 0,
+        "kept_px": 16835
+      }
+    },
+    "hand_l": {
+      "method": "hand",
+      "stretch": null,
+      "narrow": null
+    },
+    "upperarm_r": {
+      "method": "mesh",
+      "stretch": 1.0209519698357992,
+      "narrow": null,
+      "width_fit": {
+        "upper": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 0
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": 1.1381,
+          "samples": 3
+        }
+      }
+    },
+    "forearm_r": {
+      "method": "mesh",
+      "stretch": 0.9799836326281032,
+      "narrow": null,
+      "wrist_trim": {
+        "trimmed_px": 0,
+        "feathered_px": 0,
+        "kept_px": 16835
+      }
+    },
+    "hand_r": {
+      "method": "hand",
+      "stretch": null,
+      "narrow": null
+    }
+  },
+  "annotations": "beaver/annotations.json",
+  "allow_proposed": false,
+  "doubts": [
+    {
+      "part": "jump_1",
+      "reason": "legs_aspect",
+      "factor": 0.767
+    }
+  ],
+  "gestures": {
+    "cheer_jump": {
+      "l": {
+        "variant": "fist",
+        "facing": "palm",
+        "pose": "cheer",
+        "upperarm_deg": 45.0,
+        "forearm_deg": 85.0,
+        "thumb_deg": 175.0,
+        "thumb_target_deg": 175.0,
+        "thumb_error_deg": 0.0
+      },
+      "r": {
+        "variant": "fist",
+        "facing": "palm",
+        "pose": "cheer",
+        "upperarm_deg": 135.0,
+        "forearm_deg": 95.0,
+        "thumb_deg": 5.0,
+        "thumb_target_deg": 5.0,
+        "thumb_error_deg": 0.0
+      }
+    },
+    "hold_card": {
+      "l": {
+        "variant": "grip",
+        "facing": "back",
+        "pose": "hold_card",
+        "upperarm_deg": -95.0,
+        "forearm_deg": 170.0,
+        "thumb_deg": 80.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 10.0,
+        "errors": {
+          "hold_card": 10.0
+        }
+      }
+    },
+    "point": {
+      "l": {
+        "variant": "point",
+        "facing": "palm",
+        "pose": "outward",
+        "upperarm_deg": 5.0,
+        "forearm_deg": 5.0,
+        "thumb_deg": 95.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 5.0,
+        "errors": {
+          "outward": 5.0,
+          "across": 160.0
+        }
+      }
+    },
+    "thumbs_up": {
+      "l": {
+        "variant": "thumbsup",
+        "facing": "palm",
+        "pose": "outward",
+        "upperarm_deg": -55.0,
+        "forearm_deg": 10.0,
+        "thumb_deg": 100.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 10.0,
+        "errors": {
+          "outward": 10.0,
+          "across": 160.0
+        }
+      }
+    },
+    "wave": {
+      "l": {
+        "variant": "open",
+        "facing": "palm",
+        "pose": "wave",
+        "upperarm_deg": 20.0,
+        "forearm_deg": 70.0,
+        "thumb_deg": 160.0,
+        "thumb_target_deg": 160.0,
+        "thumb_error_deg": 0.0
+      }
+    }
+  },
+  "worn": {},
+  "meshes": {
+    "upperarm_l": {
+      "arm": "arm_l",
+      "scale_vs_sheet": 0.2519,
+      "width_fit": {
+        "upper": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 0
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": 1.1381,
+          "samples": 3
+        }
+      },
+      "rows": 27,
+      "vertices": 54,
+      "width_px": 488.0,
+      "design": {
+        "smooth": {
+          "band": [
+            -0.8,
+            0.8
+          ],
+          "neutral": 0.8,
+          "grid_share": 0.95,
+          "crease_fill": false,
+          "outer_corner_deg": 23.8,
+          "crease_gap": 0.125
+        },
+        "grid": {
+          "left": {
+            "pivot_shift": 0.5,
+            "band": [
+              -1.23,
+              0.1
+            ]
+          },
+          "right": {
+            "pivot_shift": 0.0,
+            "band": [
+              -1.2,
+              0.1
+            ]
+          },
+          "fade": 1.0
+        },
+        "default": false
+      },
+      "need_deg": [
+        -102.9,
+        92.1
+      ],
+      "covered_deg": [
+        -102.9,
+        92.1
+      ],
+      "fold_free": true,
+      "over_torso_in": [
+        "hold_card"
+      ]
+    },
+    "upperarm_r": {
+      "arm": "arm_r",
+      "scale_vs_sheet": 0.2519,
+      "width_fit": {
+        "upper": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 0
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": 1.1381,
+          "samples": 3
+        }
+      },
+      "rows": 27,
+      "vertices": 54,
+      "width_px": 488.0,
+      "design": {
+        "smooth": {
+          "band": [
+            -0.8,
+            1.0
+          ],
+          "neutral": 0.8,
+          "grid_share": 0.0,
+          "crease_fill": false,
+          "outer_corner_deg": 11.1,
+          "crease_gap": 0.0
+        },
+        "grid": null,
+        "default": false
+      },
+      "need_deg": [
+        -92.1,
+        31.9
+      ],
+      "covered_deg": [
+        -92.1,
+        31.9
+      ],
+      "fold_free": true,
+      "over_torso_in": []
+    }
+  },
+  "mesh_skipped_variants": []
+}

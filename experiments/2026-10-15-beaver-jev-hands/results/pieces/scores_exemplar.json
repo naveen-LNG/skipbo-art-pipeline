@@ -1,0 +1,119 @@
+{
+ "all": {
+  "n": 304,
+  "finger_dir": {
+   "exact_clear": 0.816,
+   "n_clear": 272,
+   "within45": 0.947,
+   "median_err_deg": 6.7,
+   "p90_err_deg": 28.7
+  },
+  "thumb_dir": {
+   "exact_clear": 0.691,
+   "n_clear": 272,
+   "within45": 0.819,
+   "median_err_deg": 11.9,
+   "p90_err_deg": 48.9
+  },
+  "facing": {
+   "acc": 0.645,
+   "auroc": 0.794,
+   "n_palm": 160,
+   "n_back": 144
+  },
+  "gesture": {
+   "acc": 0.901
+  },
+  "painted_direct": 0.546,
+  "painted_derived": 0.595,
+  "painted_derived_true_facing": 0.944
+ },
+ "fox": {
+  "n": 144,
+  "finger_dir": {
+   "exact_clear": 0.844,
+   "n_clear": 128,
+   "within45": 0.91,
+   "median_err_deg": 6.2,
+   "p90_err_deg": 23.3
+  },
+  "thumb_dir": {
+   "exact_clear": 0.672,
+   "n_clear": 128,
+   "within45": 0.743,
+   "median_err_deg": 15.0,
+   "p90_err_deg": 159.6
+  },
+  "facing": {
+   "acc": 0.715,
+   "auroc": 0.771,
+   "n_palm": 48,
+   "n_back": 96
+  },
+  "gesture": {
+   "acc": 0.882
+  },
+  "painted_direct": 0.521,
+  "painted_derived": 0.611,
+  "painted_derived_true_facing": 0.882
+ },
+ "moose": {
+  "n": 160,
+  "finger_dir": {
+   "exact_clear": 0.792,
+   "n_clear": 144,
+   "within45": 0.981,
+   "median_err_deg": 7.2,
+   "p90_err_deg": 29.1
+  },
+  "thumb_dir": {
+   "exact_clear": 0.708,
+   "n_clear": 144,
+   "within45": 0.887,
+   "median_err_deg": 10.0,
+   "p90_err_deg": 31.7
+  },
+  "facing": {
+   "acc": 0.581,
+   "auroc": 0.793,
+   "n_palm": 112,
+   "n_back": 48
+  },
+  "gesture": {
+   "acc": 0.919
+  },
+  "painted_direct": 0.569,
+  "painted_derived": 0.581,
+  "painted_derived_true_facing": 1.0
+ },
+ "unmirrored_upright": {
+  "n": 19,
+  "finger_dir": {
+   "exact_clear": 0.706,
+   "n_clear": 17,
+   "within45": 0.947,
+   "median_err_deg": 7.5,
+   "p90_err_deg": 31.8
+  },
+  "thumb_dir": {
+   "exact_clear": 0.824,
+   "n_clear": 17,
+   "within45": 0.895,
+   "median_err_deg": 6.3,
+   "p90_err_deg": 35.1
+  },
+  "facing": {
+   "acc": 0.632,
+   "auroc": 0.856,
+   "n_palm": 10,
+   "n_back": 9
+  },
+  "gesture": {
+   "acc": 0.895
+  },
+  "painted_direct": 0.526,
+  "painted_derived": 0.579,
+  "painted_derived_true_facing": 0.947
+ },
+ "tokens": 1792589
+}

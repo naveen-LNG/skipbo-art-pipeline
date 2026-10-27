@@ -1,0 +1,180 @@
+{
+  "prompt_id": "4808d8ba-73be-4196-8e28-3e21d2cfc1e2",
+  "template": "parts-split",
+  "engine": "",
+  "seed": 368026492,
+  "fingerprint": "a68f70b7533c",
+  "prompt": null,
+  "vars": {
+    "MODE": "BEN2",
+    "PREFIX": "agent/skipbo/fox-sleeves-parts",
+    "IMAGE_1": "agent/skipbo/1012_184044_s1325012029_n2_00_9c40056859.png"
+  },
+  "inputs": {
+    "1": "runs/fox-sleeves/1012_184044_s1325012029_n2_00.png"
+  },
+  "criteria": [],
+  "outputs": [
+    "runs/fox-sleeves-parts/1012_184136_s368026492_n112_00.png",
+    "runs/fox-sleeves-parts/1012_184136_s368026492_n112_01.png",
+    "runs/fox-sleeves-parts/1012_184136_s368026492_n112_02.png",
+    "runs/fox-sleeves-parts/1012_184136_s368026492_n112_03.png",
+    "runs/fox-sleeves-parts/1012_184136_s368026492_n112_04.png",
+    "runs/fox-sleeves-parts/1012_184136_s368026492_n112_05.png"
+  ],
+  "seconds": 4.2,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "10": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/1012_184044_s1325012029_n2_00_9c40056859.png"
+      }
+    },
+    "100": {
+      "class_type": "easy imageRemBg",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "rem_mode": "BEN2",
+        "image_output": "Hide",
+        "save_prefix": "x"
+      }
+    },
+    "101": {
+      "class_type": "ThresholdMask",
+      "inputs": {
+        "mask": [
+          "100",
+          1
+        ],
+        "value": 0.3
+      }
+    },
+    "102": {
+      "class_type": "GrowMask",
+      "inputs": {
+        "mask": [
+          "101",
+          0
+        ],
+        "expand": 8,
+        "tapered_corners": true
+      }
+    },
+    "103": {
+      "class_type": "MaskToSEGS",
+      "inputs": {
+        "mask": [
+          "102",
+          0
+        ],
+        "combined": false,
+        "crop_factor": 1.0,
+        "bbox_fill": false,
+        "drop_size": 24,
+        "contour_fill": true
+      }
+    },
+    "104": {
+      "class_type": "SetDefaultImageForSEGS",
+      "inputs": {
+        "segs": [
+          "103",
+          0
+        ],
+        "image": [
+          "100",
+          0
+        ],
+        "override": true
+      }
+    },
+    "105": {
+      "class_type": "ImpactDecomposeSEGS",
+      "inputs": {
+        "segs": [
+          "104",
+          0
+        ]
+      }
+    },
+    "106": {
+      "class_type": "ImpactFrom_SEG_ELT",
+      "inputs": {
+        "seg_elt": [
+          "105",
+          1
+        ]
+      }
+    },
+    "107": {
+      "class_type": "SplitImageWithAlpha",
+      "inputs": {
+        "image": [
+          "106",
+          1
+        ]
+      }
+    },
+    "108": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "107",
+          1
+        ]
+      }
+    },
+    "109": {
+      "class_type": "MaskComposite",
+      "inputs": {
+        "destination": [
+          "108",
+          0
+        ],
+        "source": [
+          "106",
+          2
+        ],
+        "x": 0,
+        "y": 0,
+        "operation": "multiply"
+      }
+    },
+    "110": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "109",
+          0
+        ]
+      }
+    },
+    "111": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "107",
+          0
+        ],
+        "alpha": [
+          "110",
+          0
+        ]
+      }
+    },
+    "112": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "111",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/fox-sleeves-parts/part"
+      }
+    }
+  }
+}

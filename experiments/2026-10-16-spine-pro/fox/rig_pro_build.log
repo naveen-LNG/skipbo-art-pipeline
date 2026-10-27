@@ -1,0 +1,10 @@
+wrote experiments/2026-10-16-spine-pro/fox/rig_pro/fox.json: 24 bones, 22 slots, constraints {'ik': [], 'transform': ['boot_l_plant', 'boot_r_plant']}, animations blink, idle, wave, cheer_jump, thumbs_up, point, hold_card, emotions, walk, run, squat, look_around, talk
+  container: {"moved": ["cheer_jump: hips translate -> character (jump)", "run: hips translate -> character (jump)"], "width": 547.1, "height": 97.6, "shadow_keys": ["cheer_jump", "run"]}
+  tail: {"bones": ["tail", "tail2", "tail3", "tail4"], "length": 542.3, "fractions": [0.0, 0.3, 0.56, 0.8], "attachments": {"fox_tail": {"vertices": 56, "triangles": 78, "padded": [41, 32], "fold_free": true}, "fox_tail_up": "region, rigid on tail"
+  torso: {"chest_at": 246.3, "moved_under_chest": ["head_base", "upperarm_l", "upperarm_r"], "mesh": {"vertices": 45, "triangles": 64, "padded": [13, 13]}, "fold_free": true}
+  head: {"face_at": [0.1, 1179.1], "ears": ["ear_r", "ear_l"], "ear_parts": false, "attachments": {"fox_head_base": {"vertices": 81, "triangles": 128, "padded": [3, 3]}, "fox_head_angry": {"vertices": 81, "triangles": 128, "padded": [1, 0]}, "fox_h
+  feet: {"feet": {"boot_l": {"target": "boot_l_ik", "leg_ik": null}, "boot_r": {"target": "boot_r_ik", "leg_ik": null}}, "baked": {"walk": ["boot_l", "boot_r"], "squat": ["boot_l", "boot_r"]}}
+  anims: {"idle": {"duration": 2.0}, "look_around": {"duration": 3.2}, "talk": {"duration": 2.4, "mouth": "fox_head_talking"}, "breathing": ["blink", "wave", "cheer_jump", "thumbs_up", "point", "hold_card", "emotions", "walk", "run", "squat", "look_
+  secondary: {"tail_root_smoothed": ["cheer_jump: sigma 1.5"], "blink": {"periodic": true, "tail": 0.0, "chest": 0.0, "ear_l": 0.0, "ear_r": 0.0}, "idle": {"periodic": true, "tail": 0.3, "chest": 0.0, "ear_l": 0.1, "ear_r": 0.1}, "wave": {"periodic": tr
+  underfill: {"slots": {"tail": 2, "hips": 1, "boot_l": 2, "boot_r": 2, "hand_l": 6, "upperarm_l": 1, "hand_r": 6, "upperarm_r": 1, "head": 10}, "ring_units": 5.58}
+  organise: {"red": 18, "yellow": 3, "green": 2}

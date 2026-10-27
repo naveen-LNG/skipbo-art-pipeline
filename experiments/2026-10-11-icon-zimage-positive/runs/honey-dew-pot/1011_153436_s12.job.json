@@ -1,0 +1,134 @@
+{
+  "prompt_id": "6fff4262-f8f5-4e3d-a23a-a0c18812f36f",
+  "template": "zimage-t2i",
+  "engine": "zimage",
+  "seed": 12,
+  "fingerprint": "c92d0f669882",
+  "prompt": "A chunky round terracotta clay pot with a wide rounded belly, a thick rolled rim and two small stubby handles, filled to the brim with glossy golden honey broth. Three plump mushrooms with rounded caramel-brown caps and cream stems sit half sunk in the broth. Three soft curling ribbons of white steam rise from the broth in simple rounded swirls. Warm terracotta orange, golden amber, caramel and cream.\n2D hand-painted casual mobile game icon in the style of merge and match-3 item art, semi-flat painted food illustration, simplified into three to five bold chunky elements with rounded, slightly inflated shapes and smooth curves. Clean digital painting with soft gradient shading in clearly defined steps, gentle soft highlights, bright saturated colours with warm or cool hue-shifted shadows in deep saturated tones, thin slightly darker coloured outlines, soft coloured contact shading where elements overlap, crisp clean edges, friendly and polished.\nSeen from a 45 degree high angle with a long lens, showing the front and the top at once, toy-like proportions, centered with an even margin on a plain flat #E8EEF4 background.",
+  "vars": {
+    "WIDTH": 1024,
+    "HEIGHT": 1024,
+    "DENOISE": 1.0,
+    "PREFIX": "agent/skipbo/honey-dew-pot"
+  },
+  "inputs": {},
+  "criteria": [
+    "reads as clay pot + mushrooms in golden broth + steam",
+    "2D painted icon, crisp, no text, no cast shadow"
+  ],
+  "outputs": [
+    "experiments/2026-10-11-icon-zimage-positive/runs/honey-dew-pot/1011_153436_s12_n81_00.png"
+  ],
+  "seconds": 86.8,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "64": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_4b.safetensors",
+        "type": "lumina2",
+        "device": "default"
+      }
+    },
+    "65": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "ae.safetensors"
+      }
+    },
+    "68": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "z_image_turbo_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "71": {
+      "class_type": "ModelSamplingAuraFlow",
+      "inputs": {
+        "model": [
+          "68",
+          0
+        ],
+        "shift": 3.0
+      }
+    },
+    "69": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "text": "A chunky round terracotta clay pot with a wide rounded belly, a thick rolled rim and two small stubby handles, filled to the brim with glossy golden honey broth. Three plump mushrooms with rounded caramel-brown caps and cream stems sit half sunk in the broth. Three soft curling ribbons of white steam rise from the broth in simple rounded swirls. Warm terracotta orange, golden amber, caramel and cream.\n2D hand-painted casual mobile game icon in the style of merge and match-3 item art, semi-flat painted food illustration, simplified into three to five bold chunky elements with rounded, slightly inflated shapes and smooth curves. Clean digital painting with soft gradient shading in clearly defined steps, gentle soft highlights, bright saturated colours with warm or cool hue-shifted shadows in deep saturated tones, thin slightly darker coloured outlines, soft coloured contact shading where elements overlap, crisp clean edges, friendly and polished.\nSeen from a 45 degree high angle with a long lens, showing the front and the top at once, toy-like proportions, centered with an even margin on a plain flat #E8EEF4 background.",
+        "clip": [
+          "64",
+          0
+        ]
+      }
+    },
+    "66": {
+      "class_type": "ConditioningZeroOut",
+      "inputs": {
+        "conditioning": [
+          "69",
+          0
+        ]
+      }
+    },
+    "72": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "71",
+          0
+        ],
+        "positive": [
+          "69",
+          0
+        ],
+        "negative": [
+          "66",
+          0
+        ],
+        "latent_image": [
+          "70",
+          0
+        ],
+        "seed": 12,
+        "steps": 8,
+        "cfg": 1.0,
+        "sampler_name": "res_multistep",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "67": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "72",
+          0
+        ],
+        "vae": [
+          "65",
+          0
+        ]
+      }
+    },
+    "81": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "67",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/honey-dew-pot"
+      }
+    },
+    "70": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1024,
+        "height": 1024,
+        "batch_size": 1
+      }
+    }
+  }
+}

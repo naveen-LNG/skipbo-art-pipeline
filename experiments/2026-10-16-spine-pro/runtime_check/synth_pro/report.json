@@ -1,0 +1,349 @@
+{
+  "global_scale_master_px_per_part_px": 1.2499,
+  "renamed": {},
+  "from_master": [],
+  "variants": {
+    "synth_boot_l_tiptoe": {
+      "scale_vs_rest": 1.143,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_boot_r_tiptoe": {
+      "scale_vs_rest": 1.143,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_l_fist": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_l_grip": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_l_open": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_l_point": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_l_thumbsup": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_r_fist": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_r_grip": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_r_open": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_r_point": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_hand_r_thumbsup": {
+      "scale_vs_rest": 1.0,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_tail_up": {
+      "scale_vs_rest": 1.248,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_upperarm_l_raised": {
+      "scale_vs_rest": 1.143,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "synth_upperarm_r_raised": {
+      "scale_vs_rest": 1.143,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    }
+  },
+  "master_frame": {
+    "width": 600,
+    "height": 900,
+    "mid_x": 299.53,
+    "ground_y": 866.25,
+    "units_per_px": 0.800073
+  },
+  "parts": {
+    "torso": {
+      "method": "two_point",
+      "stretch": 1.0,
+      "narrow": null
+    },
+    "hips": {
+      "method": "two_point",
+      "stretch": 1.000377492037277,
+      "narrow": null
+    },
+    "head_base": {
+      "method": "matcher",
+      "stretch": null,
+      "narrow": null
+    },
+    "tail": {
+      "method": "matcher",
+      "stretch": null,
+      "narrow": null
+    },
+    "boot_l": {
+      "method": "socket",
+      "stretch": null,
+      "narrow": null
+    },
+    "boot_r": {
+      "method": "socket",
+      "stretch": null,
+      "narrow": null
+    },
+    "leg_l": {
+      "method": "two_point",
+      "stretch": 1.0497585741099362,
+      "narrow": 1.0344827586206897
+    },
+    "leg_r": {
+      "method": "two_point",
+      "stretch": 1.0497585741099362,
+      "narrow": 1.0344827586206897
+    },
+    "upperarm_l": {
+      "method": "two_point",
+      "stretch": 1.0001387859960087,
+      "narrow": null,
+      "width_fit": {
+        "factor": 0.95,
+        "raw": 0.95
+      }
+    },
+    "forearm_l": {
+      "method": "two_point",
+      "stretch": 1.0002205649770115,
+      "narrow": null,
+      "wrist_trim": {
+        "trimmed_px": 0,
+        "feathered_px": 0,
+        "kept_px": 90
+      }
+    },
+    "hand_l": {
+      "method": "hand",
+      "stretch": null,
+      "narrow": null
+    },
+    "upperarm_r": {
+      "method": "two_point",
+      "stretch": 1.0001387859960087,
+      "narrow": null,
+      "width_fit": {
+        "factor": 0.95,
+        "raw": 0.95
+      }
+    },
+    "forearm_r": {
+      "method": "two_point",
+      "stretch": 1.0002205649770117,
+      "narrow": null,
+      "wrist_trim": {
+        "trimmed_px": 0,
+        "feathered_px": 0,
+        "kept_px": 90
+      }
+    },
+    "hand_r": {
+      "method": "hand",
+      "stretch": null,
+      "narrow": null
+    }
+  },
+  "annotations": "/private/tmp/claude-501/-Users-skipbo-Dev-playground-comfy/d64b7711-70dd-4437-b21d-4bddd3c40fc2/scratchpad/synth/annotations.json",
+  "allow_proposed": false,
+  "doubts": [],
+  "gestures": {
+    "cheer_jump": {
+      "l": {
+        "variant": "fist",
+        "facing": "palm",
+        "pose": "cheer",
+        "upperarm_deg": 70.0,
+        "forearm_deg": 90.0,
+        "thumb_deg": -180.0,
+        "thumb_target_deg": -180.0,
+        "thumb_error_deg": 0.0
+      },
+      "r": {
+        "variant": "fist",
+        "facing": "palm",
+        "pose": "cheer",
+        "upperarm_deg": 110.0,
+        "forearm_deg": 90.0,
+        "thumb_deg": 0.0,
+        "thumb_target_deg": 0.0,
+        "thumb_error_deg": 0.0
+      }
+    },
+    "hold_card": {
+      "l": {
+        "variant": "grip",
+        "facing": "back",
+        "pose": "hold_card",
+        "upperarm_deg": -95.0,
+        "forearm_deg": 170.0,
+        "thumb_deg": 65.7,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 24.3,
+        "errors": {
+          "hold_card": 24.3
+        }
+      }
+    },
+    "point": {
+      "l": {
+        "variant": "point",
+        "facing": "palm",
+        "pose": "outward",
+        "upperarm_deg": 5.0,
+        "forearm_deg": 5.0,
+        "thumb_deg": 100.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 10.0,
+        "errors": {
+          "outward": 10.0,
+          "across": 165.0
+        }
+      }
+    },
+    "thumbs_up": {
+      "l": {
+        "variant": "thumbsup",
+        "facing": "palm",
+        "pose": "outward",
+        "upperarm_deg": -55.0,
+        "forearm_deg": 10.0,
+        "thumb_deg": 100.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 10.0,
+        "errors": {
+          "outward": 10.0,
+          "across": 160.0
+        }
+      }
+    },
+    "wave": {
+      "l": {
+        "variant": "open",
+        "facing": "palm",
+        "pose": "wave",
+        "upperarm_deg": 20.0,
+        "forearm_deg": 85.0,
+        "thumb_deg": 175.0,
+        "thumb_target_deg": 175.0,
+        "thumb_error_deg": 0.0
+      }
+    }
+  },
+  "worn": {
+    "boot_l": {
+      "back_slot": "boot_l_back",
+      "attachments": {
+        "synth_boot_l": {
+          "method": "inside",
+          "ellipse": [
+            35.5,
+            17.0,
+            17.5,
+            4.0
+          ],
+          "band": [
+            35.5,
+            17.0,
+            25.09,
+            7.84
+          ],
+          "tips_px": 4,
+          "back_px": 458,
+          "shell_px": 3034
+        },
+        "synth_boot_l_tiptoe": {
+          "method": "inside",
+          "ellipse": [
+            29.5,
+            16.5,
+            15.5,
+            3.5
+          ],
+          "band": [
+            29.5,
+            16.5,
+            21.95,
+            7.28
+          ],
+          "tips_px": 1,
+          "back_px": 360,
+          "shell_px": 2443
+        }
+      }
+    },
+    "boot_r": {
+      "back_slot": "boot_r_back",
+      "attachments": {
+        "synth_boot_r": {
+          "method": "inside",
+          "ellipse": [
+            55.0,
+            17.0,
+            18.0,
+            4.0
+          ],
+          "band": [
+            55.0,
+            17.0,
+            25.09,
+            7.84
+          ],
+          "tips_px": 4,
+          "back_px": 458,
+          "shell_px": 3032
+        },
+        "synth_boot_r_tiptoe": {
+          "method": "inside",
+          "ellipse": [
+            39.5,
+            16.5,
+            15.5,
+            3.5
+          ],
+          "band": [
+            39.5,
+            16.5,
+            21.95,
+            7.28
+          ],
+          "tips_px": 2,
+          "back_px": 362,
+          "shell_px": 2448
+        }
+      }
+    }
+  }
+}

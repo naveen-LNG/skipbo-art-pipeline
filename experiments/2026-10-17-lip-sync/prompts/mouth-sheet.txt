@@ -1,0 +1,30 @@
+IMAGE ROLES:
+image_1 = THE HEAD, finished and approved: the character's neutral head. Every head you paint is this exact head: same outline, size, colours, fur, eyes, eyebrows and nose.
+image_2 = SHEET FORMAT. A sheet of this same head already painted for this game, nine expression swaps on a grid. Take from it the layout, the scale and the way the mouths are painted (the dark-red inside, the pink tongue, the white teeth); its eyes and eyebrows are not part of this picture.
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game. Every shape is a big, chunky, simplified mass with a soft rounded silhouette. Shading is smooth airbrushed volume with broad soft highlights. Colour is bright, clean and saturated. Edges are clean and slightly soft; there is no outline, contour line or ink line anywhere. Eyes are simple glossy dark ovals with one small white highlight.
+
+TASK:
+Paint the head from image_1 as a sheet of mouth shapes for lip sync in Spine: the shapes a cartoon mouth makes while talking. Every head on the sheet is the head from image_1 copied exactly, with the eyes open and calm, the eyebrows relaxed and the nose unchanged, exactly as in image_1. ONLY the mouth and the lower part of the cream muzzle around it change. The eyes, eyebrows, nose, ears, fur and outline are pixel-for-pixel the same on all nine heads, so the mouth can be cut out and swapped on its own.
+
+THE PIECES (nine heads, each painted exactly once), laid out in a three by three grid, left to right and top to bottom:
+1. Rest: the mouth exactly as in image_1, lips closed in a relaxed line, the two big front teeth resting on the lower lip.
+2. M B P: lips pressed firmly together in a flat closed line, a little tighter and shorter than at rest, the front teeth still showing above the lips.
+3. Consonant: the mouth only slightly open, the jaw almost shut, a narrow dark gap between the front teeth and the lower lip, as when saying "s", "t" or "ee"; lips stretched a little wider.
+4. Open: the mouth open about as tall as the front teeth are long, a dark-red inside and the tip of a pink tongue, as when saying "eh".
+5. Wide open: the jaw dropped, the mouth open its widest and tallest, a dark-red inside and a pink tongue, as when saying "ah". The open mouth stays inside the cream muzzle.
+6. Round: the mouth slightly rounded and open, a small soft oval with a dark-red inside, as when saying "oh" or "er".
+7. Pucker: the lips pushed forward into a small tight round "oo" shape with a tiny dark opening, as when saying "oo" or "w"; the front teeth hidden behind the round lips.
+8. F V: the two big front teeth pressing down on the lower lip, the lower lip tucked under them, the mouth corners closed, as when saying "f" or "v".
+9. L: the mouth open about as much as "eh", with the pink tongue tip raised and touching behind the front teeth, as when saying "l".
+
+All pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it. Pieces never touch, never overlap, and stay fully inside the frame. Each head is shown flat, facing the viewer, upright, and all nine share one scale, the scale of image_2. The sheet contains only these nine heads, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.
+
+FINAL CHECK:
+1. Nine heads with one identical outline and size, each the head from image_1.
+2. The eyes, eyebrows and nose are identical on all nine heads and match image_1: eyes open and calm, never closed, never surprised.
+3. Only the mouth and the muzzle around it change; each mouth is clearly different from the others and reads as the sound named.
+4. Painted like image_2: airbrushed soft volume, smooth, no outlines; flat light grey background; no text.
+
+CHARACTER NOTES (from the art director, they override image_1 where they differ):
+{{CHARACTER}}

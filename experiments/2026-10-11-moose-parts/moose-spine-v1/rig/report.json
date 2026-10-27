@@ -1,0 +1,126 @@
+{
+  "global_scale_master_px_per_part_px": 1.4311,
+  "renamed": {
+    "leg_l": "leg_r",
+    "leg_r": "leg_l",
+    "ear_l": "ear_r",
+    "ear_r": "ear_l"
+  },
+  "from_master": [
+    "forearm_l",
+    "forearm_r",
+    "hand_l",
+    "hand_r",
+    "hips",
+    "hips_patch",
+    "hoof_l",
+    "hoof_r",
+    "leg_l",
+    "leg_r",
+    "torso_patch",
+    "upperarm_l",
+    "upperarm_r"
+  ],
+  "parts": {
+    "hips": {
+      "err": 0.04125,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "torso": {
+      "err": 0.08708,
+      "scale_rel": 1.0,
+      "angle": 0
+    },
+    "head_base": {
+      "err": 0.0404,
+      "scale_rel": 1.05,
+      "angle": 0
+    },
+    "cap": {
+      "err": 0.01042,
+      "scale_rel": 1.1,
+      "angle": 0
+    },
+    "scarf": {
+      "err": 0.05207,
+      "scale_rel": 1.05,
+      "angle": 0
+    },
+    "bell": {
+      "err": 0.09843,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "leg_r": {
+      "err": 0.05731,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "leg_l": {
+      "err": 0.05542,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "hoof_l": {
+      "err": 0.00279,
+      "scale_rel": 0.95,
+      "angle": 0
+    },
+    "hoof_r": {
+      "err": 0.00238,
+      "scale_rel": 1.0,
+      "angle": 0
+    },
+    "antler_l": {
+      "err": 0.00474,
+      "scale_rel": 1.05,
+      "angle": 0
+    },
+    "antler_r": {
+      "err": 0.0057,
+      "scale_rel": 1.05,
+      "angle": 0
+    },
+    "ear_r": {
+      "err": 0.00669,
+      "scale_rel": 1.05,
+      "angle": 0
+    },
+    "ear_l": {
+      "err": 0.00465,
+      "scale_rel": 1.05,
+      "angle": 0
+    },
+    "upperarm_l": {
+      "err": 0.06102,
+      "scale_rel": 0.9,
+      "angle": -9
+    },
+    "upperarm_r": {
+      "err": 0.05938,
+      "scale_rel": 0.9,
+      "angle": 9
+    },
+    "hand_l": {
+      "err": 0.03179,
+      "scale_rel": 0.9,
+      "angle": 45
+    },
+    "hand_r": {
+      "err": 0.03303,
+      "scale_rel": 0.9,
+      "angle": -45
+    },
+    "forearm_l": {
+      "err": 0.03935,
+      "scale_rel": 0.8,
+      "angle": 0
+    },
+    "forearm_r": {
+      "err": 0.03911,
+      "scale_rel": 0.8,
+      "angle": 0
+    }
+  }
+}

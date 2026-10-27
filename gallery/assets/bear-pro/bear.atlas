@@ -1,0 +1,145 @@
+bear_0.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+bear_arm_l
+bounds: 2,1342,468,664
+bear_arm_l_under
+bounds: 474,1342,468,664
+bear_arm_r
+bounds: 2,2,470,666
+bear_arm_r_under
+bounds: 2,672,470,666
+bear_hand_l
+bounds: 1852,1880,126,162
+offsets: 5,6,135,172
+bear_hand_l_fist_under
+bounds: 768,574,154,210
+offsets: 8,8,170,220
+bear_hand_l_open
+bounds: 738,1110,197,227
+offsets: 4,7,208,240
+bear_hand_l_point
+bounds: 1459,629,509,608
+offsets: 60,59,642,706
+bear_hand_l_point_under
+bounds: 946,2,509,625
+offsets: 77,76,676,740
+bear_hand_r_fist_under
+bounds: 768,788,155,209
+offsets: 7,8,170,219
+bear_hand_r_point
+bounds: 946,631,509,608
+offsets: 73,59,642,706
+bear_hand_r_point_under
+bounds: 1459,2,509,623
+offsets: 90,76,676,740
+bear_hand_r_under
+bounds: 1723,1880,125,166
+offsets: 10,11,145,182
+bear_head_angry
+bounds: 1431,1703,288,264
+bear_head_angry_under
+bounds: 1723,1612,288,264
+bear_head_base
+bounds: 476,1110,258,226
+bear_head_blink
+bounds: 476,574,288,264
+bear_head_blink_under
+bounds: 476,842,288,264
+bear_hips_under
+bounds: 946,1243,497,456
+bear_prop_flag
+bounds: 476,2,382,568
+bear_prop_hurdle
+bounds: 1459,1241,564,367
+bear_torso
+bounds: 946,1703,481,313
+shadow
+bounds: 2,2020,48,14
+
+bear_1.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+bear_clog_l
+bounds: 264,1522,216,172
+bear_clog_l_under
+bounds: 294,769,213,173
+offsets: 6,7,226,182
+bear_clog_r
+bounds: 403,1698,216,172
+bear_clog_r_under
+bounds: 495,538,213,173
+offsets: 7,7,226,182
+bear_hand_l_fist
+bounds: 294,1157,158,207
+bear_hand_l_grip
+bounds: 456,1151,188,194
+offsets: 36,36,258,254
+bear_hand_l_grip_under
+bounds: 456,946,188,201
+offsets: 43,43,272,268
+bear_hand_l_open_under
+bounds: 2,1752,197,233
+offsets: 11,14,222,254
+bear_hand_l_thumbsup
+bounds: 403,1874,197,169
+bear_hand_l_thumbsup_under
+bounds: 623,1547,192,172
+offsets: 9,8,210,182
+bear_hand_l_under
+bounds: 648,920,126,167
+offsets: 10,11,145,182
+bear_hand_r
+bounds: 703,715,125,162
+offsets: 5,6,135,172
+bear_hand_r_fist
+bounds: 294,946,158,207
+bear_hand_r_grip
+bounds: 484,1349,188,194
+offsets: 34,36,258,254
+bear_hand_r_grip_under
+bounds: 511,715,188,201
+offsets: 41,43,272,268
+bear_hand_r_open
+bounds: 294,538,197,227
+offsets: 7,7,208,240
+bear_hand_r_open_under
+bounds: 203,1752,196,233
+offsets: 13,14,221,253
+bear_hand_r_thumbsup
+bounds: 604,1874,197,169
+bear_hand_r_thumbsup_under
+bounds: 805,1723,192,172
+offsets: 9,8,210,182
+bear_head_base_under
+bounds: 2,1522,258,226
+bear_head_happy
+bounds: 493,2,288,264
+bear_head_happy_under
+bounds: 785,2,288,264
+bear_head_laugh
+bounds: 2,988,288,263
+bear_head_laugh_under
+bounds: 2,1255,288,263
+bear_head_neutral
+bounds: 1077,2,288,264
+bear_head_neutral_under
+bounds: 1369,2,288,264
+bear_head_sad
+bounds: 1661,2,288,264
+bear_head_sad_under
+bounds: 493,270,288,264
+bear_head_surprised
+bounds: 2,452,288,264
+bear_head_surprised_under
+bounds: 785,270,288,264
+bear_head_talking
+bounds: 1077,270,288,264
+bear_head_talking_under
+bounds: 1369,270,288,264
+bear_head_wink
+bounds: 1661,270,288,264
+bear_head_wink_under
+bounds: 2,720,288,264
+bear_hips
+bounds: 2,2,487,446

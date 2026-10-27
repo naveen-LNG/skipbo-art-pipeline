@@ -1,0 +1,722 @@
+<title>Cast Animation Review</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,750&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a light-table review sheet. Sticky transport bar, cast summary strip, then one exposure-sheet
+   grid per character (one cell per animation, all looping on one shared clock). */
+:root {
+  --bg: #eef0f2;
+  --surface: #ffffff;
+  --surface-2: #f6f7f9;
+  --line: #d7dbe1;
+  --fg: #1b2028;
+  --muted: #5d6673;
+  --accent: #2856c8;        /* animator's blue pencil */
+  --accent-soft: #dfe7fb;
+  --key: #c8452f;           /* key-pose red */
+  --ok: #1f7a4a; --ok-soft: #dcf1e5;
+  --bad: #b3261e; --bad-soft: #fbe2df;
+  --none: #6b7280; --none-soft: #eceef1;
+  --stage-light: #e4e7ea;
+  --stage-dark: #2b3038;
+  --check-a: #e9ecef; --check-b: #d3d8de;
+  --stage: var(--stage-light);
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Instrument Sans", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --r: 10px;
+  --gutter: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12151a; --surface: #1a1e25; --surface-2: #20252d; --line: #2e343e;
+    --fg: #e7eaef; --muted: #9aa3b0; --accent: #7ea1ff; --accent-soft: #24304d; --key: #ff8a73;
+    --ok: #6fd39b; --ok-soft: #173525; --bad: #ff8b80; --bad-soft: #3d1c1a; --none: #9aa3b0; --none-soft: #262b33;
+    --stage-light: #d9dde2; --stage-dark: #262b33; --check-a: #2d333c; --check-b: #232830;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12151a; --surface: #1a1e25; --surface-2: #20252d; --line: #2e343e;
+  --fg: #e7eaef; --muted: #9aa3b0; --accent: #7ea1ff; --accent-soft: #24304d; --key: #ff8a73;
+  --ok: #6fd39b; --ok-soft: #173525; --bad: #ff8b80; --bad-soft: #3d1c1a; --none: #9aa3b0; --none-soft: #262b33;
+  --stage-light: #d9dde2; --stage-dark: #262b33; --check-a: #2d333c; --check-b: #232830;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { background: var(--bg); color: var(--fg); }
+body { margin: 0; font: 14px/1.45 var(--f-body); -webkit-font-smoothing: antialiased; }
+body[data-bg="light"] { --stage: var(--stage-light); }
+body[data-bg="dark"] { --stage: var(--stage-dark); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- transport bar ---------- */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+  padding-block: 10px; padding-inline: var(--gutter);
+}
+.bar-inner { max-width: 1680px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.brand { display: flex; align-items: baseline; gap: 10px; margin-right: auto; min-width: 0; }
+.brand h1 { font: 750 20px/1.1 var(--f-display); letter-spacing: -0.01em; margin: 0; white-space: nowrap; }
+.brand .sub { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.group { display: flex; align-items: center; gap: 6px; }
+.group > .lbl { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface-2); }
+.seg button { border: 0; background: transparent; padding: 5px 10px; cursor: pointer; font-size: 13px; color: var(--muted); }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+.seg button:disabled { opacity: 0.35; cursor: not-allowed; }
+.btn { border: 1px solid var(--line); background: var(--surface-2); border-radius: 8px; padding: 5px 10px; cursor: pointer; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--surface); border-color: var(--accent); min-width: 78px; justify-content: center; }
+.transport { display: flex; align-items: center; gap: 8px; flex: 1 1 440px; min-width: 0; }
+.transport > * { flex-shrink: 0; }
+.transport input[type=range] { flex: 1 1 80px; min-width: 60px; accent-color: var(--accent); }
+.tc { font: 500 12px/1 var(--f-mono); font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; min-width: 112px; text-align: right; }
+
+main { max-width: 1680px; margin: 0 auto; padding-inline: var(--gutter); padding-block: 20px 80px; display: grid; gap: 28px; }
+
+/* ---------- summary ---------- */
+.summary { display: grid; gap: 14px; }
+.totals { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; }
+.totals .n { font: 750 28px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.totals .k { color: var(--muted); font-size: 13px; margin-left: 5px; }
+.totals .when { color: var(--muted); font: 12px var(--f-mono); margin-left: auto; }
+.cast { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.chip { display: grid; gap: 6px; text-align: left; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); cursor: pointer; }
+.chip:hover { border-color: var(--accent); }
+.chip .nm { font: 600 16px/1.1 var(--f-display); text-transform: capitalize; display: flex; justify-content: space-between; gap: 8px; }
+.chip .nm small { font: 400 12px var(--f-mono); color: var(--muted); text-transform: none; }
+.badges { display: flex; flex-wrap: wrap; gap: 4px; }
+.badge { font: 500 11px/1 var(--f-mono); padding: 4px 6px; border-radius: 5px; white-space: nowrap; }
+.badge.pass { color: var(--ok); background: var(--ok-soft); }
+.badge.fail { color: var(--bad); background: var(--bad-soft); }
+.badge.none { color: var(--none); background: var(--none-soft); }
+.badge.err { color: var(--bad); background: var(--bad-soft); }
+.badge.load { color: var(--muted); background: var(--none-soft); }
+.notice { border: 1px solid var(--bad); background: var(--bad-soft); color: var(--fg); border-radius: var(--r); padding: 10px 12px; font-size: 13px; }
+.notice code { font-family: var(--f-mono); font-size: 12px; overflow-wrap: anywhere; }
+
+/* ---------- review notes (what changed overnight, what to look at) ---------- */
+.notes { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); }
+.notes > summary { cursor: pointer; padding: 12px 14px; font: 600 15px/1.2 var(--f-display); display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.notes > summary small { font: 400 12px var(--f-mono); color: var(--muted); }
+.notes-body { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 18px 28px; padding: 4px 14px 16px; border-top: 1px solid var(--line); }
+.note { min-width: 0; display: grid; gap: 8px; align-content: start; }
+.note h3 { margin: 10px 0 0; font: 600 11px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.note p, .note li { margin: 0; font-size: 13.5px; line-height: 1.5; max-width: 68ch; }
+.note ul { margin: 0; padding-left: 18px; display: grid; gap: 5px; }
+.note code { font: 12px var(--f-mono); overflow-wrap: anywhere; }
+.note strong { font-weight: 600; }
+.tbl-wrap { overflow-x: auto; }
+.note table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.note th, .note td { text-align: left; vertical-align: top; padding: 6px 8px 6px 0; border-bottom: 1px solid var(--line); }
+.note th { font: 600 11px var(--f-mono); color: var(--muted); letter-spacing: 0.04em; }
+.note td:first-child { font-weight: 600; white-space: nowrap; }
+.cast-note { display: grid; gap: 3px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.cast-note:last-child { border-bottom: 0; }
+.cast-note .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.cast-note .nm { font: 600 15px/1.2 var(--f-display); margin-right: 4px; }
+
+/* ---------- character sections ---------- */
+.char { display: grid; gap: 12px; scroll-margin-top: 90px; }
+.char-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; border-top: 1px solid var(--line); padding-top: 14px; }
+.char-head h2 { font: 750 26px/1 var(--f-display); margin: 0; text-transform: capitalize; letter-spacing: -0.01em; }
+.char-head .meta { color: var(--muted); font-size: 12px; font-family: var(--f-mono); overflow-wrap: anywhere; min-width: 0; }
+.char-head .seg { margin-left: auto; }
+.char-head .qa-fail { color: var(--bad); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--cell-min, 190px), 1fr)); gap: 10px; }
+.char[data-mode="both"] .grid { --cell-min: 300px; }
+.cell { display: grid; grid-template-rows: auto auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; cursor: zoom-in; padding: 0; text-align: left; }
+.cell:hover { border-color: var(--accent); }
+.stages { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 1px; background: var(--line); }
+.stage { position: relative; aspect-ratio: var(--ar, 0.8); background: var(--stage); max-width: 100%; }
+body[data-bg="checker"] .stage { background: repeating-conic-gradient(var(--check-a) 0% 25%, var(--check-b) 0% 50%) 0 0 / 16px 16px; }
+.stage .tag { position: absolute; left: 6px; top: 6px; font: 500 10px/1 var(--f-mono); letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 5px; border-radius: 4px; background: var(--surface); color: var(--muted); }
+.stage .tag.pro { color: var(--accent); }
+.vhead { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+.vhead span { background: var(--surface-2); font: 500 10px/1 var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 8px; color: var(--muted); }
+.vhead span.pro { color: var(--accent); }
+.cell { grid-template-rows: auto; }
+.panel .vhead { border-radius: 6px; overflow: hidden; }
+.stage .absent { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 12px; text-align: center; padding: 8px; }
+.stage .state { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font: 12px var(--f-mono); }
+.prog { height: 2px; background: var(--line); position: relative; overflow: hidden; }
+.prog i { position: absolute; inset: 0; background: var(--key); transform-origin: 0 50%; transform: scaleX(0); }
+.cap { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 7px 10px 8px; min-width: 0; }
+.cap b { font: 600 13px/1.2 var(--f-body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cap span { font: 400 11px/1 var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---------- WebGL overlay ---------- */
+#gl { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+body.modal-open #gl { z-index: 30; }
+
+/* ---------- large view ---------- */
+.modal { position: fixed; inset: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent); display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) 16px max(16px, env(safe-area-inset-bottom, 0px)); }
+.panel { width: min(1200px, 100%); max-height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+.panel-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.panel-head h3 { margin: 0; font: 750 20px/1.1 var(--f-display); }
+.panel-head h3 small { font: 400 12px var(--f-mono); color: var(--muted); margin-left: 6px; }
+.panel-head .sp { margin-left: auto; }
+.big { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px; min-height: 0; height: min(72vh, 900px); }
+.big .stage { aspect-ratio: auto; height: 100%; border-radius: 8px; }
+.panel-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.panel-foot input[type=range] { flex: 1 1 200px; accent-color: var(--key); }
+.kbd { color: var(--muted); font-size: 12px; }
+.kbd kbd { font: 11px var(--f-mono); border: 1px solid var(--line); border-radius: 4px; padding: 1px 4px; background: var(--surface-2); }
+
+.fab { display: none; }
+@media (max-width: 760px) {
+  .bar { position: static; }
+  .brand { width: 100%; }
+  .tc { min-width: 0; }
+  .char-head .seg { margin-left: 0; }
+  .char[data-mode="both"] .grid { --cell-min: 240px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .char[data-mode="both"] .grid { grid-template-columns: minmax(0, 1fr); }
+  .cap { flex-direction: column; align-items: flex-start; gap: 3px; padding: 6px 8px 7px; }
+  .big { grid-auto-flow: row; grid-auto-rows: 1fr; height: 58vh; }
+  .kbd { display: none; }
+  .fab { display: inline-flex; position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 12; box-shadow: 0 4px 14px rgb(0 0 0 / 0.18); padding: 10px 16px; }
+  body.modal-open .fab { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<header class="bar" id="bar">
+  <div class="bar-inner">
+    <div class="brand"><h1>Cast Animation Review</h1><span class="sub" id="sub">loading manifest…</span></div>
+    <div class="transport">
+      <button class="btn primary" id="play" aria-pressed="true" title="Play / pause all (Space)">Pause</button>
+      <button class="btn" id="stepB" title="Back one frame (,)" aria-label="Back one frame">‹ 1f</button>
+      <button class="btn" id="stepF" title="Forward one frame (.)" aria-label="Forward one frame">1f ›</button>
+      <input type="range" id="scrub" min="0" max="1" step="0.001" value="0" aria-label="Scrub the shared clock">
+      <span class="tc" id="tc">0.00 s · f 0</span>
+    </div>
+    <div class="group"><span class="lbl">Speed</span>
+      <div class="seg" id="speed"><button data-v="0.25">¼×</button><button data-v="0.5">½×</button><button data-v="1">1×</button></div></div>
+    <div class="group"><span class="lbl">Rig</span>
+      <div class="seg" id="mode"><button data-v="legacy">Legacy</button><button data-v="pro">Pro</button><button data-v="both">Side by side</button></div></div>
+    <div class="group"><span class="lbl">Stage</span>
+      <div class="seg" id="bgsel"><button data-v="light">Light</button><button data-v="dark">Dark</button><button data-v="checker">Checker</button></div></div>
+    <div class="group"><span class="lbl">Framing</span>
+      <div class="seg" id="fit"><button data-v="clip" title="Each cell zooms to its own animation">Per clip</button><button data-v="cast" title="Every cell of a character uses one scale">One scale</button></div></div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="summary" id="summary" aria-label="Cast summary"></section>
+  <details class="notes" id="notes" open>
+    <summary>Read first: what changed overnight <small>branch spine-pro-cast · 16 Oct 2026</small></summary>
+    <div class="notes-body">
+      <div class="note">
+        <h3>How to review</h3>
+        <p><strong>Side by side</strong> plays today's pipeline (Legacy) on the left of each cell and the new <strong>Pro</strong> rig on the right, on one shared clock. Start with <code>idle</code>, <code>walk</code>, <code>wave</code> and <code>cheer_jump</code>: that is where the tail follow-through, ear flop, breathing and planted feet show. <code>look_around</code> and <code>talk</code> are new and Pro only.</p>
+        <p>Click a cell for a large view. <strong>Bones</strong> there draws the skeleton, including the new helper bones. Drop the speed to ¼× to see overlap.</p>
+        <h3>What Pro adds</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Primitive</th><th>What you see</th><th>Research</th></tr></thead>
+          <tbody>
+            <tr><td>Container + shadow</td><td>A <code>character</code> bone carries jumps; root is never keyed. A ground shadow shrinks and fades in the air.</td><td>§2.4</td></tr>
+            <tr><td>Tail chain</td><td>3–4 bones on the tail's axis, one bending mesh. The tail lags, swings and settles after moves.</td><td>§2.5–2.6</td></tr>
+            <tr><td>Chest breathing</td><td>The torso is a mesh on hips and a <code>chest</code> helper. Arms and head use <code>inherit: noScale</code>, so they don't swell with the breath.</td><td>§2.5</td></tr>
+            <tr><td>Face + ears</td><td>Every expression head is a 9×9 mesh with a <code>face</code> bone: moving it fakes a 3D turn. Ears are found from the head outline and flop.</td><td>§2.5</td></tr>
+            <tr><td>Planted feet</td><td>Feet follow green target bones through transform constraints, so the hips bob over still feet in idle and squat.</td><td>§2.7</td></tr>
+            <tr><td>Underfill</td><td>A darkened fill at each joint, so a gap that opens reads as shadow, not background.</td><td>§6 rule 2</td></tr>
+            <tr><td>Organisation</td><td>Controllers red, helpers yellow, targets green, the way an animator sets up a rig.</td><td>§2.8</td></tr>
+            <tr><td>Animator loop</td><td><code>spine_diff.py</code> turns an animator's edited Spine JSON into one labelled correction per change.</td><td>§4</td></tr>
+          </tbody>
+        </table></div>
+        <p>The fox, moose and beaver rigs were checked against the official Spine 4.2 web player: 296 legacy and Pro poses match <code>spine_qa</code>'s renderer to within 0.0005 units, with no console errors.</p>
+      </div>
+      <div class="note">
+        <h3>New cast, made from text overnight</h3>
+        <div class="cast-note">
+          <div class="row"><span class="nm">Rabbit</span><span class="badge pass">legacy 20/20</span><span class="badge pass">pro 22/22</span><span class="badge none">12 images</span></div>
+          <p>Long separate ears ready for ear bones. Still off: in <code>hold_card</code> the paw covers the chest and reads as a hand on the heart; the boot tops show a rim; trousers a little wide. Its bib-shaped torso hangs far below the waist, so Pro now weights that part to the hips (a general fix, noted in the rig report).</p>
+        </div>
+        <div class="cast-note">
+          <div class="row"><span class="nm">Red panda</span><span class="badge pass">legacy 20/20</span><span class="badge pass">pro 22/22</span><span class="badge none">10 images</span></div>
+          <p>The ringed tail gets the full chain. Still off: boot shafts look stretched under the hem; mittens 0.85× the master's; tail rings fall in different places from the master's; the <code>hold_card</code> grip reads as a fist.</p>
+        </div>
+        <div class="cast-note">
+          <div class="row"><span class="nm">Bear</span><span class="badge pass">legacy 20/20</span><span class="badge pass">pro 22/22</span><span class="badge none">9 images</span></div>
+          <p>Chunky body, apron in the hips piece. Still off: mittens sit about 20 px high; a crease where the torso meets each sleeve cap; clogs stay flat in the air (the tiptoe clog was dropped after a 3.2× scaling bug).</p>
+        </div>
+        <h3>Pipeline problems found (your call)</h3>
+        <ul>
+          <li><strong>Tiptoe scaling bug.</strong> The tiptoe variant is sized against the rest foot's unsnapped width; the bear's clogs came out 3.2× tall. <code>spine_qa</code> passed it; the gallery caught it.</li>
+          <li><strong>Scale from neck-to-waist only.</strong> Chunky bodies come out too wide, and one bad waist point shrank the rabbit to IoU 0.64, with no doubt raised.</li>
+          <li><strong>Master contract misses pale fur.</strong> Light-grey fur and white muzzles on the grey background key out as holes.</li>
+          <li><strong>One-piece trousers.</strong> The body sheet's "each leg in two" fights them; all three characters had trousers rebuilt by a local script.</li>
+          <li><strong>Sleeves and snaps.</strong> The sleeve prompt can't say "rolled up over a bare forearm"; point snapping fails on long sleeve caps, clog heels and slanted mittens.</li>
+        </ul>
+        <h3>Where it lives</h3>
+        <p>Branch <code>spine-pro-cast</code>, nothing pushed, your checkout untouched. Write-ups: <code>experiments/2026-10-16-spine-pro/README.md</code> and <code>experiments/2026-10-16-cast/&lt;character&gt;/README.md</code>. Code: <code>scripts/spine_pro.py</code>, <code>pro_*.py</code>, <code>qa_constraints.py</code>, <code>spine_diff.py</code>. 423 tests pass.</p>
+      </div>
+    </div>
+  </details>
+</main>
+
+<button class="btn primary fab" id="fab">Pause</button>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="panel">
+    <div class="panel-head">
+      <h3 id="mTitle">—</h3>
+      <div class="badges" id="mBadges"></div>
+      <span class="sp"></span>
+      <button class="btn" id="mBones" aria-pressed="false">Bones</button>
+      <button class="btn" id="mPrev" aria-label="Previous animation">← Prev</button>
+      <button class="btn" id="mNext" aria-label="Next animation">Next →</button>
+      <button class="btn" id="mClose" aria-label="Close large view">Close ✕</button>
+    </div>
+    <div class="big" id="mBig"></div>
+    <div class="panel-foot">
+      <button class="btn primary" id="mPlay">Pause</button>
+      <button class="btn" id="mStepB" aria-label="Back one frame">‹ 1f</button>
+      <button class="btn" id="mStepF" aria-label="Forward one frame">1f ›</button>
+      <input type="range" id="mScrub" min="0" max="1" step="0.001" value="0" aria-label="Scrub this animation">
+      <span class="tc" id="mTc">0.00 / 0.00 s</span>
+      <span class="kbd"><kbd>Space</kbd> play <kbd>,</kbd><kbd>.</kbd> frame <kbd>←</kbd><kbd>→</kbd> anim <kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/@esotericsoftware/spine-webgl@4.2.120/dist/iife/spine-webgl.min.js"></script>
+<script>
+"use strict";
+const FPS = 30;
+const $ = (s, el = document) => el.querySelector(s);
+const h = (tag, attrs = {}, ...kids) => {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") el.className = v; else if (k === "text") el.textContent = v;
+    else if (k.startsWith("on")) el.addEventListener(k.slice(2), v); else if (v !== null && v !== undefined) el.setAttribute(k, v);
+  }
+  for (const c of kids) if (c) el.append(c);
+  return el;
+};
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("castgal." + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem("castgal." + k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } },
+};
+const LABELS = { redpanda: "red panda" };
+const label = n => LABELS[n] || n.replace(/[_-]+/g, " ");
+const fmtDur = d => `${d.toFixed(2)} s · ${Math.round(d * FPS)} f`;
+
+const S = {
+  playing: true, speed: store.get("speed", 1), T: 0, bg: store.get("bg", "light"),
+  mode: store.get("mode", null), fit: store.get("fit", "clip"), jumped: true, stepDt: 0, bones: false,
+  modal: null,   // {char, anims, index, stages}
+};
+const G = { manifest: null, chars: [], byName: {}, rigs: {}, cells: [], maxDur: 1, frames: 0, errors: [] };
+window.gallery = G; window.galleryState = S;
+
+// ------------------------------------------------------------------ WebGL
+const canvas = $("#gl");
+let ctx, renderer, assets;
+try {
+  ctx = new spine.ManagedWebGLRenderingContext(canvas, { alpha: true, premultipliedAlpha: true, antialias: true });
+  if (!ctx.gl) throw new Error("WebGL is not available in this browser");
+  renderer = new spine.SceneRenderer(canvas, ctx, true);
+  renderer.skeletonDebugRenderer.drawRegionAttachments = false;
+  renderer.skeletonDebugRenderer.drawMeshHull = false;
+  renderer.skeletonDebugRenderer.drawMeshTriangles = false;
+  renderer.skeletonDebugRenderer.drawBoundingBoxes = false;
+  renderer.skeletonDebugRenderer.drawClipping = false;
+  renderer.skeletonDebugRenderer.drawPaths = true;
+  assets = new spine.AssetManager(ctx, "");
+} catch (e) {
+  G.errors.push("WebGL: " + e.message);
+}
+
+// ------------------------------------------------------------------ data
+async function init() {
+  let man;
+  try {
+    const r = await fetch("manifest.json", { cache: "no-store" });
+    if (!r.ok) throw new Error(`manifest.json: HTTP ${r.status}`);
+    man = await r.json();
+  } catch (e) {
+    $("#sub").textContent = "could not load manifest.json";
+    $("#summary").append(h("div", { class: "notice", text: `${e.message}. Rebuild with python3 tools/build_gallery.py and serve the gallery folder over http.` }));
+    return;
+  }
+  G.manifest = man;
+  for (const r of man.rigs) {
+    let c = G.byName[r.character];
+    if (!c) { c = G.byName[r.character] = { name: r.character, rigs: {}, bounds: null, el: null, mode: null }; G.chars.push(c); }
+    c.rigs[r.variant] = r;
+    G.rigs[r.id] = { entry: r, data: null, error: null, bounds: null, status: "loading" };
+    for (const a of r.animations) G.maxDur = Math.max(G.maxDur, a.duration);
+  }
+  const anyPro = G.chars.some(c => c.rigs.pro);
+  if (!S.mode || (S.mode !== "legacy" && !anyPro)) S.mode = anyPro ? "both" : "legacy";
+  for (const c of G.chars) c.mode = effectiveMode(c, S.mode);
+  renderSummary();
+  for (const c of G.chars) renderChar(c);
+  syncControls();
+  // load every rig; each one fills its cells as it arrives
+  await Promise.all(Object.values(G.rigs).map(loadRig));
+  renderSummary();
+}
+
+function effectiveMode(c, want) {
+  const has = v => !!c.rigs[v];
+  if (want === "both") return has("legacy") && has("pro") ? "both" : (has("pro") ? "pro" : "legacy");
+  if (has(want)) return want;
+  return has("legacy") ? "legacy" : Object.keys(c.rigs)[0];
+}
+
+function loadRig(rig) {
+  const e = rig.entry;
+  if (!assets) { rig.status = "error"; rig.error = G.errors[0]; refreshChar(G.byName[e.character]); return Promise.resolve(); }
+  const one = (fn, path) => new Promise((res, rej) => fn.call(assets, path, () => res(), (p, msg) => rej(new Error(`${p}: ${msg}`))));
+  return Promise.all([one(assets.loadJson, e.json), one(assets.loadTextureAtlas, e.atlas)]).then(() => {
+    const atlas = assets.require(e.atlas);
+    const sj = new spine.SkeletonJson(new spine.AtlasAttachmentLoader(atlas));
+    rig.data = sj.readSkeletonData(assets.require(e.json));
+    rig.bounds = measure(rig.data);
+    rig.status = "ready";
+  }).catch(err => {
+    rig.status = "error"; rig.error = String(err && err.message || err);
+    console.error(`[gallery] ${e.id} failed to load:`, rig.error);
+  }).then(() => {
+    const c = G.byName[e.character];
+    const bs = Object.values(c.rigs).map(r => G.rigs[r.id].bounds && G.rigs[r.id].bounds.all).filter(Boolean);
+    if (bs.length) c.bounds = union(bs);
+    // per-clip framing: cells share the median clip aspect so rows stay aligned
+    const aspects = Object.values(c.rigs).flatMap(r => G.rigs[r.id].bounds ? Object.values(G.rigs[r.id].bounds.per) : [])
+      .map(b => { const u = union([b]); return u.w / u.h; }).sort((a, b) => a - b);
+    if (aspects.length) c.clipAspect = Math.min(1.2, Math.max(0.55, aspects[Math.floor(aspects.length / 2)]));
+    refreshChar(c);
+  });
+}
+
+// union of the skeleton's bounds over every animation, sampled; one box per character keeps scale equal
+function measure(data) {
+  const sk = new spine.Skeleton(data), off = new spine.Vector2(), size = new spine.Vector2();
+  let b = null;
+  const add = () => {
+    sk.updateWorldTransform(spine.Physics.pose);
+    sk.getBounds(off, size, []);
+    if (!isFinite(off.x) || !isFinite(size.x) || size.x <= 0) return;
+    const r = { x0: off.x, y0: off.y, x1: off.x + size.x, y1: off.y + size.y };
+    b = b ? { x0: Math.min(b.x0, r.x0), y0: Math.min(b.y0, r.y0), x1: Math.max(b.x1, r.x1), y1: Math.max(b.y1, r.y1) } : r;
+  };
+  sk.setToSetupPose(); add();
+  const setup = b, per = {};
+  for (const a of data.animations) {
+    b = null;
+    const n = Math.max(2, Math.ceil(a.duration * 10));
+    for (let i = 0; i <= n; i++) {
+      const t = a.duration * i / n;
+      sk.setToSetupPose();
+      a.apply(sk, t, t, false, null, 1, spine.MixBlend.setup, spine.MixDirection.mixIn);
+      add();
+    }
+    if (b) per[a.name] = b;
+  }
+  const all = [setup, ...Object.values(per)].filter(Boolean);
+  return { all: all.length ? all.reduce((a, r) => ({ x0: Math.min(a.x0, r.x0), y0: Math.min(a.y0, r.y0), x1: Math.max(a.x1, r.x1), y1: Math.max(a.y1, r.y1) })) : null, setup, per };
+}
+function union(bs) {
+  const b = bs.reduce((a, r) => ({ x0: Math.min(a.x0, r.x0), y0: Math.min(a.y0, r.y0), x1: Math.max(a.x1, r.x1), y1: Math.max(a.y1, r.y1) }));
+  const pad = 0.04 * Math.max(b.x1 - b.x0, b.y1 - b.y0);
+  return { x: b.x0 - pad, y: b.y0 - pad, w: b.x1 - b.x0 + 2 * pad, h: b.y1 - b.y0 + 2 * pad };
+}
+
+// ------------------------------------------------------------------ DOM
+function qaBadge(r, label) {
+  const rig = G.rigs[r.id];
+  if (rig && rig.status === "error") return h("span", { class: "badge err", title: rig.error, text: `${label} load error` });
+  const q = r.qa || { status: "none", failing: [] };
+  const cls = q.status === "pass" ? "pass" : q.status === "fail" ? "fail" : "none";
+  const txt = q.status === "pass" ? `${label} QA pass` : q.status === "fail" ? `${label} QA fail ${q.failing.length}` : `${label} no QA`;
+  const title = q.status === "fail" ? "Failing: " + q.failing.join(", ") : (q.source ? "From " + q.source : "No QA report next to this rig");
+  return h("span", { class: "badge " + cls, title, text: txt });
+}
+
+function renderSummary() {
+  const m = G.manifest, el = $("#summary");
+  el.textContent = "";
+  const nAnim = m.rigs.reduce((s, r) => s + r.animations.length, 0);
+  const uniqueAnims = G.chars.reduce((s, c) => s + new Set(Object.values(c.rigs).flatMap(r => r.animations.map(a => a.name))).size, 0);
+  const built = new Date(m.generated_at);
+  $("#sub").textContent = `${G.chars.length} characters · ${m.rigs.length} rigs · built ${isNaN(built) ? m.generated_at : built.toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`;
+  const stat = (n, k) => h("div", {}, h("span", { class: "n", text: String(n) }), h("span", { class: "k", text: k }));
+  const fails = m.rigs.filter(r => r.qa && r.qa.status === "fail").length;
+  el.append(h("div", { class: "totals" },
+    stat(G.chars.length, "characters"), stat(m.rigs.length, "rigs"), stat(uniqueAnims, "animations"),
+    (nAnim !== uniqueAnims ? stat(nAnim, "clips playing") : null), stat(fails, "rigs failing QA"),
+    h("span", { class: "when", text: `T max ${G.maxDur.toFixed(2)} s @ ${FPS} fps` })));
+  const cast = h("div", { class: "cast" });
+  for (const c of G.chars) {
+    const badges = h("div", { class: "badges" });
+    for (const v of ["legacy", "pro"]) if (c.rigs[v]) badges.append(qaBadge(c.rigs[v], v));
+    const n = new Set(Object.values(c.rigs).flatMap(r => r.animations.map(a => a.name))).size;
+    cast.append(h("button", { class: "chip", onclick: () => c.el.scrollIntoView({ behavior: "smooth", block: "start" }) },
+      h("span", { class: "nm" }, document.createTextNode(label(c.name)), h("small", { text: `${n} anims` })), badges));
+  }
+  el.append(cast);
+  const errs = [...G.errors, ...(m.errors || []).map(e => `build: ${e.id} (${e.source}): ${e.error}`),
+    ...Object.values(G.rigs).filter(r => r.error).map(r => `load: ${r.entry.id}: ${r.error}`),
+    ...m.rigs.filter(r => r.missing_regions && r.missing_regions.length).map(r => `${r.id}: atlas lacks ${r.missing_regions.join(", ")}`),
+    ...m.rigs.filter(r => r.stale).map(r => `${r.id}: showing previous build (${r.built_at}); latest source failed to build`)];
+  if (errs.length) el.append(h("div", { class: "notice" }, h("b", { text: "Problems: " }),
+    ...errs.map((t, i) => h("div", {}, h("code", { text: t })))));
+}
+
+function renderChar(c) {
+  if (!c.el) {
+    c.el = h("section", { class: "char", id: "c-" + c.name, "aria-label": label(c.name) });
+    $("#main").append(c.el);
+  }
+  const el = c.el;
+  el.textContent = "";
+  el.dataset.mode = c.mode;
+  const seg = h("div", { class: "seg", role: "group", "aria-label": `${c.name} rig variant` });
+  for (const [v, label] of [["legacy", "Legacy"], ["pro", "Pro"], ["both", "Side by side"]]) {
+    const ok = v === "both" ? !!(c.rigs.legacy && c.rigs.pro) : !!c.rigs[v];
+    seg.append(h("button", { "aria-pressed": String(c.mode === v), disabled: ok ? null : "", title: ok ? "" : `no ${v === "both" ? "pro + legacy pair" : v} rig yet`,
+      onclick: () => { c.mode = v; renderChar(c); } , text: label }));
+  }
+  const badges = h("div", { class: "badges" });
+  for (const v of ["legacy", "pro"]) if (c.rigs[v]) badges.append(qaBadge(c.rigs[v], v));
+  const meta = h("div", { class: "meta" });
+  for (const r of Object.values(c.rigs)) {
+    const k = r.counts || {};
+    const extra = ["ik", "transform", "path", "physics"].filter(x => k[x]).map(x => `${x} ${k[x]}`);
+    if (r.qa && r.qa.status === "fail") meta.append(h("div", { class: "qa-fail", text: `${r.variant} QA failing: ${r.qa.failing.join(", ")}` }));
+    meta.append(h("div", { text: `${r.variant}: ${k.bones} bones · ${k.slots} slots · ${k.meshes} meshes${extra.length ? " · " + extra.join(" · ") : ""} — ${r.source}` }));
+  }
+  el.append(h("div", { class: "char-head" }, h("h2", { text: label(c.name) }), badges, meta, seg));
+  const variants = c.mode === "both" ? ["legacy", "pro"] : [c.mode];
+  const names = [];
+  for (const v of variants) for (const a of c.rigs[v].animations) if (!names.includes(a.name)) names.push(a.name);
+  const grid = h("div", { class: "grid" });
+  G.cells = G.cells.filter(x => x.char !== c);
+  const ar = S.fit === "clip" && c.clipAspect ? c.clipAspect : (c.bounds ? c.bounds.w / c.bounds.h : null);
+  if (ar) el.style.setProperty("--ar", ar.toFixed(4));
+  names.forEach((name, idx) => {
+    const stagesEl = h("div", { class: "stages" });
+    const stages = variants.map(v => makeStage(c, v, name, stagesEl, false));
+    const vhead = variants.length > 1 ? h("div", { class: "vhead", "aria-hidden": "true" }, ...variants.map(v => h("span", { class: v, text: v }))) : null;
+    if (S.fit === "clip") {
+      const per = stages.map(s => s.rig.bounds && s.rig.bounds.per[name]).filter(Boolean);
+      const box = per.length ? union(per) : null;
+      for (const s of stages) s.bounds = box;
+    }
+    const durs = stages.filter(s => s.dur !== null).map(s => s.dur);
+    const dTxt = durs.length ? (new Set(durs.map(d => d.toFixed(2))).size > 1 ? durs.map(d => d.toFixed(2)).join(" / ") + " s" : fmtDur(durs[0])) : "";
+    const prog = h("i");
+    const cell = h("button", { class: "cell", title: `Open ${name} large`, onclick: () => openModal(c, names, idx) },
+      vhead, stagesEl, h("div", { class: "prog" }, prog), h("div", { class: "cap" }, h("b", { text: name }), h("span", { text: dTxt })));
+    grid.append(cell);
+    G.cells.push({ char: c, name, stages, prog, dur: Math.max(0, ...durs) });
+  });
+  el.append(grid);
+}
+
+function makeStage(c, variant, animName, parent, tagged) {
+  const r = c.rigs[variant], rig = G.rigs[r.id];
+  const a = r.animations.find(x => x.name === animName);
+  const el = h("div", { class: "stage" });
+  if (tagged) el.append(h("span", { class: "tag " + variant, text: variant }));
+  const st = { el, rig, variant, animName, dur: a ? a.duration : null, skeleton: null, anim: null, char: c };
+  if (!a) el.append(h("div", { class: "absent", text: `not in ${variant} rig` }));
+  else if (rig.status === "loading") el.append(h("div", { class: "state", text: "loading…" }));
+  else if (rig.status === "error") el.append(h("div", { class: "absent", text: "failed to load: " + rig.error }));
+  else bindSkeleton(st);
+  parent.append(el);
+  return st;
+}
+function bindSkeleton(st) {
+  const data = st.rig.data;
+  st.anim = data.findAnimation(st.animName);
+  if (!st.anim) return;
+  st.skeleton = new spine.Skeleton(data);
+  st.skeleton.setToSetupPose();
+  st.skeleton.updateWorldTransform(spine.Physics.reset);
+}
+function refreshChar(c) {
+  renderChar(c);
+  if (S.modal && S.modal.char === c) buildModalStages();
+  renderSummary();
+}
+
+// ------------------------------------------------------------------ controls
+function syncControls() {
+  document.body.dataset.bg = S.bg;
+  for (const b of $("#speed").children) b.setAttribute("aria-pressed", String(+b.dataset.v === S.speed));
+  for (const b of $("#bgsel").children) b.setAttribute("aria-pressed", String(b.dataset.v === S.bg));
+  for (const b of $("#fit").children) b.setAttribute("aria-pressed", String(b.dataset.v === S.fit));
+  const anyPro = G.chars.some(c => c.rigs.pro), anyLegacy = G.chars.some(c => c.rigs.legacy);
+  for (const b of $("#mode").children) {
+    b.setAttribute("aria-pressed", String(b.dataset.v === S.mode));
+    b.disabled = (b.dataset.v === "pro" || b.dataset.v === "both") ? !anyPro : !anyLegacy;
+    b.title = b.disabled ? "no pro rigs in this build yet" : "";
+  }
+  const label = S.playing ? "Pause" : "Play";
+  for (const id of ["#play", "#fab", "#mPlay"]) { $(id).textContent = label; $(id).setAttribute("aria-pressed", String(S.playing)); }
+  $("#mBones").setAttribute("aria-pressed", String(S.bones));
+}
+function togglePlay() { S.playing = !S.playing; S.jumped = true; syncControls(); }
+function step(n) { S.playing = false; S.T = Math.max(0, S.T + n / FPS); S.stepDt = Math.abs(n) / FPS; syncControls(); }
+$("#play").onclick = togglePlay; $("#fab").onclick = togglePlay; $("#mPlay").onclick = togglePlay;
+$("#stepB").onclick = () => step(-1); $("#stepF").onclick = () => step(1);
+$("#mStepB").onclick = () => step(-1); $("#mStepF").onclick = () => step(1);
+$("#speed").onclick = e => { const v = e.target.dataset && e.target.dataset.v; if (v) { S.speed = +v; store.set("speed", S.speed); syncControls(); } };
+$("#bgsel").onclick = e => { const v = e.target.dataset && e.target.dataset.v; if (v) { S.bg = v; store.set("bg", v); syncControls(); } };
+$("#fit").onclick = e => {
+  const v = e.target.dataset && e.target.dataset.v; if (!v) return;
+  S.fit = v; store.set("fit", v); syncControls();
+  for (const c of G.chars) renderChar(c);
+};
+$("#mode").onclick = e => {
+  const v = e.target.dataset && e.target.dataset.v; if (!v || e.target.disabled) return;
+  S.mode = v; store.set("mode", v);
+  for (const c of G.chars) { c.mode = effectiveMode(c, v); renderChar(c); }
+  syncControls();
+};
+const scrub = $("#scrub");
+scrub.addEventListener("input", () => { S.playing = false; S.T = +scrub.value * G.maxDur; S.jumped = true; syncControls(); });
+const mScrub = $("#mScrub");
+mScrub.addEventListener("input", () => {
+  if (!S.modal) return;
+  const d = modalDur();
+  S.playing = false; S.T = +mScrub.value * d; S.jumped = true; syncControls();
+});
+$("#mBones").onclick = () => { S.bones = !S.bones; syncControls(); };
+$("#mClose").onclick = closeModal;
+$("#mPrev").onclick = () => moveModal(-1);
+$("#mNext").onclick = () => moveModal(1);
+$("#modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
+document.addEventListener("keydown", e => {
+  if (e.target.matches && e.target.matches("input[type=text], textarea")) return;
+  if (e.key === " ") { e.preventDefault(); togglePlay(); }
+  else if (e.key === ",") step(-1);
+  else if (e.key === ".") step(1);
+  else if (S.modal && e.key === "Escape") closeModal();
+  else if (S.modal && e.key === "ArrowLeft") moveModal(-1);
+  else if (S.modal && e.key === "ArrowRight") moveModal(1);
+});
+
+// ------------------------------------------------------------------ large view
+function openModal(c, anims, index) {
+  S.modal = { char: c, anims, index, stages: [], returnFocus: document.activeElement };
+  document.body.classList.add("modal-open");
+  $("#modal").hidden = false;
+  buildModalStages();
+  $("#mClose").focus();
+}
+function moveModal(d) {
+  if (!S.modal) return;
+  const m = S.modal; m.index = (m.index + d + m.anims.length) % m.anims.length; S.jumped = true;
+  buildModalStages();
+}
+function modalDur() { return S.modal ? Math.max(0.0001, ...S.modal.stages.filter(s => s.dur).map(s => s.dur)) : 1; }
+function buildModalStages() {
+  const m = S.modal, c = m.char, name = m.anims[m.index];
+  const variants = c.mode === "both" ? ["legacy", "pro"] : [c.mode];
+  const big = $("#mBig"); big.textContent = "";
+  m.stages = variants.map(v => makeStage(c, v, name, big, variants.length > 1));
+  // the large view frames just this animation (same box for both variants so they stay comparable)
+  const per = m.stages.map(s => s.rig.bounds && s.rig.bounds.per[name]).filter(Boolean);
+  const box = per.length ? union(per) : null;
+  for (const s of m.stages) s.bounds = box;
+  const d = modalDur();
+  $("#mTitle").textContent = "";
+  $("#mTitle").append(document.createTextNode(`${label(c.name)} · ${name}`), h("small", { text: fmtDur(d) }));
+  const b = $("#mBadges"); b.textContent = "";
+  for (const v of variants) b.append(qaBadge(c.rigs[v], v));
+}
+function closeModal() {
+  if (!S.modal) return;
+  const rf = S.modal.returnFocus;
+  S.modal = null;
+  $("#modal").hidden = true; $("#mBig").textContent = "";
+  document.body.classList.remove("modal-open");
+  if (rf && rf.focus) rf.focus({ preventScroll: true });
+}
+
+// ------------------------------------------------------------------ render loop
+let last = performance.now();
+function pose(st, dt, physics) {
+  const sk = st.skeleton, d = st.anim.duration;
+  const t = d > 0 ? S.T % d : 0;
+  if (physics === spine.Physics.update) sk.update(dt);
+  sk.setToSetupPose();
+  st.anim.apply(sk, t, t, true, null, 1, spine.MixBlend.setup, spine.MixDirection.mixIn);
+  sk.updateWorldTransform(physics);
+  return t;
+}
+function draw(st, rect, W, H, dpr) {
+  const b = st.bounds || st.char.bounds; if (!b) return;
+  const gl = ctx.gl;
+  const x = Math.round(rect.left * dpr), y = Math.round((H - rect.bottom) * dpr);
+  const w = Math.round(rect.width * dpr), hh = Math.round(rect.height * dpr);
+  gl.viewport(x, y, w, hh);
+  const sx = Math.max(0, x), sy = Math.max(0, y);
+  gl.scissor(sx, sy, Math.max(0, Math.min(x + w, canvas.width) - sx), Math.max(0, Math.min(y + hh, canvas.height) - sy));
+  const scale = Math.min(rect.width / b.w, rect.height / b.h);
+  const cam = renderer.camera;
+  cam.viewportWidth = rect.width / scale; cam.viewportHeight = rect.height / scale;
+  cam.position.x = b.x + b.w / 2; cam.position.y = b.y + b.h / 2;
+  renderer.begin();
+  renderer.drawSkeleton(st.skeleton, false);
+  if (S.bones && S.modal) { renderer.skeletonDebugRenderer.scale = 1 / scale; renderer.drawSkeletonDebug(st.skeleton, false); }
+  renderer.end();
+}
+function frame(now, manual) {
+  if (!manual) requestAnimationFrame(frame);
+  const dt = Math.min(0.1, (now - last) / 1000); last = now;
+  let physics, pdt = 0;
+  if (S.playing) { S.T += dt * S.speed; pdt = dt * S.speed; physics = S.jumped ? spine.Physics.reset : spine.Physics.update; }
+  else if (S.stepDt) { pdt = S.stepDt; physics = spine.Physics.update; }
+  else physics = S.jumped ? spine.Physics.reset : spine.Physics.pose;
+  S.stepDt = 0; S.jumped = false;
+  // timecode + scrubbers
+  const tLoop = S.T % G.maxDur;
+  if (document.activeElement !== scrub) scrub.value = (tLoop / G.maxDur).toFixed(4);
+  $("#tc").textContent = `${tLoop.toFixed(2)} s · f ${Math.floor(tLoop * FPS + 1e-6)}`;
+  if (S.modal) {
+    const d = modalDur(), tm = S.T % d;
+    if (document.activeElement !== mScrub) mScrub.value = (tm / d).toFixed(4);
+    $("#mTc").textContent = `${tm.toFixed(2)} / ${d.toFixed(2)} s · f ${Math.floor(tm * FPS + 1e-6)}`;
+  }
+  if (!ctx || !ctx.gl) return;
+  const W = window.innerWidth, H = window.innerHeight;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const cw = Math.round(W * dpr), ch = Math.round(H * dpr);
+  if (canvas.width !== cw || canvas.height !== ch) { canvas.width = cw; canvas.height = ch; }
+  const gl = ctx.gl;
+  gl.disable(gl.SCISSOR_TEST);
+  gl.viewport(0, 0, cw, ch);
+  gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+  gl.enable(gl.SCISSOR_TEST);
+  const barBottom = document.body.classList.contains("modal-open") ? 0 : Math.max(0, $("#bar").getBoundingClientRect().bottom);
+  const list = S.modal ? S.modal.stages : G.cells.flatMap(c => c.stages);
+  let drawn = 0;
+  for (const st of list) {
+    if (!st.skeleton || !st.anim) continue;
+    const r = st.el.getBoundingClientRect();
+    if (r.bottom < barBottom || r.top > H || r.right < 0 || r.left > W || r.width < 2) continue;
+    pose(st, pdt, physics);
+    draw(st, r, W, H, dpr);
+    drawn++;
+  }
+  if (!S.modal) for (const c of G.cells) if (c.dur > 0) c.prog.style.transform = `scaleX(${((S.T % c.dur) / c.dur).toFixed(4)})`;
+  G.frames++; G.lastDrawn = drawn;
+}
+G.renderAt = (t) => { S.playing = false; S.T = t; S.jumped = true; syncControls(); frame(performance.now(), true); return G.lastDrawn; };
+syncControls();
+G.ready = init().catch(e => { console.error(e); G.errors.push(String(e)); });
+requestAnimationFrame(frame);
+</script>

@@ -1,0 +1,163 @@
+beaver_0.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+beaver_arm_l
+bounds: 2,2,466,774
+beaver_arm_l_under
+bounds: 2,780,466,774
+beaver_arm_r
+bounds: 472,2,466,774
+beaver_arm_r_under
+bounds: 472,780,466,774
+beaver_boot_l
+bounds: 1887,884,105,105
+offsets: 2,2,109,108
+beaver_boot_l_under
+bounds: 1778,884,105,108
+offsets: 6,6,117,116
+beaver_boot_r
+bounds: 1456,1873,105,105
+offsets: 2,2,109,108
+beaver_boot_r_under
+bounds: 1456,1474,105,108
+offsets: 6,6,117,116
+beaver_hand_l
+bounds: 1565,1960,72,80
+offsets: 4,4,80,88
+beaver_hand_l_fist
+bounds: 1122,1546,330,426
+beaver_hand_l_fist_under
+bounds: 456,1558,329,434
+offsets: 14,14,356,451
+beaver_hand_l_open_under
+bounds: 248,1814,202,229
+offsets: 9,12,222,246
+beaver_hand_l_point
+bounds: 942,528,414,512
+offsets: 55,51,520,592
+beaver_hand_l_point_under
+bounds: 942,2,414,522
+offsets: 65,62,541,614
+beaver_hand_l_under
+bounds: 1565,1474,72,83
+offsets: 8,8,88,96
+beaver_hand_r
+bounds: 1641,1873,72,80
+offsets: 4,4,80,88
+beaver_hand_r_fist
+bounds: 1338,1044,330,426
+beaver_hand_r_fist_under
+bounds: 789,1558,329,434
+offsets: 13,14,356,451
+beaver_hand_r_open_under
+bounds: 1778,651,202,229
+offsets: 11,12,222,246
+beaver_hand_r_point
+bounds: 1360,528,414,512
+offsets: 51,51,520,592
+beaver_hand_r_point_under
+bounds: 1360,2,414,522
+offsets: 62,62,541,614
+beaver_hand_r_under
+bounds: 1565,1873,72,83
+offsets: 8,8,88,96
+beaver_head_base
+bounds: 1778,2,256,218
+beaver_head_base_under
+bounds: 1778,224,256,218
+beaver_head_happy
+bounds: 1456,1616,292,253
+beaver_head_happy_under
+bounds: 1752,1616,292,253
+beaver_hips
+bounds: 1778,446,242,201
+offsets: 18,1,278,202
+beaver_hips_under
+bounds: 2,1814,242,206
+offsets: 21,4,284,210
+beaver_prop_flag
+bounds: 942,1044,392,498
+beaver_prop_hurdle
+bounds: 2,1558,450,252
+beaver_tail
+bounds: 1672,1044,368,282
+beaver_tail_under
+bounds: 1672,1330,368,282
+shadow
+bounds: 1996,651,48,14
+
+beaver_1.webp
+size: 2048,1024
+filter: MipMapLinearLinear,Linear
+beaver_boot_l_tiptoe
+bounds: 1476,446,154,180
+beaver_boot_l_tiptoe_under
+bounds: 1886,461,151,175
+offsets: 8,8,166,190
+beaver_boot_r_tiptoe
+bounds: 1728,282,154,180
+beaver_boot_r_tiptoe_under
+bounds: 1886,282,151,175
+offsets: 7,8,166,190
+beaver_hand_l_grip
+bounds: 690,776,135,209
+offsets: 5,7,148,222
+beaver_hand_l_grip_under
+bounds: 414,776,134,215
+offsets: 11,13,158,234
+beaver_hand_l_open
+bounds: 2,776,202,223
+offsets: 3,6,210,234
+beaver_hand_l_thumbsup
+bounds: 968,771,188,180
+beaver_hand_l_thumbsup_under
+bounds: 1352,776,184,182
+offsets: 8,7,200,192
+beaver_hand_r_grip
+bounds: 829,776,135,209
+offsets: 8,7,148,222
+beaver_hand_r_grip_under
+bounds: 552,776,134,215
+offsets: 13,13,158,234
+beaver_hand_r_open
+bounds: 208,776,202,223
+offsets: 5,6,210,234
+beaver_hand_r_thumbsup
+bounds: 1160,776,188,180
+beaver_hand_r_thumbsup_under
+bounds: 1540,260,184,182
+offsets: 8,7,200,192
+beaver_head_angry
+bounds: 887,259,291,252
+beaver_head_angry_under
+bounds: 887,515,291,252
+beaver_head_blink
+bounds: 1182,2,290,254
+beaver_head_blink_under
+bounds: 1476,2,290,254
+beaver_head_laugh
+bounds: 592,518,291,253
+beaver_head_laugh_under
+bounds: 887,2,291,253
+beaver_head_neutral
+bounds: 2,2,291,254
+beaver_head_neutral_under
+bounds: 2,260,291,254
+beaver_head_sad
+bounds: 2,518,291,254
+beaver_head_sad_under
+bounds: 297,2,291,254
+beaver_head_surprised
+bounds: 297,260,291,254
+beaver_head_surprised_under
+bounds: 297,518,291,254
+beaver_head_talking
+bounds: 592,2,291,254
+beaver_head_talking_under
+bounds: 592,260,291,254
+beaver_head_wink
+bounds: 1182,260,290,254
+beaver_head_wink_under
+bounds: 1182,518,290,254
+beaver_torso
+bounds: 1770,2,275,276

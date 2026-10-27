@@ -1,0 +1,124 @@
+{
+  "structure": {
+    "pass": true,
+    "pivot_off_joint": {},
+    "reversed_bones": {},
+    "weak_joints": {},
+    "slivers": {},
+    "fragments": {},
+    "draw_order": {},
+    "variant_misfit": {},
+    "mesh_fold": {}
+  },
+  "setup": {
+    "pass": true,
+    "silhouette_iou": 0.916
+  },
+  "seams": {
+    "pass": false,
+    "seams": {
+      "hips/tail": 0.0,
+      "hips/boot_l": 0.0,
+      "hips/boot_r": 0.0,
+      "upperarm_l/hand_l": 0.0,
+      "upperarm_r/hand_r": 0.0,
+      "torso/tail": 0.015,
+      "torso/hips": 0.024,
+      "torso/upperarm_l": 0.0,
+      "torso/upperarm_r": 0.0,
+      "head/torso": 0.0,
+      "legs_a/tail": 0.0,
+      "hand_l/legs_a": 0.0,
+      "hand_r/tail": 0.0,
+      "hand_r/legs_a": 0.0,
+      "torso/legs_a": 0.005,
+      "prop_can/hips": 0.0,
+      "prop_can/torso": 0.101,
+      "upperarm_l/torso": 0.032
+    }
+  },
+  "thumbs": {
+    "pass": true,
+    "thumbs": {},
+    "unchecked": {}
+  },
+  "sockets": {
+    "pass": true,
+    "sockets": {
+      "beaver_hand_l/beaver_arm_l": {
+        "spill": 0.018,
+        "spill_at": "idle@1.40",
+        "off": 0.23,
+        "off_at": "water@3.80"
+      },
+      "beaver_hand_r/beaver_arm_r": {
+        "spill": 0.013,
+        "spill_at": "squat@1.40",
+        "off": 0.23,
+        "off_at": "water@3.80"
+      }
+    }
+  },
+  "landmarks": {
+    "pass": true,
+    "landmarks": {
+      "shoulder_l": 0.0,
+      "elbow_l": 0.01,
+      "wrist_l": 14.9,
+      "ankle_l": 0.02,
+      "shoulder_r": 0.0,
+      "elbow_r": 0.01,
+      "wrist_r": 14.9,
+      "ankle_r": 0.02
+    },
+    "failed": {}
+  },
+  "layer_order": {
+    "pass": true,
+    "wrong": {}
+  },
+  "idle": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "squat": {
+    "pass": true,
+    "frames": 61,
+    "duration": 2.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "plant_seed": {
+    "pass": true,
+    "frames": 79,
+    "duration": 2.6,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "water": {
+    "pass": true,
+    "frames": 115,
+    "duration": 3.8,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  }
+}

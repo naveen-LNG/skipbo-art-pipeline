@@ -1,0 +1,160 @@
+{
+ "nose_bottom": 252,
+ "rig_mouth_top": 293,
+ "mouth_tops": {
+  "X": 296,
+  "A": 312,
+  "B": 306,
+  "C": 301,
+  "D": 286,
+  "E": 318,
+  "F": 342,
+  "G": 316,
+  "H": 305
+ },
+ "fit_scale": {
+  "X": 1.0,
+  "A": 1.0,
+  "B": 1.0,
+  "C": 1.0,
+  "D": 0.8,
+  "E": 0.9,
+  "F": 1.0,
+  "G": 1.0,
+  "H": 0.98
+ },
+ "philtrum_x_at_nose": 297,
+ "shapes": {
+  "X": {
+   "line_end_x": 300,
+   "decal_bbox": [
+    199,
+    288,
+    386,
+    366
+   ],
+   "decal_px": 6665,
+   "outside_muzzle_px": 0
+  },
+  "A": {
+   "line_end_x": 306,
+   "decal_bbox": [
+    192,
+    304,
+    401,
+    361
+   ],
+   "decal_px": 5584,
+   "outside_muzzle_px": 0
+  },
+  "B": {
+   "line_end_x": 300,
+   "decal_bbox": [
+    217,
+    298,
+    371,
+    376
+   ],
+   "decal_px": 7469,
+   "outside_muzzle_px": 0
+  },
+  "C": {
+   "line_end_x": 297,
+   "decal_bbox": [
+    215,
+    293,
+    388,
+    407
+   ],
+   "decal_px": 13211,
+   "outside_muzzle_px": 0
+  },
+  "D": {
+   "line_end_x": 299,
+   "decal_bbox": [
+    236,
+    278,
+    356,
+    411
+   ],
+   "decal_px": 11608,
+   "outside_muzzle_px": 0
+  },
+  "E": {
+   "line_end_x": 300,
+   "decal_bbox": [
+    244,
+    310,
+    348,
+    410
+   ],
+   "decal_px": 7583,
+   "outside_muzzle_px": 0
+  },
+  "F": {
+   "line_end_x": 297,
+   "decal_bbox": [
+    274,
+    334,
+    325,
+    406
+   ],
+   "decal_px": 2132,
+   "outside_muzzle_px": 0
+  },
+  "G": {
+   "line_end_x": 296,
+   "decal_bbox": [
+    184,
+    308,
+    406,
+    391
+   ],
+   "decal_px": 8217,
+   "outside_muzzle_px": 0
+  },
+  "H": {
+   "line_end_x": 294,
+   "decal_bbox": [
+    213,
+    297,
+    381,
+    410
+   ],
+   "decal_px": 12796,
+   "outside_muzzle_px": 0
+  }
+ },
+ "order": [
+  "X",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H"
+ ],
+ "names": {
+  "X": "rest",
+  "A": "MBP",
+  "B": "consonant/ee",
+  "C": "eh",
+  "D": "ah",
+  "E": "oh/er",
+  "F": "oo/w",
+  "G": "F/V",
+  "H": "L"
+ },
+ "mask_bbox": [
+  150,
+  183,
+  428,
+  425
+ ],
+ "head_size": [
+  575,
+  500
+ ]
+}

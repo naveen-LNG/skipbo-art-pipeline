@@ -1,0 +1,73 @@
+{
+  "prompt_id": "60ad83eb-53e7-43f7-b28a-35a952c4ad98",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 1298440028,
+  "fingerprint": "6c66797c56a9",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nRepaint the character from image_1 as a sheet of separate body pieces for 2D skeletal animation in Spine. Each piece is painted whole, including the area that is normally hidden under the piece in front of it, so that the pieces can rotate at their joints without showing gaps. Joint ends are rounded.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\nRow 1: hips (only the top of the mustard-yellow trousers: the brown belt with its gold buckle and the trousers below it down to the crotch and no further, painted whole, with two rounded leg openings just below the crotch; no trouser legs on it). Row 2: left leg, right leg (one mustard-yellow trouser leg each, from the crotch down to its rolled cuff at the hem, exactly as long and as wide as in image_1, rounded at the top, with nothing below the cuff). Row 3: tail (the broad flat dark-brown paddle tail exactly as it hangs in image_1: its narrow rounded root at the upper right, where it joins the hips, and the wide paddle at the lower left).\n\nCutting rules for every piece in the list: a piece listed separately is painted with empty background all around it and never joined to a neighbour. Each arm is in three pieces (upper arm, forearm, hand) and each leg in two (leg, foot). Every limb piece is painted straight and upright, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself, like the end of a sausage: the top of each upper arm, both ends of each forearm, the wrist end of each hand, the top of each leg, the ankle end of each foot and the root of the tail. No piece has a flat, straight or slanted cut edge. The torso is painted whole as it looks with the arms taken away: both shoulders are rounded, and the sides of the body that the arms normally cover are painted all the way down to the waist. The hips piece is painted whole, including the crotch between the legs. The head base carries only the fixed features of the head; the eyes, eyebrows and mouth belong to the face sheet and appear nowhere on this sheet.\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these pieces, with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows, each clearly cut from the character in image_1 in its colours and painting.\n2. Each arm is in three pieces and each leg in two; every head item and neck item is separate from the head and torso; no eyes, eyebrows or mouths anywhere on the sheet.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth surfaces, no outlines; every joint end fully rounded, no flat cut edges; torso sides and hips crotch painted complete.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young beaver carpenter: warm chestnut-brown fur, a cream muzzle with two big white front teeth showing under a dark-brown nose, small round ears, and a broad flat dark-brown paddle tail. A turquoise knitted long-sleeved sweater with a ribbed collar and ribbed cuffs, mustard-yellow trousers held by a brown belt with a gold buckle, and red boots. Dark-brown mitten paws. Both paws are empty: no tools or props.",
+  "vars": {
+    "ASPECT": "1:1",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "CHARACTER": "A cheerful young beaver carpenter: warm chestnut-brown fur, a cream muzzle with two big white front teeth showing under a dark-brown nose, small round ears, and a broad flat dark-brown paddle tail. A turquoise knitted long-sleeved sweater with a ribbed collar and ribbed cuffs, mustard-yellow trousers held by a brown belt with a gold buckle, and red boots. Dark-brown mitten paws. Both paws are empty: no tools or props.",
+    "PIECES": "Row 1: hips (only the top of the mustard-yellow trousers: the brown belt with its gold buckle and the trousers below it down to the crotch and no further, painted whole, with two rounded leg openings just below the crotch; no trouser legs on it). Row 2: left leg, right leg (one mustard-yellow trouser leg each, from the crotch down to its rolled cuff at the hem, exactly as long and as wide as in image_1, rounded at the top, with nothing below the cuff). Row 3: tail (the broad flat dark-brown paddle tail exactly as it hangs in image_1: its narrow rounded root at the upper right, where it joins the hips, and the wide paddle at the lower left).",
+    "PREFIX": "agent/skipbo/beaver-lower",
+    "IMAGE_1": "agent/skipbo/beaver_master_b7bdcb0423.png",
+    "IMAGE_2": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+  },
+  "inputs": {
+    "1": "beaver_master.png",
+    "2": "../../../plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas-small.jpg"
+  },
+  "criteria": [],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-lower/1015_182123_s1298440028_n2_00.png"
+  ],
+  "seconds": 32.2,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nRepaint the character from image_1 as a sheet of separate body pieces for 2D skeletal animation in Spine. Each piece is painted whole, including the area that is normally hidden under the piece in front of it, so that the pieces can rotate at their joints without showing gaps. Joint ends are rounded.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\nRow 1: hips (only the top of the mustard-yellow trousers: the brown belt with its gold buckle and the trousers below it down to the crotch and no further, painted whole, with two rounded leg openings just below the crotch; no trouser legs on it). Row 2: left leg, right leg (one mustard-yellow trouser leg each, from the crotch down to its rolled cuff at the hem, exactly as long and as wide as in image_1, rounded at the top, with nothing below the cuff). Row 3: tail (the broad flat dark-brown paddle tail exactly as it hangs in image_1: its narrow rounded root at the upper right, where it joins the hips, and the wide paddle at the lower left).\n\nCutting rules for every piece in the list: a piece listed separately is painted with empty background all around it and never joined to a neighbour. Each arm is in three pieces (upper arm, forearm, hand) and each leg in two (leg, foot). Every limb piece is painted straight and upright, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself, like the end of a sausage: the top of each upper arm, both ends of each forearm, the wrist end of each hand, the top of each leg, the ankle end of each foot and the root of the tail. No piece has a flat, straight or slanted cut edge. The torso is painted whole as it looks with the arms taken away: both shoulders are rounded, and the sides of the body that the arms normally cover are painted all the way down to the waist. The hips piece is painted whole, including the crotch between the legs. The head base carries only the fixed features of the head; the eyes, eyebrows and mouth belong to the face sheet and appear nowhere on this sheet.\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these pieces, with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows, each clearly cut from the character in image_1 in its colours and painting.\n2. Each arm is in three pieces and each leg in two; every head item and neck item is separate from the head and torso; no eyes, eyebrows or mouths anywhere on the sheet.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth surfaces, no outlines; every joint end fully rounded, no flat cut edges; torso sides and hips crotch painted complete.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young beaver carpenter: warm chestnut-brown fur, a cream muzzle with two big white front teeth showing under a dark-brown nose, small round ears, and a broad flat dark-brown paddle tail. A turquoise knitted long-sleeved sweater with a ribbed collar and ribbed cuffs, mustard-yellow trousers held by a brown belt with a gold buckle, and red boots. Dark-brown mitten paws. Both paws are empty: no tools or props.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "1:1",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/beaver_master_b7bdcb0423.png"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/beaver-lower"
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+ "rig": "rig/rabbit.json",
+ "refs": [
+  "../../2026-10-11-rig-annotations/fox/rig/fox.json",
+  "../../2026-10-11-rig-annotations/moose/rig/moose.json"
+ ],
+ "prev": "/private/tmp/claude-501/-Users-skipbo-Dev-playground-comfy/d64b7711-70dd-4437-b21d-4bddd3c40fc2/scratchpad/rig_r8/rabbit.json",
+ "joints_sheet": "rig/qa/joints.png",
+ "joints": {
+  "elbow_l": {
+   "broken": 2.19,
+   "ref_max": 2.34,
+   "verdict": "within approved range"
+  },
+  "shoulder_r": {
+   "broken": 2.0,
+   "ref_max": 2.0,
+   "verdict": "within approved range"
+  },
+  "ankle_r": {
+   "broken": 1.96,
+   "ref_max": 1.93,
+   "verdict": "WARN worse than approved"
+  },
+  "elbow_r": {
+   "broken": 1.92,
+   "ref_max": 2.34,
+   "verdict": "within approved range"
+  },
+  "ankle_l": {
+   "broken": 1.87,
+   "ref_max": 1.93,
+   "verdict": "within approved range"
+  },
+  "wrist_l": {
+   "broken": 1.8,
+   "ref_max": 2.45,
+   "verdict": "within approved range"
+  },
+  "wrist_r": {
+   "broken": 1.8,
+   "ref_max": 2.45,
+   "verdict": "within approved range"
+  },
+  "shoulder_l": {
+   "broken": 1.78,
+   "ref_max": 2.0,
+   "verdict": "within approved range"
+  },
+  "neck": {
+   "broken": 1.68,
+   "ref_max": 2.11,
+   "verdict": "within approved range"
+  },
+  "waist": {
+   "broken": 1.13,
+   "ref_max": 1.9,
+   "verdict": "within approved range"
+  }
+ },
+ "pairs": {
+  "shoulder_l": {
+   "p_new_better": 0.6,
+   "verdict": "about the same"
+  },
+  "shoulder_r": {
+   "p_new_better": 0.45,
+   "verdict": "about the same"
+  },
+  "elbow_l": {
+   "p_new_better": 0.61,
+   "verdict": "BETTER"
+  },
+  "elbow_r": {
+   "p_new_better": 0.58,
+   "verdict": "about the same"
+  },
+  "wrist_l": {
+   "p_new_better": 0.55,
+   "verdict": "about the same"
+  },
+  "wrist_r": {
+   "p_new_better": 0.47,
+   "verdict": "about the same"
+  },
+  "neck": {
+   "p_new_better": 0.49,
+   "verdict": "about the same"
+  },
+  "waist": {
+   "p_new_better": 0.68,
+   "verdict": "BETTER"
+  },
+  "ankle_l": {
+   "p_new_better": 0.45,
+   "verdict": "about the same"
+  },
+  "ankle_r": {
+   "p_new_better": 0.49,
+   "verdict": "about the same"
+  }
+ },
+ "frames": {
+  "n": 78,
+  "mean": 0.831,
+  "ref_p90": 0.67,
+  "ref_mean": 0.559,
+  "above_ref_p90": 77,
+  "to_review": [
+   {
+    "anim": "wave",
+    "t": 0.25,
+    "p_defect": 0.91
+   },
+   {
+    "anim": "hold_card",
+    "t": 0.6,
+    "p_defect": 0.91
+   },
+   {
+    "anim": "hold_card",
+    "t": 1.8,
+    "p_defect": 0.91
+   },
+   {
+    "anim": "wave",
+    "t": 2.75,
+    "p_defect": 0.9
+   },
+   {
+    "anim": "point",
+    "t": 1.0,
+    "p_defect": 0.9
+   },
+   {
+    "anim": "point",
+    "t": 1.4,
+    "p_defect": 0.9
+   },
+   {
+    "anim": "emotions",
+    "t": 4.2,
+    "p_defect": 0.9
+   },
+   {
+    "anim": "emotions",
+    "t": 5.4,
+    "p_defect": 0.9
+   }
+  ],
+  "sheet": "rig/qa/jev/frames_to_review.png"
+ },
+ "holds": {
+  "point/hand_l": {
+   "reads_as": "point",
+   "p_variant": 0.85,
+   "p_thumb_up": 0.79,
+   "finger_deg": 4,
+   "thumb_deg": 105,
+   "issues": [],
+   "crop": "rig/qa/jev/holds/rabbit__point_hand_l.png"
+  },
+  "thumbs_up/hand_l": {
+   "reads_as": "thumbsup",
+   "p_variant": 0.88,
+   "p_thumb_up": 0.85,
+   "finger_deg": 9,
+   "thumb_deg": 107,
+   "issues": [],
+   "crop": "rig/qa/jev/holds/rabbit__thumbs_up_hand_l.png"
+  },
+  "hold_card/hand_l": {
+   "reads_as": "grip",
+   "p_variant": 0.45,
+   "p_thumb_up": 0.46,
+   "finger_deg": 160,
+   "thumb_deg": 114,
+   "issues": [],
+   "crop": "rig/qa/jev/holds/rabbit__hold_card_hand_l.png"
+  },
+  "wave/hand_l": {
+   "reads_as": "open",
+   "p_variant": 0.98,
+   "p_thumb_up": 0.07,
+   "finger_deg": 61,
+   "thumb_deg": 185,
+   "issues": [],
+   "crop": "rig/qa/jev/holds/rabbit__wave_hand_l.png"
+  },
+  "cheer_jump/hand_l": {
+   "reads_as": "fist",
+   "p_variant": 0.77,
+   "p_thumb_up": 0.25,
+   "finger_deg": 68,
+   "thumb_deg": 175,
+   "issues": [],
+   "crop": "rig/qa/jev/holds/rabbit__cheer_jump_hand_l.png"
+  }
+ },
+ "fail": false,
+ "jev": {
+  "calls": 230,
+  "cached": 0,
+  "input_tokens": 439850
+ }
+}

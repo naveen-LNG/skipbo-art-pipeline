@@ -1,0 +1,214 @@
+{
+ "frames": {
+  "bend60@0.000": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "f34f719b8a1869a6874ecf828d6b3b6dc76c7cee91784d1066db166193d5d93a",
+   "hand": [
+    15894,
+    "5e67be56176006d50f8668e8e8c3bc5a04061d7d2532572e8caf75a6597d9864"
+   ]
+  },
+  "bend60@0.033": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "f34f719b8a1869a6874ecf828d6b3b6dc76c7cee91784d1066db166193d5d93a",
+   "hand": [
+    15894,
+    "5e67be56176006d50f8668e8e8c3bc5a04061d7d2532572e8caf75a6597d9864"
+   ]
+  },
+  "bend60@0.067": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "f34f719b8a1869a6874ecf828d6b3b6dc76c7cee91784d1066db166193d5d93a",
+   "hand": [
+    15894,
+    "5e67be56176006d50f8668e8e8c3bc5a04061d7d2532572e8caf75a6597d9864"
+   ]
+  },
+  "bend60@0.100": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "f34f719b8a1869a6874ecf828d6b3b6dc76c7cee91784d1066db166193d5d93a",
+   "hand": [
+    15894,
+    "5e67be56176006d50f8668e8e8c3bc5a04061d7d2532572e8caf75a6597d9864"
+   ]
+  },
+  "bend60@0.133": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "f34f719b8a1869a6874ecf828d6b3b6dc76c7cee91784d1066db166193d5d93a",
+   "hand": [
+    15894,
+    "5e67be56176006d50f8668e8e8c3bc5a04061d7d2532572e8caf75a6597d9864"
+   ]
+  },
+  "bend60@0.167": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "f34f719b8a1869a6874ecf828d6b3b6dc76c7cee91784d1066db166193d5d93a",
+   "hand": [
+    15894,
+    "5e67be56176006d50f8668e8e8c3bc5a04061d7d2532572e8caf75a6597d9864"
+   ]
+  },
+  "bend60@0.200": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "f34f719b8a1869a6874ecf828d6b3b6dc76c7cee91784d1066db166193d5d93a",
+   "hand": [
+    15894,
+    "5e67be56176006d50f8668e8e8c3bc5a04061d7d2532572e8caf75a6597d9864"
+   ]
+  },
+  "fold170@0.000": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "7829d785f51e37a6748a6da2725e0e7e5498ad3668efdcf78a5e4b62d4fee131",
+   "hand": [
+    11592,
+    "bccfc7c142f332d9e157042f9673b3750b0c194f96f596617cc4dcdbedd3b590"
+   ]
+  },
+  "fold170@0.167": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "570d04a100465bc08cece9e8b7b93051c88252f3e605ba692b82c6efae7d3206",
+   "hand": [
+    15319,
+    "965c5bf3844eaec824681d73588e0d4790a28c64b75464c5fdf60373efe4095d"
+   ]
+  },
+  "fold170@0.333": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "0c46d15d92c067e898e28b73d1afd6e6a8aed504b664056d0e5ab870b756ee06",
+   "hand": [
+    15898,
+    "19e6e5acca31bf3caab02f0c523dafb2095e04a06e22fcb908e9b3eaa298c646"
+   ]
+  },
+  "fold170@0.500": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "64e281fd7e08d25053e876a050300b1ba3bbfc153fb359e9c8f5a6843106a391",
+   "hand": [
+    15896,
+    "cd5c7ac24bf18ffd0f22263e9ac84189e93fa00a45a2bfa48c37b9dec79ab326"
+   ]
+  },
+  "fold170@0.667": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "bc2776641385bb3571e0d0cc28da677fda7f155e5741f05edafaeaa200dfa145",
+   "hand": [
+    15896,
+    "b2d74707e37fbcfe552c94bd57cf7f75fad3718ee9e1de6e9f553390826cf28f"
+   ]
+  },
+  "fold170@0.833": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "d527a7ee8ff36d2f29f407d69fed16933ea9272054d71bf14ef7137135ba3f52",
+   "hand": [
+    15894,
+    "f8657a86ac9543088382c69c0003f27b3725b3ed92c00e7298f4d383cd84eec5"
+   ]
+  },
+  "fold170@1.000": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "b2baa6a53f00efee5953999ca5a1a6a548271547bc0ab5c02418133107ba4c0f",
+   "hand": [
+    15892,
+    "10f4dcbe67d1e61cbb5b27bbe12979b7697ecdc87a6d16218f900aa1b3b2560b"
+   ]
+  },
+  "setup@0.000": {
+   "arm": [
+    48321,
+    "16270a1b5d1e8cb07112fe79e106d3fa613c32b687c6ebd4decfd53b7a5dfb23"
+   ],
+   "frame": "7829d785f51e37a6748a6da2725e0e7e5498ad3668efdcf78a5e4b62d4fee131",
+   "hand": [
+    11592,
+    "bccfc7c142f332d9e157042f9673b3750b0c194f96f596617cc4dcdbedd3b590"
+   ]
+  }
+ },
+ "reports": {
+  "bend60": {
+   "detached": {},
+   "duration": 0.2,
+   "frames": 7,
+   "jerky_bones": {},
+   "joint_holes": {},
+   "mesh_fold": {},
+   "occluded": {},
+   "pass": true,
+   "unstitched": {}
+  },
+  "fold170": {
+   "detached": {},
+   "duration": 1,
+   "frames": 31,
+   "jerky_bones": {},
+   "joint_holes": {},
+   "mesh_fold": {},
+   "occluded": {},
+   "pass": true,
+   "unstitched": {}
+  },
+  "seams": {
+   "pass": true,
+   "seams": {}
+  },
+  "structure": {
+   "draw_order": {},
+   "fragments": {},
+   "mesh_fold": {},
+   "pass": false,
+   "pivot_off_joint": {
+    "upper": {
+     "in_parent": true,
+     "in_part": false
+    }
+   },
+   "reversed_bones": {},
+   "slivers": {},
+   "variant_misfit": {},
+   "variant_size": {},
+   "weak_joints": {}
+  }
+ }
+}

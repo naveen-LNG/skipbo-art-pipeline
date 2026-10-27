@@ -1,0 +1,29 @@
+IMAGE ROLES:
+image_1 = THE CHARACTER, finished and approved, standing. Its belt, trousers and boots are what you paint, with exactly their colours, shading and size.
+image_2 = THE TARGET POSE: the same character at the end of the movement. Take from it only how the legs are bent in the last drawing.
+image_3 = THE LEGS AT REST, exactly as the animation shows them now: belt, trousers and boots alone. {{REST_USE}} Its proportions hold for every drawing: the belt as wide as image_3's, the trousers as chunky, the boots as big; standing, the legs from the top of the belt to the soles are about as tall as the belt is wide.
+
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Interior detail is minimal: a shape reads from its silhouette and its colour.
+Shading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.
+Edges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.
+Surfaces are smooth. Cloth and leather are smooth painted colour with a soft highlight, with no grain, weave or texture.
+
+TASK:
+Paint an animator's in-between sequence of the character's lower body for 2D frame-by-frame animation: {{COUNT}} drawings of only the belt, the trousers and the boots, {{LAYOUT}}, played in that order as one smooth movement. {{MOVE}}
+
+THE DRAWINGS:
+{{STEPS}}
+
+Neighbouring drawings differ by one small, even step, so that played in a row the legs move smoothly with no jump between any two drawings. Every drawing is the same trousers and boots painted in exactly the same way: the same colours, the same shading and light from the upper left, the same belt with its gold buckle, the same rolled cuffs and the same red boots; only the bend of the legs changes. The belt is the same width in every drawing, and in each row every belt sits on one shared straight line, so the drawings line up by their belts; where the legs fold, the boots rise toward the belt. Seen straight from the front: the buckle in the middle of the belt, the knees bending out to the picture's left and right, both boots pointing toward the viewer as in image_1.
+
+Each drawing ends at the top with the top edge of the belt, cut straight across: no sweater, no body, no paws and no tail. The drawings are laid out on one flat plain light grey background, each standing apart from its neighbours with a clear gap of empty background; they never touch, never overlap, and stay fully inside the frame. All drawings share one scale, the scale of image_3. Each drawing fills its place in the layout, chunky and as wide as image_3; around the drawings is plain empty background, with nothing painted in it. The sheet contains only these drawings, painted fully opaque, with no labels, numbers, text, guides, ground line or shadows.
+
+FINAL CHECK:
+1. Exactly {{COUNT}} drawings, {{LAYOUT}}; in each row the belts on one straight line; all belts the same width.
+2. The first like image_3, the last like image_2's legs, even small steps between; image_3's proportions throughout.
+3. Identical painting and colours in every drawing; only the leg bend changes.
+4. Only belt, trousers and boots; flat light grey background; no text.
+
+CHARACTER NOTES:
+{{CHARACTER}}

@@ -1,0 +1,179 @@
+{
+  "global_scale_master_px_per_part_px": 1.4962,
+  "renamed": {
+    "leg_l": "leg_r",
+    "leg_r": "leg_l",
+    "ear_l": "ear_r",
+    "ear_r": "ear_l",
+    "upperarm_l": "upperarm_r",
+    "upperarm_r": "upperarm_l"
+  },
+  "from_master": [],
+  "variants": {
+    "moose_hand_l_fist": {
+      "scale_vs_rest": 0.701,
+      "turn_deg": 0.0
+    },
+    "moose_hand_l_grip": {
+      "scale_vs_rest": 0.676,
+      "turn_deg": 0.0
+    },
+    "moose_hand_l_open": {
+      "scale_vs_rest": 0.669,
+      "turn_deg": 0.0
+    },
+    "moose_hand_l_point": {
+      "scale_vs_rest": 0.665,
+      "turn_deg": 0.0
+    },
+    "moose_hand_l_thumbsup": {
+      "scale_vs_rest": 0.714,
+      "turn_deg": 0.0
+    },
+    "moose_hand_r_fist": {
+      "scale_vs_rest": 0.701,
+      "turn_deg": 0.0
+    },
+    "moose_hand_r_grip": {
+      "scale_vs_rest": 0.676,
+      "turn_deg": 0.0
+    },
+    "moose_hand_r_open": {
+      "scale_vs_rest": 0.669,
+      "turn_deg": 0.0
+    },
+    "moose_hand_r_point": {
+      "scale_vs_rest": 0.665,
+      "turn_deg": 0.0
+    },
+    "moose_hand_r_thumbsup": {
+      "scale_vs_rest": 0.714,
+      "turn_deg": 0.0
+    },
+    "moose_hoof_l_tiptoe": {
+      "scale_vs_rest": 0.772,
+      "turn_deg": 0.0
+    },
+    "moose_hoof_r_tiptoe": {
+      "scale_vs_rest": 0.772,
+      "turn_deg": 0.0
+    },
+    "moose_upperarm_l_raised": {
+      "scale_vs_rest": 0.595,
+      "turn_deg": 32.3
+    },
+    "moose_upperarm_r_raised": {
+      "scale_vs_rest": 0.594,
+      "turn_deg": -32.3
+    }
+  },
+  "master_frame": {
+    "width": 1792,
+    "height": 2400,
+    "mid_x": 896.25,
+    "ground_y": 2227.5,
+    "units_per_px": 0.668381
+  },
+  "parts": {
+    "hips": {
+      "err": 0.03675,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "torso": {
+      "err": 0.09318,
+      "scale_rel": 1.0,
+      "angle": 0
+    },
+    "head_base": {
+      "err": 0.02671,
+      "scale_rel": 1.0,
+      "angle": 0
+    },
+    "cap": {
+      "err": 0.00527,
+      "scale_rel": 1.05,
+      "angle": 0
+    },
+    "scarf": {
+      "err": 0.05233,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "bell": {
+      "err": 0.11773,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "leg_r": {
+      "err": 0.0442,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "leg_l": {
+      "err": 0.04051,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "hoof_l": {
+      "err": 0.0094,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "hoof_r": {
+      "err": 0.00557,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "antler_l": {
+      "err": 0.02553,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "antler_r": {
+      "err": 0.0219,
+      "scale_rel": 0.95,
+      "angle": 0
+    },
+    "ear_r": {
+      "err": 0.01794,
+      "scale_rel": 0.9,
+      "angle": 20
+    },
+    "ear_l": {
+      "err": 0.02036,
+      "scale_rel": 0.9,
+      "angle": -10
+    },
+    "upperarm_r": {
+      "err": 0.05012,
+      "scale_rel": 0.9,
+      "angle": 9
+    },
+    "upperarm_l": {
+      "err": 0.05087,
+      "scale_rel": 0.9,
+      "angle": -9
+    },
+    "hand_l": {
+      "err": 0.22888,
+      "scale_rel": 0.9,
+      "angle": 18
+    },
+    "hand_r": {
+      "err": 0.23666,
+      "scale_rel": 0.9,
+      "angle": -18
+    },
+    "forearm_l": {
+      "err": 0.02312,
+      "scale_rel": 0.8,
+      "angle": 0
+    },
+    "forearm_r": {
+      "err": 0.02252,
+      "scale_rel": 0.8,
+      "angle": -9
+    }
+  }
+}

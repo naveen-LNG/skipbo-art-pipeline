@@ -1,0 +1,64 @@
+{
+  "structure": {
+    "pass": true,
+    "pivot_off_joint": {},
+    "reversed_bones": {},
+    "weak_joints": {},
+    "slivers": {},
+    "fragments": {}
+  },
+  "setup": {
+    "pass": true,
+    "silhouette_iou": 0.976
+  },
+  "blink": {
+    "pass": true,
+    "frames": 31,
+    "duration": 1.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {}
+  },
+  "idle": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {}
+  },
+  "wave": {
+    "pass": true,
+    "frames": 91,
+    "duration": 3.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {}
+  },
+  "cheer_jump": {
+    "pass": true,
+    "frames": 58,
+    "duration": 1.9,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {}
+  },
+  "emotions": {
+    "pass": true,
+    "frames": 217,
+    "duration": 7.2,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {}
+  }
+}

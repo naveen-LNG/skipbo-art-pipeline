@@ -1,0 +1,144 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prompts vs Your Messages</title>
+<style>
+:root{--bg:#fbfaf8;--card:#fff;--ink:#1d1b19;--mut:#6c6762;--line:#e6e1da;--acc:#b4531f;--acc2:#f3e3d6;--ok:#3f7d4e;--warn:#b8860b;--bad:#b23a2e;--okb:#e2efe4;--warnb:#f7eed2;--badb:#f6e0dc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17161a;--card:#201f24;--ink:#ece9e4;--mut:#a39d96;--line:#33313a;--acc:#e8905c;--acc2:#3a2a20;--ok:#7fc08e;--warn:#dcb45a;--bad:#e8796a;--okb:#23331f;--warnb:#3a3118;--badb:#3b221f}}
+:root[data-theme="dark"]{--bg:#17161a;--card:#201f24;--ink:#ece9e4;--mut:#a39d96;--line:#33313a;--acc:#e8905c;--acc2:#3a2a20;--ok:#7fc08e;--warn:#dcb45a;--bad:#e8796a;--okb:#23331f;--warnb:#3a3118;--badb:#3b221f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1060px;margin:0 auto;padding:48px 16px 96px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0 0 8px;letter-spacing:-.02em}
+.sub{color:var(--mut);margin:0 0 36px;font-size:17px}
+h2{font-size:22px;margin:56px 0 6px;letter-spacing:-.01em}
+h3{font-size:17px;margin:26px 0 4px}
+p.note{color:var(--mut);margin:0 0 18px;font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.kpi b{display:block;font-size:32px;line-height:1.1;letter-spacing:-.03em;color:var(--acc)}
+.kpi span{display:block;font-size:13px;color:var(--mut);margin-top:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;overflow-x:auto}
+.lede{background:var(--acc2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 8px}
+.lede p{margin:0;font-size:16.5px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:620px}
+th,td{text-align:left;padding:9px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);font-weight:600;white-space:nowrap}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.mut{color:var(--mut)}
+.when{color:var(--mut);white-space:nowrap;font-variant-numeric:tabular-nums}
+.utext{color:var(--mut);font-size:12.5px;margin-top:3px;max-width:380px}
+.kind{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:99px;font-weight:600;letter-spacing:.03em;white-space:nowrap}
+.k-shot{background:var(--badb);color:var(--bad)}
+.k-mix{background:var(--warnb);color:var(--warn)}
+.k-word{background:var(--okb);color:var(--ok)}
+.barcell{width:120px}
+.bar{display:grid;grid-template-columns:200px 1fr 40px;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.bl{color:var(--mut);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bt{height:12px;background:var(--acc);border-radius:3px;display:block;min-width:2px}
+.bt.bad{background:var(--bad)}
+.bv{font-variant-numeric:tabular-nums;color:var(--mut)}
+.sbar{display:grid;grid-template-columns:1fr;gap:4px;margin:14px 0}
+.sl{font-size:14px;font-weight:600}
+.st{height:16px;border-radius:4px;display:block;background:var(--ok)}
+.st.warn{background:var(--warn)}
+.st.bad{background:var(--bad)}
+.sv{font-size:12.5px;color:var(--mut);font-variant-numeric:tabular-nums}
+.find{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:12px;padding:18px 20px;margin:14px 0}
+.find h3{margin:0 0 6px;font-size:17px}
+.find p{margin:6px 0;font-size:14.5px}
+.find .ev{font-size:13px;color:var(--mut);border-top:1px dashed var(--line);margin-top:12px;padding-top:10px}
+.fix{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:12px;padding:18px 20px;margin:14px 0}
+.fix h3{margin:0 0 6px;font-size:17px;color:var(--ok)}
+.fix p{margin:6px 0;font-size:14.5px}
+.fix .gain{font-size:13px;color:var(--mut);margin-top:10px}
+code{background:var(--acc2);padding:1px 5px;border-radius:4px;font-size:.9em}
+.find code,.fix code{background:var(--acc2)}
+ul.cav li{margin:7px 0;font-size:14px;color:var(--mut)}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;background:var(--acc2);color:var(--acc);font-weight:600}
+@media(max-width:700px){.bar{grid-template-columns:130px 1fr 34px}}
+</style></head><body><div class="wrap">
+
+<h1>Your messages &rarr; the prompts they caused</h1>
+<p class="sub">Every ComfyUI job from 8&ndash;11 Oct 2026 joined to the message of yours that triggered it, so the cost of each instruction is visible. Compiled 11 October 2026.</p>
+
+<div class="lede"><p><strong>Yes, the correlation is exact.</strong> All 603 jobs fall inside the session transcript's own time window, so each one lands in a single gap between two of your messages. 603 of 603 attributed, none orphaned.</p></div>
+
+<h2>What your 57 messages cost</h2>
+<div class="kpis">
+<div class="kpi"><b>26</b><span>of your 57 turns triggered generation</span></div>
+<div class="kpi"><b>16.5</b><span>generations per triggering turn, mean (median 13)</span></div>
+<div class="kpi"><b>14.5 h</b><span>GPU time, 867 minutes</span></div>
+<div class="kpi"><b>101 s</b><span>median per job</span></div>
+</div>
+
+<h2>Where the time actually went</h2>
+<p class="note">Each of the 429 generations is either the first shot at a new prompt, a rewritten prompt chasing the same target, or the identical prompt run again on a different seed.</p>
+<div class="card"><div class="sbar"><span class="sl">First attempt at a new prompt</span><span class="st ok" style="width:94.7%"></span><span class="sv">149 gens &middot; 340 GPU-min</span></div><div class="sbar"><span class="sl">Prompt rewritten, same target</span><span class="st warn" style="width:46.0%"></span><span class="sv">83 gens &middot; 165 GPU-min</span></div><div class="sbar"><span class="sl">Same prompt, new seed (re-roll)</span><span class="st bad" style="width:100.0%"></span><span class="sv">197 gens &middot; 359 GPU-min</span></div>
+<p style="font-size:13px;color:var(--mut);margin:18px 0 0"><strong>65% of generations &mdash; 8.7 of the 14.5 GPU-hours &mdash; were retries.</strong> Seed re-rolls alone took 6 hours and changed nothing about the instruction being given to the model.</p></div>
+
+<h2>Turn by turn</h2>
+<p class="note">Ordered as they happened. &ldquo;New&rdquo; and &ldquo;rework&rdquo; count prompt clusters that were fresh versus ones already generated in an earlier turn.</p>
+<div class="card"><table>
+<thead><tr><th class="num">#</th><th>When</th><th>Your message</th><th class="num">Gens</th><th class="num">Cuts</th><th class="num">GPU min</th><th></th></tr></thead>
+<tbody><tr><td class="num">1</td><td class="when">Oct 08, 19:08</td><td><span class="kind k-word">words only</span><div class="utext">For testing the spine animation, Generate one tree image and animate it with leaves moving and creepers growing on the tree from the bottom</div></td><td class="num">22</td><td class="num mut">3</td><td class="num">32</td><td class="barcell"><span class="bt " style="width:27.8%"></span></td></tr><tr><td class="num">2</td><td class="when">Oct 08, 22:25</td><td><span class="kind k-word">words only</span><div class="utext">Go with Option A</div></td><td class="num">13</td><td class="num mut">5</td><td class="num">18</td><td class="barcell"><span class="bt " style="width:16.5%"></span></td></tr><tr><td class="num">3</td><td class="when">Oct 08, 23:36</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">36</td><td class="num mut">0</td><td class="num">54</td><td class="barcell"><span class="bt " style="width:45.6%"></span></td></tr><tr><td class="num">4</td><td class="when">Oct 09, 00:39</td><td><span class="kind k-word">words only</span><div class="utext">Im not satisfied with the art style as the art style for already shipped Blocks events characters are completely different and our character style is not matching with that</div></td><td class="num">20</td><td class="num mut">0</td><td class="num">38</td><td class="barcell"><span class="bt " style="width:25.3%"></span></td></tr><tr><td class="num">5</td><td class="when">Oct 09, 01:21</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">10</td><td class="num mut">0</td><td class="num">23</td><td class="barcell"><span class="bt " style="width:12.7%"></span></td></tr><tr><td class="num">6</td><td class="when">Oct 09, 01:45</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">10</td><td class="num mut">0</td><td class="num">19</td><td class="barcell"><span class="bt " style="width:12.7%"></span></td></tr><tr><td class="num">7</td><td class="when">Oct 09, 02:09</td><td><span class="kind k-word">words only</span><div class="utext">go ahead with these five and proceed with next steps</div></td><td class="num">5</td><td class="num mut">5</td><td class="num">11</td><td class="barcell"><span class="bt " style="width:6.3%"></span></td></tr><tr><td class="num">8</td><td class="when">Oct 09, 02:21</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">8</td><td class="num mut">3</td><td class="num">15</td><td class="barcell"><span class="bt " style="width:10.1%"></span></td></tr><tr><td class="num">9</td><td class="when">Oct 09, 02:37</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">5</td><td class="num mut">10</td><td class="num">9</td><td class="barcell"><span class="bt " style="width:6.3%"></span></td></tr><tr><td class="num">10</td><td class="when">Oct 09, 03:09</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">34</td><td class="num mut">10</td><td class="num">70</td><td class="barcell"><span class="bt " style="width:43.0%"></span></td></tr><tr><td class="num">11</td><td class="when">Oct 09, 04:28</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">79</td><td class="num mut">42</td><td class="num">150</td><td class="barcell"><span class="bt " style="width:100.0%"></span></td></tr><tr><td class="num">12</td><td class="when">Oct 09, 08:42</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">11</td><td class="num mut">0</td><td class="num">31</td><td class="barcell"><span class="bt " style="width:13.9%"></span></td></tr><tr><td class="num">13</td><td class="when">Oct 09, 09:17</td><td><span class="kind k-word">words only</span><div class="utext">go ahead with the layers and the icons</div></td><td class="num">19</td><td class="num mut">30</td><td class="num">44</td><td class="barcell"><span class="bt " style="width:24.1%"></span></td></tr><tr><td class="num">14</td><td class="when">Oct 09, 10:05</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">1</td><td class="num mut">1</td><td class="num">2</td><td class="barcell"><span class="bt " style="width:1.3%"></span></td></tr><tr><td class="num">15</td><td class="when">Oct 10, 21:50</td><td><span class="kind k-word">words only</span><div class="utext">go ahead with the Moose prototype using generated parts</div></td><td class="num">27</td><td class="num mut">2</td><td class="num">59</td><td class="barcell"><span class="bt " style="width:34.2%"></span></td></tr><tr><td class="num">16</td><td class="when">Oct 10, 22:58</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">7</td><td class="num mut">0</td><td class="num">15</td><td class="barcell"><span class="bt " style="width:8.9%"></span></td></tr><tr><td class="num">17</td><td class="when">Oct 10, 23:13</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">2</td><td class="num mut">0</td><td class="num">4</td><td class="barcell"><span class="bt " style="width:2.5%"></span></td></tr><tr><td class="num">18</td><td class="when">Oct 10, 23:18</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">5</td><td class="num mut">0</td><td class="num">11</td><td class="barcell"><span class="bt " style="width:6.3%"></span></td></tr><tr><td class="num">19</td><td class="when">Oct 10, 23:29</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">17</td><td class="num mut">0</td><td class="num">36</td><td class="barcell"><span class="bt " style="width:21.5%"></span></td></tr><tr><td class="num">20</td><td class="when">Oct 11, 00:06</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">12</td><td class="num mut">0</td><td class="num">19</td><td class="barcell"><span class="bt " style="width:15.2%"></span></td></tr><tr><td class="num">21</td><td class="when">Oct 11, 01:54</td><td><span class="kind k-word">words only</span><div class="utext">go ahead and put the Moose prototype in the game and proceed with the next steps</div></td><td class="num">1</td><td class="num mut">0</td><td class="num">3</td><td class="barcell"><span class="bt " style="width:1.3%"></span></td></tr><tr><td class="num">22</td><td class="when">Oct 11, 01:59</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">13</td><td class="num mut">0</td><td class="num">26</td><td class="barcell"><span class="bt " style="width:16.5%"></span></td></tr><tr><td class="num">23</td><td class="when">Oct 11, 02:33</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">17</td><td class="num mut">0</td><td class="num">32</td><td class="barcell"><span class="bt " style="width:21.5%"></span></td></tr><tr><td class="num">24</td><td class="when">Oct 11, 03:04</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">15</td><td class="num mut">0</td><td class="num">30</td><td class="barcell"><span class="bt " style="width:19.0%"></span></td></tr><tr><td class="num">25</td><td class="when">Oct 11, 08:51</td><td><span class="kind k-word">words only</span><div class="utext">go ahead and build all scenes</div></td><td class="num">1</td><td class="num mut">0</td><td class="num">4</td><td class="barcell"><span class="bt " style="width:1.3%"></span></td></tr><tr><td class="num">26</td><td class="when">Oct 11, 09:03</td><td><span class="kind k-shot">screenshot only</span><div class="utext">(annotated screenshot, no words)</div></td><td class="num">39</td><td class="num mut">60</td><td class="num">112</td><td class="barcell"><span class="bt " style="width:49.4%"></span></td></tr></tbody></table></div>
+
+<h2>Where the regressions come from</h2>
+
+<div class="find"><h3>1. Negative instructions cannot work at all under these settings</h3>
+<p>Every one of the 429 generations ran <code>cfg 1.0</code> with <code>ConditioningZeroOut</code> wired into the sampler's negative input. At CFG&nbsp;1 there is no classifier-free guidance, so the negative branch is mathematically ignored &mdash; and it was zeroed out anyway. Every <code>no&nbsp;X</code> / <code>NOT&nbsp;X</code> phrase is being fed to the model as <em>positive</em> conditioning.</p>
+<p>That is why the same prohibitions keep reappearing: writing &ldquo;not pink, not a pig snout&rdquo; puts <em>pink</em> and <em>pig snout</em> into the positive prompt. The corrections re-summon the thing they forbid.</p>
+<p class="ev"><strong>Evidence:</strong> 429/429 jobs &mdash; cfg 1.0, 8 steps, <code>res_multistep</code>, negative = <code>ConditioningZeroOut</code>. Most-repeated prohibition phrases across the prompt corpus:</p>
+<div style="margin-top:12px"><div class="bar"><span class="bl"><code>no text</code></span><span class="bt bad" style="width:100.0%"></span><span class="bv">135</span></div><div class="bar"><span class="bl"><code>no shadow</code></span><span class="bt bad" style="width:57.8%"></span><span class="bv">78</span></div><div class="bar"><span class="bl"><code>no animals</code></span><span class="bt bad" style="width:53.3%"></span><span class="bv">72</span></div><div class="bar"><span class="bl"><code>no objects</code></span><span class="bt bad" style="width:43.7%"></span><span class="bv">59</span></div><div class="bar"><span class="bl"><code>no people</code></span><span class="bt bad" style="width:29.6%"></span><span class="bv">40</span></div><div class="bar"><span class="bl"><code>no human skin</code></span><span class="bt bad" style="width:26.7%"></span><span class="bv">36</span></div><div class="bar"><span class="bl"><code>no human nose</code></span><span class="bt bad" style="width:26.7%"></span><span class="bv">36</span></div><div class="bar"><span class="bl"><code>no mustache</code></span><span class="bt bad" style="width:26.7%"></span><span class="bv">36</span></div><div class="bar"><span class="bl"><code>no frame</code></span><span class="bt bad" style="width:17.8%"></span><span class="bv">24</span></div><div class="bar"><span class="bl"><code>no characters</code></span><span class="bt bad" style="width:14.8%"></span><span class="bv">20</span></div><div class="bar"><span class="bl"><code>no letters</code></span><span class="bt bad" style="width:13.3%"></span><span class="bv">18</span></div><div class="bar"><span class="bl"><code>no ground</code></span><span class="bt bad" style="width:11.1%"></span><span class="bv">15</span></div><div class="bar"><span class="bl"><code>(not pink</code></span><span class="bt bad" style="width:10.4%"></span><span class="bv">14</span></div><div class="bar"><span class="bl"><code>not a pig snout</code></span><span class="bt bad" style="width:8.1%"></span><span class="bv">11</span></div><div class="bar"><span class="bl"><code>not a deer</code></span><span class="bt bad" style="width:8.1%"></span><span class="bv">11</span></div><div class="bar"><span class="bl"><code>no eyebrows</code></span><span class="bt bad" style="width:8.1%"></span><span class="bv">11</span></div><div class="bar"><span class="bl"><code>no other characters</code></span><span class="bt bad" style="width:7.4%"></span><span class="bv">10</span></div><div class="bar"><span class="bl"><code>no arms and no hands at all</code></span><span class="bt bad" style="width:5.2%"></span><span class="bv">7</span></div><div class="bar"><span class="bl"><code>no glow</code></span><span class="bt bad" style="width:5.2%"></span><span class="bv">7</span></div></div>
+</div>
+
+<div class="find"><h3>2. Screenshot-only feedback drives three quarters of the burn</h3>
+<p>18 of the 26 triggering turns were an annotated screenshot with no words at all. They produced <strong>321 of the 429 generations</strong> at a mean of 17.8 per turn, against 13.5 for turns that carried a sentence. The two most expensive turns of the whole session &mdash; 79 generations / 150 GPU-min, and 39 generations / 112 GPU-min &mdash; were both wordless.</p>
+<p>With no words, the fault has to be inferred from the picture, so several candidate fixes get generated in parallel instead of one targeted fix.</p>
+<p class="ev"><strong>Evidence:</strong> turns 3, 5, 6, 8&ndash;12, 14, 16&ndash;20, 22&ndash;24 and 26 in the table above.</p></div>
+
+<div class="find"><h3>3. Seed roulette substitutes for fixing the prompt</h3>
+<p>197 generations &mdash; 46% of them, 6 GPU-hours &mdash; reran a byte-identical prompt on a new seed. Only 83 generations involved actually rewriting the prompt. When a result is wrong for a structural reason (wrong snout, arm fused to the vest), re-rolling cannot fix it, and the session re-rolled roughly 2.4 times for every prompt rewrite.</p>
+<p class="ev"><strong>Evidence:</strong> 429 generations across 232 distinct prompt texts; 149 prompt clusters.</p></div>
+
+<div class="find"><h3>4. A handful of targets get reopened across many separate turns</h3>
+<p>28 of the 149 prompt clusters span more than one of your turns, absorbing 141 generations. The worst is the Moose's face, reopened in five separate turns.</p>
+<div class="card" style="margin-top:12px;padding:0;border:0"><table style="min-width:420px">
+<thead><tr><th class="num">Turns</th><th class="num">Gens</th><th>Target</th></tr></thead><tbody><tr><td class="num">5</td><td class="num">7</td><td>Moose face: dark brown fur, pale eyebrows, black eyes, tan muzzle, conductor cap</td></tr><tr><td class="num">3</td><td class="num">7</td><td>Four-character lineup, same style, moose on the right</td></tr><tr><td class="num">3</td><td class="num">7</td><td>Grandpa moose, plain grey-blue background, cut-out parts</td></tr><tr><td class="num">3</td><td class="num">6</td><td>Four-character lineup (second wording)</td></tr><tr><td class="num">3</td><td class="num">6</td><td>Four-character lineup (third wording)</td></tr><tr><td class="num">3</td><td class="num">4</td><td>Moose front view, arms clear of the vest</td></tr></tbody></table></div>
+<p class="ev"><strong>Reading:</strong> a target reopened in five turns was signed off four times and then found wanting &mdash; the acceptance check is happening after generation, not before.</p></div>
+
+<div class="find"><h3>5. Style was settled only after four turns and 91 generations</h3>
+<p>Turns 1&ndash;4 cycled the base style through &ldquo;glossy 3D clay-like render&rdquo; &rarr; &ldquo;smooth glossy 3D cartoon&rdquo; &rarr; &ldquo;anthropomorphic animal, true ANIMAL face&rdquo; &rarr; &ldquo;Flat 2D cartoon, NOT a 3D render&rdquo;. That cost <strong>91 generations and 142 GPU-minutes</strong> before the first keeper. The deciding constraint &mdash; match the already-shipped Blocks characters &mdash; arrived in turn 4, in words, and settled it immediately.</p>
+<p class="ev"><strong>Evidence:</strong> turn 4, your message: &ldquo;Im not satisfied with the art style as the art style for already shipped Blocks events characters are completely different&hellip;&rdquo;</p></div>
+
+<h2>What to change</h2>
+
+<div class="fix"><h3>Rewrite prohibitions as positive descriptions</h3>
+<p>Replace every <code>no X</code> with the thing you <em>do</em> want in that slot: not &ldquo;big dark-brown nose (not pink, not a pig snout)&rdquo; but &ldquo;a broad dark-brown nose leather with two wide nostrils at the tip of a long tan muzzle&rdquo;. Or, if negatives are genuinely needed, raise CFG above 1 and feed a real second <code>CLIPTextEncode</code> instead of <code>ConditioningZeroOut</code> &mdash; but that changes Z-Image Turbo's tuned operating point, so the positive rewrite is the cheaper move.</p>
+<p class="gain">Targets the 36 repeats each of &ldquo;no human skin / no human nose / no mustache&rdquo; and the 135 of &ldquo;no text&rdquo;.</p></div>
+
+<div class="fix"><h3>Cap re-rolls at two, then force a prompt change</h3>
+<p>A standing rule: after two seeds on the same prompt, the next job must carry different words. Half of the 197 re-rolls were third-or-later attempts on identical text.</p>
+<p class="gain">Even a 50% cut here saves roughly 3 GPU-hours per session of this size.</p></div>
+
+<div class="fix"><h3>Put one sentence on every screenshot</h3>
+<p>The screenshot shows <em>where</em>; one line says <em>what</em> &mdash; &ldquo;snout too short&rdquo;, &ldquo;arm fused to vest&rdquo;, &ldquo;this one is fine, fix only the eyes&rdquo;. Worded turns already run 24% leaner. Saying what is <em>acceptable</em> matters as much as what is wrong: it stops a cluster being reopened a fifth time.</p>
+<p class="gain">Against 321 generations currently driven by wordless turns.</p></div>
+
+<div class="fix"><h3>Settle style against a reference before generating a cast</h3>
+<p>The Blocks-match constraint that ended the search in turn 4 could have been given in turn 1. Pin an accepted frame as the style reference and run img2img from it rather than exploring style with text-to-image.</p>
+<p class="gain">Against the 91 generations and 142 GPU-minutes spent on turns 1&ndash;4.</p></div>
+
+<div class="fix"><h3>Review in one batch, not one asset at a time</h3>
+<p>Clusters reopened across three to five turns are the expensive ones. Generating a contact sheet of every part and approving it in a single pass collapses those turns into one.</p>
+<p class="gain">Against the 141 generations sitting in multi-turn clusters.</p></div>
+
+<h2>Method and limits</h2>
+<ul class="cav">
+<li>Join key is time: each job's <code>execution_start</code> falls between two consecutive user messages in session <code>98e97613</code>, whose transcript spans 8&ndash;11 Oct exactly. 603/603 jobs land inside a gap, and none precede the first message, so attribution is unambiguous &mdash; but it is attribution by adjacency, not by a recorded causal link.</li>
+<li>Only 57 of the session's 114 user records are genuine messages from you; the rest are task notifications, system reminders and command echoes, and were excluded.</li>
+<li>&ldquo;Prompt cluster&rdquo; uses a <code>difflib</code> ratio of 0.80 on the first 600 characters. A looser threshold would show more rework, a tighter one less.</li>
+<li>GPU minutes are server-side execution time per job, not queue or wall-clock time, and they include jobs queued back to back.</li>
+<li>This covers one session's window. The August and September work is gone from the server's history, so these ratios are not proven to generalise beyond character-rig work.</li>
+</ul>
+
+</div></body></html>

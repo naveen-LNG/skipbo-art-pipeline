@@ -1,0 +1,17 @@
+{
+  "scale_by": null,
+  "match_width": "experiments/2026-10-11-moose-parts/moose-spine-v1/body/moose_head_base.png",
+  "anchor": null,
+  "target": null,
+  "factors": {
+    "moose_head_angry.png": 0.7873,
+    "moose_head_blink.png": 0.786,
+    "moose_head_happy.png": 0.7873,
+    "moose_head_laugh.png": 0.7833,
+    "moose_head_neutral.png": 0.786,
+    "moose_head_sad.png": 0.7846,
+    "moose_head_surprised.png": 0.7846,
+    "moose_head_talking.png": 0.7886,
+    "moose_head_wink.png": 0.7886
+  }
+}

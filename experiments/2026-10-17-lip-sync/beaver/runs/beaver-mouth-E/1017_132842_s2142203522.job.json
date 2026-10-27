@@ -1,0 +1,60 @@
+{
+  "prompt_id": "9aab5dc6-96ce-4308-9b4e-5861d97f12aa",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 2142203522,
+  "fingerprint": "035d97984049",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE HEAD to edit, finished and approved.\n\nTASK:\nEdit only the mouth of image_1. Keep everything else exactly as it is: the outline, size, fur, colours, eyes, eyebrows, nose and the cream muzzle stay pixel for pixel the same, and the painting stays the same soft airbrushed volume with no outlines.\n\nTHE MOUTH:\nThe mouth says \"oh\": keep the small soft round open mouth of image_1, the same size and place. The two big white front teeth of this beaver must stay visible: they hang down from the top of the round mouth, the same width and colour as in image_1's neighbours, resting just inside the upper edge of the opening, so the dark-red inside shows below them. Clean smooth teeth, no cracks or dark lines on them.\n\nThe head stands alone on the same flat plain light grey background as image_1, centred, at the same size, with no text, labels or shadows.",
+  "vars": {
+    "ASPECT": "1:1",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 2,
+    "PREFIX": "agent/skipbo/beaver-mouth-E",
+    "IMAGE_1": "agent/skipbo/head_E_on_grey_1b7d88d0e5.png"
+  },
+  "inputs": {
+    "1": "head_E_on_grey.png"
+  },
+  "criteria": [],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-17-lip-sync/beaver/runs/beaver-mouth-E/1017_132842_s2142203522_n2_00.png",
+    "/work/comfy/experiments/2026-10-17-lip-sync/beaver/runs/beaver-mouth-E/1017_132842_s2142203522_n2_01.png"
+  ],
+  "seconds": 155.8,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE HEAD to edit, finished and approved.\n\nTASK:\nEdit only the mouth of image_1. Keep everything else exactly as it is: the outline, size, fur, colours, eyes, eyebrows, nose and the cream muzzle stay pixel for pixel the same, and the painting stays the same soft airbrushed volume with no outlines.\n\nTHE MOUTH:\nThe mouth says \"oh\": keep the small soft round open mouth of image_1, the same size and place. The two big white front teeth of this beaver must stay visible: they hang down from the top of the round mouth, the same width and colour as in image_1's neighbours, resting just inside the upper edge of the opening, so the dark-red inside shows below them. Clean smooth teeth, no cracks or dark lines on them.\n\nThe head stands alone on the same flat plain light grey background as image_1, centred, at the same size, with no text, labels or shadows.",
+        "image_count": 2,
+        "use_search": false,
+        "aspect_ratio": "1:1",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/head_E_on_grey_1b7d88d0e5.png"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/beaver-mouth-E"
+      }
+    }
+  }
+}

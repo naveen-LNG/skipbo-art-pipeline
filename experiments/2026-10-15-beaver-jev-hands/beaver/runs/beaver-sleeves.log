@@ -1,0 +1,10 @@
+note: nb-pro calls a paid API (Gemini gemini-3-pro-image-preview) - 1 call(s)
+queued f395b0b2-3523-4513-952b-362f9d64f1ba seed=2029172542
+  f395b0b2 in progress (0s)
+  f395b0b2 in progress (31s)
+  f395b0b2 in progress (60s)
+/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-sleeves/1015_182154_s2029172542_n2_00.png
+queued 62115d5c-58e2-4f30-b693-348ea857e63f seed=1429494389
+  62115d5c in progress (0s)
+  62115d5c in progress (31s)
+/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-sleeves-parts/1015_182230_s1429494389_n112_00.png

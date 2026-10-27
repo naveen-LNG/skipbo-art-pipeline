@@ -1,0 +1,667 @@
+{
+ "attachments": {
+  "bear_clog_l": {
+   "slot": "clog_l",
+   "variant": null,
+   "side": "l",
+   "points": {
+    "ankle": [
+     99.36,
+     103.2
+    ],
+    "ground": [
+     250.56,
+     339.53
+    ]
+   },
+   "widths": {
+    "ankle": 182.0
+   }
+  },
+  "bear_clog_r": {
+   "slot": "clog_r",
+   "variant": null,
+   "side": "r",
+   "points": {
+    "ankle": [
+     332.64,
+     103.2
+    ],
+    "ground": [
+     181.44,
+     339.53
+    ]
+   },
+   "widths": {
+    "ankle": 182.0
+   }
+  },
+  "bear_hips": {
+   "slot": "hips",
+   "variant": null,
+   "side": "",
+   "points": {
+    "hip_l": [
+     707.95,
+     858.44
+    ],
+    "hip_r": [
+     266.58,
+     858.44
+    ],
+    "waist": [
+     487.0,
+     82.96
+    ]
+   },
+   "widths": {
+    "hip_l": 427.0,
+    "hip_r": 427.0
+   }
+  },
+  "bear_arm_l": {
+   "slot": "upperarm_l",
+   "variant": null,
+   "side": "l",
+   "points": {
+    "elbow": [
+     421.14,
+     712.78
+    ],
+    "shoulder": [
+     442.27,
+     249.55
+    ],
+    "wrist": [
+     442.27,
+     1247.23
+    ]
+   },
+   "widths": {
+    "shoulder": 383.84,
+    "wrist": 379.53
+   },
+   "rim_inset": {
+    "wrist": 19.92
+   }
+  },
+  "bear_hand_l": {
+   "slot": "hand_l",
+   "variant": null,
+   "side": "l",
+   "points": {
+    "fingertip": [
+     168.42,
+     324.56
+    ],
+    "thumb_tip": [
+     36.45,
+     216.31
+    ],
+    "wrist": [
+     168.42,
+     27.23
+    ]
+   },
+   "widths": {
+    "wrist": 147.2
+   }
+  },
+  "bear_hand_l_fist": {
+   "slot": "hand_l",
+   "variant": "fist",
+   "side": "l",
+   "points": {
+    "thumb_tip": [
+     283.5,
+     240.12
+    ],
+    "wrist": [
+     138.06,
+     17.3
+    ]
+   },
+   "widths": {
+    "wrist": 198.8
+   }
+  },
+  "bear_hand_l_grip": {
+   "slot": "hand_l",
+   "variant": "grip",
+   "side": "l",
+   "points": {
+    "fingertip": [
+     320.75,
+     389.47
+    ],
+    "thumb_tip": [
+     222.66,
+     367.77
+    ],
+    "wrist": [
+     320.75,
+     98.04
+    ]
+   },
+   "widths": {
+    "wrist": 229.64
+   }
+  },
+  "bear_hand_l_open": {
+   "slot": "hand_l",
+   "variant": "open",
+   "side": "l",
+   "points": {
+    "fingertip": [
+     198.17,
+     456.92
+    ],
+    "thumb_tip": [
+     393.62,
+     234.53
+    ],
+    "wrist": [
+     198.17,
+     28.72
+    ]
+   },
+   "widths": {
+    "wrist": 219.2
+   }
+  },
+  "bear_hand_l_point": {
+   "slot": "hand_l",
+   "variant": "point",
+   "side": "l",
+   "points": {
+    "fingertip": [
+     545.61,
+     1259.32
+    ],
+    "thumb_tip": [
+     1050.87,
+     815.58
+    ],
+    "wrist": [
+     545.61,
+     120.57
+    ]
+   },
+   "widths": {
+    "wrist": 624.26
+   }
+  },
+  "bear_hand_l_thumbsup": {
+   "slot": "hand_l",
+   "variant": "thumbsup",
+   "side": "l",
+   "points": {
+    "thumb_tip": [
+     382.18,
+     169.0
+    ],
+    "wrist": [
+     130.98,
+     19.15
+    ]
+   },
+   "widths": {
+    "wrist": 205.6
+   }
+  },
+  "bear_arm_r": {
+   "slot": "upperarm_r",
+   "variant": null,
+   "side": "r",
+   "points": {
+    "elbow": [
+     517.56,
+     714.73
+    ],
+    "shoulder": [
+     495.09,
+     250.8
+    ],
+    "wrist": [
+     495.09,
+     1250.65
+    ]
+   },
+   "widths": {
+    "shoulder": 382.87,
+    "wrist": 378.8
+   },
+   "rim_inset": {
+    "wrist": 19.89
+   }
+  },
+  "bear_hand_r": {
+   "slot": "hand_r",
+   "variant": null,
+   "side": "r",
+   "points": {
+    "fingertip": [
+     101.84,
+     325.6
+    ],
+    "thumb_tip": [
+     233.63,
+     216.74
+    ],
+    "wrist": [
+     101.84,
+     27.18
+    ]
+   },
+   "widths": {
+    "wrist": 148.8
+   }
+  },
+  "bear_hand_r_fist": {
+   "slot": "hand_r",
+   "variant": "fist",
+   "side": "r",
+   "points": {
+    "thumb_tip": [
+     31.5,
+     240.12
+    ],
+    "wrist": [
+     176.94,
+     17.3
+    ]
+   },
+   "widths": {
+    "wrist": 198.8
+   }
+  },
+  "bear_hand_r_grip": {
+   "slot": "hand_r",
+   "variant": "grip",
+   "side": "r",
+   "points": {
+    "fingertip": [
+     194.25,
+     389.47
+    ],
+    "thumb_tip": [
+     292.34,
+     367.77
+    ],
+    "wrist": [
+     194.25,
+     98.04
+    ]
+   },
+   "widths": {
+    "wrist": 229.64
+   }
+  },
+  "bear_hand_r_open": {
+   "slot": "hand_r",
+   "variant": "open",
+   "side": "r",
+   "points": {
+    "fingertip": [
+     217.83,
+     456.92
+    ],
+    "thumb_tip": [
+     22.38,
+     234.53
+    ],
+    "wrist": [
+     217.83,
+     28.72
+    ]
+   },
+   "widths": {
+    "wrist": 219.2
+   }
+  },
+  "bear_hand_r_point": {
+   "slot": "hand_r",
+   "variant": "point",
+   "side": "r",
+   "points": {
+    "fingertip": [
+     737.39,
+     1259.32
+    ],
+    "thumb_tip": [
+     232.13,
+     815.58
+    ],
+    "wrist": [
+     737.39,
+     120.57
+    ]
+   },
+   "widths": {
+    "wrist": 624.26
+   }
+  },
+  "bear_hand_r_thumbsup": {
+   "slot": "hand_r",
+   "variant": "thumbsup",
+   "side": "r",
+   "points": {
+    "thumb_tip": [
+     11.82,
+     169.0
+    ],
+    "wrist": [
+     263.02,
+     19.15
+    ]
+   },
+   "widths": {
+    "wrist": 205.6
+   }
+  },
+  "bear_torso": {
+   "slot": "torso",
+   "variant": null,
+   "side": "",
+   "points": {
+    "neck": [
+     467.5,
+     156.26
+    ],
+    "waist": [
+     467.5,
+     572.15
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_base": {
+   "slot": "head",
+   "variant": null,
+   "side": "",
+   "points": {
+    "neck": [
+     256.5,
+     437.47
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_angry": {
+   "slot": "head",
+   "variant": "angry",
+   "side": "",
+   "points": {
+    "neck": [
+     287.0,
+     509.25
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_blink": {
+   "slot": "head",
+   "variant": "blink",
+   "side": "",
+   "points": {
+    "neck": [
+     287.0,
+     510.22
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_happy": {
+   "slot": "head",
+   "variant": "happy",
+   "side": "",
+   "points": {
+    "neck": [
+     286.0,
+     509.25
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_laugh": {
+   "slot": "head",
+   "variant": "laugh",
+   "side": "",
+   "points": {
+    "neck": [
+     287.0,
+     507.31
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_neutral": {
+   "slot": "head",
+   "variant": "neutral",
+   "side": "",
+   "points": {
+    "neck": [
+     286.5,
+     509.25
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_sad": {
+   "slot": "head",
+   "variant": "sad",
+   "side": "",
+   "points": {
+    "neck": [
+     286.5,
+     509.25
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_surprised": {
+   "slot": "head",
+   "variant": "surprised",
+   "side": "",
+   "points": {
+    "neck": [
+     287.0,
+     508.28
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_talking": {
+   "slot": "head",
+   "variant": "talking",
+   "side": "",
+   "points": {
+    "neck": [
+     287.0,
+     509.25
+    ]
+   },
+   "widths": {}
+  },
+  "bear_head_wink": {
+   "slot": "head",
+   "variant": "wink",
+   "side": "",
+   "points": {
+    "neck": [
+     287.5,
+     509.25
+    ]
+   },
+   "widths": {}
+  }
+ },
+ "sockets": [
+  {
+   "child": "bear_hand_l",
+   "child_point": "wrist",
+   "parent": "bear_arm_l",
+   "parent_point": "wrist",
+   "width": 379.53
+  },
+  {
+   "child": "bear_hand_r",
+   "child_point": "wrist",
+   "parent": "bear_arm_r",
+   "parent_point": "wrist",
+   "width": 378.8
+  }
+ ],
+ "layer_order": [
+  {
+   "slot": "hand_l",
+   "over": "upperarm_l",
+   "relation": "above"
+  },
+  {
+   "slot": "hand_r",
+   "over": "upperarm_r",
+   "relation": "above"
+  }
+ ],
+ "holds": {
+  "point": {
+   "time": 1.2,
+   "slot": "hand_l",
+   "variant": "point",
+   "side": "l",
+   "attachment": "bear_hand_l_point",
+   "pose": "outward",
+   "thumb_target": 90.0
+  },
+  "thumbs_up": {
+   "time": 1.2,
+   "slot": "hand_l",
+   "variant": "thumbsup",
+   "side": "l",
+   "attachment": "bear_hand_l_thumbsup",
+   "pose": "outward",
+   "thumb_target": 90.0
+  },
+  "hold_card": {
+   "time": 1.2,
+   "slot": "hand_l",
+   "variant": "grip",
+   "side": "l",
+   "attachment": "bear_hand_l_grip",
+   "pose": "hold_card",
+   "thumb_target": 90.0
+  },
+  "wave": {
+   "time": 0.75,
+   "slot": "hand_l",
+   "variant": "open",
+   "side": "l",
+   "attachment": "bear_hand_l_open",
+   "pose": "wave",
+   "thumb_target": 175.0
+  },
+  "cheer_jump": {
+   "time": 0.95,
+   "slot": "hand_l",
+   "variant": "fist",
+   "side": "l",
+   "attachment": "bear_hand_l_fist",
+   "pose": "cheer",
+   "thumb_target": -180.0
+  }
+ },
+ "thumb_targets": {
+  "bear_hand_l": 180.0,
+  "bear_hand_l_fist": 180.0,
+  "bear_hand_l_grip": 90.0,
+  "bear_hand_l_open": 180.0,
+  "bear_hand_l_point": 90.0,
+  "bear_hand_l_thumbsup": 90.0,
+  "bear_hand_r": 0.0,
+  "bear_hand_r_fist": 0.0,
+  "bear_hand_r_grip": 90.0,
+  "bear_hand_r_open": 0.0,
+  "bear_hand_r_point": 90.0,
+  "bear_hand_r_thumbsup": 90.0
+ },
+ "master_points_units": {
+  "ankle_l": [
+   223.949,
+   221.15
+  ],
+  "ankle_r": [
+   -224.412,
+   221.15
+  ],
+  "elbow_l": [
+   514.553,
+   1141.89
+  ],
+  "elbow_r": [
+   -515.016,
+   1141.89
+  ],
+  "fingertip_l": [
+   655.703,
+   574.768
+  ],
+  "fingertip_r": [
+   -656.167,
+   574.768
+  ],
+  "ground": [
+   -0.232,
+   -14.595
+  ],
+  "hip_l": [
+   222.288,
+   174.446
+  ],
+  "hip_r": [
+   -222.751,
+   174.446
+  ],
+  "neck": [
+   -0.232,
+   1364.292
+  ],
+  "shoulder_l": [
+   406.614,
+   1364.292
+  ],
+  "shoulder_r": [
+   -407.077,
+   1364.292
+  ],
+  "waist": [
+   -0.232,
+   948.402
+  ],
+  "wrist_l": [
+   605.885,
+   881.681
+  ],
+  "wrist_r": [
+   -606.349,
+   881.681
+  ]
+ },
+ "point_bones": {
+  "shoulder_l": "upperarm_l",
+  "elbow_l": "forearm_l",
+  "wrist_l": "hand_l",
+  "ankle_l": "clog_l",
+  "shoulder_r": "upperarm_r",
+  "elbow_r": "forearm_r",
+  "wrist_r": "hand_r",
+  "ankle_r": "clog_r"
+ },
+ "body_height_units": 1996.05,
+ "push_in": {
+  "shoulder_l": 23.202,
+  "wrist_l": 23.189,
+  "shoulder_r": 22.583,
+  "wrist_r": 23.092
+ }
+}

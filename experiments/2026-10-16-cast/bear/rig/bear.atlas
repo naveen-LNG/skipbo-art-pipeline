@@ -1,0 +1,179 @@
+images/bear_clog_l.png
+size: 432,344
+filter: Linear,Linear
+bear_clog_l
+bounds: 0,0,432,344
+
+images/bear_clog_r.png
+size: 432,344
+filter: Linear,Linear
+bear_clog_r
+bounds: 0,0,432,344
+
+images/bear_hips.png
+size: 974,892
+filter: Linear,Linear
+bear_hips
+bounds: 0,0,974,892
+
+images/bear_arm_l.png
+size: 936,1329
+filter: Linear,Linear
+bear_arm_l
+bounds: 0,0,936,1329
+
+images/bear_hand_l.png
+size: 270,343
+filter: Linear,Linear
+bear_hand_l
+bounds: 0,0,270,343
+
+images/bear_arm_r.png
+size: 941,1333
+filter: Linear,Linear
+bear_arm_r
+bounds: 0,0,941,1333
+
+images/bear_hand_r.png
+size: 270,344
+filter: Linear,Linear
+bear_hand_r
+bounds: 0,0,270,344
+
+images/bear_torso.png
+size: 935,601
+filter: Linear,Linear
+bear_torso
+bounds: 0,0,935,601
+
+images/bear_head_base.png
+size: 513,451
+filter: Linear,Linear
+bear_head_base
+bounds: 0,0,513,451
+
+images/bear_head_angry.png
+size: 574,525
+filter: Linear,Linear
+bear_head_angry
+bounds: 0,0,574,525
+
+images/bear_head_blink.png
+size: 574,526
+filter: Linear,Linear
+bear_head_blink
+bounds: 0,0,574,526
+
+images/bear_head_happy.png
+size: 572,525
+filter: Linear,Linear
+bear_head_happy
+bounds: 0,0,572,525
+
+images/bear_head_laugh.png
+size: 574,523
+filter: Linear,Linear
+bear_head_laugh
+bounds: 0,0,574,523
+
+images/bear_head_neutral.png
+size: 573,525
+filter: Linear,Linear
+bear_head_neutral
+bounds: 0,0,573,525
+
+images/bear_head_sad.png
+size: 573,525
+filter: Linear,Linear
+bear_head_sad
+bounds: 0,0,573,525
+
+images/bear_head_surprised.png
+size: 574,524
+filter: Linear,Linear
+bear_head_surprised
+bounds: 0,0,574,524
+
+images/bear_head_talking.png
+size: 574,525
+filter: Linear,Linear
+bear_head_talking
+bounds: 0,0,574,525
+
+images/bear_head_wink.png
+size: 575,525
+filter: Linear,Linear
+bear_head_wink
+bounds: 0,0,575,525
+
+images/bear_hand_l_fist.png
+size: 315,414
+filter: Linear,Linear
+bear_hand_l_fist
+bounds: 0,0,315,414
+
+images/bear_hand_l_grip.png
+size: 515,507
+filter: Linear,Linear
+bear_hand_l_grip
+bounds: 0,0,515,507
+
+images/bear_hand_l_open.png
+size: 416,480
+filter: Linear,Linear
+bear_hand_l_open
+bounds: 0,0,416,480
+
+images/bear_hand_l_point.png
+size: 1283,1412
+filter: Linear,Linear
+bear_hand_l_point
+bounds: 0,0,1283,1412
+
+images/bear_hand_l_thumbsup.png
+size: 394,338
+filter: Linear,Linear
+bear_hand_l_thumbsup
+bounds: 0,0,394,338
+
+images/bear_hand_r_fist.png
+size: 315,414
+filter: Linear,Linear
+bear_hand_r_fist
+bounds: 0,0,315,414
+
+images/bear_hand_r_grip.png
+size: 515,507
+filter: Linear,Linear
+bear_hand_r_grip
+bounds: 0,0,515,507
+
+images/bear_hand_r_open.png
+size: 416,480
+filter: Linear,Linear
+bear_hand_r_open
+bounds: 0,0,416,480
+
+images/bear_hand_r_point.png
+size: 1283,1412
+filter: Linear,Linear
+bear_hand_r_point
+bounds: 0,0,1283,1412
+
+images/bear_hand_r_thumbsup.png
+size: 394,338
+filter: Linear,Linear
+bear_hand_r_thumbsup
+bounds: 0,0,394,338
+
+images/bear_prop_flag.png
+size: 763,1136
+filter: Linear,Linear
+bear_prop_flag
+bounds: 0,0,763,1136
+
+images/bear_prop_hurdle.png
+size: 1127,734
+filter: Linear,Linear
+bear_prop_hurdle
+bounds: 0,0,1127,734

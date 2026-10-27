@@ -1,0 +1,2164 @@
+{
+  "character": "fox",
+  "master": {
+    "hands": {
+      "l": {
+        "facing": "back",
+        "thumb_side": "medial"
+      },
+      "r": {
+        "facing": "back",
+        "thumb_side": "medial"
+      }
+    },
+    "image": "master.png",
+    "layers": {
+      "foot": "over_hips",
+      "upperarm": "under_torso"
+    },
+    "points": {
+      "ankle_l": [
+        0.59,
+        0.82
+      ],
+      "ankle_r": [
+        0.41,
+        0.82
+      ],
+      "elbow_l": [
+        0.72,
+        0.53
+      ],
+      "elbow_r": [
+        0.28,
+        0.53
+      ],
+      "fingertip_l": [
+        0.86,
+        0.69
+      ],
+      "fingertip_r": [
+        0.14,
+        0.69
+      ],
+      "ground": [
+        0.5,
+        0.94
+      ],
+      "hip_l": [
+        0.585,
+        0.85
+      ],
+      "hip_r": [
+        0.415,
+        0.85
+      ],
+      "neck": [
+        0.5,
+        0.452
+      ],
+      "shoulder_l": [
+        0.625,
+        0.455
+      ],
+      "shoulder_r": [
+        0.375,
+        0.455
+      ],
+      "waist": [
+        0.5,
+        0.735
+      ],
+      "wrist_l": [
+        0.795,
+        0.605
+      ],
+      "wrist_r": [
+        0.205,
+        0.605
+      ]
+    },
+    "snapped": {
+      "ankle_l": null,
+      "ankle_r": null,
+      "elbow_l": null,
+      "elbow_r": null,
+      "hip_l": null,
+      "hip_r": null,
+      "shoulder_l": null,
+      "shoulder_r": null,
+      "wrist_l": null,
+      "wrist_r": null
+    },
+    "status": "fixed"
+  },
+  "pieces": {
+    "face-heads/00": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/fox_head_angry.png",
+          "mirrored": false,
+          "name": "head_angry",
+          "points": {
+            "neck": [
+              321.0,
+              531.84
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "angry"
+    },
+    "face-heads/01": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/fox_head_blink.png",
+          "mirrored": false,
+          "name": "head_blink",
+          "points": {
+            "neck": [
+              323.0,
+              534.72
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "blink"
+    },
+    "face-heads/02": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/fox_head_happy.png",
+          "mirrored": false,
+          "name": "head_happy",
+          "points": {
+            "neck": [
+              322.5,
+              534.72
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "happy"
+    },
+    "face-heads/03": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/fox_head_laugh.png",
+          "mirrored": false,
+          "name": "head_laugh",
+          "points": {
+            "neck": [
+              321.5,
+              534.72
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "laugh"
+    },
+    "face-heads/04": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/fox_head_neutral.png",
+          "mirrored": false,
+          "name": "head_neutral",
+          "points": {
+            "neck": [
+              322.5,
+              534.72
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "neutral"
+    },
+    "face-heads/05": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/fox_head_sad.png",
+          "mirrored": false,
+          "name": "head_sad",
+          "points": {
+            "neck": [
+              322.0,
+              534.72
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "sad"
+    },
+    "face-heads/06": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/fox_head_surprised.png",
+          "mirrored": false,
+          "name": "head_surprised",
+          "points": {
+            "neck": [
+              323.0,
+              534.72
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "surprised"
+    },
+    "face-heads/07": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/fox_head_talking.png",
+          "mirrored": false,
+          "name": "head_talking",
+          "points": {
+            "neck": [
+              320.5,
+              532.8
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "talking"
+    },
+    "face-heads/08": {
+      "confidence": 0.7,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/fox_head_wink.png",
+          "mirrored": false,
+          "name": "head_wink",
+          "points": {
+            "neck": [
+              321.0,
+              532.8
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.96
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "wink"
+    },
+    "fox-arms-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-arms-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-arms-parts/02": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "variants/fox_upperarm_l_raised.png",
+          "mirrored": false,
+          "name": "upperarm_l_raised",
+          "points": {
+            "elbow": [
+              232.76,
+              747.28
+            ],
+            "shoulder": [
+              232.76,
+              219.98
+            ]
+          },
+          "rotated": 6.66,
+          "widths": {
+            "elbow": 256.88,
+            "shoulder": 385.37
+          }
+        },
+        {
+          "depths": {},
+          "file": "variants/fox_upperarm_r_raised.png",
+          "mirrored": true,
+          "name": "upperarm_r_raised",
+          "points": {
+            "elbow": [
+              282.24,
+              747.28
+            ],
+            "shoulder": [
+              282.24,
+              219.98
+            ]
+          },
+          "rotated": 6.66,
+          "widths": {
+            "elbow": 256.88,
+            "shoulder": 385.37
+          }
+        }
+      ],
+      "painted_as": "l",
+      "points": {
+        "elbow": {
+          "at": [
+            0.36,
+            0.83
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 256.88
+        },
+        "shoulder": {
+          "at": [
+            0.51,
+            0.23
+          ],
+          "kind": "round_end",
+          "snap": "ok",
+          "snapped": [
+            0.5068,
+            0.2266
+          ],
+          "width": 385.37
+        }
+      },
+      "role": "upperarm",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "raised"
+    },
+    "fox-arms-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-body-v2-parts/00": {
+      "confidence": 0.8,
+      "name": "boot",
+      "note": "toe points right = outwards for the left foot",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 68.25
+          },
+          "file": "body/fox_boot_l.png",
+          "mirrored": false,
+          "name": "boot_l",
+          "points": {
+            "ankle": [
+              106.48,
+              16.63
+            ],
+            "ground": [
+              134.0,
+              267.72
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 195.0
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.45,
+            0.07
+          ],
+          "depth": 68.25,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.3973,
+            0.0603
+          ],
+          "width": 195.0
+        },
+        "ground": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/01": {
+      "confidence": 0.8,
+      "name": "boot",
+      "note": "toe points left = outwards for the right foot",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 68.25
+          },
+          "file": "body/fox_boot_r.png",
+          "mirrored": false,
+          "name": "boot_r",
+          "points": {
+            "ankle": [
+              163.03,
+              16.64
+            ],
+            "ground": [
+              134.0,
+              268.69
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 195.0
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.55,
+            0.07
+          ],
+          "depth": 68.25,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.6083,
+            0.0601
+          ],
+          "width": 195.0
+        },
+        "ground": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/02": {
+      "confidence": 0.0,
+      "note": "the dungaree leg tubes of the hips piece run from the crotch into the boots, so the separate leg has no visible span (61 px in the master against a 445 px painted leg): using it left blue leg showing beside the boots",
+      "outputs": [],
+      "points": {},
+      "role": "leg",
+      "side": "l",
+      "status": "ignored"
+    },
+    "fox-body-v2-parts/03": {
+      "confidence": 0.0,
+      "note": "the dungaree leg tubes of the hips piece run from the crotch into the boots, so the separate leg has no visible span (61 px in the master against a 445 px painted leg): using it left blue leg showing beside the boots",
+      "outputs": [],
+      "points": {},
+      "role": "leg",
+      "side": "r",
+      "status": "ignored"
+    },
+    "fox-body-v2-parts/04": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/fox_tail.png",
+          "mirrored": false,
+          "name": "tail",
+          "points": {
+            "root": [
+              24.92,
+              145.6
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.04,
+            0.35
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "tail",
+      "side": "",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/05": {
+      "confidence": 0.8,
+      "facing": "back",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 33.74
+          },
+          "file": "body/fox_hand_l.png",
+          "mirrored": true,
+          "name": "hand_l",
+          "points": {
+            "fingertip": [
+              95.35,
+              238.19
+            ],
+            "thumb_tip": [
+              24.19,
+              130.6
+            ],
+            "wrist": [
+              95.35,
+              23.2
+            ]
+          },
+          "rotated": 6.31,
+          "widths": {
+            "wrist": 96.4
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.45,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.93,
+            0.55
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.55,
+            0.06
+          ],
+          "depth": 33.74,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5874,
+            0.0645
+          ],
+          "width": 96.4
+        }
+      },
+      "role": "hand",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/06": {
+      "confidence": 0.8,
+      "facing": "back",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 36.91
+          },
+          "file": "body/fox_hand_r.png",
+          "mirrored": false,
+          "name": "hand_r",
+          "points": {
+            "fingertip": [
+              84.75,
+              227.4
+            ],
+            "thumb_tip": [
+              165.06,
+              126.05
+            ],
+            "wrist": [
+              84.75,
+              17.87
+            ]
+          },
+          "rotated": 1.56,
+          "widths": {
+            "wrist": 105.47
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.45,
+            0.95
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.93,
+            0.53
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.55,
+            0.06
+          ],
+          "depth": 36.91,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.483,
+            0.0625
+          ],
+          "width": 105.47
+        }
+      },
+      "role": "hand",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/07": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 48.3
+          },
+          "file": "body/fox_forearm_l.png",
+          "mirrored": false,
+          "name": "forearm_l",
+          "points": {
+            "elbow": [
+              86.82,
+              80.73
+            ],
+            "wrist": [
+              86.82,
+              237.33
+            ]
+          },
+          "rotated": -3.73,
+          "widths": {
+            "elbow": 133.3,
+            "wrist": 138.0
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.44,
+            0.29
+          ],
+          "kind": "round_end",
+          "snap": "ok",
+          "snapped": [
+            0.4536,
+            0.3079
+          ],
+          "width": 133.3
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "depth": 48.3,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5146,
+            0.9484
+          ],
+          "width": 138.0
+        }
+      },
+      "role": "forearm",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/08": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 48.02
+          },
+          "file": "body/fox_forearm_r.png",
+          "mirrored": false,
+          "name": "forearm_r",
+          "points": {
+            "elbow": [
+              98.32,
+              80.04
+            ],
+            "wrist": [
+              98.32,
+              237.3
+            ]
+          },
+          "rotated": 3.93,
+          "widths": {
+            "elbow": 132.0,
+            "wrist": 137.2
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.56,
+            0.29
+          ],
+          "kind": "round_end",
+          "snap": "ok",
+          "snapped": [
+            0.5511,
+            0.3054
+          ],
+          "width": 132.0
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "depth": 48.02,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.487,
+            0.9484
+          ],
+          "width": 137.2
+        }
+      },
+      "role": "forearm",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/09": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/fox_upperarm_l.png",
+          "mirrored": false,
+          "name": "upperarm_l",
+          "points": {
+            "elbow": [
+              167.48,
+              261.44
+            ],
+            "shoulder": [
+              167.48,
+              108.51
+            ]
+          },
+          "rotated": -26.3,
+          "widths": {
+            "elbow": 154.13,
+            "shoulder": 141.42
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.62,
+            0.72
+          ],
+          "kind": "round_end",
+          "snap": "ok",
+          "snapped": [
+            0.6233,
+            0.7181
+          ],
+          "width": 154.13
+        },
+        "shoulder": {
+          "at": [
+            0.33,
+            0.27
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 141.42
+        }
+      },
+      "role": "upperarm",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/10": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/fox_upperarm_r.png",
+          "mirrored": false,
+          "name": "upperarm_r",
+          "points": {
+            "elbow": [
+              175.72,
+              262.42
+            ],
+            "shoulder": [
+              175.72,
+              108.52
+            ]
+          },
+          "rotated": 26.16,
+          "widths": {
+            "elbow": 152.71,
+            "shoulder": 141.43
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.375,
+            0.72
+          ],
+          "kind": "round_end",
+          "snap": "ok",
+          "snapped": [
+            0.3763,
+            0.7215
+          ],
+          "width": 152.71
+        },
+        "shoulder": {
+          "at": [
+            0.67,
+            0.27
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 141.43
+        }
+      },
+      "role": "upperarm",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/11": {
+      "confidence": 0.6,
+      "note": "waist = the point at the bottom of the bib in the master; hip points = the dungaree leg openings, which sit inside the boots",
+      "outputs": [
+        {
+          "depths": {
+            "hip_l": 71.4,
+            "hip_r": 71.75
+          },
+          "file": "body/fox_hips.png",
+          "mirrored": false,
+          "name": "hips",
+          "points": {
+            "hip_l": [
+              406.5,
+              454.02
+            ],
+            "hip_r": [
+              140.5,
+              454.02
+            ],
+            "waist": [
+              273.5,
+              263.45
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "hip_l": 204.0,
+            "hip_r": 205.0
+          }
+        }
+      ],
+      "points": {
+        "hip_l": {
+          "at": [
+            0.79,
+            0.97
+          ],
+          "depth": 71.4,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.7432,
+            0.9478
+          ],
+          "width": 204.0
+        },
+        "hip_r": {
+          "at": [
+            0.21,
+            0.97
+          ],
+          "depth": 71.75,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.2568,
+            0.9478
+          ],
+          "width": 205.0
+        },
+        "waist": {
+          "at": [
+            0.5,
+            0.55
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "hips",
+      "side": "",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/12": {
+      "confidence": 0.8,
+      "note": "neck = top of the purple collar; waist = bottom of the bib",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/fox_torso.png",
+          "mirrored": false,
+          "name": "torso",
+          "points": {
+            "neck": [
+              256.5,
+              163.68
+            ],
+            "shoulder_l": [
+              487.35,
+              150.04
+            ],
+            "shoulder_r": [
+              25.65,
+              150.04
+            ],
+            "waist": [
+              256.5,
+              661.54
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.24
+          ],
+          "kind": "point"
+        },
+        "shoulder_l": {
+          "at": [
+            0.95,
+            0.22
+          ],
+          "kind": "point"
+        },
+        "shoulder_r": {
+          "at": [
+            0.05,
+            0.22
+          ],
+          "kind": "point"
+        },
+        "waist": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "torso",
+      "side": "",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/13": {
+      "confidence": 0.6,
+      "note": "likely dropped: the expression heads include the ears",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/fox_ear_l.png",
+          "mirrored": false,
+          "name": "ear_l",
+          "points": {
+            "root": [
+              98.4,
+              316.2
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.4,
+            0.85
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/14": {
+      "confidence": 0.6,
+      "note": "likely dropped: the expression heads include the ears",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/fox_ear_r.png",
+          "mirrored": false,
+          "name": "ear_r",
+          "points": {
+            "root": [
+              148.2,
+              316.2
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.6,
+            0.85
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "fox-body-v2-parts/15": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/fox_head_base.png",
+          "mirrored": false,
+          "name": "head_base",
+          "points": {
+            "neck": [
+              406.0,
+              518.7
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.95
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed"
+    },
+    "fox-hands-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-hands-parts/01": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "painted with the wrist at the right side",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 67.15
+          },
+          "file": "variants/fox_hand_l_thumbsup.png",
+          "mirrored": true,
+          "name": "hand_l_thumbsup",
+          "points": {
+            "thumb_tip": [
+              418.07,
+              174.72
+            ],
+            "wrist": [
+              140.68,
+              20.84
+            ]
+          },
+          "rotated": 90.0,
+          "widths": {
+            "wrist": 191.85
+          }
+        },
+        {
+          "depths": {
+            "wrist": 67.15
+          },
+          "file": "variants/fox_hand_r_thumbsup.png",
+          "mirrored": false,
+          "name": "hand_r_thumbsup",
+          "points": {
+            "thumb_tip": [
+              12.93,
+              174.72
+            ],
+            "wrist": [
+              290.32,
+              20.84
+            ]
+          },
+          "rotated": 90.0,
+          "widths": {
+            "wrist": 191.85
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.48,
+            0.03
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.97,
+            0.62
+          ],
+          "depth": 67.15,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.938,
+            0.6736
+          ],
+          "width": 191.85
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "thumbsup"
+    },
+    "fox-hands-parts/02": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-hands-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-hands-parts/04": {
+      "confidence": 0.5,
+      "facing": "back",
+      "note": "which curl is the thumb is unclear",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 63.98
+          },
+          "file": "variants/fox_hand_l_grip.png",
+          "mirrored": false,
+          "name": "hand_l_grip",
+          "points": {
+            "fingertip": [
+              216.33,
+              544.42
+            ],
+            "thumb_tip": [
+              87.55,
+              314.6
+            ],
+            "wrist": [
+              216.33,
+              62.71
+            ]
+          },
+          "rotated": 18.4,
+          "widths": {
+            "wrist": 182.8
+          }
+        },
+        {
+          "depths": {
+            "wrist": 63.98
+          },
+          "file": "variants/fox_hand_r_grip.png",
+          "mirrored": true,
+          "name": "hand_r_grip",
+          "points": {
+            "fingertip": [
+              268.67,
+              544.42
+            ],
+            "thumb_tip": [
+              397.45,
+              314.6
+            ],
+            "wrist": [
+              268.67,
+              62.71
+            ]
+          },
+          "rotated": 18.4,
+          "widths": {
+            "wrist": 182.8
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.2,
+            0.9
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.05,
+            0.42
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.7,
+            0.03
+          ],
+          "depth": 63.98,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.6593,
+            0.052
+          ],
+          "width": 182.8
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "grip"
+    },
+    "fox-hands-parts/05": {
+      "confidence": 0.8,
+      "facing": "back",
+      "note": "superseded by the palm-facing point in fox-point-palm-parts/02 (2026-10-12); two point hands per side would write the same variant file",
+      "outputs": [],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.55,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.95,
+            0.58
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.03
+          ],
+          "depth": 63.28,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.4815,
+            0.0287
+          ],
+          "width": 180.8
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "ignored",
+      "variant": "point"
+    },
+    "fox-hands-parts/06": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-hands-parts/07": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-hands-parts/08": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-hands-parts/09": {
+      "confidence": 0.6,
+      "facing": "back",
+      "note": "superseded by the palm-facing fist in fox-palm-fist-parts/02 (2026-10-12): this one is painted back-of-hand, so the raised cheer fists showed their backs",
+      "outputs": [],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.88,
+            0.7
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.55,
+            0.03
+          ],
+          "depth": 59.08,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5599,
+            0.0363
+          ],
+          "width": 168.8
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "ignored",
+      "variant": "fist"
+    },
+    "fox-hands-parts/10": {
+      "confidence": 0.8,
+      "facing": "back",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 69.36
+          },
+          "file": "variants/fox_hand_l_open.png",
+          "mirrored": true,
+          "name": "hand_l_open",
+          "points": {
+            "fingertip": [
+              235.32,
+              555.83
+            ],
+            "thumb_tip": [
+              25.48,
+              293.16
+            ],
+            "wrist": [
+              235.32,
+              30.44
+            ]
+          },
+          "rotated": 2.6,
+          "widths": {
+            "wrist": 198.16
+          }
+        },
+        {
+          "depths": {
+            "wrist": 69.36
+          },
+          "file": "variants/fox_hand_r_open.png",
+          "mirrored": false,
+          "name": "hand_r_open",
+          "points": {
+            "fingertip": [
+              216.68,
+              555.83
+            ],
+            "thumb_tip": [
+              426.52,
+              293.16
+            ],
+            "wrist": [
+              216.68,
+              30.44
+            ]
+          },
+          "rotated": 2.6,
+          "widths": {
+            "wrist": 198.16
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.45,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.97,
+            0.52
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.03
+          ],
+          "depth": 69.36,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5058,
+            0.0361
+          ],
+          "width": 198.16
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "open"
+    },
+    "fox-hands-parts/11": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-palm-fist-parts/00": {
+      "confidence": 0.0,
+      "note": "stray boot painted on the fist sheet, not used",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-palm-fist-parts/01": {
+      "confidence": 0.0,
+      "note": "stray boot painted on the fist sheet, not used",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-palm-fist-parts/02": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "palm-facing fist (2026-10-12): curled fingers toward the viewer for cheer_jump; thumb_tip on the thumb mass at its outer (image-right) side, its true tip folds across the fingers",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 130.62
+          },
+          "file": "variants/fox_hand_l_fist.png",
+          "mirrored": false,
+          "name": "hand_l_fist",
+          "points": {
+            "thumb_tip": [
+              588.2,
+              538.2
+            ],
+            "wrist": [
+              220.49,
+              37.88
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 373.2
+          }
+        },
+        {
+          "depths": {
+            "wrist": 130.62
+          },
+          "file": "variants/fox_hand_r_fist.png",
+          "mirrored": true,
+          "name": "hand_r_fist",
+          "points": {
+            "thumb_tip": [
+              103.8,
+              538.2
+            ],
+            "wrist": [
+              471.51,
+              37.88
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 373.2
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.85,
+            0.6
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.36,
+            0.05
+          ],
+          "depth": 130.62,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.3186,
+            0.0422
+          ],
+          "width": 373.2
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "fist"
+    },
+    "fox-palm-fist-parts/03": {
+      "confidence": 0.0,
+      "note": "mirror twin of /02 (the other side's fist); /02 covers both sides",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-point-palm-parts/00": {
+      "confidence": 0.85,
+      "facing": "palm",
+      "note": "palm-facing point (2026-10-12): lets the point gesture use the outward pose",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 155.48
+          },
+          "file": "variants/fox_hand_l_point.png",
+          "mirrored": false,
+          "name": "hand_l_point",
+          "points": {
+            "fingertip": [
+              510.87,
+              1253.57
+            ],
+            "thumb_tip": [
+              1047.71,
+              726.09
+            ],
+            "wrist": [
+              510.87,
+              99.25
+            ]
+          },
+          "rotated": -10.45,
+          "widths": {
+            "wrist": 444.22
+          }
+        },
+        {
+          "depths": {
+            "wrist": 155.48
+          },
+          "file": "variants/fox_hand_r_point.png",
+          "mirrored": true,
+          "name": "hand_r_point",
+          "points": {
+            "fingertip": [
+              658.13,
+              1253.57
+            ],
+            "thumb_tip": [
+              121.29,
+              726.09
+            ],
+            "wrist": [
+              658.13,
+              99.25
+            ]
+          },
+          "rotated": -10.45,
+          "widths": {
+            "wrist": 444.22
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.533,
+            0.982
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.98,
+            0.469
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.368,
+            0.03
+          ],
+          "depth": 155.48,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.3165,
+            0.0368
+          ],
+          "width": 444.22
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "point"
+    },
+    "fox-point-palm-parts/01": {
+      "confidence": 0.0,
+      "note": "mirror twin of /00 (the other side's hand); /00 covers both sides",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-poses-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-poses-parts/01": {
+      "confidence": 0.8,
+      "outputs": [
+        {
+          "depths": {},
+          "file": "variants/fox_tail_up.png",
+          "mirrored": false,
+          "name": "tail_up",
+          "points": {
+            "root": [
+              20.34,
+              336.04
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.03,
+            0.62
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "tail",
+      "side": "",
+      "status": "confirmed",
+      "variant": "up"
+    },
+    "fox-poses-parts/02": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-poses-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-poses-parts/04": {
+      "confidence": 0.6,
+      "name": "boot",
+      "note": "toe right = left foot",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 68.32
+          },
+          "file": "variants/fox_boot_l_tiptoe.png",
+          "mirrored": false,
+          "name": "boot_l_tiptoe",
+          "points": {
+            "ankle": [
+              112.7,
+              20.4
+            ],
+            "ground": [
+              177.1,
+              329.8
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 195.2
+          }
+        },
+        {
+          "depths": {
+            "ankle": 68.32
+          },
+          "file": "variants/fox_boot_r_tiptoe.png",
+          "mirrored": true,
+          "name": "boot_r_tiptoe",
+          "points": {
+            "ankle": [
+              209.3,
+              20.4
+            ],
+            "ground": [
+              144.9,
+              329.8
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 195.2
+          }
+        }
+      ],
+      "painted_as": "l",
+      "points": {
+        "ankle": {
+          "at": [
+            0.35,
+            0.06
+          ],
+          "depth": 68.32,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 195.2
+        },
+        "ground": {
+          "at": [
+            0.55,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "tiptoe"
+    },
+    "fox-poses-parts/05": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-poses-parts/06": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-poses-parts/07": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-poses-parts/08": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-poses-parts/09": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-sleeves-parts/00": {
+      "confidence": 0.0,
+      "note": "spare sleeve from the sheet",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-sleeves-parts/01": {
+      "confidence": 0.0,
+      "note": "spare sleeve from the sheet",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-sleeves-parts/02": {
+      "confidence": 0.75,
+      "note": "whole sleeve; elbow at the master's elbow ratio (52%)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 80.92
+          },
+          "file": "body/fox_arm_l.png",
+          "mirrored": false,
+          "name": "arm_l",
+          "points": {
+            "elbow": [
+              207.67,
+              456.77
+            ],
+            "shoulder": [
+              203.36,
+              116.68
+            ],
+            "wrist": [
+              203.36,
+              804.48
+            ]
+          },
+          "rotated": 6.72,
+          "widths": {
+            "shoulder": 173.74,
+            "wrist": 231.2
+          }
+        },
+        {
+          "depths": {
+            "wrist": 80.92
+          },
+          "file": "body/fox_arm_r.png",
+          "mirrored": true,
+          "name": "arm_r",
+          "points": {
+            "elbow": [
+              186.33,
+              456.77
+            ],
+            "shoulder": [
+              190.64,
+              116.68
+            ],
+            "wrist": [
+              190.64,
+              804.48
+            ]
+          },
+          "rotated": 6.72,
+          "widths": {
+            "shoulder": 173.74,
+            "wrist": 231.2
+          }
+        }
+      ],
+      "painted_as": "l",
+      "points": {
+        "elbow": {
+          "at": [
+            0.52,
+            0.55
+          ],
+          "kind": "point"
+        },
+        "shoulder": {
+          "at": [
+            0.6383,
+            0.1298
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 173.74
+        },
+        "wrist": {
+          "at": [
+            0.4317,
+            0.9863
+          ],
+          "depth": 80.92,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.3702,
+            0.9783
+          ],
+          "width": 231.2
+        }
+      },
+      "role": "arm",
+      "side": "either",
+      "status": "confirmed"
+    },
+    "fox-sleeves-parts/03": {
+      "confidence": 0.0,
+      "note": "spare sleeve from the sheet",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-sleeves-parts/04": {
+      "confidence": 0.0,
+      "note": "spare sleeve from the sheet",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "fox-sleeves-parts/05": {
+      "confidence": 0.0,
+      "note": "spare sleeve from the sheet",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    }
+  },
+  "version": 1
+}

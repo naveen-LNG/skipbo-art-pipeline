@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Beaver Room Makeover</title>
+<script src="https://unpkg.com/@esotericsoftware/spine-player@4.2.100/dist/iife/spine-player.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@esotericsoftware/spine-player@4.2.100/dist/spine-player.css">
+<style>
+:root {
+  --bg: #1d2633; --ink: #3a2a1c; --cream: #fff8ec; --gold: #ffc93c; --gold-deep: #e8a316;
+  --coral: #f07b5f; --teal: #3fb7b0; --shadow: rgba(30, 20, 10, .35);
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden;
+  font: 600 15px/1.2 "Baloo 2", "Nunito", system-ui, sans-serif; color: var(--ink); user-select: none; }
+body { display: grid; place-items: center; }
+
+/* the stage keeps the art's 1536x2752 frame and fits the window */
+#stage { position: relative; height: min(100vh, calc(100vw * 2752 / 1536)); aspect-ratio: 1536 / 2752;
+  overflow: hidden; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,.5); container-type: size; }
+#scene { position: absolute; inset: 0; transition: filter 1.4s ease; }
+#scene img.layer, #scene img.full { position: absolute; pointer-events: none; opacity: 0; }
+#scene img.full { inset: 0; width: 100%; height: 100%; }
+#base { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* neglect grade: a cool dim wash that lifts as the room is fixed */
+#gloom { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply;
+  background: radial-gradient(120% 80% at 50% 45%, rgba(120,140,170,.35), rgba(40,55,80,.75));
+  transition: opacity 1.4s ease; }
+.glow { position: absolute; pointer-events: none; mix-blend-mode: screen; opacity: 0; border-radius: 50%;
+  transition: opacity 1.2s ease; }
+#glow-lamp { left: 22%; top: -6%; width: 60%; height: 36%;
+  background: radial-gradient(closest-side, rgba(255,214,140,.55), rgba(255,190,90,0)); }
+#glow-fire { left: 56%; top: 46%; width: 60%; height: 34%;
+  background: radial-gradient(closest-side, rgba(255,160,70,.6), rgba(255,120,40,0)); }
+#glow-fire.on { animation: flicker 1.7s infinite; }
+@keyframes flicker { 0%,100% { opacity: .85 } 30% { opacity: .65 } 55% { opacity: 1 } 80% { opacity: .7 } }
+
+#beaver { position: absolute; width: 44cqw; height: 53.4cqw; left: 50%; top: 0; transform: translateX(-50%);
+  transition: left 0s linear; pointer-events: none; }
+#beaver .spine-player { background: transparent !important; }
+#beaver-shadow { position: absolute; width: 22cqw; height: 3.4cqw; border-radius: 50%; transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(60,30,10,.4), rgba(60,30,10,0)); pointer-events: none; }
+
+/* HUD */
+#hud { position: absolute; left: 0; right: 0; top: 0; padding: 3cqw 3.5cqw; display: flex; gap: 2.5cqw;
+  align-items: center; z-index: 20; }
+.pill { background: var(--cream); border-radius: 999px; padding: 1.4cqw 3cqw 1.4cqw 1.6cqw; display: flex; align-items: center;
+  gap: 1.6cqw; box-shadow: 0 .8cqw 0 rgba(0,0,0,.18); font-size: 4.2cqw; }
+#stars .icon { width: 7cqw; height: 7cqw; }
+#stars b { min-width: 4ch; }
+#play { margin-left: 1cqw; width: 7cqw; height: 7cqw; border-radius: 50%; border: 0; background: #48c26a; color: #fff;
+  font: 800 5.4cqw/1 inherit; box-shadow: 0 .6cqw 0 #2f8f4b; cursor: pointer; }
+#play:active { transform: translateY(.4cqw); box-shadow: 0 .2cqw 0 #2f8f4b; }
+#progress { flex: 1; flex-direction: column; align-items: stretch; gap: 1cqw; padding: 1.4cqw 3cqw; border-radius: 4cqw; }
+#progress .label { display: flex; justify-content: space-between; font-size: 3.4cqw; }
+#bar { height: 2.6cqw; border-radius: 99px; background: #e9dcc6; overflow: hidden; }
+#bar i { display: block; height: 100%; width: 0; border-radius: 99px;
+  background: linear-gradient(90deg, var(--teal), #6ad8c9); transition: width .8s cubic-bezier(.3,1.4,.5,1); }
+#mute { width: 9cqw; height: 9cqw; border-radius: 50%; border: 0; background: var(--cream); font-size: 4.6cqw;
+  box-shadow: 0 .8cqw 0 rgba(0,0,0,.18); cursor: pointer; }
+
+/* task bubbles */
+.bubble { position: absolute; width: 17cqw; height: 17cqw; margin: -8.5cqw 0 0 -8.5cqw; z-index: 10; cursor: pointer;
+  border: 0; padding: 0; background: none; animation: bob 2.4s ease-in-out infinite; }
+.bubble .disc { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, #fdf2dc 70%);
+  box-shadow: 0 1cqw 0 rgba(0,0,0,.2), 0 0 0 .9cqw rgba(255,255,255,.55); display: grid; place-items: center; overflow: hidden; }
+.bubble .disc img { width: 78%; height: 78%; object-fit: contain; }
+.bubble .disc span { font-size: 8cqw; }
+.bubble .cost { position: absolute; left: 50%; bottom: -3.2cqw; transform: translateX(-50%); display: flex; gap: .6cqw;
+  align-items: center; background: var(--gold); border-radius: 99px; padding: .5cqw 2cqw .5cqw 1cqw; font-size: 3.6cqw;
+  color: #6b3d00; box-shadow: 0 .6cqw 0 var(--gold-deep); white-space: nowrap; }
+.bubble .cost svg { width: 4cqw; height: 4cqw; }
+.bubble.pop-in { animation: popin .5s cubic-bezier(.3,1.6,.5,1) both, bob 2.4s ease-in-out .5s infinite; }
+.bubble.poor .disc { filter: saturate(.4); }
+.bubble.shake { animation: shake .4s; }
+.bubble.gone { animation: popout .3s ease-in forwards; pointer-events: none; }
+.bubble.finale { width: 22cqw; height: 22cqw; margin: -11cqw 0 0 -11cqw; }
+.bubble.finale .disc { background: var(--gold); box-shadow: 0 1cqw 0 rgba(0,0,0,.2), 0 0 0 .9cqw rgba(255,201,60,.6), 0 0 6cqw rgba(255,214,120,.9); }
+.bubble.finale .disc img { width: 88%; height: 88%; border-radius: 50%; object-fit: cover; }
+@keyframes bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-1.4cqw) } }
+@keyframes popin { from { transform: scale(0) } to { transform: scale(1) } }
+@keyframes popout { to { transform: scale(0); opacity: 0 } }
+@keyframes shake { 0%,100% { transform: translateX(0) } 25% { transform: translateX(-2cqw) } 75% { transform: translateX(2cqw) } }
+
+/* effects */
+.fx { position: absolute; pointer-events: none; z-index: 15; }
+.puff { border-radius: 50%; background: radial-gradient(circle at 40% 35%, #fff, #f3eee6 60%, rgba(243,238,230,0) 72%); }
+.spark { width: 5cqw; height: 5cqw; background: var(--gold);
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); }
+.flystar { width: 7cqw; height: 7cqw; z-index: 30; }
+#toast { position: absolute; left: 50%; top: 17cqw; transform: translate(-50%, -6cqw); opacity: 0; z-index: 25;
+  background: var(--ink); color: var(--cream); padding: 2cqw 4cqw; border-radius: 99px; font-size: 3.8cqw; white-space: nowrap;
+  transition: opacity .25s, transform .25s; }
+#toast.show { opacity: 1; transform: translate(-50%, 0); }
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; z-index: 16; }
+#banner { position: absolute; left: 50%; top: 91%; z-index: 26; transform: translate(-50%, -50%) scale(0); width: 88cqw;
+  display: flex; align-items: center; justify-content: space-between; gap: 3cqw;
+  background: var(--cream); border-radius: 5cqw; padding: 2.6cqw 3cqw 2.6cqw 5cqw; box-shadow: 0 1.2cqw 0 rgba(0,0,0,.25); }
+#banner.show { animation: popin .6s cubic-bezier(.3,1.6,.5,1) forwards; transform: translate(-50%, -50%); }
+#banner.show { animation-name: bannerin; }
+@keyframes bannerin { from { transform: translate(-50%, -50%) scale(0) } to { transform: translate(-50%, -50%) scale(1) } }
+#banner h1 { margin: 0 0 .6cqw; font-size: 5.6cqw; color: var(--coral); }
+#banner p { margin: 0; font-size: 3.3cqw; }
+#banner button { flex: none; }
+#banner button { border: 0; border-radius: 99px; background: var(--teal); color: #fff; font: 800 4.2cqw/1 inherit;
+  padding: 2.4cqw 6cqw; box-shadow: 0 .8cqw 0 #2a8a85; cursor: pointer; }
+.confetti { width: 2.2cqw; height: 3.4cqw; border-radius: .5cqw; z-index: 24; }
+#loading { position: absolute; inset: 0; display: grid; place-items: center; background: var(--bg); color: var(--cream);
+  font-size: 4.4cqw; z-index: 40; transition: opacity .4s; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="scene">
+    <img id="base" src="assets/base.jpg" alt="">
+    <div id="layers"></div>
+    <img id="finale" class="full" src="assets/finale.jpg" alt="">
+    <div id="glow-lamp" class="glow"></div>
+    <div id="glow-fire" class="glow"></div>
+    <div id="gloom"></div>
+    <div id="beaver-shadow"></div>
+    <div id="beaver"></div>
+  </div>
+  <div id="flash"></div>
+  <div id="hud">
+    <div class="pill" id="stars"><svg class="icon" viewBox="0 0 24 24"><use href="#star"/></svg><b id="starN">0</b>
+      <button id="play" title="Play a puzzle level for stars">+</button></div>
+    <div class="pill" id="progress"><div class="label"><span>Living room</span><span id="progN">0/7</span></div><div id="bar"><i></i></div></div>
+    <button id="mute" title="Sound">🔊</button>
+  </div>
+  <div id="toast"></div>
+  <div id="banner"><div><h1>Room complete!</h1><p>The living room is cosy again.</p></div><button id="again">Play again</button></div>
+  <div id="loading">Loading the house…</div>
+</div>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="star" viewBox="0 0 24 24">
+  <path d="M12 1.8l3.1 6.6 7.1.9-5.2 4.9 1.3 7.1L12 17.8l-6.3 3.5 1.3-7.1L1.8 9.3l7.1-.9z" fill="#ffc93c" stroke="#e8a316" stroke-width="1.4" stroke-linejoin="round"/>
+</symbol></defs></svg>
+
+<script>
+// ---- the room: what can be fixed, what it costs, where its bubble floats (fractions of the frame) ----
+const ITEMS = [
+  { id: "mess",      name: "Clear the mess",   cost: 1, at: [.15, .86], icon: "🧹" },
+  { id: "rug",       name: "New rug",          cost: 1, at: [.80, .80] },
+  { id: "sofa",      name: "New sofa",         cost: 2, at: [.22, .60] },
+  { id: "window",    name: "Fix the window",   cost: 2, at: [.28, .33] },
+  { id: "lamp",      name: "New chandelier",   cost: 1, at: [.56, .13] },
+  { id: "fireplace", name: "Light the fire",   cost: 2, at: [.84, .44] },
+];
+const FINALE = { id: "finale", name: "Make it cosy", cost: 3, at: [.50, .44] };
+const START_STARS = 5, LEVEL_STARS = 3;
+const FLOOR_Y = .815, WALK_MIN = .30, WALK_MAX = .70, WALK_SPEED = .22;   // feet line, walk range, frame widths per second
+
+const $ = s => document.querySelector(s);
+const stage = $("#stage"), scene = $("#scene");
+let layout, player, stars = 0, done = new Set(), busy = false, beaverX = .5, muted = false;
+
+// ---- sound: tiny synth blips so the page needs no audio files ----
+let ac;
+function tone(freq, dur = .12, type = "sine", vol = .12, when = 0, slide = 0) {
+  if (muted) return; ac ??= new AudioContext();
+  const t = ac.currentTime + when, o = ac.createOscillator(), g = ac.createGain();
+  o.type = type; o.frequency.setValueAtTime(freq, t); if (slide) o.frequency.exponentialRampToValueAtTime(freq * slide, t + dur);
+  g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.001, t + dur);
+  o.connect(g).connect(ac.destination); o.start(t); o.stop(t + dur);
+}
+const sfx = {
+  coin: () => { tone(988, .08, "square", .06); tone(1319, .18, "square", .06, .07); },
+  poof: () => { tone(320, .35, "triangle", .14, 0, .35); tone(180, .3, "sine", .1, .02, .5); },
+  sparkle: () => [1568, 2093, 2637, 3136].forEach((f, i) => tone(f, .14, "sine", .05, .06 * i)),
+  nope: () => { tone(220, .12, "square", .06); tone(180, .18, "square", .06, .1); },
+  fanfare: () => [523, 659, 784, 1047, 784, 1047].forEach((f, i) => tone(f, i > 3 ? .4 : .16, "triangle", .1, .14 * i)),
+};
+
+// ---- helpers ----
+const pct = (v, of) => (100 * v / of) + "%";
+const wait = ms => new Promise(r => setTimeout(r, ms));
+function fx(cls, x, y, w, h) {   // x, y, w, h in frame fractions; centred on x, y
+  const e = document.createElement("div"); e.className = "fx " + cls;
+  Object.assign(e.style, { left: x * 100 + "%", top: y * 100 + "%" });
+  if (w) Object.assign(e.style, { width: w * 100 + "cqw", height: (h ?? w) * 100 + "cqw" });
+  stage.append(e); return e;
+}
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 1800); }
+function setStars(n) { stars = n; $("#starN").textContent = n; document.querySelectorAll(".bubble").forEach(b => b.classList.toggle("poor", +b.dataset.cost > stars)); }
+
+// ---- beaver (Spine) ----
+function anim(name, loop = false, then = "idle") {
+  const s = player.animationState; s.setAnimation(0, name, loop);
+  if (!loop && then) s.addAnimation(0, then, true, 0);
+  return player.skeleton.data.findAnimation(name).duration * 1000;
+}
+function placeBeaver(x) {
+  beaverX = x; const b = $("#beaver"), sh = $("#beaver-shadow");
+  b.style.left = x * 100 + "%"; sh.style.left = x * 100 + "%";
+}
+async function walkTo(x) {
+  x = Math.min(WALK_MAX, Math.max(WALK_MIN, x));
+  const dist = Math.abs(x - beaverX); if (dist < .03) return;
+  player.skeleton.scaleX = x < beaverX ? -1 : 1;
+  anim("walk", true);
+  const ms = dist / WALK_SPEED * 1000, b = $("#beaver"), sh = $("#beaver-shadow");
+  b.style.transition = sh.style.transition = `left ${ms}ms linear`;
+  placeBeaver(x); await wait(ms);
+  b.style.transition = sh.style.transition = "";
+  player.skeleton.scaleX = 1; anim("idle", true);
+}
+
+// ---- effects ----
+function puff(cx, cy, spread) {
+  sfx.poof();
+  for (let i = 0; i < 16; i++) {
+    const a = Math.random() * Math.PI * 2, r = spread * (.4 + Math.random() * .7), s = .07 + Math.random() * .09;
+    const e = fx("puff", cx, cy, s);
+    e.animate([{ transform: "translate(-50%,-50%) scale(.2)", opacity: 1 },
+               { transform: `translate(calc(-50% + ${Math.cos(a) * r * 100}cqw), calc(-50% + ${Math.sin(a) * r * 60}cqw)) scale(1.3)`, opacity: .95, offset: .45 },
+               { transform: `translate(calc(-50% + ${Math.cos(a) * r * 130}cqw), calc(-50% + ${Math.sin(a) * r * 80 - 4}cqw)) scale(1.6)`, opacity: 0 }],
+              { duration: 900 + Math.random() * 400, easing: "cubic-bezier(.2,.8,.3,1)" }).onfinish = () => e.remove();
+  }
+}
+function sparkles(cx, cy, w, h, n = 12) {
+  sfx.sparkle();
+  for (let i = 0; i < n; i++) {
+    const e = fx("spark", cx + (Math.random() - .5) * w, cy + (Math.random() - .5) * h);
+    const d = 200 + Math.random() * 700;
+    e.animate([{ transform: "translate(-50%,-50%) scale(0) rotate(0)", opacity: 1 },
+               { transform: "translate(-50%,-50%) scale(1.2) rotate(90deg)", opacity: 1, offset: .5 },
+               { transform: "translate(-50%,-50%) scale(0) rotate(180deg)", opacity: 0 }],
+              { duration: 700, delay: d, easing: "ease-out" }).onfinish = () => e.remove();
+  }
+}
+function flyStars(n, fromX, fromY, toEl, onEach) {
+  const s = stage.getBoundingClientRect(), t = toEl.getBoundingClientRect();
+  const tx = (t.left + t.width / 2 - s.left) / s.width, ty = (t.top + t.height / 2 - s.top) / s.height;
+  for (let i = 0; i < n; i++) {
+    const e = fx("flystar", fromX, fromY); e.innerHTML = '<svg viewBox="0 0 24 24" width="100%" height="100%"><use href="#star"/></svg>';
+    const dx = (tx - fromX) * 100, dy = (ty - fromY) * 100;
+    e.animate([{ transform: "translate(-50%,-50%) scale(.4)" },
+               { transform: `translate(calc(-50% + ${dx * .3 + (Math.random() - .5) * 20}cqw), calc(-50% + ${dy * 30 - 10}cqh)) scale(1.3)`, offset: .4 },
+               { transform: `translate(calc(-50% + ${dx}cqw), calc(-50% + ${dy}cqh)) scale(.7)` }],
+              { duration: 650, delay: i * 110, easing: "ease-in-out", fill: "both" }).onfinish = () => { e.remove(); onEach?.(); };
+  }
+}
+function confetti() {
+  const cols = ["#f07b5f", "#ffc93c", "#3fb7b0", "#fff8ec", "#8fd16a"];
+  for (let i = 0; i < 90; i++) {
+    const e = fx("confetti", Math.random(), -.05); e.style.background = cols[i % cols.length];
+    const dx = (Math.random() - .5) * 30, rot = Math.random() * 900;
+    e.animate([{ transform: "translate(0,0) rotate(0)" }, { transform: `translate(${dx}cqw, 185cqw) rotate(${rot}deg)` }],
+              { duration: 2200 + Math.random() * 1800, delay: Math.random() * 900, easing: "cubic-bezier(.3,.1,.6,1)" }).onfinish = () => e.remove();
+  }
+}
+
+// ---- progress and room grade ----
+function refreshProgress() {
+  const n = done.size, total = ITEMS.length + 1;
+  $("#progN").textContent = `${n}/${total}`; $("#bar i").style.width = pct(n, total);
+  const k = Math.min(n, ITEMS.length) / ITEMS.length;     // gloom lifts with each fix, gone at the finale
+  $("#gloom").style.opacity = done.has("finale") ? 0 : 1 - .75 * k;
+  scene.style.filter = done.has("finale") ? "none" : `saturate(${.72 + .23 * k}) brightness(${.9 + .08 * k})`;
+  $("#glow-lamp").style.opacity = done.has("finale") ? .4 : done.has("lamp") ? 1 : 0;   // the finale art carries its own warm light
+  $("#glow-fire").classList.toggle("on", done.has("fireplace"));
+}
+
+// ---- bubbles ----
+function makeBubble(item, delay = 0) {
+  const b = document.createElement("button"); b.className = "bubble pop-in" + (item === FINALE ? " finale" : "");
+  b.dataset.id = item.id; b.dataset.cost = item.cost; b.title = item.name; b.style.animationDelay = delay + "ms";
+  Object.assign(b.style, { left: item.at[0] * 100 + "%", top: item.at[1] * 100 + "%" });
+  b.innerHTML = `<div class="disc">${item.icon ? `<span>${item.icon}</span>` : `<img src="assets/thumbs/${item.id}.png" alt="">`}</div>
+    <div class="cost"><svg viewBox="0 0 24 24"><use href="#star"/></svg>${item.cost}</div>`;
+  b.onclick = () => buy(item, b);
+  b.classList.toggle("poor", item.cost > stars);
+  stage.append(b);
+}
+
+async function buy(item, bubble) {
+  if (busy) return;
+  if (stars < item.cost) {
+    sfx.nope(); bubble.classList.remove("shake"); void bubble.offsetWidth; bubble.classList.add("shake");
+    toast(`Need ${item.cost - stars} more ⭐ — tap + to play a level`);
+    $("#play").animate([{ transform: "scale(1)" }, { transform: "scale(1.35)" }, { transform: "scale(1)" }], { duration: 450, iterations: 2 });
+    return;
+  }
+  busy = true; setStars(stars - item.cost); sfx.coin();
+  bubble.classList.add("gone"); setTimeout(() => bubble.remove(), 320);
+  item === FINALE ? await finale() : await fixItem(item);
+  busy = false;
+}
+
+async function fixItem(item) {
+  const L = layout.items[item.id], W = layout.width, H = layout.height;
+  const cx = (L.x + L.w / 2) / W, cy = (L.y + L.h / 2) / H;
+  await walkTo(cx);
+  await wait(Math.min(anim("point"), 700));
+  puff(cx, cy, Math.min(.32, Math.max(.12, L.w / W * .45)));
+  await wait(260);
+  const img = document.getElementById("L-" + item.id);
+  img.animate([{ opacity: 0, transform: "scale(.94)" }, { opacity: 1, transform: "scale(1.035)", offset: .6 }, { opacity: 1, transform: "scale(1)" }],
+              { duration: 650, easing: "cubic-bezier(.3,1.3,.5,1)", fill: "forwards" });
+  img.style.opacity = 1;
+  sparkles(cx, cy, L.w / W, L.h / H);
+  done.add(item.id); refreshProgress();
+  anim("cheer_jump"); await wait(900);
+  if (ITEMS.every(i => done.has(i.id))) { await wait(300); makeBubble(FINALE); toast("One last touch…"); }
+}
+
+async function finale() {
+  await walkTo(.5);
+  anim("thumbs_up"); await wait(600);
+  const fl = $("#flash"); fl.animate([{ opacity: 0 }, { opacity: .85 }, { opacity: 0 }], { duration: 1100, easing: "ease-in-out" });
+  sfx.sparkle(); await wait(450);
+  $("#finale").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 1400, easing: "ease-out", fill: "forwards" });
+  $("#finale").style.opacity = 1;
+  document.querySelectorAll("#layers img").forEach(i => i.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 1400, fill: "forwards" }));
+  done.add("finale"); refreshProgress();
+  sparkles(.5, .4, .9, .7, 30);
+  await wait(900); sfx.fanfare(); confetti();
+  anim("cheer_jump", false, null); player.animationState.addAnimation(0, "wave", false, 0); player.animationState.addAnimation(0, "idle", true, 0);
+  await wait(1200); $("#banner").classList.add("show");
+}
+
+function reset() {
+  document.querySelectorAll(".bubble").forEach(b => b.remove());
+  document.querySelectorAll("#layers img, #finale").forEach(i => { i.getAnimations().forEach(a => a.cancel()); i.style.opacity = 0; });
+  $("#banner").classList.remove("show");
+  done.clear(); setStars(START_STARS); refreshProgress(); placeBeaver(.5); anim("idle", true);
+  ITEMS.forEach((it, i) => makeBubble(it, 150 + i * 120));
+}
+
+// ---- boot ----
+$("#play").onclick = () => {   // stands in for playing a puzzle level
+  if (busy) return; toast(`Level cleared! +${LEVEL_STARS} ⭐`);
+  const s = $("#stars").getBoundingClientRect(), st = stage.getBoundingClientRect();
+  flyStars(LEVEL_STARS, .5, .45, $("#stars .icon"), () => { setStars(stars + 1); sfx.coin(); });
+};
+$("#mute").onclick = () => { muted = !muted; $("#mute").textContent = muted ? "🔇" : "🔊"; };
+$("#again").onclick = reset;
+
+(async () => {
+  layout = await (await fetch("assets/layout.json")).json();
+  for (const it of ITEMS) {
+    const L = layout.items[it.id], img = document.createElement("img");
+    img.className = "layer"; img.id = "L-" + it.id; img.src = `assets/layers/${it.id}.png`;
+    Object.assign(img.style, { left: pct(L.x, layout.width), top: pct(L.y, layout.height), width: pct(L.w, layout.width),
+                               transformOrigin: "50% 80%" });
+    $("#layers").append(img);
+  }
+  // the Spine viewport is fixed so the beaver never rescales between animations; feet sit at FLOOR_Y
+  const VP = { x: -700, y: -60, width: 1400, height: 1700 };
+  const bv = $("#beaver"), bw = 44, bh = bw * VP.height / VP.width;
+  bv.style.width = bw + "cqw"; bv.style.height = bh + "cqw";
+  bv.style.top = `calc(${FLOOR_Y * 100}cqh - ${bh * (1 + VP.y / VP.height)}cqw)`;
+  $("#beaver-shadow").style.top = `calc(${FLOOR_Y * 100}cqh - 1.7cqw)`;
+  player = new spine.SpinePlayer("beaver", {
+    jsonUrl: "beaver/beaver.json", atlasUrl: "beaver/beaver.atlas", animation: "idle", premultipliedAlpha: false,
+    alpha: true, backgroundColor: "#00000000", showControls: false, showLoading: false, interactive: false,
+    viewport: { ...VP, padLeft: 0, padRight: 0, padTop: 0, padBottom: 0, transitionTime: 0 },
+    success: () => { $("#loading").style.opacity = 0; setTimeout(() => $("#loading").remove(), 400); reset(); window.ready = true; },
+    error: (p, msg) => { $("#loading").textContent = "Could not load the beaver: " + msg; },
+  });
+})();
+</script>
+</body>
+</html>

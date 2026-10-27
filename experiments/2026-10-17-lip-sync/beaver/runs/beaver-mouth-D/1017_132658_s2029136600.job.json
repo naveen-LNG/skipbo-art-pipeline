@@ -1,0 +1,60 @@
+{
+  "prompt_id": "d68a3c26-711d-4f14-b17b-85bac79a401c",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 2029136600,
+  "fingerprint": "78a52c5b8bf2",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE HEAD to edit, finished and approved.\n\nTASK:\nEdit only the mouth of image_1. Keep everything else exactly as it is: the outline, size, fur, colours, eyes, eyebrows, nose and the cream muzzle stay pixel for pixel the same, and the painting stays the same soft airbrushed volume with no outlines.\n\nTHE MOUTH:\nThe mouth says \"ah\": keep the wide open mouth of image_1, the same size and shape, with its dark-red inside and pink tongue lying low and flat inside the mouth. Repaint the two big front teeth as two clean smooth white rounded rectangles side by side at the top of the opening, the same size as on a closed beaver mouth, not stretched, with only a thin soft gap between them and no dark cracks, jagged edges or grey lines on them.\n\nThe head stands alone on the same flat plain light grey background as image_1, centred, at the same size, with no text, labels or shadows.",
+  "vars": {
+    "ASPECT": "1:1",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 2,
+    "PREFIX": "agent/skipbo/beaver-mouth-D",
+    "IMAGE_1": "agent/skipbo/head_D_on_grey_24b2f693de.png"
+  },
+  "inputs": {
+    "1": "head_D_on_grey.png"
+  },
+  "criteria": [],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-17-lip-sync/beaver/runs/beaver-mouth-D/1017_132658_s2029136600_n2_00.png",
+    "/work/comfy/experiments/2026-10-17-lip-sync/beaver/runs/beaver-mouth-D/1017_132658_s2029136600_n2_01.png"
+  ],
+  "seconds": 52.5,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE HEAD to edit, finished and approved.\n\nTASK:\nEdit only the mouth of image_1. Keep everything else exactly as it is: the outline, size, fur, colours, eyes, eyebrows, nose and the cream muzzle stay pixel for pixel the same, and the painting stays the same soft airbrushed volume with no outlines.\n\nTHE MOUTH:\nThe mouth says \"ah\": keep the wide open mouth of image_1, the same size and shape, with its dark-red inside and pink tongue lying low and flat inside the mouth. Repaint the two big front teeth as two clean smooth white rounded rectangles side by side at the top of the opening, the same size as on a closed beaver mouth, not stretched, with only a thin soft gap between them and no dark cracks, jagged edges or grey lines on them.\n\nThe head stands alone on the same flat plain light grey background as image_1, centred, at the same size, with no text, labels or shadows.",
+        "image_count": 2,
+        "use_search": false,
+        "aspect_ratio": "1:1",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/head_D_on_grey_24b2f693de.png"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/beaver-mouth-D"
+      }
+    }
+  }
+}

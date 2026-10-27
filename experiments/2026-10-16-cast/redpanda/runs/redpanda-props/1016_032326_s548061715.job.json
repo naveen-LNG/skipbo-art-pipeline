@@ -1,0 +1,73 @@
+{
+  "prompt_id": "32f1cc79-bc73-4c28-9824-f209bbed02cd",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 548061715,
+  "fingerprint": "0e96b772def7",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint two props for the character from image_1, as separate pieces for 2D skeletal animation in Spine, in exactly the painting style of image_1 and image_2. They are objects, not body parts.\n\nTHE PIECES (two props, each painted exactly once), side by side in one row, large, together filling most of the sheet:\nLeft: a small white flag on a thin straight wooden stick: the stick is vertical, as long as the character's whole arm, and the plain white rectangular cloth hangs from the top third of the stick out to the right with two soft folds; nothing is drawn on the cloth. Right: a low wooden hurdle seen straight from the front: two short upright posts on small feet and one horizontal crossbar painted red and white, about as tall as the character's boots and trousers up to the knee, and about as wide as the character's hips.\n\nEach prop is painted straight-on, upright, whole and fully opaque, in the soft chunky style of image_1: simple rounded shapes, smooth airbrushed shading, no outlines. Each prop is in scale with the character in image_1, as stated in its description.\n\nAll pieces are laid out on one flat plain light grey background. The props stand apart with a clear gap of empty background between them. They never touch, never overlap, and stay fully inside the frame, with an even margin of background around each. The sheet contains only these two props, painted fully opaque, with no character, no hands, no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly two props in one row, nothing else on the sheet: no character and no hands.\n2. Each prop upright, whole, straight-on, in the stated size.\n3. Painted like image_1: airbrushed soft volume, chunky shapes, smooth, no outlines.\n4. Flat light grey background around both; no text.\n\nCHARACTER NOTES (the character the props belong to; it is not painted on this sheet):\nA cheerful young red panda explorer: rusty red-orange fur, a white face mask with white cheeks and a white muzzle, two white eyebrow spots above the eyes, rounded rust ears with white edges, and a dark-brown nose. Dark-brown mitten paws. A big bushy tail with clear alternating rings of rust red and cream: it comes out from behind the hips on the right side of the picture, sweeps out sideways and curves upward in one clean soft shape, its tip ending at about belt height, fully visible beside the body, below the hand and clear of it, with plain background between the tail and the leg and between the tail and the arm. A mustard-yellow long-sleeved field jacket with two flapped chest pockets and plain cuffs, olive-green trousers held by a brown belt, and brown lace-up hiking boots. Both paws are empty: no tools or props.",
+  "vars": {
+    "ASPECT": "4:3",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "CHARACTER": "A cheerful young red panda explorer: rusty red-orange fur, a white face mask with white cheeks and a white muzzle, two white eyebrow spots above the eyes, rounded rust ears with white edges, and a dark-brown nose. Dark-brown mitten paws. A big bushy tail with clear alternating rings of rust red and cream: it comes out from behind the hips on the right side of the picture, sweeps out sideways and curves upward in one clean soft shape, its tip ending at about belt height, fully visible beside the body, below the hand and clear of it, with plain background between the tail and the leg and between the tail and the arm. A mustard-yellow long-sleeved field jacket with two flapped chest pockets and plain cuffs, olive-green trousers held by a brown belt, and brown lace-up hiking boots. Both paws are empty: no tools or props.",
+    "PROPS": "Left: a small white flag on a thin straight wooden stick: the stick is vertical, as long as the character's whole arm, and the plain white rectangular cloth hangs from the top third of the stick out to the right with two soft folds; nothing is drawn on the cloth. Right: a low wooden hurdle seen straight from the front: two short upright posts on small feet and one horizontal crossbar painted red and white, about as tall as the character's boots and trousers up to the knee, and about as wide as the character's hips.",
+    "PREFIX": "agent/skipbo/redpanda-props",
+    "IMAGE_1": "agent/skipbo/redpanda_master_4e2ce5aaab.png",
+    "IMAGE_2": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+  },
+  "inputs": {
+    "1": "redpanda_master.png",
+    "2": "../../../plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas-small.jpg"
+  },
+  "criteria": [],
+  "outputs": [
+    "/work/comfy/.claude/worktrees/spine-pro/experiments/2026-10-16-cast/redpanda/runs/redpanda-props/1016_032326_s548061715_n2_00.png"
+  ],
+  "seconds": 64.4,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint two props for the character from image_1, as separate pieces for 2D skeletal animation in Spine, in exactly the painting style of image_1 and image_2. They are objects, not body parts.\n\nTHE PIECES (two props, each painted exactly once), side by side in one row, large, together filling most of the sheet:\nLeft: a small white flag on a thin straight wooden stick: the stick is vertical, as long as the character's whole arm, and the plain white rectangular cloth hangs from the top third of the stick out to the right with two soft folds; nothing is drawn on the cloth. Right: a low wooden hurdle seen straight from the front: two short upright posts on small feet and one horizontal crossbar painted red and white, about as tall as the character's boots and trousers up to the knee, and about as wide as the character's hips.\n\nEach prop is painted straight-on, upright, whole and fully opaque, in the soft chunky style of image_1: simple rounded shapes, smooth airbrushed shading, no outlines. Each prop is in scale with the character in image_1, as stated in its description.\n\nAll pieces are laid out on one flat plain light grey background. The props stand apart with a clear gap of empty background between them. They never touch, never overlap, and stay fully inside the frame, with an even margin of background around each. The sheet contains only these two props, painted fully opaque, with no character, no hands, no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly two props in one row, nothing else on the sheet: no character and no hands.\n2. Each prop upright, whole, straight-on, in the stated size.\n3. Painted like image_1: airbrushed soft volume, chunky shapes, smooth, no outlines.\n4. Flat light grey background around both; no text.\n\nCHARACTER NOTES (the character the props belong to; it is not painted on this sheet):\nA cheerful young red panda explorer: rusty red-orange fur, a white face mask with white cheeks and a white muzzle, two white eyebrow spots above the eyes, rounded rust ears with white edges, and a dark-brown nose. Dark-brown mitten paws. A big bushy tail with clear alternating rings of rust red and cream: it comes out from behind the hips on the right side of the picture, sweeps out sideways and curves upward in one clean soft shape, its tip ending at about belt height, fully visible beside the body, below the hand and clear of it, with plain background between the tail and the leg and between the tail and the arm. A mustard-yellow long-sleeved field jacket with two flapped chest pockets and plain cuffs, olive-green trousers held by a brown belt, and brown lace-up hiking boots. Both paws are empty: no tools or props.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "4:3",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/redpanda_master_4e2ce5aaab.png"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/redpanda-props"
+      }
+    }
+  }
+}

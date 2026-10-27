@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Beaver's Garden</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script src="https://unpkg.com/@esotericsoftware/spine-player@4.2.120/dist/iife/spine-player.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@esotericsoftware/spine-player@4.2.120/dist/spine-player.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sun: #ffcf3a; --sun-deep: #f2a91c; --bark: #5a3418; --leaf: #4fae3c; --leaf-deep: #2f7d2a;
+    --sky: #2f8ee6; --pink: #f2588f; --cream: #fff8e6; --night: #1c3b2a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--night); font-family: "Baloo 2", system-ui, sans-serif; color: var(--bark); overflow: hidden; }
+  body { display: grid; place-items: center; }
+  /* the game frame: 9:16, as large as the window allows */
+  #stage { position: relative; width: min(100vw, calc(100vh * 9 / 16)); aspect-ratio: 9 / 16; overflow: hidden;
+           background: #7cc65a url("lawn.jpg") center / cover no-repeat; touch-action: manipulation; user-select: none; }
+  #shadows, #fx { position: absolute; inset: 0; pointer-events: none; }
+  #fx { z-index: 3; }
+  .shadow { position: absolute; border-radius: 50%; background: radial-gradient(closest-side, rgba(38, 92, 22, .55), rgba(38, 92, 22, 0)); transform: translate(-50%, -50%); }
+  #spine { position: absolute; left: 0; z-index: 2; }
+  #spine .spine-player { background: transparent !important; }
+  #spine canvas { pointer-events: none; }
+
+  /* HUD */
+  #hud { position: absolute; z-index: 4; top: 2.2%; left: 4%; right: 4%; display: flex; flex-direction: column; align-items: center; gap: .4em;
+         font-size: clamp(11px, calc(min(100vw, 100vh * 9 / 16) / 26), 22px); }
+  #title { margin: 0; font-weight: 800; font-size: 1.9em; line-height: 1; color: var(--cream); letter-spacing: .01em;
+           text-shadow: 0 .09em 0 var(--leaf-deep), 0 .18em .4em rgba(0, 0, 0, .25); }
+  #pips { display: flex; gap: .45em; padding: .45em .7em; border-radius: 1.4em; background: rgba(255, 248, 230, .9);
+          box-shadow: 0 .25em 0 rgba(47, 125, 42, .55), 0 .5em 1em rgba(0, 0, 0, .15); }
+  .pip { width: 3.1em; height: 3.1em; border-radius: 50%; display: grid; place-items: center; background: #e9e1c8; position: relative; overflow: hidden; transition: background .3s, transform .3s; }
+  .pip img { display: block; width: 2.3em; height: 2.3em; object-fit: contain; filter: grayscale(1) opacity(.35); transition: filter .4s; }
+  .pip.done { background: #c8ef9e; }
+  .pip.done img { filter: none; }
+  .pip.now { transform: scale(1.14); box-shadow: 0 0 0 .18em var(--sun); }
+  #status { min-height: 1.4em; margin: 0; font-weight: 600; font-size: 1.15em; color: var(--cream); text-shadow: 0 .08em .2em rgba(0, 0, 0, .45); text-align: center; }
+
+  /* the action button */
+  #action { position: absolute; z-index: 4; left: 50%; bottom: 4.5%; transform: translateX(-50%);
+            font: 800 clamp(16px, calc(min(100vw, 100vh * 9 / 16) / 15), 34px) / 1 "Baloo 2", system-ui, sans-serif;
+            color: var(--bark); background: linear-gradient(var(--sun), var(--sun-deep)); border: 0; border-radius: 1em;
+            padding: .55em 1.3em .45em; min-width: 62%; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: .4em;
+            box-shadow: 0 .22em 0 #c07a10, 0 .45em .9em rgba(0, 0, 0, .25); transition: transform .12s, filter .2s, opacity .2s; }
+  #action:hover { filter: brightness(1.05); }
+  #action:active { transform: translateX(-50%) translateY(.12em); box-shadow: 0 .1em 0 #c07a10, 0 .3em .6em rgba(0, 0, 0, .25); }
+  #action:focus-visible { outline: .14em solid var(--cream); outline-offset: .16em; }
+  #action[disabled] { opacity: .55; cursor: default; filter: saturate(.6); }
+  #action .ic { height: 1.25em; width: auto; }
+  #action.pulse { animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 50% { transform: translateX(-50%) scale(1.05); } }
+
+  #mute { position: absolute; z-index: 4; right: 3%; bottom: 5.6%; width: 2.4em; height: 2.4em; border-radius: 50%; border: 0; cursor: pointer;
+          background: rgba(255, 248, 230, .85); font-size: clamp(12px, calc(min(100vw, 100vh * 9 / 16) / 28), 20px); color: var(--bark); }
+  #mute:focus-visible { outline: .14em solid var(--sun); }
+
+  /* the bloom banner */
+  #banner { position: absolute; z-index: 5; left: 50%; top: 21%; transform: translate(-50%, -50%) scale(.4); opacity: 0; pointer-events: none;
+            font-weight: 800; font-size: clamp(22px, calc(min(100vw, 100vh * 9 / 16) / 9), 56px); color: var(--cream); white-space: nowrap;
+            text-shadow: 0 .07em 0 var(--pink), 0 .14em 0 #b8306a, 0 .25em .5em rgba(0, 0, 0, .3); transition: transform .5s cubic-bezier(.2, 1.6, .4, 1), opacity .3s; }
+  #banner.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  #loading { position: absolute; inset: 0; display: grid; place-items: center; z-index: 6; color: var(--cream); font-weight: 800; font-size: 1.4em; background: rgba(28, 59, 42, .55); }
+  @media (prefers-reduced-motion: reduce) { #action.pulse { animation: none; } }
+</style>
+</head>
+<body>
+<main id="stage" aria-label="Beaver's Garden: plant a seed and water it until it flowers">
+  <div id="shadows"></div>
+  <div id="spine"></div>
+  <canvas id="fx"></canvas>
+  <header id="hud">
+    <h1 id="title">Beaver's Garden</h1>
+    <div id="pips" role="list" aria-label="Growth stages"></div>
+    <p id="status" aria-live="polite">Tap to plant a seed</p>
+  </header>
+  <div id="banner">It bloomed!</div>
+  <button id="action" class="pulse"><span id="label">Plant the seed</span></button>
+  <button id="mute" aria-label="Sound off" title="Sound">♪</button>
+  <div id="loading">Loading…</div>
+</main>
+<script>
+// Beaver's Garden: the beaver rig (garden/rig) on the lawn. Track 0 plays the beaver (plant_seed, water, cheer_jump,
+// idle); track 1 holds the plant's stage (grow_0 .. grow_4). The rig's events drive the game: `seed` (the paw lets go)
+// shows the seed mound, `pour` (the stream starts) grows the plant one stage a moment later.
+const RIG = "../rig/", IMG = RIG + "images/beaver_prop_plant";
+const STAGES = [
+  {name: "Seed", img: IMG + ".png", say: "Planted! Now give it some water"},
+  {name: "Sprout", img: IMG + "_1.png", say: "A sprout! Keep watering"},
+  {name: "Sapling", img: IMG + "_2.png", say: "It's growing! More water"},
+  {name: "Bud", img: IMG + "_3.png", say: "A bud! One more drink"},
+  {name: "Flower", img: IMG + "_4.png", say: "It bloomed!"}];
+const STAGE_TOP = [0.13, 0.2, 0.38, 0.52, 0.6];      // each stage's height above its base, share of body height
+// what the player shows, in skeleton units: the beaver, the plant beside it, headroom for the cheer jump
+const VP = {x: -640, y: -130, width: 1560, height: 1600};
+const GROUND_AT = 0.765;                              // where the lawn's ground line sits, share of the stage height
+
+const $ = id => document.getElementById(id);
+const stage = $("stage"), fx = $("fx"), ctx = fx.getContext("2d"), btn = $("action"), label = $("label");
+let player, state, skel, bodyH = 1208, level = -1, busy = true, layout = {};
+
+// ---------- stage pips
+STAGES.forEach((s, i) => {
+  const d = document.createElement("div");
+  d.className = "pip"; d.setAttribute("role", "listitem"); d.setAttribute("aria-label", s.name);
+  d.innerHTML = `<img src="${s.img}" alt="">`;
+  $("pips").appendChild(d);
+});
+function paintPips() {
+  [...$("pips").children].forEach((d, i) => { d.classList.toggle("done", i <= level); d.classList.toggle("now", i === level); });
+}
+
+// ---------- layout: world (skeleton units, y up) -> stage px
+function doLayout() {
+  const W = stage.clientWidth, H = stage.clientHeight, dpr = devicePixelRatio || 1;
+  const divH = W * VP.height / VP.width;
+  const groundFrac = (VP.y + VP.height) / VP.height;              // ground (y = 0) inside the player box
+  const top = GROUND_AT * H - groundFrac * divH;
+  Object.assign($("spine").style, {top: top + "px", width: W + "px", height: divH + "px"});
+  fx.width = W * dpr; fx.height = H * dpr; fx.style.width = W + "px"; fx.style.height = H + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  layout = {W, H, top, k: W / VP.width};
+  placeShadows();
+}
+const toPx = (wx, wy) => [(wx - VP.x) * layout.k, layout.top + (VP.y + VP.height - wy) * layout.k];
+
+function placeShadows() {
+  const box = $("shadows"); box.innerHTML = "";
+  const add = (wx, wy, w, h) => {
+    const [x, y] = toPx(wx, wy), s = document.createElement("div");
+    s.className = "shadow";
+    Object.assign(s.style, {left: x + "px", top: y + "px", width: w * layout.k + "px", height: h * layout.k + "px"});
+    box.appendChild(s);
+  };
+  add(0, 10, 620, 110);                                           // under the beaver's boots
+  if (level >= 0 && skel) { const p = skel.findBone("prop_plant"); add(p.worldX, p.worldY + 8, 400, 80); }
+}
+
+// ---------- particles: water splashes, sparkles, petals, floating words
+const parts = [];
+function plantTop() { const p = skel.findBone("prop_plant"); return [p.worldX, p.worldY + STAGE_TOP[Math.max(0, level)] * bodyH]; }
+function splash(n) {
+  const p = skel.findBone("prop_plant"), [x, y] = toPx(p.worldX - 0.075 * bodyH, p.worldY + 0.14 * bodyH);
+  for (let i = 0; i < n; i++)
+    parts.push({kind: "drop", x, y, vx: (Math.random() - .5) * 140, vy: -60 - Math.random() * 140, life: .7 + Math.random() * .4, age: 0, r: 2.5 + Math.random() * 3});
+}
+function sparkle(n, wx, wy, spread = 0.12) {
+  const [x, y] = toPx(wx, wy), s = spread * bodyH * layout.k;
+  for (let i = 0; i < n; i++) {
+    const a = Math.random() * Math.PI * 2, v = 40 + Math.random() * 120;
+    parts.push({kind: "star", x: x + Math.cos(a) * s * Math.random(), y: y + Math.sin(a) * s * Math.random(), vx: Math.cos(a) * v, vy: Math.sin(a) * v - 40,
+                life: .8 + Math.random() * .6, age: 0, r: 5 + Math.random() * 7, spin: Math.random() * 6});
+  }
+}
+function petals(n) {
+  for (let i = 0; i < n; i++)
+    parts.push({kind: "petal", x: Math.random() * layout.W, y: -20 - Math.random() * layout.H * .4, vx: (Math.random() - .5) * 40, vy: 70 + Math.random() * 90,
+                life: 5, age: 0, r: 6 + Math.random() * 6, spin: Math.random() * 6, hue: [335, 45, 200, 100][i % 4]});
+}
+function word(text, wx, wy) {
+  const [x, y] = toPx(wx, wy);
+  parts.push({kind: "word", text, x, y, vx: 0, vy: -45, life: 1.6, age: 0});
+}
+function star(c, x, y, r, rot) {
+  c.beginPath();
+  for (let i = 0; i < 10; i++) { const a = rot + i * Math.PI / 5, rr = i % 2 ? r * .45 : r; c.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr); }
+  c.closePath(); c.fill();
+}
+let last = performance.now();
+function tick(now) {
+  const dt = Math.min(.05, (now - last) / 1000); last = now;
+  ctx.clearRect(0, 0, layout.W, layout.H);
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i]; p.age += dt;
+    if (p.age > p.life || p.y > layout.H + 40) { parts.splice(i, 1); continue; }
+    const t = p.age / p.life, fade = Math.min(1, (1 - t) * 3);
+    p.x += p.vx * dt; p.y += p.vy * dt;
+    ctx.globalAlpha = fade;
+    if (p.kind === "drop") {
+      p.vy += 520 * dt;
+      ctx.fillStyle = "#bfe9ff"; ctx.beginPath(); ctx.ellipse(p.x, p.y, p.r * .8, p.r, 0, 0, Math.PI * 2); ctx.fill();
+    } else if (p.kind === "star") {
+      p.vx *= .96; p.vy = p.vy * .96 + 10 * dt; p.spin += dt * 4;
+      ctx.fillStyle = t < .5 ? "#fff6b0" : "#ffd23f"; star(ctx, p.x, p.y, p.r * (1 - t * .5), p.spin);
+    } else if (p.kind === "petal") {
+      p.spin += dt * 3; p.x += Math.sin(p.age * 3 + p.r) * 30 * dt;
+      ctx.fillStyle = `hsl(${p.hue} 85% 68%)`;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.spin); ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r * .55, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+    } else if (p.kind === "word") {
+      const s = Math.min(1, p.age * 6) * (layout.W / 20);
+      ctx.font = `800 ${s}px "Baloo 2", system-ui`; ctx.textAlign = "center";
+      ctx.lineWidth = s * .22; ctx.strokeStyle = "#2f7d2a"; ctx.strokeText(p.text, p.x, p.y);
+      ctx.fillStyle = "#fff8e6"; ctx.fillText(p.text, p.x, p.y);
+    }
+  }
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(tick);
+}
+
+// ---------- sound: a few tiny synthesized cues (off until the first tap, as browsers require)
+let audio = null, muted = false;
+function tone(freqs, dur = .12, type = "sine", gain = .12) {
+  if (muted) return;
+  audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+  const t0 = audio.currentTime;
+  freqs.forEach((f, i) => {
+    const o = audio.createOscillator(), g = audio.createGain();
+    o.type = type; o.frequency.setValueAtTime(f, t0 + i * dur); o.frequency.exponentialRampToValueAtTime(f * 1.5, t0 + i * dur + dur);
+    g.gain.setValueAtTime(0, t0 + i * dur); g.gain.linearRampToValueAtTime(gain, t0 + i * dur + .01); g.gain.exponentialRampToValueAtTime(.001, t0 + i * dur + dur * 1.6);
+    o.connect(g).connect(audio.destination); o.start(t0 + i * dur); o.stop(t0 + i * dur + dur * 1.7);
+  });
+}
+function pourSound() {
+  if (muted) return;
+  audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+  const n = audio.sampleRate * 1.4, b = audio.createBuffer(1, n, audio.sampleRate), d = b.getChannelData(0);
+  for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * Math.min(1, i / 4000, (n - i) / 9000);
+  const s = audio.createBufferSource(), f = audio.createBiquadFilter(), g = audio.createGain();
+  f.type = "bandpass"; f.frequency.value = 1800; f.Q.value = .7; g.gain.value = .07;
+  s.buffer = b; s.connect(f).connect(g).connect(audio.destination); s.start();
+}
+$("mute").onclick = () => { muted = !muted; $("mute").textContent = muted ? "×" : "♪"; $("mute").setAttribute("aria-label", muted ? "Sound on" : "Sound off"); };
+
+// ---------- the game
+function setButton(text, enabled, pulse = enabled) {
+  label.textContent = text; btn.disabled = !enabled; btn.classList.toggle("pulse", pulse);
+}
+function say(t) { $("status").textContent = t; }
+
+function grow(to) {
+  level = to;
+  state.setAnimation(1, "grow_" + to, false);
+  paintPips(); placeShadows();
+  const [x, y] = plantTop();
+  sparkle(to === 4 ? 40 : 18, x, y - 0.05 * bodyH);
+  word(STAGES[to].name + "!", x, y + 0.08 * bodyH);
+  tone(to === 4 ? [523, 659, 784, 1046] : [440 + to * 90], to === 4 ? .13 : .14, "triangle", .1);
+}
+
+function onAction() {
+  if (busy) return;
+  busy = true;
+  if (level < 0) {                                    // plant the seed
+    setButton("Planting…", false);
+    say("Digging a little hole…");
+    state.setAnimation(0, "plant_seed", false);
+    state.addAnimation(0, "idle", true, 0);
+  } else if (level < 4) {                             // water it
+    setButton("Watering…", false);
+    say("Glug glug glug…");
+    state.setAnimation(0, "water", false);
+    state.addAnimation(0, "idle", true, 0);
+  } else {                                            // start over
+    state.setEmptyAnimation(1, 0);
+    level = -1; paintPips(); placeShadows();
+    $("banner").classList.remove("show");
+    requestAnimationFrame(() => { skel.setSlotsToSetupPose(); busy = false; setButton("Plant the seed", true); say("Tap to plant a seed"); });
+  }
+}
+btn.addEventListener("click", onAction);
+
+function listen() {
+  state.addListener({
+    event(entry, ev) {
+      if (ev.data.name === "seed") { grow(0); }
+      if (ev.data.name === "pour") {
+        pourSound();
+        let n = 0;
+        const iv = setInterval(() => { if (skel) splash(4); if (++n > 9) clearInterval(iv); }, 130);
+        setTimeout(() => grow(level + 1), 900);             // the plant answers the water while it is still pouring
+      }
+    },
+    complete(entry) {
+      const a = entry.animation.name;
+      if (entry.trackIndex !== 0) return;
+      if (a === "plant_seed") { busy = false; setButton("Water it  1 / 4", true); say(STAGES[0].say); }
+      if (a === "water") {
+        if (level >= 4) {
+          state.setAnimation(0, "cheer_jump", false); state.addAnimation(0, "idle", true, 0);
+          $("banner").classList.add("show"); say("");
+          petals(60); setTimeout(() => petals(40), 700);
+          setButton("Plant another", false, false);
+        } else { busy = false; setButton(`Water it  ${level + 1} / 4`, true); say(STAGES[level].say); }
+      }
+      if (a === "cheer_jump") { busy = false; setButton("Plant another", true); }
+    }});
+}
+
+player = new spine.SpinePlayer("spine", {
+  jsonUrl: RIG + "beaver.json", atlasUrl: RIG + "beaver.atlas", animation: "idle",
+  premultipliedAlpha: false, alpha: true, backgroundColor: "#00000000", showControls: false, showLoading: false,
+  viewport: {x: VP.x, y: VP.y, width: VP.width, height: VP.height, padLeft: 0, padRight: 0, padTop: 0, padBottom: 0, transitionTime: 0},
+  success(p) {
+    state = p.animationState; skel = p.skeleton;
+    state.data.defaultMix = 0.2;
+    bodyH = p.skeleton.data.height || bodyH;
+    listen(); doLayout(); paintPips();
+    $("loading").remove(); busy = false; setButton("Plant the seed", true);
+    window.ready = true;
+  },
+  error(p, msg) { $("loading").textContent = "Could not load the rig: " + msg; window.loadError = msg; }
+});
+window.addEventListener("resize", doLayout);
+doLayout();
+requestAnimationFrame(tick);
+// for checks: the game state, and the button's action
+window.game = {get level() { return level; }, get busy() { return busy; }, act: onAction};
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+ "pads": {
+  "all": 0.811,
+  "fox": 0.888,
+  "moose": 0.7
+ },
+ "creases": {
+  "all": 0.56,
+  "fox": 0.609,
+  "moose": 0.516
+ },
+ "thumb_front": {
+  "all": 0.827,
+  "fox": 0.839,
+  "moose": 0.797
+ },
+ "knuckles": {
+  "all": 0.78,
+  "fox": 0.776,
+  "moose": 0.858
+ },
+ "smooth_top": {
+  "all": 0.876,
+  "fox": 0.802,
+  "moose": 0.918
+ },
+ "curl": {
+  "all": 0.675,
+  "fox": 0.627,
+  "moose": 0.767
+ },
+ "combined": {
+  "all": 0.889,
+  "fox": 0.872,
+  "moose": 0.921
+ }
+}

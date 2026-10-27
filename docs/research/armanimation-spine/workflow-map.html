@@ -1,0 +1,444 @@
+<title>Spine Rigging Workflow Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a rigging blueprint. One column, sequence-numbered stages, schematic skeletons colour-coded the way Spine colours them (grey bones, red IK, cyan mesh, amber helpers). */
+:root{
+  --paper:#f2f4f6; --sheet:#ffffff; --ink:#16202a; --muted:#56626e; --rule:#d6dce2;
+  --bone:#6a7682; --helper:#b77900; --ik:#cf3b2a; --mesh:#0a8ea3; --accent:#2c56c4;
+  --gen:#2c56c4; --anim:#7a3fb8; --cap:#0a7f4f;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0e1317; --sheet:#151c22; --ink:#e5eaef; --muted:#9aa6b1; --rule:#26313b;
+  --bone:#9aa6b1; --helper:#f0b429; --ik:#ff6a58; --mesh:#3fc6da; --accent:#7f9cff;
+  --gen:#7f9cff; --anim:#c08cf5; --cap:#45c88d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0e1317; --sheet:#151c22; --ink:#e5eaef; --muted:#9aa6b1; --rule:#26313b;
+  --bone:#9aa6b1; --helper:#f0b429; --ik:#ff6a58; --mesh:#3fc6da; --accent:#7f9cff;
+  --gen:#7f9cff; --anim:#c08cf5; --cap:#45c88d; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 15px/1.55 var(--body);font-stretch:100%}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:28px 64px;display:grid;gap:44px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;font-stretch:112%;letter-spacing:-.01em;line-height:1.05}
+h2{font-size:22px;font-weight:750;font-stretch:108%}
+h3{font-size:16px;font-weight:700}
+p{margin:0}
+.lede{max-width:66ch;color:var(--muted);font-size:16px}
+.eyebrow{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+header{display:grid;gap:12px}
+code,.mono{font-family:var(--mono);font-size:.86em}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:var(--muted)}
+.key{display:inline-flex;align-items:center;gap:6px}
+.sw{width:18px;height:4px;border-radius:2px;display:inline-block}
+.sw.dot{width:10px;height:10px;border-radius:50%}
+
+.filter{display:flex;flex-wrap:wrap;gap:6px}
+.filter button{font:600 13px var(--body);padding:7px 12px;border-radius:999px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);cursor:pointer}
+.filter button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sectionhead{display:grid;gap:8px}
+
+/* stages */
+.stages{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:st}
+.stage{display:grid;grid-template-columns:56px minmax(0,1fr);gap:0 18px;position:relative}
+.stage::before{counter-increment:st;content:counter(st,decimal-leading-zero);font:700 15px/1 var(--mono);color:var(--muted);padding-top:20px;text-align:right}
+.stage>.card{border-left:2px solid var(--rule);padding:18px 0 26px 22px;display:grid;gap:10px;min-width:0}
+.stage:last-child>.card{padding-bottom:4px}
+.stage .card::before{content:"";position:absolute;left:69px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--muted)}
+.titlerow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.owner{font:600 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:4px;border:1px solid currentColor}
+.owner.gen{color:var(--gen)} .owner.anim{color:var(--anim)} .owner.cap{color:var(--cap)}
+.does{margin:0;padding-left:18px;display:grid;gap:3px;max-width:78ch}
+.prims{display:flex;flex-wrap:wrap;gap:6px}
+.prim{font:500 12px var(--mono);padding:3px 7px;border-radius:4px;background:color-mix(in srgb,var(--ink) 7%,transparent);color:var(--ink)}
+.prim.h{color:var(--helper);background:color-mix(in srgb,var(--helper) 14%,transparent)}
+.prim.i{color:var(--ik);background:color-mix(in srgb,var(--ik) 12%,transparent)}
+.prim.m{color:var(--mesh);background:color-mix(in srgb,var(--mesh) 13%,transparent)}
+.bnotes{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.bnotes li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px;font-size:14px;padding:7px 10px;border-radius:6px;background:var(--sheet);border:1px solid var(--rule)}
+.bnotes .b{font:600 11px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.gap{font-size:14px;color:var(--muted);max-width:78ch}
+.gap strong{color:var(--ink)}
+
+/* skeleton schematics */
+.skels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:20px}
+figure{margin:0;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:16px;display:grid;gap:10px;min-width:0}
+figure[hidden]{display:none!important}
+figcaption{font-size:13px;color:var(--muted)}
+.svgbox{overflow-x:auto}
+svg text{font-family:var(--mono);font-size:10.5px;fill:var(--ink)}
+svg .lbl-h{fill:var(--helper);font-weight:600}
+svg .lbl-i{fill:var(--ik);font-weight:600}
+svg .lbl-m{fill:var(--mesh)}
+svg .lbl-mute{fill:var(--muted)}
+.bn{stroke:var(--bone);stroke-width:3.2;stroke-linecap:round;fill:none}
+.bn.far{opacity:.35}
+.hp{stroke:var(--helper);stroke-width:3.6;stroke-linecap:round;fill:none}
+.ikl{stroke:var(--ik);stroke-width:1.4;stroke-dasharray:3 3;fill:none}
+.pv{fill:var(--sheet);stroke:var(--bone);stroke-width:2}
+.pv.h{stroke:var(--helper);fill:var(--helper)}
+.tg{fill:var(--ik)}
+.msh{fill:color-mix(in srgb,var(--mesh) 8%,transparent);stroke:var(--mesh);stroke-width:1.3;stroke-dasharray:5 4}
+.gnd{stroke:var(--rule);stroke-width:1.5}
+.shadow{fill:color-mix(in srgb,var(--ink) 9%,transparent)}
+.cross{stroke:var(--muted);stroke-width:1.5}
+.inh{fill:none;stroke:var(--accent);stroke-width:1.4}
+.svg-lbl-acc{fill:var(--accent)}
+
+/* loop */
+.loop{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:16px}
+.loop svg text{font-family:var(--body);font-size:12.5px}
+.nd{fill:var(--paper);stroke:var(--rule);stroke-width:1.4}
+.nd.gen{stroke:var(--gen)} .nd.anim{stroke:var(--anim)} .nd.cap{stroke:var(--cap)}
+.ar{stroke:var(--muted);stroke-width:1.5;fill:none}
+.ar-head{fill:var(--muted)}
+.t-gen{fill:var(--gen);font-weight:700} .t-anim{fill:var(--anim);font-weight:700} .t-cap{fill:var(--cap);font-weight:700}
+.t-sub{fill:var(--muted);font-size:11px!important}
+
+/* shortcuts */
+.tbl{overflow-x:auto;background:var(--sheet);border:1px solid var(--rule);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+kbd{font:600 12px var(--mono);padding:2px 6px;border:1px solid var(--rule);border-bottom-width:2px;border-radius:4px;background:var(--paper);white-space:nowrap}
+.foot{font-size:13px;color:var(--muted);max-width:80ch}
+
+@media (max-width:620px){
+  .stage{grid-template-columns:30px minmax(0,1fr);gap:0 12px}
+  .stage::before{font-size:12px}
+  .stage .card::before{left:37px}
+  .bnotes li{grid-template-columns:minmax(0,1fr);gap:2px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Research · Armanimation channel + top parts-splitting tutorials · 37 + 14 videos</div>
+  <h1>How a Spine animator turns one character image into a smooth rig</h1>
+  <p class="lede">These are the stages a professional Spine animator works through, from cut-out parts to the first idle loop. Each stage notes who should own it in our pipeline: our generator, the animator in Spine, or the feedback capture that turns the animator's fixes into data. Learnings are bucketed by character type so that humanoid rules don't leak into animal rigs.</p>
+  <div class="legend" aria-label="Colour key">
+    <span class="key"><span class="sw" style="background:var(--bone)"></span>bone</span>
+    <span class="key"><span class="sw" style="background:var(--helper)"></span>helper pivot (no image of its own)</span>
+    <span class="key"><span class="sw dot" style="background:var(--ik)"></span>IK target / constraint</span>
+    <span class="key"><span class="sw" style="background:var(--mesh)"></span>mesh + weights</span>
+    <span class="key"><span class="sw" style="background:var(--accent)"></span>inherit rotation/scale off</span>
+  </div>
+</header>
+
+<section class="sectionhead" aria-labelledby="f-h">
+  <h2 id="f-h">Show rules for</h2>
+  <div class="filter" role="group" aria-label="Character bucket">
+    <button type="button" data-f="all" aria-pressed="true">All buckets</button>
+    <button type="button" data-f="quad" aria-pressed="false">Quadruped animal</button>
+    <button type="button" data-f="hum" aria-pressed="false">Cartoon humanoid</button>
+    <button type="button" data-f="real" aria-pressed="false">Realistic humanoid</button>
+    <button type="button" data-f="cre" aria-pressed="false">Creature</button>
+    <button type="button" data-f="env" aria-pressed="false">Background</button>
+  </div>
+  <p class="gap">Our beaver, fox and moose are <strong>biped bodies with animal heads</strong>, and the channel has no clean example of that. Use <em>Cartoon humanoid</em> for the body and limbs and <em>Quadruped animal</em> for the head, ears, eyes and mouth. Annotate them as a separate <code>anthro-biped-animal</code> bucket.</p>
+</section>
+
+<section aria-labelledby="w-h" style="display:grid;gap:18px">
+  <h2 id="w-h">The workflow</h2>
+  <ol class="stages">
+
+    <li class="stage"><div class="card">
+      <div class="titlerow"><h3>Plan the motion before cutting</h3><span class="owner gen">Generator</span></div>
+      <ul class="does"><li>Ask the developers for the Spine version and whether meshes and constraints are allowed.</li><li>List the animations (idle, jump, talk) and "understand who your character is". Cut only what those animations need.</li></ul>
+      <div class="prims"><span class="prim">animation list</span><span class="prim">Spine version</span></div>
+      <ul class="bnotes">
+        <li data-b="quad"><span class="b">Quadruped</span><span>Foreground legs get the full rig. Background legs are simplified or copied from the foreground set.</span></li>
+        <li data-b="hum"><span class="b">Cartoon human</span><span>A small character talks with 3 swapped mouths. A large one needs a meshed mouth.</span></li>
+      </ul>
+    </div></li>
+
+    <li class="stage"><div class="card">
+      <div class="titlerow"><h3>Cut parts in Photoshop</h3><span class="owner gen">Generator</span></div>
+      <ul class="does"><li>Cut one layer per independently moving part, with a unique name. That name becomes the bone, slot and attachment.</li><li>End joints round so a rotation never shows a seam. Don't over-cut: one mesh bends better than three pieces.</li><li>Deliver a straightened copy of curved parts (Puppet Warp or Liquify). Test joints by holding Alt and dragging the transform pivot.</li></ul>
+      <div class="prims"><span class="prim">layer = bone name</span><span class="prim">round joint ends</span><span class="prim">straightened copy</span></div>
+      <ul class="bnotes">
+        <li data-b="quad"><span class="b">Quadruped</span><span>Cut eyes, upper and lower lids, lashes, pupils, nostrils, and mouth with chin as separate layers. Eyebrows stay in the head mesh.</span></li>
+        <li data-b="real"><span class="b">Realistic</span><span>Straighten the curved hair or scarf before rigging (Tracer).</span></li>
+      </ul>
+      <p class="gap"><strong>Splitting a flat master</strong>, from the most-viewed Live2D, Spine and After Effects separation tutorials:</p>
+      <ul class="does">
+        <li><strong>Paint every part complete.</strong> Repaint the torso under the arms, the back hair under the face, and the ground behind a cut-out object. Moving a part must never reveal a hole.</li>
+        <li><strong>Underfill:</strong> put a darker flat copy of each silhouette under it, so a gap reads as shadow.</li>
+        <li><strong>Round joint caps:</strong> draw a circle on each pivot and merge it into both limb ends.</li>
+        <li>Split eyes into white, iris, highlight, upper and lower lash, lid and brow. Split mouths into lips, teeth, tongue and interior. Cut long hair into A/B/C segments.</li>
+        <li>For painterly art, cut with Select and Mask and rebuild hidden areas with the Clone Stamp.</li>
+      </ul>
+      <ul class="bnotes">
+        <li data-b="env"><span class="b">Background</span><span>Cut each element from the flat painting (Color Range for foliage), repaint what it covered, and reassemble the layers in Spine. Clouds ride a path.</span></li>
+      </ul>
+    </div></li>
+
+    <li class="stage"><div class="card">
+      <div class="titlerow"><h3>Import with tags</h3><span class="owner gen">Generator</span></div>
+      <ul class="does"><li>Import the PSD with tags in the layer names. Pivots are never set in the PSD; the animator places them.</li></ul>
+      <div class="prims"><span class="prim">[bone]</span><span class="prim">[slot]</span><span class="prim">[skin:name]</span><span class="prim m">[mesh]</span><span class="prim m">[mesh:source]</span><span class="prim">[merge]</span><span class="prim">[folder]</span><span class="prim">[ignore]</span><span class="prim">[origin]</span><span class="prim">[overlay]</span></div>
+    </div></li>
+
+    <li class="stage"><div class="card">
+      <div class="titlerow"><h3>Build the skeleton</h3><span class="owner gen">Generator draft</span><span class="owner anim">Animator fixes pivots</span></div>
+      <ul class="does"><li>Never animate <code>root</code>. The first bone is a <code>character</code> container, then <code>pelvis</code> at the centre of mass.</li><li>The pivot goes in the middle of the round joint piece. To find it, loop between two extreme poses and Alt-redraw the bone until the bend looks right.</li><li>Use as few bones as possible. No neck bone: a mesh bridges chest and head.</li></ul>
+      <div class="prims"><span class="prim">container bone</span><span class="prim">Alt-redraw</span><span class="prim">Ctrl+click = bone on image</span></div>
+      <ul class="bnotes">
+        <li data-b="quad"><span class="b">Quadruped</span><span>Body splits into rotation-only <code>hips</code> and <code>chest</code> branches. The chest sits midway between the front legs. Tail is a 2–5 bone chain with a rigid tip. The shadow sits outside the container.</span></li>
+        <li data-b="hum"><span class="b">Cartoon human</span><span>Chain: pelvis → hip → leg → foot, and pelvis → waist → chest → head. Make one 3-bone finger and fake the others.</span></li>
+        <li data-b="real"><span class="b">Realistic</span><span>Put the pelvis a little behind the body. One slot holds two leg attachments (standing vs contact). Digitigrade legs are a 3-bone chain plus foot (Dragonborn).</span></li>
+        <li data-b="cre"><span class="b">Creature</span><span>Wing joints are siblings under the shoulder, each with a red control bone. Each feather row is its own bone chain.</span></li>
+      </ul>
+    </div></li>
+
+    <li class="stage"><div class="card">
+      <div class="titlerow"><h3>Add helper pivots</h3><span class="owner anim">Animator</span><span class="owner cap">Capture</span></div>
+      <ul class="does"><li>Add bones that hold no image of their own. They give the "extra layer" of motion that makes a rig feel soft.</li><li>Turn off inherit rotation on head and shoulders so they stay upright as the torso swings, and inherit scale on shoulders and neck so breathing scales only the chest.</li></ul>
+      <div class="prims"><span class="prim h">face (scale = 3D turn)</span><span class="prim h">back_head −100%</span><span class="prim h">ear chain ≤3</span><span class="prim h">eyelid curve</span><span class="prim h">chest2 bend</span><span class="prim h">chin / mouth-scale</span></div>
+      <ul class="bnotes">
+        <li data-b="quad"><span class="b">Quadruped</span><span>Head rig: back_head, cheek_L/R, ear_L &gt; ear_L1, eyebrows, whiskers (1 bone each), and eye with ball IK, lid and shine. Eyelid bones only curve the lid; the blink is a closed / happy-closed swap. Eyes sit in empty sockets, and both pupils are aimed by one shared target bone.</span></li>
+        <li data-b="hum"><span class="b">Cartoon human</span><span>Extra pelvis pivots (pelvis2/3/5/7) for shoulders and details. A big yellow <code>chest2</code> helper is lightly weighted to bend the whole torso. The <code>face</code> bone took "20 seconds".</span></li>
+        <li data-b="real"><span class="b">Realistic</span><span>A <code>face_3D</code> bone drives the face. The skewed "ring" face rig takes about an hour, so use it for hero heads only.</span></li>
+      </ul>
+    </div></li>
+
+    <li class="stage"><div class="card">
+      <div class="titlerow"><h3>Mesh and weight what bends</h3><span class="owner anim">Animator</span><span class="owner cap">Capture</span></div>
+      <ul class="does"><li>Mesh only what bends. Props, eyes and highlights stay rigid images on a bone.</li><li>Put dense vertices on the inside of a bend and few elsewhere, with bones sitting on vertex rows. Avoid long thin triangles.</li><li>Weights: 100% on one bone away from a joint, with a narrow blend band at the joint. Paint one bone at a time with the others locked, then Smooth. Smooth only spreads along edges, so add manual edges as routes.</li></ul>
+      <div class="prims"><span class="prim m">mesh</span><span class="prim m">manual (orange) edges</span><span class="prim m">bind + lock</span><span class="prim m">smooth / prune</span><span class="prim">avoid deform keys</span></div>
+      <ul class="bnotes">
+        <li data-b="quad"><span class="b">Quadruped</span><span>The body mesh binds to the controller bones, not the IK children. Eyebrows sit inside edge rings so they don't stretch the face.</span></li>
+        <li data-b="hum"><span class="b">Cartoon human</span><span>A leg can be a 5-vertex mesh. Heel weights split about 62/38 between foot and leg. Keep triangles from crossing the scar. Mouth: container bone plus a scale bone locked at 30%.</span></li>
+        <li data-b="real"><span class="b">Realistic</span><span>Face weights fall off from 100% at the centre to about 80% at the nose and 0–5% at the ears. Fingers have 3 outer and 2 inner vertices per bend.</span></li>
+        <li data-b="cre"><span class="b">Creature</span><span>A long raptor body has orange edges across it at every bone.</span></li>
+      </ul>
+      <p class="gap"><strong>This is our biggest gap.</strong> Every part we generate is a rigid image, 100% on one bone.</p>
+    </div></li>
+
+    <li class="stage"><div class="card">
+      <div class="titlerow"><h3>Add constraints</h3><span class="owner gen">Generator</span><span class="owner anim">Animator tunes</span></div>
+      <ul class="does"><li>Use IK only for external contact (ground, prop, hand on waist), and never on an arm just to steer it. 2-bone IK with Stretch; bend the legs slightly before creating it.</li><li>IK plus a transform constraint lets one control bone both move and rotate the foot.</li></ul>
+      <div class="prims"><span class="prim i">IK 2-bone + stretch</span><span class="prim i">target-to-foot transform</span><span class="prim i">transform (follow / mirror)</span><span class="prim i">slider (4.3)</span></div>
+      <ul class="bnotes">
+        <li data-b="quad"><span class="b">Quadruped</span><span>The IK target is a child of the paw. Rear legs get a hand-moved "reversed bone" instead of a double IK. A transform constraint keeps the targets following when airborne. Ears follow the head through transform constraints.</span></li>
+        <li data-b="hum"><span class="b">Cartoon human</span><span>Redraw the foot so it touches the shin end, or stretching slides it. Parent the IK targets outside the leg, under the container. A hand on a cane gets arm IK because it touches something.</span></li>
+        <li data-b="real"><span class="b">Realistic</span><span>Prop drives the hand: the hand is a child of the staff and the arm IK targets the hand.</span></li>
+        <li data-b="cre"><span class="b">Creature</span><span>Wing: transform constraints at 50% make the middle bones follow halfway. Spider: additive, clamped 4.3 transforms make a procedural step. Turtle lips ride a path constraint.</span></li>
+      </ul>
+    </div></li>
+
+    <li class="stage"><div class="card">
+      <div class="titlerow"><h3>Organize for hand-off</h3><span class="owner gen">Generator</span></div>
+      <ul class="does"><li>Colour controllers red with big icons. Put IK targets in a named selection and hide them; don't make them transparent.</li><li>Keep images inside bones and slots in folders.</li></ul>
+      <div class="prims"><span class="prim">bone colour / icon</span><span class="prim">selection groups</span><span class="prim">slot folders</span></div>
+    </div></li>
+
+    <li class="stage"><div class="card">
+      <div class="titlerow"><h3>Animate at 80% rig</h3><span class="owner anim">Animator</span><span class="owner cap">Capture rig edits</span></div>
+      <ul class="does"><li>"Bring it to 80% and then jump into the animation": the rig keeps changing during animation.</li><li>Idle: a 60-frame breathing loop, offset limb rotations, then duplicated variations. Split the hip's X and Y timelines so paths curve.</li></ul>
+      <div class="prims"><span class="prim">Ctrl+Shift+L key all</span><span class="prim">ghosting</span><span class="prim">offsets</span><span class="prim">separate X/Y</span></div>
+      <ul class="bnotes">
+        <li data-b="quad"><span class="b">Quadruped</span><span>Jump: animate only the main bone's Y, then rotation. The face goes before the legs, and tail, ears and fur come last. Front legs lift first and land first.</span></li>
+        <li data-b="hum"><span class="b">Cartoon human</span><span>Weight-shift variation: the hip leads the foot by 8 frames. Key everything at both transition edges.</span></li>
+      </ul>
+    </div></li>
+  </ol>
+</section>
+
+<section aria-labelledby="s-h" style="display:grid;gap:16px">
+  <h2 id="s-h">Where the extra pivots go</h2>
+  <p class="lede">Schematics based on the cow, pig and rabbit rigs and the mutant brute rig. Grey bones carry images. Amber bones are helper pivots that exist only for smoother motion.</p>
+  <div class="skels">
+    <figure data-b="quad">
+      <div class="svgbox">
+      <svg viewBox="0 0 540 330" width="100%" role="img" aria-label="Quadruped skeleton schematic">
+        <line class="gnd" x1="20" y1="292" x2="520" y2="292"/>
+        <ellipse class="shadow" cx="260" cy="296" rx="150" ry="9"/>
+        <path class="msh" d="M150 112 Q160 92 250 96 Q330 92 345 110 L352 170 Q330 190 250 186 Q170 192 150 170 Z"/>
+        <!-- far legs -->
+        <polyline class="bn far" points="192,160 184,212 198,252 194,282"/>
+        <polyline class="bn far" points="342,160 348,214 343,282"/>
+        <!-- spine -->
+        <polyline class="bn" points="255,150 180,142"/>
+        <polyline class="bn" points="255,150 330,138"/>
+        <circle class="pv" cx="255" cy="150" r="4.5"/>
+        <!-- hips/chest helpers -->
+        <circle class="pv h" cx="180" cy="142" r="6"/>
+        <circle class="pv h" cx="330" cy="138" r="6"/>
+        <!-- tail -->
+        <polyline class="bn" points="176,138 150,122 126,116"/>
+        <polyline class="hp" points="126,116 104,124"/>
+        <!-- rear leg -->
+        <polyline class="bn" points="176,150 166,205 182,246"/>
+        <polyline class="hp" points="182,246 178,280"/>
+        <circle class="tg" cx="178" cy="284" r="5"/>
+        <!-- front leg -->
+        <polyline class="bn" points="326,150 332,208 326,272"/>
+        <circle class="tg" cx="326" cy="282" r="5"/>
+        <line class="ikl" x1="326" y1="282" x2="332" y2="208"/>
+        <!-- head -->
+        <polyline class="bn" points="332,134 398,96"/>
+        <circle class="pv" cx="398" cy="96" r="4.5"/>
+        <polyline class="hp" points="398,96 372,82"/>
+        <circle class="pv h" cx="372" cy="82" r="4"/>
+        <polyline class="hp" points="402,82 396,56 382,38"/>
+        <polyline class="bn" points="414,104 432,104"/>
+        <circle class="tg" cx="436" cy="104" r="4"/>
+        <polyline class="hp" points="408,118 432,130 428,146"/>
+        <!-- container cross -->
+        <path class="cross" d="M255 286 v12 M249 292 h12"/>
+        <!-- inherit off marker on head -->
+        <circle class="inh" cx="398" cy="96" r="10"/>
+        <!-- labels -->
+        <text x="240" y="170">body</text>
+        <text class="lbl-h" x="188" y="130">hips</text>
+        <text class="lbl-h" x="318" y="126" text-anchor="end">chest</text>
+        <text x="30" y="104">tail 1–5</text><text class="lbl-h" x="30" y="146">rigid tip</text>
+        <text class="lbl-h" x="196" y="270">reversed bone</text>
+        <text class="lbl-i" x="196" y="306">IK target</text>
+        <text class="lbl-i" x="340" y="282">target = child of paw</text>
+        <text class="lbl-h" x="364" y="72" text-anchor="end">back_head −100%</text>
+        <text class="lbl-h" x="392" y="28">ear ≤3 bones</text>
+        <text class="lbl-i" x="446" y="100">eye ball IK</text>
+        <text class="lbl-h" x="440" y="140">mouth › chin</text>
+        <text class="lbl-m" x="206" y="202">body mesh</text><text class="lbl-m" x="206" y="215">→ hips + chest</text>
+        <text class="lbl-mute" x="268" y="318">character (container) · shadow outside it</text>
+        <text class="svg-lbl-acc" x="418" y="80">head</text>
+      </svg>
+      </div>
+      <figcaption><strong>Quadruped animal.</strong> The hips/chest split under the body gives the spine its curve. Ears, back-of-head and tail are helper chains. Far legs are simplified.</figcaption>
+    </figure>
+
+    <figure data-b="hum">
+      <div class="svgbox">
+      <svg viewBox="0 0 520 430" width="100%" role="img" aria-label="Cartoon humanoid skeleton schematic">
+        <line class="gnd" x1="20" y1="398" x2="500" y2="398"/>
+        <g transform="translate(50,0)">
+        <path class="msh" d="M150 148 Q210 132 270 148 L262 236 Q210 252 158 236 Z"/>
+        <path class="msh" d="M178 236 L170 330 L196 330 L204 240 Z"/>
+        <rect class="msh" x="198" y="120" width="24" height="26" rx="6"/>
+        <!-- pelvis + legs -->
+        <circle class="pv" cx="210" cy="236" r="7"/>
+        <polyline class="bn" points="210,242 186,250"/>
+        <polyline class="bn" points="186,250 182,318 178,380"/>
+        <polyline class="bn" points="210,242 236,250 240,318 244,380"/>
+        <circle class="tg" cx="176" cy="390" r="5"/><circle class="tg" cx="246" cy="390" r="5"/>
+        <line class="ikl" x1="176" y1="390" x2="182" y2="318"/><line class="ikl" x1="246" y1="390" x2="240" y2="318"/>
+        <!-- spine -->
+        <polyline class="bn" points="210,236 210,200 210,152"/>
+        <circle class="pv" cx="210" cy="200" r="4.5"/><circle class="pv" cx="210" cy="152" r="4.5"/>
+        <polyline class="bn" points="210,146 210,92"/>
+        <circle class="pv" cx="210" cy="118" r="4.5"/>
+        <!-- helpers -->
+        <polyline class="hp" points="210,182 268,170"/>
+        <circle class="pv h" cx="210" cy="182" r="5"/>
+        <polyline class="hp" points="210,236 254,222"/>
+        <circle class="pv h" cx="210" cy="78" r="6"/>
+        <!-- shoulders + arms (FK) -->
+        <polyline class="bn" points="210,154 162,156"/>
+        <polyline class="bn" points="210,154 258,156"/>
+        <circle class="inh" cx="162" cy="156" r="9"/><circle class="inh" cx="258" cy="156" r="9"/><circle class="inh" cx="210" cy="118" r="10"/>
+        <polyline class="bn" points="162,156 144,210 138,262"/>
+        <polyline class="bn" points="258,156 276,210 282,262"/>
+        <!-- container -->
+        <path class="cross" d="M210 392 v12 M204 398 h12"/>
+        <text x="220" y="204">waist</text>
+        </g>
+        <!-- labels, kept in the side margins -->
+        <text x="176" y="238" text-anchor="end">pelvis</text>
+        <text x="176" y="300" text-anchor="end">hip › leg › foot</text>
+        <text class="lbl-m" x="176" y="330" text-anchor="end">leg mesh: 5 verts</text>
+        <text class="lbl-mute" x="176" y="262" text-anchor="end">arms: FK, no IK</text>
+        <text class="svg-lbl-acc" x="176" y="150" text-anchor="end">inherit rotation off</text>
+        <text class="svg-lbl-acc" x="176" y="164" text-anchor="end">(head, shoulders)</text>
+        <text class="lbl-i" x="306" y="394">IK + target-to-foot</text>
+        <text class="lbl-h" x="352" y="82">face (scale = 3D turn)</text>
+        <text class="lbl-m" x="352" y="126">neck = mesh, no bone</text>
+        <text class="lbl-h" x="352" y="172">chest2 bend helper</text>
+        <text class="lbl-h" x="352" y="224">pelvis2/5/7 extra pivots</text>
+        <text class="lbl-mute" x="260" y="420" text-anchor="middle">character (container) — root never animated</text>
+      </svg>
+      </div>
+      <figcaption><strong>Cartoon humanoid.</strong> A short spine with no neck bone, foot IK with one control, FK arms, and helper pivots for the torso bend and the fake 3D face.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section aria-labelledby="l-h" style="display:grid;gap:16px">
+  <h2 id="l-h">The feedback loop to capture</h2>
+  <p class="lede">The generator emits a first-pass Spine project. The animator fixes it in Spine. Diffing the exported JSON against what we generated gives labelled corrections, tagged with the same bucket and stage as the learnings.</p>
+  <div class="loop svgbox">
+    <svg viewBox="0 0 980 300" width="100%" style="min-width:720px" role="img" aria-label="Feedback loop diagram">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ar-head" d="M0 0 L10 5 L0 10 z"/></marker></defs>
+      <rect class="nd gen" x="20" y="30" width="170" height="74" rx="8"/>
+      <text class="t-gen" x="36" y="58">Master image</text><text class="t-sub" x="36" y="80">locked, A-pose, front view</text>
+      <rect class="nd gen" x="230" y="30" width="170" height="74" rx="8"/>
+      <text class="t-gen" x="246" y="58">Exploded parts</text><text class="t-sub" x="246" y="80">round ends, straightened copies</text>
+      <rect class="nd gen" x="440" y="30" width="170" height="74" rx="8"/>
+      <text class="t-gen" x="456" y="58">Spine project v0</text><text class="t-sub" x="456" y="80">bones, helpers, meshes, IK</text>
+      <rect class="nd anim" x="650" y="30" width="310" height="74" rx="8"/>
+      <text class="t-anim" x="666" y="58">Animator in Spine Professional</text><text class="t-sub" x="666" y="80">Alt-redraw pivots · add helpers · re-mesh · repaint</text>
+      <rect class="nd cap" x="650" y="196" width="310" height="74" rx="8"/>
+      <text class="t-cap" x="666" y="224">Export JSON → diff vs v0</text><text class="t-sub" x="666" y="246">moved / added bones · weights · constraints</text>
+      <rect class="nd cap" x="340" y="196" width="270" height="74" rx="8"/>
+      <text class="t-cap" x="356" y="224">Annotated corrections</text><text class="t-sub" x="356" y="246">bucket · stage · primitive · before/after</text>
+      <rect class="nd gen" x="20" y="196" width="280" height="74" rx="8"/>
+      <text class="t-gen" x="36" y="224">Generator rules, per bucket</text><text class="t-sub" x="36" y="246">next rig starts closer to the animator's</text>
+      <path class="ar" d="M190 67 H226" marker-end="url(#ah)"/>
+      <path class="ar" d="M400 67 H436" marker-end="url(#ah)"/>
+      <path class="ar" d="M610 67 H646" marker-end="url(#ah)"/>
+      <path class="ar" d="M805 104 V192" marker-end="url(#ah)"/>
+      <path class="ar" d="M650 233 H614" marker-end="url(#ah)"/>
+      <path class="ar" d="M340 233 H304" marker-end="url(#ah)"/>
+      <path class="ar" d="M160 196 V150 Q160 130 300 130 H500 Q525 130 525 108" marker-end="url(#ah)"/>
+    </svg>
+  </div>
+</section>
+
+<section aria-labelledby="k-h" style="display:grid;gap:16px">
+  <h2 id="k-h">Shortcuts that do several things at once</h2>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Keys</th><th>What it does</th><th>Seen in</th></tr></thead>
+      <tbody>
+        <tr><td>Create tool + <kbd>Ctrl</kbd>+click image</td><td>Places a bone centred on that image</td><td><a href="https://youtu.be/9Zv-Mb7zi2U?t=29">Rigging Part 1, 0:29</a></td></tr>
+        <tr><td>Create tool + <kbd>Alt</kbd> + draw</td><td>Redraws a bone's pivot and angle while keeping its children and attachments, the main pivot-fixing move</td><td><a href="https://youtu.be/_TikdZ9LCGs?t=4">Mastering Bones, 0:04</a></td></tr>
+        <tr><td><kbd>Alt</kbd> + drag bone tip</td><td>Lengthens a bone and pushes all its children along</td><td><a href="https://youtu.be/wxC9yiYwg4c?t=517">Common Mistakes, 8:37</a></td></tr>
+        <tr><td>Select slots → <kbd>P</kbd> → click bone</td><td>Re-parents many attachments into one bone</td><td><a href="https://youtu.be/9Zv-Mb7zi2U?t=549">Rigging Part 1, 9:09</a></td></tr>
+        <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></td><td>Keys everything visible. Used at both edges of an idle variation so nothing outside it changes</td><td><a href="https://youtu.be/jKzIo566gnk?t=1388">Idle Part 2, 23:08</a></td></tr>
+        <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd> + drag keys</td><td>Copies keyframes in the dopesheet</td><td><a href="https://youtu.be/wxC9yiYwg4c?t=548">Common Mistakes, 9:08</a></td></tr>
+        <tr><td><kbd>Ctrl</kbd>+<kbd>Alt</kbd> + drag keys</td><td>Offsets timelines for overlap</td><td><a href="https://youtu.be/jKzIo566gnk?t=764">Idle Part 2, 12:44</a></td></tr>
+        <tr><td><kbd>Shift</kbd>+click vertex</td><td>Selects the whole connected ring (also in Weights since 4.2)</td><td><a href="https://youtu.be/Z_9Rydrxd90?t=31">Orange lines, 0:31</a></td></tr>
+        <tr><td><kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>V</kbd></td><td>Stores a vertex selection and copies positions, so you can restore an eye after a broad face edit</td><td><a href="https://youtu.be/qEc-mKRTfHY?t=585">Meshes, 9:45</a></td></tr>
+        <tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd> · <kbd>Ctrl</kbd>+<kbd>Up</kbd></td><td>Hides all bones · jumps to the parent in the tree</td><td><a href="https://youtu.be/_TikdZ9LCGs?t=330">Mastering Bones, 5:30</a></td></tr>
+        <tr><td>Double middle-click a bone (4.3)</td><td>Selects all its descendants</td><td><a href="https://youtu.be/zHvQ_GqJsQQ?t=85">4.3 beta, 1:25</a></td></tr>
+        <tr><td>Photoshop <kbd>Ctrl</kbd>+<kbd>U</kbd> then <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>U</kbd></td><td>Recolours one part, then reapplies the same settings to another layer</td><td><a href="https://youtu.be/Y01o76_WfqI?t=252">Tracer PSD, 4:12</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot">Shortcuts are taken from auto-captions on the Windows build; on a Mac, use Cmd for Ctrl. The full set of 112 bucketed learnings, with frames, is in <code>docs/research/armanimation-spine/learnings.jsonl</code> in the repo. Meshes, weights, IK and constraints need Spine Professional.</p>
+</section>
+</div>
+
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.filter button'));
+  function apply(f){
+    btns.forEach(function(b){b.setAttribute('aria-pressed', String(b.dataset.f===f));});
+    document.querySelectorAll('[data-b]').forEach(function(el){ el.hidden = !(f==='all' || el.dataset.b===f); });
+    try{ localStorage.setItem('rigmap-bucket', f); }catch(e){}
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ apply(b.dataset.f); }); });
+  var saved='all'; try{ saved = localStorage.getItem('rigmap-bucket') || 'all'; }catch(e){}
+  apply(saved);
+})();
+</script>

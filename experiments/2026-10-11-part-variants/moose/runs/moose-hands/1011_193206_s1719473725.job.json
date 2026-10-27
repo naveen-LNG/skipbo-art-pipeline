@@ -1,0 +1,75 @@
+{
+  "prompt_id": "09631d94-8b48-4db4-abcc-1c950cc923f2",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 1719473725,
+  "fingerprint": "e37e83156eca",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the hands of the character from image_1 as a sheet of swappable hand poses for 2D skeletal animation in Spine. Every hand on the sheet is the same hand at the same size as in image_1, painted again in a different pose, so any one of them can replace another at the end of the arm.\n\nTHE PIECES (twelve hands, each painted exactly once), in two rows of six, left to right:\nRow 1: the hand at the end of the character's left arm (the arm on the right side of image_1), in these six poses: relaxed (exactly the hoof hand of image_1, open and relaxed); open (palm facing the viewer, all fingers spread wide, as in a wave); fist (fingers curled into a soft round fist); point (index finger stretched straight down, the other fingers curled); thumbs-up (fingers curled into a fist, thumb sticking straight out sideways, away from the body); grip (fingers curled loosely forward and the thumb pressed against the side of the first finger, as when pinching something thin).\nRow 2: the hand at the end of the character's right arm (the arm on the left side of image_1), in the same six poses in the same order.\n\nEvery hand is painted the same way up, as if hanging at the end of an arm that points straight down: the wrist end is at the top of the piece, fully rounded and as wide as the wrist, and the hand extends downwards from it. This holds for every pose, including the open hand, the fist and the thumbs-up: none of them has its wrist at the bottom or at the side. Each hand includes only the hand itself, from the wrist down, in the colours and painting of the hands in image_1; the sleeve, cuff and arm belong to other pieces and appear nowhere on this sheet. Every hand is the same chunky cartoon mitten as the hands in image_1: the same number of short, fat, rounded fingers, a simple soft-toy shape and the same flat colour, never a detailed or realistic human hand with knuckles and nails. The hands hold nothing.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Twelve hands in two rows of six, all the same size as the hands in image_1, each one clearly a different pose in the listed order.\n2. Every hand the same way up, wrist at the top, rounded wrist end, no sleeve or cuff; chunky mittens like image_1 with its number of fingers; nothing held.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA kind grandpa moose train conductor: dark-brown fur, a big rounded tan muzzle with two large dark nostrils, small black eyes, bushy cream eyebrows, round ears and broad flat antlers. Navy conductor cap with a gold band and a round gold badge, red scarf with a small gold bell, navy vest with three gold buttons and a gold belt buckle over a cream long-sleeved shirt, brown trousers, dark-brown hoof hands and hooves.",
+  "vars": {
+    "ASPECT": "3:2",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "HANDS": "relaxed (exactly the hoof hand of image_1, open and relaxed); open (palm facing the viewer, all fingers spread wide, as in a wave); fist (fingers curled into a soft round fist); point (index finger stretched straight down, the other fingers curled); thumbs-up (fingers curled into a fist, thumb sticking straight out sideways, away from the body); grip (fingers curled loosely forward and the thumb pressed against the side of the first finger, as when pinching something thin).",
+    "CHARACTER": "A kind grandpa moose train conductor: dark-brown fur, a big rounded tan muzzle with two large dark nostrils, small black eyes, bushy cream eyebrows, round ears and broad flat antlers. Navy conductor cap with a gold band and a round gold badge, red scarf with a small gold bell, navy vest with three gold buttons and a gold belt buckle over a cream long-sleeved shirt, brown trousers, dark-brown hoof hands and hooves.",
+    "PREFIX": "agent/skipbo/moose-hands",
+    "IMAGE_1": "agent/skipbo/moose_master_12058fc17f.png",
+    "IMAGE_2": "agent/skipbo/shipped-hippo-atlas_3ce5141f8c.jpg"
+  },
+  "inputs": {
+    "1": "/work/comfy/experiments/2026-10-11-moose-parts/moose-spine-v1/moose_master.png",
+    "2": "/work/comfy/plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas.jpg"
+  },
+  "criteria": [
+    "12 hoof mittens like master, wrist up"
+  ],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-11-part-variants/moose/runs/moose-hands/1011_193206_s1719473725_n2_00.png"
+  ],
+  "seconds": 32.5,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the hands of the character from image_1 as a sheet of swappable hand poses for 2D skeletal animation in Spine. Every hand on the sheet is the same hand at the same size as in image_1, painted again in a different pose, so any one of them can replace another at the end of the arm.\n\nTHE PIECES (twelve hands, each painted exactly once), in two rows of six, left to right:\nRow 1: the hand at the end of the character's left arm (the arm on the right side of image_1), in these six poses: relaxed (exactly the hoof hand of image_1, open and relaxed); open (palm facing the viewer, all fingers spread wide, as in a wave); fist (fingers curled into a soft round fist); point (index finger stretched straight down, the other fingers curled); thumbs-up (fingers curled into a fist, thumb sticking straight out sideways, away from the body); grip (fingers curled loosely forward and the thumb pressed against the side of the first finger, as when pinching something thin).\nRow 2: the hand at the end of the character's right arm (the arm on the left side of image_1), in the same six poses in the same order.\n\nEvery hand is painted the same way up, as if hanging at the end of an arm that points straight down: the wrist end is at the top of the piece, fully rounded and as wide as the wrist, and the hand extends downwards from it. This holds for every pose, including the open hand, the fist and the thumbs-up: none of them has its wrist at the bottom or at the side. Each hand includes only the hand itself, from the wrist down, in the colours and painting of the hands in image_1; the sleeve, cuff and arm belong to other pieces and appear nowhere on this sheet. Every hand is the same chunky cartoon mitten as the hands in image_1: the same number of short, fat, rounded fingers, a simple soft-toy shape and the same flat colour, never a detailed or realistic human hand with knuckles and nails. The hands hold nothing.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Twelve hands in two rows of six, all the same size as the hands in image_1, each one clearly a different pose in the listed order.\n2. Every hand the same way up, wrist at the top, rounded wrist end, no sleeve or cuff; chunky mittens like image_1 with its number of fingers; nothing held.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA kind grandpa moose train conductor: dark-brown fur, a big rounded tan muzzle with two large dark nostrils, small black eyes, bushy cream eyebrows, round ears and broad flat antlers. Navy conductor cap with a gold band and a round gold badge, red scarf with a small gold bell, navy vest with three gold buttons and a gold belt buckle over a cream long-sleeved shirt, brown trousers, dark-brown hoof hands and hooves.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "3:2",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/moose_master_12058fc17f.png"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas_3ce5141f8c.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/moose-hands"
+      }
+    }
+  }
+}

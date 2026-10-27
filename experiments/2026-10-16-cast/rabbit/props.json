@@ -1,0 +1,4 @@
+{
+ "flag": {"image": "props/flag.png", "kind": "held", "grip": [0.035, 0.80], "tip": [0.035, 0.02], "length": 0.34},
+ "hurdle": {"image": "props/hurdle.png", "kind": "ground", "base": [0.5, 0.99], "height": 0.2, "front": 0.05}
+}

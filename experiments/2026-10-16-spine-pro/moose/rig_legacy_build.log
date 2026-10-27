@@ -1,0 +1,29 @@
+global scale: 1.344 master px per part px (annotated neck-to-waist)
+  expression heads matched: err 0.0366, scale 1.14
+  bell           err 0.0505  scale 0.90  angle 0
+  cap            err 0.0145  scale 1.10  angle 0
+  head_base      err 0.0256  scale 1.10  angle 0
+  antler_l       err -0.0749  scale 0.87  angle -1  (side and root held)
+  antler_r       err -0.0760  scale 0.93  angle 6  (side and root held)
+  ear_l          err -0.0487  scale 0.87  angle -18  (side and root held)
+  ear_r          err -0.0469  scale 0.87  angle 9  (side and root held)
+  ? doubt: {'part': 'upperarm_l', 'reason': 'shoulder_outside_torso', 'moved_px': 25.8}
+  ? doubt: {'part': 'upperarm_r', 'reason': 'shoulder_outside_torso', 'moved_px': 25.8}
+  variant moose_upperarm_l_raised.png: skipped (that arm is one sleeve mesh)
+  variant moose_upperarm_r_raised.png: skipped (that arm is one sleeve mesh)
+  variants: moose_hand_l_fist, moose_hand_l_grip, moose_hand_l_open, moose_hand_l_point, moose_hand_l_thumbsup, moose_hand_r_fist, moose_hand_r_grip, moose_hand_r_open, moose_hand_r_point, moose_hand_r_thumbsup, moose_hoof_l_tiptoe, moose_hoof_r_tiptoe
+  ! variant moose_hand_l_fist: scale 0.297 vs 0.62 for its sheet-mates; check the piece
+  ! variant moose_hand_l_point: scale 0.26 vs 0.62 for its sheet-mates; check the piece
+  ! variant moose_hand_r_fist: scale 0.299 vs 0.62 for its sheet-mates; check the piece
+  ! variant moose_hand_r_point: scale 0.262 vs 0.62 for its sheet-mates; check the piece
+  wave forearm angle (clear of the head through the wave): 62.5
+  wave (l): open hand, palm, wave pose, thumb at 152 deg (target 152, off 0)
+  cheer_jump pose (clear of the head, mirrored): upper arm 40.0 deg, forearm 60.0 deg
+  cheer_jump (l): fist hand, palm, cheer pose, thumb at 150 deg (target 150, off 0)
+  cheer_jump (r): fist hand, palm, cheer pose, thumb at 30 deg (target 30, off 0)
+  thumbs_up (l): thumbsup hand, palm, outward pose, thumb at 100 deg (target 90, off 10)
+  point (l): point hand, palm, outward pose, thumb at 95 deg (target 90, off 5)
+  hold_card (l): grip hand, back, hold_card pose, thumb at 80 deg (target 90, off 10)
+  upperarm_l: sleeve mesh arm_l, 27 rows, elbow -101..94 deg needed, fold-free -101..94 (weights ('smooth', -1.15, 0.6, 0.8, 0.105, ((0.5, -0.9, 0.3), (0.0, -0.9, 0.3), 1.0), None))
+  upperarm_r: sleeve mesh arm_r, 27 rows, elbow -94..10 deg needed, fold-free -94..10 (weights ('smooth', -1.15, 0.6, 0.8, 0.0, None, 0.0))
+wrote experiments/2026-10-16-spine-pro/moose/rig_legacy/moose.json (19 bones, 16 slots, 37 images, animations: blink, idle, wave, cheer_jump, thumbs_up, point, hold_card, emotions, walk, run, squat)

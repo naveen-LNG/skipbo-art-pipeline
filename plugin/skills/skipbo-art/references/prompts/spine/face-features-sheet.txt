@@ -1,0 +1,29 @@
+IMAGE ROLES:
+image_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.
+image_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.
+Shading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.
+Colour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.
+Edges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.
+Surfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.
+Eyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.
+
+TASK:
+Paint the facial features of the character from image_1 as a sheet of separate swappable pieces for facial animation in Spine, so each piece drops straight onto the head base.
+
+THE PIECES (thirteen, each painted exactly once), laid out in these rows from left to right:
+Row 1: scale anchor, the character's head base: the head from image_1 with its snout, muzzle, nose or beak and nostrils, with plain eye areas and a plain mouth area, and without any hat, horn, antler, ear or hair tuft. Every other piece on this sheet is painted at exactly the size it has on this head: measure each eye, eyebrow and mouth against the width of the head in image_1 and paint it at that same fraction of this head's width. The features on a character like this are small compared with the head, so an eye is usually only about a tenth of the head's width and a mouth well under half of it.
+Row 2: left eye open, right eye open, left eye closed, right eye closed. Each eye sits on a small soft patch, only slightly larger than the eye itself, of the head's own skin, fur or feathers; an open eye is glossy and dark with one small white highlight, a closed eye is a gentle downward-curved eyelid line.
+Row 3: left eyebrow, right eyebrow, left eyebrow raised, right eyebrow raised. Each eyebrow is painted on its own with empty background around it, the raised ones arched up in surprise. If the character has no eyebrows, paint four small soft brow-ridge shapes in the head's own colour.
+Row 4: mouth smile, mouth open happy with a dark-red inside and a pink tongue, mouth O as when saying "oh", mouth sad. Each mouth sits on a small oval patch, only slightly larger than the mouth itself, of the surface just below the nose or beak; the nostrils stay on the head base and appear nowhere in this row.
+All pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these thirteen pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.
+
+FINAL CHECK:
+1. The head base is the head from image_1 without its hat, horns or ears, and every feature has the same size relative to it as on the head in image_1.
+2. Every piece matches the colours and painting of the face in image_1.
+3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.
+4. Every piece separated by empty background; flat light grey background; no text.
+
+CHARACTER NOTES (from the art director, they override image_1 where they differ):
+{{CHARACTER}}

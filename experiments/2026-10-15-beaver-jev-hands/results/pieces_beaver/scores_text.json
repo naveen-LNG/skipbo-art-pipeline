@@ -1,0 +1,90 @@
+{
+ "all": {
+  "n": 112,
+  "finger_dir": {
+   "exact_clear": 0.75,
+   "n_clear": 112,
+   "within45": 0.804,
+   "median_err_deg": 8.5,
+   "p90_err_deg": 65.9
+  },
+  "thumb_dir": {
+   "exact_clear": 0.688,
+   "n_clear": 112,
+   "within45": 0.759,
+   "median_err_deg": 10.4,
+   "p90_err_deg": 52.2
+  },
+  "facing": {
+   "acc": 0.625,
+   "auroc": 0.39,
+   "n_palm": 32,
+   "n_back": 80
+  },
+  "gesture": {
+   "acc": 0.688
+  },
+  "painted_direct": 0.482,
+  "painted_derived": 0.607,
+  "painted_derived_true_facing": 0.982
+ },
+ "beaver": {
+  "n": 112,
+  "finger_dir": {
+   "exact_clear": 0.75,
+   "n_clear": 112,
+   "within45": 0.804,
+   "median_err_deg": 8.5,
+   "p90_err_deg": 65.9
+  },
+  "thumb_dir": {
+   "exact_clear": 0.688,
+   "n_clear": 112,
+   "within45": 0.759,
+   "median_err_deg": 10.4,
+   "p90_err_deg": 52.2
+  },
+  "facing": {
+   "acc": 0.625,
+   "auroc": 0.39,
+   "n_palm": 32,
+   "n_back": 80
+  },
+  "gesture": {
+   "acc": 0.688
+  },
+  "painted_direct": 0.482,
+  "painted_derived": 0.607,
+  "painted_derived_true_facing": 0.982
+ },
+ "unmirrored_upright": {
+  "n": 7,
+  "finger_dir": {
+   "exact_clear": 0.429,
+   "n_clear": 7,
+   "within45": 0.714,
+   "median_err_deg": 36.1,
+   "p90_err_deg": 82.6
+  },
+  "thumb_dir": {
+   "exact_clear": 1.0,
+   "n_clear": 7,
+   "within45": 1.0,
+   "median_err_deg": 9.3,
+   "p90_err_deg": 15.6
+  },
+  "facing": {
+   "acc": 0.571,
+   "auroc": 0.2,
+   "n_palm": 2,
+   "n_back": 5
+  },
+  "gesture": {
+   "acc": 0.571
+  },
+  "painted_direct": 0.429,
+  "painted_derived": 0.571,
+  "painted_derived_true_facing": 1.0
+ },
+ "tokens": 191001
+}

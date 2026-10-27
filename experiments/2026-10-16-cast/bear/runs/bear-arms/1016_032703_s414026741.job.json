@@ -1,0 +1,73 @@
+{
+  "prompt_id": "7abbc069-8d5a-4e5b-b5d6-13b56322e45d",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 414026741,
+  "fingerprint": "540ef60d46c7",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the two arms of the character from image_1, without the paws, as separate pieces for 2D skeletal animation in Spine. Each arm becomes one bending mesh, so it must be painted whole and straight.\n\nTHE PIECES (two arms, each painted exactly once), side by side in one row, large, together filling most of the sheet:\nLeft: the arm of the character's right side (the arm on the left side of image_1).\nRight: the arm of the character's left side (the arm on the right side of image_1).\nA whole arm is the white shirt sleeve pushed up to the elbow plus the bare forearm: from the rounded white shoulder down to the thick soft white rolled cuff at the elbow halfway down, then the bare honey-brown furry forearm below the roll down to the wrist, as ONE piece from the shoulder all the way down to the wrist: painted straight and upright with the shoulder end at the top, rounded like the end of a sausage, the same width as image_1's arm along its whole length, and ending at the bottom in a rounded furry wrist end where the paw would join. There is no paw, mitten or body piece on the sheet.\n\nAll pieces are laid out on one flat plain light grey background. The two arms stand apart with a clear gap of empty background between them. They never touch, never overlap, and stay fully inside the frame, with an even margin of background below each wrist. All pieces share one scale, the scale of the arms in image_1. The sheet contains only these two arms, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly two arms in one row, nothing else on the sheet: no paws.\n2. Each arm one straight upright piece from a rounded shoulder end down to its rounded furry wrist, the rolled cuff at the elbow, the same width as image_1's arm.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Flat light grey background below and around both arms; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA big friendly brown bear baker with a chunky, heavy, round body: warm honey-brown fur, a round light-tan muzzle with a dark-brown nose, small round ears, and a big round belly. A white baker's shirt whose sleeves are pushed up to the elbows in a thick soft white roll; below the roll the honey-brown furry forearms are bare down to the paws. A short red-and-white checked apron tied at the waist with a red waistband over the shirt, hanging over the front of the trousers to just below the crotch. Wide brown trousers on short sturdy legs. Dark-brown wooden clogs. Dark chocolate-brown mitten paws, darker than the fur. No hat, no tail. Both paws are empty: no tools or props.",
+  "vars": {
+    "ASPECT": "4:3",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "CHARACTER": "A big friendly brown bear baker with a chunky, heavy, round body: warm honey-brown fur, a round light-tan muzzle with a dark-brown nose, small round ears, and a big round belly. A white baker's shirt whose sleeves are pushed up to the elbows in a thick soft white roll; below the roll the honey-brown furry forearms are bare down to the paws. A short red-and-white checked apron tied at the waist with a red waistband over the shirt, hanging over the front of the trousers to just below the crotch. Wide brown trousers on short sturdy legs. Dark-brown wooden clogs. Dark chocolate-brown mitten paws, darker than the fur. No hat, no tail. Both paws are empty: no tools or props.",
+    "SLEEVE": "the white shirt sleeve pushed up to the elbow plus the bare forearm: from the rounded white shoulder down to the thick soft white rolled cuff at the elbow halfway down, then the bare honey-brown furry forearm below the roll down to the wrist",
+    "PREFIX": "agent/skipbo/bear-arms",
+    "IMAGE_1": "agent/skipbo/bear_master_b26bf4df40.png",
+    "IMAGE_2": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+  },
+  "inputs": {
+    "1": "bear_master.png",
+    "2": "../../../plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas-small.jpg"
+  },
+  "criteria": [],
+  "outputs": [
+    "/work/comfy/.claude/worktrees/spine-pro/experiments/2026-10-16-cast/bear/runs/bear-arms/1016_032703_s414026741_n2_00.png"
+  ],
+  "seconds": 262.2,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the two arms of the character from image_1, without the paws, as separate pieces for 2D skeletal animation in Spine. Each arm becomes one bending mesh, so it must be painted whole and straight.\n\nTHE PIECES (two arms, each painted exactly once), side by side in one row, large, together filling most of the sheet:\nLeft: the arm of the character's right side (the arm on the left side of image_1).\nRight: the arm of the character's left side (the arm on the right side of image_1).\nA whole arm is the white shirt sleeve pushed up to the elbow plus the bare forearm: from the rounded white shoulder down to the thick soft white rolled cuff at the elbow halfway down, then the bare honey-brown furry forearm below the roll down to the wrist, as ONE piece from the shoulder all the way down to the wrist: painted straight and upright with the shoulder end at the top, rounded like the end of a sausage, the same width as image_1's arm along its whole length, and ending at the bottom in a rounded furry wrist end where the paw would join. There is no paw, mitten or body piece on the sheet.\n\nAll pieces are laid out on one flat plain light grey background. The two arms stand apart with a clear gap of empty background between them. They never touch, never overlap, and stay fully inside the frame, with an even margin of background below each wrist. All pieces share one scale, the scale of the arms in image_1. The sheet contains only these two arms, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly two arms in one row, nothing else on the sheet: no paws.\n2. Each arm one straight upright piece from a rounded shoulder end down to its rounded furry wrist, the rolled cuff at the elbow, the same width as image_1's arm.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Flat light grey background below and around both arms; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA big friendly brown bear baker with a chunky, heavy, round body: warm honey-brown fur, a round light-tan muzzle with a dark-brown nose, small round ears, and a big round belly. A white baker's shirt whose sleeves are pushed up to the elbows in a thick soft white roll; below the roll the honey-brown furry forearms are bare down to the paws. A short red-and-white checked apron tied at the waist with a red waistband over the shirt, hanging over the front of the trousers to just below the crotch. Wide brown trousers on short sturdy legs. Dark-brown wooden clogs. Dark chocolate-brown mitten paws, darker than the fur. No hat, no tail. Both paws are empty: no tools or props.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "4:3",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/bear_master_b26bf4df40.png"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/bear-arms"
+      }
+    }
+  }
+}

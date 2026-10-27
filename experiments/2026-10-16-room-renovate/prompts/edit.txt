@@ -1,0 +1,5 @@
+Edit the attached picture, image 1. It is a room in a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Change one thing only: {{TARGET}}
+
+{{NEW}}
+
+Everything else in the picture stays exactly as it is, as though untouched: the same camera, the same framing and crop, the same perspective, every other piece of furniture, every wall, the floor, the ceiling, the light and the colours outside the changed part are identical to image 1, pixel for pixel. Nothing moves, nothing is added anywhere else and nothing else is repaired. The new part is painted in exactly the same style as the rest of the picture: clean simplified rounded masses, soft broad shading with one wide light side, one wide shade side and one soft highlight, no outlines, no texture, no fine detail, and bright clean saturated colours. No characters, no text.

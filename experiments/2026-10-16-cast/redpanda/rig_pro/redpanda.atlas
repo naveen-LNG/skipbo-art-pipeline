@@ -1,0 +1,407 @@
+images/redpanda_arm_l.png
+size: 1108,1605
+filter: Linear,Linear
+redpanda_arm_l
+bounds: 0,0,1108,1605
+
+images/redpanda_arm_l_under.png
+size: 1108,1605
+filter: Linear,Linear
+redpanda_arm_l_under
+bounds: 0,0,1108,1605
+
+images/redpanda_arm_r.png
+size: 860,1499
+filter: Linear,Linear
+redpanda_arm_r
+bounds: 0,0,860,1499
+
+images/redpanda_arm_r_under.png
+size: 860,1499
+filter: Linear,Linear
+redpanda_arm_r_under
+bounds: 0,0,860,1499
+
+images/redpanda_boot_l.png
+size: 267,402
+filter: Linear,Linear
+redpanda_boot_l
+bounds: 0,0,267,402
+
+images/redpanda_boot_l_tiptoe.png
+size: 347,724
+filter: Linear,Linear
+redpanda_boot_l_tiptoe
+bounds: 0,0,347,724
+
+images/redpanda_boot_l_tiptoe_under.png
+size: 373,750
+filter: Linear,Linear
+redpanda_boot_l_tiptoe_under
+bounds: 0,0,373,750
+
+images/redpanda_boot_l_under.png
+size: 285,420
+filter: Linear,Linear
+redpanda_boot_l_under
+bounds: 0,0,285,420
+
+images/redpanda_boot_r.png
+size: 265,403
+filter: Linear,Linear
+redpanda_boot_r
+bounds: 0,0,265,403
+
+images/redpanda_boot_r_tiptoe.png
+size: 348,722
+filter: Linear,Linear
+redpanda_boot_r_tiptoe
+bounds: 0,0,348,722
+
+images/redpanda_boot_r_tiptoe_under.png
+size: 374,748
+filter: Linear,Linear
+redpanda_boot_r_tiptoe_under
+bounds: 0,0,374,748
+
+images/redpanda_boot_r_under.png
+size: 283,421
+filter: Linear,Linear
+redpanda_boot_r_under
+bounds: 0,0,283,421
+
+images/redpanda_ear_l.png
+size: 238,268
+filter: Linear,Linear
+redpanda_ear_l
+bounds: 0,0,238,268
+
+images/redpanda_ear_l_under.png
+size: 258,288
+filter: Linear,Linear
+redpanda_ear_l_under
+bounds: 0,0,258,288
+
+images/redpanda_ear_r.png
+size: 261,293
+filter: Linear,Linear
+redpanda_ear_r
+bounds: 0,0,261,293
+
+images/redpanda_ear_r_under.png
+size: 281,313
+filter: Linear,Linear
+redpanda_ear_r_under
+bounds: 0,0,281,313
+
+images/redpanda_hand_l.png
+size: 186,200
+filter: Linear,Linear
+redpanda_hand_l
+bounds: 0,0,186,200
+
+images/redpanda_hand_l_fist.png
+size: 321,381
+filter: Linear,Linear
+redpanda_hand_l_fist
+bounds: 0,0,321,381
+
+images/redpanda_hand_l_fist_under.png
+size: 355,415
+filter: Linear,Linear
+redpanda_hand_l_fist_under
+bounds: 0,0,355,415
+
+images/redpanda_hand_l_grip.png
+size: 506,518
+filter: Linear,Linear
+redpanda_hand_l_grip
+bounds: 0,0,506,518
+
+images/redpanda_hand_l_grip_under.png
+size: 542,554
+filter: Linear,Linear
+redpanda_hand_l_grip_under
+bounds: 0,0,542,554
+
+images/redpanda_hand_l_open.png
+size: 471,491
+filter: Linear,Linear
+redpanda_hand_l_open
+bounds: 0,0,471,491
+
+images/redpanda_hand_l_open_under.png
+size: 507,527
+filter: Linear,Linear
+redpanda_hand_l_open_under
+bounds: 0,0,507,527
+
+images/redpanda_hand_l_point.png
+size: 831,1206
+filter: Linear,Linear
+redpanda_hand_l_point
+bounds: 0,0,831,1206
+
+images/redpanda_hand_l_point_under.png
+size: 913,1288
+filter: Linear,Linear
+redpanda_hand_l_point_under
+bounds: 0,0,913,1288
+
+images/redpanda_hand_l_thumbsup.png
+size: 383,317
+filter: Linear,Linear
+redpanda_hand_l_thumbsup
+bounds: 0,0,383,317
+
+images/redpanda_hand_l_thumbsup_under.png
+size: 417,351
+filter: Linear,Linear
+redpanda_hand_l_thumbsup_under
+bounds: 0,0,417,351
+
+images/redpanda_hand_l_under.png
+size: 204,218
+filter: Linear,Linear
+redpanda_hand_l_under
+bounds: 0,0,204,218
+
+images/redpanda_hand_r.png
+size: 185,200
+filter: Linear,Linear
+redpanda_hand_r
+bounds: 0,0,185,200
+
+images/redpanda_hand_r_fist.png
+size: 321,381
+filter: Linear,Linear
+redpanda_hand_r_fist
+bounds: 0,0,321,381
+
+images/redpanda_hand_r_fist_under.png
+size: 353,413
+filter: Linear,Linear
+redpanda_hand_r_fist_under
+bounds: 0,0,353,413
+
+images/redpanda_hand_r_grip.png
+size: 506,518
+filter: Linear,Linear
+redpanda_hand_r_grip
+bounds: 0,0,506,518
+
+images/redpanda_hand_r_grip_under.png
+size: 542,554
+filter: Linear,Linear
+redpanda_hand_r_grip_under
+bounds: 0,0,542,554
+
+images/redpanda_hand_r_open.png
+size: 471,491
+filter: Linear,Linear
+redpanda_hand_r_open
+bounds: 0,0,471,491
+
+images/redpanda_hand_r_open_under.png
+size: 505,525
+filter: Linear,Linear
+redpanda_hand_r_open_under
+bounds: 0,0,505,525
+
+images/redpanda_hand_r_point.png
+size: 831,1206
+filter: Linear,Linear
+redpanda_hand_r_point
+bounds: 0,0,831,1206
+
+images/redpanda_hand_r_point_under.png
+size: 907,1282
+filter: Linear,Linear
+redpanda_hand_r_point_under
+bounds: 0,0,907,1282
+
+images/redpanda_hand_r_thumbsup.png
+size: 383,317
+filter: Linear,Linear
+redpanda_hand_r_thumbsup
+bounds: 0,0,383,317
+
+images/redpanda_hand_r_thumbsup_under.png
+size: 415,349
+filter: Linear,Linear
+redpanda_hand_r_thumbsup_under
+bounds: 0,0,415,349
+
+images/redpanda_hand_r_under.png
+size: 203,218
+filter: Linear,Linear
+redpanda_hand_r_under
+bounds: 0,0,203,218
+
+images/redpanda_head_angry.png
+size: 636,491
+filter: Linear,Linear
+redpanda_head_angry
+bounds: 0,0,636,491
+
+images/redpanda_head_angry_under.png
+size: 636,491
+filter: Linear,Linear
+redpanda_head_angry_under
+bounds: 0,0,636,491
+
+images/redpanda_head_base.png
+size: 570,444
+filter: Linear,Linear
+redpanda_head_base
+bounds: 0,0,570,444
+
+images/redpanda_head_base_under.png
+size: 570,444
+filter: Linear,Linear
+redpanda_head_base_under
+bounds: 0,0,570,444
+
+images/redpanda_head_blink.png
+size: 645,496
+filter: Linear,Linear
+redpanda_head_blink
+bounds: 0,0,645,496
+
+images/redpanda_head_blink_under.png
+size: 645,496
+filter: Linear,Linear
+redpanda_head_blink_under
+bounds: 0,0,645,496
+
+images/redpanda_head_happy.png
+size: 645,495
+filter: Linear,Linear
+redpanda_head_happy
+bounds: 0,0,645,495
+
+images/redpanda_head_happy_under.png
+size: 645,495
+filter: Linear,Linear
+redpanda_head_happy_under
+bounds: 0,0,645,495
+
+images/redpanda_head_laugh.png
+size: 642,493
+filter: Linear,Linear
+redpanda_head_laugh
+bounds: 0,0,642,493
+
+images/redpanda_head_laugh_under.png
+size: 642,493
+filter: Linear,Linear
+redpanda_head_laugh_under
+bounds: 0,0,642,493
+
+images/redpanda_head_neutral.png
+size: 646,495
+filter: Linear,Linear
+redpanda_head_neutral
+bounds: 0,0,646,495
+
+images/redpanda_head_neutral_under.png
+size: 646,495
+filter: Linear,Linear
+redpanda_head_neutral_under
+bounds: 0,0,646,495
+
+images/redpanda_head_sad.png
+size: 642,492
+filter: Linear,Linear
+redpanda_head_sad
+bounds: 0,0,642,492
+
+images/redpanda_head_sad_under.png
+size: 642,492
+filter: Linear,Linear
+redpanda_head_sad_under
+bounds: 0,0,642,492
+
+images/redpanda_head_surprised.png
+size: 642,493
+filter: Linear,Linear
+redpanda_head_surprised
+bounds: 0,0,642,493
+
+images/redpanda_head_surprised_under.png
+size: 642,493
+filter: Linear,Linear
+redpanda_head_surprised_under
+bounds: 0,0,642,493
+
+images/redpanda_head_talking.png
+size: 638,492
+filter: Linear,Linear
+redpanda_head_talking
+bounds: 0,0,638,492
+
+images/redpanda_head_talking_under.png
+size: 638,492
+filter: Linear,Linear
+redpanda_head_talking_under
+bounds: 0,0,638,492
+
+images/redpanda_head_wink.png
+size: 639,493
+filter: Linear,Linear
+redpanda_head_wink
+bounds: 0,0,639,493
+
+images/redpanda_head_wink_under.png
+size: 639,493
+filter: Linear,Linear
+redpanda_head_wink_under
+bounds: 0,0,639,493
+
+images/redpanda_hips.png
+size: 480,511
+filter: Linear,Linear
+redpanda_hips
+bounds: 0,0,480,511
+
+images/redpanda_hips_under.png
+size: 498,529
+filter: Linear,Linear
+redpanda_hips_under
+bounds: 0,0,498,529
+
+images/redpanda_prop_flag.png
+size: 844,1056
+filter: Linear,Linear
+redpanda_prop_flag
+bounds: 0,0,844,1056
+
+images/redpanda_prop_hurdle.png
+size: 1008,681
+filter: Linear,Linear
+redpanda_prop_hurdle
+bounds: 0,0,1008,681
+
+images/redpanda_tail.png
+size: 1084,1122
+filter: Linear,Linear
+redpanda_tail
+bounds: 0,0,1084,1122
+
+images/redpanda_tail_under.png
+size: 1084,1122
+filter: Linear,Linear
+redpanda_tail_under
+bounds: 0,0,1084,1122
+
+images/redpanda_torso.png
+size: 480,588
+filter: Linear,Linear
+redpanda_torso
+bounds: 0,0,480,588
+
+images/shadow.png
+size: 96,28
+filter: Linear,Linear
+shadow
+bounds: 0,0,96,28

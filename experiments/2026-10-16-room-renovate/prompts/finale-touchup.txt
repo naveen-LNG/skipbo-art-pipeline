@@ -1,0 +1,7 @@
+Edit the attached picture, image 1. It is the finished room of a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Make two small finishing corrections and change nothing else:
+
+PICTURE: The framed painting of the green hill above the fireplace is hanging slightly crooked. Straighten it: it hangs perfectly level and square to the viewer, its top and bottom edges exactly horizontal and its two sides exactly vertical, a neat even rectangle, centred above the mantelpiece at the same size, with the same painting inside it and no wire showing.
+
+FLOOR: The floorboards are freshly mopped and polished: the same planks in the same direction, widths and perspective, in an even clean warm honey-brown with a soft gentle sheen where the warm light falls, and with no scratches, no scuff marks, no cracks, no knots, no chips and no dark worn patches anywhere. Only the plain straight joins between the planks remain.
+
+Everything else stays exactly as it is in image 1, pixel for pixel: the camera, the framing, the crop, the walls, the window, the curtains, the chandelier, the fireplace and its fire, the plant, the sofa, the cushions, the rug and the light. Painted in exactly the same style as the rest of the picture: clean simplified masses, soft broad shading, no outlines, no texture, no wood grain. No characters, no text.

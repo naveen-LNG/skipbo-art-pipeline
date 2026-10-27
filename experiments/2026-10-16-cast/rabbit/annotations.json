@@ -1,0 +1,1613 @@
+{
+  "character": "rabbit",
+  "master": {
+    "hands": {
+      "l": {
+        "facing": "back",
+        "thumb_side": "medial"
+      },
+      "r": {
+        "facing": "back",
+        "thumb_side": "medial"
+      }
+    },
+    "image": "rabbit_master.png",
+    "layers": {
+      "foot": "over_hips",
+      "upperarm": "under_torso"
+    },
+    "points": {
+      "ankle_l": [
+        0.595,
+        0.84
+      ],
+      "ankle_r": [
+        0.43,
+        0.84
+      ],
+      "elbow_l": [
+        0.71,
+        0.585
+      ],
+      "elbow_r": [
+        0.305,
+        0.585
+      ],
+      "fingertip_l": [
+        0.8275,
+        0.797
+      ],
+      "fingertip_r": [
+        0.1725,
+        0.792
+      ],
+      "ground": [
+        0.51,
+        0.968
+      ],
+      "hip_l": [
+        0.595,
+        0.85
+      ],
+      "hip_r": [
+        0.43,
+        0.85
+      ],
+      "neck": [
+        0.52,
+        0.48
+      ],
+      "shoulder_l": [
+        0.655,
+        0.53
+      ],
+      "shoulder_r": [
+        0.365,
+        0.53
+      ],
+      "waist": [
+        0.51,
+        0.63
+      ],
+      "wrist_l": [
+        0.765,
+        0.645
+      ],
+      "wrist_r": [
+        0.245,
+        0.645
+      ]
+    },
+    "snapped": {
+      "ankle_l": null,
+      "ankle_r": null,
+      "elbow_l": null,
+      "elbow_r": null,
+      "hip_l": null,
+      "hip_r": null,
+      "shoulder_l": null,
+      "shoulder_r": null,
+      "wrist_l": null,
+      "wrist_r": null
+    },
+    "status": "fixed"
+  },
+  "pieces": {
+    "rabbit-body-parts/00": {
+      "confidence": 0.8,
+      "name": "boot",
+      "note": "toe right = outward for the left foot",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 80.15
+          },
+          "file": "body/rabbit_boot_l.png",
+          "mirrored": false,
+          "name": "boot_l",
+          "points": {
+            "ankle": [
+              112.89,
+              18.57
+            ],
+            "ground": [
+              153.0,
+              293.91
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 229.0
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.42,
+            0.09
+          ],
+          "depth": 80.15,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.3689,
+            0.0613
+          ],
+          "width": 229.0
+        },
+        "ground": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "l",
+      "status": "confirmed"
+    },
+    "rabbit-body-parts/01": {
+      "confidence": 0.8,
+      "name": "boot",
+      "note": "toe left = outward for the right foot",
+      "outputs": [
+        {
+          "depths": {
+            "ankle": 81.9
+          },
+          "file": "body/rabbit_boot_r.png",
+          "mirrored": false,
+          "name": "boot_r",
+          "points": {
+            "ankle": [
+              174.42,
+              17.36
+            ],
+            "ground": [
+              146.5,
+              294.88
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "ankle": 234.0
+          }
+        }
+      ],
+      "points": {
+        "ankle": {
+          "at": [
+            0.6,
+            0.09
+          ],
+          "depth": 81.9,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5953,
+            0.0571
+          ],
+          "width": 234.0
+        },
+        "ground": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "foot",
+      "side": "r",
+      "status": "confirmed"
+    },
+    "rabbit-body-parts/02": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/03": {
+      "confidence": 0.0,
+      "note": "round 4: a tilted boot, not toe-down; its worn cut left 227 px of slivers and it overlapped the trousers 3.4x as much as the rest boot (variant_misfit). Dropped: cheer_jump and jump_hurdle skip the tiptoe swap",
+      "outputs": [],
+      "points": {},
+      "role": "foot",
+      "side": "either",
+      "status": "ignored",
+      "variant": "tiptoe"
+    },
+    "rabbit-body-parts/04": {
+      "confidence": 0.0,
+      "note": "two-piece arm spare: the rig uses one whole sleeve per arm (sleeves-pair.txt); kept as the fallback if the short, fat sleeve mesh folds",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/05": {
+      "confidence": 0.0,
+      "note": "two-piece arm spare: the rig uses one whole sleeve per arm (sleeves-pair.txt); kept as the fallback if the short, fat sleeve mesh folds",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/06": {
+      "confidence": 0.75,
+      "facing": "back",
+      "note": "relaxed mitten, thumb toward the body as in the master (back of the paw)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 56.12
+          },
+          "file": "body/rabbit_hand_l.png",
+          "mirrored": false,
+          "name": "hand_l",
+          "points": {
+            "fingertip": [
+              187.11,
+              424.38
+            ],
+            "thumb_tip": [
+              69.13,
+              316.55
+            ],
+            "wrist": [
+              187.11,
+              64.12
+            ]
+          },
+          "rotated": -13.88,
+          "widths": {
+            "wrist": 160.35
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.7,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.18,
+            0.78
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.38,
+            0.1
+          ],
+          "depth": 56.12,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 160.35
+        }
+      },
+      "role": "hand",
+      "side": "l",
+      "status": "fixed"
+    },
+    "rabbit-body-parts/07": {
+      "confidence": 0.75,
+      "facing": "back",
+      "note": "relaxed mitten, thumb toward the body as in the master (back of the paw)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 54.0
+          },
+          "file": "body/rabbit_hand_r.png",
+          "mirrored": false,
+          "name": "hand_r",
+          "points": {
+            "fingertip": [
+              171.94,
+              424.27
+            ],
+            "thumb_tip": [
+              289.1,
+              316.9
+            ],
+            "wrist": [
+              171.94,
+              64.17
+            ]
+          },
+          "rotated": 13.78,
+          "widths": {
+            "wrist": 154.29
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.3,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.82,
+            0.78
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.62,
+            0.1
+          ],
+          "depth": 54.0,
+          "kind": "opening",
+          "snap": "failed",
+          "width": 154.29
+        }
+      },
+      "role": "hand",
+      "side": "r",
+      "status": "fixed"
+    },
+    "rabbit-body-parts/08": {
+      "confidence": 0.0,
+      "note": "two-piece arm spare: the rig uses one whole sleeve per arm (sleeves-pair.txt); kept as the fallback if the short, fat sleeve mesh folds",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/09": {
+      "confidence": 0.0,
+      "note": "two-piece arm spare: the rig uses one whole sleeve per arm (sleeves-pair.txt); kept as the fallback if the short, fat sleeve mesh folds",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/10": {
+      "confidence": 0.0,
+      "note": "round 6: painted into the trousers piece (make_trousers.py). The matcher put the ball on the cheek, the paw, then outside the trousers (its rim is the background's grey and the paw hides half of it)",
+      "outputs": [],
+      "points": {},
+      "role": "tail",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/11": {
+      "confidence": 0.0,
+      "note": "replaced by its repaint (make_torso.py / make_trousers.py / make_ears.py)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/12": {
+      "confidence": 0.0,
+      "note": "replaced by its repaint (make_torso.py / make_trousers.py / make_ears.py)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/13": {
+      "confidence": 0.0,
+      "note": "replaced by its repaint (make_torso.py / make_trousers.py / make_ears.py)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/14": {
+      "confidence": 0.0,
+      "note": "replaced by its repaint (make_torso.py / make_trousers.py / make_ears.py)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-body-parts/15": {
+      "confidence": 0.8,
+      "note": "head base without features; the expression heads replace it",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/rabbit_head_base.png",
+          "mirrored": false,
+          "name": "head_base",
+          "points": {
+            "neck": [
+              241.5,
+              402.69
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.93
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed"
+    },
+    "rabbit-ears-parts/00": {
+      "confidence": 0.8,
+      "note": "body piece 13 (picture-left of the pair), root stretched 1.6x downward to tuck behind the head (make_ears.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/rabbit_ear_r.png",
+          "mirrored": false,
+          "name": "ear_r",
+          "points": {
+            "root": [
+              110.0,
+              515.22
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.5,
+            0.93
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "r",
+      "status": "fixed"
+    },
+    "rabbit-ears-parts/01": {
+      "confidence": 0.8,
+      "note": "body piece 14 (picture-right of the pair), root stretched like the right ear",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/rabbit_ear_l.png",
+          "mirrored": false,
+          "name": "ear_l",
+          "points": {
+            "root": [
+              100.0,
+              508.71
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "root": {
+          "at": [
+            0.5,
+            0.93
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "ear",
+      "side": "l",
+      "status": "fixed"
+    },
+    "rabbit-face-parts/00": {
+      "confidence": 0.8,
+      "note": "expression head, no ears; position on the 3x3 face sheet gives the expression (tools/locate.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/rabbit_head_wink.png",
+          "mirrored": false,
+          "name": "head_wink",
+          "points": {
+            "neck": [
+              276.0,
+              481.12
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "wink"
+    },
+    "rabbit-face-parts/01": {
+      "confidence": 0.8,
+      "note": "expression head, no ears; position on the 3x3 face sheet gives the expression (tools/locate.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/rabbit_head_talking.png",
+          "mirrored": false,
+          "name": "head_talking",
+          "points": {
+            "neck": [
+              277.0,
+              482.09
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "talking"
+    },
+    "rabbit-face-parts/02": {
+      "confidence": 0.8,
+      "note": "expression head, no ears; position on the 3x3 face sheet gives the expression (tools/locate.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/rabbit_head_angry.png",
+          "mirrored": false,
+          "name": "head_angry",
+          "points": {
+            "neck": [
+              276.5,
+              481.12
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "angry"
+    },
+    "rabbit-face-parts/03": {
+      "confidence": 0.8,
+      "note": "expression head, no ears; position on the 3x3 face sheet gives the expression (tools/locate.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/rabbit_head_sad.png",
+          "mirrored": false,
+          "name": "head_sad",
+          "points": {
+            "neck": [
+              276.0,
+              482.09
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "sad"
+    },
+    "rabbit-face-parts/04": {
+      "confidence": 0.8,
+      "note": "expression head, no ears; position on the 3x3 face sheet gives the expression (tools/locate.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/rabbit_head_surprised.png",
+          "mirrored": false,
+          "name": "head_surprised",
+          "points": {
+            "neck": [
+              276.5,
+              481.12
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "surprised"
+    },
+    "rabbit-face-parts/05": {
+      "confidence": 0.8,
+      "note": "expression head, no ears; position on the 3x3 face sheet gives the expression (tools/locate.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/rabbit_head_laugh.png",
+          "mirrored": false,
+          "name": "head_laugh",
+          "points": {
+            "neck": [
+              276.5,
+              482.09
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "laugh"
+    },
+    "rabbit-face-parts/06": {
+      "confidence": 0.8,
+      "note": "expression head, no ears; position on the 3x3 face sheet gives the expression (tools/locate.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/rabbit_head_happy.png",
+          "mirrored": false,
+          "name": "head_happy",
+          "points": {
+            "neck": [
+              276.5,
+              483.06
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "happy"
+    },
+    "rabbit-face-parts/07": {
+      "confidence": 0.8,
+      "note": "expression head, no ears; position on the 3x3 face sheet gives the expression (tools/locate.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/rabbit_head_blink.png",
+          "mirrored": false,
+          "name": "head_blink",
+          "points": {
+            "neck": [
+              277.0,
+              483.06
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "blink"
+    },
+    "rabbit-face-parts/08": {
+      "confidence": 0.8,
+      "note": "expression head, no ears; position on the 3x3 face sheet gives the expression (tools/locate.py)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "face-heads/rabbit_head_neutral.png",
+          "mirrored": false,
+          "name": "head_neutral",
+          "points": {
+            "neck": [
+              277.5,
+              483.06
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "head",
+      "side": "",
+      "status": "confirmed",
+      "variant": "neutral"
+    },
+    "rabbit-hands-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-hands-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-hands-parts/02": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-hands-parts/03": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-hands-parts/04": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-hands-parts/05": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-hands-parts/06": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-hands-parts/07": {
+      "confidence": 0.7,
+      "facing": "back",
+      "note": "loose grip, thumb on the left beside the first finger; labelled palm the worn strip put the thumb 170 deg off, as back it sits on top of the pinch (worn strip reviewed)",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 50.96
+          },
+          "file": "variants/rabbit_hand_l_grip.png",
+          "mirrored": false,
+          "name": "hand_l_grip",
+          "points": {
+            "fingertip": [
+              169.77,
+              458.71
+            ],
+            "thumb_tip": [
+              45.33,
+              277.52
+            ],
+            "wrist": [
+              169.77,
+              25.6
+            ]
+          },
+          "rotated": -2.43,
+          "widths": {
+            "wrist": 145.6
+          }
+        },
+        {
+          "depths": {
+            "wrist": 50.96
+          },
+          "file": "variants/rabbit_hand_r_grip.png",
+          "mirrored": true,
+          "name": "hand_r_grip",
+          "points": {
+            "fingertip": [
+              157.23,
+              458.71
+            ],
+            "thumb_tip": [
+              281.67,
+              277.52
+            ],
+            "wrist": [
+              157.23,
+              25.6
+            ]
+          },
+          "rotated": -2.43,
+          "widths": {
+            "wrist": 145.6
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.55,
+            0.95
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.12,
+            0.58
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.55,
+            0.05
+          ],
+          "depth": 50.96,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.4901,
+            0.039
+          ],
+          "width": 145.6
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "fixed",
+      "variant": "grip"
+    },
+    "rabbit-hands-parts/08": {
+      "confidence": 0.7,
+      "facing": "palm",
+      "note": "wrist up, thumb out to the left, the curled fingers' fronts show",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 61.04
+          },
+          "file": "variants/rabbit_hand_l_thumbsup.png",
+          "mirrored": true,
+          "name": "hand_l_thumbsup",
+          "points": {
+            "thumb_tip": [
+              347.26,
+              201.6
+            ],
+            "wrist": [
+              118.59,
+              21.65
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 174.4
+          }
+        },
+        {
+          "depths": {
+            "wrist": 61.04
+          },
+          "file": "variants/rabbit_hand_r_thumbsup.png",
+          "mirrored": false,
+          "name": "hand_r_thumbsup",
+          "points": {
+            "thumb_tip": [
+              10.74,
+              201.6
+            ],
+            "wrist": [
+              239.41,
+              21.65
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 174.4
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.03,
+            0.45
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.6,
+            0.05
+          ],
+          "depth": 61.04,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.6688,
+            0.0483
+          ],
+          "width": 174.4
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "thumbsup"
+    },
+    "rabbit-hands-parts/09": {
+      "confidence": 0.0,
+      "note": "back-facing point (knuckles, no palm pad): the rig would point it across the chest, where it reads as a grip (beaver lesson); replaced by the palm-facing point",
+      "outputs": [],
+      "points": {},
+      "role": "hand",
+      "side": "either",
+      "status": "ignored",
+      "variant": "point"
+    },
+    "rabbit-hands-parts/10": {
+      "confidence": 0.75,
+      "facing": "palm",
+      "note": "palm-facing fist: curled fingertips toward us, thumb folded across from the right",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 51.52
+          },
+          "file": "variants/rabbit_hand_l_fist.png",
+          "mirrored": false,
+          "name": "hand_l_fist",
+          "points": {
+            "thumb_tip": [
+              264.88,
+              218.4
+            ],
+            "wrist": [
+              149.91,
+              17.4
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 147.2
+          }
+        },
+        {
+          "depths": {
+            "wrist": 51.52
+          },
+          "file": "variants/rabbit_hand_r_fist.png",
+          "mirrored": true,
+          "name": "hand_r_fist",
+          "points": {
+            "thumb_tip": [
+              36.12,
+              218.4
+            ],
+            "wrist": [
+              151.09,
+              17.4
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "wrist": 147.2
+          }
+        }
+      ],
+      "points": {
+        "thumb_tip": {
+          "at": [
+            0.88,
+            0.52
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.05
+          ],
+          "depth": 51.52,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.498,
+            0.0414
+          ],
+          "width": 147.2
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "fist"
+    },
+    "rabbit-hands-parts/11": {
+      "confidence": 0.75,
+      "facing": "palm",
+      "note": "palm pad with its creases visible, four fingers spread",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 65.15
+          },
+          "file": "variants/rabbit_hand_l_open.png",
+          "mirrored": true,
+          "name": "hand_l_open",
+          "points": {
+            "fingertip": [
+              173.92,
+              526.81
+            ],
+            "thumb_tip": [
+              401.25,
+              275.23
+            ],
+            "wrist": [
+              173.92,
+              37.97
+            ]
+          },
+          "rotated": 6.02,
+          "widths": {
+            "wrist": 186.13
+          }
+        },
+        {
+          "depths": {
+            "wrist": 65.15
+          },
+          "file": "variants/rabbit_hand_r_open.png",
+          "mirrored": false,
+          "name": "hand_r_open",
+          "points": {
+            "fingertip": [
+              264.08,
+              526.81
+            ],
+            "thumb_tip": [
+              36.75,
+              275.23
+            ],
+            "wrist": [
+              264.08,
+              37.97
+            ]
+          },
+          "rotated": 6.02,
+          "widths": {
+            "wrist": 186.13
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.55,
+            0.97
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.03,
+            0.45
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.6,
+            0.05
+          ],
+          "depth": 65.15,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.6835,
+            0.0475
+          ],
+          "width": 186.13
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "open"
+    },
+    "rabbit-point-palm-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-point-palm-parts/01": {
+      "confidence": 0.8,
+      "facing": "palm",
+      "note": "palm-facing point: points outward with the thumb up",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 153.44
+          },
+          "file": "variants/rabbit_hand_l_point.png",
+          "mirrored": true,
+          "name": "hand_l_point",
+          "points": {
+            "fingertip": [
+              537.79,
+              1369.75
+            ],
+            "thumb_tip": [
+              1043.31,
+              835.48
+            ],
+            "wrist": [
+              537.79,
+              100.83
+            ]
+          },
+          "rotated": 12.16,
+          "widths": {
+            "wrist": 438.4
+          }
+        },
+        {
+          "depths": {
+            "wrist": 153.44
+          },
+          "file": "variants/rabbit_hand_r_point.png",
+          "mirrored": false,
+          "name": "hand_r_point",
+          "points": {
+            "fingertip": [
+              672.21,
+              1369.75
+            ],
+            "thumb_tip": [
+              166.69,
+              835.48
+            ],
+            "wrist": [
+              672.21,
+              100.83
+            ]
+          },
+          "rotated": 12.16,
+          "widths": {
+            "wrist": 438.4
+          }
+        }
+      ],
+      "points": {
+        "fingertip": {
+          "at": [
+            0.43,
+            0.98
+          ],
+          "kind": "point"
+        },
+        "thumb_tip": {
+          "at": [
+            0.03,
+            0.5
+          ],
+          "kind": "point"
+        },
+        "wrist": {
+          "at": [
+            0.68,
+            0.04
+          ],
+          "depth": 153.44,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.7103,
+            0.0331
+          ],
+          "width": 438.4
+        }
+      },
+      "role": "hand",
+      "side": "either",
+      "status": "confirmed",
+      "variant": "point"
+    },
+    "rabbit-sleeves-parts/00": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-sleeves-parts/01": {
+      "confidence": 0.0,
+      "note": "spare piece from the sheet, not used by the rig (the other hand's row, a second tiptoe boot)",
+      "outputs": [],
+      "points": {},
+      "role": "",
+      "side": "",
+      "status": "ignored"
+    },
+    "rabbit-sleeves-wide-parts/00": {
+      "confidence": 0.8,
+      "note": "whole sleeve of the left arm (sleeves sheet piece 00, picture right), widened toward the cuff by make_sleeve_wide.py; elbow at the master's elbow ratio",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 294.7
+          },
+          "file": "body/rabbit_arm_l.png",
+          "mirrored": false,
+          "name": "arm_l",
+          "points": {
+            "elbow": [
+              507.09,
+              707.74
+            ],
+            "shoulder": [
+              532.27,
+              229.21
+            ],
+            "wrist": [
+              532.27,
+              1187.92
+            ]
+          },
+          "rotated": -3.01,
+          "widths": {
+            "shoulder": 327.97,
+            "wrist": 842.0
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.5,
+            0.57
+          ],
+          "kind": "point"
+        },
+        "shoulder": {
+          "at": [
+            0.5,
+            0.17
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 327.97
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "depth": 294.7,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.5524,
+            0.9692
+          ],
+          "width": 842.0
+        }
+      },
+      "role": "arm",
+      "side": "l",
+      "status": "fixed"
+    },
+    "rabbit-sleeves-wide-parts/01": {
+      "confidence": 0.8,
+      "note": "whole sleeve of the right arm (sleeves sheet piece 01), widened toward the cuff",
+      "outputs": [
+        {
+          "depths": {
+            "wrist": 324.1
+          },
+          "file": "body/rabbit_arm_r.png",
+          "mirrored": false,
+          "name": "arm_r",
+          "points": {
+            "elbow": [
+              566.24,
+              711.16
+            ],
+            "shoulder": [
+              539.15,
+              233.12
+            ],
+            "wrist": [
+              539.15,
+              1189.76
+            ]
+          },
+          "rotated": 3.24,
+          "widths": {
+            "shoulder": 327.69,
+            "wrist": 926.0
+          }
+        }
+      ],
+      "points": {
+        "elbow": {
+          "at": [
+            0.5,
+            0.57
+          ],
+          "kind": "point"
+        },
+        "shoulder": {
+          "at": [
+            0.5,
+            0.17
+          ],
+          "kind": "round_end",
+          "snap": "failed",
+          "width": 327.69
+        },
+        "wrist": {
+          "at": [
+            0.5,
+            0.97
+          ],
+          "depth": 324.1,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.4487,
+            0.9679
+          ],
+          "width": 926.0
+        }
+      },
+      "role": "arm",
+      "side": "r",
+      "status": "fixed"
+    },
+    "rabbit-torso-parts/00": {
+      "confidence": 0.8,
+      "note": "body-sheet torso 12 made symmetric (its picture-left armhole was open); neck = top of the green collar; waist at 0.72 so neck-to-waist gives the global scale the torso and trouser widths need (1.35, round 1)",
+      "outputs": [
+        {
+          "depths": {},
+          "file": "body/rabbit_torso.png",
+          "mirrored": false,
+          "name": "torso",
+          "points": {
+            "neck": [
+              243.0,
+              117.26
+            ],
+            "waist": [
+              243.0,
+              383.76
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {}
+        }
+      ],
+      "points": {
+        "neck": {
+          "at": [
+            0.5,
+            0.22
+          ],
+          "kind": "point"
+        },
+        "waist": {
+          "at": [
+            0.5,
+            0.72
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "torso",
+      "side": "",
+      "status": "fixed"
+    },
+    "rabbit-trousers-parts/00": {
+      "confidence": 0.8,
+      "note": "body-sheet trousers 11 with both legs (no leg pieces), openings filled with cloth, legs narrowed 0.92 at the hems and the cotton tail painted in behind the right hip (make_trousers.py); the leg ends go into the boots (foot: over_hips)",
+      "outputs": [
+        {
+          "depths": {
+            "hip_l": 52.15,
+            "hip_r": 53.55
+          },
+          "file": "body/rabbit_hips.png",
+          "mirrored": false,
+          "name": "hips",
+          "points": {
+            "hip_l": [
+              434.41,
+              445.15
+            ],
+            "hip_r": [
+              236.89,
+              449.15
+            ],
+            "waist": [
+              335.81,
+              106.9
+            ]
+          },
+          "rotated": 0.0,
+          "widths": {
+            "hip_l": 149.0,
+            "hip_r": 153.0
+          }
+        }
+      ],
+      "points": {
+        "hip_l": {
+          "at": [
+            0.787,
+            0.96
+          ],
+          "depth": 52.15,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.7464,
+            0.9411
+          ],
+          "width": 149.0
+        },
+        "hip_r": {
+          "at": [
+            0.36,
+            0.96
+          ],
+          "depth": 53.55,
+          "kind": "opening",
+          "snap": "ok",
+          "snapped": [
+            0.407,
+            0.9496
+          ],
+          "width": 153.0
+        },
+        "waist": {
+          "at": [
+            0.577,
+            0.226
+          ],
+          "kind": "point"
+        }
+      },
+      "role": "hips",
+      "side": "",
+      "status": "fixed"
+    }
+  },
+  "version": 1
+}

@@ -1,0 +1,80 @@
+{
+  "global_scale_master_px_per_part_px": 1.3952,
+  "renamed": {},
+  "from_master": [
+    "boot_l",
+    "boot_r",
+    "forearm_l",
+    "forearm_r",
+    "hand_l",
+    "hand_r",
+    "hips",
+    "leg_l",
+    "leg_r",
+    "torso_patch",
+    "upperarm_l",
+    "upperarm_r"
+  ],
+  "parts": {
+    "hips": {
+      "err": 0.07202,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "torso": {
+      "err": 0.07388,
+      "scale_rel": 1.0,
+      "angle": 0
+    },
+    "head_base": {
+      "err": 0.03662,
+      "scale_rel": 0.95,
+      "angle": 0
+    },
+    "leg_l": {
+      "err": 0.05119,
+      "scale_rel": 0.9,
+      "angle": 30
+    },
+    "leg_r": {
+      "err": 0.0509,
+      "scale_rel": 0.9,
+      "angle": -30
+    },
+    "boot_l": {
+      "err": 0.05465,
+      "scale_rel": 0.9,
+      "angle": -10
+    },
+    "boot_r": {
+      "err": 0.09401,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "tail": {
+      "err": 0.27014,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "upperarm_l": {
+      "err": 0.03615,
+      "scale_rel": 0.9,
+      "angle": 9
+    },
+    "upperarm_r": {
+      "err": 0.04026,
+      "scale_rel": 0.9,
+      "angle": -9
+    },
+    "hand_l": {
+      "err": 0.08367,
+      "scale_rel": 0.9,
+      "angle": 9
+    },
+    "hand_r": {
+      "err": 0.09665,
+      "scale_rel": 0.9,
+      "angle": -9
+    }
+  }
+}

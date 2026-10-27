@@ -1,0 +1,1514 @@
+{
+ "last_node_id": 369,
+ "last_link_id": 27,
+ "nodes": [
+  {
+   "id": 10,
+   "type": "LoadImage",
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      22
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "SKIPBO_ROOM_before.png",
+    "image"
+   ],
+   "title": "The room this object belongs to (before or after)"
+  },
+  {
+   "id": 11,
+   "type": "LoadImage",
+   "pos": [
+    0,
+    360
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      23
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "SKIPBO_STYLE_lr_block_01.png",
+    "image"
+   ],
+   "title": "Style ref A: LR render"
+  },
+  {
+   "id": 12,
+   "type": "LoadImage",
+   "pos": [
+    0,
+    720
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      24
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "SKIPBO_STYLE_lr_block_02.png",
+    "image"
+   ],
+   "title": "Style ref B: LR render"
+  },
+  {
+   "id": 20,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "A living room in a home-makeover game. Its three theme colours are a dominant warm honey brown, carried by the plank floor and all the woodwork; a supporting clean mid teal, carried by the striped back wall; and a paler warm cream, carried by the ceiling, the plasterwork and the daylight at the window.\n\nTHE CAMERA: one fixed camera standing inside the room, level and not tilted, in a tall vertical nine by sixteen frame that takes in the ceiling along its top edge and a wide sweep of floor along its bottom edge. The eye line crosses the frame about one fifth of the way down from the top, just above the head of the arched window. Everything above that line is seen a little from below and shows its underside: the ceiling, and the hanging lamp, whose shades show their open undersides. Everything below that line is seen a little from above and shows its top surfaces: the fireplace's mantelshelf, the window sill, the seat of the sofa, and the whole floor, which opens out widely towards the bottom of the frame.\n\nTHE WALLS AND THE FLOOR: the back wall stands square to the camera and carries the arched window on its left half; its vertical stripes run straight up and down and do not converge. The right hand wall recedes away to the right and carries the fireplace's projecting chimney breast, so that breast turns its left hand face towards the camera and towards the window. The floor is wide planks laid diagonally, running from the lower left of the frame away towards the upper right, their long seams converging very gently as they go.\n\nTHE LIGHT: one key light only, the daylight that comes in through the arched window on the back wall at the upper left. Every object in the room carries its broad lit passage on its upper left side and falls into soft shade on its lower right side, and each one lays a single soft shadow on the floor that is darkest and tightest where it touches down and spreads a short way towards its lower right before fading out altogether. Those shadows are a deeper, warmer brown of the planks themselves and never a grey. The room reads light everywhere, with no dark passages and no strong contrast."
+   ],
+   "title": "THE ROOM: camera, eye level, light, palette (edit once per room)"
+  },
+  {
+   "id": 21,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    450.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      6
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "a brand new three seat sofa, chunky and rounded, upholstered in warm coral orange, with plump whole seat cushions and plump whole back cushions, two round sunflower yellow scatter cushions on it, generous rolled arms at both ends, and four short chunky wooden legs holding it level."
+   ],
+   "title": "COMPONENT: what this one object is (edit me)"
+  },
+  {
+   "id": 22,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    900.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      10
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "The sofa stands against the back wall facing into the room, so it is seen almost from the front with its left hand end a little nearer the camera: its back and front are nearly parallel to the picture's horizontal, its left arm is the larger and sits a little lower in the picture, and its right arm is slightly smaller and sits a little higher as the body runs away to the upper right. It stands well below the eye line, so the viewer looks down onto it: the whole top of the seat cushions is visible as a band in front of the back cushions, and the top faces of both arms show."
+   ],
+   "title": "PERSPECTIVE: which way its edges recede, which faces show (edit me)"
+  },
+  {
+   "id": 23,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    1350.0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      14
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "In the painted frame it stands about three fifths of the frame's width wide and about a quarter of the frame's height tall from the floor to the top of its back cushions. Its seat sits about one scatter cushion's height above the floor and the legs are short and stubby, about a third of the seat's thickness."
+   ],
+   "title": "PLACEMENT: where it stands and how big, measured (edit me)"
+  },
+  {
+   "id": 24,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    420,
+    1800
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      18
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "The seat cushions show their top surfaces, and the right hand end sits slightly higher in the picture than the left."
+   ],
+   "title": "CHECK: one line this component must meet (edit me)"
+  },
+  {
+   "id": 300,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    840.0,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 8,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "IMAGE ROLES:\nimage_1 = THE ROOM this object belongs to, finished and approved. It is the one authority on the camera, the eye level, the light and the palette, and the object you paint has to look as though it had always been painted into it. Nothing in image_1 is copied into this picture: not its walls, not its floor, not its ceiling, not its furniture and not anything standing in it. It is matched, never reproduced.\nimage_2 = STYLE REFERENCE A and image_3 = STYLE REFERENCE B, the house style of the game.\n\nART STYLE (reproduce exactly):\nReproduce the finished art style of the attached style reference images as exactly as possible. They define the finish, the shading, the colour and the shape language, and nothing else is taken from them: not their subjects, not their characters, not their poses and not their compositions.\n\nMEDIUM: A finished colour illustration for a bright casual mobile game. It carries two treatments at once. The setting, meaning the sky, the ground, the water, the distance and the planting, is built from clean simplified masses, each softly shaded across its whole body. The props and the characters that stand in the scene are cleaner, more saturated and more sharply edged against what is behind them, so that they read forward. There is no line art anywhere: no outlines, no contours, no ink, no drawn edges and no dark strokes around anything, and shapes separate from one another only by their own colour and by the shadow between them.\n\nSKY, SEA AND CLOUDS: The sky is one clean vertical gradient, deeper and more saturated at the top and lighter towards the horizon, and it holds nothing but clouds. The clouds are large soft rounded masses built from a few big overlapping lobes, bright white on top and shaded a little cooler and deeper underneath, and each lobe is modelled as a rounded volume in its own right so the cloud has real depth and never reads as a flat cut-out silhouette. They sit low near the horizon and read as solid shapes rather than as mist or haze. The sea is horizontal bands of clean saturated colour: the deepest and most saturated at the horizon, stepping to a brighter turquoise, then to a pale mint at the shore, and where it meets the land the foam is drawn as two or three soft overlapping curves of slightly different weight and length, thinning out towards the sides, rather than as one even mechanical line. If a sun is in the scene it is one clean disc with a soft even glow immediately around it and nothing more: no rays, no streaks, no lens flare, no wide wash of haze across the sky, and no bleaching of the colours near it.\n\nTHE SETTING: Ground, water, hills, distant land and planting are each one simplified mass with a soft rounded silhouette, softly shaded across its body, with a slightly deeper tone along its lower edge where it meets what is in front. Sand and grass may carry a very gentle broad mottling of a slightly different tone, nothing more. Masses overlap one another in clear steps and each step reads as a distinct plane. Foliage is built from rounded lobed canopies with a deeper underside. Water is two or three soft bands of clean colour with a few crisp white foam curves. Distance is paler, cooler and quieter, its shapes reduced further, but it stays perfectly sharp.\n\nTHE PROPS AND CHARACTERS: Every object and every character is shaded with soft broad volume: one wide passage of light where the light falls, one wide passage of shade where the form turns away, and a smooth gentle transition between them running across the whole body of the object, plus one broad soft highlight where the light strikes most directly. That is the whole of the shading: two wide zones and one highlight, with no further modelling, no small facets and no detail lighting. Each object casts one shadow onto the ground, and that shadow is darkest and tightest exactly where the object touches the ground, then softens and fades as it travels away from that contact until it loses its edge altogether at the far end. It is a deeper tone of the ground itself and never a grey.\n\nFLAT DIVISIONS: Wherever two colours meet inside a single object they meet as flat areas along one clean edge and nothing happens at that edge. The wedges of a parasol, the sectors of a beach ball, the stripes of a towel, the band of a hat: each is a flat field of colour, and the join carries no bevel, no ridge, no raised lip, no inner shadow, no glow and no strip of highlight. The soft shading passes straight over those divisions as though they were printed on the surface, because that is what they are. This holds just as much on a curved body: on a ball or a dome the coloured sectors are flat fields that simply follow the curve, and none of them is given a shading, a highlight or an edge of its own. The one soft volume shading of the whole ball runs across every sector alike, so the ball reads as one round form printed with colour rather than as separate panels assembled together.\n\nRIM LIGHT: A few rim lights are present and they are wanted, but only a few: on two or three forms in the whole picture, those standing directly against the scene's own light, a narrow band of lighter colour runs along the lit edge. Each one is light and subtle, a step up from the local colour rather than a white line, and it covers only part of that edge. Its own edge is clean but not razor sharp: the band fades away at both of its ends and melts a little into the local colour along its inner side, so it reads as light catching a soft form and never as a hard bright sliver stuck onto it. Most objects carry none at all, and a rim light never runs around a whole outline and never along a division inside an object.\n\nSURFACE: No surface is described by fine repeated detail. Wood has no grain lines, sand has no speckle, leaves have no vein networks and no serrated edges, fabric has no weave and no fibres, basketwork has no visible weaving and no woven pattern, stone has no pitting, and a flower is a few plain rounded petals with no veining and no ruffled edge. Where a material must be told apart it is told apart by its colour and by a very few large clean marks: three plank joints across a deck, one dark stripe down a leaf, two bright curves on the water.\n\nFORM LANGUAGE: Everything is built from big generous rounded volumes with a bold readable silhouette. Corners are softened, edges have thickness, and nothing is thin, spindly, angular or fragile. Objects are simplified into a few large clear masses: a bush is a cluster of soft domes, a tree is a stack of rounded canopies on a curved trunk, a rock is a smooth pebble. A flower is a few plain rounded petals lying flat against the plant, each one a simple shape with no thickness of its own: no extruded edge, no raised lip, no side wall and no rim running round it, so a petal never looks pressed out of the surface. Nothing is drawn thin: a basket, a hat brim, a surfboard, a plank, a pole and a stem are all given real thickness and a generous chunky mass, noticeably thicker than they would be in life, because a thin form reads as weak and fragile at this size. Everything is drawn larger and bolder than life and reads instantly from its silhouette alone.\n\nTHEME COLOURS: The scene is defined by exactly three theme colours, named in the scene description with their hue, saturation and brightness: a dominant, a second that supports it, and a third that is lighter and paler. Those three carry the picture and everything else in it is a tone or a close neighbour of one of them.\n\nCOLOUR: Bright, vivid and strongly saturated, at the strength of the house palette itself: most of the picture sits between fifty five and eighty five percent saturation with brightness above ninety, and the colours are the frank clean colours of that palette rather than softened versions of them. Never dusty, muddy, greyed, milky, chalky, pastel or washed out. The whole image reads light with no dark passages, even at night, where the darkness stays a deep clean blue rather than a black. The dominant theme colour covers about half the coloured surface, so the scene can be named by it, and a complementary colour of the opposite temperature runs through the picture covering between a tenth and a third without ever rivalling it. Depth is built by using the dominant across its tonal range, paler and quieter behind, stronger and cleaner in front, never by darkening. Colour is spread, never piled up: each of the three theme colours appears in at least three separated places across the frame, near the top, in the middle and low down, so the eye finds it again as it travels. No colour is allowed to collect in one region of the picture, and the props of a group are not all given the same colour: they are shared out among the three theme colours so the group reads as varied rather than as one mass of a single hue.\n\nDEPTH: Three clear bands, each a distinct step. A foreground band along the bottom, cropped by the frame, largest in scale. A middle band carrying the subject, the crispest and most saturated part of the picture. A background band behind, paler and simpler, its shapes reduced further but still perfectly sharp. Distance is read as a step down in saturation and a step up in lightness, never as blur, haze or fog.\n\nAVOID: Outlines, contours, ink lines and dark strokes around shapes. A three dimensional rendered look: inflated plastic forms, glossy moulded surfaces, specular blobs, inner glow, inner shadow, and bevelled or highlighted edges where two colours meet. A flat vector, clip-art or sticker look, and forms left unshaded. A painterly or brushy look, visible brush strokes, grain and noise. Photographic rendering, depth of field, blur, bloom, lens flare and fog. Fine repeated texture. Rim light on every object. A busy sky. Dark passages and heavy contrast. Text, lettering, logos and watermarks.\n\nLENS AND PERSPECTIVE: The camera is rectilinear and the frame carries no lens distortion. Straight lines stay straight from one edge of the frame to the other and verticals stay vertical: a fence rail, a post, a plank, a horizon and a tree trunk do not bow, curve or splay towards the corners. There is no fisheye, no barrel distortion, no wide angle bulge, no curved horizon and no vignette.\nTHE ROOM THIS OBJECT BELONGS TO:\n"
+   ],
+   "title": "prompt part 1 (fixed)"
+  },
+  {
+   "id": 302,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    957.6000000000001,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 11,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      4
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nTASK:\nPaint ONE object and nothing else:\n"
+   ],
+   "title": "prompt part 3 (fixed)"
+  },
+  {
+   "id": 304,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1075.2,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 14,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      8
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nIt is a standalone asset for the game. It will be cut out along its own silhouette and laid back into the room of image_1 at a fixed place, so it has to be painted as the finished object already seen from the room's camera, standing where it stands in the room. It is not a catalogue picture of the object, and it is not a scene with the object in it. There is no room around it here: no wall behind it, no floor under it, no other furniture, no character and no lettering of any kind. The object stands alone.\n\nTHE CAMERA: The camera has not moved. It is the same camera as image_1, at the same height above the floor, the same distance from the object and the same focal length, pointed the same way, and the object is drawn exactly as that camera sees it from the place in the room named below. The room's eye line therefore crosses this object at the same height as it crosses the objects of image_1: whatever in the object lies below that line is seen a little from above and shows its top surfaces, and whatever lies above it is seen a little from below and shows its undersides. "
+   ],
+   "title": "prompt part 5 (fixed)"
+  },
+  {
+   "id": 306,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1192.8,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 17,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      12
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nWHERE IT STANDS AND HOW BIG IT IS: "
+   ],
+   "title": "prompt part 7 (fixed)"
+  },
+  {
+   "id": 308,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1310.4,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 20,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      16
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n\nLIGHT: One key light only, the room's own, exactly as described above and as seen in image_1. The object carries one wide passage of light on the side that faces that light, one wide passage of soft shade on the side that turns away from it, one broad soft highlight where the light strikes most directly, and a gentle lighter bounce along the shaded edge. Its colours sit at the same brightness and the same saturation as the things already standing in image_1, so that it reads as part of that one lit room rather than as a brighter, darker or cooler object brought in from somewhere else.\n\nCONTACT SHADOW: The object is painted together with its own shadow, and that shadow is part of this picture. It is the shadow this object casts onto the surface it rests against in the room, thrown by the room's own light direction: darkest and tightest exactly along the line where the object touches that surface, then softening and fading as it travels away from that line until it loses its edge altogether, painted as a deeper, warmer tone of that surface and never as a grey, and reaching no further from the object than a third of the object's own height. An object that hangs from the ceiling or is fixed to a wall instead carries the soft shadow it casts onto that ceiling or wall, close around its fixing. An object that is itself a piece of floor, ground or carpet casts no shadow at all, because it is the surface.\n\nBACKGROUND: Everything that is not the object itself and not that shadow is one flat plain light grey, a single even field of one tone running to all four edges of the frame, with no gradient, no second tone, no pattern, no vignette and no horizon in it. The object sits in the middle of the frame with a clear margin of that grey on all four sides and is never cut by the frame.\n\nFINAL CHECK:\n1. One object only, whole and uncropped, alone on flat plain light grey with its own contact shadow and nothing else in the frame.\n2. Seen from the camera of image_1: the same eye level, and its receding edges run the way they are described above.\n3. The same light as image_1: the lit side, the shade side and the highlight on the sides named above, and a shadow that is tightest where the object meets the surface and fades away from it.\n4. Its colour, brightness and saturation belong to image_1's palette.\n5. "
+   ],
+   "title": "prompt part 9 (fixed)"
+  },
+  {
+   "id": 310,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    1428.0000000000002,
+    0.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 23,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      20
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "PrimitiveStringMultiline"
+   },
+   "widgets_values": [
+    "\n6. Painted like the style references: soft broad volume, clean saturated colour, no outlines, no texture, no lettering.\n"
+   ],
+   "title": "prompt part 11 (fixed)"
+  },
+  {
+   "id": 360,
+   "type": "StringConcatenate",
+   "pos": [
+    840.0,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 1,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 2,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 361,
+   "type": "StringConcatenate",
+   "pos": [
+    898.8000000000001,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 3,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 4,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 362,
+   "type": "StringConcatenate",
+   "pos": [
+    957.6000000000001,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 5,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 6,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 363,
+   "type": "StringConcatenate",
+   "pos": [
+    1016.4,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 7,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 8,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      9
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 364,
+   "type": "StringConcatenate",
+   "pos": [
+    1075.2,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 9,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 10,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      11
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 365,
+   "type": "StringConcatenate",
+   "pos": [
+    1134.0,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 11,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 12,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      13
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 366,
+   "type": "StringConcatenate",
+   "pos": [
+    1192.8,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 18,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 13,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 14,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      15
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 367,
+   "type": "StringConcatenate",
+   "pos": [
+    1251.6,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 19,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 15,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 16,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      17
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 368,
+   "type": "StringConcatenate",
+   "pos": [
+    1310.4,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 21,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 17,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 18,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      19
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 369,
+   "type": "StringConcatenate",
+   "pos": [
+    1369.2,
+    216.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 22,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "string_a",
+     "type": "STRING",
+     "link": 19,
+     "widget": {
+      "name": "string_a"
+     }
+    },
+    {
+     "name": "string_b",
+     "type": "STRING",
+     "link": 20,
+     "widget": {
+      "name": "string_b"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      21
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "StringConcatenate"
+   },
+   "widgets_values": [
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 40,
+   "type": "NanoBananaAIO",
+   "pos": [
+    4620,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 24,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 21,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "image_1",
+     "type": "IMAGE",
+     "link": 22
+    },
+    {
+     "name": "image_2",
+     "type": "IMAGE",
+     "link": 23
+    },
+    {
+     "name": "image_3",
+     "type": "IMAGE",
+     "link": 24
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      25,
+      26
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "thinking",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "grounding_sources",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "NanoBananaAIO"
+   },
+   "widgets_values": [
+    "gemini-3-pro-image-preview",
+    "",
+    1,
+    false,
+    "1:1",
+    "2K",
+    0.35
+   ],
+   "title": "Component on flat grey (Nano Banana Pro)"
+  },
+  {
+   "id": 41,
+   "type": "SaveImage",
+   "pos": [
+    5040,
+    0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 25,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 25
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_COMPONENTS/room/sofa_flat"
+   ],
+   "title": "Flat render (keep: shows what the matte ate)"
+  },
+  {
+   "id": 42,
+   "type": "easy imageRemBg",
+   "pos": [
+    5040,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 26,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 26
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      27
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "easy imageRemBg"
+   },
+   "widgets_values": [
+    "BEN2",
+    "Hide",
+    "x",
+    false,
+    null,
+    false
+   ],
+   "title": "Cut the grey away"
+  },
+  {
+   "id": 43,
+   "type": "SaveImage",
+   "pos": [
+    5460,
+    450.0
+   ],
+   "size": [
+    380,
+    160
+   ],
+   "flags": {},
+   "order": 27,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 27
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "SKIPBO_COMPONENTS/room/sofa"
+   ],
+   "title": "Transparent component PNG"
+  },
+  {
+   "id": 1,
+   "type": "MarkdownNote",
+   "pos": [
+    0,
+    -440
+   ],
+   "size": [
+    1240,
+    380
+   ],
+   "flags": {},
+   "order": 28,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {},
+   "title": "How to use",
+   "widgets_values": [
+    "## Room components: one fitting at a time, as a transparent asset\n\n**In:** the room the object belongs to (image_1) and the two LR style refs. **Out:** `<name>_flat` (the raw render on\ngrey) and `<name>` (the same object cut to a transparent PNG), ready to drop onto the room at a fixed box.\n\nThis is the additive way to build a makeover room. An in-place edit of the room can only rearrange pixels the room\nalready has, so it can never introduce something the room never contained, and it fails outright on heroes, large\nstructures, flat ground elements and strung decorations. A component is painted from nothing, so none of that\napplies. The price is the **match**, and that is all the prompt talks about: the room's camera and eye level, which\nway this object's own edges recede, its measured footprint, the room's one light direction, and its contact shadow.\n\n1. Load the room. If the object replaces something, load the **before** room; if it is being added to a finished\n   room, load that. Keep both style refs.\n2. **THE ROOM** is written once per room and reused for every component: the camera height, where the eye line\n   crosses the frame, which wall faces the camera, which way the floor runs, where the key light comes from, and\n   the three theme colours. Copy it unchanged between runs.\n3. **COMPONENT** is the object and nothing about the room.\n4. **PERSPECTIVE** and **PLACEMENT** are the two that decide whether this works. Say which faces are visible and\n   which way the receding edges go (\"its top is seen from above, its right-hand side recedes to the upper right\").\n   Give the size against something measurable, never \"medium-sized\".\n5. Set **aspect_ratio** on the Nano Banana node to the shape of the object's own box: a rug is 16:9, a window 3:4,\n   a floor lamp 9:16.\n6. Queue. One Nano Banana Pro call (billed), about 30 seconds.\n7. Check the **flat** render first, then the cut-out:\n   - does the eye level match the room, or is the object seen from a different height?\n   - did the matte keep the contact shadow, or eat it? BEN2 usually keeps a soft one and drops a detached one.\n   - is the palette the room's, or a cleaner, cooler version of it?\n\nMaintained in the `comfy/` repo (`tools/build_components_workflow.py`, prompt `references/prompts/components.txt`)."
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   300,
+   0,
+   360,
+   0,
+   "STRING"
+  ],
+  [
+   2,
+   20,
+   0,
+   360,
+   1,
+   "STRING"
+  ],
+  [
+   3,
+   360,
+   0,
+   361,
+   0,
+   "STRING"
+  ],
+  [
+   4,
+   302,
+   0,
+   361,
+   1,
+   "STRING"
+  ],
+  [
+   5,
+   361,
+   0,
+   362,
+   0,
+   "STRING"
+  ],
+  [
+   6,
+   21,
+   0,
+   362,
+   1,
+   "STRING"
+  ],
+  [
+   7,
+   362,
+   0,
+   363,
+   0,
+   "STRING"
+  ],
+  [
+   8,
+   304,
+   0,
+   363,
+   1,
+   "STRING"
+  ],
+  [
+   9,
+   363,
+   0,
+   364,
+   0,
+   "STRING"
+  ],
+  [
+   10,
+   22,
+   0,
+   364,
+   1,
+   "STRING"
+  ],
+  [
+   11,
+   364,
+   0,
+   365,
+   0,
+   "STRING"
+  ],
+  [
+   12,
+   306,
+   0,
+   365,
+   1,
+   "STRING"
+  ],
+  [
+   13,
+   365,
+   0,
+   366,
+   0,
+   "STRING"
+  ],
+  [
+   14,
+   23,
+   0,
+   366,
+   1,
+   "STRING"
+  ],
+  [
+   15,
+   366,
+   0,
+   367,
+   0,
+   "STRING"
+  ],
+  [
+   16,
+   308,
+   0,
+   367,
+   1,
+   "STRING"
+  ],
+  [
+   17,
+   367,
+   0,
+   368,
+   0,
+   "STRING"
+  ],
+  [
+   18,
+   24,
+   0,
+   368,
+   1,
+   "STRING"
+  ],
+  [
+   19,
+   368,
+   0,
+   369,
+   0,
+   "STRING"
+  ],
+  [
+   20,
+   310,
+   0,
+   369,
+   1,
+   "STRING"
+  ],
+  [
+   21,
+   369,
+   0,
+   40,
+   0,
+   "STRING"
+  ],
+  [
+   22,
+   10,
+   0,
+   40,
+   1,
+   "IMAGE"
+  ],
+  [
+   23,
+   11,
+   0,
+   40,
+   2,
+   "IMAGE"
+  ],
+  [
+   24,
+   12,
+   0,
+   40,
+   3,
+   "IMAGE"
+  ],
+  [
+   25,
+   40,
+   0,
+   41,
+   0,
+   "IMAGE"
+  ],
+  [
+   26,
+   40,
+   0,
+   42,
+   0,
+   "IMAGE"
+  ],
+  [
+   27,
+   42,
+   0,
+   43,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "title": "Inputs: the room + the two LR style refs (keep these two)",
+   "bounding": [
+    -20,
+    -60,
+    420,
+    1120
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Edit these five boxes: one object per run",
+   "bounding": [
+    400,
+    -60,
+    420,
+    2200
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Fixed prompt text (collapsed, do not edit here)",
+   "bounding": [
+    820,
+    -60,
+    3780,
+    1480
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  },
+  {
+   "title": "Nano Banana Pro -> transparent component",
+   "bounding": [
+    4600,
+    -60,
+    1260,
+    1120
+   ],
+   "color": "#3f789e",
+   "font_size": 24
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.45,
+   "offset": [
+    60,
+    520
+   ]
+  }
+ },
+ "version": 0.4
+}

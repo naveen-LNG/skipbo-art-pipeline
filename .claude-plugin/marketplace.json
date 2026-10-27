@@ -1,0 +1,14 @@
+{
+  "name": "skipbo-tools",
+  "description": "Tortoise Systems tools for the SkipBo art pipeline on ComfyUI.",
+  "owner": {
+    "name": "Tortoise Systems"
+  },
+  "plugins": [
+    {
+      "name": "skipbo-art",
+      "source": "./plugin",
+      "description": "SkipBo ComfyUI art pipeline: house styles, prompt rules, character to Spine parts."
+    }
+  ]
+}

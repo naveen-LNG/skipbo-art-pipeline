@@ -1,0 +1,79 @@
+{
+  "prompt_id": "38d35912-8ff8-4fd1-8b5e-5a2bc0ae6d49",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 1401969899,
+  "fingerprint": "b43787d356e3",
+  "prompt": "IMAGE ROLES:\nimage_1 and image_2 = ART STYLE. Animation atlases of two characters already shipped in this game, a hippo and a raccoon, cut into separate parts. Take from them only how things are painted: shading, colour, edges, level of detail and the chunky shape language. Their species, costumes and layout are not part of this picture.\n\nTASK:\nPaint the character described in the CHARACTER NOTES as one finished full-body character in the art style of image_1 and image_2, as a clean master drawing for cutting into animation parts.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nPOSE AND FRAMING:\nFront view, facing the viewer, in a symmetrical rest pose. Both arms hang down and out at about thirty degrees from the sides, so plain background shows between each arm and the body along the whole arm. Hands open and relaxed. Legs straight, feet a little apart and flat on the ground. A tail, if the character has one, hangs to one side and stays clear of the legs, with background visible between them. Head level, looking at the viewer, with a gentle closed-mouth smile and eyes open. The whole character fits in the frame with an even margin around it and fills about eighty-five percent of its height. The background is one flat plain light grey with nothing else in it, and the character stands on it without any cast shadow.\n\nFINAL CHECK:\n1. Painted like the shipped hippo and raccoon: airbrushed soft volume, candy colours, chunky simplified shapes, smooth surfaces, no outlines.\n2. Exactly the character in the CHARACTER NOTES: every costume piece in its stated colour.\n3. Front view, symmetrical, arms clear of the body, full body in frame.\n4. Flat light grey background, single character, no text.\n\nCHARACTER NOTES (from the art director):\nA cheerful young rabbit gardener: soft light-grey fur with a white muzzle, a small pink nose, and two long ears with pink inner ears that stand straight up above the head, side by side with plain background between them, both fully inside the frame; a short round white cotton tail. A grass-green long-sleeved shirt whose sleeves reach all the way down to the wrists and end in a soft rolled cuff right at the paw, so no fur shows on the arms; denim-blue dungaree trousers with a bib and two shoulder straps fastened by two round brass buttons; orange rubber boots. Light-grey mitten paws, each a chunky mitten with four short fat rounded fingers. Both paws are empty: no tools or props.",
+  "vars": {
+    "ASPECT": "3:4",
+    "SIZE": "2K",
+    "TEMP": 0.6,
+    "COUNT": 2,
+    "CHARACTER": "A cheerful young rabbit gardener: soft light-grey fur with a white muzzle, a small pink nose, and two long ears with pink inner ears that stand straight up above the head, side by side with plain background between them, both fully inside the frame; a short round white cotton tail. A grass-green long-sleeved shirt whose sleeves reach all the way down to the wrists and end in a soft rolled cuff right at the paw, so no fur shows on the arms; denim-blue dungaree trousers with a bib and two shoulder straps fastened by two round brass buttons; orange rubber boots. Light-grey mitten paws, each a chunky mitten with four short fat rounded fingers. Both paws are empty: no tools or props.",
+    "PREFIX": "agent/skipbo/rabbit-master2",
+    "IMAGE_1": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg",
+    "IMAGE_2": "agent/skipbo/shipped-raccoon-atlas_7d3904441b.jpg"
+  },
+  "inputs": {
+    "1": "../../../plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas-small.jpg",
+    "2": "../../../plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-raccoon-atlas.jpg"
+  },
+  "criteria": [
+    "sleeves to the wrist, no fur on arms",
+    "mitten paws",
+    "both long ears upright, separated, inside frame",
+    "arms clear of body, legs apart",
+    "flat light grey background"
+  ],
+  "outputs": [
+    "runs/rabbit-master2/1016_032214_s1401969899_n2_00.png",
+    "runs/rabbit-master2/1016_032214_s1401969899_n2_01.png"
+  ],
+  "seconds": 123.8,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 and image_2 = ART STYLE. Animation atlases of two characters already shipped in this game, a hippo and a raccoon, cut into separate parts. Take from them only how things are painted: shading, colour, edges, level of detail and the chunky shape language. Their species, costumes and layout are not part of this picture.\n\nTASK:\nPaint the character described in the CHARACTER NOTES as one finished full-body character in the art style of image_1 and image_2, as a clean master drawing for cutting into animation parts.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nPOSE AND FRAMING:\nFront view, facing the viewer, in a symmetrical rest pose. Both arms hang down and out at about thirty degrees from the sides, so plain background shows between each arm and the body along the whole arm. Hands open and relaxed. Legs straight, feet a little apart and flat on the ground. A tail, if the character has one, hangs to one side and stays clear of the legs, with background visible between them. Head level, looking at the viewer, with a gentle closed-mouth smile and eyes open. The whole character fits in the frame with an even margin around it and fills about eighty-five percent of its height. The background is one flat plain light grey with nothing else in it, and the character stands on it without any cast shadow.\n\nFINAL CHECK:\n1. Painted like the shipped hippo and raccoon: airbrushed soft volume, candy colours, chunky simplified shapes, smooth surfaces, no outlines.\n2. Exactly the character in the CHARACTER NOTES: every costume piece in its stated colour.\n3. Front view, symmetrical, arms clear of the body, full body in frame.\n4. Flat light grey background, single character, no text.\n\nCHARACTER NOTES (from the art director):\nA cheerful young rabbit gardener: soft light-grey fur with a white muzzle, a small pink nose, and two long ears with pink inner ears that stand straight up above the head, side by side with plain background between them, both fully inside the frame; a short round white cotton tail. A grass-green long-sleeved shirt whose sleeves reach all the way down to the wrists and end in a soft rolled cuff right at the paw, so no fur shows on the arms; denim-blue dungaree trousers with a bib and two shoulder straps fastened by two round brass buttons; orange rubber boots. Light-grey mitten paws, each a chunky mitten with four short fat rounded fingers. Both paws are empty: no tools or props.",
+        "image_count": 2,
+        "use_search": false,
+        "aspect_ratio": "3:4",
+        "image_size": "2K",
+        "temperature": 0.6,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-raccoon-atlas_7d3904441b.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/rabbit-master2"
+      }
+    }
+  }
+}

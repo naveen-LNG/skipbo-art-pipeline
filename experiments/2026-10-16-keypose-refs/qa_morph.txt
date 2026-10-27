@@ -1,0 +1,21 @@
+PASS  structure  {}
+PASS  setup      {"silhouette_iou": 0.916}
+PASS  seams      {"seams": {"hips/tail": 0.0, "hips/boot_l": 0.0, "hips/boot_r": 0.0, "upperarm_l/hand_l": 0.0, "upperarm_r/hand_r": 0.0, "torso/tail": 0.014, "torso/hips": 0.014, "torso/upperarm_l": 0.0, "torso/upperarm_r": 0.0, "head/torso": 0.0, "hand_l/torso": 0.017, "upperarm_l/torso": 0.019, "legs_a/tail": 0.0
+PASS  thumbs     {"thumbs": {"point": 5.0, "thumbs_up": 10.0, "hold_card": 10.0, "wave": 10.0, "cheer_jump": 2.4}}
+PASS  sockets    {"sockets": {"beaver_hand_l/beaver_arm_l": {"spill": 0.018, "spill_at": "idle@1.40", "off": 0.26, "off_at": "cheer_jump@1.20"}, "beaver_hand_r/beaver_arm_r": {"spill": 0.015, "spill_at": "wave_flag@1.90", "off": 0.26, "off_at": "cheer_jump@1.20"}}}
+PASS  landmarks  {"landmarks": {"shoulder_l": 0.0, "elbow_l": 0.01, "wrist_l": 14.9, "ankle_l": 0.02, "shoulder_r": 0.0, "elbow_r": 0.01, "wrist_r": 14.9, "ankle_r": 0.02}}
+PASS  layer_order {}
+PASS  blink      {"frames": 31, "duration": 1.0}
+PASS  idle       {"frames": 73, "duration": 2.4}
+PASS  wave       {"frames": 91, "duration": 3.0}
+PASS  cheer_jump {"frames": 58, "duration": 1.9}
+PASS  thumbs_up  {"frames": 73, "duration": 2.4}
+PASS  point      {"frames": 73, "duration": 2.4}
+PASS  hold_card  {"frames": 73, "duration": 2.4}
+PASS  emotions   {"frames": 217, "duration": 7.2}
+PASS  walk       {"frames": 31, "duration": 1.0}
+PASS  run        {"frames": 20, "duration": 0.64}
+FAIL  squat      {"frames": 61, "duration": 2.0, "detached": {"boot_l": [0.0, 0.033, 0.067, 0.1, 0.133, 0.167, 0.2, 0.233, 0.267, 0.3, 0.333, 0.367, 0.4, 0.433, 0.467, 0.5, 0.533, 0.567, 0.6, 0.633, 0.667, 0.7, 0.733, 0.767, 0.8, 0.833, 0.867, 0.9, 0.933, 0.967, 1.0, 1.033, 1.067, 1.1, 1.133, 1.167, 1.2, 1.233, 1.26
+FAIL  jump_hurdle {"frames": 94, "duration": 3.1, "detached": {"boot_l": [0.0, 0.033, 0.067, 0.1, 0.133, 0.167, 0.2, 0.233, 0.267, 0.3, 0.333, 0.367, 0.4, 0.433, 0.467, 0.5, 0.533, 0.567, 0.6, 0.633, 0.667, 0.7, 0.733, 0.767, 0.8, 0.833, 0.867, 0.9, 0.933, 0.967, 1.0, 1.033, 1.067, 1.1, 1.133, 1.167, 1.2, 1.233, 1.56
+PASS  wave_flag  {"frames": 109, "duration": 3.6}
+FAIL  plant_seed {"frames": 85, "duration": 2.8, "detached": {"boot_l": [0.0, 0.033, 0.067, 0.1, 0.133, 0.167, 0.2, 0.233, 0.267, 0.3, 0.333, 0.367, 0.4, 0.433, 0.467, 0.5, 0.533, 0.567, 0.6, 0.633, 0.667, 0.7, 0.733, 0.767, 0.8, 0.833, 0.867, 0.9, 0.933, 0.967, 1.0, 1.033, 1.067, 1.1, 1.133, 1.167, 1.2, 1.233, 1.26

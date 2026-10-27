@@ -1,0 +1,16 @@
+IMAGE ROLES:
+image_1 = DRAWING A: a finished animation drawing of the character's lower body (belt, trousers, boots).
+image_2 = DRAWING B: the next finished drawing of the same movement.
+
+TASK:
+Paint the animator's in-between: three drawings of only the belt, the trousers and the boots, side by side in one row from left to right. The left drawing is image_1 exactly. The right drawing is image_2 exactly. The middle drawing is the in-between: the legs exactly halfway between the two, as if the movement were paused at its middle. {{MOVE}}
+
+THE MIDDLE DRAWING: every part sits halfway between where it is in image_1 and where it is in image_2: the knees halfway in how far they bend and how far apart they spread, the boots halfway in height and in how far apart they stand. Measured from the top of the belt to the soles of the boots, it is exactly halfway between the two in height. It is painted exactly like image_1 and image_2: the same colours, the same soft airbrushed shading and light from the upper left, the same belt and buckle, the same cuffs and the same boots (or feet), as chunky as they are, with no outline or dark edge anywhere. The belt is exactly as wide as theirs.
+
+LAYOUT: the three belts sit on one straight line across the picture and are all the same width. The drawings stand apart with a clear gap of empty background between them, never touching, fully inside the frame, on one flat plain light grey background with nothing else in it: no labels, text, guides, ground line or shadows.
+
+FINAL CHECK:
+1. Three drawings in one row: image_1 exactly, the in-between, image_2 exactly.
+2. The middle one exactly halfway between them in bend, spread and height.
+3. Painted exactly like them; same belt width; belts on one line.
+4. Flat light grey background; no text.

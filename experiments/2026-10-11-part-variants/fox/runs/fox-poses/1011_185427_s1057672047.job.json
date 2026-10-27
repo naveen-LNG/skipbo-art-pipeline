@@ -1,0 +1,77 @@
+{
+  "prompt_id": "a4e33dc0-0b9d-430f-bcd5-7ba343647e3f",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 1057672047,
+  "fingerprint": "f924770c1679",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint pose variants of some body pieces of the character from image_1 for 2D skeletal animation in Spine. Each row starts with the piece exactly as it is on the character, followed by its variants; a variant is the same piece at the same size and width, painted again in a different pose, so it can replace the first one at the same joint.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\nRow 1: left upper arm, then left upper arm raised (purple sleeve from shoulder to elbow; the raised one is the same sleeve as it looks on an arm lifted high overhead, painted upright the same way: its top end is a wider soft rounded shoulder with one gentle fold where the cloth bunches).\nRow 2: right upper arm, then right upper arm raised (the same two for the other arm).\nRow 3: left boot, left boot on tiptoe, right boot, right boot on tiptoe (orange boots; on tiptoe the boot is seen from the front with its toe pointing down and its sole tilted towards the viewer, as when jumping, with its rounded ankle end still at the top).\nRow 4: tail, then tail up (the big bushy orange tail with its cream tip; tail up is the same tail swept up into a happy curl with the cream tip at the top; both tails have their rounded root at the lower left, where they join the hips).\n\nEvery limb piece is painted straight and upright, the same way up as its first piece, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself; no piece has a flat, straight or slanted cut edge. Each variant keeps exactly the colours, width and painting of its first piece; only the pose changes.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows; each variant the same size and width as the first piece of its row.\n2. Limb pieces upright with the joining end at the top, every joining end fully rounded.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.",
+  "vars": {
+    "ASPECT": "1:1",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "POSES": "Row 1: left upper arm, then left upper arm raised (purple sleeve from shoulder to elbow; the raised one is the same sleeve as it looks on an arm lifted high overhead, painted upright the same way: its top end is a wider soft rounded shoulder with one gentle fold where the cloth bunches).\nRow 2: right upper arm, then right upper arm raised (the same two for the other arm).\nRow 3: left boot, left boot on tiptoe, right boot, right boot on tiptoe (orange boots; on tiptoe the boot is seen from the front with its toe pointing down and its sole tilted towards the viewer, as when jumping, with its rounded ankle end still at the top).\nRow 4: tail, then tail up (the big bushy orange tail with its cream tip; tail up is the same tail swept up into a happy curl with the cream tip at the top; both tails have their rounded root at the lower left, where they join the hips).",
+    "CHARACTER": "A cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.",
+    "PREFIX": "agent/skipbo/fox-poses",
+    "IMAGE_1": "agent/skipbo/fox_master_9b63fad707.png",
+    "IMAGE_2": "agent/skipbo/shipped-hippo-atlas_3ce5141f8c.jpg"
+  },
+  "inputs": {
+    "1": "/work/comfy/experiments/2026-10-11-fox-parts/fox_master.png",
+    "2": "/work/comfy/plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas.jpg"
+  },
+  "criteria": [
+    "10 pieces in 4 rows",
+    "variants same width as first piece",
+    "tail roots lower left"
+  ],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-11-part-variants/fox/runs/fox-poses/1011_185427_s1057672047_n2_00.png"
+  ],
+  "seconds": 74.0,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint pose variants of some body pieces of the character from image_1 for 2D skeletal animation in Spine. Each row starts with the piece exactly as it is on the character, followed by its variants; a variant is the same piece at the same size and width, painted again in a different pose, so it can replace the first one at the same joint.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\nRow 1: left upper arm, then left upper arm raised (purple sleeve from shoulder to elbow; the raised one is the same sleeve as it looks on an arm lifted high overhead, painted upright the same way: its top end is a wider soft rounded shoulder with one gentle fold where the cloth bunches).\nRow 2: right upper arm, then right upper arm raised (the same two for the other arm).\nRow 3: left boot, left boot on tiptoe, right boot, right boot on tiptoe (orange boots; on tiptoe the boot is seen from the front with its toe pointing down and its sole tilted towards the viewer, as when jumping, with its rounded ankle end still at the top).\nRow 4: tail, then tail up (the big bushy orange tail with its cream tip; tail up is the same tail swept up into a happy curl with the cream tip at the top; both tails have their rounded root at the lower left, where they join the hips).\n\nEvery limb piece is painted straight and upright, the same way up as its first piece, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself; no piece has a flat, straight or slanted cut edge. Each variant keeps exactly the colours, width and painting of its first piece; only the pose changes.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows; each variant the same size and width as the first piece of its row.\n2. Limb pieces upright with the joining end at the top, every joining end fully rounded.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "1:1",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/fox_master_9b63fad707.png"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas_3ce5141f8c.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/fox-poses"
+      }
+    }
+  }
+}

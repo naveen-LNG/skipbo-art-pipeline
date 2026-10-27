@@ -1,0 +1,64 @@
+{
+  "prompt_id": "a66bdfd1-9cbd-4ca6-bf03-d60de41d6ce4",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 1906133058,
+  "fingerprint": "9b641c69351f",
+  "prompt": "Edit the attached picture, image 1. It is a room in a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Change one thing only: all the mess on the floor: the cardboard boxes and broken planks in the front left corner, the planks leaning against the wall beside the fireplace, the tipped bucket and the plaster lumps in the front right corner, and every small lump of rubble lying anywhere on the floor.\n\nAll of it is gone. In its place is the plain clean wooden floor of the room, the same planks continuing in the same colour, direction and perspective as the rest of the floor, swept clean and whole, with no object of any kind on it.\n\nEverything else in the picture stays exactly as it is, as though untouched: the same camera, the same framing and crop, the same perspective, every other piece of furniture, every wall, the floor, the ceiling, the light and the colours outside the changed part are identical to image 1, pixel for pixel. Nothing moves, nothing is added anywhere else and nothing else is repaired. The new part is painted in exactly the same style as the rest of the picture: clean simplified rounded masses, soft broad shading with one wide light side, one wide shade side and one soft highlight, no outlines, no texture, no fine detail, and bright clean saturated colours. No characters, no text.",
+  "vars": {
+    "ASPECT": "9:16",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "TARGET": "all the mess on the floor: the cardboard boxes and broken planks in the front left corner, the planks leaning against the wall beside the fireplace, the tipped bucket and the plaster lumps in the front right corner, and every small lump of rubble lying anywhere on the floor.",
+    "NEW": "All of it is gone. In its place is the plain clean wooden floor of the room, the same planks continuing in the same colour, direction and perspective as the rest of the floor, swept clean and whole, with no object of any kind on it.",
+    "PREFIX": "agent/skipbo/edit-mess",
+    "IMAGE_1": "agent/skipbo/base_409cde9a24.png"
+  },
+  "inputs": {
+    "1": "base.png"
+  },
+  "criteria": [
+    "only the mess changed",
+    "same camera and framing as base"
+  ],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-16-room-renovate/room/runs/edit-mess/1016_180142_s1906133058_n2_00.png"
+  ],
+  "seconds": 184.1,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "Edit the attached picture, image 1. It is a room in a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Change one thing only: all the mess on the floor: the cardboard boxes and broken planks in the front left corner, the planks leaning against the wall beside the fireplace, the tipped bucket and the plaster lumps in the front right corner, and every small lump of rubble lying anywhere on the floor.\n\nAll of it is gone. In its place is the plain clean wooden floor of the room, the same planks continuing in the same colour, direction and perspective as the rest of the floor, swept clean and whole, with no object of any kind on it.\n\nEverything else in the picture stays exactly as it is, as though untouched: the same camera, the same framing and crop, the same perspective, every other piece of furniture, every wall, the floor, the ceiling, the light and the colours outside the changed part are identical to image 1, pixel for pixel. Nothing moves, nothing is added anywhere else and nothing else is repaired. The new part is painted in exactly the same style as the rest of the picture: clean simplified rounded masses, soft broad shading with one wide light side, one wide shade side and one soft highlight, no outlines, no texture, no fine detail, and bright clean saturated colours. No characters, no text.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "9:16",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/base_409cde9a24.png"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/edit-mess"
+      }
+    }
+  }
+}

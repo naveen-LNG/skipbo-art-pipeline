@@ -1,0 +1,30 @@
+IMAGE ROLES:
+image_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.
+image_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.
+
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.
+Shading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.
+Colour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.
+Edges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.
+Surfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.
+Eyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.
+
+TASK:
+Paint the two arms of the character from image_1, without the paws, as separate pieces for 2D skeletal animation in Spine. Each arm becomes one bending mesh, so it must be painted whole and straight.
+
+THE PIECES (two arms, each painted exactly once), side by side in one row, large, together filling most of the sheet:
+Left: the arm of the character's right side (the arm on the left side of image_1).
+Right: the arm of the character's left side (the arm on the right side of image_1).
+A whole arm is {{SLEEVE}}, as ONE piece from the shoulder all the way down to the wrist: painted straight and upright with the shoulder end at the top, rounded like the end of a sausage, the same width as image_1's arm along its whole length, and ending at the bottom in a rounded furry wrist end where the paw would join. There is no paw, mitten or body piece on the sheet.
+
+All pieces are laid out on one flat plain light grey background. The two arms stand apart with a clear gap of empty background between them. They never touch, never overlap, and stay fully inside the frame, with an even margin of background below each wrist. All pieces share one scale, the scale of the arms in image_1. The sheet contains only these two arms, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.
+
+FINAL CHECK:
+1. Exactly two arms in one row, nothing else on the sheet: no paws.
+2. Each arm one straight upright piece from a rounded shoulder end down to its rounded furry wrist, the rolled cuff at the elbow, the same width as image_1's arm.
+3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.
+4. Flat light grey background below and around both arms; no text.
+
+CHARACTER NOTES (from the art director, they override image_1 where they differ):
+{{CHARACTER}}

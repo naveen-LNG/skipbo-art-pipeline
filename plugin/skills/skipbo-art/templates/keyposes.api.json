@@ -1,0 +1,797 @@
+{
+  "_meta": {
+    "engine": "nb",
+    "billed": "Gemini gemini-3-pro-image-preview x3",
+    "description": "Approved master -> three key frames of one action (keypose.txt). IMAGE_1 = master, IMAGE_2 = prop. Vars: CHARACTER, STORY, PROP_ROLE, PLACEMENT, CHECK, POSE_A, POSE_B, POSE_C.",
+    "defaults": {}
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_1}}"
+    }
+  },
+  "11": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{IMAGE_2}}"
+    }
+  },
+  "20": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{CHARACTER}}"
+    }
+  },
+  "21": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{STORY}}"
+    }
+  },
+  "22": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{PROP_ROLE}}"
+    }
+  },
+  "23": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{PLACEMENT}}"
+    }
+  },
+  "24": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{CHECK}}"
+    }
+  },
+  "25": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{POSE_A}}"
+    }
+  },
+  "26": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{POSE_B}}"
+    }
+  },
+  "27": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "{{POSE_C}}"
+    }
+  },
+  "300": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved, in its rest pose. This picture shows the same character on the same canvas, at the same size and painted in exactly the same way, only in a different pose.\n"
+    }
+  },
+  "302": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint one key frame of a 2D game animation of the character from image_1: the single moment described below, held still, as the animator's target drawing for that moment. A cartoon animator would draw this frame with a clear, strong, readable pose: weight, balance and the line of action read at once from the silhouette.\n\nWHAT IS HAPPENING:\n"
+    }
+  },
+  "304": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nTHE POSE IN THIS FRAME:\n"
+    }
+  },
+  "306": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nCAMERA AND BODY TURN: This is a 2D game character that is only ever drawn from the front, like a paper puppet, so the camera has not moved since image_1 and the character never turns. The head is painted exactly as in image_1, straight on and symmetrical: the nose sits in the exact horizontal middle of the face, both eyes are the same size, both ears show at the same height. The chest and the belt buckle face the viewer squarely, in the middle of the body, with one shoulder at each side. The head may tip a little to one side, the eyes may glance toward something, and the body may lean a little sideways, but the head, chest and hips never rotate toward either side and never show three-quarter view or profile. All movement happens in the picture's plane: arms swing out to the sides, up and down; knees bend out to the sides, toward the picture's left and right.\n\nSIZE AND PLACEMENT: Same canvas and the same scale as image_1: the head, paws, boots and sweater are exactly as big as they are in image_1, so this frame can be laid over image_1. "
+    }
+  },
+  "308": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nThe background is one flat plain light grey, exactly as in image_1, with nothing else in it except what is named above, and no cast shadow, motion lines, speed lines, dust, text or labels.\n\nFINAL CHECK:\n1. Exactly the character of image_1: same costume, colours, proportions and size.\n2. Front view: face, chest and belt buckle face the viewer; no turn of the body.\n3. "
+    }
+  },
+  "310": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n4. Painted like image_1: airbrushed soft volume, smooth, no outlines.\n5. Flat light grey background; one character; no text or motion lines.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+    }
+  },
+  "312": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n"
+    }
+  },
+  "320": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "300",
+        0
+      ],
+      "string_b": [
+        "22",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "321": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "320",
+        0
+      ],
+      "string_b": [
+        "302",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "322": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "321",
+        0
+      ],
+      "string_b": [
+        "21",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "323": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "322",
+        0
+      ],
+      "string_b": [
+        "304",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "324": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "323",
+        0
+      ],
+      "string_b": [
+        "25",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "325": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "324",
+        0
+      ],
+      "string_b": [
+        "306",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "326": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "325",
+        0
+      ],
+      "string_b": [
+        "23",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "327": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "326",
+        0
+      ],
+      "string_b": [
+        "308",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "328": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "327",
+        0
+      ],
+      "string_b": [
+        "24",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "329": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "328",
+        0
+      ],
+      "string_b": [
+        "310",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "330": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "329",
+        0
+      ],
+      "string_b": [
+        "20",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "331": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "330",
+        0
+      ],
+      "string_b": [
+        "312",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "40": {
+    "class_type": "NanoBananaAIO",
+    "inputs": {
+      "model_name": "gemini-3-pro-image-preview",
+      "prompt": [
+        "331",
+        0
+      ],
+      "image_count": 1,
+      "use_search": false,
+      "aspect_ratio": "3:4",
+      "image_size": "2K",
+      "temperature": 0.5,
+      "image_1": [
+        "10",
+        0
+      ],
+      "image_2": [
+        "11",
+        0
+      ]
+    }
+  },
+  "41": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "40",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/key_A"
+    }
+  },
+  "340": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved, in its rest pose. This picture shows the same character on the same canvas, at the same size and painted in exactly the same way, only in a different pose.\n"
+    }
+  },
+  "342": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint one key frame of a 2D game animation of the character from image_1: the single moment described below, held still, as the animator's target drawing for that moment. A cartoon animator would draw this frame with a clear, strong, readable pose: weight, balance and the line of action read at once from the silhouette.\n\nWHAT IS HAPPENING:\n"
+    }
+  },
+  "344": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nTHE POSE IN THIS FRAME:\n"
+    }
+  },
+  "346": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nCAMERA AND BODY TURN: This is a 2D game character that is only ever drawn from the front, like a paper puppet, so the camera has not moved since image_1 and the character never turns. The head is painted exactly as in image_1, straight on and symmetrical: the nose sits in the exact horizontal middle of the face, both eyes are the same size, both ears show at the same height. The chest and the belt buckle face the viewer squarely, in the middle of the body, with one shoulder at each side. The head may tip a little to one side, the eyes may glance toward something, and the body may lean a little sideways, but the head, chest and hips never rotate toward either side and never show three-quarter view or profile. All movement happens in the picture's plane: arms swing out to the sides, up and down; knees bend out to the sides, toward the picture's left and right.\n\nSIZE AND PLACEMENT: Same canvas and the same scale as image_1: the head, paws, boots and sweater are exactly as big as they are in image_1, so this frame can be laid over image_1. "
+    }
+  },
+  "348": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nThe background is one flat plain light grey, exactly as in image_1, with nothing else in it except what is named above, and no cast shadow, motion lines, speed lines, dust, text or labels.\n\nFINAL CHECK:\n1. Exactly the character of image_1: same costume, colours, proportions and size.\n2. Front view: face, chest and belt buckle face the viewer; no turn of the body.\n3. "
+    }
+  },
+  "350": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n4. Painted like image_1: airbrushed soft volume, smooth, no outlines.\n5. Flat light grey background; one character; no text or motion lines.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+    }
+  },
+  "352": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n"
+    }
+  },
+  "360": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "340",
+        0
+      ],
+      "string_b": [
+        "22",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "361": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "360",
+        0
+      ],
+      "string_b": [
+        "342",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "362": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "361",
+        0
+      ],
+      "string_b": [
+        "21",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "363": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "362",
+        0
+      ],
+      "string_b": [
+        "344",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "364": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "363",
+        0
+      ],
+      "string_b": [
+        "26",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "365": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "364",
+        0
+      ],
+      "string_b": [
+        "346",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "366": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "365",
+        0
+      ],
+      "string_b": [
+        "23",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "367": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "366",
+        0
+      ],
+      "string_b": [
+        "348",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "368": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "367",
+        0
+      ],
+      "string_b": [
+        "24",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "369": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "368",
+        0
+      ],
+      "string_b": [
+        "350",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "370": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "369",
+        0
+      ],
+      "string_b": [
+        "20",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "371": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "370",
+        0
+      ],
+      "string_b": [
+        "352",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "42": {
+    "class_type": "NanoBananaAIO",
+    "inputs": {
+      "model_name": "gemini-3-pro-image-preview",
+      "prompt": [
+        "371",
+        0
+      ],
+      "image_count": 1,
+      "use_search": false,
+      "aspect_ratio": "3:4",
+      "image_size": "2K",
+      "temperature": 0.5,
+      "image_1": [
+        "10",
+        0
+      ],
+      "image_2": [
+        "11",
+        0
+      ]
+    }
+  },
+  "43": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "42",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/key_B"
+    }
+  },
+  "380": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved, in its rest pose. This picture shows the same character on the same canvas, at the same size and painted in exactly the same way, only in a different pose.\n"
+    }
+  },
+  "382": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint one key frame of a 2D game animation of the character from image_1: the single moment described below, held still, as the animator's target drawing for that moment. A cartoon animator would draw this frame with a clear, strong, readable pose: weight, balance and the line of action read at once from the silhouette.\n\nWHAT IS HAPPENING:\n"
+    }
+  },
+  "384": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nTHE POSE IN THIS FRAME:\n"
+    }
+  },
+  "386": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nCAMERA AND BODY TURN: This is a 2D game character that is only ever drawn from the front, like a paper puppet, so the camera has not moved since image_1 and the character never turns. The head is painted exactly as in image_1, straight on and symmetrical: the nose sits in the exact horizontal middle of the face, both eyes are the same size, both ears show at the same height. The chest and the belt buckle face the viewer squarely, in the middle of the body, with one shoulder at each side. The head may tip a little to one side, the eyes may glance toward something, and the body may lean a little sideways, but the head, chest and hips never rotate toward either side and never show three-quarter view or profile. All movement happens in the picture's plane: arms swing out to the sides, up and down; knees bend out to the sides, toward the picture's left and right.\n\nSIZE AND PLACEMENT: Same canvas and the same scale as image_1: the head, paws, boots and sweater are exactly as big as they are in image_1, so this frame can be laid over image_1. "
+    }
+  },
+  "388": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n\nThe background is one flat plain light grey, exactly as in image_1, with nothing else in it except what is named above, and no cast shadow, motion lines, speed lines, dust, text or labels.\n\nFINAL CHECK:\n1. Exactly the character of image_1: same costume, colours, proportions and size.\n2. Front view: face, chest and belt buckle face the viewer; no turn of the body.\n3. "
+    }
+  },
+  "390": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n4. Painted like image_1: airbrushed soft volume, smooth, no outlines.\n5. Flat light grey background; one character; no text or motion lines.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\n"
+    }
+  },
+  "392": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": "\n"
+    }
+  },
+  "400": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "380",
+        0
+      ],
+      "string_b": [
+        "22",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "401": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "400",
+        0
+      ],
+      "string_b": [
+        "382",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "402": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "401",
+        0
+      ],
+      "string_b": [
+        "21",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "403": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "402",
+        0
+      ],
+      "string_b": [
+        "384",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "404": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "403",
+        0
+      ],
+      "string_b": [
+        "27",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "405": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "404",
+        0
+      ],
+      "string_b": [
+        "386",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "406": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "405",
+        0
+      ],
+      "string_b": [
+        "23",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "407": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "406",
+        0
+      ],
+      "string_b": [
+        "388",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "408": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "407",
+        0
+      ],
+      "string_b": [
+        "24",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "409": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "408",
+        0
+      ],
+      "string_b": [
+        "390",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "410": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "409",
+        0
+      ],
+      "string_b": [
+        "20",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "411": {
+    "class_type": "StringConcatenate",
+    "inputs": {
+      "string_a": [
+        "410",
+        0
+      ],
+      "string_b": [
+        "392",
+        0
+      ],
+      "delimiter": ""
+    }
+  },
+  "44": {
+    "class_type": "NanoBananaAIO",
+    "inputs": {
+      "model_name": "gemini-3-pro-image-preview",
+      "prompt": [
+        "411",
+        0
+      ],
+      "image_count": 1,
+      "use_search": false,
+      "aspect_ratio": "3:4",
+      "image_size": "2K",
+      "temperature": 0.5,
+      "image_1": [
+        "10",
+        0
+      ],
+      "image_2": [
+        "11",
+        0
+      ]
+    }
+  },
+  "45": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "44",
+        0
+      ],
+      "filename_prefix": "{{PREFIX}}/key_C"
+    }
+  }
+}

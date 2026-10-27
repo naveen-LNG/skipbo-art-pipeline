@@ -1,0 +1,183 @@
+{
+  "prompt_id": "d6f3ca02-2f07-49c7-a77f-832c14e2b04d",
+  "template": "parts-split",
+  "engine": "",
+  "seed": 261183901,
+  "fingerprint": "e525ef3e2900",
+  "prompt": null,
+  "vars": {
+    "MODE": "BEN2",
+    "PREFIX": "agent/skipbo/beaver-face-parts",
+    "IMAGE_1": "agent/skipbo/1015_132356_s552609281_n2_00_c4d9bcf9f9.png"
+  },
+  "inputs": {
+    "1": "runs/beaver-face/1015_132356_s552609281_n2_00.png"
+  },
+  "criteria": [],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face-parts/1015_132908_s261183901_n112_00.png",
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face-parts/1015_132908_s261183901_n112_01.png",
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face-parts/1015_132908_s261183901_n112_02.png",
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face-parts/1015_132908_s261183901_n112_03.png",
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face-parts/1015_132908_s261183901_n112_04.png",
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face-parts/1015_132908_s261183901_n112_05.png",
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face-parts/1015_132908_s261183901_n112_06.png",
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face-parts/1015_132908_s261183901_n112_07.png",
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face-parts/1015_132908_s261183901_n112_08.png"
+  ],
+  "seconds": 17.7,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "10": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/1015_132356_s552609281_n2_00_c4d9bcf9f9.png"
+      }
+    },
+    "100": {
+      "class_type": "easy imageRemBg",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "rem_mode": "BEN2",
+        "image_output": "Hide",
+        "save_prefix": "x"
+      }
+    },
+    "101": {
+      "class_type": "ThresholdMask",
+      "inputs": {
+        "mask": [
+          "100",
+          1
+        ],
+        "value": 0.3
+      }
+    },
+    "102": {
+      "class_type": "GrowMask",
+      "inputs": {
+        "mask": [
+          "101",
+          0
+        ],
+        "expand": 8,
+        "tapered_corners": true
+      }
+    },
+    "103": {
+      "class_type": "MaskToSEGS",
+      "inputs": {
+        "mask": [
+          "102",
+          0
+        ],
+        "combined": false,
+        "crop_factor": 1.0,
+        "bbox_fill": false,
+        "drop_size": 24,
+        "contour_fill": true
+      }
+    },
+    "104": {
+      "class_type": "SetDefaultImageForSEGS",
+      "inputs": {
+        "segs": [
+          "103",
+          0
+        ],
+        "image": [
+          "100",
+          0
+        ],
+        "override": true
+      }
+    },
+    "105": {
+      "class_type": "ImpactDecomposeSEGS",
+      "inputs": {
+        "segs": [
+          "104",
+          0
+        ]
+      }
+    },
+    "106": {
+      "class_type": "ImpactFrom_SEG_ELT",
+      "inputs": {
+        "seg_elt": [
+          "105",
+          1
+        ]
+      }
+    },
+    "107": {
+      "class_type": "SplitImageWithAlpha",
+      "inputs": {
+        "image": [
+          "106",
+          1
+        ]
+      }
+    },
+    "108": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "107",
+          1
+        ]
+      }
+    },
+    "109": {
+      "class_type": "MaskComposite",
+      "inputs": {
+        "destination": [
+          "108",
+          0
+        ],
+        "source": [
+          "106",
+          2
+        ],
+        "x": 0,
+        "y": 0,
+        "operation": "multiply"
+      }
+    },
+    "110": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "109",
+          0
+        ]
+      }
+    },
+    "111": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "107",
+          0
+        ],
+        "alpha": [
+          "110",
+          0
+        ]
+      }
+    },
+    "112": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "111",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/beaver-face-parts/part"
+      }
+    }
+  }
+}

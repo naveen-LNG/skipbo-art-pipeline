@@ -1,0 +1,395 @@
+images/shadow.png
+size: 96,28
+filter: Linear,Linear
+shadow
+bounds: 0,0,96,28
+
+images/synth_boot_l.png
+size: 91,91
+filter: Linear,Linear
+synth_boot_l
+bounds: 0,0,91,91
+
+images/synth_boot_l_back.png
+size: 91,91
+filter: Linear,Linear
+synth_boot_l_back
+bounds: 0,0,91,91
+
+images/synth_boot_l_tiptoe.png
+size: 69,97
+filter: Linear,Linear
+synth_boot_l_tiptoe
+bounds: 0,0,69,97
+
+images/synth_boot_l_tiptoe_back.png
+size: 69,97
+filter: Linear,Linear
+synth_boot_l_tiptoe_back
+bounds: 0,0,69,97
+
+images/synth_boot_l_tiptoe_under.png
+size: 79,107
+filter: Linear,Linear
+synth_boot_l_tiptoe_under
+bounds: 0,0,79,107
+
+images/synth_boot_l_under.png
+size: 101,101
+filter: Linear,Linear
+synth_boot_l_under
+bounds: 0,0,101,101
+
+images/synth_boot_r.png
+size: 91,91
+filter: Linear,Linear
+synth_boot_r
+bounds: 0,0,91,91
+
+images/synth_boot_r_back.png
+size: 91,91
+filter: Linear,Linear
+synth_boot_r_back
+bounds: 0,0,91,91
+
+images/synth_boot_r_tiptoe.png
+size: 69,97
+filter: Linear,Linear
+synth_boot_r_tiptoe
+bounds: 0,0,69,97
+
+images/synth_boot_r_tiptoe_back.png
+size: 69,97
+filter: Linear,Linear
+synth_boot_r_tiptoe_back
+bounds: 0,0,69,97
+
+images/synth_boot_r_tiptoe_under.png
+size: 79,107
+filter: Linear,Linear
+synth_boot_r_tiptoe_under
+bounds: 0,0,79,107
+
+images/synth_boot_r_under.png
+size: 101,101
+filter: Linear,Linear
+synth_boot_r_under
+bounds: 0,0,101,101
+
+images/synth_forearm_l.png
+size: 51,124
+filter: Linear,Linear
+synth_forearm_l
+bounds: 0,0,51,124
+
+images/synth_forearm_l_under.png
+size: 61,134
+filter: Linear,Linear
+synth_forearm_l_under
+bounds: 0,0,61,134
+
+images/synth_forearm_r.png
+size: 51,124
+filter: Linear,Linear
+synth_forearm_r
+bounds: 0,0,51,124
+
+images/synth_forearm_r_under.png
+size: 61,134
+filter: Linear,Linear
+synth_forearm_r_under
+bounds: 0,0,61,134
+
+images/synth_hand_l.png
+size: 68,72
+filter: Linear,Linear
+synth_hand_l
+bounds: 0,0,68,72
+
+images/synth_hand_l_fist.png
+size: 65,60
+filter: Linear,Linear
+synth_hand_l_fist
+bounds: 0,0,65,60
+
+images/synth_hand_l_fist_under.png
+size: 75,70
+filter: Linear,Linear
+synth_hand_l_fist_under
+bounds: 0,0,75,70
+
+images/synth_hand_l_grip.png
+size: 68,68
+filter: Linear,Linear
+synth_hand_l_grip
+bounds: 0,0,68,68
+
+images/synth_hand_l_grip_under.png
+size: 78,78
+filter: Linear,Linear
+synth_hand_l_grip_under
+bounds: 0,0,78,78
+
+images/synth_hand_l_open.png
+size: 69,75
+filter: Linear,Linear
+synth_hand_l_open
+bounds: 0,0,69,75
+
+images/synth_hand_l_open_under.png
+size: 79,85
+filter: Linear,Linear
+synth_hand_l_open_under
+bounds: 0,0,79,85
+
+images/synth_hand_l_point.png
+size: 67,76
+filter: Linear,Linear
+synth_hand_l_point
+bounds: 0,0,67,76
+
+images/synth_hand_l_point_under.png
+size: 77,86
+filter: Linear,Linear
+synth_hand_l_point_under
+bounds: 0,0,77,86
+
+images/synth_hand_l_thumbsup.png
+size: 75,60
+filter: Linear,Linear
+synth_hand_l_thumbsup
+bounds: 0,0,75,60
+
+images/synth_hand_l_thumbsup_under.png
+size: 85,70
+filter: Linear,Linear
+synth_hand_l_thumbsup_under
+bounds: 0,0,85,70
+
+images/synth_hand_l_under.png
+size: 78,82
+filter: Linear,Linear
+synth_hand_l_under
+bounds: 0,0,78,82
+
+images/synth_hand_r.png
+size: 68,72
+filter: Linear,Linear
+synth_hand_r
+bounds: 0,0,68,72
+
+images/synth_hand_r_fist.png
+size: 65,60
+filter: Linear,Linear
+synth_hand_r_fist
+bounds: 0,0,65,60
+
+images/synth_hand_r_fist_under.png
+size: 75,70
+filter: Linear,Linear
+synth_hand_r_fist_under
+bounds: 0,0,75,70
+
+images/synth_hand_r_grip.png
+size: 68,68
+filter: Linear,Linear
+synth_hand_r_grip
+bounds: 0,0,68,68
+
+images/synth_hand_r_grip_under.png
+size: 78,78
+filter: Linear,Linear
+synth_hand_r_grip_under
+bounds: 0,0,78,78
+
+images/synth_hand_r_open.png
+size: 69,75
+filter: Linear,Linear
+synth_hand_r_open
+bounds: 0,0,69,75
+
+images/synth_hand_r_open_under.png
+size: 79,85
+filter: Linear,Linear
+synth_hand_r_open_under
+bounds: 0,0,79,85
+
+images/synth_hand_r_point.png
+size: 67,76
+filter: Linear,Linear
+synth_hand_r_point
+bounds: 0,0,67,76
+
+images/synth_hand_r_point_under.png
+size: 77,86
+filter: Linear,Linear
+synth_hand_r_point_under
+bounds: 0,0,77,86
+
+images/synth_hand_r_thumbsup.png
+size: 75,60
+filter: Linear,Linear
+synth_hand_r_thumbsup
+bounds: 0,0,75,60
+
+images/synth_hand_r_thumbsup_under.png
+size: 85,70
+filter: Linear,Linear
+synth_hand_r_thumbsup_under
+bounds: 0,0,85,70
+
+images/synth_hand_r_under.png
+size: 78,82
+filter: Linear,Linear
+synth_hand_r_under
+bounds: 0,0,78,82
+
+images/synth_head_base.png
+size: 139,139
+filter: Linear,Linear
+synth_head_base
+bounds: 0,0,139,139
+
+images/synth_head_base_under.png
+size: 139,139
+filter: Linear,Linear
+synth_head_base_under
+bounds: 0,0,139,139
+
+images/synth_head_happy.png
+size: 139,139
+filter: Linear,Linear
+synth_head_happy
+bounds: 0,0,139,139
+
+images/synth_head_happy_under.png
+size: 139,139
+filter: Linear,Linear
+synth_head_happy_under
+bounds: 0,0,139,139
+
+images/synth_head_neutral.png
+size: 139,139
+filter: Linear,Linear
+synth_head_neutral
+bounds: 0,0,139,139
+
+images/synth_head_neutral_under.png
+size: 139,139
+filter: Linear,Linear
+synth_head_neutral_under
+bounds: 0,0,139,139
+
+images/synth_hips.png
+size: 145,95
+filter: Linear,Linear
+synth_hips
+bounds: 0,0,145,95
+
+images/synth_hips_under.png
+size: 155,105
+filter: Linear,Linear
+synth_hips_under
+bounds: 0,0,155,105
+
+images/synth_leg_l.png
+size: 67,261
+filter: Linear,Linear
+synth_leg_l
+bounds: 0,0,67,261
+
+images/synth_leg_l_under.png
+size: 77,271
+filter: Linear,Linear
+synth_leg_l_under
+bounds: 0,0,77,271
+
+images/synth_leg_r.png
+size: 67,261
+filter: Linear,Linear
+synth_leg_r
+bounds: 0,0,67,261
+
+images/synth_leg_r_under.png
+size: 77,271
+filter: Linear,Linear
+synth_leg_r_under
+bounds: 0,0,77,271
+
+images/synth_tail.png
+size: 44,160
+filter: Linear,Linear
+synth_tail
+bounds: 0,0,44,160
+
+images/synth_tail_under.png
+size: 44,160
+filter: Linear,Linear
+synth_tail_under
+bounds: 0,0,44,160
+
+images/synth_tail_up.png
+size: 40,122
+filter: Linear,Linear
+synth_tail_up
+bounds: 0,0,40,122
+
+images/synth_tail_up_under.png
+size: 50,132
+filter: Linear,Linear
+synth_tail_up_under
+bounds: 0,0,50,132
+
+images/synth_torso.png
+size: 155,207
+filter: Linear,Linear
+synth_torso
+bounds: 0,0,155,207
+
+images/synth_upperarm_l.png
+size: 56,150
+filter: Linear,Linear
+synth_upperarm_l
+bounds: 0,0,56,150
+
+images/synth_upperarm_l_raised.png
+size: 51,120
+filter: Linear,Linear
+synth_upperarm_l_raised
+bounds: 0,0,51,120
+
+images/synth_upperarm_l_raised_under.png
+size: 61,130
+filter: Linear,Linear
+synth_upperarm_l_raised_under
+bounds: 0,0,61,130
+
+images/synth_upperarm_l_under.png
+size: 66,160
+filter: Linear,Linear
+synth_upperarm_l_under
+bounds: 0,0,66,160
+
+images/synth_upperarm_r.png
+size: 56,150
+filter: Linear,Linear
+synth_upperarm_r
+bounds: 0,0,56,150
+
+images/synth_upperarm_r_raised.png
+size: 51,120
+filter: Linear,Linear
+synth_upperarm_r_raised
+bounds: 0,0,51,120
+
+images/synth_upperarm_r_raised_under.png
+size: 61,130
+filter: Linear,Linear
+synth_upperarm_r_raised_under
+bounds: 0,0,61,130
+
+images/synth_upperarm_r_under.png
+size: 66,160
+filter: Linear,Linear
+synth_upperarm_r_under
+bounds: 0,0,66,160

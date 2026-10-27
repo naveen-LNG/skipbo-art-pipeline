@@ -1,0 +1,89 @@
+{
+  "prompt_id": "d51140c4-635c-49bd-82c4-2243a40ddaf1",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 2136309626,
+  "fingerprint": "8a3897ce21a6",
+  "prompt": "IMAGE ROLES:\nimage_1 = CHARACTER DESIGN. A grandpa moose train conductor, shown in front view on the left and three-quarter view on the right. Take from it only who he is: species, body proportions, costume, colours and accessories.\nimage_2 and image_3 = ART STYLE. Animation atlases of two characters already shipped in this game, a hippo and a raccoon, cut into separate parts. Take from them only how things are painted: shading, colour, edges, level of detail and the chunky shape language. Their species, costumes and layout are not part of this picture.\n\nTASK:\nPaint the moose from image_1 as one finished full-body character in the art style of image_2 and image_3, as a clean master drawing for cutting into animation parts.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nCHARACTER:\nA kind grandpa moose with dark-brown fur, a big rounded tan muzzle with two large dark nostrils and a gentle closed-mouth smile, small glossy black eyes, bushy cream eyebrows, round brown ears and broad flat brown antlers. He wears a navy conductor cap with a gold band and a round gold badge, a red scarf knotted at the neck with a small gold bell, a navy vest with three gold buttons and a gold belt buckle over a cream long-sleeved shirt, and brown trousers. His hands are dark-brown hoof mittens and his feet are dark-brown hooves.\n\nPOSE AND FRAMING:\nFront view, facing the viewer, in a symmetrical rest pose. Both arms hang down and out at about thirty degrees from his sides, so plain background shows between each arm and the vest along the whole arm. Hands open and relaxed. Legs straight, hooves a little apart and flat on the ground. Head level, looking at the viewer. The whole character fits in the frame with an even margin around him and fills about eighty-five percent of its height. The background is one flat plain light grey with nothing else in it, and the character stands on it without any cast shadow.\n\nFINAL CHECK:\n1. Painted like the shipped hippo and raccoon: airbrushed soft volume, candy colours, chunky simplified shapes, smooth surfaces, no outlines.\n2. Clearly the same moose as image_1: same costume pieces and colours.\n3. Front view, symmetrical, arms clear of the body, full body in frame.\n4. Flat light grey background, single character, no text.",
+  "vars": {
+    "ASPECT": "3:4",
+    "SIZE": "2K",
+    "TEMP": 0.6,
+    "COUNT": 2,
+    "PREFIX": "agent/skipbo/moose-master",
+    "IMAGE_1": "agent/skipbo/moose_turn_00006__c2ec613d19.png",
+    "IMAGE_2": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg",
+    "IMAGE_3": "agent/skipbo/shipped-raccoon-atlas_7d3904441b.jpg"
+  },
+  "inputs": {
+    "1": "references/characters/moose/moose_turn_00006_.png",
+    "2": "plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas-small.jpg",
+    "3": "plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-raccoon-atlas.jpg"
+  },
+  "criteria": [
+    "painted like shipped hippo/raccoon: airbrushed, no outlines, chunky",
+    "same moose costume as design ref",
+    "front view symmetrical, arms clear of vest, full body",
+    "flat light grey bg, no shadow"
+  ],
+  "outputs": [
+    "experiments/2026-10-11-moose-parts/runs/moose-master/1011_145718_s2136309626_n2_00.png",
+    "experiments/2026-10-11-moose-parts/runs/moose-master/1011_145718_s2136309626_n2_01.png"
+  ],
+  "seconds": 73.7,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = CHARACTER DESIGN. A grandpa moose train conductor, shown in front view on the left and three-quarter view on the right. Take from it only who he is: species, body proportions, costume, colours and accessories.\nimage_2 and image_3 = ART STYLE. Animation atlases of two characters already shipped in this game, a hippo and a raccoon, cut into separate parts. Take from them only how things are painted: shading, colour, edges, level of detail and the chunky shape language. Their species, costumes and layout are not part of this picture.\n\nTASK:\nPaint the moose from image_1 as one finished full-body character in the art style of image_2 and image_3, as a clean master drawing for cutting into animation parts.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nCHARACTER:\nA kind grandpa moose with dark-brown fur, a big rounded tan muzzle with two large dark nostrils and a gentle closed-mouth smile, small glossy black eyes, bushy cream eyebrows, round brown ears and broad flat brown antlers. He wears a navy conductor cap with a gold band and a round gold badge, a red scarf knotted at the neck with a small gold bell, a navy vest with three gold buttons and a gold belt buckle over a cream long-sleeved shirt, and brown trousers. His hands are dark-brown hoof mittens and his feet are dark-brown hooves.\n\nPOSE AND FRAMING:\nFront view, facing the viewer, in a symmetrical rest pose. Both arms hang down and out at about thirty degrees from his sides, so plain background shows between each arm and the vest along the whole arm. Hands open and relaxed. Legs straight, hooves a little apart and flat on the ground. Head level, looking at the viewer. The whole character fits in the frame with an even margin around him and fills about eighty-five percent of its height. The background is one flat plain light grey with nothing else in it, and the character stands on it without any cast shadow.\n\nFINAL CHECK:\n1. Painted like the shipped hippo and raccoon: airbrushed soft volume, candy colours, chunky simplified shapes, smooth surfaces, no outlines.\n2. Clearly the same moose as image_1: same costume pieces and colours.\n3. Front view, symmetrical, arms clear of the body, full body in frame.\n4. Flat light grey background, single character, no text.",
+        "image_count": 2,
+        "use_search": false,
+        "aspect_ratio": "3:4",
+        "image_size": "2K",
+        "temperature": 0.6,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ],
+        "image_3": [
+          "13",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/moose_turn_00006__c2ec613d19.png"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+      }
+    },
+    "13": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-raccoon-atlas_7d3904441b.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/moose-master"
+      }
+    }
+  }
+}

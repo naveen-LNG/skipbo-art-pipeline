@@ -1,0 +1,412 @@
+<title>Jev in the Rig Pipeline</title>
+<meta name="description" content="Independent review of where the TypeSafe Jev model is called in the character-rig pipeline, what each call decides, and whether it changed an outcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (max 1120px); diagrams and the table scroll sideways inside their own frames. */
+:root{
+  --bg:#eef2f3; --surface:#ffffff; --ink:#14212a; --muted:#56656f; --line:#c9d3d8;
+  --accent:#11807f; --jev:#b8761a; --score:#6a4fb3;
+  --good:#2f7d3c; --warn:#a35f00; --bad:#b3261e;
+  --good-bg:#e3f1e5; --warn-bg:#f8ecd9; --bad-bg:#f8e1df; --tint:#e2ecee;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f171b; --surface:#172228; --ink:#e3ecef; --muted:#93a4ad; --line:#2f3d44;
+  --accent:#4cc3bf; --jev:#e0a347; --score:#a99bf0;
+  --good:#6cc27a; --warn:#e6a23c; --bad:#f0786f;
+  --good-bg:#1b3022; --warn-bg:#352812; --bad-bg:#3a1c1a; --tint:#1d2d33; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f171b; --surface:#172228; --ink:#e3ecef; --muted:#93a4ad; --line:#2f3d44;
+  --accent:#4cc3bf; --jev:#e0a347; --score:#a99bf0;
+  --good:#6cc27a; --warn:#e6a23c; --bad:#f0786f;
+  --good-bg:#1b3022; --warn-bg:#352812; --bad-bg:#3a1c1a; --tint:#1d2d33; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;padding-inline:16px;padding-block:28px 64px}
+main{max-width:1120px;margin:0 auto;display:grid;gap:44px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(28px,4.6vw,44px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:800}
+h3{font-size:16px;font-weight:600}
+p{margin:0;max-width:72ch}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:grid;gap:14px}
+.lede{font-size:17px;max-width:70ch}
+code,.mono{font-family:var(--mono);font-size:.88em}
+section{display:grid;gap:16px;min-width:0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;display:grid;gap:2px;align-content:start}
+.fact b{font-family:var(--display);font-size:26px;font-weight:800;font-variant-numeric:tabular-nums}
+.fact span{color:var(--muted);font-size:13.5px}
+.frame{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px}
+.frame svg{display:block;width:100%;height:auto}
+.frame.diagram svg{min-width:1000px}
+.frame.chart svg{min-width:640px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+/* svg text */
+.s-title{font:600 15px var(--display);fill:var(--ink)}
+.s-h{font:600 13px var(--body);fill:var(--ink)}
+.s-b{font:400 12px var(--body);fill:var(--ink)}
+.s-m{font:400 12px var(--body);fill:var(--muted)}
+.s-k{font:500 11px var(--mono);fill:var(--muted);letter-spacing:.04em}
+.s-v{font:500 12px var(--mono);fill:var(--ink)}
+.box{fill:var(--surface);stroke:var(--line);stroke-width:1.2}
+.box-jev{fill:var(--surface);stroke:var(--jev);stroke-width:1.6}
+.box-dash{fill:var(--surface);stroke:var(--muted);stroke-width:1.2;stroke-dasharray:5 4}
+.box-research{fill:var(--tint);stroke:var(--line);stroke-width:1}
+.stage{fill:var(--surface);stroke:var(--line);stroke-width:1.2}
+.stage-jev{fill:var(--surface);stroke:var(--jev);stroke-width:2}
+.wire{stroke:var(--muted);stroke-width:1.4;fill:none}
+.wire-jev{stroke:var(--jev);stroke-width:1.6;fill:none}
+.ar{fill:var(--muted)} .ar-jev{fill:var(--jev)}
+.dia{fill:var(--jev)}
+.q-choice{fill:var(--accent)} .q-noul{fill:var(--jev)} .q-score{fill:var(--score)} .q-pair{fill:var(--ink)}
+.sep{stroke:var(--line);stroke-width:1}
+.bar-can{fill:var(--accent)} .bar-cannot{fill:var(--bad)}
+.chance{stroke:var(--ink);stroke-width:2}
+.grid{stroke:var(--line);stroke-width:1}
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:1040px;font-size:13.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font:600 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--tint)}
+td.num{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tfoot td{font-weight:600;background:var(--tint)}
+.pill{display:inline-block;font:600 11px var(--mono);letter-spacing:.04em;padding:2px 7px;border-radius:999px;white-space:nowrap;border:1px solid currentColor}
+.p-gate{color:var(--bad);background:var(--bad-bg)}
+.p-doubt{color:var(--warn);background:var(--warn-bg)}
+.p-rank{color:var(--accent);background:var(--tint)}
+.p-research{color:var(--muted)}
+.v{display:block;font-weight:600;margin-bottom:2px}
+.v-yes{color:var(--good)} .v-no{color:var(--bad)} .v-part{color:var(--warn)}
+.src{display:block;color:var(--muted);font-family:var(--mono);font-size:11.5px;margin-top:3px}
+/* panels */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:grid;gap:10px;align-content:start;min-width:0}
+.panel ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.panel li{max-width:70ch}
+.panel.stop{border-color:var(--bad)}
+.panel.stop h3{color:var(--bad)}
+.gap{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding-block:10px;border-top:1px solid var(--line)}
+.gap:first-of-type{border-top:0}
+.gap .n{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+.gap b{font-weight:600}
+.gap p{font-size:14px}
+.gap .fix{grid-column:2;font-size:13.5px;color:var(--muted)}
+.claims{display:grid;gap:10px}
+.claim{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:4px;padding:10px 14px;font-size:14px}
+.claim q{font-style:italic}
+footer{color:var(--muted);font-size:12.5px;max-width:90ch}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+<main>
+<header>
+  <div class="eyebrow">Independent review · branch beaver-jev-hands · commit 0e5a919</div>
+  <h1>Jev in the rig pipeline</h1>
+  <p class="lede">Where TypeSafe Jev (jev-1.14.0) is called, what each answer feeds, and what it actually changed. Checked against the scripts and result files, not only the experiment README.</p>
+  <div class="facts">
+    <div class="fact"><b>2,578</b><span>Jev calls in the beaver experiment, 6.82M input tokens, about $0.29</span></div>
+    <div class="fact"><b>1</b><span>build outcome changed by Jev: the first beaver point hand (read as a grip, aimed across the chest)</span></div>
+    <div class="fact"><b>1</b><span>gate: point / thumbs-up hold must show the thumb up. Everything else is a WARN, a doubt or a ranked list</span></div>
+    <div class="fact"><b>0</b><span>fix sizes or directions taken from Jev. All came from aligned crops, colour measurements and code sweeps</span></div>
+  </div>
+</header>
+
+<section aria-labelledby="pipe">
+  <h2 id="pipe">Where Jev is called</h2>
+  <p>Jev sits at two points: the hands checkpoint during annotation, and an optional review after <code>spine_qa</code> passes. Master, sheets, split and rig build make no Jev calls.</p>
+  <div class="legend">
+    <span><i style="background:var(--accent)"></i>Choice</span>
+    <span><i style="background:var(--jev)"></i>Noul (P true)</span>
+    <span><i style="background:var(--score)"></i>Score 0–3</span>
+    <span><i style="background:var(--ink)"></i>Pairwise Choice, both orders</span>
+    <span>Box: research only, never used in the pipeline</span>
+  </div>
+  <div class="frame diagram">
+<svg viewBox="0 0 1120 600" role="img" aria-labelledby="pipeT pipeD">
+<title id="pipeT">Rig pipeline with Jev call points</title>
+<desc id="pipeD">Seven stages from master to review. Jev is called at the annotate stage (check --jev palm/back cues) and after spine_qa (jev_qa joints, pairs, frames, holds), feeding checkpoint 6 review.</desc>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ar"/></marker>
+  <marker id="ahj" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ar-jev"/></marker>
+</defs>
+
+<!-- stages -->
+<g>
+  <rect class="stage" x="22" y="20" width="140" height="78" rx="5"/>
+  <text class="s-title" x="34" y="46">1 Master</text><text class="s-m" x="34" y="66">Nano Banana Pro</text><text class="s-k" x="34" y="86">NO JEV</text>
+  <rect class="stage" x="178" y="20" width="140" height="78" rx="5"/>
+  <text class="s-title" x="190" y="46">2 Sheets</text><text class="s-m" x="190" y="66">body · hands · poses · face</text><text class="s-k" x="190" y="86">NO JEV</text>
+  <rect class="stage" x="334" y="20" width="140" height="78" rx="5"/>
+  <text class="s-title" x="346" y="46">3 Split</text><text class="s-m" x="346" y="66">pieces cut from sheets</text><text class="s-k" x="346" y="86">NO JEV</text>
+  <rect class="stage-jev" x="490" y="20" width="140" height="78" rx="5"/>
+  <text class="s-title" x="502" y="46">4 Annotate</text><text class="s-m" x="502" y="66">checkpoints 1–3</text><path class="dia" d="M508 80l6 6-6 6-6-6z"/><text class="s-k" x="520" y="90" style="fill:var(--jev)">JEV · HANDS</text>
+  <rect class="stage" x="646" y="20" width="140" height="78" rx="5"/>
+  <text class="s-title" x="658" y="46">5 Rig build</text><text class="s-m" x="658" y="66">spine_rig.py</text><text class="s-k" x="658" y="86">NO JEV</text>
+  <rect class="stage-jev" x="802" y="20" width="140" height="78" rx="5"/>
+  <text class="s-title" x="814" y="46">6 spine_qa</text><text class="s-m" x="814" y="66">15 geometric checks</text><path class="dia" d="M820 80l6 6-6 6-6-6z"/><text class="s-k" x="832" y="90" style="fill:var(--jev)">JEV · OPTIONAL</text>
+  <rect class="stage" x="958" y="20" width="140" height="78" rx="5"/>
+  <text class="s-title" x="970" y="46">7 Review</text><text class="s-m" x="970" y="66">checkpoint 6 · person</text><text class="s-k" x="970" y="86">READS JEV OUTPUT</text>
+  <line class="wire" x1="162" y1="59" x2="176" y2="59" marker-end="url(#ah)"/>
+  <line class="wire" x1="318" y1="59" x2="332" y2="59" marker-end="url(#ah)"/>
+  <line class="wire" x1="474" y1="59" x2="488" y2="59" marker-end="url(#ah)"/>
+  <line class="wire" x1="630" y1="59" x2="644" y2="59" marker-end="url(#ah)"/>
+  <line class="wire" x1="786" y1="59" x2="800" y2="59" marker-end="url(#ah)"/>
+  <line class="wire" x1="942" y1="59" x2="956" y2="59" marker-end="url(#ah)"/>
+</g>
+
+<!-- research column -->
+<rect class="box-research" x="22" y="150" width="330" height="330" rx="5"/>
+<text class="s-k" x="36" y="174">RESEARCH ONLY · NO PIPELINE DECISION</text>
+<text class="s-h" x="36" y="200">run_hands.py · 1,192 calls</text>
+<text class="s-b" x="36" y="218">Fox, moose, held-out beaver hands vs exact truth:</text>
+<text class="s-b" x="36" y="234">8-way finger and thumb, pose, palm/back, left/right</text>
+<text class="s-b" x="36" y="250">(Choice); thumb up, mirrored (Noul).</text>
+<text class="s-h" x="36" y="280">run_facing_cues.py · 304 calls</text>
+<text class="s-b" x="36" y="298">Found that 5 visible cues beat "palm or back?":</text>
+<text class="s-b" x="36" y="314">AUROC 0.61 → 0.89. Became check --jev.</text>
+<text class="s-h" x="36" y="344">jev_joints.py · 43 calls</text>
+<text class="s-b" x="36" y="362">Every approved joint scored P(matches) &lt; 0.5,</text>
+<text class="s-b" x="36" y="378">so absolute thresholds were dropped.</text>
+<text class="s-h" x="36" y="408">clef-judge (2026-10-12) · Box, nudges</text>
+<text class="s-b" x="36" y="426">Fix direction 34% (chance 25%); Box IoU 0.50.</text>
+<text class="s-b" x="36" y="442">Pixel offsets stay in code. Box is not wired in.</text>
+<text class="s-m" x="36" y="466">Changed no rig; shaped which questions are asked.</text>
+
+<!-- card A: check jev -->
+<line class="wire-jev" x1="560" y1="98" x2="560" y2="148" marker-end="url(#ahj)"/>
+<rect class="box-jev" x="370" y="150" width="336" height="200" rx="5"/>
+<text class="s-h" x="384" y="174">rig_annotations.py check --jev → jev_facing.py</text>
+<text class="s-m" x="384" y="191">Checkpoint 3 (hands) · in the skill · ~$0.001 per piece</text>
+<text class="s-k" x="384" y="216">IN</text><text class="s-b" x="424" y="216">each hand piece on grey, 448 px, 8 turns × mirror = 16</text>
+<text class="s-k" x="384" y="238">ASK</text>
+<rect class="q-noul" x="424" y="228" width="10" height="10" rx="2"/><text class="s-b" x="440" y="238">5 cues: pads, creases, thumb in front, knuckles,</text>
+<text class="s-b" x="440" y="254">smooth back</text>
+<rect class="q-choice" x="520" y="244" width="10" height="10" rx="2"/><text class="s-b" x="536" y="254">curl toward / away / flat</text>
+<text class="s-k" x="384" y="278">CODE</text><text class="s-b" x="424" y="278">palm cues − back cues + ½(toward − away), mean of 16</text>
+<text class="s-b" x="424" y="294">band: ≥ −0.05 palm · ≤ −0.20 back · between: no call</text>
+<text class="s-b" x="424" y="310">doubt only if the call DISAGREES with annotated facing</text>
+<text class="s-k" x="384" y="334">ROLE</text><text class="s-b" x="424" y="334" style="fill:var(--warn);font-weight:600">raises a doubt to the person</text>
+
+<!-- card A2: jev_annotate -->
+<rect class="box-dash" x="370" y="366" width="336" height="150" rx="5"/>
+<text class="s-h" x="384" y="390">jev_annotate.py · experiment only, not in skill</text>
+<text class="s-k" x="384" y="414">IN</text><text class="s-b" x="424" y="414">8 hand pieces + 3 palm and 3 back example images</text>
+<text class="s-k" x="384" y="434">ASK</text><rect class="q-choice" x="424" y="424" width="10" height="10" rx="2"/><text class="s-b" x="440" y="434">finger, thumb, pose, facing (with examples)</text>
+<text class="s-k" x="384" y="454">CODE</text><text class="s-b" x="424" y="454">pose ≠ variant → doubt; anatomy rule on Jev's</text>
+<text class="s-b" x="424" y="470">directions vs annotated points → doubt;</text>
+<text class="s-b" x="424" y="486">P(palm) ≤ 0.2 or ≥ 0.8 and disagreeing → doubt</text>
+<text class="s-m" x="384" y="506">Beaver: 3 pose doubts, all dismissed; facing never confident</text>
+
+<!-- card B: jev_qa -->
+<line class="wire-jev" x1="872" y1="98" x2="872" y2="148" marker-end="url(#ahj)"/>
+<text class="s-m" x="880" y="118">after 15/15 pass</text>
+<line class="wire-jev" x1="1060" y1="150" x2="1060" y2="100" marker-end="url(#ahj)"/>
+<rect class="box-jev" x="722" y="150" width="378" height="430" rx="5"/>
+<text class="s-h" x="736" y="174">jev_qa.py · beside spine_qa · ~200 calls, ~$0.02</text>
+<text class="s-m" x="736" y="191">Output → checkpoint 6 summary. Exit 1 only on a hold FAIL.</text>
+
+<line class="sep" x1="736" y1="202" x2="1086" y2="202"/>
+<text class="s-k" x="736" y="222">JOINTS</text><rect class="q-score" x="800" y="212" width="10" height="10" rx="2"/><text class="s-b" x="816" y="222">Score 0–3 "how broken"</text>
+<text class="s-b" x="736" y="240">IN master crop | render crop, 11 joints, setup pose only</text>
+<text class="s-b" x="736" y="256">CODE WARN if above the worst approved fox/moose joint</text>
+<text class="s-b" x="736" y="272">of that type (no fixed threshold)</text>
+
+<line class="sep" x1="736" y1="284" x2="1086" y2="284"/>
+<text class="s-k" x="736" y="304">PAIRS</text><rect class="q-pair" x="800" y="294" width="10" height="10" rx="2"/><text class="s-b" x="816" y="304">"which build is closer to master?"</text>
+<text class="s-b" x="736" y="322">IN master + new + previous build crops, both orders</text>
+<text class="s-b" x="736" y="338">CODE mean P(new) &gt; 0.6 BETTER · &lt; 0.4 WARN worse</text>
+
+<line class="sep" x1="736" y1="352" x2="1086" y2="352"/>
+<text class="s-k" x="736" y="372">FRAMES</text><rect class="q-noul" x="800" y="362" width="10" height="10" rx="2"/><text class="s-b" x="816" y="372">"rigging or stitching defect?"</text>
+<text class="s-b" x="736" y="390">IN 6 whole frames per animation, 720 px</text>
+<text class="s-b" x="736" y="406">CODE rank; list frames above approved rigs' p90</text>
+<text class="s-b" x="736" y="422">→ frames_to_review.png (a reading list)</text>
+
+<line class="sep" x1="736" y1="436" x2="1086" y2="436"/>
+<text class="s-k" x="736" y="456">HOLDS</text><rect class="q-choice" x="800" y="446" width="10" height="10" rx="2"/><text class="s-b" x="816" y="456">finger, thumb, pose</text><rect class="q-noul" x="934" y="446" width="10" height="10" rx="2"/><text class="s-b" x="950" y="456">thumb up</text>
+<text class="s-b" x="736" y="474">IN one hand crop per gesture hold (one slot per hold)</text>
+<text class="s-b" x="736" y="492"><tspan style="fill:var(--bad);font-weight:600">FAIL</tspan> P(up) &lt; 0.5 on point or thumbs_up</text>
+<text class="s-b" x="736" y="510"><tspan style="fill:var(--warn);font-weight:600">WARN</tspan> P(pose) &lt; 0.3 · point across body ·</text>
+<text class="s-b" x="736" y="526">anatomy rule (Jev directions + annotated facing)</text>
+<text class="s-b" x="736" y="542">says the other hand, only if thumb ⟂ fingers</text>
+<text class="s-m" x="736" y="566">Palm/back is never asked at the hold stage.</text>
+<text class="s-m" x="1054" y="140" text-anchor="end" style="fill:var(--jev)">to review: WARNs, list</text>
+</svg>
+  </div>
+</section>
+
+<section aria-labelledby="uses">
+  <h2 id="uses">Every Jev use, and what it changed</h2>
+  <p>Calls and tokens from <code>results/jev_calls.json</code>; cost as reported in the README (input tokens only). Reliability numbers re-read from the score files named under each cell.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Use</th><th>Questions</th><th>Calls · tokens · cost</th><th>Decision role</th><th>Measured reliability</th><th>Changed an outcome?</th></tr></thead>
+    <tbody>
+    <tr><td class="num">1</td><td><b>Hand-direction experiment</b><span class="src">run_hands.py, score_hands.py</span></td>
+      <td>Choice: 8-way finger, 8-way thumb, pose, palm/back, left/right. Noul: thumb up, mirrored. Text vs example images.</td>
+      <td class="num">1,192<br>4.38M<br>$0.18</td>
+      <td><span class="pill p-research">research only</span></td>
+      <td>Finger 96% within 45° (7°), thumb 82%, pose 91%, thumb up AUROC 0.99. Palm/back 0.61, left/right 51%, mirrored 0.42. Held-out beaver weaker: finger 80%, pose 69%.<span class="src">results/pieces/scores_text.json · holds/scores_text.json · pieces_beaver/scores_text.json</span></td>
+      <td><span class="v v-no">No rig change</span>Decided which questions the tools ask and which they avoid.</td></tr>
+    <tr><td class="num">2</td><td><b>Annotation cross-check</b><span class="src">jev_annotate.py (not promoted)</span></td>
+      <td>Choice: pose, finger, thumb, facing with 3+3 examples.</td>
+      <td class="num">8<br>39k<br>&lt;$0.01</td>
+      <td><span class="pill p-doubt">doubt to person</span></td>
+      <td>Facing with examples: AUROC 0.79 fox/moose, 0.60 beaver. On the beaver P(palm) ranged 0.28–0.51, never confident.<span class="src">beaver/annotations/jev/jev_hands.json · pieces*/scores_exemplar.json</span></td>
+      <td><span class="v v-no">No</span>Agreed on every thumb side. Raised 3 pose doubts (rest reads thumbs-up ×2, open reads relaxed), all dismissed as fair readings.</td></tr>
+    <tr><td class="num">3</td><td><b>Hold check on rigs</b><span class="src">jev_rig_check.py → jev_hands.check_holds</span></td>
+      <td>Choice: finger, thumb, pose. Noul: thumb up.</td>
+      <td class="num">15<br>23k<br>&lt;$0.01</td>
+      <td><span class="pill p-gate">gates (thumb up)</span> <span class="pill p-doubt">WARN</span></td>
+      <td>Thumb up AUROC 0.99 fox/moose, 1.00 beaver final. Approved rigs: no FAIL, one false WARN (moose wave). Approved point holds sit at P(up) 0.66–0.88, close to the 0.5 cut.<span class="src">holds/scores_text.json · rig_check_{fox,moose,beaver}.json</span></td>
+      <td><span class="v v-yes">Yes, once</span>First beaver point: P(point) 0.02 (reads grip), fingers left (across body), P(up) 0.25, while <code>spine_qa</code> passed. Palm-facing point hand drawn. Missed the backward cheer fists.<span class="src">holds_beaver/results_text.jsonl</span></td></tr>
+    <tr><td class="num">4</td><td><b>Joint audit, first pass</b><span class="src">jev_joints.py</span></td>
+      <td>Noul: matches master, seamless. Choice: size. Score: broken 0–3.</td>
+      <td class="num">43<br>81k<br>&lt;$0.01</td>
+      <td><span class="pill p-research">research only</span></td>
+      <td>Reviewed build worst at shoulders, elbows, neck, ankles (2.1–2.35). Every approved joint P(matches) &lt; 0.5, so a 0.5 threshold flags good rigs.<span class="src">results/round2/joints_*_jev.jsonl</span></td>
+      <td><span class="v v-no">No</span>Confirmed defects the user had already named; found nothing new.</td></tr>
+    <tr><td class="num">5</td><td><b>Palm/back from cues</b><span class="src">run_facing_cues.py</span></td>
+      <td>Noul ×5 cues. Choice: curl.</td>
+      <td class="num">304<br>387k<br>$0.02</td>
+      <td><span class="pill p-research">research only</span></td>
+      <td>Combined AUROC 0.89 (fox 0.87, moose 0.92). Band cut-offs were then set on these same pieces, so the "12 of 13" is in-sample.<span class="src">results/pieces/scores_cues.json</span></td>
+      <td><span class="v v-no">No rig change</span>New capability, later promoted as <code>check --jev</code>.</td></tr>
+    <tr><td class="num">6</td><td><b>Palm/back of beaver hands</b><span class="src">jev_facing.py (= check --jev)</span></td>
+      <td>Noul ×5 + Choice curl, ×16 turns; upright adds finger, thumb, pose.</td>
+      <td class="num">160<br>210k<br>$0.01</td>
+      <td><span class="pill p-doubt">doubt to person</span></td>
+      <td>9 of 10 pieces match the annotation. The grip disagrees (palm vs annotated back). Three palm pieces sit within 0.011 of the −0.05 cut: fist_palm0 −0.049, point_palm −0.047, thumbsup −0.039.<span class="src">results/round2/facing_beaver.json</span></td>
+      <td><span class="v v-part">No, after the fact</span>Run after the user's review. The old cheer fist scored −0.40 (back), but it was annotated back, and the doubt fires only on disagreement, so this check would not have flagged it.</td></tr>
+    <tr><td class="num">7</td><td><b>Jev QA ×4 runs</b><span class="src">jev_qa.py: joints, pairs, frames, holds</span></td>
+      <td>Score 0–3 per joint; pairwise Choice both orders; Noul defect per frame; holds as #3.</td>
+      <td class="num">856<br>1.70M<br>$0.07</td>
+      <td><span class="pill p-rank">ranks / WARN</span> <span class="pill p-gate">gate via holds</span></td>
+      <td>Pairs final vs reviewed: 9 of 11 joints better, wrists worse (0.16 / 0.38). Joints shoulder_r (2.05 vs 1.77) and both ankles (1.74, 1.79 vs 1.62) above the approved max in all three runs. Frames: final mean P(defect) 0.559 vs approved 0.557; list was hold_card every time.<span class="src">results/round2/jev_qa_{v4_vs_v2,v5_vs_v4,final_vs_v2}.json</span></td>
+      <td><span class="v v-part">Measured, did not steer</span>Confirmed the improvement. Wrist verdict overruled by eye. The shoulder_r and ankle WARNs were still open at sign-off, and no fix came from them.</td></tr>
+    </tbody>
+    <tfoot><tr><td></td><td>Total</td><td></td><td class="num">2,578 · 6.82M · $0.29</td><td colspan="3">Earlier clef-judge rounds 4–5 add 982+ Jev calls (~$0.12 cumulative), research only. The skill's own validation runs are not counted.</td></tr></tfoot>
+  </table>
+  </div>
+</section>
+
+<section aria-labelledby="can">
+  <h2 id="can">What Jev judges well, and what it doesn't</h2>
+  <p>Bars show the measured score; the black tick is chance for that question (8-way within 45° = 0.375, 6-way pose = 0.17, 4-way direction = 0.25, AUROC and 2-way = 0.5).</p>
+  <div class="frame chart">
+<svg viewBox="0 0 900 480" role="img" aria-labelledby="canT">
+<title id="canT">Measured reliability of Jev by question, against chance</title>
+<g>
+  <line class="grid" x1="340" y1="20" x2="340" y2="440"/><line class="grid" x1="465" y1="20" x2="465" y2="440"/>
+  <line class="grid" x1="590" y1="20" x2="590" y2="440"/><line class="grid" x1="715" y1="20" x2="715" y2="440"/>
+  <line class="grid" x1="840" y1="20" x2="840" y2="440"/>
+  <text class="s-k" x="340" y="460" text-anchor="middle">0</text><text class="s-k" x="465" y="460" text-anchor="middle">0.25</text>
+  <text class="s-k" x="590" y="460" text-anchor="middle">0.5</text><text class="s-k" x="715" y="460" text-anchor="middle">0.75</text>
+  <text class="s-k" x="840" y="460" text-anchor="middle">1</text>
+</g>
+<text class="s-k" x="10" y="30" style="fill:var(--accent)">JUDGES WELL</text>
+<g>
+  <text class="s-b" x="330" y="56" text-anchor="end">Finger direction, within 45° (median 7°)</text>
+  <rect class="bar-can" x="340" y="44" width="480" height="16" rx="2"/><line class="chance" x1="527.5" y1="40" x2="527.5" y2="64"/><text class="s-v" x="828" y="57">0.96</text>
+  <text class="s-b" x="330" y="86" text-anchor="end">Thumb direction, within 45° (median 13°)</text>
+  <rect class="bar-can" x="340" y="74" width="410" height="16" rx="2"/><line class="chance" x1="527.5" y1="70" x2="527.5" y2="94"/><text class="s-v" x="758" y="87">0.82</text>
+  <text class="s-b" x="330" y="116" text-anchor="end">Pose, 6 choices</text>
+  <rect class="bar-can" x="340" y="104" width="455" height="16" rx="2"/><line class="chance" x1="423" y1="100" x2="423" y2="124"/><text class="s-v" x="803" y="117">0.91</text>
+  <text class="s-b" x="330" y="146" text-anchor="end">Thumb up on rendered holds (AUROC)</text>
+  <rect class="bar-can" x="340" y="134" width="495" height="16" rx="2"/><line class="chance" x1="590" y1="130" x2="590" y2="154"/><text class="s-v" x="843" y="147">0.99</text>
+  <text class="s-b" x="330" y="176" text-anchor="end">Palm/back from 5 visible cues (AUROC)</text>
+  <rect class="bar-can" x="340" y="164" width="445" height="16" rx="2"/><line class="chance" x1="590" y1="160" x2="590" y2="184"/><text class="s-v" x="793" y="177">0.89</text>
+  <text class="s-b" x="330" y="206" text-anchor="end">Real rejected full-body frames (AUROC)</text>
+  <rect class="bar-can" x="340" y="194" width="495" height="16" rx="2"/><line class="chance" x1="590" y1="190" x2="590" y2="214"/><text class="s-v" x="843" y="207">0.99</text>
+  <text class="s-b" x="330" y="236" text-anchor="end">Joint moved since last render (0.04 if same)</text>
+  <rect class="bar-can" x="340" y="224" width="455" height="16" rx="2"/><text class="s-v" x="803" y="237">0.91</text>
+</g>
+<text class="s-k" x="10" y="276" style="fill:var(--bad)">JUDGES POORLY</text>
+<g>
+  <text class="s-b" x="330" y="302" text-anchor="end">Palm or back, asked directly (AUROC)</text>
+  <rect class="bar-cannot" x="340" y="290" width="305" height="16" rx="2"/><line class="chance" x1="590" y1="286" x2="590" y2="310"/><text class="s-v" x="653" y="303">0.61</text>
+  <text class="s-b" x="330" y="332" text-anchor="end">Left or right hand, asked directly</text>
+  <rect class="bar-cannot" x="340" y="320" width="255" height="16" rx="2"/><line class="chance" x1="590" y1="316" x2="590" y2="340"/><text class="s-v" x="603" y="333">0.51</text>
+  <text class="s-b" x="330" y="362" text-anchor="end">"Is this hand mirrored?" (AUROC)</text>
+  <rect class="bar-cannot" x="340" y="350" width="210" height="16" rx="2"/><line class="chance" x1="590" y1="346" x2="590" y2="370"/><text class="s-v" x="603" y="363">0.42</text>
+  <text class="s-b" x="330" y="392" text-anchor="end">Fix direction for a pixel shift, 4-way</text>
+  <rect class="bar-cannot" x="340" y="380" width="170" height="16" rx="2"/><line class="chance" x1="465" y1="376" x2="465" y2="400"/><text class="s-v" x="518" y="393">0.34</text>
+  <text class="s-b" x="330" y="422" text-anchor="end">Planted defects in a full frame (AUROC)</text>
+  <rect class="bar-cannot" x="340" y="410" width="225" height="16" rx="2"/><line class="chance" x1="590" y1="406" x2="590" y2="430"/><text class="s-v" x="603" y="423">0.45</text>
+</g>
+</svg>
+  </div>
+  <div class="two">
+    <div class="panel">
+      <h3>Sources for the bars</h3>
+      <ul>
+        <li>Finger, thumb, pose, palm/back direct, left/right: fox + moose pieces, n = 304 · <code>results/pieces/scores_text.json</code></li>
+        <li>Thumb up, mirrored: fox + moose rendered frames, n = 120 · <code>results/holds/scores_text.json</code>; beaver final thumb up 1.00 · <code>holds_beaver2</code></li>
+        <li>Palm/back cues: <code>results/pieces/scores_cues.json</code></li>
+        <li>Full-body frames, moved joint, pixel direction, planted frames: clef-judge rounds 4–5 README</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Not on the chart because there is no usable number</h3>
+      <ul>
+        <li><b>Absolute joint judgement.</b> Every approved fox and moose joint scores P(matches master) &lt; 0.5. Only comparisons carry signal.</li>
+        <li><b>Whole-frame defect on a finished rig.</b> Final beaver mean P(defect) 0.559 vs approved 0.557. The ranked list was hold_card on every run, a known art issue.</li>
+        <li><b>Box.</b> IoU 0.50, confidence miscalibrated (ECE 0.37–0.48), edges too coarse for 8–24 px shifts.</li>
+        <li><b>Held-out drop.</b> On the beaver, finger 80% and pose 69%, against 96% and 91% on the characters the rules were tuned on.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="assess">
+  <h2 id="assess">Assessment</h2>
+  <div class="two">
+    <div class="panel stop">
+      <h3>Where Jev should not be the decider</h3>
+      <ul>
+        <li><b>Palm vs back, and which hand.</b> Use the annotation and the anatomy rule in code. Cue scores can raise a question; they can't settle one. Three beaver palms sat within 0.011 of the cut-off.</li>
+        <li><b>Any fix size or direction.</b> 34% on 4-way nudges. Keep colour measurements, mask alignment and sweeps in code.</li>
+        <li><b>Any absolute threshold</b> on a joint or frame score. Compare against approved rigs and the previous build instead.</li>
+        <li><b>Approval of a build.</b> Frames and joints are reading lists. The one gate worth keeping is thumb up on point and thumbs-up holds.</li>
+        <li><b>Overruling the aligned crops.</b> When Jev and a person disagree (the wrists), the person decides by looking.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Claims in the README that the code does not support</h3>
+      <div class="claims">
+        <div class="claim">Call #2 <q>asked no palm/back question</q>. <code>jev_annotate.py</code> does ask facing, with examples. It never got past P(palm) 0.51, so it could not raise a doubt.</div>
+        <div class="claim">Check --jev <q>would have caught the cheer fist</q> (also in <code>spine-parts.md</code>). The fist was annotated back, correctly, and Jev also says back. <code>facing_doubt</code> fires only on disagreement, so no doubt is raised. The defect was a back-facing fist in a raised pose, and no rule checks that.</div>
+        <div class="claim">Jev QA <q>found the wrist and ankle regressions</q>. Pairs rated the ankles better in every run. They are only above the approved max, and that WARN was never cleared.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Gaps: defects no check is aimed at</h3>
+    <div class="gap"><span class="n">1</span><p><b>Belt and waist in motion.</b> Joint crops are rendered in the setup pose only. The only Jev look at animation is a whole-frame noul at 720 px, which scores the final beaver the same as the approved rigs (0.559 vs 0.557). <code>spine_qa</code>'s <code>stitched</code> and hole checks are geometric and passed. A waist gap at cheer apex or mid-jump has no targeted check.</p>
+      <p class="fix">Run <code>joint_crops</code> at animation extremes, not just the setup pose. Ask Jev pairwise against the same joint's setup-pose crop; it detects "moved" at 91%. In code, measure the gap pixels between sweater hem and belt per frame.</p></div>
+    <div class="gap"><span class="n">2</span><p><b>Boots beside trouser cuffs.</b> <code>sockets</code> measures spill past the parent's rim near one opening centre, not a boot showing beside a narrower cuff. Jev flagged both ankles above the approved max in all three QA runs. The final joints sheet shows a visible step at the left cuff. Nobody acted on the WARN.</p>
+      <p class="fix">In code, compare the boot top's width with the cuff opening's width, against the master's ratio, in every socket frame. Turn a persistent joint WARN into a checkpoint-6 doubt, with the crop shown.</p></div>
+    <div class="gap"><span class="n">3</span><p><b>Hand size vs cuff.</b> Hands are sized by wrist-to-fingertip length and tuned with a sweep. Nothing compares mitten width with cuff width. Jev's wrist pairs preferred the earlier build (0.16 / 0.38) and were overruled. The final crops show a smaller mitten than the master's.</p>
+      <p class="fix">Add a code ratio: hand width over cuff opening, rig vs master, within ±10%. Then use Jev pairwise on the wrist crop to break ties.</p></div>
+    <div class="gap"><span class="n">4</span><p><b>Lower-body proportions vs the master.</b> <code>setup</code> checks one global silhouette IoU (≥ 0.85), and <code>landmarks</code> checks joint points within 1%. Neither checks widths or lengths of trouser legs and boots. The trousers were repainted by script (<code>make_trousers.py</code>), and 15% of the silhouette can differ without a failure.</p>
+      <p class="fix">Run per-region IoU and width profiles against the master (hips band, each leg, each boot). Jev's joint Score is already above the approved max at the ankles and can rank which region to inspect first.</p></div>
+    <div class="gap"><span class="n">5</span><p><b>Hold check sees one hand and never palm/back.</b> <code>hold_crops</code> takes one slot per hold, so cheer_jump's second fist is never looked at. Facing isn't asked at holds. A back-facing raised fist annotated correctly passes today's pipeline end to end.</p>
+      <p class="fix">Crop both hands per hold. Add a code rule per gesture on the annotated facing (a raised cheer fist shows its palm). Run the cue score on the rendered hold crop as a second opinion.</p></div>
+    <div class="gap"><span class="n">6</span><p><b>Thresholds tuned in-sample.</b> The palm/back band was set on the fox and moose pieces it is scored on. Approved point holds sit at P(up) 0.66, only 0.16 above the FAIL line.</p>
+      <p class="fix">Re-check the band and the 0.5 thumb cut on the next new character before trusting them. Treat calls near a cut-off as "ask".</p></div>
+  </div>
+</section>
+
+<footer>
+  Read from <code>experiments/2026-10-15-beaver-jev-hands</code> (README, scripts, results), <code>experiments/2026-10-12-clef-judge/README.md</code> and <code>plugin/skills/skipbo-art</code> (<code>jev_client.py</code>, <code>jev_facing.py</code>, <code>jev_hands.py</code>, <code>jev_qa.py</code>, <code>joint_crops.py</code>, <code>rig_annotations.py check --jev</code>, <code>SKILL.md</code>, <code>references/spine-parts.md</code>). No Jev calls were made for this review, and nothing in the repo was changed.
+</footer>
+</main>

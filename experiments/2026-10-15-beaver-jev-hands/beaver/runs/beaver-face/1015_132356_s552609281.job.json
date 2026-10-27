@@ -1,0 +1,72 @@
+{
+  "prompt_id": "38e36e61-c174-4239-a275-757ea5db9fa9",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 552609281,
+  "fingerprint": "81544fe7c617",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the head of the character from image_1 as a sheet of whole-face expression swaps for facial animation in Spine. Every head on the sheet is the same head at the same size, painted again with a different expression, so any one of them can replace another on the rig.\n\nTHE PIECES (nine heads, each painted exactly once), laid out in a three by three grid, left to right and top to bottom:\nEach head is the character's head base from image_1, front view, with its eyes, eyebrows, snout or beak, nostrils and mouth, and without any hat, horn, antler, ear or hair tuft, because those are separate pieces. All nine heads have exactly the same outline, size and fur, skin or feathers; only the eyes, eyebrows and mouth change, and they stay the same small size they have on the head in image_1.\n1. Neutral: eyes open, eyebrows relaxed, gentle closed smile, exactly as in image_1.\n2. Blink: the same face with both eyes closed as gentle curved eyelid lines.\n3. Happy: eyes open and bright, wide open smiling mouth with a dark-red inside and a pink tongue.\n4. Laugh: eyes squeezed shut in happy upward curves, wide open laughing mouth.\n5. Surprised: eyes wide open, eyebrows raised high, small round open mouth.\n6. Sad: eyebrows tilted up in the middle, eyes open and looking down, gentle downturned mouth.\n7. Angry: eyebrows pulled down in the middle, eyes narrowed, mouth a tight frown.\n8. Talking: eyes open, mouth half open in a relaxed oval as in mid-word.\n9. Wink: the left eye closed in a gentle curve, the right eye open, a cheeky smile.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these nine heads, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Nine heads with one identical outline and size, each the head from image_1 without hat, horns or ears, with the features as small as in image_1.\n2. Only the eyes, eyebrows and mouth change between heads; every head matches the colours and painting of image_1.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young beaver carpenter: warm chestnut-brown fur, a cream muzzle with two big white front teeth showing under a dark-brown nose, small round ears, and a broad flat dark-brown paddle tail. A turquoise knitted long-sleeved sweater with a ribbed collar and ribbed cuffs, mustard-yellow trousers held by a brown belt with a gold buckle, and red boots. Dark-brown mitten paws. Both paws are empty: no tools or props.",
+  "vars": {
+    "ASPECT": "1:1",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "CHARACTER": "A cheerful young beaver carpenter: warm chestnut-brown fur, a cream muzzle with two big white front teeth showing under a dark-brown nose, small round ears, and a broad flat dark-brown paddle tail. A turquoise knitted long-sleeved sweater with a ribbed collar and ribbed cuffs, mustard-yellow trousers held by a brown belt with a gold buckle, and red boots. Dark-brown mitten paws. Both paws are empty: no tools or props.",
+    "PREFIX": "agent/skipbo/beaver-face",
+    "IMAGE_1": "agent/skipbo/beaver_master_b7bdcb0423.png",
+    "IMAGE_2": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+  },
+  "inputs": {
+    "1": "beaver_master.png",
+    "2": "../../../plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas-small.jpg"
+  },
+  "criteria": [],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-15-beaver-jev-hands/beaver/runs/beaver-face/1015_132356_s552609281_n2_00.png"
+  ],
+  "seconds": 69.9,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint the head of the character from image_1 as a sheet of whole-face expression swaps for facial animation in Spine. Every head on the sheet is the same head at the same size, painted again with a different expression, so any one of them can replace another on the rig.\n\nTHE PIECES (nine heads, each painted exactly once), laid out in a three by three grid, left to right and top to bottom:\nEach head is the character's head base from image_1, front view, with its eyes, eyebrows, snout or beak, nostrils and mouth, and without any hat, horn, antler, ear or hair tuft, because those are separate pieces. All nine heads have exactly the same outline, size and fur, skin or feathers; only the eyes, eyebrows and mouth change, and they stay the same small size they have on the head in image_1.\n1. Neutral: eyes open, eyebrows relaxed, gentle closed smile, exactly as in image_1.\n2. Blink: the same face with both eyes closed as gentle curved eyelid lines.\n3. Happy: eyes open and bright, wide open smiling mouth with a dark-red inside and a pink tongue.\n4. Laugh: eyes squeezed shut in happy upward curves, wide open laughing mouth.\n5. Surprised: eyes wide open, eyebrows raised high, small round open mouth.\n6. Sad: eyebrows tilted up in the middle, eyes open and looking down, gentle downturned mouth.\n7. Angry: eyebrows pulled down in the middle, eyes narrowed, mouth a tight frown.\n8. Talking: eyes open, mouth half open in a relaxed oval as in mid-word.\n9. Wink: the left eye closed in a gentle curve, the right eye open, a cheeky smile.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these nine heads, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Nine heads with one identical outline and size, each the head from image_1 without hat, horns or ears, with the features as small as in image_1.\n2. Only the eyes, eyebrows and mouth change between heads; every head matches the colours and painting of image_1.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young beaver carpenter: warm chestnut-brown fur, a cream muzzle with two big white front teeth showing under a dark-brown nose, small round ears, and a broad flat dark-brown paddle tail. A turquoise knitted long-sleeved sweater with a ribbed collar and ribbed cuffs, mustard-yellow trousers held by a brown belt with a gold buckle, and red boots. Dark-brown mitten paws. Both paws are empty: no tools or props.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "1:1",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/beaver_master_b7bdcb0423.png"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/beaver-face"
+      }
+    }
+  }
+}

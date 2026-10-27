@@ -1,0 +1,91 @@
+fox_0.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+fox_arm_l
+bounds: 499,2,197,418
+fox_arm_r
+bounds: 499,424,197,418
+fox_boot_l
+bounds: 1226,992,130,127
+offsets: 2,2,134,138
+fox_boot_l_back
+bounds: 2,2019,99,24
+offsets: 4,112,134,138
+fox_boot_l_tiptoe
+bounds: 1341,284,155,148
+offsets: 4,2,161,170
+fox_boot_l_tiptoe_back
+bounds: 1341,436,111,52
+offsets: 2,116,161,170
+fox_boot_r
+bounds: 1241,1123,130,127
+offsets: 2,2,134,138
+fox_boot_r_back
+bounds: 105,2019,97,24
+offsets: 32,112,134,138
+fox_boot_r_tiptoe
+bounds: 1226,840,155,148
+offsets: 2,2,161,170
+fox_boot_r_tiptoe_back
+bounds: 1025,496,111,52
+offsets: 48,116,161,170
+fox_hand_l
+bounds: 1360,992,83,114
+offsets: 6,7,99,127
+fox_hand_l_fist
+bounds: 2,1222,346,448
+fox_hand_l_grip
+bounds: 1151,2,184,261
+offsets: 38,23,242,308
+fox_hand_l_open
+bounds: 826,847,208,277
+offsets: 7,7,226,291
+fox_hand_l_point
+bounds: 2,2,493,606
+offsets: 39,42,584,678
+fox_hand_l_thumbsup
+bounds: 1150,496,216,168
+fox_hand_r
+bounds: 1241,1254,81,114
+offsets: 5,3,90,121
+fox_hand_r_fist
+bounds: 352,1222,346,448
+fox_hand_r_grip
+bounds: 1038,847,184,261
+offsets: 20,23,242,308
+fox_hand_r_open
+bounds: 1029,1128,208,277
+offsets: 11,7,226,291
+fox_hand_r_point
+bounds: 2,612,493,606
+offsets: 52,42,584,678
+fox_hand_r_thumbsup
+bounds: 1150,668,216,168
+fox_head_angry
+bounds: 700,284,321,277
+fox_head_base
+bounds: 2,1674,406,273
+fox_head_blink
+bounds: 499,846,323,278
+fox_head_happy
+bounds: 1015,1410,322,278
+fox_head_laugh
+bounds: 1015,1692,322,278
+fox_head_neutral
+bounds: 1341,2,322,278
+fox_head_sad
+bounds: 1667,2,322,278
+fox_head_surprised
+bounds: 702,1128,323,278
+fox_head_talking
+bounds: 826,565,320,278
+fox_head_wink
+bounds: 826,2,321,278
+fox_hips
+bounds: 702,1410,274,240
+fox_tail
+bounds: 1025,284,312,208
+fox_tail_up
+bounds: 672,1674,339,271
+fox_torso
+bounds: 412,1674,256,341

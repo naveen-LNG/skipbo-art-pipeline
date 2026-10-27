@@ -1,0 +1,30 @@
+IMAGE ROLES:
+image_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.
+image_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.
+
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.
+Shading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.
+Colour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.
+Edges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.
+Surfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.
+Eyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.
+
+TASK:
+Paint the five growth stages of one garden plant, as separate pieces for 2D skeletal animation in Spine, in exactly the painting style of image_1 and image_2. They are objects, not body parts. The animation swaps one stage for the next in the same spot, so all five share the same soil mound.
+
+THE PIECES (five stages, each painted exactly once), side by side in one row from left to right, growing taller from left to right:
+{{STAGES}}
+
+The soil mound at the bottom of every stage is the same mound: identical in size, shape, colour and shading in all five, and every mound sits on the same baseline across the sheet. Only the plant above the mound changes. Each stage is painted straight-on, upright, whole and fully opaque, in the soft chunky style of image_1: simple rounded shapes, smooth airbrushed shading, no outlines. Stems are thick and chunky, leaves are big plain rounded shapes with at most one soft darker stripe, and the flower is a few big plain rounded petals with no veins.
+
+All pieces are laid out on one flat plain light grey background. The stages stand apart with a clear gap of empty background between them. They never touch, never overlap, and stay fully inside the frame, with an even margin of background around each. The sheet contains only these five stages, painted fully opaque, with no character, no hands, no tools, no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.
+
+FINAL CHECK:
+1. Exactly five stages in one row, growing from a seed to a flower, nothing else on the sheet.
+2. The same soil mound under every stage, same size, same baseline.
+3. Painted like image_1: airbrushed soft volume, chunky shapes, smooth, no outlines.
+4. Flat light grey background around all five; no text.
+
+CHARACTER NOTES (the character who plants and waters it; it is not painted on this sheet):
+{{CHARACTER}}

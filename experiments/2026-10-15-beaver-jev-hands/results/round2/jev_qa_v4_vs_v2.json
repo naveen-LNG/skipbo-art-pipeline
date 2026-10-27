@@ -1,0 +1,228 @@
+{
+ "joints": {
+  "shoulder_l": {
+   "broken": 1.8,
+   "ref_max": 1.72,
+   "ref_mean": 1.71,
+   "verdict": "WORSE than approved"
+  },
+  "shoulder_r": {
+   "broken": 2.07,
+   "ref_max": 1.72,
+   "ref_mean": 1.71,
+   "verdict": "WORSE than approved"
+  },
+  "elbow_l": {
+   "broken": 1.82,
+   "ref_max": 2.42,
+   "ref_mean": 1.83,
+   "verdict": "within approved range"
+  },
+  "elbow_r": {
+   "broken": 2.06,
+   "ref_max": 2.42,
+   "ref_mean": 1.83,
+   "verdict": "within approved range"
+  },
+  "wrist_l": {
+   "broken": 1.71,
+   "ref_max": 2.49,
+   "ref_mean": 2.16,
+   "verdict": "within approved range"
+  },
+  "wrist_r": {
+   "broken": 1.87,
+   "ref_max": 2.49,
+   "ref_mean": 2.16,
+   "verdict": "within approved range"
+  },
+  "neck": {
+   "broken": 1.26,
+   "ref_max": 2.13,
+   "ref_mean": 1.73,
+   "verdict": "within approved range"
+  },
+  "waist": {
+   "broken": 0.99,
+   "ref_max": 2.06,
+   "ref_mean": 1.98,
+   "verdict": "within approved range"
+  },
+  "ankle_l": {
+   "broken": 1.82,
+   "ref_max": 1.68,
+   "ref_mean": 1.5,
+   "verdict": "WORSE than approved"
+  },
+  "ankle_r": {
+   "broken": 1.83,
+   "ref_max": 1.68,
+   "ref_mean": 1.5,
+   "verdict": "WORSE than approved"
+  },
+  "tail": {
+   "broken": 1.12,
+   "ref_max": 1.64,
+   "ref_mean": 1.64,
+   "verdict": "within approved range"
+  }
+ },
+ "pairs": {
+  "shoulder_l": {
+   "p_new_better": 0.91,
+   "prev_broken": 2.21,
+   "new_broken": 1.8,
+   "verdict": "BETTER"
+  },
+  "shoulder_r": {
+   "p_new_better": 0.77,
+   "prev_broken": 2.18,
+   "new_broken": 2.07,
+   "verdict": "BETTER"
+  },
+  "elbow_l": {
+   "p_new_better": 0.74,
+   "prev_broken": 2.16,
+   "new_broken": 1.82,
+   "verdict": "BETTER"
+  },
+  "elbow_r": {
+   "p_new_better": 0.45,
+   "prev_broken": 2.22,
+   "new_broken": 2.06,
+   "verdict": "about the same"
+  },
+  "wrist_l": {
+   "p_new_better": 0.19,
+   "prev_broken": 1.35,
+   "new_broken": 1.71,
+   "verdict": "WORSE"
+  },
+  "wrist_r": {
+   "p_new_better": 0.07,
+   "prev_broken": 1.33,
+   "new_broken": 1.87,
+   "verdict": "WORSE"
+  },
+  "neck": {
+   "p_new_better": 0.95,
+   "prev_broken": 2.1,
+   "new_broken": 1.26,
+   "verdict": "BETTER"
+  },
+  "waist": {
+   "p_new_better": 0.86,
+   "prev_broken": 1.42,
+   "new_broken": 0.99,
+   "verdict": "BETTER"
+  },
+  "ankle_l": {
+   "p_new_better": 0.87,
+   "prev_broken": 2.25,
+   "new_broken": 1.82,
+   "verdict": "BETTER"
+  },
+  "ankle_r": {
+   "p_new_better": 0.88,
+   "prev_broken": 2.32,
+   "new_broken": 1.83,
+   "verdict": "BETTER"
+  },
+  "tail": {
+   "p_new_better": 0.96,
+   "prev_broken": 1.38,
+   "new_broken": 1.12,
+   "verdict": "BETTER"
+  }
+ },
+ "frames": {
+  "ref_p90": 0.68,
+  "ref_mean": 0.557,
+  "mean": 0.58,
+  "n": 48,
+  "to_review": [
+   {
+    "anim": "hold_card",
+    "t": 1.0,
+    "p_defect": 0.82
+   },
+   {
+    "anim": "hold_card",
+    "t": 0.6,
+    "p_defect": 0.82
+   },
+   {
+    "anim": "hold_card",
+    "t": 1.8,
+    "p_defect": 0.81
+   },
+   {
+    "anim": "hold_card",
+    "t": 1.4,
+    "p_defect": 0.8
+   },
+   {
+    "anim": "point",
+    "t": 1.0,
+    "p_defect": 0.74
+   },
+   {
+    "anim": "point",
+    "t": 1.8,
+    "p_defect": 0.73
+   },
+   {
+    "anim": "point",
+    "t": 1.4,
+    "p_defect": 0.73
+   },
+   {
+    "anim": "point",
+    "t": 0.6,
+    "p_defect": 0.73
+   }
+  ]
+ },
+ "holds": {
+  "wave/hand_l": {
+   "reads_as": "open",
+   "p_variant": 0.97,
+   "p_thumb_up": 0.07,
+   "finger_deg": 66,
+   "thumb_deg": 184,
+   "issues": []
+  },
+  "point/hand_l": {
+   "reads_as": "point",
+   "p_variant": 0.85,
+   "p_thumb_up": 0.89,
+   "finger_deg": 0,
+   "thumb_deg": 87,
+   "issues": []
+  },
+  "thumbs_up/hand_l": {
+   "reads_as": "thumbsup",
+   "p_variant": 0.96,
+   "p_thumb_up": 0.92,
+   "finger_deg": 39,
+   "thumb_deg": 83,
+   "issues": []
+  },
+  "hold_card/hand_l": {
+   "reads_as": "grip",
+   "p_variant": 0.69,
+   "p_thumb_up": 0.28,
+   "finger_deg": 166,
+   "thumb_deg": 142,
+   "issues": []
+  },
+  "cheer_jump/hand_l": {
+   "reads_as": "fist",
+   "p_variant": 0.86,
+   "p_thumb_up": 0.14,
+   "finger_deg": 84,
+   "thumb_deg": 202,
+   "issues": []
+  }
+ }
+}

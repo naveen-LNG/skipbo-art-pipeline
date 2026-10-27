@@ -1,0 +1,47 @@
+[
+ {
+  "group": "1 Hand direction experiment: fox+moose pieces (text, examples)",
+  "calls": 608,
+  "input_tokens": 2311036
+ },
+ {
+  "group": "1 Hand direction experiment: fox+moose rendered holds (text, examples)",
+  "calls": 240,
+  "input_tokens": 956924
+ },
+ {
+  "group": "1 Hand direction experiment: beaver pieces + holds (held out)",
+  "calls": 344,
+  "input_tokens": 1108591
+ },
+ {
+  "group": "2 Beaver hand annotation cross-check (jev_annotate)",
+  "calls": 8,
+  "input_tokens": 39402
+ },
+ {
+  "group": "3 Hold check on rigs (jev_rig_check)",
+  "calls": 15,
+  "input_tokens": 23397
+ },
+ {
+  "group": "4 Joint audit vs master, first pass (v2 + fox + moose, v3)",
+  "calls": 43,
+  "input_tokens": 81122
+ },
+ {
+  "group": "5 Palm/back from visual cues (fox+moose, 304)",
+  "calls": 304,
+  "input_tokens": 386910
+ },
+ {
+  "group": "6 Palm/back annotation of beaver hands (cues x16 turns)",
+  "calls": 160,
+  "input_tokens": 209939
+ },
+ {
+  "group": "7 Jev QA pass x4 (joints vs approved, pairs vs previous, frames, holds)",
+  "calls": 856,
+  "input_tokens": 1699636
+ }
+]

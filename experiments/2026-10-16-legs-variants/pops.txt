@@ -1,0 +1,3 @@
+squat        swaps 12  worst swap excess  0.65%  mean  0.05%  (frame change median 1.70%)
+jump_hurdle  swaps 35  worst swap excess  1.95%  mean -0.04%  (frame change median 4.55%)
+plant_seed   swaps 14  worst swap excess  1.65%  mean  0.10%  (frame change median 1.32%)

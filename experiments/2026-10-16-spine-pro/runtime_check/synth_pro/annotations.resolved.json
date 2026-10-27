@@ -1,0 +1,783 @@
+{
+ "attachments": {
+  "synth_tail": {
+   "slot": "tail",
+   "variant": null,
+   "side": "",
+   "points": {
+    "root": [
+     21.2,
+     21.2
+    ]
+   },
+   "widths": {}
+  },
+  "synth_tail_up": {
+   "slot": "tail",
+   "variant": "up",
+   "side": "",
+   "points": {
+    "root": [
+     19.8,
+     19.8
+    ]
+   },
+   "widths": {}
+  },
+  "synth_leg_l": {
+   "slot": "leg_l",
+   "variant": null,
+   "side": "l",
+   "points": {
+    "hem": [
+     33.2,
+     250.89
+    ],
+    "hip": [
+     33.2,
+     33.2
+    ]
+   },
+   "widths": {
+    "hem": 40.0,
+    "hip": 46.4
+   }
+  },
+  "synth_leg_r": {
+   "slot": "leg_r",
+   "variant": null,
+   "side": "r",
+   "points": {
+    "hem": [
+     33.2,
+     250.89
+    ],
+    "hip": [
+     33.2,
+     33.2
+    ]
+   },
+   "widths": {
+    "hem": 40.0,
+    "hip": 46.4
+   }
+  },
+  "synth_boot_l": {
+   "slot": "boot_l",
+   "variant": null,
+   "side": "l",
+   "points": {
+    "ankle": [
+     35.6,
+     16.4
+    ],
+    "ground": [
+     45.2,
+     80.4
+    ]
+   },
+   "widths": {
+    "ankle": 44.8
+   }
+  },
+  "synth_boot_l_tiptoe": {
+   "slot": "boot_l",
+   "variant": "tiptoe",
+   "side": "l",
+   "points": {
+    "ankle": [
+     29.6,
+     15.6
+    ],
+    "ground": [
+     35.9,
+     86.3
+    ]
+   },
+   "widths": {
+    "ankle": 39.2
+   }
+  },
+  "synth_boot_r": {
+   "slot": "boot_r",
+   "variant": null,
+   "side": "r",
+   "points": {
+    "ankle": [
+     54.8,
+     16.4
+    ],
+    "ground": [
+     45.2,
+     80.4
+    ]
+   },
+   "widths": {
+    "ankle": 44.8
+   }
+  },
+  "synth_boot_r_tiptoe": {
+   "slot": "boot_r",
+   "variant": "tiptoe",
+   "side": "r",
+   "points": {
+    "ankle": [
+     39.4,
+     15.6
+    ],
+    "ground": [
+     33.1,
+     86.3
+    ]
+   },
+   "widths": {
+    "ankle": 39.2
+   }
+  },
+  "synth_hips": {
+   "slot": "hips",
+   "variant": null,
+   "side": "",
+   "points": {
+    "hip_l": [
+     102.8,
+     77.2
+    ],
+    "hip_r": [
+     42.0,
+     77.2
+    ],
+    "waist": [
+     72.4,
+     21.2
+    ]
+   },
+   "widths": {
+    "hip_l": 48.0,
+    "hip_r": 48.0
+   }
+  },
+  "synth_torso": {
+   "slot": "torso",
+   "variant": null,
+   "side": "",
+   "points": {
+    "neck": [
+     77.2,
+     16.4
+    ],
+    "shoulder_l": [
+     131.6,
+     40.4
+    ],
+    "shoulder_r": [
+     22.8,
+     40.4
+    ],
+    "waist": [
+     77.2,
+     190.8
+    ]
+   },
+   "widths": {}
+  },
+  "synth_hand_l": {
+   "slot": "hand_l",
+   "variant": null,
+   "side": "l",
+   "points": {
+    "fingertip": [
+     27.6,
+     61.2
+    ],
+    "thumb_tip": [
+     57.99,
+     22.27
+    ],
+    "wrist": [
+     27.6,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_l_fist": {
+   "slot": "hand_l",
+   "variant": "fist",
+   "side": "l",
+   "points": {
+    "thumb_tip": [
+     54.82,
+     15.08
+    ],
+    "wrist": [
+     27.8,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_l_grip": {
+   "slot": "hand_l",
+   "variant": "grip",
+   "side": "l",
+   "points": {
+    "fingertip": [
+     29.08,
+     54.28
+    ],
+    "thumb_tip": [
+     10.01,
+     22.27
+    ],
+    "wrist": [
+     40.4,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_l_open": {
+   "slot": "hand_l",
+   "variant": "open",
+   "side": "l",
+   "points": {
+    "fingertip": [
+     28.6,
+     64.4
+    ],
+    "thumb_tip": [
+     58.99,
+     22.27
+    ],
+    "wrist": [
+     28.6,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_l_point": {
+   "slot": "hand_l",
+   "variant": "point",
+   "side": "l",
+   "points": {
+    "fingertip": [
+     33.0,
+     65.2
+    ],
+    "thumb_tip": [
+     57.0,
+     21.2
+    ],
+    "wrist": [
+     28.2,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_l_thumbsup": {
+   "slot": "hand_l",
+   "variant": "thumbsup",
+   "side": "l",
+   "points": {
+    "thumb_tip": [
+     64.94,
+     15.67
+    ],
+    "wrist": [
+     28.2,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_r": {
+   "slot": "hand_r",
+   "variant": null,
+   "side": "r",
+   "points": {
+    "fingertip": [
+     40.4,
+     61.2
+    ],
+    "thumb_tip": [
+     10.01,
+     22.27
+    ],
+    "wrist": [
+     40.4,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_r_fist": {
+   "slot": "hand_r",
+   "variant": "fist",
+   "side": "r",
+   "points": {
+    "thumb_tip": [
+     10.18,
+     15.08
+    ],
+    "wrist": [
+     37.2,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_r_grip": {
+   "slot": "hand_r",
+   "variant": "grip",
+   "side": "r",
+   "points": {
+    "fingertip": [
+     38.92,
+     54.28
+    ],
+    "thumb_tip": [
+     57.99,
+     22.27
+    ],
+    "wrist": [
+     27.6,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_r_open": {
+   "slot": "hand_r",
+   "variant": "open",
+   "side": "r",
+   "points": {
+    "fingertip": [
+     40.4,
+     64.4
+    ],
+    "thumb_tip": [
+     10.01,
+     22.27
+    ],
+    "wrist": [
+     40.4,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_r_point": {
+   "slot": "hand_r",
+   "variant": "point",
+   "side": "r",
+   "points": {
+    "fingertip": [
+     34.0,
+     65.2
+    ],
+    "thumb_tip": [
+     10.0,
+     21.2
+    ],
+    "wrist": [
+     38.8,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_hand_r_thumbsup": {
+   "slot": "hand_r",
+   "variant": "thumbsup",
+   "side": "r",
+   "points": {
+    "thumb_tip": [
+     10.06,
+     15.67
+    ],
+    "wrist": [
+     46.8,
+     10.0
+    ]
+   },
+   "widths": {
+    "wrist": 24.0
+   }
+  },
+  "synth_forearm_l": {
+   "slot": "forearm_l",
+   "variant": null,
+   "side": "l",
+   "points": {
+    "elbow": [
+     25.2,
+     25.2
+    ],
+    "wrist": [
+     25.2,
+     113.2
+    ]
+   },
+   "widths": {
+    "elbow": 30.4,
+    "wrist": 28.8
+   }
+  },
+  "synth_forearm_r": {
+   "slot": "forearm_r",
+   "variant": null,
+   "side": "r",
+   "points": {
+    "elbow": [
+     25.2,
+     25.2
+    ],
+    "wrist": [
+     25.2,
+     113.2
+    ]
+   },
+   "widths": {
+    "elbow": 30.4,
+    "wrist": 28.8
+   }
+  },
+  "synth_upperarm_l": {
+   "slot": "upperarm_l",
+   "variant": null,
+   "side": "l",
+   "points": {
+    "elbow": [
+     27.6,
+     123.6
+    ],
+    "shoulder": [
+     27.6,
+     27.6
+    ]
+   },
+   "widths": {
+    "elbow": 32.0,
+    "shoulder": 35.2
+   }
+  },
+  "synth_upperarm_l_raised": {
+   "slot": "upperarm_l",
+   "variant": "raised",
+   "side": "l",
+   "points": {
+    "elbow": [
+     25.4,
+     95.4
+    ],
+    "shoulder": [
+     25.4,
+     25.4
+    ]
+   },
+   "widths": {
+    "elbow": 28.0,
+    "shoulder": 30.8
+   }
+  },
+  "synth_upperarm_r": {
+   "slot": "upperarm_r",
+   "variant": null,
+   "side": "r",
+   "points": {
+    "elbow": [
+     27.6,
+     123.6
+    ],
+    "shoulder": [
+     27.6,
+     27.6
+    ]
+   },
+   "widths": {
+    "elbow": 32.0,
+    "shoulder": 35.2
+   }
+  },
+  "synth_upperarm_r_raised": {
+   "slot": "upperarm_r",
+   "variant": "raised",
+   "side": "r",
+   "points": {
+    "elbow": [
+     25.4,
+     95.4
+    ],
+    "shoulder": [
+     25.4,
+     25.4
+    ]
+   },
+   "widths": {
+    "elbow": 28.0,
+    "shoulder": 30.8
+   }
+  },
+  "synth_head_base": {
+   "slot": "head",
+   "variant": null,
+   "side": "",
+   "points": {
+    "neck": [
+     69.2,
+     128.4
+    ]
+   },
+   "widths": {}
+  },
+  "synth_head_happy": {
+   "slot": "head",
+   "variant": "happy",
+   "side": "",
+   "points": {
+    "neck": [
+     69.2,
+     128.4
+    ]
+   },
+   "widths": {}
+  },
+  "synth_head_neutral": {
+   "slot": "head",
+   "variant": "neutral",
+   "side": "",
+   "points": {
+    "neck": [
+     69.2,
+     128.4
+    ]
+   },
+   "widths": {}
+  }
+ },
+ "sockets": [
+  {
+   "child": "synth_leg_l",
+   "child_point": "hem",
+   "parent": "synth_boot_l",
+   "parent_point": "ankle",
+   "width": 44.8
+  },
+  {
+   "child": "synth_leg_l",
+   "child_point": "hip",
+   "parent": "synth_hips",
+   "parent_point": "hip_l",
+   "width": 48.0
+  },
+  {
+   "child": "synth_hand_l",
+   "child_point": "wrist",
+   "parent": "synth_forearm_l",
+   "parent_point": "wrist",
+   "width": 28.8
+  },
+  {
+   "child": "synth_leg_r",
+   "child_point": "hem",
+   "parent": "synth_boot_r",
+   "parent_point": "ankle",
+   "width": 44.8
+  },
+  {
+   "child": "synth_leg_r",
+   "child_point": "hip",
+   "parent": "synth_hips",
+   "parent_point": "hip_r",
+   "width": 48.0
+  },
+  {
+   "child": "synth_hand_r",
+   "child_point": "wrist",
+   "parent": "synth_forearm_r",
+   "parent_point": "wrist",
+   "width": 28.8
+  }
+ ],
+ "layer_order": [
+  {
+   "slot": "hand_l",
+   "over": "forearm_l",
+   "relation": "below"
+  },
+  {
+   "slot": "hand_r",
+   "over": "forearm_r",
+   "relation": "below"
+  }
+ ],
+ "holds": {
+  "point": {
+   "time": 1.2,
+   "slot": "hand_l",
+   "variant": "point",
+   "side": "l",
+   "attachment": "synth_hand_l_point",
+   "pose": "outward",
+   "thumb_target": 90.0
+  },
+  "thumbs_up": {
+   "time": 1.2,
+   "slot": "hand_l",
+   "variant": "thumbsup",
+   "side": "l",
+   "attachment": "synth_hand_l_thumbsup",
+   "pose": "outward",
+   "thumb_target": 90.0
+  },
+  "hold_card": {
+   "time": 1.2,
+   "slot": "hand_l",
+   "variant": "grip",
+   "side": "l",
+   "attachment": "synth_hand_l_grip",
+   "pose": "hold_card",
+   "thumb_target": 90.0
+  },
+  "wave": {
+   "time": 0.75,
+   "slot": "hand_l",
+   "variant": "open",
+   "side": "l",
+   "attachment": "synth_hand_l_open",
+   "pose": "wave",
+   "thumb_target": 175.0
+  },
+  "cheer_jump": {
+   "time": 0.95,
+   "slot": "hand_l",
+   "variant": "fist",
+   "side": "l",
+   "attachment": "synth_hand_l_fist",
+   "pose": "cheer",
+   "thumb_target": -180.0
+  }
+ },
+ "thumb_targets": {
+  "synth_hand_l": 0.0,
+  "synth_hand_l_fist": 180.0,
+  "synth_hand_l_grip": 90.0,
+  "synth_hand_l_open": 180.0,
+  "synth_hand_l_point": 90.0,
+  "synth_hand_l_thumbsup": 90.0,
+  "synth_hand_r": 180.0,
+  "synth_hand_r_fist": 0.0,
+  "synth_hand_r_grip": 90.0,
+  "synth_hand_r_open": 0.0,
+  "synth_hand_r_point": 90.0,
+  "synth_hand_r_thumbsup": 90.0
+ },
+ "master_points_units": {
+  "ankle_l": [
+   37.194,
+   59.405
+  ],
+  "ankle_r": [
+   -36.444,
+   59.405
+  ],
+  "elbow_l": [
+   87.599,
+   393.228
+  ],
+  "elbow_r": [
+   -86.849,
+   393.228
+  ],
+  "fingertip_l": [
+   117.794,
+   257.424
+  ],
+  "fingertip_r": [
+   -117.044,
+   257.424
+  ],
+  "ground": [
+   0.375,
+   -4.608
+  ],
+  "hip_l": [
+   30.762,
+   277.009
+  ],
+  "hip_r": [
+   -30.012,
+   277.009
+  ],
+  "neck": [
+   0.375,
+   507.431
+  ],
+  "shoulder_l": [
+   54.764,
+   483.452
+  ],
+  "shoulder_r": [
+   -54.014,
+   483.452
+  ],
+  "waist": [
+   0.375,
+   333.031
+  ],
+  "wrist_l": [
+   108.913,
+   307.828
+  ],
+  "wrist_r": [
+   -108.163,
+   307.828
+  ]
+ },
+ "point_bones": {
+  "shoulder_l": "upperarm_l",
+  "elbow_l": "forearm_l",
+  "wrist_l": "hand_l",
+  "hip_l": "leg_l",
+  "ankle_l": "boot_l",
+  "shoulder_r": "upperarm_r",
+  "elbow_r": "forearm_r",
+  "wrist_r": "hand_r",
+  "hip_r": "leg_r",
+  "ankle_r": "boot_r"
+ },
+ "body_height_units": 630.458,
+ "push_in": {
+  "hip_l": 5.6,
+  "hip_r": 5.6,
+  "shoulder_l": 0.0,
+  "wrist_l": 3.36,
+  "shoulder_r": 0.0,
+  "wrist_r": 3.36
+ }
+}

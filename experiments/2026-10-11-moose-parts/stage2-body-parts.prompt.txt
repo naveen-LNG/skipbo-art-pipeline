@@ -1,0 +1,37 @@
+IMAGE ROLES:
+image_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions and the same scale as he appears in image_1.
+image_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.
+
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.
+Shading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.
+Colour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.
+Edges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.
+Surfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.
+Eyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.
+TASK:
+Repaint the moose from image_1 as a sheet of separate body pieces for 2D skeletal animation in Spine. Each piece is painted whole, including the area that is normally hidden under the piece in front of it, so that the pieces can rotate at their joints without showing gaps.
+
+THE PIECES (each exactly once):
+1. Head base: the furry head with the big tan muzzle and its two nostrils, and plain fur where the eyes and eyebrows sit, with a smooth plain muzzle where the mouth sits. Its lower edge is complete fur all the way round.
+2. Conductor cap, on its own.
+3. Left antler and 4. right antler, each on its own with a rounded base.
+5. Left ear and 6. right ear, each on its own.
+7. Red scarf with its knot and hanging end, on its own.
+8. Small gold bell, on its own.
+9. Torso: the navy vest with its buttons and buckle over the cream shirt, continuing up into a short brown neck at the top, painted complete where the scarf and head would cover it.
+10. Left upper arm and 11. right upper arm: cream shirt sleeve from the shoulder to the elbow, the shoulder end rounded so it tucks under the vest.
+12. Left forearm and 13. right forearm: cream sleeve from the elbow to the wrist, with a rounded elbow end and a brown fur wrist at the bottom.
+14. Left hand and 15. right hand: dark-brown hoof mittens, open and relaxed, each with a short wrist stub.
+16. Hips: the top of the brown trousers below the belt, with rounded leg openings.
+17. Left leg and 18. right leg: brown trouser legs from hip to ankle, rounded at the top.
+19. Left hoof and 20. right hoof: dark-brown hooves.
+
+LAYOUT:
+The pieces are laid out in loose rows on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, at the same scale as in image_1. The sheet contains only these pieces, with no labels, numbers, text, guides or shadows.
+
+FINAL CHECK:
+1. Twenty separate pieces, every one clearly the same moose as image_1 in colour, shading and scale.
+2. Painted like the shipped atlas: airbrushed soft volume, smooth surfaces, no outlines.
+3. Joint ends rounded and hidden areas painted complete.
+4. Every piece separated by empty background; flat light grey background; no text.

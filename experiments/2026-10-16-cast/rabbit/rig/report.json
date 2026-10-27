@@ -1,0 +1,491 @@
+{
+  "global_scale_master_px_per_part_px": 1.3525,
+  "renamed": {},
+  "from_master": [],
+  "variants": {
+    "rabbit_hand_l_fist": {
+      "scale_vs_rest": 1.089,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "rabbit_hand_l_grip": {
+      "scale_vs_rest": 1.101,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "rabbit_hand_l_open": {
+      "scale_vs_rest": 0.861,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "rabbit_hand_l_point": {
+      "scale_vs_rest": 0.366,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "rabbit_hand_l_thumbsup": {
+      "scale_vs_rest": 0.919,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "rabbit_hand_r_fist": {
+      "scale_vs_rest": 1.048,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "rabbit_hand_r_grip": {
+      "scale_vs_rest": 1.06,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "rabbit_hand_r_open": {
+      "scale_vs_rest": 0.829,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "rabbit_hand_r_point": {
+      "scale_vs_rest": 0.352,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "rabbit_hand_r_thumbsup": {
+      "scale_vs_rest": 0.885,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    }
+  },
+  "master_frame": {
+    "width": 1792,
+    "height": 2400,
+    "mid_x": 862.5,
+    "ground_y": 2298.75,
+    "units_per_px": 0.739362
+  },
+  "parts": {
+    "torso": {
+      "method": "two_point",
+      "stretch": 0.9999999999999999,
+      "narrow": null
+    },
+    "hips": {
+      "method": "two_point",
+      "stretch": 1.147383757988555,
+      "narrow": null,
+      "width_fit": {
+        "factor": 1.0,
+        "raw": 1.0400000000000003
+      }
+    },
+    "head_base": {
+      "method": "matcher",
+      "stretch": null,
+      "narrow": null
+    },
+    "ear_r": {
+      "method": "matcher",
+      "stretch": null,
+      "narrow": null
+    },
+    "ear_l": {
+      "method": "matcher",
+      "stretch": null,
+      "narrow": null
+    },
+    "boot_l": {
+      "method": "socket",
+      "stretch": null,
+      "narrow": null,
+      "ankle_shift": {
+        "dx": -14.298327881617297
+      }
+    },
+    "boot_r": {
+      "method": "socket",
+      "stretch": null,
+      "narrow": null,
+      "ankle_shift": {
+        "dx": 14.29832788161707
+      }
+    },
+    "upperarm_l": {
+      "method": "mesh",
+      "stretch": 0.9728900622286482,
+      "narrow": null,
+      "width_fit": {
+        "upper": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 1
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 1
+        }
+      }
+    },
+    "forearm_l": {
+      "method": "mesh",
+      "stretch": 1.0270170381905466,
+      "narrow": null,
+      "wrist_trim": {
+        "trimmed_px": 2,
+        "feathered_px": 1,
+        "kept_px": 50800
+      }
+    },
+    "hand_l": {
+      "method": "hand",
+      "stretch": null,
+      "narrow": null
+    },
+    "upperarm_r": {
+      "method": "mesh",
+      "stretch": 0.9735252867116956,
+      "narrow": null,
+      "width_fit": {
+        "upper": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 0
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": 1.0871,
+          "samples": 3
+        }
+      }
+    },
+    "forearm_r": {
+      "method": "mesh",
+      "stretch": 1.0264438347599327,
+      "narrow": null,
+      "wrist_trim": {
+        "trimmed_px": 6,
+        "feathered_px": 8,
+        "kept_px": 61877
+      }
+    },
+    "hand_r": {
+      "method": "hand",
+      "stretch": null,
+      "narrow": null
+    }
+  },
+  "annotations": "annotations.json",
+  "allow_proposed": false,
+  "doubts": [
+    {
+      "part": "boot_l",
+      "reason": "ground_miss",
+      "ratio": 0.825,
+      "limit": [
+        0.85,
+        1.15
+      ]
+    },
+    {
+      "part": "boot_r",
+      "reason": "ground_miss",
+      "ratio": 0.818,
+      "limit": [
+        0.85,
+        1.15
+      ]
+    },
+    {
+      "part": "upperarm_r",
+      "reason": "shoulder_outside_torso",
+      "moved_px": 8.2
+    },
+    {
+      "part": "hand_r",
+      "reason": "matcher_disagreement",
+      "distance_frac": 0.0452,
+      "annotation": [
+        408.6,
+        1685.4
+      ],
+      "matcher": [
+        343.1,
+        1758.8
+      ]
+    },
+    {
+      "part": "boot_l",
+      "reason": "worn_opening_guessed",
+      "ellipse": [
+        124.5,
+        39.14,
+        114.5,
+        40.08
+      ]
+    }
+  ],
+  "gestures": {
+    "cheer_jump": {
+      "l": {
+        "variant": "fist",
+        "facing": "palm",
+        "pose": "cheer",
+        "upperarm_deg": 60.0,
+        "forearm_deg": 70.0,
+        "thumb_deg": 160.0,
+        "thumb_target_deg": 160.0,
+        "thumb_error_deg": 0.0
+      },
+      "r": {
+        "variant": "fist",
+        "facing": "palm",
+        "pose": "cheer",
+        "upperarm_deg": 120.0,
+        "forearm_deg": 110.0,
+        "thumb_deg": 20.0,
+        "thumb_target_deg": 20.0,
+        "thumb_error_deg": 0.0
+      }
+    },
+    "hold_card": {
+      "l": {
+        "variant": "grip",
+        "facing": "back",
+        "pose": "hold_card",
+        "upperarm_deg": -95.0,
+        "forearm_deg": 170.0,
+        "thumb_deg": 80.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 10.0,
+        "errors": {
+          "hold_card": 10.0
+        }
+      }
+    },
+    "point": {
+      "l": {
+        "variant": "point",
+        "facing": "palm",
+        "pose": "outward",
+        "upperarm_deg": 5.0,
+        "forearm_deg": 5.0,
+        "thumb_deg": 95.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 5.0,
+        "errors": {
+          "outward": 5.0,
+          "across": 160.0
+        }
+      }
+    },
+    "thumbs_up": {
+      "l": {
+        "variant": "thumbsup",
+        "facing": "palm",
+        "pose": "outward",
+        "upperarm_deg": -55.0,
+        "forearm_deg": 10.0,
+        "thumb_deg": 100.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 10.0,
+        "errors": {
+          "outward": 10.0,
+          "across": 160.0
+        }
+      }
+    },
+    "wave": {
+      "l": {
+        "variant": "open",
+        "facing": "palm",
+        "pose": "wave",
+        "upperarm_deg": 20.0,
+        "forearm_deg": 65.0,
+        "thumb_deg": 155.0,
+        "thumb_target_deg": 155.0,
+        "thumb_error_deg": 0.0
+      }
+    }
+  },
+  "worn": {
+    "boot_l": {
+      "back_slot": "boot_l_back",
+      "attachments": {
+        "rabbit_boot_l": {
+          "method": "ellipse",
+          "ellipse": [
+            124.5,
+            39.14,
+            114.5,
+            40.08
+          ],
+          "band": [
+            124.5,
+            39.14,
+            114.5,
+            29.4
+          ],
+          "tilt": 0.0352,
+          "lip_ends_px": 278,
+          "tips_px": 0,
+          "back_px": 12732,
+          "shell_px": 50555
+        }
+      }
+    },
+    "boot_r": {
+      "back_slot": "boot_r_back",
+      "attachments": {
+        "rabbit_boot_r": {
+          "method": "inside",
+          "ellipse": [
+            167.5,
+            37.0,
+            98.5,
+            19.0
+          ],
+          "band": [
+            167.5,
+            37.0,
+            131.04,
+            32.48
+          ],
+          "tips_px": 47,
+          "back_px": 8302,
+          "shell_px": 52121
+        }
+      }
+    }
+  },
+  "meshes": {
+    "upperarm_l": {
+      "arm": "arm_l",
+      "scale_vs_sheet": 0.2613,
+      "width_fit": {
+        "upper": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 1
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 1
+        }
+      },
+      "rows": 27,
+      "vertices": 54,
+      "width_px": 358.0,
+      "design": {
+        "smooth": {
+          "band": [
+            -1.14,
+            0.8
+          ],
+          "neutral": 0.8,
+          "grid_share": 0.157,
+          "crease_fill": false,
+          "outer_corner_deg": 25.4,
+          "crease_gap": 0.003
+        },
+        "grid": {
+          "left": {
+            "pivot_shift": 0.5,
+            "band": [
+              -1.24,
+              0.1
+            ]
+          },
+          "right": {
+            "pivot_shift": 0.5,
+            "band": [
+              -0.9,
+              0.1
+            ]
+          },
+          "fade": 1.0
+        },
+        "default": false
+      },
+      "need_deg": [
+        -102.6,
+        92.3
+      ],
+      "covered_deg": [
+        -102.6,
+        92.3
+      ],
+      "fold_free": true,
+      "over_torso_in": [
+        "hold_card"
+      ]
+    },
+    "upperarm_r": {
+      "arm": "arm_r",
+      "scale_vs_sheet": 0.27,
+      "width_fit": {
+        "upper": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": null,
+          "samples": 0
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 0.0,
+          "raw": 1.0871,
+          "samples": 3
+        }
+      },
+      "rows": 27,
+      "vertices": 54,
+      "width_px": 358.0,
+      "design": {
+        "smooth": {
+          "band": [
+            -0.8,
+            0.6
+          ],
+          "neutral": 0.8,
+          "grid_share": 0.6,
+          "crease_fill": false,
+          "outer_corner_deg": 31.5,
+          "crease_gap": 0.001
+        },
+        "grid": {
+          "left": {
+            "pivot_shift": 0.8,
+            "band": [
+              -0.3,
+              0.1
+            ]
+          },
+          "right": {
+            "pivot_shift": 0.0,
+            "band": [
+              -0.6,
+              0.1
+            ]
+          },
+          "fade": 1.0
+        },
+        "default": false
+      },
+      "need_deg": [
+        -94.8,
+        10.0
+      ],
+      "covered_deg": [
+        -94.8,
+        10.0
+      ],
+      "fold_free": true,
+      "over_torso_in": []
+    }
+  },
+  "mesh_skipped_variants": []
+}

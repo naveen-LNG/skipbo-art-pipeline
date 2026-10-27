@@ -1,0 +1,11 @@
+wrote ../2026-10-16-cast/redpanda/rig_pro/redpanda.json: 26 bones, 26 slots, constraints {'ik': [], 'transform': ['boot_l_plant', 'boot_r_plant']}, animations blink, idle, wave, cheer_jump, thumbs_up, point, hold_card, emotions, walk, run, squat, jump_hurdle, wave_flag, look_around, talk
+  container: {"moved": ["cheer_jump: hips translate -> character (jump)", "jump_hurdle: hips translate -> character (jump)"], "width": 754.9, "height": 118.1, "shadow_keys": ["cheer_jump", "jump_hurdle"]}
+  tail: {"bones": ["tail", "tail2", "tail3", "tail4"], "length": 1207.7, "fractions": [0.0, 0.3, 0.56, 0.8], "attachments": {"redpanda_tail": {"vertices": 60, "triangles": 84, "padded": [165, 98], "fold_free": true}}}
+  torso: {"chest_at": 161.6, "moved_under_chest": ["head_base", "upperarm_l", "upperarm_r"], "mesh": {"vertices": 50, "triangles": 72, "padded": [10, 12]}, "fold_free": true}
+  head: {"face_at": [-104.9, 1356.7], "ears": [], "ear_parts": true, "attachments": {"redpanda_head_base": {"vertices": 81, "triangles": 128, "padded": [1, 1]}, "redpanda_head_angry": {"vertices": 81, "triangles": 128, "padded": [1, 1]}, "redpanda_
+  feet: {"feet": {"boot_l": {"target": "boot_l_ik", "leg_ik": null}, "boot_r": {"target": "boot_r_ik", "leg_ik": null}}, "baked": {"walk": ["boot_l", "boot_r"], "run": ["boot_l", "boot_r"], "squat": ["boot_l", "boot_r"], "jump_hurdle": ["boot_l", "
+  anims: {"idle": {"duration": 2.0}, "look_around": {"duration": 3.2}, "talk": {"duration": 2.4, "mouth": "redpanda_head_talking"}, "breathing": ["blink", "wave", "cheer_jump", "thumbs_up", "point", "hold_card", "emotions", "walk", "run", "squat", "
+  secondary: {"tail_root_smoothed": ["cheer_jump: sigma 1.5", "jump_hurdle: sigma 1.5"], "blink": {"periodic": true, "tail": 0.0, "chest": 0.0, "ear_l": 0.0, "ear_r": 0.0}, "idle": {"periodic": true, "tail": 0.1, "chest": 0.0, "ear_l": 0.1, "ear_r": 0.1
+  underfill: {"slots": {"ear_l": 1, "ear_r": 1, "tail": 1, "boot_l": 2, "boot_r": 2, "hips": 1, "hand_l": 6, "upperarm_l": 1, "hand_r": 6, "upperarm_r": 1, "head": 10}, "ring_units": 6.75}
+  organise: {"red": 19, "yellow": 3, "green": 2}
+redpanda: pro rig in ../2026-10-16-cast/redpanda/rig_pro, spine_qa PASS

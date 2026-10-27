@@ -1,0 +1,200 @@
+{
+  "structure": {
+    "pass": true,
+    "pivot_off_joint": {},
+    "reversed_bones": {},
+    "weak_joints": {},
+    "slivers": {},
+    "fragments": {},
+    "draw_order": {},
+    "variant_misfit": {},
+    "mesh_fold": {}
+  },
+  "setup": {
+    "pass": true,
+    "silhouette_iou": 0.897
+  },
+  "seams": {
+    "pass": true,
+    "seams": {
+      "hips/tail": 0.0,
+      "boot_l/hips": 0.0,
+      "boot_r/hips": 0.0,
+      "torso/tail": 0.0,
+      "torso/hips": 0.0,
+      "torso/upperarm_l": 0.0,
+      "torso/upperarm_r": 0.0,
+      "head/torso": 0.0,
+      "head/upperarm_r": 0.0,
+      "hand_l/torso": 0.0,
+      "upperarm_l/torso": 0.011
+    }
+  },
+  "thumbs": {
+    "pass": true,
+    "thumbs": {
+      "point": 5.0,
+      "thumbs_up": 10.0,
+      "hold_card": 10.0,
+      "wave": 10.0,
+      "cheer_jump": 2.3
+    },
+    "unchecked": {}
+  },
+  "sockets": {
+    "pass": true,
+    "sockets": {
+      "fox_hand_l/fox_arm_l": {
+        "spill": 0.011,
+        "spill_at": "cheer_jump@0.20",
+        "off": 0.24,
+        "off_at": "cheer_jump@0.50"
+      },
+      "fox_hand_r/fox_arm_r": {
+        "spill": 0.005,
+        "spill_at": "cheer_jump@0.50",
+        "off": 0.24,
+        "off_at": "cheer_jump@0.50"
+      }
+    }
+  },
+  "landmarks": {
+    "pass": true,
+    "landmarks": {
+      "shoulder_l": 0.01,
+      "elbow_l": 0.02,
+      "wrist_l": 13.56,
+      "ankle_l": 31.77,
+      "shoulder_r": 0.01,
+      "elbow_r": 0.02,
+      "wrist_r": 13.57,
+      "ankle_r": 31.77
+    },
+    "failed": {}
+  },
+  "layer_order": {
+    "pass": true,
+    "wrong": {}
+  },
+  "blink": {
+    "pass": true,
+    "frames": 31,
+    "duration": 1.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "idle": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "wave": {
+    "pass": true,
+    "frames": 91,
+    "duration": 3.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "cheer_jump": {
+    "pass": true,
+    "frames": 58,
+    "duration": 1.9,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "thumbs_up": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "point": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "hold_card": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "emotions": {
+    "pass": true,
+    "frames": 217,
+    "duration": 7.2,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "walk": {
+    "pass": true,
+    "frames": 31,
+    "duration": 1.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "run": {
+    "pass": true,
+    "frames": 20,
+    "duration": 0.64,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "squat": {
+    "pass": true,
+    "frames": 61,
+    "duration": 2.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  }
+}

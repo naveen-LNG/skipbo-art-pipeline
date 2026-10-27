@@ -1,0 +1,64 @@
+{
+  "prompt_id": "47821bf2-40ef-4985-9564-3c09df10fd85",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 494454085,
+  "fingerprint": "eb037f4eecf5",
+  "prompt": "Edit the attached picture, image 1. It is a room in a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Change one thing only: the broken stone fireplace on the right, with its chimney breast, the cracked mantel, the crooked empty picture frame above it and the rubble on its hearth.\n\nIn its exact place and at its exact size and shape, a brand new fireplace: smooth warm cream stone with a chunky clean mantelpiece, no cracks, the hearth swept clean, and a cheerful fire burning inside on two logs: big simple rounded flame shapes in sunflower yellow and warm orange, glowing softly on the hearth. Above the mantel the picture frame now hangs straight and holds a simple painting of a sunny green hill under blue sky. A small green potted plant stands on one end of the mantel.\n\nEverything else in the picture stays exactly as it is, as though untouched: the same camera, the same framing and crop, the same perspective, every other piece of furniture, every wall, the floor, the ceiling, the light and the colours outside the changed part are identical to image 1, pixel for pixel. Nothing moves, nothing is added anywhere else and nothing else is repaired. The new part is painted in exactly the same style as the rest of the picture: clean simplified rounded masses, soft broad shading with one wide light side, one wide shade side and one soft highlight, no outlines, no texture, no fine detail, and bright clean saturated colours. No characters, no text.",
+  "vars": {
+    "ASPECT": "9:16",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "TARGET": "the broken stone fireplace on the right, with its chimney breast, the cracked mantel, the crooked empty picture frame above it and the rubble on its hearth.",
+    "NEW": "In its exact place and at its exact size and shape, a brand new fireplace: smooth warm cream stone with a chunky clean mantelpiece, no cracks, the hearth swept clean, and a cheerful fire burning inside on two logs: big simple rounded flame shapes in sunflower yellow and warm orange, glowing softly on the hearth. Above the mantel the picture frame now hangs straight and holds a simple painting of a sunny green hill under blue sky. A small green potted plant stands on one end of the mantel.",
+    "PREFIX": "agent/skipbo/edit-fireplace",
+    "IMAGE_1": "agent/skipbo/base_409cde9a24.png"
+  },
+  "inputs": {
+    "1": "base.png"
+  },
+  "criteria": [
+    "only the fireplace changed",
+    "same camera and framing as base"
+  ],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-16-room-renovate/room/runs/edit-fireplace/1016_180009_s494454085_n2_00.png"
+  ],
+  "seconds": 92.0,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "Edit the attached picture, image 1. It is a room in a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Change one thing only: the broken stone fireplace on the right, with its chimney breast, the cracked mantel, the crooked empty picture frame above it and the rubble on its hearth.\n\nIn its exact place and at its exact size and shape, a brand new fireplace: smooth warm cream stone with a chunky clean mantelpiece, no cracks, the hearth swept clean, and a cheerful fire burning inside on two logs: big simple rounded flame shapes in sunflower yellow and warm orange, glowing softly on the hearth. Above the mantel the picture frame now hangs straight and holds a simple painting of a sunny green hill under blue sky. A small green potted plant stands on one end of the mantel.\n\nEverything else in the picture stays exactly as it is, as though untouched: the same camera, the same framing and crop, the same perspective, every other piece of furniture, every wall, the floor, the ceiling, the light and the colours outside the changed part are identical to image 1, pixel for pixel. Nothing moves, nothing is added anywhere else and nothing else is repaired. The new part is painted in exactly the same style as the rest of the picture: clean simplified rounded masses, soft broad shading with one wide light side, one wide shade side and one soft highlight, no outlines, no texture, no fine detail, and bright clean saturated colours. No characters, no text.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "9:16",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/base_409cde9a24.png"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/edit-fireplace"
+      }
+    }
+  }
+}

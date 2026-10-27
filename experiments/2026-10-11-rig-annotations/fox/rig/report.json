@@ -1,0 +1,551 @@
+{
+  "global_scale_master_px_per_part_px": 1.3642,
+  "renamed": {},
+  "from_master": [],
+  "variants": {
+    "fox_boot_l_tiptoe": {
+      "scale_vs_rest": 0.999,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_boot_r_tiptoe": {
+      "scale_vs_rest": 0.999,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_l_fist": {
+      "scale_vs_rest": 0.258,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_l_grip": {
+      "scale_vs_rest": 0.527,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_l_open": {
+      "scale_vs_rest": 0.486,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_l_point": {
+      "scale_vs_rest": 0.217,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_l_thumbsup": {
+      "scale_vs_rest": 0.502,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_r_fist": {
+      "scale_vs_rest": 0.283,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_r_grip": {
+      "scale_vs_rest": 0.577,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_r_open": {
+      "scale_vs_rest": 0.532,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_r_point": {
+      "scale_vs_rest": 0.237,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_hand_r_thumbsup": {
+      "scale_vs_rest": 0.55,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    },
+    "fox_tail_up": {
+      "scale_vs_rest": 0.842,
+      "turn_deg": 0.0,
+      "joint": "annotated"
+    }
+  },
+  "master_frame": {
+    "width": 1792,
+    "height": 2400,
+    "mid_x": 892.5,
+    "ground_y": 2238.75,
+    "units_per_px": 0.733009
+  },
+  "parts": {
+    "torso": {
+      "method": "two_point",
+      "stretch": 1.0000000000000002,
+      "narrow": null
+    },
+    "hips": {
+      "method": "two_point",
+      "stretch": 1.0616078118629049,
+      "narrow": null,
+      "width_fit": {
+        "factor": 0.65,
+        "raw": 0.6468292682926828
+      }
+    },
+    "head_base": {
+      "method": "matcher",
+      "stretch": null,
+      "narrow": null
+    },
+    "tail": {
+      "method": "matcher",
+      "stretch": null,
+      "narrow": null
+    },
+    "boot_l": {
+      "method": "socket",
+      "stretch": null,
+      "narrow": null,
+      "ankle_shift": {
+        "dx": -43.34154340577675
+      }
+    },
+    "boot_r": {
+      "method": "socket",
+      "stretch": null,
+      "narrow": null,
+      "ankle_shift": {
+        "dx": 43.34154340577686
+      }
+    },
+    "upperarm_l": {
+      "method": "mesh",
+      "stretch": 1.0606759577597196,
+      "narrow": null,
+      "width_fit": {
+        "upper": {
+          "factor": 0.8779,
+          "offset_px": 27.37,
+          "raw": 0.8779,
+          "samples": 2
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 22.46,
+          "raw": 1.0683,
+          "samples": 3
+        }
+      }
+    },
+    "forearm_l": {
+      "method": "mesh",
+      "stretch": 0.9406535380134259,
+      "narrow": null,
+      "wrist_trim": {
+        "trimmed_px": 0,
+        "feathered_px": 0,
+        "kept_px": 3798
+      }
+    },
+    "hand_l": {
+      "method": "hand",
+      "stretch": null,
+      "narrow": null
+    },
+    "upperarm_r": {
+      "method": "mesh",
+      "stretch": 1.0606759577597196,
+      "narrow": null,
+      "width_fit": {
+        "upper": {
+          "factor": 0.9127,
+          "offset_px": -33.24,
+          "raw": 0.9127,
+          "samples": 2
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": -30.74,
+          "raw": 1.0674,
+          "samples": 3
+        }
+      }
+    },
+    "forearm_r": {
+      "method": "mesh",
+      "stretch": 0.940653538013426,
+      "narrow": null,
+      "wrist_trim": {
+        "trimmed_px": 0,
+        "feathered_px": 0,
+        "kept_px": 3798
+      }
+    },
+    "hand_r": {
+      "method": "hand",
+      "stretch": null,
+      "narrow": null
+    }
+  },
+  "annotations": "fox/annotations.json",
+  "allow_proposed": false,
+  "doubts": [
+    {
+      "part": "boot_l",
+      "reason": "ground_miss",
+      "ratio": 0.841,
+      "limit": [
+        0.85,
+        1.15
+      ]
+    },
+    {
+      "part": "boot_r",
+      "reason": "ground_miss",
+      "ratio": 0.838,
+      "limit": [
+        0.85,
+        1.15
+      ]
+    },
+    {
+      "part": "hips",
+      "reason": "hips_too_wide",
+      "ratio": 0.647,
+      "limit": 0.35
+    },
+    {
+      "part": "torso",
+      "reason": "shoulder_mismatch",
+      "point": "shoulder_l",
+      "distance_frac": 0.046,
+      "limit": 0.04
+    },
+    {
+      "part": "torso",
+      "reason": "shoulder_mismatch",
+      "point": "shoulder_r",
+      "distance_frac": 0.046,
+      "limit": 0.04
+    },
+    {
+      "part": "hand_l",
+      "reason": "matcher_disagreement",
+      "distance_frac": 0.1358,
+      "annotation": [
+        1473.3,
+        1533.7
+      ],
+      "matcher": [
+        1368.8,
+        1792.5
+      ]
+    },
+    {
+      "part": "hips",
+      "reason": "matcher_disagreement",
+      "distance_frac": 0.0623,
+      "annotation": [
+        896.0,
+        1729.3
+      ],
+      "matcher": [
+        965.6,
+        1621.9
+      ]
+    },
+    {
+      "part": "boot_l_tiptoe",
+      "reason": "worn_opening_guessed",
+      "ellipse": [
+        115.0,
+        60.72,
+        106.0,
+        34.16
+      ]
+    },
+    {
+      "part": "boot_r_tiptoe",
+      "reason": "worn_opening_guessed",
+      "ellipse": [
+        207.0,
+        60.72,
+        106.0,
+        34.16
+      ]
+    }
+  ],
+  "gestures": {
+    "cheer_jump": {
+      "l": {
+        "variant": "fist",
+        "facing": "palm",
+        "pose": "cheer",
+        "upperarm_deg": 20.0,
+        "forearm_deg": 50.0,
+        "thumb_deg": 140.0,
+        "thumb_target_deg": 140.0,
+        "thumb_error_deg": 0.0
+      },
+      "r": {
+        "variant": "fist",
+        "facing": "palm",
+        "pose": "cheer",
+        "upperarm_deg": 160.0,
+        "forearm_deg": 130.0,
+        "thumb_deg": 40.0,
+        "thumb_target_deg": 40.0,
+        "thumb_error_deg": 0.0
+      }
+    },
+    "hold_card": {
+      "l": {
+        "variant": "grip",
+        "facing": "back",
+        "pose": "hold_card",
+        "upperarm_deg": -95.0,
+        "forearm_deg": 170.0,
+        "thumb_deg": 80.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 10.0,
+        "errors": {
+          "hold_card": 10.0
+        }
+      }
+    },
+    "point": {
+      "l": {
+        "variant": "point",
+        "facing": "palm",
+        "pose": "outward",
+        "upperarm_deg": 5.0,
+        "forearm_deg": 5.0,
+        "thumb_deg": 95.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 5.0,
+        "errors": {
+          "outward": 5.0,
+          "across": 160.0
+        }
+      }
+    },
+    "thumbs_up": {
+      "l": {
+        "variant": "thumbsup",
+        "facing": "palm",
+        "pose": "outward",
+        "upperarm_deg": -55.0,
+        "forearm_deg": 10.0,
+        "thumb_deg": 100.0,
+        "thumb_target_deg": 90.0,
+        "thumb_error_deg": 10.0,
+        "errors": {
+          "outward": 10.0,
+          "across": 160.0
+        }
+      }
+    },
+    "wave": {
+      "l": {
+        "variant": "open",
+        "facing": "back",
+        "pose": "wave",
+        "upperarm_deg": 20.0,
+        "forearm_deg": 40.0,
+        "thumb_deg": -50.0,
+        "thumb_target_deg": -50.0,
+        "thumb_error_deg": 0.0
+      }
+    }
+  },
+  "worn": {
+    "boot_l": {
+      "back_slot": "boot_l_back",
+      "attachments": {
+        "fox_boot_l": {
+          "method": "inside",
+          "ellipse": [
+            104.5,
+            27.0,
+            85.5,
+            16.0
+          ],
+          "band": [
+            104.5,
+            27.0,
+            109.2,
+            21.28
+          ],
+          "tips_px": 73,
+          "back_px": 5111,
+          "shell_px": 43710
+        },
+        "fox_boot_l_tiptoe": {
+          "method": "ellipse",
+          "ellipse": [
+            115.0,
+            60.72,
+            106.0,
+            34.16
+          ],
+          "band": [
+            115.0,
+            60.72,
+            106.0,
+            47.46
+          ],
+          "tilt": -0.2024,
+          "lip_ends_px": 298,
+          "tips_px": 0,
+          "back_px": 13807,
+          "shell_px": 55488
+        }
+      }
+    },
+    "boot_r": {
+      "back_slot": "boot_r_back",
+      "attachments": {
+        "fox_boot_r": {
+          "method": "inside",
+          "ellipse": [
+            163.5,
+            26.5,
+            85.5,
+            16.5
+          ],
+          "band": [
+            163.5,
+            26.5,
+            109.2,
+            20.72
+          ],
+          "tips_px": 98,
+          "back_px": 5033,
+          "shell_px": 43746
+        },
+        "fox_boot_r_tiptoe": {
+          "method": "ellipse",
+          "ellipse": [
+            207.0,
+            60.72,
+            106.0,
+            34.16
+          ],
+          "band": [
+            207.0,
+            60.72,
+            106.0,
+            47.46
+          ],
+          "tilt": 0.2024,
+          "lip_ends_px": 298,
+          "tips_px": 0,
+          "back_px": 13807,
+          "shell_px": 55488
+        }
+      }
+    }
+  },
+  "meshes": {
+    "upperarm_l": {
+      "arm": "arm_l",
+      "scale_vs_sheet": 0.5034,
+      "width_fit": {
+        "upper": {
+          "factor": 0.8779,
+          "offset_px": 27.37,
+          "raw": 0.8779,
+          "samples": 2
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": 22.46,
+          "raw": 1.0683,
+          "samples": 3
+        }
+      },
+      "rows": 28,
+      "vertices": 56,
+      "width_px": 233.0,
+      "design": {
+        "smooth": {
+          "band": [
+            -1.2,
+            0.6
+          ],
+          "neutral": 0.8,
+          "grid_share": 0.0,
+          "crease_fill": true,
+          "outer_corner_deg": 9.1,
+          "crease_gap": 0.002
+        },
+        "grid": null,
+        "default": false
+      },
+      "need_deg": [
+        -98.3,
+        81.7
+      ],
+      "covered_deg": [
+        -98.3,
+        81.7
+      ],
+      "fold_free": true,
+      "over_torso_in": [
+        "hold_card"
+      ]
+    },
+    "upperarm_r": {
+      "arm": "arm_r",
+      "scale_vs_sheet": 0.5034,
+      "width_fit": {
+        "upper": {
+          "factor": 0.9127,
+          "offset_px": -33.24,
+          "raw": 0.9127,
+          "samples": 2
+        },
+        "lower": {
+          "factor": 1.0,
+          "offset_px": -30.74,
+          "raw": 1.0674,
+          "samples": 3
+        }
+      },
+      "rows": 28,
+      "vertices": 56,
+      "width_px": 233.0,
+      "design": {
+        "left": {
+          "pivot_shift": 0.0,
+          "band": [
+            -0.5,
+            0.5
+          ]
+        },
+        "right": {
+          "pivot_shift": 0.0,
+          "band": [
+            -0.5,
+            0.5
+          ]
+        },
+        "fade": 1.0,
+        "default": true
+      },
+      "need_deg": [
+        -46.7,
+        10.0
+      ],
+      "covered_deg": [
+        -46.7,
+        10.0
+      ],
+      "fold_free": true,
+      "over_torso_in": []
+    }
+  },
+  "mesh_skipped_variants": [
+    "fox_upperarm_l_raised",
+    "fox_upperarm_r_raised"
+  ]
+}

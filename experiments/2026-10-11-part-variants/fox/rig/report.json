@@ -1,0 +1,151 @@
+{
+  "global_scale_master_px_per_part_px": 1.3416,
+  "renamed": {
+    "boot_l": "boot_r",
+    "boot_r": "boot_l",
+    "hand_l": "hand_r",
+    "hand_r": "hand_l"
+  },
+  "from_master": [],
+  "variants": {
+    "fox_boot_l_tiptoe": {
+      "scale_vs_rest": 0.839,
+      "turn_deg": 0.0
+    },
+    "fox_boot_r_tiptoe": {
+      "scale_vs_rest": 0.839,
+      "turn_deg": 0.0
+    },
+    "fox_hand_l_fist": {
+      "scale_vs_rest": 0.48,
+      "turn_deg": 0.0
+    },
+    "fox_hand_l_grip": {
+      "scale_vs_rest": 0.463,
+      "turn_deg": 0.0
+    },
+    "fox_hand_l_open": {
+      "scale_vs_rest": 0.466,
+      "turn_deg": 0.0
+    },
+    "fox_hand_l_point": {
+      "scale_vs_rest": 0.448,
+      "turn_deg": 0.0
+    },
+    "fox_hand_l_thumbsup": {
+      "scale_vs_rest": 0.497,
+      "turn_deg": 0.0
+    },
+    "fox_hand_r_fist": {
+      "scale_vs_rest": 0.48,
+      "turn_deg": 0.0
+    },
+    "fox_hand_r_grip": {
+      "scale_vs_rest": 0.463,
+      "turn_deg": 0.0
+    },
+    "fox_hand_r_open": {
+      "scale_vs_rest": 0.466,
+      "turn_deg": 0.0
+    },
+    "fox_hand_r_point": {
+      "scale_vs_rest": 0.448,
+      "turn_deg": 0.0
+    },
+    "fox_hand_r_thumbsup": {
+      "scale_vs_rest": 0.497,
+      "turn_deg": 0.0
+    },
+    "fox_tail_up": {
+      "scale_vs_rest": 0.844,
+      "turn_deg": 0.0
+    },
+    "fox_upperarm_l_raised": {
+      "scale_vs_rest": 0.543,
+      "turn_deg": 33.3
+    },
+    "fox_upperarm_r_raised": {
+      "scale_vs_rest": 0.544,
+      "turn_deg": -33.5
+    }
+  },
+  "master_frame": {
+    "width": 1792,
+    "height": 2400,
+    "mid_x": 892.5,
+    "ground_y": 2238.75,
+    "units_per_px": 0.745388
+  },
+  "parts": {
+    "hips": {
+      "err": 0.06035,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "torso": {
+      "err": 0.06055,
+      "scale_rel": 1.0,
+      "angle": 0
+    },
+    "head_base": {
+      "err": 0.03708,
+      "scale_rel": 1.0,
+      "angle": 0
+    },
+    "leg_l": {
+      "err": 0.05004,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "leg_r": {
+      "err": 0.05042,
+      "scale_rel": 0.9,
+      "angle": -30
+    },
+    "boot_r": {
+      "err": 0.23948,
+      "scale_rel": 0.9,
+      "angle": -10
+    },
+    "boot_l": {
+      "err": 0.05037,
+      "scale_rel": 0.9,
+      "angle": -10
+    },
+    "tail": {
+      "err": 0.25252,
+      "scale_rel": 0.9,
+      "angle": 0
+    },
+    "upperarm_l": {
+      "err": 0.05643,
+      "scale_rel": 0.9,
+      "angle": 18
+    },
+    "upperarm_r": {
+      "err": 0.05944,
+      "scale_rel": 0.9,
+      "angle": -18
+    },
+    "hand_r": {
+      "err": 0.14081,
+      "scale_rel": 0.9,
+      "angle": -45
+    },
+    "hand_l": {
+      "err": 0.03898,
+      "scale_rel": 0.9,
+      "angle": 18
+    },
+    "forearm_l": {
+      "err": 0.00403,
+      "scale_rel": 0.95,
+      "angle": 36
+    },
+    "forearm_r": {
+      "err": 0.00439,
+      "scale_rel": 0.95,
+      "angle": -36
+    }
+  }
+}

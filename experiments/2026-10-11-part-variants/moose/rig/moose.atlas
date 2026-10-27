@@ -1,0 +1,257 @@
+images/moose_antler_l.png
+size: 344,284
+filter: Linear,Linear
+moose_antler_l
+bounds: 0,0,344,284
+
+images/moose_antler_r.png
+size: 344,275
+filter: Linear,Linear
+moose_antler_r
+bounds: 0,0,344,275
+
+images/moose_ear_l.png
+size: 208,109
+filter: Linear,Linear
+moose_ear_l
+bounds: 0,0,208,109
+
+images/moose_ear_r.png
+size: 207,112
+filter: Linear,Linear
+moose_ear_r
+bounds: 0,0,207,112
+
+images/moose_leg_l.png
+size: 273,469
+filter: Linear,Linear
+moose_leg_l
+bounds: 0,0,273,469
+
+images/moose_leg_r.png
+size: 272,468
+filter: Linear,Linear
+moose_leg_r
+bounds: 0,0,272,468
+
+images/moose_hoof_l.png
+size: 272,360
+filter: Linear,Linear
+moose_hoof_l
+bounds: 0,0,272,360
+
+images/moose_hoof_r.png
+size: 273,360
+filter: Linear,Linear
+moose_hoof_r
+bounds: 0,0,273,360
+
+images/moose_hips.png
+size: 527,385
+filter: Linear,Linear
+moose_hips
+bounds: 0,0,527,385
+
+images/moose_torso.png
+size: 578,579
+filter: Linear,Linear
+moose_torso
+bounds: 0,0,578,579
+
+images/moose_hand_l.png
+size: 262,309
+filter: Linear,Linear
+moose_hand_l
+bounds: 0,0,262,309
+
+images/moose_hand_r.png
+size: 262,308
+filter: Linear,Linear
+moose_hand_r
+bounds: 0,0,262,308
+
+images/moose_forearm_l.png
+size: 278,308
+filter: Linear,Linear
+moose_forearm_l
+bounds: 0,0,278,308
+
+images/moose_forearm_r.png
+size: 250,318
+filter: Linear,Linear
+moose_forearm_r
+bounds: 0,0,250,318
+
+images/moose_upperarm_l.png
+size: 273,368
+filter: Linear,Linear
+moose_upperarm_l
+bounds: 0,0,273,368
+
+images/moose_upperarm_r.png
+size: 273,368
+filter: Linear,Linear
+moose_upperarm_r
+bounds: 0,0,273,368
+
+images/moose_scarf.png
+size: 448,282
+filter: Linear,Linear
+moose_scarf
+bounds: 0,0,448,282
+
+images/moose_head_base.png
+size: 486,515
+filter: Linear,Linear
+moose_head_base
+bounds: 0,0,486,515
+
+images/moose_cap.png
+size: 345,210
+filter: Linear,Linear
+moose_cap
+bounds: 0,0,345,210
+
+images/moose_bell.png
+size: 108,129
+filter: Linear,Linear
+moose_bell
+bounds: 0,0,108,129
+
+images/moose_head_angry.png
+size: 470,490
+filter: Linear,Linear
+moose_head_angry
+bounds: 0,0,470,490
+
+images/moose_head_blink.png
+size: 470,499
+filter: Linear,Linear
+moose_head_blink
+bounds: 0,0,470,499
+
+images/moose_head_happy.png
+size: 470,501
+filter: Linear,Linear
+moose_head_happy
+bounds: 0,0,470,501
+
+images/moose_head_laugh.png
+size: 470,491
+filter: Linear,Linear
+moose_head_laugh
+bounds: 0,0,470,491
+
+images/moose_head_neutral.png
+size: 470,499
+filter: Linear,Linear
+moose_head_neutral
+bounds: 0,0,470,499
+
+images/moose_head_sad.png
+size: 470,494
+filter: Linear,Linear
+moose_head_sad
+bounds: 0,0,470,494
+
+images/moose_head_surprised.png
+size: 470,494
+filter: Linear,Linear
+moose_head_surprised
+bounds: 0,0,470,494
+
+images/moose_head_talking.png
+size: 470,492
+filter: Linear,Linear
+moose_head_talking
+bounds: 0,0,470,492
+
+images/moose_head_wink.png
+size: 470,492
+filter: Linear,Linear
+moose_head_wink
+bounds: 0,0,470,492
+
+images/moose_hand_l_fist.png
+size: 309,390
+filter: Linear,Linear
+moose_hand_l_fist
+bounds: 0,0,309,390
+
+images/moose_hand_l_grip.png
+size: 323,428
+filter: Linear,Linear
+moose_hand_l_grip
+bounds: 0,0,323,428
+
+images/moose_hand_l_open.png
+size: 365,432
+filter: Linear,Linear
+moose_hand_l_open
+bounds: 0,0,365,432
+
+images/moose_hand_l_point.png
+size: 346,452
+filter: Linear,Linear
+moose_hand_l_point
+bounds: 0,0,346,452
+
+images/moose_hand_l_thumbsup.png
+size: 389,376
+filter: Linear,Linear
+moose_hand_l_thumbsup
+bounds: 0,0,389,376
+
+images/moose_hand_r_fist.png
+size: 309,390
+filter: Linear,Linear
+moose_hand_r_fist
+bounds: 0,0,309,390
+
+images/moose_hand_r_grip.png
+size: 323,428
+filter: Linear,Linear
+moose_hand_r_grip
+bounds: 0,0,323,428
+
+images/moose_hand_r_open.png
+size: 365,432
+filter: Linear,Linear
+moose_hand_r_open
+bounds: 0,0,365,432
+
+images/moose_hand_r_point.png
+size: 346,452
+filter: Linear,Linear
+moose_hand_r_point
+bounds: 0,0,346,452
+
+images/moose_hand_r_thumbsup.png
+size: 389,376
+filter: Linear,Linear
+moose_hand_r_thumbsup
+bounds: 0,0,389,376
+
+images/moose_hoof_l_tiptoe.png
+size: 272,506
+filter: Linear,Linear
+moose_hoof_l_tiptoe
+bounds: 0,0,272,506
+
+images/moose_hoof_r_tiptoe.png
+size: 272,506
+filter: Linear,Linear
+moose_hoof_r_tiptoe
+bounds: 0,0,272,506
+
+images/moose_upperarm_l_raised.png
+size: 353,662
+filter: Linear,Linear
+moose_upperarm_l_raised
+bounds: 0,0,353,662
+
+images/moose_upperarm_r_raised.png
+size: 353,662
+filter: Linear,Linear
+moose_upperarm_r_raised
+bounds: 0,0,353,662

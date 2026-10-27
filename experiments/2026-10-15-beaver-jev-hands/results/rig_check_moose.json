@@ -1,0 +1,44 @@
+{
+ "wave/hand_l": {
+  "reads_as": "open",
+  "p_variant": 0.89,
+  "p_thumb_up": 0.07,
+  "finger_deg": 83,
+  "thumb_deg": 346,
+  "issues": [
+   "WARN may be drawn as the other hand (mirrored): look at it"
+  ]
+ },
+ "point/hand_l": {
+  "reads_as": "point",
+  "p_variant": 0.63,
+  "p_thumb_up": 0.66,
+  "finger_deg": 360,
+  "thumb_deg": 96,
+  "issues": []
+ },
+ "thumbs_up/hand_l": {
+  "reads_as": "thumbsup",
+  "p_variant": 0.98,
+  "p_thumb_up": 0.93,
+  "finger_deg": 47,
+  "thumb_deg": 87,
+  "issues": []
+ },
+ "hold_card/hand_l": {
+  "reads_as": "grip",
+  "p_variant": 0.58,
+  "p_thumb_up": 0.39,
+  "finger_deg": 163,
+  "thumb_deg": 86,
+  "issues": []
+ },
+ "cheer_jump/hand_l": {
+  "reads_as": "fist",
+  "p_variant": 0.87,
+  "p_thumb_up": 0.17,
+  "finger_deg": 94,
+  "thumb_deg": 169,
+  "issues": []
+ }
+}

@@ -1,0 +1,26 @@
+IMAGE ROLES:
+image_1 = CHARACTER DESIGN. A grandpa moose train conductor, shown in front view on the left and three-quarter view on the right. Take from it only who he is: species, body proportions, costume, colours and accessories.
+image_2 and image_3 = ART STYLE. Animation atlases of two characters already shipped in this game, a hippo and a raccoon, cut into separate parts. Take from them only how things are painted: shading, colour, edges, level of detail and the chunky shape language. Their species, costumes and layout are not part of this picture.
+
+TASK:
+Paint the moose from image_1 as one finished full-body character in the art style of image_2 and image_3, as a clean master drawing for cutting into animation parts.
+
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.
+Shading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.
+Colour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.
+Edges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.
+Surfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.
+Eyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.
+
+CHARACTER:
+A kind grandpa moose with dark-brown fur, a big rounded tan muzzle with two large dark nostrils and a gentle closed-mouth smile, small glossy black eyes, bushy cream eyebrows, round brown ears and broad flat brown antlers. He wears a navy conductor cap with a gold band and a round gold badge, a red scarf knotted at the neck with a small gold bell, a navy vest with three gold buttons and a gold belt buckle over a cream long-sleeved shirt, and brown trousers. His hands are dark-brown hoof mittens and his feet are dark-brown hooves.
+
+POSE AND FRAMING:
+Front view, facing the viewer, in a symmetrical rest pose. Both arms hang down and out at about thirty degrees from his sides, so plain background shows between each arm and the vest along the whole arm. Hands open and relaxed. Legs straight, hooves a little apart and flat on the ground. Head level, looking at the viewer. The whole character fits in the frame with an even margin around him and fills about eighty-five percent of its height. The background is one flat plain light grey with nothing else in it, and the character stands on it without any cast shadow.
+
+FINAL CHECK:
+1. Painted like the shipped hippo and raccoon: airbrushed soft volume, candy colours, chunky simplified shapes, smooth surfaces, no outlines.
+2. Clearly the same moose as image_1: same costume pieces and colours.
+3. Front view, symmetrical, arms clear of the body, full body in frame.
+4. Flat light grey background, single character, no text.

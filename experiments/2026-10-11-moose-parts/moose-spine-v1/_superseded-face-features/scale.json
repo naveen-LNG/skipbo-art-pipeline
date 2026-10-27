@@ -1,0 +1,19 @@
+{
+  "scale_by": 0.6385869565217391,
+  "anchor": "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_head_anchor.png",
+  "target": "experiments/2026-10-11-moose-parts/moose-spine-v1/body/moose_head_base.png",
+  "files": [
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_brow_l.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_brow_r.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_brow_raised_l.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_brow_raised_r.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_eye_closed_l.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_eye_closed_r.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_eye_open_l.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_eye_open_r.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_mouth_o.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_mouth_open.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_mouth_sad.png",
+    "experiments/2026-10-11-moose-parts/moose-spine-v1/face-unscaled/moose_mouth_smile.png"
+  ]
+}

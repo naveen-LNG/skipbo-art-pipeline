@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><title>beaver lip sync</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://unpkg.com/@esotericsoftware/spine-player@4.2.43/dist/iife/spine-player.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@esotericsoftware/spine-player@4.2.43/dist/spine-player.css">
+<style>html,body{margin:0;height:100%;background:#d6d6d6;font:14px system-ui}#p{width:100%;height:calc(100% - 52px)}
+#bar{height:52px;display:flex;gap:8px;align-items:center;padding:0 12px}button{font:inherit;padding:8px 14px}</style></head>
+<body><div id="bar"></div><div id="p"></div><script>
+// idle on track 0, talk_<line> on track 1; every frame track 1's time is set from the audio clock, so picture and sound cannot drift.
+const lines = ["line1", "line2"], q = new URLSearchParams(location.search);
+let audio = null, entry = null;
+window.player = new spine.SpinePlayer("p", {jsonUrl: "beaver.json", atlasUrl: "beaver.atlas", animation: "idle",
+  premultipliedAlpha: false, backgroundColor: "#d6d6d6", showControls: false,
+  viewport: {x: -380, y: 520, width: 760, height: 820, padLeft: 0, padRight: 0, padTop: 0, padBottom: 0},
+  success: p => {
+    for (const l of lines) {
+      const b = document.createElement("button"); b.textContent = "Play " + l;
+      b.onclick = () => { if (audio) audio.pause(); audio = new Audio(l + ".wav");
+        entry = p.animationState.setAnimation(1, "talk_" + l, false); entry.mixDuration = 0;
+        audio.play(); };
+      document.getElementById("bar").append(b);
+    }
+    const tick = () => { if (audio && entry) { entry.trackTime = audio.currentTime; if (audio.ended) { p.animationState.setEmptyAnimation(1, 0); entry = null; } }
+      requestAnimationFrame(tick); };
+    tick();
+    if (q.get("anim")) { const t = parseFloat(q.get("t") || "0"); p.pause();
+      p.animationState.setAnimation(0, "idle", true); const e = p.animationState.setAnimation(1, q.get("anim"), false);
+      p.animationState.update(t); p.animationState.apply(p.skeleton); p.skeleton.updateWorldTransform(spine.Physics.update); }
+    window.ready = true; },
+  error: (p, msg) => { window.loadError = msg; document.body.insertAdjacentText("afterbegin", msg); }});
+</script></body></html>

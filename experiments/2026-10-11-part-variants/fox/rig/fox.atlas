@@ -1,0 +1,227 @@
+images/fox_tail.png
+size: 623,416
+filter: Linear,Linear
+fox_tail
+bounds: 0,0,623,416
+
+images/fox_leg_l.png
+size: 256,479
+filter: Linear,Linear
+fox_leg_l
+bounds: 0,0,256,479
+
+images/fox_leg_r.png
+size: 255,479
+filter: Linear,Linear
+fox_leg_r
+bounds: 0,0,255,479
+
+images/fox_boot_l.png
+size: 268,276
+filter: Linear,Linear
+fox_boot_l
+bounds: 0,0,268,276
+
+images/fox_boot_r.png
+size: 268,277
+filter: Linear,Linear
+fox_boot_r
+bounds: 0,0,268,277
+
+images/fox_hips.png
+size: 547,479
+filter: Linear,Linear
+fox_hips
+bounds: 0,0,547,479
+
+images/fox_torso.png
+size: 513,682
+filter: Linear,Linear
+fox_torso
+bounds: 0,0,513,682
+
+images/fox_hand_l.png
+size: 173,236
+filter: Linear,Linear
+fox_hand_l
+bounds: 0,0,173,236
+
+images/fox_hand_r.png
+size: 172,236
+filter: Linear,Linear
+fox_hand_r
+bounds: 0,0,172,236
+
+images/fox_forearm_l.png
+size: 167,244
+filter: Linear,Linear
+fox_forearm_l
+bounds: 0,0,167,244
+
+images/fox_forearm_r.png
+size: 168,244
+filter: Linear,Linear
+fox_forearm_r
+bounds: 0,0,168,244
+
+images/fox_upperarm_l.png
+size: 231,306
+filter: Linear,Linear
+fox_upperarm_l
+bounds: 0,0,231,306
+
+images/fox_upperarm_r.png
+size: 231,306
+filter: Linear,Linear
+fox_upperarm_r
+bounds: 0,0,231,306
+
+images/fox_head_base.png
+size: 812,546
+filter: Linear,Linear
+fox_head_base
+bounds: 0,0,812,546
+
+images/fox_head_angry.png
+size: 642,554
+filter: Linear,Linear
+fox_head_angry
+bounds: 0,0,642,554
+
+images/fox_head_blink.png
+size: 646,557
+filter: Linear,Linear
+fox_head_blink
+bounds: 0,0,646,557
+
+images/fox_head_happy.png
+size: 645,557
+filter: Linear,Linear
+fox_head_happy
+bounds: 0,0,645,557
+
+images/fox_head_laugh.png
+size: 643,557
+filter: Linear,Linear
+fox_head_laugh
+bounds: 0,0,643,557
+
+images/fox_head_neutral.png
+size: 645,557
+filter: Linear,Linear
+fox_head_neutral
+bounds: 0,0,645,557
+
+images/fox_head_sad.png
+size: 644,557
+filter: Linear,Linear
+fox_head_sad
+bounds: 0,0,644,557
+
+images/fox_head_surprised.png
+size: 646,557
+filter: Linear,Linear
+fox_head_surprised
+bounds: 0,0,646,557
+
+images/fox_head_talking.png
+size: 641,555
+filter: Linear,Linear
+fox_head_talking
+bounds: 0,0,641,555
+
+images/fox_head_wink.png
+size: 642,555
+filter: Linear,Linear
+fox_head_wink
+bounds: 0,0,642,555
+
+images/fox_boot_l_tiptoe.png
+size: 322,340
+filter: Linear,Linear
+fox_boot_l_tiptoe
+bounds: 0,0,322,340
+
+images/fox_boot_r_tiptoe.png
+size: 322,340
+filter: Linear,Linear
+fox_boot_r_tiptoe
+bounds: 0,0,322,340
+
+images/fox_hand_l_fist.png
+size: 317,476
+filter: Linear,Linear
+fox_hand_l_fist
+bounds: 0,0,317,476
+
+images/fox_hand_l_grip.png
+size: 331,539
+filter: Linear,Linear
+fox_hand_l_grip
+bounds: 0,0,331,539
+
+images/fox_hand_l_open.png
+size: 426,562
+filter: Linear,Linear
+fox_hand_l_open
+bounds: 0,0,426,562
+
+images/fox_hand_l_point.png
+size: 319,601
+filter: Linear,Linear
+fox_hand_l_point
+bounds: 0,0,319,601
+
+images/fox_hand_l_thumbsup.png
+size: 431,336
+filter: Linear,Linear
+fox_hand_l_thumbsup
+bounds: 0,0,431,336
+
+images/fox_hand_r_fist.png
+size: 317,476
+filter: Linear,Linear
+fox_hand_r_fist
+bounds: 0,0,317,476
+
+images/fox_hand_r_grip.png
+size: 331,539
+filter: Linear,Linear
+fox_hand_r_grip
+bounds: 0,0,331,539
+
+images/fox_hand_r_open.png
+size: 426,562
+filter: Linear,Linear
+fox_hand_r_open
+bounds: 0,0,426,562
+
+images/fox_hand_r_point.png
+size: 319,601
+filter: Linear,Linear
+fox_hand_r_point
+bounds: 0,0,319,601
+
+images/fox_hand_r_thumbsup.png
+size: 431,336
+filter: Linear,Linear
+fox_hand_r_thumbsup
+bounds: 0,0,431,336
+
+images/fox_tail_up.png
+size: 678,542
+filter: Linear,Linear
+fox_tail_up
+bounds: 0,0,678,542
+
+images/fox_upperarm_l_raised.png
+size: 417,868
+filter: Linear,Linear
+fox_upperarm_l_raised
+bounds: 0,0,417,868
+
+images/fox_upperarm_r_raised.png
+size: 417,868
+filter: Linear,Linear
+fox_upperarm_r_raised
+bounds: 0,0,417,868

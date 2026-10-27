@@ -1,0 +1,233 @@
+{
+ "LoadImage": {
+  "input": {
+   "required": {
+    "image": [
+     [
+      "example.png"
+     ],
+     {
+      "image_upload": true
+     }
+    ]
+   }
+  },
+  "output": [
+   "IMAGE",
+   "MASK"
+  ],
+  "output_name": [
+   "IMAGE",
+   "MASK"
+  ]
+ },
+ "PrimitiveStringMultiline": {
+  "input": {
+   "required": {
+    "value": [
+     "STRING",
+     {
+      "default": "",
+      "multiline": true
+     }
+    ]
+   }
+  },
+  "output": [
+   "STRING"
+  ],
+  "output_name": [
+   "STRING"
+  ]
+ },
+ "StringConcatenate": {
+  "input": {
+   "required": {
+    "string_a": [
+     "STRING",
+     {
+      "default": "",
+      "multiline": true
+     }
+    ],
+    "string_b": [
+     "STRING",
+     {
+      "default": "",
+      "multiline": true
+     }
+    ],
+    "delimiter": [
+     "STRING",
+     {
+      "default": "",
+      "multiline": false
+     }
+    ]
+   }
+  },
+  "output": [
+   "STRING"
+  ],
+  "output_name": [
+   "STRING"
+  ]
+ },
+ "NanoBananaAIO": {
+  "input": {
+   "required": {
+    "model_name": [
+     [
+      "gemini-3-pro-image-preview"
+     ],
+     {}
+    ],
+    "prompt": [
+     "STRING",
+     {
+      "default": "",
+      "multiline": true
+     }
+    ],
+    "image_count": [
+     "INT",
+     {
+      "default": 1
+     }
+    ],
+    "use_search": [
+     "BOOLEAN",
+     {
+      "default": false
+     }
+    ],
+    "aspect_ratio": [
+     [
+      "1:1"
+     ],
+     {}
+    ],
+    "image_size": [
+     [
+      "2K"
+     ],
+     {}
+    ],
+    "temperature": [
+     "FLOAT",
+     {
+      "default": 1.0
+     }
+    ]
+   },
+   "optional": {
+    "image_1": [
+     "IMAGE",
+     {}
+    ],
+    "image_2": [
+     "IMAGE",
+     {}
+    ],
+    "image_3": [
+     "IMAGE",
+     {}
+    ],
+    "image_4": [
+     "IMAGE",
+     {}
+    ],
+    "image_5": [
+     "IMAGE",
+     {}
+    ],
+    "image_6": [
+     "IMAGE",
+     {}
+    ]
+   }
+  },
+  "output": [
+   "IMAGE",
+   "STRING",
+   "STRING"
+  ],
+  "output_name": [
+   "images",
+   "thinking",
+   "grounding_sources"
+  ]
+ },
+ "SaveImage": {
+  "input": {
+   "required": {
+    "images": [
+     "IMAGE",
+     {}
+    ],
+    "filename_prefix": [
+     "STRING",
+     {
+      "default": "ComfyUI"
+     }
+    ]
+   }
+  },
+  "output": [],
+  "output_name": []
+ },
+ "easy imageRemBg": {
+  "input": {
+   "required": {
+    "images": [
+     "IMAGE",
+     {}
+    ],
+    "rem_mode": [
+     [
+      "BEN2"
+     ],
+     {}
+    ],
+    "image_output": [
+     [
+      "Hide"
+     ],
+     {}
+    ],
+    "save_prefix": [
+     "STRING",
+     {
+      "default": "ComfyUI"
+     }
+    ],
+    "w4": [
+     "BOOLEAN",
+     {
+      "default": false
+     }
+    ],
+    "w5": [
+     [
+      "none"
+     ],
+     {}
+    ],
+    "w6": [
+     "BOOLEAN",
+     {
+      "default": false
+     }
+    ]
+   }
+  },
+  "output": [
+   "IMAGE",
+   "MASK"
+  ],
+  "output_name": [
+   "image",
+   "mask"
+  ]
+ }
+}

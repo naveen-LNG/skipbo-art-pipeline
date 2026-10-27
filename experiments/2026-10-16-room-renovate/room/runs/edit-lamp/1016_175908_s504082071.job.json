@@ -1,0 +1,64 @@
+{
+  "prompt_id": "63286cd5-679f-49b7-b28c-5a5dcfefab5a",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 504082071,
+  "fingerprint": "bf511aed4af9",
+  "prompt": "Edit the attached picture, image 1. It is a room in a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Change one thing only: the broken ceiling lamp hanging from the ceiling, with its cobwebs.\n\nIn its exact place and at its exact size, a brand new chandelier: a chunky polished warm brass frame on a short straight chain with three round warm cream glass shades, all three lit and glowing a soft warm yellow, hanging perfectly straight. The cobwebs around it are gone.\n\nEverything else in the picture stays exactly as it is, as though untouched: the same camera, the same framing and crop, the same perspective, every other piece of furniture, every wall, the floor, the ceiling, the light and the colours outside the changed part are identical to image 1, pixel for pixel. Nothing moves, nothing is added anywhere else and nothing else is repaired. The new part is painted in exactly the same style as the rest of the picture: clean simplified rounded masses, soft broad shading with one wide light side, one wide shade side and one soft highlight, no outlines, no texture, no fine detail, and bright clean saturated colours. No characters, no text.",
+  "vars": {
+    "ASPECT": "9:16",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "TARGET": "the broken ceiling lamp hanging from the ceiling, with its cobwebs.",
+    "NEW": "In its exact place and at its exact size, a brand new chandelier: a chunky polished warm brass frame on a short straight chain with three round warm cream glass shades, all three lit and glowing a soft warm yellow, hanging perfectly straight. The cobwebs around it are gone.",
+    "PREFIX": "agent/skipbo/edit-lamp",
+    "IMAGE_1": "agent/skipbo/base_409cde9a24.png"
+  },
+  "inputs": {
+    "1": "base.png"
+  },
+  "criteria": [
+    "only the lamp changed",
+    "same camera and framing as base"
+  ],
+  "outputs": [
+    "/work/comfy/experiments/2026-10-16-room-renovate/room/runs/edit-lamp/1016_175908_s504082071_n2_00.png"
+  ],
+  "seconds": 32.3,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "Edit the attached picture, image 1. It is a room in a home makeover game, painted in a clean soft-shaded casual game style with no outlines. Change one thing only: the broken ceiling lamp hanging from the ceiling, with its cobwebs.\n\nIn its exact place and at its exact size, a brand new chandelier: a chunky polished warm brass frame on a short straight chain with three round warm cream glass shades, all three lit and glowing a soft warm yellow, hanging perfectly straight. The cobwebs around it are gone.\n\nEverything else in the picture stays exactly as it is, as though untouched: the same camera, the same framing and crop, the same perspective, every other piece of furniture, every wall, the floor, the ceiling, the light and the colours outside the changed part are identical to image 1, pixel for pixel. Nothing moves, nothing is added anywhere else and nothing else is repaired. The new part is painted in exactly the same style as the rest of the picture: clean simplified rounded masses, soft broad shading with one wide light side, one wide shade side and one soft highlight, no outlines, no texture, no fine detail, and bright clean saturated colours. No characters, no text.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "9:16",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/base_409cde9a24.png"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/edit-lamp"
+      }
+    }
+  }
+}

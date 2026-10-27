@@ -1,0 +1,44 @@
+{
+ "wave/hand_l": {
+  "reads_as": "open",
+  "p_variant": 0.95,
+  "p_thumb_up": 0.06,
+  "finger_deg": 70,
+  "thumb_deg": 186,
+  "issues": []
+ },
+ "point/hand_l": {
+  "reads_as": "point",
+  "p_variant": 0.9,
+  "p_thumb_up": 0.88,
+  "finger_deg": 357,
+  "thumb_deg": 89,
+  "issues": []
+ },
+ "thumbs_up/hand_l": {
+  "reads_as": "thumbsup",
+  "p_variant": 0.97,
+  "p_thumb_up": 0.92,
+  "finger_deg": 18,
+  "thumb_deg": 80,
+  "issues": []
+ },
+ "hold_card/hand_l": {
+  "reads_as": "fist",
+  "p_variant": 0.06,
+  "p_thumb_up": 0.22,
+  "finger_deg": 251,
+  "thumb_deg": 272,
+  "issues": [
+   "WARN reads as 'fist', not grip"
+  ]
+ },
+ "cheer_jump/hand_l": {
+  "reads_as": "fist",
+  "p_variant": 0.96,
+  "p_thumb_up": 0.08,
+  "finger_deg": 84,
+  "thumb_deg": 340,
+  "issues": []
+ }
+}

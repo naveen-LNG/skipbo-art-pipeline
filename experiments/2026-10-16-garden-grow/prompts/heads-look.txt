@@ -1,0 +1,30 @@
+IMAGE ROLES:
+image_1 = THE HEAD, finished and approved: the character's neutral expression head as it is used on the rig. Every head you paint is this exact head: same outline, size, colours, shading and features.
+image_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.
+Shading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.
+Colour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.
+Edges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.
+Surfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.
+Eyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.
+
+TASK:
+Paint the head from image_1 twice more as whole-face expression swaps for facial animation in Spine. Each head is the same head at the same size as image_1, painted again with a different expression, so it can replace image_1 on the rig. The character is watering a plant on the ground beside it, to the lower right of the picture, and both heads look at that plant.
+
+THE PIECES (two heads, each painted exactly once), side by side in one row:
+1. Looking at the plant: both eyes open, the dark pupils moved to the lower right corner of each eye so the eyes glance down to the right side of the picture, eyebrows relaxed and slightly raised with interest, a gentle closed smile with the two front teeth showing as in image_1.
+2. Delighted at the plant: both eyes open with the pupils in the lower right corner of each eye in the same way, eyebrows raised, a wide open happy smile with a dark-red inside and a pink tongue, the two front teeth showing.
+
+The head does not turn at all: both heads are painted straight from the front exactly like image_1, with the nose and the muzzle in the exact middle of the face and both ears at the same height, and the same outline, fur, muzzle, nose and teeth as image_1. Only the pupils move inside the eyes; only the eyes, eyebrows and mouth change, and they stay the same size they have in image_1. No ears, no hat: those are separate pieces, exactly as image_1 has none.
+
+All pieces are laid out on one flat plain light grey background, with a clear gap of empty background between the two heads. They never touch, never overlap and stay fully inside the frame. The sheet contains only these two heads, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.
+
+FINAL CHECK:
+1. Two heads in one row, each the head of image_1 straight from the front, nose in the middle, same outline.
+2. In both, only the pupils move: to the lower right corner of each eye.
+3. Painted like image_1: airbrushed soft volume, smooth, no outlines.
+4. Flat light grey background; no text.
+
+CHARACTER NOTES:
+{{CHARACTER}}

@@ -1,0 +1,230 @@
+{"key": "c352f2d681bdff4066f9e5a62786ff8b7d98bd06", "id": "fox__shoulder_l", "answers": {"broken": {"type": "score", "score": 1.41, "confidence": 0.26, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.19, "1": 0.28, "2": 0.45, "3": 0.08}}}}
+{"key": "7c6392a9277cf244d7817065781cf621747f1f9d", "id": "fox__elbow_l", "answers": {"broken": {"type": "score", "score": 1.58, "confidence": 0.31, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.14, "1": 0.28, "2": 0.45, "3": 0.13}}}}
+{"key": "ba84ce4cf097f958f8e4768b3f1550d50afe8b7f", "id": "fox__shoulder_r", "answers": {"broken": {"type": "score", "score": 1.56, "confidence": 0.4, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.14, "1": 0.23, "2": 0.54, "3": 0.09}}}}
+{"key": "c7d3b47bd2ee884984c9da0a453f3d686dcab26a", "id": "fox__elbow_r", "answers": {"broken": {"type": "score", "score": 1.06, "confidence": 0.0, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.36, "1": 0.28, "2": 0.29, "3": 0.07}}}}
+{"key": "184b7f8907ded8de105c67cc2a366ad3983c0f6e", "id": "fox__wrist_r", "answers": {"broken": {"type": "score", "score": 1.87, "confidence": 0.65, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.04, "1": 0.16, "2": 0.69, "3": 0.11}}}}
+{"key": "4a9956032d400eb7cd88669f8047dc35e05d3a0e", "id": "fox__waist", "answers": {"broken": {"type": "score", "score": 1.61, "confidence": 0.21, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.18, "1": 0.23, "2": 0.39, "3": 0.2}}}}
+{"key": "034145f68beb99c12eef6939e4b54e9ed1816f69", "id": "fox__wrist_l", "answers": {"broken": {"type": "score", "score": 2.25, "confidence": 0.38, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.06, "1": 0.07, "2": 0.44, "3": 0.43}}}}
+{"key": "3928ee2a25504fbb9d28e473b4f7493a2042d7d0", "id": "fox__neck", "answers": {"broken": {"type": "score", "score": 2.11, "confidence": 0.59, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.02, "1": 0.11, "2": 0.61, "3": 0.26}}}}
+{"key": "532c087c4002fad4656ef0c470f0e0baca26f3c4", "id": "fox__ankle_l", "answers": {"broken": {"type": "score", "score": 1.93, "confidence": 0.46, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.08, "1": 0.15, "2": 0.54, "3": 0.23}}}}
+{"key": "bab4318e42602b1d9cd1f476854dc3addfb96730", "id": "fox__ankle_r", "answers": {"broken": {"type": "score", "score": 1.69, "confidence": 0.46, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.08, "1": 0.26, "2": 0.54, "3": 0.12}}}}
+{"key": "373e7774c08acaae00004528ce06ec3bd2771007", "id": "fox__tail", "answers": {"broken": {"type": "score", "score": 1.28, "confidence": 0.1, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.24, "1": 0.33, "2": 0.34, "3": 0.09}}}}
+{"key": "29aee5a32e0a5f6fbe9bbd4bb093f928129da42b", "id": "moose__elbow_l", "answers": {"broken": {"type": "score", "score": 2.26, "confidence": 0.52, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.02, "1": 0.07, "2": 0.54, "3": 0.37}}}}
+{"key": "35fa63a166d99b2bcb0a9fb3a989fc0f9fa52458", "id": "moose__elbow_r", "answers": {"broken": {"type": "score", "score": 2.34, "confidence": 0.44, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.02, "1": 0.07, "2": 0.45999999999999996, "3": 0.45}}}}
+{"key": "d3cf044ada86472824a52ccfff7e9402bf8f8962", "id": "moose__shoulder_r", "answers": {"broken": {"type": "score", "score": 2.0, "confidence": 0.57, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.05, "1": 0.11, "2": 0.62, "3": 0.22}}}}
+{"key": "df8540dd7c45d99a76f9660ab2dd98e6f44f48f0", "id": "moose__shoulder_l", "answers": {"broken": {"type": "score", "score": 1.89, "confidence": 0.56, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.06, "1": 0.15, "2": 0.62, "3": 0.17}}}}
+{"key": "d89563ffffa646f8e214591f0dce070f8667b7eb", "id": "moose__wrist_l", "answers": {"broken": {"type": "score", "score": 2.32, "confidence": 0.57, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.0, "1": 0.05, "2": 0.57, "3": 0.38}}}}
+{"key": "cacc9f5931a465b3c5ed3ee90e1a83d57d12b434", "id": "moose__wrist_r", "answers": {"broken": {"type": "score", "score": 2.45, "confidence": 0.44, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.01, "1": 0.04, "2": 0.45, "3": 0.5}}}}
+{"key": "4a3d3d8c1e89f61285fa370216bcbeaa30995b34", "id": "moose__neck", "answers": {"broken": {"type": "score", "score": 1.23, "confidence": 0.23, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.27, "1": 0.32, "2": 0.32, "3": 0.09}}}}
+{"key": "50391a7c4ea8359dc8188e07badca42da6641304", "id": "moose__waist", "answers": {"broken": {"type": "score", "score": 1.9, "confidence": 0.78, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.03, "1": 0.1, "2": 0.81, "3": 0.06}}}}
+{"key": "f5a352e74d066f089313720900d87095ae210e3c", "id": "moose__ankle_l", "answers": {"broken": {"type": "score", "score": 1.57, "confidence": 0.38, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.14, "1": 0.24, "2": 0.52, "3": 0.1}}}}
+{"key": "041fa6d1f5fb263806d796ee82c6d32f00d64c1e", "id": "moose__ankle_r", "answers": {"broken": {"type": "score", "score": 1.29, "confidence": 0.3, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.21, "1": 0.37, "2": 0.35, "3": 0.07}}}}
+{"key": "8a988c317a0487944b97345d4e2183d71dd9061a", "id": "rabbit__elbow_l", "answers": {"broken": {"type": "score", "score": 2.19, "confidence": 0.52, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.03, "1": 0.09, "2": 0.55, "3": 0.33}}}}
+{"key": "cb2058a50c60df0b323344f9cdaee8f407086187", "id": "rabbit__shoulder_r", "answers": {"broken": {"type": "score", "score": 2.0, "confidence": 0.59, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.04, "1": 0.13, "2": 0.63, "3": 0.2}}}}
+{"key": "82391b6f54ca43cda9ec82e69b4e7d2513877801", "id": "rabbit__elbow_r", "answers": {"broken": {"type": "score", "score": 1.92, "confidence": 0.44, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.07, "1": 0.18, "2": 0.51, "3": 0.24}}}}
+{"key": "0f6ceeb725022474a4fc54753ce07a6b07976b35", "id": "rabbit__shoulder_l", "answers": {"broken": {"type": "score", "score": 1.78, "confidence": 0.55, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.06, "1": 0.21, "2": 0.61, "3": 0.12}}}}
+{"key": "265e3f48c69191161f1339c7ff27958762b910c2", "id": "rabbit__wrist_l", "answers": {"broken": {"type": "score", "score": 1.8, "confidence": 0.38, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.09, "1": 0.23, "2": 0.47, "3": 0.21}}}}
+{"key": "cad8eb1a8b44e9dc019170cc2ca2ab635d6353d6", "id": "rabbit__wrist_r", "answers": {"broken": {"type": "score", "score": 1.8, "confidence": 0.33, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.11, "1": 0.22, "2": 0.44, "3": 0.23}}}}
+{"key": "6ffbb6eab3db7d2c28493671bafff22e4772b5e4", "id": "rabbit__neck", "answers": {"broken": {"type": "score", "score": 1.68, "confidence": 0.44, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.09, "1": 0.26, "2": 0.53, "3": 0.12}}}}
+{"key": "6007b382e43c7939a5e77d9197c576fad7259625", "id": "rabbit__waist", "answers": {"broken": {"type": "score", "score": 1.13, "confidence": 0.28, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.29, "1": 0.34, "2": 0.31, "3": 0.06}}}}
+{"key": "0ef2a133318736763b8d8bba3913202f544fe823", "id": "rabbit__ankle_l", "answers": {"broken": {"type": "score", "score": 1.87, "confidence": 0.43, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.1, "1": 0.15, "2": 0.53, "3": 0.22}}}}
+{"key": "9c554755de287ce3cfcdbb7affb4a916271ef321", "id": "rabbit__ankle_r", "answers": {"broken": {"type": "score", "score": 1.96, "confidence": 0.53, "legend": {"0": "Exactly as in the master.", "1": "Slightly off: a small shift or size difference.", "2": "Clearly off: a visible step, gap, wrong size or misplaced part.", "3": "Badly broken: the parts obviously do not belong together."}, "probabilities": {"0": 0.06, "1": 0.14, "2": 0.59, "3": 0.21}}}}
+{"key": "0840588bd7d5374c215f01d6498263b3ed893ddc", "id": "shoulder_l__0", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.24, "probabilities": {"render_1": 0.62, "render_2": 0.38}}}}
+{"key": "228f0ea233e6c6d537fdeed5822402bc7b03a1f4", "id": "shoulder_r__1", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.34, "probabilities": {"render_1": 0.67, "render_2": 0.33}}}}
+{"key": "48a8b0791cfb931a750a70b8b1c829a8ce8ad161", "id": "shoulder_r__0", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.12, "probabilities": {"render_1": 0.56, "render_2": 0.44}}}}
+{"key": "c0aac9d2abcc52bee29624b0b4abaa927e250e9c", "id": "shoulder_l__1", "answers": {"closer": {"type": "choice", "choice": "render_2", "confidence": 0.16, "probabilities": {"render_1": 0.42, "render_2": 0.58}}}}
+{"key": "d3482f4b54305393c39bb4298792473d1ad6ec3a", "id": "elbow_r__1", "answers": {"closer": {"type": "choice", "choice": "render_2", "confidence": 0.1, "probabilities": {"render_1": 0.45, "render_2": 0.55}}}}
+{"key": "6ff37d82f6d0efdabcc1556977a0aee999d94dd8", "id": "elbow_l__0", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.46, "probabilities": {"render_1": 0.73, "render_2": 0.27}}}}
+{"key": "924603e6368d90095f51cc1a91146fd0e8885050", "id": "elbow_r__0", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.22, "probabilities": {"render_1": 0.61, "render_2": 0.39}}}}
+{"key": "052e1737a1b70b1376aaf045c4876270980109c2", "id": "elbow_l__1", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.02, "probabilities": {"render_1": 0.51, "render_2": 0.49}}}}
+{"key": "b272a1d1c6e9a960a0d9f2dfc140b1f542966121", "id": "wrist_l__0", "answers": {"closer": {"type": "choice", "choice": "render_2", "confidence": 0.02, "probabilities": {"render_1": 0.49, "render_2": 0.51}}}}
+{"key": "75294454997517fb5079aad7a6d954acf38f09a6", "id": "wrist_l__1", "answers": {"closer": {"type": "choice", "choice": "render_2", "confidence": 0.22, "probabilities": {"render_1": 0.39, "render_2": 0.61}}}}
+{"key": "478f0ec1211fd781e619ee20f7dd1bd393fa5aa9", "id": "wrist_r__0", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.06, "probabilities": {"render_1": 0.53, "render_2": 0.47}}}}
+{"key": "acc10853b6e11a9249fcff7864400316ce9ecd0d", "id": "wrist_r__1", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.16, "probabilities": {"render_1": 0.58, "render_2": 0.42}}}}
+{"key": "3598c1c64dbad373a27fa581cc7f2773f192fdec", "id": "neck__0", "answers": {"closer": {"type": "choice", "choice": "render_2", "confidence": 0.04, "probabilities": {"render_1": 0.48, "render_2": 0.52}}}}
+{"key": "2be4209a109e1ee02ba3b66fd1ef4ef476686169", "id": "neck__1", "answers": {"closer": {"type": "choice", "choice": "render_2", "confidence": 0.02, "probabilities": {"render_1": 0.49, "render_2": 0.51}}}}
+{"key": "92328472e5fd347779ef57917442335e3ff9ce62", "id": "waist__0", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.26, "probabilities": {"render_1": 0.63, "render_2": 0.37}}}}
+{"key": "b90a318aaef139b654bc7f5acbfe90c6a3867c00", "id": "waist__1", "answers": {"closer": {"type": "choice", "choice": "render_2", "confidence": 0.44, "probabilities": {"render_1": 0.28, "render_2": 0.72}}}}
+{"key": "13510593e49192e6d0f56e5553463418ae41dc89", "id": "ankle_l__0", "answers": {"closer": {"type": "choice", "choice": "render_2", "confidence": 0.1, "probabilities": {"render_1": 0.45, "render_2": 0.55}}}}
+{"key": "4e614324da1b48913ada30836d1891dfcf3cc6a5", "id": "ankle_r__0", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.22, "probabilities": {"render_1": 0.61, "render_2": 0.39}}}}
+{"key": "521a87744a77a891d286dffa4248d286aafb2ddd", "id": "ankle_l__1", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.12, "probabilities": {"render_1": 0.56, "render_2": 0.44}}}}
+{"key": "a4adc525a705e4fb3c00eb94ab4f007045339123", "id": "ankle_r__1", "answers": {"closer": {"type": "choice", "choice": "render_1", "confidence": 0.26, "probabilities": {"render_1": 0.63, "render_2": 0.37}}}}
+{"key": "9fd00bf31e6c912d5c1503abe017fb2e06d572d5", "id": "fox__blink_0.42", "answers": {"defect": {"type": "noul", "noul": 0.58}}}
+{"key": "9fd00bf31e6c912d5c1503abe017fb2e06d572d5", "id": "fox__blink_0.25", "answers": {"defect": {"type": "noul", "noul": 0.53}}}
+{"key": "9fd00bf31e6c912d5c1503abe017fb2e06d572d5", "id": "fox__blink_0.08", "answers": {"defect": {"type": "noul", "noul": 0.55}}}
+{"key": "049412b835f8a060b871e73b8fbc61e2b80f81b9", "id": "fox__blink_0.58", "answers": {"defect": {"type": "noul", "noul": 0.52}}}
+{"key": "9fd00bf31e6c912d5c1503abe017fb2e06d572d5", "id": "fox__blink_0.75", "answers": {"defect": {"type": "noul", "noul": 0.53}}}
+{"key": "9fd00bf31e6c912d5c1503abe017fb2e06d572d5", "id": "fox__blink_0.92", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "e15dbd48716695fa498a37248b6ccd0cd9286b08", "id": "fox__idle_0.20", "answers": {"defect": {"type": "noul", "noul": 0.51}}}
+{"key": "d9e3f50eaabc935731fcd103da431be996c43d00", "id": "fox__idle_0.60", "answers": {"defect": {"type": "noul", "noul": 0.53}}}
+{"key": "64708d63da88ec1be6100767b3a6b0392db73cc1", "id": "fox__idle_1.00", "answers": {"defect": {"type": "noul", "noul": 0.55}}}
+{"key": "02aa81e9a51895ac8ac3677008cedb5bf0875062", "id": "fox__idle_1.40", "answers": {"defect": {"type": "noul", "noul": 0.54}}}
+{"key": "eb3c841991bc5f055ced401251e2555734ce0dfa", "id": "fox__idle_1.80", "answers": {"defect": {"type": "noul", "noul": 0.55}}}
+{"key": "ebcdb934c846486c2927e885165708a49816a089", "id": "fox__idle_2.20", "answers": {"defect": {"type": "noul", "noul": 0.51}}}
+{"key": "c4268ca40355550b91fc3be68be77c91337bf215", "id": "fox__wave_0.75", "answers": {"defect": {"type": "noul", "noul": 0.52}}}
+{"key": "8a376a90183e77bb21149e3ed9250a96ae813b53", "id": "fox__wave_1.25", "answers": {"defect": {"type": "noul", "noul": 0.54}}}
+{"key": "c501827b6186ad5378f9630b11b3a20f013a670a", "id": "fox__wave_1.75", "answers": {"defect": {"type": "noul", "noul": 0.54}}}
+{"key": "f2083799532030c0e6142e71c1242109948436ba", "id": "fox__wave_0.25", "answers": {"defect": {"type": "noul", "noul": 0.58}}}
+{"key": "98821efbfdb49cc5d604456184fa64cc708fa810", "id": "fox__wave_2.25", "answers": {"defect": {"type": "noul", "noul": 0.54}}}
+{"key": "e71f9042a204e5c76b536b6fff3a5e42e833e19d", "id": "fox__wave_2.75", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "4dbfb90f0b9e7ad151757a28847c90507456a690", "id": "fox__cheer_jump_0.16", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "468af6d90e131173133b1b7900f8843a5982acc6", "id": "fox__cheer_jump_0.47", "answers": {"defect": {"type": "noul", "noul": 0.48}}}
+{"key": "4ec45d9a4be148f129755e37757cc3752707d8e5", "id": "fox__cheer_jump_0.79", "answers": {"defect": {"type": "noul", "noul": 0.48}}}
+{"key": "a41ed940d8a3170b86c0509bb02d0c3d93173e7e", "id": "fox__cheer_jump_1.11", "answers": {"defect": {"type": "noul", "noul": 0.46}}}
+{"key": "755c7142fc1cc75435716c30d610da57bb3f466b", "id": "fox__cheer_jump_1.43", "answers": {"defect": {"type": "noul", "noul": 0.5}}}
+{"key": "e18e84091f6944dc9b2e366209c44e6ec9b61a6f", "id": "fox__cheer_jump_1.74", "answers": {"defect": {"type": "noul", "noul": 0.54}}}
+{"key": "358969b60f1f68a4e7bc9c2282bb6f301a3acd22", "id": "fox__thumbs_up_0.20", "answers": {"defect": {"type": "noul", "noul": 0.5}}}
+{"key": "6c960aa1e18639f071a2dfe4e940a6cbb8ca26c8", "id": "fox__thumbs_up_0.60", "answers": {"defect": {"type": "noul", "noul": 0.55}}}
+{"key": "6c960aa1e18639f071a2dfe4e940a6cbb8ca26c8", "id": "fox__thumbs_up_1.00", "answers": {"defect": {"type": "noul", "noul": 0.57}}}
+{"key": "6c960aa1e18639f071a2dfe4e940a6cbb8ca26c8", "id": "fox__thumbs_up_1.40", "answers": {"defect": {"type": "noul", "noul": 0.55}}}
+{"key": "6c960aa1e18639f071a2dfe4e940a6cbb8ca26c8", "id": "fox__thumbs_up_1.80", "answers": {"defect": {"type": "noul", "noul": 0.58}}}
+{"key": "706857ad3e31d3b108f637bf46eb6aa7a737b836", "id": "fox__thumbs_up_2.20", "answers": {"defect": {"type": "noul", "noul": 0.53}}}
+{"key": "fb63e86de84d221d24e36c5038a92a7199682f1e", "id": "fox__point_0.20", "answers": {"defect": {"type": "noul", "noul": 0.53}}}
+{"key": "be26e0a637ae8e75f8a5a26d0305a2be13a7a6fa", "id": "fox__point_0.60", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "be26e0a637ae8e75f8a5a26d0305a2be13a7a6fa", "id": "fox__point_1.00", "answers": {"defect": {"type": "noul", "noul": 0.58}}}
+{"key": "be26e0a637ae8e75f8a5a26d0305a2be13a7a6fa", "id": "fox__point_1.40", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "be26e0a637ae8e75f8a5a26d0305a2be13a7a6fa", "id": "fox__point_1.80", "answers": {"defect": {"type": "noul", "noul": 0.58}}}
+{"key": "fed315866151df80830699e1b57cf321569508dc", "id": "fox__point_2.20", "answers": {"defect": {"type": "noul", "noul": 0.52}}}
+{"key": "96ea0703d09054f4c3751c0d0d0ead25d0cbc61c", "id": "fox__hold_card_0.20", "answers": {"defect": {"type": "noul", "noul": 0.76}}}
+{"key": "a1341b505ee80abefba3d2443f60275558dcb7d8", "id": "fox__hold_card_0.60", "answers": {"defect": {"type": "noul", "noul": 0.74}}}
+{"key": "a1341b505ee80abefba3d2443f60275558dcb7d8", "id": "fox__hold_card_1.00", "answers": {"defect": {"type": "noul", "noul": 0.76}}}
+{"key": "a1341b505ee80abefba3d2443f60275558dcb7d8", "id": "fox__hold_card_1.40", "answers": {"defect": {"type": "noul", "noul": 0.74}}}
+{"key": "a1341b505ee80abefba3d2443f60275558dcb7d8", "id": "fox__hold_card_1.80", "answers": {"defect": {"type": "noul", "noul": 0.75}}}
+{"key": "7285de42f93474e3ff21edb0922585dee004c625", "id": "fox__hold_card_2.20", "answers": {"defect": {"type": "noul", "noul": 0.67}}}
+{"key": "beca50f6e6b30c91d9e15db6780001b68c06289b", "id": "fox__emotions_0.60", "answers": {"defect": {"type": "noul", "noul": 0.54}}}
+{"key": "2b69f1b76e7ae18394eeaaa06e8b0080185e9e2a", "id": "fox__emotions_1.80", "answers": {"defect": {"type": "noul", "noul": 0.49}}}
+{"key": "9842a218ff54d266b271d72dd090f59b7d0e49b5", "id": "fox__emotions_3.00", "answers": {"defect": {"type": "noul", "noul": 0.46}}}
+{"key": "7496e7a17b542629e2e4eaa701016e94dbcf4d64", "id": "fox__emotions_4.20", "answers": {"defect": {"type": "noul", "noul": 0.54}}}
+{"key": "4784f819f58b269066e894d73446f611d679d359", "id": "fox__emotions_5.40", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "79fee86533eebefef70957442fd88e773a210163", "id": "fox__emotions_6.60", "answers": {"defect": {"type": "noul", "noul": 0.46}}}
+{"key": "fff30a6c17e85b1850e7edcea54d381e22ca5441", "id": "moose__blink_0.42", "answers": {"defect": {"type": "noul", "noul": 0.5}}}
+{"key": "fff30a6c17e85b1850e7edcea54d381e22ca5441", "id": "moose__blink_0.08", "answers": {"defect": {"type": "noul", "noul": 0.48}}}
+{"key": "fff30a6c17e85b1850e7edcea54d381e22ca5441", "id": "moose__blink_0.25", "answers": {"defect": {"type": "noul", "noul": 0.48}}}
+{"key": "fe979459e038233ddc3e087c17d1641415f0b268", "id": "moose__blink_0.58", "answers": {"defect": {"type": "noul", "noul": 0.49}}}
+{"key": "fff30a6c17e85b1850e7edcea54d381e22ca5441", "id": "moose__blink_0.75", "answers": {"defect": {"type": "noul", "noul": 0.48}}}
+{"key": "6ec60402174c1db840a2cff4d0a8d5a02a9a5a6f", "id": "moose__idle_0.20", "answers": {"defect": {"type": "noul", "noul": 0.47}}}
+{"key": "79cd2f3e6809d6ec1f66f62c6f61330b63f36f32", "id": "moose__idle_0.60", "answers": {"defect": {"type": "noul", "noul": 0.52}}}
+{"key": "fff30a6c17e85b1850e7edcea54d381e22ca5441", "id": "moose__blink_0.92", "answers": {"defect": {"type": "noul", "noul": 0.47}}}
+{"key": "a79808eebbdd1bfadf41f8780d5329cf61bb7b1a", "id": "moose__idle_1.40", "answers": {"defect": {"type": "noul", "noul": 0.47}}}
+{"key": "34172ab0034118717b013848192b4e13a9ce6d2e", "id": "moose__idle_2.20", "answers": {"defect": {"type": "noul", "noul": 0.46}}}
+{"key": "53d246d0adaccca2c55dd8a615d4c4d4f95caba4", "id": "moose__idle_1.80", "answers": {"defect": {"type": "noul", "noul": 0.47}}}
+{"key": "68eb3bcf0503e1bc6d298382f2512705f92b6a6d", "id": "moose__idle_1.00", "answers": {"defect": {"type": "noul", "noul": 0.51}}}
+{"key": "4f12d7dc0c574babe867c2fba2b91d1270205d1f", "id": "moose__wave_0.25", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "2f2d853f16fd67d959b228d0ff9567515050a47d", "id": "moose__wave_0.75", "answers": {"defect": {"type": "noul", "noul": 0.63}}}
+{"key": "43b889e191a5a44276304620357441009acf5fe3", "id": "moose__wave_1.25", "answers": {"defect": {"type": "noul", "noul": 0.62}}}
+{"key": "7a097f5b83728b76676de1234e0579ff2475c28e", "id": "moose__wave_1.75", "answers": {"defect": {"type": "noul", "noul": 0.61}}}
+{"key": "e9062dcf050b2c618d17f2b4062902ca62103d3e", "id": "moose__wave_2.25", "answers": {"defect": {"type": "noul", "noul": 0.59}}}
+{"key": "d401f44921c1a667f657bbda99a3b9d130b85f43", "id": "moose__cheer_jump_0.16", "answers": {"defect": {"type": "noul", "noul": 0.52}}}
+{"key": "c7ecbfdd4c830f5f1da254ae8b9e04b6436cb19e", "id": "moose__wave_2.75", "answers": {"defect": {"type": "noul", "noul": 0.58}}}
+{"key": "d15e5851b56ac2cc4a3785bbd8a98f90b57554cb", "id": "moose__cheer_jump_0.47", "answers": {"defect": {"type": "noul", "noul": 0.65}}}
+{"key": "012e5b1b9bd68a3694dcfb9ec9739f40d4efa50e", "id": "moose__cheer_jump_0.79", "answers": {"defect": {"type": "noul", "noul": 0.68}}}
+{"key": "8277cba2a3814214e17e2fca9f9d046d629aaf7b", "id": "moose__cheer_jump_1.43", "answers": {"defect": {"type": "noul", "noul": 0.7}}}
+{"key": "a0583486908ecb77901d7534052e5728d105c50d", "id": "moose__cheer_jump_1.74", "answers": {"defect": {"type": "noul", "noul": 0.47}}}
+{"key": "82e51aaa5511d0c298911ff6905dfa68ccf1b9c5", "id": "moose__cheer_jump_1.11", "answers": {"defect": {"type": "noul", "noul": 0.7}}}
+{"key": "ef30b82061ca8d7b3b0159e557e2f8740687d6c1", "id": "moose__thumbs_up_0.20", "answers": {"defect": {"type": "noul", "noul": 0.47}}}
+{"key": "c6516225a10b0f8a4272f268b2a7fa9e116dcd67", "id": "moose__thumbs_up_0.60", "answers": {"defect": {"type": "noul", "noul": 0.59}}}
+{"key": "c6516225a10b0f8a4272f268b2a7fa9e116dcd67", "id": "moose__thumbs_up_1.00", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "c6516225a10b0f8a4272f268b2a7fa9e116dcd67", "id": "moose__thumbs_up_1.40", "answers": {"defect": {"type": "noul", "noul": 0.57}}}
+{"key": "c6516225a10b0f8a4272f268b2a7fa9e116dcd67", "id": "moose__thumbs_up_1.80", "answers": {"defect": {"type": "noul", "noul": 0.59}}}
+{"key": "657b0e9fc149369353465d1b0afdf386986ae953", "id": "moose__thumbs_up_2.20", "answers": {"defect": {"type": "noul", "noul": 0.49}}}
+{"key": "30e2d20187abc8567f4fd721cd8a4dfb6a12d581", "id": "moose__point_0.20", "answers": {"defect": {"type": "noul", "noul": 0.5}}}
+{"key": "62fcfc8e980b1cc40897e87f215562669d4e6f5b", "id": "moose__point_0.60", "answers": {"defect": {"type": "noul", "noul": 0.67}}}
+{"key": "62fcfc8e980b1cc40897e87f215562669d4e6f5b", "id": "moose__point_1.00", "answers": {"defect": {"type": "noul", "noul": 0.68}}}
+{"key": "62fcfc8e980b1cc40897e87f215562669d4e6f5b", "id": "moose__point_1.40", "answers": {"defect": {"type": "noul", "noul": 0.69}}}
+{"key": "62fcfc8e980b1cc40897e87f215562669d4e6f5b", "id": "moose__point_1.80", "answers": {"defect": {"type": "noul", "noul": 0.66}}}
+{"key": "8f3478db48683d91e41cef6c5316388caa6917a6", "id": "moose__point_2.20", "answers": {"defect": {"type": "noul", "noul": 0.47}}}
+{"key": "dab4a8af8b091ad65cd8b5b7a62d0727be573fce", "id": "moose__hold_card_0.20", "answers": {"defect": {"type": "noul", "noul": 0.54}}}
+{"key": "0a00154c1984fab6ba1a97536836bf35edd28212", "id": "moose__hold_card_0.60", "answers": {"defect": {"type": "noul", "noul": 0.66}}}
+{"key": "0a00154c1984fab6ba1a97536836bf35edd28212", "id": "moose__hold_card_1.00", "answers": {"defect": {"type": "noul", "noul": 0.66}}}
+{"key": "0a00154c1984fab6ba1a97536836bf35edd28212", "id": "moose__hold_card_1.40", "answers": {"defect": {"type": "noul", "noul": 0.67}}}
+{"key": "0a00154c1984fab6ba1a97536836bf35edd28212", "id": "moose__hold_card_1.80", "answers": {"defect": {"type": "noul", "noul": 0.66}}}
+{"key": "5531edc68e6b38cc35433855dc8e668eaa6d560c", "id": "moose__emotions_0.60", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "5ea60d1bc2b1d0634f7c2d4b68d0a8a10aade975", "id": "moose__hold_card_2.20", "answers": {"defect": {"type": "noul", "noul": 0.57}}}
+{"key": "c674e46a1839d85627b26478e6100cdbc343aa61", "id": "moose__emotions_1.80", "answers": {"defect": {"type": "noul", "noul": 0.47}}}
+{"key": "91afb2d76b6028c3d940a60756bbe978402f3aa6", "id": "moose__emotions_3.00", "answers": {"defect": {"type": "noul", "noul": 0.46}}}
+{"key": "9771ba5bdce809e4edda36c31d57351c96b588ad", "id": "moose__emotions_4.20", "answers": {"defect": {"type": "noul", "noul": 0.52}}}
+{"key": "5959823b506f0d1557ac4932e31af00a1c546a45", "id": "moose__emotions_6.60", "answers": {"defect": {"type": "noul", "noul": 0.48}}}
+{"key": "33bb8fe5d5210346235326ca4c059b5ec9e65429", "id": "moose__emotions_5.40", "answers": {"defect": {"type": "noul", "noul": 0.56}}}
+{"key": "fec1e5b44cc04a8609c625a997dcbf57fa87895b", "id": "rabbit__blink_0.08", "answers": {"defect": {"type": "noul", "noul": 0.85}}}
+{"key": "fec1e5b44cc04a8609c625a997dcbf57fa87895b", "id": "rabbit__blink_0.42", "answers": {"defect": {"type": "noul", "noul": 0.87}}}
+{"key": "fec1e5b44cc04a8609c625a997dcbf57fa87895b", "id": "rabbit__blink_0.25", "answers": {"defect": {"type": "noul", "noul": 0.85}}}
+{"key": "1f42c81812397c21df0ee68a149a22b1f4a52b97", "id": "rabbit__blink_0.58", "answers": {"defect": {"type": "noul", "noul": 0.89}}}
+{"key": "fec1e5b44cc04a8609c625a997dcbf57fa87895b", "id": "rabbit__blink_0.75", "answers": {"defect": {"type": "noul", "noul": 0.85}}}
+{"key": "fec1e5b44cc04a8609c625a997dcbf57fa87895b", "id": "rabbit__blink_0.92", "answers": {"defect": {"type": "noul", "noul": 0.85}}}
+{"key": "be411bc47104d0643375d147fb861b4e61cced90", "id": "rabbit__idle_0.20", "answers": {"defect": {"type": "noul", "noul": 0.87}}}
+{"key": "45cbdfb3de200bea85d0fa92e0890061c1cfbd6d", "id": "rabbit__idle_0.60", "answers": {"defect": {"type": "noul", "noul": 0.8}}}
+{"key": "4493a763372c8da4f3a08658cde0233b2837db56", "id": "rabbit__idle_1.00", "answers": {"defect": {"type": "noul", "noul": 0.78}}}
+{"key": "c888cad8973be583ad7d3d8df9576938b6b55265", "id": "rabbit__idle_1.40", "answers": {"defect": {"type": "noul", "noul": 0.88}}}
+{"key": "1a713a25132d03cb640d8bdd32cb685f0a96ced5", "id": "rabbit__idle_1.80", "answers": {"defect": {"type": "noul", "noul": 0.87}}}
+{"key": "9896a58423af6fe28ed2049f64144986963da107", "id": "rabbit__idle_2.20", "answers": {"defect": {"type": "noul", "noul": 0.85}}}
+{"key": "d0177432020c31f22968ed308f55666bdde1a953", "id": "rabbit__wave_0.25", "answers": {"defect": {"type": "noul", "noul": 0.91}}}
+{"key": "8e8383d258efcd9db8b2f2d5bfaf5fac8b1423f3", "id": "rabbit__wave_0.75", "answers": {"defect": {"type": "noul", "noul": 0.84}}}
+{"key": "515ca55f0ae53b478dfcadfc02a0b1861ffc1a2e", "id": "rabbit__wave_1.75", "answers": {"defect": {"type": "noul", "noul": 0.84}}}
+{"key": "38830448edfca94446cedca43ac9aa28a176754f", "id": "rabbit__wave_1.25", "answers": {"defect": {"type": "noul", "noul": 0.83}}}
+{"key": "9fa7c428203a3855d8bb3384da8c0fb681afb6ca", "id": "rabbit__wave_2.25", "answers": {"defect": {"type": "noul", "noul": 0.83}}}
+{"key": "8f2c4e4ff9b7a1b71d6f0e7d4ee100c6171c2e49", "id": "rabbit__wave_2.75", "answers": {"defect": {"type": "noul", "noul": 0.9}}}
+{"key": "d63d16b2be4ee3ac47b2286ec1fec55f87195d7e", "id": "rabbit__cheer_jump_0.16", "answers": {"defect": {"type": "noul", "noul": 0.77}}}
+{"key": "cd29d25f87311ea8ef5b32c2f2711422b80050f6", "id": "rabbit__cheer_jump_0.47", "answers": {"defect": {"type": "noul", "noul": 0.69}}}
+{"key": "b2036461adbd1afaeec800f5758babd71e1fbad2", "id": "rabbit__cheer_jump_0.79", "answers": {"defect": {"type": "noul", "noul": 0.71}}}
+{"key": "0f3e8e9a2ca1d62da88e37354cc592dd71fe56e4", "id": "rabbit__cheer_jump_1.11", "answers": {"defect": {"type": "noul", "noul": 0.65}}}
+{"key": "16fe4a2936349a58570a0d22816a05545dfcc7bb", "id": "rabbit__cheer_jump_1.43", "answers": {"defect": {"type": "noul", "noul": 0.73}}}
+{"key": "e1be1b1588bdf9a403d46d72ff115872b1a5e422", "id": "rabbit__cheer_jump_1.74", "answers": {"defect": {"type": "noul", "noul": 0.8}}}
+{"key": "8affb38af66410b58df1a70e99b48e5d17563380", "id": "rabbit__thumbs_up_0.20", "answers": {"defect": {"type": "noul", "noul": 0.82}}}
+{"key": "b0e91a14ff1a3b29404c5bb2fe6a4e14b1548981", "id": "rabbit__thumbs_up_0.60", "answers": {"defect": {"type": "noul", "noul": 0.88}}}
+{"key": "5a28ae8d19873dfb5d5c4924960d06e164a6b773", "id": "rabbit__thumbs_up_1.00", "answers": {"defect": {"type": "noul", "noul": 0.88}}}
+{"key": "5a28ae8d19873dfb5d5c4924960d06e164a6b773", "id": "rabbit__thumbs_up_1.40", "answers": {"defect": {"type": "noul", "noul": 0.87}}}
+{"key": "b0e91a14ff1a3b29404c5bb2fe6a4e14b1548981", "id": "rabbit__thumbs_up_1.80", "answers": {"defect": {"type": "noul", "noul": 0.88}}}
+{"key": "8affb38af66410b58df1a70e99b48e5d17563380", "id": "rabbit__thumbs_up_2.20", "answers": {"defect": {"type": "noul", "noul": 0.82}}}
+{"key": "aad77e856f6935e4d495b13563eaee856bae5e37", "id": "rabbit__point_0.20", "answers": {"defect": {"type": "noul", "noul": 0.86}}}
+{"key": "ecfa137fcc32ce35fe43100352f8b62572be0499", "id": "rabbit__point_0.60", "answers": {"defect": {"type": "noul", "noul": 0.89}}}
+{"key": "4dcc72f001cf1a67d597725aa44a21108fe4ef14", "id": "rabbit__point_1.00", "answers": {"defect": {"type": "noul", "noul": 0.9}}}
+{"key": "4dcc72f001cf1a67d597725aa44a21108fe4ef14", "id": "rabbit__point_1.40", "answers": {"defect": {"type": "noul", "noul": 0.9}}}
+{"key": "aad77e856f6935e4d495b13563eaee856bae5e37", "id": "rabbit__point_2.20", "answers": {"defect": {"type": "noul", "noul": 0.87}}}
+{"key": "ecfa137fcc32ce35fe43100352f8b62572be0499", "id": "rabbit__point_1.80", "answers": {"defect": {"type": "noul", "noul": 0.88}}}
+{"key": "073f63b8a9cacd76397a1023bcdef2d733be6bf8", "id": "rabbit__hold_card_0.20", "answers": {"defect": {"type": "noul", "noul": 0.86}}}
+{"key": "75ef792328834d837313ef9fcd554e6ca6508aaa", "id": "rabbit__hold_card_0.60", "answers": {"defect": {"type": "noul", "noul": 0.91}}}
+{"key": "a6af1f986f9d0ff2fbd1c97bb6d869e4aef43cd7", "id": "rabbit__hold_card_1.40", "answers": {"defect": {"type": "noul", "noul": 0.89}}}
+{"key": "a6af1f986f9d0ff2fbd1c97bb6d869e4aef43cd7", "id": "rabbit__hold_card_1.00", "answers": {"defect": {"type": "noul", "noul": 0.89}}}
+{"key": "75ef792328834d837313ef9fcd554e6ca6508aaa", "id": "rabbit__hold_card_1.80", "answers": {"defect": {"type": "noul", "noul": 0.91}}}
+{"key": "440be9ef9f65f965af7980bb6e4a0298b45ba884", "id": "rabbit__hold_card_2.20", "answers": {"defect": {"type": "noul", "noul": 0.88}}}
+{"key": "aab305524b7c150c1a1d32cbafc9ff45cc9c67c7", "id": "rabbit__emotions_0.60", "answers": {"defect": {"type": "noul", "noul": 0.88}}}
+{"key": "dd520c6c49125eb11ca056abf01fd611a5c02b00", "id": "rabbit__emotions_1.80", "answers": {"defect": {"type": "noul", "noul": 0.85}}}
+{"key": "f89b9499f486d850bbee9c4d74032afea6929919", "id": "rabbit__emotions_3.00", "answers": {"defect": {"type": "noul", "noul": 0.83}}}
+{"key": "a2a593a843dcb90a31a186e60a4d3812aab0a58f", "id": "rabbit__emotions_4.20", "answers": {"defect": {"type": "noul", "noul": 0.9}}}
+{"key": "7bd8bb99590497ad12dec4de6ffecc19ea491ef8", "id": "rabbit__emotions_5.40", "answers": {"defect": {"type": "noul", "noul": 0.9}}}
+{"key": "5a3a18c3ebe7e22750203ae89bbf276ae33e5ef1", "id": "rabbit__emotions_6.60", "answers": {"defect": {"type": "noul", "noul": 0.88}}}
+{"key": "11345a82c70a251b7f8874de057997e8b669f8b3", "id": "rabbit__walk_0.08", "answers": {"defect": {"type": "noul", "noul": 0.75}}}
+{"key": "9ec93d06fcbaad366ae217fe4b3b7488a997cc18", "id": "rabbit__walk_0.25", "answers": {"defect": {"type": "noul", "noul": 0.79}}}
+{"key": "11345a82c70a251b7f8874de057997e8b669f8b3", "id": "rabbit__walk_0.42", "answers": {"defect": {"type": "noul", "noul": 0.76}}}
+{"key": "418fb9a896f98445c946b3b4fbf97837d1a94193", "id": "rabbit__walk_0.58", "answers": {"defect": {"type": "noul", "noul": 0.85}}}
+{"key": "073e41c679fb70db6de79ba67c09329fe98c69f0", "id": "rabbit__walk_0.75", "answers": {"defect": {"type": "noul", "noul": 0.76}}}
+{"key": "418fb9a896f98445c946b3b4fbf97837d1a94193", "id": "rabbit__walk_0.92", "answers": {"defect": {"type": "noul", "noul": 0.84}}}
+{"key": "b6ec987f4469081498f7afd55453efece3eaccf5", "id": "rabbit__run_0.05", "answers": {"defect": {"type": "noul", "noul": 0.72}}}
+{"key": "af510a4bed6bb567ad357ee6d802d93a61b5bd13", "id": "rabbit__run_0.16", "answers": {"defect": {"type": "noul", "noul": 0.76}}}
+{"key": "044e99846d114ae65672af7f0065da189c940912", "id": "rabbit__run_0.27", "answers": {"defect": {"type": "noul", "noul": 0.73}}}
+{"key": "87f1cf4347995b93ceba1ca22c09c28cdf01fca0", "id": "rabbit__run_0.37", "answers": {"defect": {"type": "noul", "noul": 0.73}}}
+{"key": "d6068837b9e16d82fb801e58ea5607841a4c52fa", "id": "rabbit__run_0.48", "answers": {"defect": {"type": "noul", "noul": 0.77}}}
+{"key": "8e0a9012e468d5120e0f4a7488b093c4f66ccb1e", "id": "rabbit__run_0.59", "answers": {"defect": {"type": "noul", "noul": 0.75}}}
+{"key": "87d65dd0de5eb159288d699543740bc0d1fc350b", "id": "rabbit__squat_0.17", "answers": {"defect": {"type": "noul", "noul": 0.9}}}
+{"key": "3bd1cae78093f89ee228716cf3976abe65e53159", "id": "rabbit__squat_0.50", "answers": {"defect": {"type": "noul", "noul": 0.8}}}
+{"key": "355bc1eda0fbbf002b04fdb0565fa64678cdc414", "id": "rabbit__squat_0.83", "answers": {"defect": {"type": "noul", "noul": 0.78}}}
+{"key": "355bc1eda0fbbf002b04fdb0565fa64678cdc414", "id": "rabbit__squat_1.17", "answers": {"defect": {"type": "noul", "noul": 0.78}}}
+{"key": "3bd1cae78093f89ee228716cf3976abe65e53159", "id": "rabbit__squat_1.50", "answers": {"defect": {"type": "noul", "noul": 0.79}}}
+{"key": "87d65dd0de5eb159288d699543740bc0d1fc350b", "id": "rabbit__squat_1.83", "answers": {"defect": {"type": "noul", "noul": 0.88}}}
+{"key": "0e129da8c79a6f0d6f29accefa4f50ffb98af420", "id": "rabbit__jump_hurdle_0.18", "answers": {"defect": {"type": "noul", "noul": 0.9}}}
+{"key": "623ec9a626d1ae6521c28d453653e6e5d0b7e5da", "id": "rabbit__jump_hurdle_0.55", "answers": {"defect": {"type": "noul", "noul": 0.8}}}
+{"key": "2ae9996fef5a53c18d3add6658f2e20addd50d4c", "id": "rabbit__jump_hurdle_0.92", "answers": {"defect": {"type": "noul", "noul": 0.76}}}
+{"key": "3a8e34116373a612f00935c750f8c7f5c200a37f", "id": "rabbit__jump_hurdle_1.28", "answers": {"defect": {"type": "noul", "noul": 0.76}}}
+{"key": "59e29f49393c1f99ef0e077a7b47c4dd1da3196a", "id": "rabbit__jump_hurdle_1.65", "answers": {"defect": {"type": "noul", "noul": 0.8}}}
+{"key": "ba766b51db725719a4dbc9c66ba77397e3caca4b", "id": "rabbit__jump_hurdle_2.02", "answers": {"defect": {"type": "noul", "noul": 0.77}}}
+{"key": "098c287248930748e745a0cb26272c9c9977c389", "id": "rabbit__wave_flag_0.27", "answers": {"defect": {"type": "noul", "noul": 0.87}}}
+{"key": "d26a5f9deb73d5768d2baaafc177e922e8e38570", "id": "rabbit__wave_flag_0.80", "answers": {"defect": {"type": "noul", "noul": 0.84}}}
+{"key": "1b3b2d413a6baa0741ca4edae946d92f57e4a7f3", "id": "rabbit__wave_flag_1.33", "answers": {"defect": {"type": "noul", "noul": 0.86}}}
+{"key": "df90ba6f9538d4d1653c6166c8f80bce99100b50", "id": "rabbit__wave_flag_1.87", "answers": {"defect": {"type": "noul", "noul": 0.86}}}
+{"key": "a44a88d8a626e56af8a66d98975864d9c43830a2", "id": "rabbit__wave_flag_2.40", "answers": {"defect": {"type": "noul", "noul": 0.83}}}
+{"key": "769267997604958a517c803dd1381a5458264ac3", "id": "rabbit__wave_flag_2.93", "answers": {"defect": {"type": "noul", "noul": 0.87}}}
+{"key": "7357f13ecf20a40b5200fcb8c284d960f6f88eb3", "id": "thumbs_up/hand_l", "answers": {"finger_dir": {"type": "choice", "choice": "right", "confidence": 0.68, "probabilities": {"up": 0.03, "up-right": 0.17, "right": 0.72, "down-right": 0.04, "down": 0.0, "down-left": 0.01, "left": 0.01, "up-left": 0.02}}, "thumb_dir": {"type": "choice", "choice": "up-left", "confidence": 0.37, "probabilities": {"up": 0.41, "up-right": 0.12, "right": 0.0, "down-right": 0.0, "down": 0.0, "down-left": 0.01, "left": 0.01, "up-left": 0.45}}, "gesture": {"type": "choice", "choice": "thumbsup", "confidence": 0.86, "probabilities": {"relaxed": 0.0, "open": 0.0, "fist": 0.0, "point": 0.02, "thumbsup": 0.88, "grip": 0.1}}, "thumb_up": {"type": "noul", "noul": 0.85}}}
+{"key": "1420d1fe3ead49289dab3ed9d0dbde97cacc8c5a", "id": "point/hand_l", "answers": {"finger_dir": {"type": "choice", "choice": "right", "confidence": 0.85, "probabilities": {"up": 0.0, "up-right": 0.11, "right": 0.87, "down-right": 0.02, "down": 0.0, "down-left": 0.0, "left": 0.0, "up-left": 0.0}}, "thumb_dir": {"type": "choice", "choice": "up-left", "confidence": 0.47, "probabilities": {"up": 0.22, "up-right": 0.24000000000000002, "right": 0.0, "down-right": 0.0, "down": 0.0, "down-left": 0.0, "left": 0.0, "up-left": 0.54}}, "gesture": {"type": "choice", "choice": "point", "confidence": 0.82, "probabilities": {"relaxed": 0.0, "open": 0.0, "fist": 0.0, "point": 0.85, "thumbsup": 0.13, "grip": 0.02}}, "thumb_up": {"type": "noul", "noul": 0.79}}}
+{"key": "0af7fea42e53cce4ee6b15a27310b7a35fa6534c", "id": "wave/hand_l", "answers": {"finger_dir": {"type": "choice", "choice": "up-right", "confidence": 0.57, "probabilities": {"up": 0.33, "up-right": 0.62, "right": 0.02, "down-right": 0.0, "down": 0.0, "down-left": 0.0, "left": 0.01, "up-left": 0.02}}, "thumb_dir": {"type": "choice", "choice": "left", "confidence": 0.66, "probabilities": {"up": 0.0, "up-right": 0.0, "right": 0.0, "down-right": 0.01, "down": 0.0, "down-left": 0.2, "left": 0.7, "up-left": 0.09}}, "gesture": {"type": "choice", "choice": "open", "confidence": 0.98, "probabilities": {"relaxed": 0.01, "open": 0.98, "fist": 0.0, "point": 0.0, "thumbsup": 0.0, "grip": 0.01}}, "thumb_up": {"type": "noul", "noul": 0.07}}}
+{"key": "e136198a0426d27ed21b7c0a71756dfce936b236", "id": "hold_card/hand_l", "answers": {"finger_dir": {"type": "choice", "choice": "up-left", "confidence": 0.36, "probabilities": {"up": 0.04, "up-right": 0.04, "right": 0.02, "down-right": 0.02, "down": 0.01, "down-left": 0.18, "left": 0.25, "up-left": 0.44}}, "thumb_dir": {"type": "choice", "choice": "up-left", "confidence": 0.2, "probabilities": {"up": 0.16, "up-right": 0.22, "right": 0.04, "down-right": 0.04, "down": 0.02, "down-left": 0.11, "left": 0.11, "up-left": 0.3}}, "gesture": {"type": "choice", "choice": "grip", "confidence": 0.34, "probabilities": {"relaxed": 0.02, "open": 0.01, "fist": 0.03, "point": 0.12, "thumbsup": 0.37, "grip": 0.45}}, "thumb_up": {"type": "noul", "noul": 0.46}}}
+{"key": "40fa5a06475da18a768f86ad416d5cfac40d8c1e", "id": "cheer_jump/hand_l", "answers": {"finger_dir": {"type": "choice", "choice": "up-right", "confidence": 0.41, "probabilities": {"up": 0.32, "up-right": 0.48, "right": 0.03, "down-right": 0.02, "down": 0.01, "down-left": 0.02, "left": 0.01, "up-left": 0.11}}, "thumb_dir": {"type": "choice", "choice": "left", "confidence": 0.29, "probabilities": {"up": 0.04, "up-right": 0.04, "right": 0.05, "down-right": 0.04, "down": 0.04, "down-left": 0.17, "left": 0.38, "up-left": 0.24}}, "gesture": {"type": "choice", "choice": "fist", "confidence": 0.72, "probabilities": {"relaxed": 0.0, "open": 0.0, "fist": 0.77, "point": 0.02, "thumbsup": 0.07, "grip": 0.14}}, "thumb_up": {"type": "noul", "noul": 0.25}}}

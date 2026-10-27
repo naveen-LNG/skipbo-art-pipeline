@@ -1,0 +1,254 @@
+{
+ "source": "/private/tmp/claude-501/-Users-skipbo-Dev-playground-comfy/d64b7711-70dd-4437-b21d-4bddd3c40fc2/scratchpad/synth/rig/synth.json",
+ "skipped": [],
+ "stages": {
+  "container": {
+   "moved": [
+    "cheer_jump: hips translate -> character (jump)",
+    "run: hips translate -> character (jump)"
+   ],
+   "width": 189.8,
+   "height": 44.0,
+   "shadow_keys": [
+    "cheer_jump",
+    "run"
+   ]
+  },
+  "tail": {
+   "bones": [
+    "tail",
+    "tail2",
+    "tail3"
+   ],
+   "length": 111.8,
+   "fractions": [
+    0.0,
+    0.4,
+    0.72
+   ],
+   "attachments": {
+    "synth_tail": {
+     "vertices": 52,
+     "triangles": 72,
+     "padded": [
+      1,
+      0
+     ],
+     "fold_free": true
+    },
+    "synth_tail_up": "region, rigid on tail"
+   }
+  },
+  "torso": {
+   "chest_at": 75.2,
+   "moved_under_chest": [
+    "head_base",
+    "upperarm_l",
+    "upperarm_r"
+   ],
+   "mesh": {
+    "vertices": 45,
+    "triangles": 64,
+    "padded": [
+     0,
+     0
+    ]
+   },
+   "fold_free": true
+  },
+  "head": {
+   "face_at": [
+    0.1,
+    562.8
+   ],
+   "ears": [],
+   "ear_parts": false,
+   "attachments": {
+    "synth_head_base": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      0,
+      0
+     ]
+    },
+    "synth_head_happy": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      0,
+      0
+     ]
+    },
+    "synth_head_neutral": {
+     "vertices": 81,
+     "triangles": 128,
+     "padded": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  "feet": {
+   "feet": {
+    "boot_l": {
+     "target": "boot_l_ik",
+     "leg_ik": "leg_l"
+    },
+    "boot_r": {
+     "target": "boot_r_ik",
+     "leg_ik": "leg_r"
+    }
+   },
+   "baked": {
+    "walk": [
+     "boot_l",
+     "boot_r"
+    ],
+    "squat": [
+     "boot_l",
+     "boot_r"
+    ]
+   }
+  },
+  "anims": {
+   "idle": {
+    "duration": 2.0
+   },
+   "look_around": {
+    "duration": 3.2
+   },
+   "talk": {
+    "duration": 2.4,
+    "mouth": "synth_head_happy"
+   },
+   "breathing": [
+    "wave",
+    "cheer_jump",
+    "thumbs_up",
+    "point",
+    "hold_card",
+    "emotions",
+    "walk",
+    "run",
+    "squat",
+    "look_around",
+    "talk"
+   ]
+  },
+  "secondary": {
+   "idle": {
+    "periodic": true,
+    "tail": 0.6,
+    "chest": 0.0
+   },
+   "wave": {
+    "periodic": true,
+    "tail": 0.0,
+    "chest": 0.0
+   },
+   "cheer_jump": {
+    "periodic": true,
+    "tail": 7.0,
+    "tail_damped": 0.68,
+    "chest": 0.0
+   },
+   "thumbs_up": {
+    "periodic": true,
+    "tail": 0.0,
+    "chest": 0.0
+   },
+   "point": {
+    "periodic": true,
+    "tail": 0.0,
+    "chest": 0.0
+   },
+   "hold_card": {
+    "periodic": true,
+    "tail": 0.0,
+    "chest": 0.0
+   },
+   "emotions": {
+    "periodic": true,
+    "tail": 0.0,
+    "chest": 0.0
+   },
+   "walk": {
+    "periodic": true,
+    "tail": 8.3,
+    "chest": 0.0
+   },
+   "run": {
+    "periodic": false,
+    "tail": 4.7,
+    "tail_damped": 0.59,
+    "chest": 0.2
+   },
+   "squat": {
+    "periodic": true,
+    "tail": 4.8,
+    "chest": 0.0
+   },
+   "look_around": {
+    "periodic": false,
+    "tail": 0.0,
+    "chest": 0.1
+   },
+   "talk": {
+    "periodic": false,
+    "tail": 0.0,
+    "chest": 0.0
+   }
+  },
+  "underfill": {
+   "slots": {
+    "tail": 2,
+    "leg_l": 1,
+    "leg_r": 1,
+    "boot_l": 2,
+    "boot_r": 2,
+    "hips": 1,
+    "hand_l": 6,
+    "hand_r": 6,
+    "forearm_l": 1,
+    "forearm_r": 1,
+    "upperarm_l": 2,
+    "upperarm_r": 2,
+    "head": 3
+   },
+   "ring_units": 2.52
+  },
+  "organise": {
+   "red": 17,
+   "yellow": 3,
+   "green": 2
+  }
+ },
+ "bones": 23,
+ "slots": 30,
+ "animations": [
+  "idle",
+  "wave",
+  "cheer_jump",
+  "thumbs_up",
+  "point",
+  "hold_card",
+  "emotions",
+  "walk",
+  "run",
+  "squat",
+  "look_around",
+  "talk"
+ ],
+ "constraints": {
+  "ik": [
+   "leg_l_ik",
+   "leg_r_ik"
+  ],
+  "transform": [
+   "boot_l_rotate",
+   "boot_r_rotate"
+  ]
+ }
+}

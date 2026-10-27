@@ -1,0 +1,76 @@
+{
+  "prompt_id": "88d150d5-8154-4ffe-a663-d5293839e4c6",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 1325012029,
+  "fingerprint": "f16937591a4d",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint pose variants of some body pieces of the character from image_1 for 2D skeletal animation in Spine. Each row starts with the piece exactly as it is on the character, followed by its variants; a variant is the same piece at the same size and width, painted again in a different pose, so it can replace the first one at the same joint.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\nRow 1: left whole sleeve, then right whole sleeve. A whole sleeve is the purple shirt sleeve as ONE piece from the shoulder all the way down to the end of its rolled cuff, painted straight and upright with the shoulder end at the top, the same width as image_1's sleeve along its whole length, with one soft fold at the elbow and the rolled cuff at the bottom, and no paw. The right whole sleeve is the same sleeve for the other arm.\n\nEvery limb piece is painted straight and upright, the same way up as its first piece, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself; no piece has a flat, straight or slanted cut edge. Each variant keeps exactly the colours, width and painting of its first piece; only the pose changes.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows; each variant the same size and width as the first piece of its row.\n2. Limb pieces upright with the joining end at the top, every joining end fully rounded.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.",
+  "vars": {
+    "ASPECT": "1:1",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "POSES": "Row 1: left whole sleeve, then right whole sleeve. A whole sleeve is the purple shirt sleeve as ONE piece from the shoulder all the way down to the end of its rolled cuff, painted straight and upright with the shoulder end at the top, the same width as image_1's sleeve along its whole length, with one soft fold at the elbow and the rolled cuff at the bottom, and no paw. The right whole sleeve is the same sleeve for the other arm.",
+    "CHARACTER": "A cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.",
+    "PREFIX": "agent/skipbo/fox-sleeves",
+    "IMAGE_1": "agent/skipbo/master_9b63fad707.png",
+    "IMAGE_2": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+  },
+  "inputs": {
+    "1": "master.png",
+    "2": "/work/comfy/plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas-small.jpg"
+  },
+  "criteria": [
+    "two whole sleeves, shoulder to cuff, upright",
+    "same width as the master sleeve, no paw"
+  ],
+  "outputs": [
+    "runs/fox-sleeves/1012_184044_s1325012029_n2_00.png"
+  ],
+  "seconds": 126.9,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nPaint pose variants of some body pieces of the character from image_1 for 2D skeletal animation in Spine. Each row starts with the piece exactly as it is on the character, followed by its variants; a variant is the same piece at the same size and width, painted again in a different pose, so it can replace the first one at the same joint.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\nRow 1: left whole sleeve, then right whole sleeve. A whole sleeve is the purple shirt sleeve as ONE piece from the shoulder all the way down to the end of its rolled cuff, painted straight and upright with the shoulder end at the top, the same width as image_1's sleeve along its whole length, with one soft fold at the elbow and the rolled cuff at the bottom, and no paw. The right whole sleeve is the same sleeve for the other arm.\n\nEvery limb piece is painted straight and upright, the same way up as its first piece, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself; no piece has a flat, straight or slanted cut edge. Each variant keeps exactly the colours, width and painting of its first piece; only the pose changes.\n\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. All pieces share one scale, the scale of the body pieces in image_1. The sheet contains only these pieces, painted fully opaque, with no faint, ghosted or half-transparent shapes anywhere, and with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows; each variant the same size and width as the first piece of its row.\n2. Limb pieces upright with the joining end at the top, every joining end fully rounded.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth, no outlines.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "1:1",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/master_9b63fad707.png"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/fox-sleeves"
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+ "beaver-body-parts/02": {
+  "variant": "relaxed",
+  "facing": "back",
+  "finger_deg": 272.9,
+  "thumb_deg": 182.9,
+  "jev_gesture": "thumbsup",
+  "jev_gesture_p": 0.08,
+  "jev_finger_deg": 193.4,
+  "jev_thumb_deg": 181.8,
+  "painted_from_points": "l",
+  "painted_from_jev": "l",
+  "jev_p_palm": 0.28
+ },
+ "beaver-body-parts/03": {
+  "variant": "relaxed",
+  "facing": "back",
+  "finger_deg": 267.1,
+  "thumb_deg": 357.1,
+  "jev_gesture": "thumbsup",
+  "jev_gesture_p": 0.09,
+  "jev_finger_deg": 325.4,
+  "jev_thumb_deg": 359.1,
+  "painted_from_points": "r",
+  "painted_from_jev": "r",
+  "jev_p_palm": 0.42
+ },
+ "beaver-hands-parts/06": {
+  "variant": "thumbsup",
+  "facing": "palm",
+  "finger_deg": 7.7,
+  "thumb_deg": 97.7,
+  "jev_gesture": "thumbsup",
+  "jev_gesture_p": 0.99,
+  "jev_finger_deg": 58.4,
+  "jev_thumb_deg": 85.7,
+  "painted_from_points": "l",
+  "painted_from_jev": "l",
+  "jev_p_palm": 0.41
+ },
+ "beaver-hands-parts/07": {
+  "variant": "fist",
+  "facing": "back",
+  "finger_deg": 273.2,
+  "thumb_deg": 3.2,
+  "jev_gesture": "fist",
+  "jev_gesture_p": 0.94,
+  "jev_finger_deg": 273.8,
+  "jev_thumb_deg": 352.9,
+  "painted_from_points": "r",
+  "painted_from_jev": "r",
+  "jev_p_palm": 0.46
+ },
+ "beaver-hands-parts/10": {
+  "variant": "grip",
+  "facing": "back",
+  "finger_deg": 266.1,
+  "thumb_deg": 176.1,
+  "jev_gesture": "grip",
+  "jev_gesture_p": 0.71,
+  "jev_finger_deg": 231.8,
+  "jev_thumb_deg": 179.3,
+  "painted_from_points": "l",
+  "painted_from_jev": "l",
+  "jev_p_palm": 0.47
+ },
+ "beaver-hands-parts/11": {
+  "variant": "open",
+  "facing": "palm",
+  "finger_deg": 270.0,
+  "thumb_deg": 0.0,
+  "jev_gesture": "relaxed",
+  "jev_gesture_p": 0.2,
+  "jev_finger_deg": 264.7,
+  "jev_thumb_deg": 1.7,
+  "painted_from_points": "l",
+  "painted_from_jev": "l",
+  "jev_p_palm": 0.51
+ },
+ "beaver-point-palm-parts/02": {
+  "variant": "point",
+  "facing": "palm",
+  "finger_deg": 261.8,
+  "thumb_deg": 171.8,
+  "jev_gesture": "point",
+  "jev_gesture_p": 0.93,
+  "jev_finger_deg": 262.2,
+  "jev_thumb_deg": 180.0,
+  "painted_from_points": "r",
+  "painted_from_jev": "r",
+  "jev_p_palm": 0.5
+ }
+}

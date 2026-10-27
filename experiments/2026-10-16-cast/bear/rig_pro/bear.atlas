@@ -1,0 +1,347 @@
+images/bear_arm_l.png
+size: 936,1329
+filter: Linear,Linear
+bear_arm_l
+bounds: 0,0,936,1329
+
+images/bear_arm_l_under.png
+size: 936,1329
+filter: Linear,Linear
+bear_arm_l_under
+bounds: 0,0,936,1329
+
+images/bear_arm_r.png
+size: 941,1333
+filter: Linear,Linear
+bear_arm_r
+bounds: 0,0,941,1333
+
+images/bear_arm_r_under.png
+size: 941,1333
+filter: Linear,Linear
+bear_arm_r_under
+bounds: 0,0,941,1333
+
+images/bear_clog_l.png
+size: 432,344
+filter: Linear,Linear
+bear_clog_l
+bounds: 0,0,432,344
+
+images/bear_clog_l_under.png
+size: 452,364
+filter: Linear,Linear
+bear_clog_l_under
+bounds: 0,0,452,364
+
+images/bear_clog_r.png
+size: 432,344
+filter: Linear,Linear
+bear_clog_r
+bounds: 0,0,432,344
+
+images/bear_clog_r_under.png
+size: 452,364
+filter: Linear,Linear
+bear_clog_r_under
+bounds: 0,0,452,364
+
+images/bear_hand_l.png
+size: 270,343
+filter: Linear,Linear
+bear_hand_l
+bounds: 0,0,270,343
+
+images/bear_hand_l_fist.png
+size: 315,414
+filter: Linear,Linear
+bear_hand_l_fist
+bounds: 0,0,315,414
+
+images/bear_hand_l_fist_under.png
+size: 341,440
+filter: Linear,Linear
+bear_hand_l_fist_under
+bounds: 0,0,341,440
+
+images/bear_hand_l_grip.png
+size: 515,507
+filter: Linear,Linear
+bear_hand_l_grip
+bounds: 0,0,515,507
+
+images/bear_hand_l_grip_under.png
+size: 543,535
+filter: Linear,Linear
+bear_hand_l_grip_under
+bounds: 0,0,543,535
+
+images/bear_hand_l_open.png
+size: 416,480
+filter: Linear,Linear
+bear_hand_l_open
+bounds: 0,0,416,480
+
+images/bear_hand_l_open_under.png
+size: 444,508
+filter: Linear,Linear
+bear_hand_l_open_under
+bounds: 0,0,444,508
+
+images/bear_hand_l_point.png
+size: 1283,1412
+filter: Linear,Linear
+bear_hand_l_point
+bounds: 0,0,1283,1412
+
+images/bear_hand_l_point_under.png
+size: 1351,1480
+filter: Linear,Linear
+bear_hand_l_point_under
+bounds: 0,0,1351,1480
+
+images/bear_hand_l_thumbsup.png
+size: 394,338
+filter: Linear,Linear
+bear_hand_l_thumbsup
+bounds: 0,0,394,338
+
+images/bear_hand_l_thumbsup_under.png
+size: 420,364
+filter: Linear,Linear
+bear_hand_l_thumbsup_under
+bounds: 0,0,420,364
+
+images/bear_hand_l_under.png
+size: 290,363
+filter: Linear,Linear
+bear_hand_l_under
+bounds: 0,0,290,363
+
+images/bear_hand_r.png
+size: 270,344
+filter: Linear,Linear
+bear_hand_r
+bounds: 0,0,270,344
+
+images/bear_hand_r_fist.png
+size: 315,414
+filter: Linear,Linear
+bear_hand_r_fist
+bounds: 0,0,315,414
+
+images/bear_hand_r_fist_under.png
+size: 339,438
+filter: Linear,Linear
+bear_hand_r_fist_under
+bounds: 0,0,339,438
+
+images/bear_hand_r_grip.png
+size: 515,507
+filter: Linear,Linear
+bear_hand_r_grip
+bounds: 0,0,515,507
+
+images/bear_hand_r_grip_under.png
+size: 543,535
+filter: Linear,Linear
+bear_hand_r_grip_under
+bounds: 0,0,543,535
+
+images/bear_hand_r_open.png
+size: 416,480
+filter: Linear,Linear
+bear_hand_r_open
+bounds: 0,0,416,480
+
+images/bear_hand_r_open_under.png
+size: 442,506
+filter: Linear,Linear
+bear_hand_r_open_under
+bounds: 0,0,442,506
+
+images/bear_hand_r_point.png
+size: 1283,1412
+filter: Linear,Linear
+bear_hand_r_point
+bounds: 0,0,1283,1412
+
+images/bear_hand_r_point_under.png
+size: 1351,1480
+filter: Linear,Linear
+bear_hand_r_point_under
+bounds: 0,0,1351,1480
+
+images/bear_hand_r_thumbsup.png
+size: 394,338
+filter: Linear,Linear
+bear_hand_r_thumbsup
+bounds: 0,0,394,338
+
+images/bear_hand_r_thumbsup_under.png
+size: 420,364
+filter: Linear,Linear
+bear_hand_r_thumbsup_under
+bounds: 0,0,420,364
+
+images/bear_hand_r_under.png
+size: 290,364
+filter: Linear,Linear
+bear_hand_r_under
+bounds: 0,0,290,364
+
+images/bear_head_angry.png
+size: 577,527
+filter: Linear,Linear
+bear_head_angry
+bounds: 0,0,577,527
+
+images/bear_head_angry_under.png
+size: 577,527
+filter: Linear,Linear
+bear_head_angry_under
+bounds: 0,0,577,527
+
+images/bear_head_base.png
+size: 516,453
+filter: Linear,Linear
+bear_head_base
+bounds: 0,0,516,453
+
+images/bear_head_base_under.png
+size: 516,453
+filter: Linear,Linear
+bear_head_base_under
+bounds: 0,0,516,453
+
+images/bear_head_blink.png
+size: 577,529
+filter: Linear,Linear
+bear_head_blink
+bounds: 0,0,577,529
+
+images/bear_head_blink_under.png
+size: 577,529
+filter: Linear,Linear
+bear_head_blink_under
+bounds: 0,0,577,529
+
+images/bear_head_happy.png
+size: 575,528
+filter: Linear,Linear
+bear_head_happy
+bounds: 0,0,575,528
+
+images/bear_head_happy_under.png
+size: 575,528
+filter: Linear,Linear
+bear_head_happy_under
+bounds: 0,0,575,528
+
+images/bear_head_laugh.png
+size: 577,526
+filter: Linear,Linear
+bear_head_laugh
+bounds: 0,0,577,526
+
+images/bear_head_laugh_under.png
+size: 577,526
+filter: Linear,Linear
+bear_head_laugh_under
+bounds: 0,0,577,526
+
+images/bear_head_neutral.png
+size: 576,527
+filter: Linear,Linear
+bear_head_neutral
+bounds: 0,0,576,527
+
+images/bear_head_neutral_under.png
+size: 576,527
+filter: Linear,Linear
+bear_head_neutral_under
+bounds: 0,0,576,527
+
+images/bear_head_sad.png
+size: 576,527
+filter: Linear,Linear
+bear_head_sad
+bounds: 0,0,576,527
+
+images/bear_head_sad_under.png
+size: 576,527
+filter: Linear,Linear
+bear_head_sad_under
+bounds: 0,0,576,527
+
+images/bear_head_surprised.png
+size: 576,527
+filter: Linear,Linear
+bear_head_surprised
+bounds: 0,0,576,527
+
+images/bear_head_surprised_under.png
+size: 576,527
+filter: Linear,Linear
+bear_head_surprised_under
+bounds: 0,0,576,527
+
+images/bear_head_talking.png
+size: 577,527
+filter: Linear,Linear
+bear_head_talking
+bounds: 0,0,577,527
+
+images/bear_head_talking_under.png
+size: 577,527
+filter: Linear,Linear
+bear_head_talking_under
+bounds: 0,0,577,527
+
+images/bear_head_wink.png
+size: 577,527
+filter: Linear,Linear
+bear_head_wink
+bounds: 0,0,577,527
+
+images/bear_head_wink_under.png
+size: 577,527
+filter: Linear,Linear
+bear_head_wink_under
+bounds: 0,0,577,527
+
+images/bear_hips.png
+size: 974,892
+filter: Linear,Linear
+bear_hips
+bounds: 0,0,974,892
+
+images/bear_hips_under.png
+size: 994,912
+filter: Linear,Linear
+bear_hips_under
+bounds: 0,0,994,912
+
+images/bear_prop_flag.png
+size: 763,1136
+filter: Linear,Linear
+bear_prop_flag
+bounds: 0,0,763,1136
+
+images/bear_prop_hurdle.png
+size: 1127,734
+filter: Linear,Linear
+bear_prop_hurdle
+bounds: 0,0,1127,734
+
+images/bear_torso.png
+size: 962,626
+filter: Linear,Linear
+bear_torso
+bounds: 0,0,962,626
+
+images/shadow.png
+size: 96,28
+filter: Linear,Linear
+shadow
+bounds: 0,0,96,28

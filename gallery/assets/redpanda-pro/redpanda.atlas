@@ -1,0 +1,172 @@
+redpanda_0.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+redpanda_arm_l
+bounds: 2,2,554,802
+redpanda_arm_l_under
+bounds: 2,808,554,802
+redpanda_arm_r
+bounds: 560,2,430,750
+redpanda_arm_r_under
+bounds: 560,756,430,750
+redpanda_boot_l_tiptoe
+bounds: 2,1614,174,362
+redpanda_boot_l_tiptoe_under
+bounds: 358,1614,170,357
+offsets: 8,9,186,375
+redpanda_boot_l_under
+bounds: 1540,589,129,197
+offsets: 7,6,142,210
+redpanda_boot_r_tiptoe
+bounds: 180,1614,174,361
+redpanda_boot_r_tiptoe_under
+bounds: 1540,1482,169,357
+offsets: 9,8,187,374
+redpanda_boot_r_under
+bounds: 1540,790,129,196
+offsets: 7,6,142,210
+redpanda_ear_l_under
+bounds: 1540,990,124,138
+offsets: 3,4,129,144
+redpanda_hand_l
+bounds: 1312,1948,89,97
+offsets: 2,1,93,100
+redpanda_hand_l_grip_under
+bounds: 1528,1843,177,201
+offsets: 42,39,271,277
+redpanda_hand_l_open_under
+bounds: 1312,1719,212,225
+offsets: 19,24,254,264
+redpanda_hand_l_point
+bounds: 1686,2,342,564
+offsets: 33,14,416,603
+redpanda_hand_l_point_under
+bounds: 994,2,342,583
+offsets: 53,35,456,644
+redpanda_hand_r
+bounds: 1405,1948,89,97
+offsets: 1,1,92,100
+redpanda_hand_r_point
+bounds: 1686,570,342,564
+offsets: 41,14,416,603
+redpanda_hand_r_point_under
+bounds: 1340,2,342,583
+offsets: 60,33,454,641
+redpanda_head_blink
+bounds: 986,1719,322,248
+redpanda_head_neutral
+bounds: 1713,1482,323,248
+redpanda_head_neutral_under
+bounds: 1713,1734,323,248
+redpanda_prop_flag
+bounds: 560,1510,422,528
+redpanda_prop_hurdle
+bounds: 1540,1138,504,340
+redpanda_tail
+bounds: 994,589,542,561
+redpanda_tail_under
+bounds: 994,1154,542,561
+shadow
+bounds: 1709,1986,48,14
+
+redpanda_1.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+redpanda_boot_l
+bounds: 824,504,130,193
+offsets: 2,2,134,201
+redpanda_boot_r
+bounds: 218,1062,128,193
+offsets: 2,2,132,202
+redpanda_ear_l
+bounds: 540,1621,119,134
+redpanda_ear_r
+bounds: 501,1809,130,146
+redpanda_ear_r_under
+bounds: 362,1809,135,150
+offsets: 2,4,140,156
+redpanda_hand_l_fist
+bounds: 183,1645,160,190
+redpanda_hand_l_fist_under
+bounds: 183,1285,158,194
+offsets: 10,10,178,208
+redpanda_hand_l_grip
+bounds: 2,1488,177,195
+offsets: 33,30,253,259
+redpanda_hand_l_open
+bounds: 703,730,212,219
+offsets: 10,15,236,246
+redpanda_hand_l_thumbsup
+bounds: 2,1886,192,158
+redpanda_hand_l_thumbsup_under
+bounds: 379,1455,188,162
+offsets: 10,10,208,176
+redpanda_hand_l_under
+bounds: 1955,2,90,100
+offsets: 6,6,102,109
+redpanda_hand_r_fist
+bounds: 198,1839,160,190
+redpanda_hand_r_fist_under
+bounds: 345,1259,156,192
+offsets: 10,10,176,206
+redpanda_hand_r_grip
+bounds: 2,1687,177,195
+offsets: 43,30,253,259
+redpanda_hand_r_grip_under
+bounds: 2,1285,177,199
+offsets: 52,39,271,277
+redpanda_hand_r_open
+bounds: 2,1062,212,219
+offsets: 14,15,236,246
+redpanda_hand_r_open_under
+bounds: 487,730,212,224
+offsets: 22,23,252,262
+redpanda_hand_r_thumbsup
+bounds: 183,1483,192,158
+redpanda_hand_r_thumbsup_under
+bounds: 347,1645,189,160
+offsets: 10,10,208,174
+redpanda_hand_r_under
+bounds: 1955,106,90,100
+offsets: 6,6,102,109
+redpanda_head_angry
+bounds: 1296,502,318,246
+redpanda_head_angry_under
+bounds: 1618,502,318,246
+redpanda_head_base
+bounds: 246,504,285,222
+redpanda_head_base_under
+bounds: 535,504,285,222
+redpanda_head_blink_under
+bounds: 2,2,322,248
+redpanda_head_happy
+bounds: 328,2,322,248
+redpanda_head_happy_under
+bounds: 654,2,322,248
+redpanda_head_laugh
+bounds: 980,2,321,246
+redpanda_head_laugh_under
+bounds: 1305,2,321,246
+redpanda_head_sad
+bounds: 1630,2,321,246
+redpanda_head_sad_under
+bounds: 980,252,321,246
+redpanda_head_surprised
+bounds: 1305,252,321,246
+redpanda_head_surprised_under
+bounds: 1630,252,321,246
+redpanda_head_talking
+bounds: 650,254,319,246
+redpanda_head_talking_under
+bounds: 973,502,319,246
+redpanda_head_wink
+bounds: 2,254,320,246
+redpanda_head_wink_under
+bounds: 326,254,320,246
+redpanda_hips
+bounds: 2,802,240,256
+redpanda_hips_under
+bounds: 246,730,237,257
+offsets: 6,7,249,264
+redpanda_torso
+bounds: 2,504,240,294

@@ -1,0 +1,9 @@
+# the rig's QA renders: only report.json and the two moves this experiment changed are kept
+beaver/rig/qa/*
+!beaver/rig/qa/report.json
+!beaver/rig/qa/squat*
+!beaver/rig/qa/jump_hurdle*
+!beaver/rig/qa/setup_vs_master.png
+beaver_garden/rig/qa/*
+!beaver_garden/rig/qa/report.json
+!beaver_garden/rig/qa/plant_seed*

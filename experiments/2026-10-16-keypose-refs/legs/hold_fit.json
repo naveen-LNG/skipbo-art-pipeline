@@ -1,0 +1,16 @@
+{
+ "s5": {
+  "thigh_sy": 1.1,
+  "shin_sy": 0.9,
+  "shin_len": 1.2,
+  "kdx": -20,
+  "kdy": -40
+ },
+ "j5": {
+  "thigh_sy": 1.0,
+  "shin_sy": 0.7,
+  "shin_len": 1.2,
+  "kdx": 0.0,
+  "kdy": 0.0
+ }
+}

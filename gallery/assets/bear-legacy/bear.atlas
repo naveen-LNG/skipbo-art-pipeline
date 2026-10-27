@@ -1,0 +1,71 @@
+bear_0.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+bear_arm_l
+bounds: 2,672,468,664
+bear_arm_r
+bounds: 2,2,470,666
+bear_clog_l
+bounds: 515,1855,216,172
+bear_clog_r
+bounds: 735,1855,216,172
+bear_hand_l
+bounds: 955,1854,126,162
+offsets: 5,6,135,172
+bear_hand_l_fist
+bounds: 1499,718,158,207
+bear_hand_l_grip
+bounds: 1357,929,188,194
+offsets: 36,36,258,254
+bear_hand_l_open
+bounds: 1097,1746,197,227
+offsets: 4,7,208,240
+bear_hand_l_point
+bounds: 2,1340,509,608
+offsets: 60,59,642,706
+bear_hand_l_thumbsup
+bounds: 1661,718,197,169
+bear_hand_r
+bounds: 1921,2,125,162
+offsets: 5,6,135,172
+bear_hand_r_fist
+bounds: 1277,718,158,207
+bear_hand_r_grip
+bounds: 1277,1127,188,194
+offsets: 34,36,258,254
+bear_hand_r_open
+bounds: 1298,1746,197,227
+offsets: 7,7,208,240
+bear_hand_r_point
+bounds: 474,672,509,608
+offsets: 73,59,642,706
+bear_hand_r_thumbsup
+bounds: 1661,891,197,169
+bear_head_angry
+bounds: 1736,452,287,262
+bear_head_base
+bounds: 1097,1516,256,226
+bear_head_blink
+bounds: 515,1588,287,263
+bear_head_happy
+bounds: 987,718,286,262
+bear_head_laugh
+bounds: 806,1588,287,262
+bear_head_neutral
+bounds: 987,984,286,262
+bear_head_sad
+bounds: 987,1250,286,262
+bear_head_surprised
+bounds: 1154,452,287,262
+bear_head_talking
+bounds: 1445,452,287,262
+bear_head_wink
+bounds: 862,373,288,262
+bear_hips
+bounds: 1430,2,487,446
+bear_prop_flag
+bounds: 476,2,382,568
+bear_prop_hurdle
+bounds: 862,2,564,367
+bear_torso
+bounds: 515,1284,468,300

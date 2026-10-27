@@ -1,0 +1,29 @@
+IMAGE ROLES:
+image_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.
+image_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.
+
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.
+Shading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.
+Colour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.
+Edges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.
+Surfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.
+Eyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.
+
+TASK:
+Repaint the character from image_1 as a sheet of separate body pieces for 2D skeletal animation in Spine. Each piece is painted whole, including the area that is normally hidden under the piece in front of it, so that the pieces can rotate at their joints without showing gaps. Joint ends are rounded.
+
+THE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:
+{{PIECES}}
+
+Cutting rules for every piece in the list: a piece listed separately is painted with empty background all around it and never joined to a neighbour. Each arm is in three pieces (upper arm, forearm, hand) and each leg in two (leg, foot). Every limb piece is painted straight and upright, with the end that joins the body at the top. Every end that joins another piece is a full rounded end as wide as the piece itself, like the end of a sausage: the top of each upper arm, both ends of each forearm, the wrist end of each hand, the top of each leg, the ankle end of each foot and the root of the tail. No piece has a flat, straight or slanted cut edge. The torso is painted whole as it looks with the arms taken away: both shoulders are rounded, and the sides of the body that the arms normally cover are painted all the way down to the waist. The hips piece is painted whole, including the crotch between the legs. A leg in trousers is the trouser leg alone, from just above the crotch down to its cuff at the bottom: the cuff is painted as it looks from the front, with no hole or inside showing, and the foot is its own piece. The head base carries only the fixed features of the head; the eyes, eyebrows and mouth belong to the face sheet and appear nowhere on this sheet.
+All pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these pieces, with no labels, numbers, text, guides or shadows.
+
+FINAL CHECK:
+1. Exactly the pieces in the list, in its rows, each clearly cut from the character in image_1 in its colours and painting.
+2. Each arm is in three pieces and each leg in two; every head item and neck item is separate from the head and torso; no eyes, eyebrows or mouths anywhere on the sheet.
+3. Painted like the shipped atlas: airbrushed soft volume, smooth surfaces, no outlines; every joint end fully rounded, no flat cut edges; torso sides and hips crotch painted complete.
+4. Every piece separated by empty background; flat light grey background; no text.
+
+CHARACTER NOTES (from the art director, they override image_1 where they differ):
+{{CHARACTER}}

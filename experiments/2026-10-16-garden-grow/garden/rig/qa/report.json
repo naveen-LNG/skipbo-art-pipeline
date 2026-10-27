@@ -1,0 +1,282 @@
+{
+  "structure": {
+    "pass": true,
+    "pivot_off_joint": {},
+    "reversed_bones": {},
+    "weak_joints": {},
+    "slivers": {},
+    "fragments": {},
+    "draw_order": {},
+    "variant_misfit": {},
+    "mesh_fold": {}
+  },
+  "setup": {
+    "pass": true,
+    "silhouette_iou": 0.916
+  },
+  "seams": {
+    "pass": false,
+    "seams": {
+      "hips/tail": 0.0,
+      "hips/boot_l": 0.0,
+      "hips/boot_r": 0.0,
+      "upperarm_l/hand_l": 0.0,
+      "upperarm_r/hand_r": 0.0,
+      "torso/tail": 0.02,
+      "torso/hips": 0.024,
+      "torso/upperarm_l": 0.0,
+      "torso/upperarm_r": 0.0,
+      "head/torso": 0.0,
+      "hand_l/torso": 0.017,
+      "upperarm_l/torso": 0.032,
+      "prop_can/hips": 0.0,
+      "prop_can/torso": 0.101,
+      "hand_l/prop_plant": 0.0,
+      "upperarm_l/prop_plant": 0.011
+    }
+  },
+  "thumbs": {
+    "pass": true,
+    "thumbs": {
+      "point": 5.0,
+      "thumbs_up": 10.0,
+      "hold_card": 10.0,
+      "wave": 10.0,
+      "cheer_jump": 2.4
+    },
+    "unchecked": {}
+  },
+  "sockets": {
+    "pass": false,
+    "sockets": {
+      "beaver_hand_l/beaver_arm_l": {
+        "spill": 0.042,
+        "spill_at": "plant_seed@1.60",
+        "off": 0.26,
+        "off_at": "cheer_jump@1.20"
+      },
+      "beaver_hand_r/beaver_arm_r": {
+        "spill": 0.019,
+        "spill_at": "plant_seed@0.50",
+        "off": 0.34,
+        "off_at": "plant_seed@1.60"
+      }
+    }
+  },
+  "landmarks": {
+    "pass": true,
+    "landmarks": {
+      "shoulder_l": 0.0,
+      "elbow_l": 0.01,
+      "wrist_l": 14.9,
+      "ankle_l": 0.02,
+      "shoulder_r": 0.0,
+      "elbow_r": 0.01,
+      "wrist_r": 14.9,
+      "ankle_r": 0.02
+    },
+    "failed": {}
+  },
+  "layer_order": {
+    "pass": true,
+    "wrong": {}
+  },
+  "blink": {
+    "pass": true,
+    "frames": 31,
+    "duration": 1.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "idle": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "wave": {
+    "pass": true,
+    "frames": 91,
+    "duration": 3.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "cheer_jump": {
+    "pass": true,
+    "frames": 58,
+    "duration": 1.9,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "thumbs_up": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "point": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "hold_card": {
+    "pass": true,
+    "frames": 73,
+    "duration": 2.4,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "emotions": {
+    "pass": true,
+    "frames": 217,
+    "duration": 7.2,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "walk": {
+    "pass": true,
+    "frames": 31,
+    "duration": 1.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "run": {
+    "pass": true,
+    "frames": 20,
+    "duration": 0.64,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "squat": {
+    "pass": true,
+    "frames": 61,
+    "duration": 2.0,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "plant_seed": {
+    "pass": true,
+    "frames": 79,
+    "duration": 2.6,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "water": {
+    "pass": true,
+    "frames": 115,
+    "duration": 3.8,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "grow_0": {
+    "pass": true,
+    "frames": 28,
+    "duration": 0.9,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "grow_1": {
+    "pass": true,
+    "frames": 28,
+    "duration": 0.9,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "grow_2": {
+    "pass": true,
+    "frames": 28,
+    "duration": 0.9,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "grow_3": {
+    "pass": true,
+    "frames": 28,
+    "duration": 0.9,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  },
+  "grow_4": {
+    "pass": true,
+    "frames": 28,
+    "duration": 0.9,
+    "detached": {},
+    "joint_holes": {},
+    "unstitched": {},
+    "jerky_bones": {},
+    "occluded": {},
+    "mesh_fold": {}
+  }
+}

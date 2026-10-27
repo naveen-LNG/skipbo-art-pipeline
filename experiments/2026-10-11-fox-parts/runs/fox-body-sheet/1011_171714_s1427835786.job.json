@@ -1,0 +1,73 @@
+{
+  "prompt_id": "d2d0884c-3bdb-40c5-ae18-90dc987a282d",
+  "template": "nb-pro",
+  "engine": "nb",
+  "seed": 1427835786,
+  "fingerprint": "8dfdfc784518",
+  "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nRepaint the character from image_1 as a sheet of separate body pieces for 2D skeletal animation in Spine. Each piece is painted whole, including the area that is normally hidden under the piece in front of it, so that the pieces can rotate at their joints without showing gaps. Joint ends are rounded.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\nRow 1: head base (the furry orange fox head with cream cheeks and muzzle and the dark-brown nose, plain fur forehead and eye areas, plain cream muzzle below the nose), left ear, right ear (pointed orange ears with dark-brown tips).\nRow 2: torso (the blue dungaree bib with its two orange buttons and front pocket over the purple shirt, continuing up into a short orange fur neck), left upper arm, right upper arm (purple sleeve from shoulder to elbow).\nRow 3: left forearm, right forearm (purple sleeve from elbow to wrist with its rolled cuff), left hand, right hand (orange fox paws, open and relaxed), hips (the top of the blue dungaree trousers below the bib, with rounded leg openings).\nRow 4: left leg, right leg (blue dungaree trouser leg from hip to ankle), left boot, right boot (orange boots), tail (the big bushy orange tail with its cream tip, with a rounded base).\n\nCutting rules for every piece in the list: a piece listed separately is painted with empty background all around it and never joined to a neighbour. Each arm is in three pieces (upper arm, forearm, hand) and each leg in two (leg, foot). The head base carries only the fixed features of the head; the eyes, eyebrows and mouth belong to the face sheet and appear nowhere on this sheet.\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these pieces, with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows, each clearly cut from the character in image_1 in its colours and painting.\n2. Each arm is in three pieces and each leg in two; every head item and neck item is separate from the head and torso; no eyes, eyebrows or mouths anywhere on the sheet.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth surfaces, no outlines; joint ends rounded and hidden areas painted complete.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.",
+  "vars": {
+    "ASPECT": "1:1",
+    "SIZE": "2K",
+    "TEMP": 0.4,
+    "COUNT": 1,
+    "CHARACTER": "A cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.",
+    "PIECES": "Row 1: head base (the furry orange fox head with cream cheeks and muzzle and the dark-brown nose, plain fur forehead and eye areas, plain cream muzzle below the nose), left ear, right ear (pointed orange ears with dark-brown tips).\nRow 2: torso (the blue dungaree bib with its two orange buttons and front pocket over the purple shirt, continuing up into a short orange fur neck), left upper arm, right upper arm (purple sleeve from shoulder to elbow).\nRow 3: left forearm, right forearm (purple sleeve from elbow to wrist with its rolled cuff), left hand, right hand (orange fox paws, open and relaxed), hips (the top of the blue dungaree trousers below the bib, with rounded leg openings).\nRow 4: left leg, right leg (blue dungaree trouser leg from hip to ankle), left boot, right boot (orange boots), tail (the big bushy orange tail with its cream tip, with a rounded base).",
+    "PREFIX": "agent/skipbo/fox-body-sheet",
+    "IMAGE_1": "agent/skipbo/fox_master_9b63fad707.png",
+    "IMAGE_2": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+  },
+  "inputs": {
+    "1": "experiments/2026-10-11-fox-parts/fox_master.png",
+    "2": "plugin/skills/skipbo-art/references/styles/blocks-characters/refs/shipped-hippo-atlas-small.jpg"
+  },
+  "criteria": [],
+  "outputs": [
+    "experiments/2026-10-11-fox-parts/runs/fox-body-sheet/1011_171714_s1427835786_n2_00.png"
+  ],
+  "seconds": 32.3,
+  "client_id": "claude-skipbo",
+  "graph": {
+    "1": {
+      "class_type": "NanoBananaAIO",
+      "inputs": {
+        "model_name": "gemini-3-pro-image-preview",
+        "prompt": "IMAGE ROLES:\nimage_1 = THE CHARACTER, finished and approved. Every piece you paint is cut from this exact character: same colours, same shading, same proportions.\nimage_2 = ATLAS FORMAT. An animation atlas of a character already shipped in this game: it shows how a character is broken into separate painted pieces laid out apart from each other on an empty background. Take from it the idea of the layout and the way the pieces are cut and painted; its species and colours are not part of this picture.\n\nART STYLE (taken from the shipped characters in the style images):\nSoft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.\nShading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.\nColour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.\nEdges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.\nSurfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.\nEyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.\n\nTASK:\nRepaint the character from image_1 as a sheet of separate body pieces for 2D skeletal animation in Spine. Each piece is painted whole, including the area that is normally hidden under the piece in front of it, so that the pieces can rotate at their joints without showing gaps. Joint ends are rounded.\n\nTHE PIECES, painted exactly as listed, each piece once, laid out in these rows from left to right:\nRow 1: head base (the furry orange fox head with cream cheeks and muzzle and the dark-brown nose, plain fur forehead and eye areas, plain cream muzzle below the nose), left ear, right ear (pointed orange ears with dark-brown tips).\nRow 2: torso (the blue dungaree bib with its two orange buttons and front pocket over the purple shirt, continuing up into a short orange fur neck), left upper arm, right upper arm (purple sleeve from shoulder to elbow).\nRow 3: left forearm, right forearm (purple sleeve from elbow to wrist with its rolled cuff), left hand, right hand (orange fox paws, open and relaxed), hips (the top of the blue dungaree trousers below the bib, with rounded leg openings).\nRow 4: left leg, right leg (blue dungaree trouser leg from hip to ankle), left boot, right boot (orange boots), tail (the big bushy orange tail with its cream tip, with a rounded base).\n\nCutting rules for every piece in the list: a piece listed separately is painted with empty background all around it and never joined to a neighbour. Each arm is in three pieces (upper arm, forearm, hand) and each leg in two (leg, foot). The head base carries only the fixed features of the head; the eyes, eyebrows and mouth belong to the face sheet and appear nowhere on this sheet.\nAll pieces are laid out on one flat plain light grey background. Every piece stands apart from every other piece with a clear gap of empty background around it, at least as wide as one of the character's fingers. Pieces never touch, never overlap, and stay fully inside the frame. Each piece is shown flat, facing the viewer, upright, and all pieces share one scale. The sheet contains only these pieces, with no labels, numbers, text, guides or shadows.\n\nFINAL CHECK:\n1. Exactly the pieces in the list, in its rows, each clearly cut from the character in image_1 in its colours and painting.\n2. Each arm is in three pieces and each leg in two; every head item and neck item is separate from the head and torso; no eyes, eyebrows or mouths anywhere on the sheet.\n3. Painted like the shipped atlas: airbrushed soft volume, smooth surfaces, no outlines; joint ends rounded and hidden areas painted complete.\n4. Every piece separated by empty background; flat light grey background; no text.\n\nCHARACTER NOTES (from the art director, they override image_1 where they differ):\nA cheerful young fox: bright orange fur with a cream muzzle, cheeks, chest tuft and tail tip, dark-brown ear tips and nose, a big bushy tail. A purple long-sleeved shirt under blue dungarees with two orange buttons and a front pocket, and orange boots. Both paws are empty: no balloons or props.",
+        "image_count": 1,
+        "use_search": false,
+        "aspect_ratio": "1:1",
+        "image_size": "2K",
+        "temperature": 0.4,
+        "image_1": [
+          "11",
+          0
+        ],
+        "image_2": [
+          "12",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/fox_master_9b63fad707.png"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "agent/skipbo/shipped-hippo-atlas-small_3b993c2b5d.jpg"
+      }
+    },
+    "2": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "1",
+          0
+        ],
+        "filename_prefix": "agent/skipbo/fox-body-sheet"
+      }
+    }
+  }
+}

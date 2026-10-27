@@ -1,0 +1,46 @@
+{
+ "can": {
+  "image": "props/can.png",
+  "kind": "held",
+  "grip": [
+   0.3,
+   0.075
+  ],
+  "tip": [
+   0.91,
+   0.235
+  ],
+  "length": 0.25,
+  "use": "water"
+ },
+ "stream": {
+  "image": "props/stream.png",
+  "kind": "attached",
+  "on": "can",
+  "at": [
+   0.905,
+   0.25
+  ],
+  "top": [
+   0.17,
+   0.05
+  ],
+  "use": "water",
+  "fall": 0.182
+ },
+ "plant": {
+  "stages": [
+   "props/plant_0.png",
+   "props/plant_1.png",
+   "props/plant_2.png",
+   "props/plant_3.png",
+   "props/plant_4.png"
+  ],
+  "kind": "ground",
+  "width": 0.24,
+  "x": 0.439,
+  "front": 0.03,
+  "behind": true,
+  "use": "grow"
+ }
+}

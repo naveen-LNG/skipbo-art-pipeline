@@ -1,0 +1,180 @@
+moose_0.webp
+size: 2048,2048
+filter: MipMapLinearLinear,Linear
+moose_arm_l
+bounds: 2,2,328,706
+moose_arm_l_under
+bounds: 2,712,328,706
+moose_arm_r
+bounds: 334,2,328,706
+moose_arm_r_under
+bounds: 334,712,328,706
+moose_bell
+bounds: 1990,1563,50,61
+offsets: 2,1,54,64
+moose_ear_l
+bounds: 2,1970,100,52
+offsets: 2,2,104,56
+moose_ear_l_under
+bounds: 1240,1994,103,52
+offsets: 2,6,112,65
+moose_ear_r
+bounds: 106,1970,100,50
+offsets: 2,2,104,54
+moose_ear_r_under
+bounds: 1132,1994,104,51
+offsets: 6,6,113,64
+moose_hand_l_fist
+bounds: 1104,535,438,512
+moose_hand_l_fist_under
+bounds: 666,535,434,521
+offsets: 16,16,466,540
+moose_hand_l_grip_under
+bounds: 1734,1823,169,215
+offsets: 37,30,228,264
+moose_hand_l_open_under
+bounds: 1366,1824,180,218
+offsets: 10,12,200,234
+moose_hand_l_point
+bounds: 868,2,429,529
+offsets: 78,59,575,618
+moose_hand_l_point_under
+bounds: 2,1422,429,544
+offsets: 94,75,607,650
+moose_hand_r_fist
+bounds: 1546,535,438,512
+moose_hand_r_fist_under
+bounds: 868,1060,434,521
+offsets: 16,16,466,540
+moose_hand_r_grip_under
+bounds: 1548,1051,169,215
+offsets: 22,30,228,264
+moose_hand_r_open_under
+bounds: 1550,1823,180,218
+offsets: 10,12,200,234
+moose_hand_r_point
+bounds: 1301,2,429,529
+offsets: 68,59,575,618
+moose_hand_r_point_under
+bounds: 435,1422,429,544
+offsets: 84,75,607,650
+moose_head_base
+bounds: 868,1585,245,260
+moose_head_base_under
+bounds: 1117,1585,245,260
+moose_head_blink
+bounds: 1506,1567,238,252
+moose_head_blink_under
+bounds: 1748,1051,238,252
+moose_head_happy
+bounds: 1306,1051,238,254
+moose_head_happy_under
+bounds: 1306,1309,238,254
+moose_head_neutral
+bounds: 1548,1307,238,252
+moose_head_neutral_under
+bounds: 1790,1307,238,252
+moose_head_sad
+bounds: 1748,1563,238,250
+moose_hips
+bounds: 1734,307,264,192
+moose_hips_under
+bounds: 868,1849,260,192
+offsets: 6,6,272,200
+moose_hoof_l_tiptoe
+bounds: 666,261,136,253
+moose_hoof_l_tiptoe_under
+bounds: 666,1060,133,255
+offsets: 8,8,148,265
+moose_hoof_l_under
+bounds: 1907,1817,133,180
+offsets: 6,7,145,189
+moose_hoof_r_tiptoe
+bounds: 1366,1567,136,253
+moose_hoof_r_tiptoe_under
+bounds: 666,2,133,255
+offsets: 7,8,148,265
+moose_scarf
+bounds: 1132,1849,224,141
+moose_torso
+bounds: 1734,2,301,301
+shadow
+bounds: 1306,1567,48,14
+
+moose_1.webp
+size: 2048,1024
+filter: MipMapLinearLinear,Linear
+moose_antler_l
+bounds: 1037,186,168,138
+offsets: 2,2,172,142
+moose_antler_r
+bounds: 1038,2,168,134
+offsets: 2,2,172,138
+moose_cap
+bounds: 1052,546,168,101
+offsets: 2,2,172,105
+moose_hand_l
+bounds: 1052,651,121,154
+offsets: 19,9,154,174
+moose_hand_l_grip
+bounds: 728,2,169,208
+offsets: 30,23,214,250
+moose_hand_l_open
+bounds: 486,758,180,211
+offsets: 3,4,186,219
+moose_hand_l_thumbsup
+bounds: 728,426,194,188
+moose_hand_l_thumbsup_under
+bounds: 854,810,190,190
+offsets: 9,9,208,202
+moose_hand_l_under
+bounds: 1062,328,121,159
+offsets: 24,14,164,184
+moose_hand_r
+bounds: 1177,651,120,152
+offsets: 15,10,154,173
+moose_hand_r_grip
+bounds: 728,214,169,208
+offsets: 15,23,214,250
+moose_hand_r_open
+bounds: 670,758,180,211
+offsets: 3,4,186,219
+moose_hand_r_thumbsup
+bounds: 854,618,194,188
+moose_hand_r_thumbsup_under
+bounds: 1048,810,190,190
+offsets: 9,9,208,202
+moose_hand_r_under
+bounds: 1187,328,120,157
+offsets: 20,15,164,183
+moose_head_angry
+bounds: 2,764,238,248
+moose_head_angry_under
+bounds: 244,2,238,248
+moose_head_laugh
+bounds: 244,254,238,248
+moose_head_laugh_under
+bounds: 244,506,238,248
+moose_head_sad_under
+bounds: 2,2,238,250
+moose_head_surprised
+bounds: 2,256,238,250
+moose_head_surprised_under
+bounds: 2,510,238,250
+moose_head_talking
+bounds: 244,758,238,248
+moose_head_talking_under
+bounds: 486,2,238,248
+moose_head_wink
+bounds: 486,254,238,248
+moose_head_wink_under
+bounds: 486,506,238,248
+moose_hoof_l
+bounds: 901,186,132,176
+offsets: 2,2,136,180
+moose_hoof_r
+bounds: 926,366,132,176
+offsets: 2,2,136,180
+moose_hoof_r_under
+bounds: 901,2,133,180
+offsets: 6,7,146,189

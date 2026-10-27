@@ -1,0 +1,35 @@
+IMAGE ROLES:
+image_1 = THE CHARACTER, finished and approved, in its rest pose. This picture shows the same character on the same canvas, at the same size and painted in exactly the same way, only in a different pose.
+{{PROP_ROLE}}
+ART STYLE (taken from the shipped characters in the style images):
+Soft digital painting for a bright casual mobile game, matching the shipped hippo and raccoon exactly. Every shape is a big, chunky, simplified mass with a soft rounded silhouette, slightly swollen and squashy, like a soft toy. Heads and hands are generous in size; hands are fat mittens with three or four short rounded fingers. Interior detail is minimal: a shape reads from its silhouette and its colour.
+Shading is smooth airbrushed volume. Each shape has one broad lit side, one broad soft shaded side and a gentle lighter bounce along the shaded edge, blended with smooth gradients. A few soft darker shapes suggest a fold, a pocket or a crease, painted as soft blurred patches. Highlights are broad and soft.
+Colour is bright, clean and saturated: candy violet, turquoise, orange, golden yellow, warm mauve. Shadows shift hue toward violet or blue on cool colours and toward red on warm colours, and stay clean and colourful.
+Edges are clean and slightly soft. Shapes are separated from each other only by colour and value. There is no outline, contour line or ink line anywhere, and no dark stroke around any shape.
+Surfaces are smooth. Fur is shown by a few soft tufts along the silhouette and a gently mottled gradient, never by drawn strands. Cloth, wood and metal are smooth painted colour with a soft highlight, with no grain, weave or texture.
+Eyes are simple glossy dark ovals with one small white highlight, set into soft eye areas; noses and nostrils are simple soft dark shapes.
+
+TASK:
+Paint one key frame of a 2D game animation of the character from image_1: the single moment described below, held still, as the animator's target drawing for that moment. A cartoon animator would draw this frame with a clear, strong, readable pose: weight, balance and the line of action read at once from the silhouette.
+
+WHAT IS HAPPENING:
+{{STORY}}
+
+THE POSE IN THIS FRAME:
+{{POSE}}
+
+CAMERA AND BODY TURN: This is a 2D game character that is only ever drawn from the front, like a paper puppet, so the camera has not moved since image_1 and the character never turns. The head is painted exactly as in image_1, straight on and symmetrical: the nose sits in the exact horizontal middle of the face, both eyes are the same size, both ears show at the same height. The chest and the belt buckle face the viewer squarely, in the middle of the body, with one shoulder at each side. The head may tip a little to one side, the eyes may glance toward something, and the body may lean a little sideways, but the head, chest and hips never rotate toward either side and never show three-quarter view or profile. All movement happens in the picture's plane: arms swing out to the sides, up and down; knees bend out to the sides, toward the picture's left and right.
+
+SIZE AND PLACEMENT: Same canvas and the same scale as image_1: the head, paws, boots and sweater are exactly as big as they are in image_1, so this frame can be laid over image_1. {{PLACEMENT}}
+
+The background is one flat plain light grey, exactly as in image_1, with nothing else in it except what is named above, and no cast shadow, motion lines, speed lines, dust, text or labels.
+
+FINAL CHECK:
+1. Exactly the character of image_1: same costume, colours, proportions and size.
+2. Front view: face, chest and belt buckle face the viewer; no turn of the body.
+3. {{CHECK}}
+4. Painted like image_1: airbrushed soft volume, smooth, no outlines.
+5. Flat light grey background; one character; no text or motion lines.
+
+CHARACTER NOTES (from the art director, they override image_1 where they differ):
+{{CHARACTER}}
