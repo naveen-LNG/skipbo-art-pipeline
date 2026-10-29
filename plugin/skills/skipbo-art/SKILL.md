@@ -60,6 +60,8 @@ Engine grammar: `references/engines.md`. **Z-Image (zimage-*) reads no negations
 | Approving a master for rigging by eye only | `scripts/spine_qa.py --contract <master>.png` first, then check colour contrast and head direction by eye |
 | Retrying a job that failed with GPU out-of-memory | Nothing to do: the shared T4 is busy and `comfy.py` already retries 3 times |
 | Acting on a wordless screenshot | Ask one question: what's wrong, and what's already fine? |
+| A long two-handed tool (shovel, rake, broom) in one paw, waved about | Both paws on the handle, solved with IK (`psd_rig.Kin.reach`), the lower paw drawn in front of the body; the action reads as the real job: stab into the ground, pry, scoop, toss the dirt onto a pile (`props`: dirt mound + clod) |
+| Holding a long tool steep in front of a short-armed cartoon body | Hold it low and flat (~40°, as the artist painted it), both paws at mid-chest, the blade out to the side; steep, the top paw lands at the mouth and the arms cross the face |
 
 ## When the user corrects you
 Every correction becomes a rule here so it never needs saying twice: fix the job, then add or sharpen a row in "Common mistakes" (or the matching reference, prompt or script), log one line in `FEEDBACK.md`, bump the patch version in `.claude-plugin/plugin.json`, and commit and push the repo clone (never the plugin cache).

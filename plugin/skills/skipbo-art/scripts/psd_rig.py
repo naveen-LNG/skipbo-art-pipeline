@@ -21,7 +21,9 @@ Layer keys are 1-based indices over the PSD's leaf layers, bottom first (psd_rig
 follow the pipeline: torso, hips, head, upperarm/forearm/hand/leg/foot + _l/_r (_l = the character's left = the
 picture's right), plus jaw (mouth), muzzle, mustache, hat, brows, lid_l/lid_r (closed eyes, hidden at rest),
 pupil_l/pupil_r, shadow. Tools ("tool": true, or extra_tools: images with a white or transparent background) hang
-on a "tool" bone in hand_l's grip, hidden at rest and shown by their animation.
+on a "tool" bone in hand_l's grip, hidden at rest and shown by their animation. Long two-handed tools (the shovel)
+take both paws: Kin.reach (two-bone IK) puts each paw on the handle and the dig is keyed by where the top paw is.
+Optional "props" ({"dirt_mound": {"image", "width"}, "dirt_clod": {...}}) give the dig a pile and a thrown clod.
 
 Joints come from where layers overlap (elbow = centre of forearm over upperarm, and so on; shoulders sit on the
 upper arm's long axis, a third in from its hidden end); override any of them under "joints".
@@ -289,7 +291,84 @@ def tool_hold(img: Image.Image, grip_from_handle: float, head_angle: float, J, A
     off = (img.width / 2 - g[0], -(img.height / 2 - g[1]))        # image centre relative to grip, y up
     cx, cy = rot(off, R)
     tool_sk = to_sk(J["tool"], J)
-    return region(img.size, (tool_sk[0] + cx, tool_sk[1] + cy), tool_sk, A["tool"], R)
+    reg = region(img.size, (tool_sk[0] + cx, tool_sk[1] + cy), tool_sk, A["tool"], R)
+    return reg, {"length": float(hi - lo), "grip": grip_from_handle, "head_angle": head_angle}
+
+
+class Kin:
+    """Forward and two-bone inverse kinematics on the setup skeleton (rotation and translation; no scale), so a pose
+    can be written as "paws here, tool along there" and turned into bone rotations."""
+
+    def __init__(self, bones: list, palms: dict):
+        self.bones = {b["name"]: b for b in bones}
+        self.order = [b["name"] for b in bones]
+        self.palms = palms                                        # hand bone -> palm point in its local frame
+
+    def world(self, pose: dict) -> dict:
+        """{bone: (angle, x, y)} in skeleton units for a pose {bone: {"r", "x", "y"}} of deltas from the setup."""
+        W = {}
+        for n in self.order:
+            b, d = self.bones[n], pose.get(n, {})
+            lx, ly = b.get("x", 0.0) + d.get("x", 0.0), b.get("y", 0.0) + d.get("y", 0.0)
+            r = b.get("rotation", 0.0) + d.get("r", 0.0)
+            if "parent" in b:
+                pa, px, py = W[b["parent"]]
+                ox, oy = rot((lx, ly), pa)
+                W[n] = (pa + r, px + ox, py + oy)
+            else:
+                W[n] = (r, lx, ly)
+        return W
+
+    def point(self, W: dict, bone: str, local) -> tuple:
+        a, x, y = W[bone]
+        ox, oy = rot(local, a)
+        return x + ox, y + oy
+
+    def reach(self, side: str, target, pose: dict) -> tuple:
+        """Upper-arm and forearm deltas that put hand_<side>'s palm on target (skeleton units) with the hand held
+        straight on the forearm and the elbow hanging below, plus the distance still missing (0 = reached)."""
+        ua, fa, hd = f"upperarm_{side}", f"forearm_{side}", f"hand_{side}"
+        W = self.world(pose)
+        par = W[self.bones[ua]["parent"]][0]
+        _, sx, sy = W[ua]
+        L1 = math.hypot(self.bones[fa]["x"], self.bones[fa]["y"])
+        v = self.bones[hd]["x"], self.bones[hd]["y"]                 # elbow -> palm in the forearm frame
+        pv = rot(self.palms[hd], self.bones[hd].get("rotation", 0.0))
+        v = v[0] + pv[0], v[1] + pv[1]
+        L2, beta = math.hypot(*v), math.degrees(math.atan2(v[1], v[0]))
+        dx, dy = target[0] - sx, target[1] - sy
+        d = math.hypot(dx, dy)
+        dc = min(max(d, abs(L1 - L2) + 1e-3), L1 + L2 - 1e-3)
+        alpha = math.degrees(math.acos((L1 * L1 + dc * dc - L2 * L2) / (2 * L1 * dc)))
+        base = math.degrees(math.atan2(dy, dx))
+        best = None
+        for th1 in (base + alpha, base - alpha):                 # elbows hang: the lower elbow wins
+            ex, ey = sx + L1 * math.cos(math.radians(th1)), sy + L1 * math.sin(math.radians(th1))
+            if best is None or ey < best[2]:
+                best = (th1, ex, ey)
+        th1, ex, ey = best
+        thp = math.degrees(math.atan2(target[1] - ey, target[0] - ex))
+        th2 = thp - beta
+        d_ua = wrap(th1 - par - self.bones[ua].get("rotation", 0.0))
+        d_fa = wrap(th2 - th1 - self.bones[fa].get("rotation", 0.0))
+        return d_ua, d_fa, max(0.0, d - (L1 + L2))
+
+
+def wrap(a: float) -> float:
+    return (a + 180.0) % 360.0 - 180.0
+
+
+def unit(deg: float) -> tuple:
+    return math.cos(math.radians(deg)), math.sin(math.radians(deg))
+
+
+def draw_order_key(names: list, moves: dict, time: float = 0.0) -> dict:
+    """A drawOrder key that puts each slot in moves right after its anchor slot ({slot: anchor})."""
+    new = [n for n in names if n not in moves]
+    for slot, anchor in moves.items():
+        new.insert(new.index(anchor) + 1, slot)
+    offs = [{"slot": s, "offset": new.index(s) - names.index(s)} for s in names if s in moves]
+    return {"time": time, "offsets": offs} if time else {"offsets": offs}
 
 
 # ------------------------------------------------------------------ animation
@@ -315,29 +394,32 @@ def spline(ts: list, vs: list, t: float, loop: bool) -> float:
     return h00 * vs[k] + h10 * h * tangent(k) + h01 * vs[k + 1] + h11 * h * tangent(k + 1)
 
 
-def bake(poses: list, duration: float) -> dict:
-    """poses: [(time, {bone: {"r", "x", "y", "sx", "sy"}})] -> Spine bone timelines baked at FPS (spine_qa and the
-    player then agree exactly). Channels a pose leaves out hold their previous value (0 / 1 at the start)."""
-    bones = sorted({b for _, p in poses for b in p})
-    defaults = {"r": 0.0, "x": 0.0, "y": 0.0, "sx": 1.0, "sy": 1.0}
+DEFAULTS = {"r": 0.0, "x": 0.0, "y": 0.0, "sx": 1.0, "sy": 1.0}
+
+
+def sampler(poses: list):
+    """poses: [(time, {bone: {"r", "x", "y", "sx", "sy"}})] -> f(t) = {bone: channels} along the splines. Channels a
+    pose leaves out hold their previous value (0 / 1 at the start); an empty pose ({}) is the rest pose."""
     track = {}
-    for b in bones:
-        cur = dict(defaults)
-        keys = []
+    for b in sorted({b for _, p in poses for b in p}):
+        cur, keys = dict(DEFAULTS), []
         for t, p in poses:
-            cur = {**cur, **p.get(b, {})} if p else dict(defaults)    # an empty pose is the rest pose
+            cur = {**cur, **p.get(b, {})} if p else dict(DEFAULTS)
             keys.append((t, dict(cur)))
-        track[b] = keys
+        track[b] = ([k[0] for k in keys], keys, keys[0][1] == keys[-1][1])
+    return lambda t: {b: {c: spline(ts, [k[1][c] for k in keys], t, loop) for c in DEFAULTS}
+                      for b, (ts, keys, loop) in track.items()}
+
+
+def bake(poses, duration: float) -> dict:
+    """Spine bone timelines baked at FPS (spine_qa and the player then agree exactly) from a pose list (see sampler)
+    or from any f(t) -> {bone: channels}."""
+    f = poses if callable(poses) else sampler(poses)
     n = int(round(duration * FPS))
+    per_t = [(round(i / FPS, 4), f(i / FPS)) for i in range(n + 1)]
     out = {}
-    for b, keys in track.items():
-        ts = [k[0] for k in keys]
-        loop = keys[0][1] == keys[-1][1]
-        frames = []
-        for i in range(n + 1):
-            t = i / FPS
-            v = {c: spline(ts, [k[1][c] for k in keys], t, loop) for c in defaults}
-            frames.append((round(t, 4), v))
+    for b in sorted({b for _, s in per_t for b in s}):
+        frames = [(t, {**DEFAULTS, **s.get(b, {})}) for t, s in per_t]
         tl = {}
         for chan, fields, base in (("rotate", ("r",), (0,)), ("translate", ("x", "y"), (0, 0)),
                                    ("scale", ("sx", "sy"), (1, 1))):
@@ -373,7 +455,113 @@ def show(slot: str, end: float) -> dict:
     return {slot: {"attachment": [{"name": slot}, {"time": end, "name": slot}]}}
 
 
-def animations(tools: list) -> dict:
+# the dig, in fractions of the skeleton's height (front view). A shovel is far longer than a cartoon arm, so it
+# is held low and flat (about 40 degrees, as the PSD paints it) with both paws at mid-chest and the blade on the
+# ground well out to the picture's left; held steep, the top paw ends up at the mouth and the arms cross the face.
+# (time, top paw x, top paw y, shovel angle handle->blade in degrees, torso turn, body dip, head turn)
+DIG = [
+    (0.0, 0.04, 0.45, -140, 0, 0.0, 3),          # ready, blade just off the ground
+    (0.45, 0.03, 0.42, -141, 4, -0.006, 6),      # stab into the ground, body dips into it
+    (0.9, 0.06, 0.39, -147, 2, -0.004, 4),       # pry: the handle pushed down, the blade levers up
+    (1.3, 0.05, 0.47, -151, -2, 0.0, 2),         # scoop lifts out with the clod
+    (1.7, 0.01, 0.50, -163, 5, 0.002, 7),        # toss to the left onto the pile
+    (2.4, 0.04, 0.45, -140, 0, 0.0, 3),          # ready again (loops)
+]
+DIG_SCOOP, DIG_RELEASE = 1.0, 1.62                 # the clod rides the blade between these, then flies
+MOUND_X = -0.64                                    # the pile, centre x, on the ground
+
+
+def shovel_dig(kin: Kin, hold: dict, H: float, names: list) -> dict:
+    """Both paws on the shovel: the top paw (hand_l) on the handle's grip, the other paw (hand_r, drawn in front of
+    the body for this animation) at the nearest point of the shaft it can reach. Arms come from Kin.reach, so the
+    paws stay on the handle; the tool bone turns the shovel to the wanted angle. A clod rides the blade from the
+    scoop to the toss and flies onto the pile."""
+    L, g1, H0 = hold["length"], hold["grip"], hold["head_angle"]
+    tool_rot = kin.bones["tool"].get("rotation", 0.0)
+    misses = []
+
+    def pose(g, phi, torso, dip, head):
+        u = unit(phi)
+        handle = (g[0] - g1 * L * u[0], g[1] - g1 * L * u[1])
+        p = {"torso": {"r": torso}, "root": {"y": dip}, "head": {"r": head}, "pupils": {"x": -4, "y": -3}}
+        dua, dfa, m1 = kin.reach("l", g, p)
+        p["upperarm_l"], p["forearm_l"] = {"r": dua}, {"r": dfa}
+        _, sx, sy = kin.world(p)["upperarm_r"]
+        s = ((sx - handle[0]) * u[0] + (sy - handle[1]) * u[1]) / L
+        s = min(max(s, g1 + 0.12), 0.55)
+        g2 = (handle[0] + s * L * u[0], handle[1] + s * L * u[1])
+        dua, dfa, m2 = kin.reach("r", g2, p)
+        p["upperarm_r"], p["forearm_r"] = {"r": dua}, {"r": dfa}
+        hand_w = kin.world(p)["hand_l"][0]
+        p["tool"] = {"r": wrap((phi - H0) - hand_w - tool_rot)}
+        misses.append(round(max(m1, m2), 1))
+        return p
+
+    poses = [(t, pose((x * H, y * H), phi, torso, dip * H, head)) for t, x, y, phi, torso, dip, head in DIG]
+    for i in range(1, len(poses)):                               # each turn within 180 degrees of the pose before,
+        for b, ch in poses[i][1].items():                        # so the splines never spin the long way round
+            if "r" in ch and "r" in poses[i - 1][1].get(b, {}):
+                prev = poses[i - 1][1][b]["r"]
+                ch["r"] = prev + wrap(ch["r"] - prev)
+    body = sampler(poses)
+    end = DIG[-1][0]
+
+    def blade(t):
+        """Where a clod sits on the blade at time t (skeleton units)."""
+        p = body(t)
+        W = kin.world(p)
+        a, x, y = W["tool"]
+        d = unit(a + H0)                                          # grip -> blade
+        k = (1 - g1) * L * 0.88
+        n = unit(a + H0 + 90)
+        if n[1] < 0:                                              # the blade's upper side
+            n = (-n[0], -n[1])
+        return x + d[0] * k + n[0] * 14, y + d[1] * k + n[1] * 14
+
+    # the clod: on the blade from scoop to release, then a throw under gravity onto the pile
+    # (a flick: launched upward, not at the blade's own slow speed, or it seems to hover beside the blade)
+    rel = blade(DIG_RELEASE)
+    vy = 0.9 * H                                                  # launch speed up, units / s
+    pile = (MOUND_X * H, 0.035 * H)
+    g_ = 2.4 * H                                                  # gravity, units / s^2
+    # time to fall onto the pile top given vy, and the sideways speed that lands it there
+    disc = vy * vy + 2 * g_ * (rel[1] - pile[1])
+    t_fly = (vy + math.sqrt(max(disc, 0))) / g_
+    vx = (pile[0] - rel[0]) / max(t_fly, 1e-3)
+    land = DIG_RELEASE + t_fly
+
+    def clod(t):
+        if t < DIG_SCOOP or t > land:
+            return blade(DIG_SCOOP)
+        if t <= DIG_RELEASE:
+            return blade(t)
+        s = t - DIG_RELEASE
+        return rel[0] + vx * s, rel[1] + vy * s - 0.5 * g_ * s * s
+
+    def full(t):
+        p = body(t)
+        cx, cy = clod(t)
+        p["clod"] = {"x": cx, "y": cy}
+        return p
+
+    if any(misses):
+        print(f"  ? doubt: shovel dig: a paw misses the handle by {max(misses)} units at some key pose")
+    t_land = round(min(land, end - 0.05), 3)
+    slots = {**show("tool_shovel", end), **blink(2.1)}
+    # the top paw reaches across the chest, which swings the upper sleeve's hidden end out past the shoulder;
+    # the cuff already covers the elbow at the body's edge, so that sleeve is off for this animation
+    slots["upperarm_l"] = {"attachment": [{"name": None}, {"time": end, "name": None}]}
+    if "dirt_mound" in names:
+        slots["dirt_mound"] = {"attachment": [{"name": "dirt_mound"}, {"time": end, "name": "dirt_mound"}]}
+    if "dirt_clod" in names:
+        slots["dirt_clod"] = {"attachment": [{"name": None}, {"time": DIG_SCOOP, "name": "dirt_clod"},
+                                             {"time": t_land, "name": None}]}
+    order = {"forearm_r": "tool_shovel", "hand_r": "forearm_r"} # the lower paw grips in front of the body
+    return {"bones": bake(full, end), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
+
+
+def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, height: float = 0.0,
+               slot_names: list | None = None) -> dict:
     """Starter set for a front-facing standing character with the tool hand on the picture's right (hand_l)."""
     A = {}
     base = {}
@@ -432,21 +620,8 @@ def animations(tools: list) -> dict:
         A["wrench"] = {"bones": bake([
             (0.0, hold), (0.5, turn), (1.0, hold), (1.5, turn), (2.0, hold),
         ], 2.0), "slots": {**show("tool_wrench", 2.0), **blink(1.0)}}
-    if "shovel" in tools:
-        # the shovel is held near the top of a long handle, so arm turns swing the blade a long way: the tool bone
-        # counter-turns the arm (tool = wanted shovel turn - arm - torso) and the dig reads as a stab along the
-        # handle, a pry and a lift
-        def dig(ua, fa, turn, torso=0.0, **more):
-            return {"upperarm_l": {"r": ua}, "forearm_l": {"r": fa}, "tool": {"r": turn - ua - fa - torso},
-                    "torso": {"r": torso}, **more}
-        A["shovel"] = {"bones": bake([
-            (0.0, base),
-            (0.45, dig(14, 8, 0, 2, head={"r": 2})),                           # draw back
-            (0.8, dig(-8, -6, 3, -4, root={"y": -5}, head={"r": -3})),         # stab down along the handle
-            (1.2, dig(-10, -2, -8, -2, root={"y": -3}, head={"r": -2})),       # pry the blade up
-            (1.65, dig(12, 10, -12, 2, root={"y": 0}, head={"r": 2})),         # lift the load
-            (2.4, base),
-        ], 2.4), "slots": {**show("tool_shovel", 2.4), **blink(2.05)}}
+    if "shovel" in tools and kin is not None:
+        A["shovel"] = shovel_dig(kin, holds["shovel"], height, slot_names)
     if "hammer" in tools:
         rest = {"upperarm_l": {"r": 40}, "forearm_l": {"r": 30}, "tool": {"r": 0}, "torso": {"r": 0},
                 "head": {"r": -2}, "pupils": {"x": 4, "y": -2}}
@@ -501,7 +676,9 @@ def main() -> int:
 
     # tools: PSD tool layers keep their painted place (a shovel already in hand) unless the config gives a hold;
     # extra tools get a hold from their shape
-    holds = {"wrench": (0.5, -70.0), "hammer": (0.12, 20.0), **{k: tuple(v) for k, v in cfg.get("holds", {}).items()}}
+    holds = {"wrench": (0.5, -70.0), "hammer": (0.12, 20.0), "shovel": (0.06, -146.0),
+             **{k: tuple(v) for k, v in cfg.get("holds", {}).items()}}
+    hold_info = {}
     tools = {}
     for p, d in parts.items():
         if d["tool"]:
@@ -519,18 +696,37 @@ def main() -> int:
         d["img"].save(out / "images" / f"{name}_{att}.png")
         images.append(f"{name}_{att}")
         if t in holds:                                            # a grip from the tool's shape; else its PSD place
-            reg = tool_hold(d["img"], *holds[t], J, A)
+            reg, hold_info[t] = tool_hold(d["img"], *holds[t], J, A)
         else:
             x0, y0, *_ = d["bbox"]
             c = to_sk((x0 + d["img"].width / 2, y0 + d["img"].height / 2), J)
             reg = region(d["img"].size, c, to_sk(J["tool"], J), A["tool"])
         tool_slots.append({"name": att, "bone": "tool"})
         skin[att] = {f"{name}_{att}": reg}
+    # props that a tool animation shows (the shovel's dirt): "props": {"dirt_mound": {"image", "width"}, ...}.
+    # The mound sits on the ground on a bone of its own; the clod has a root bone the dig moves.
+    props = {}
+    H_est = J["root"][1] - min(p["bbox"][1] for p in parts.values() if not p["tool"])
+    for pn, spec in cfg.get("props", {}).items():
+        img = key_white(Image.open(resolve(spec["image"], base)))
+        k = spec.get("width", 100) / img.width
+        img = img.resize((max(1, round(img.width * k)), max(1, round(img.height * k))), Image.LANCZOS)
+        img.save(out / "images" / f"{name}_{pn}.png")
+        images.append(f"{name}_{pn}")
+        if pn == "dirt_mound":
+            bones.append({"name": pn, "parent": "root", "x": round(MOUND_X * H_est, 2), "y": 0.0})
+            skin[pn] = {f"{name}_{pn}": {"x": 0.0, "y": round(img.height / 2 - 4, 2), "width": img.width, "height": img.height}}
+        else:
+            bones.append({"name": "clod", "parent": "root"})
+            skin[pn] = {f"{name}_{pn}": {"x": 0.0, "y": 0.0, "width": img.width, "height": img.height}}
+        props[pn] = {"name": pn, "bone": pn if pn == "dirt_mound" else "clod"}
     for p, d in parts.items():
         if d["tool"]:
             continue
         if p == "hand_l":                                         # tools are drawn just behind the gripping paw
             slots += tool_slots
+            if "dirt_clod" in props:                              # the clod rides on the blade
+                slots.append(props["dirt_clod"])
         att = f"{name}_{p}"
         d["img"].save(out / "images" / f"{att}.png")
         images.append(att)
@@ -544,15 +740,24 @@ def main() -> int:
             slot["attachment"] = att
         slots.append(slot)
         skin[p] = {att: reg}                                      # attachments are named after their images
+        if p == "shadow" and "dirt_mound" in props:               # the pile lies on the ground, behind the body
+            slots.append(props["dirt_mound"])
 
-    anims = animations(list(tools))
+    tb = next(b for b in bones if b["name"] == "tool")
+    palms = {"hand_l": (tb["x"], tb["y"])}
+    if "hand_r" in parts:
+        c = centroid(mask(parts["hand_r"], size))
+        w, j = to_sk(c, J), to_sk(J["hand_r"], J)
+        palms["hand_r"] = rot((w[0] - j[0], w[1] - j[1]), -A["hand_r"])
+    kin = Kin(bones, palms)
+    anims = animations(list(tools), kin, hold_info, H_est, [s["name"] for s in slots])
     for an in anims.values():                                     # drop keys for slots/bones this character lacks;
         an["slots"] = {k: v for k, v in an.get("slots", {}).items() if k in skin}   # slot keys name the slot's image
         for slot, tl in an["slots"].items():
             for k in tl["attachment"]:
                 if k["name"] is not None:
                     k["name"] = next(iter(skin[slot]))
-        an["bones"] = {k: v for k, v in an["bones"].items() if k in J or k == "root"}
+        an["bones"] = {k: v for k, v in an["bones"].items() if k in kin.bones}
     boxes = [d["bbox"] for d in parts.values() if not d["tool"]]  # setup bounds, skeleton units (y up)
     x0, y0 = to_sk((min(b[0] for b in boxes), max(b[3] for b in boxes)), J)
     x1, y1 = to_sk((max(b[2] for b in boxes), min(b[1] for b in boxes)), J)
