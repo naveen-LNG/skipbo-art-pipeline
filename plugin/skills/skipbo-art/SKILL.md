@@ -59,3 +59,6 @@ Engine grammar: `references/engines.md`. **Z-Image (zimage-*) reads no negations
 | Approving a master for rigging by eye only | `scripts/spine_qa.py --contract <master>.png` first, then check colour contrast and head direction by eye |
 | Retrying a job that failed with GPU out-of-memory | Nothing to do: the shared T4 is busy and `comfy.py` already retries 3 times |
 | Acting on a wordless screenshot | Ask one question: what's wrong, and what's already fine? |
+
+## When the user corrects you
+Every correction becomes a rule here so it never needs saying twice: fix the job, then add or sharpen a row in "Common mistakes" (or the matching reference, prompt or script), log one line in `FEEDBACK.md`, bump the patch version in `.claude-plugin/plugin.json`, and commit and push the repo clone (never the plugin cache).
