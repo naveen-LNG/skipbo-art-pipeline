@@ -803,7 +803,7 @@ def wrench_turn(kin: Kin, hold: dict, H: float, names: list) -> dict:
 # the bone's place (fractions of the height, y up from the ground) or None to ride the right paw's grip, tool_r).
 # Layer "back" is drawn behind the body (just after the shadow), "held" in front of it, just behind the left paw.
 # "stage" props stand on the ground while the character is lifted onto the ladder.
-PLANT_AT = (-0.25, 0.255)           # the sapling's root ball, planted in the pot at his right side
+PLANT_AT = (0.0, 0.255)             # the sapling's root ball in its pot, which is set down here
 FRAME_AT = (-0.44, 1.12)             # the picture frame on the wall, up beside the ladder, clear of the head
 LADDER_STEP = 0.41                   # the feet rest on the ladder's second step: this fraction of its height
 WALL_X, PAINT_Y0, PAINT_X = -0.72, 0.42, (-0.56, -0.63)   # arm out, the paw clear of the face
@@ -870,57 +870,61 @@ def chore(kin: Kin, keys: list, what: str) -> list:
 
 
 def plant_sapling(kin: Kin, H: float, info: dict, names: list) -> dict:
-    """No squat: the sapling held as the artist does it, one paw cupping the root ball from below (the right, picture
-    left) and the other on its side; anticipation (lift, breathe in), a little sideways bend over the pot at his
-    side, the ball lowered in and let go (it settles into the soil and wobbles), two pats of the soil at the rim, then
-    up with an overshoot and a proud, happy look. A cartoon arm can't reach the ground without a squat, so the
-    planting is into a big pot (plant_pot) standing at his right side."""
-    bw = 0.29 * info["sapling"]["w"] + 0.02 * H                  # ball centre -> the side paw's palm
+    """The sapling planted in its pot, carried in both paws as the artist holds it (one paw cupping the pot's bottom
+    corner, the other on its far side): a short waddle (feet lift in turn, an eye on the plant), a stop where the
+    pot swings on (follow-through), a lift and a breath in (anticipation), a little bend that lowers it as the paws
+    move to its sides, a gentle set-down on the ground (a small settle; the sapling wobbles), then up with an
+    overshoot and a proud look. No squat: a short cartoon arm reaches low enough with a little bend."""
+    ph = info["plant_pot"]["h"]
+    half = 0.5 * info["plant_pot"]["w"] - 0.02 * H                # pot centre -> palm on its side
 
-    def hold(x, y):
-        """Ball centre (x, y) fractions of the height: right paw cupping it from below, left paw on top by the stem."""
-        return {"r": (x * H - 0.06 * H, y * H - 0.045 * H), "l": (x * H + 0.6 * bw, y * H + 0.08 * H)}
+    def held(x, y):
+        """Pot bottom at (x, y): right paw cupping its bottom corner, left paw high on its far side."""
+        return {"r": ((x - 0.03) * H - half, y * H + 0.12 * ph), "l": ((x + 0.02) * H + half, y * H + 0.6 * ph)}
 
-    def paws(r, l):
-        return {"r": (r[0] * H, r[1] * H), "l": (l[0] * H, l[1] * H)}
+    def sides(x, y, out=0.0):
+        """Pot bottom at (x, y): both paws on its sides; out opens them."""
+        return {"r": (x * H - half - out * H, y * H + 0.5 * ph), "l": (x * H + half + out * H, y * H + 0.5 * ph)}
     rest_arms = {"upperarm_l": {"r": 0}, "forearm_l": {"r": 0}, "upperarm_r": {"r": 0}, "forearm_r": {"r": 0}}
-    T = lambda r, y, sy: {"torso": {"r": r, "y": y * H, "sy": sy}}
-    X = PLANT_AT[0]
-    up_r, up_l = (X - 0.04, 0.37), (X + 0.17, 0.375)            # the right paw pats, the left steadies the rim
-    pat_r, pat_l = (X - 0.04, 0.315), (X + 0.17, 0.365)
-    keys = [
-        (0.0, {**T(0, 0, 1.0), **face(-4, -3, 0, 1.1, -1, -6)}, hold(0.06, 0.36), None),             # holds it, clear of the pot
-        (0.5, {**T(-3, 0.008, 1.03), **face(2, 0, 4, 1.15, 0, -3)}, hold(0.07, 0.40), None),         # lift, breathe in
-        (1.2, {**T(14, -0.05, 0.97), **face(8, -4, -2, 0.95, -5, -6)}, hold(X, 0.43), None),        # leans over the pot
-        (1.6, {**T(16, -0.06, 0.96), **face(9, -5, -5, 0.85, -5, -6)}, hold(X, 0.345), None),       # lowers it in
-        (1.8, {**T(16.5, -0.065, 0.955), **face(9.5, -5, -6, 0.8, -5, -6)}, hold(X, 0.335), None),  # settles
-        (2.05, {**T(15, -0.06, 0.96), **face(8, -4, 2, 1.0, -5, -6)}, paws(up_r, up_l), None),      # lets go
-        (2.3, {**T(16, -0.065, 0.955), **face(9, -5, -2, 0.9, -5, -6)}, paws(pat_r, pat_l), None),  # pat
-        (2.5, {**T(15, -0.06, 0.96), **face(8, -4, 0, 1.0, -5, -6)}, paws(up_r, up_l), None),
-        (2.7, {**T(16, -0.065, 0.955), **face(9, -5, -2, 0.9, -5, -6)}, paws(pat_r, pat_l), None),  # pat
-        (2.9, {**T(15, -0.06, 0.96), **face(8, -4, 1, 1.0, -5, -6)}, paws(up_r, up_l), None),
-        (3.35, {**T(-3, 0.012, 1.03), **rest_arms, **face(3, 1, 6, 1.3, -2, -6)}, None, None),       # up, overshoot
-        (3.7, {**T(0, 0, 1.0), **rest_arms, **face(-3, -2, 4, 1.25, -4, -6)}, None, None),          # proud
-        (4.3, {**T(0, 0, 1.0), **rest_arms, **face(-3, -2, 4, 1.25, -4, -6)}, None, None),
+    feet = lambda l, r: {"foot_l": {"x": -l * H}, "foot_r": {"x": -r * H}}   # foot lift (the leg points down)
+
+    def B(tr, ty, sy, fc, fl=0.0, fr=0.0, root=0.0):
+        return {"root": {"y": root * H}, "torso": {"r": tr, "y": ty * H, "sy": sy}, **face(*fc), **feet(fl, fr)}
+    look = lambda hr: (hr, -3, 2, 1.1, -1, -6)                     # eyes on the plant, a smile
+    # (time, body, paws, pot bottom x, y)
+    plan = [
+        (0.0, B(0, 0, 0.99, look(0)), held, -0.03, 0.14),
+        (0.35, B(-2, 0, 0.99, look(-1.5), fl=0.03, root=0.006), held, -0.035, 0.146),   # step: left foot up
+        (0.7, B(0, -0.005, 0.98, look(0), root=-0.003), held, -0.03, 0.136),
+        (1.05, B(2, 0, 0.99, look(1.5), fr=0.03, root=0.006), held, -0.025, 0.146),     # step: right foot up
+        (1.45, B(0.5, -0.003, 0.985, look(0.5)), held, -0.028, 0.134),                  # stops, the pot swings on
+        (1.85, B(-2, 0.008, 1.02, (-2, 0, 4, 1.15, -1, -5)), held, -0.03, 0.17),         # lifts it, breathes in
+        (2.35, B(3, -0.11, 0.95, (4, -5, -3, 0.9, 0, -6)), sides, 0.0, 0.06),           # a little bend, lowers it
+        (2.55, B(3, -0.115, 0.945, (4, -5, -4, 0.85, 0, -6)), sides, 0.0, 0.045),       # sets it down
     ]
+    keys = [(t, body, paws(x, y), None) for t, body, paws, x, y in plan]
+    keys += [(2.75, B(3, -0.11, 0.95, (4, -5, 1, 1.0, 0, -6)), sides(0.0, 0.0, 0.04), None),    # lets go
+             (3.2, {**B(-2, 0.01, 1.025, (-2, 1, 6, 1.3, -1, -6)), **rest_arms}, None, None),   # up, overshoot
+             (3.55, {**B(0, 0, 1.0, (-2, -1, 4, 1.25, -2, -6)), **rest_arms}, None, None),      # proud
+             (4.2, {**B(0, 0, 1.0, (-2, -1, 4, 1.25, -2, -6)), **rest_arms}, None, None)]
     poses = chore(kin, keys, "plant")
     end = keys[-1][0]
-    # the sapling: carried in the paws, then let go into the pot, where it settles into the soil and wobbles
+    # the pot (and the sapling in it): in the paws, then set on the ground with a small settle; the sapling wobbles
+    X0 = PLANT_AT[0]
+    P = [(t, {"x": x * H - X0 * H, "y": y * H, "sx": 1, "sy": 1}) for t, _, _, x, y in plan]
+    P += [(2.66, {"x": -X0 * H, "y": 0, "sx": 1.03, "sy": 0.97}), (2.8, {"x": -X0 * H, "y": 0, "sx": 0.99, "sy": 1.01}),
+          (2.95, {"x": -X0 * H, "y": 0, "sx": 1, "sy": 1}), (end, {"x": -X0 * H, "y": 0, "sx": 1, "sy": 1})]
+    wob = {2.55: 0, 2.72: -5, 2.9: 3.5, 3.1: -1.5, 3.35: 0}       # the sapling sways after the set-down
     S = []
-    for t, _, p_, _ in keys[:5]:
-        (xr, yr), (xl, yl) = p_["r"], p_["l"]
-        bx, by = xr + 0.06 * H, yr + 0.045 * H         # the cupping paw carries it
-        S.append((t, {"sapling": {"x": bx - X * H, "y": by - PLANT_AT[1] * H, "r": 0}}))
-    S += [(2.05, {"sapling": {**S[-1][1]["sapling"], "r": 0}}), (2.2, {"sapling": {"x": 0, "y": -0.006 * H, "r": -6}}),
-          (2.38, {"sapling": {"x": 0, "y": 0.003 * H, "r": 4}}), (2.58, {"sapling": {"x": 0, "y": 0, "r": -2}}),
-          (2.85, {"sapling": {"x": 0, "y": 0, "r": 0}}), (end, {"sapling": {"x": 0, "y": 0, "r": 0}})]
-    slots = {**show("sapling", end), **show("plant_pot", end), **lids(1.6, 1.9)}
+    for t, c in P:
+        S.append((t, {"plant_pot": dict(c), "sapling": {"x": c["x"], "y": c["y"], "r": wob.get(t, 0)}}))
+    S += [(t, {}) for t in ()]
+    S = sorted(S + [(t, {"sapling": {"r": r}}) for t, r in wob.items() if t not in dict(S)], key=lambda k: k[0])
+    slots = {**show("sapling", end), **show("plant_pot", end), **lids(3.3, 3.75)}
     # the left paw reaches across the chest, swinging the upper sleeve's hidden end out past the shoulder: off until
     # the arm is back at rest
-    slots["upperarm_l"] = {"attachment": [{"name": None}, {"time": 3.25, "name": "upperarm_l"}]}
-    slots["lid_l"]["attachment"] += [{"time": 3.8, "name": "lid_l"}, {"time": 4.2, "name": None}]   # happy eyes
-    slots["lid_r"]["attachment"] += [{"time": 3.8, "name": "lid_r"}, {"time": 4.2, "name": None}]
-    order = {"forearm_r": "plant_pot", "hand_r": "forearm_r"}       # both paws in front of the plant and pot
+    slots["upperarm_l"] = {"attachment": [{"name": None}, {"time": 2.95, "name": "upperarm_l"}]}
+    order = {"forearm_r": "plant_pot", "hand_r": "forearm_r"}       # both paws in front of the pot
     return {"bones": {**bake_ft(poses, end), **bake(S, end)}, "slots": slots,
             "drawOrder": [draw_order_key(names, order)]}
 

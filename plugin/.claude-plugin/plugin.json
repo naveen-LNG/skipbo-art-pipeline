@@ -1,6 +1,6 @@
 {
   "name": "skipbo-art",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Generate SkipBo game art on the SkipBo ComfyUI server in the house styles: characters and Spine-ready parts in the shipped Blocks style, scenes, sketches, icons. Stdlib-only Python client; works on macOS, Windows and Linux.",
   "author": { "name": "Tortoise Systems" },
   "keywords": ["comfyui", "spine", "game-art", "nano-banana", "z-image"]
