@@ -171,8 +171,10 @@ def joints(parts: dict, size, over: dict) -> dict:
         J["hat"] = (float(xs.mean()), float(ys.max()))
     if "eye_whites" in M:
         J["pupils"] = centroid(M["eye_whites"])
-    if "hand_l" in M:
+    if "hand_l" in M:                                              # tool grips: one at each palm
         J["tool"] = centroid(M["hand_l"])
+    if "hand_r" in M:
+        J["tool_r"] = centroid(M["hand_r"])
     # every pivot inside its own part (a hat's bottom edge, the gap between two pupils), and inside the parent's
     # part too where they overlap: spine_qa's "pivot on the joint"
     own = {}
@@ -180,7 +182,7 @@ def joints(parts: dict, size, over: dict) -> dict:
         if not p["tool"] and n in M:
             own[p["bone"]] = own.get(p["bone"], 0) | M[n]
     for b, p in list(J.items()):
-        if b in ("root", "tool") or b not in own:
+        if b in ("root", "tool", "tool_r") or b not in own:
             continue
         par = PARENT.get(b)
         both = own[b] & own[par] if par in own else None
@@ -203,7 +205,7 @@ PARENT = {"hips": "root", "torso": "hips", "head": "torso", "upperarm_l": "torso
           "forearm_l": "upperarm_l", "forearm_r": "upperarm_r", "hand_l": "forearm_l", "hand_r": "forearm_r",
           "leg_l": "hips", "leg_r": "hips", "foot_l": "leg_l", "foot_r": "leg_r", "muzzle": "head", "jaw": "muzzle",
           "mustache": "muzzle", "hat": "head", "brows": "head", "pupils": "head", "sidefur_l": "head",
-          "sidefur_r": "head", "tool": "hand_l"}
+          "sidefur_r": "head", "tool": "hand_l", "tool_r": "hand_r"}
 POINTS_TO = {"upperarm_l": "forearm_l", "upperarm_r": "forearm_r", "forearm_l": "hand_l", "forearm_r": "hand_r",
              "leg_l": "foot_l", "leg_r": "foot_r", "torso": "head"}
 # bones with no children that only translate in the animations: they may point anywhere, so into their part
@@ -274,9 +276,10 @@ def region(img_size, centre_sk, bone_sk, bone_angle, extra_rot=0.0) -> dict:
     return att
 
 
-def tool_hold(img: Image.Image, grip_from_handle: float, head_angle: float, J, A):
-    """Region on the tool bone so the handle point grip_from_handle (0 = handle end, 1 = head end, along the long
-    axis) sits on the bone and the head points at head_angle (world degrees at rest). The head end is the wider one."""
+def tool_hold(img: Image.Image, grip_from_handle: float, head_angle: float, J, A, bone: str = "tool"):
+    """Region on a grip bone ("tool" in hand_l, "tool_r" in hand_r) so the handle point grip_from_handle (0 = handle
+    end, 1 = head end, along the long axis) sits on the bone and the head points at head_angle (world degrees at
+    rest). The head end is the wider one."""
     a = np.asarray(img)[..., 3] > ALPHA
     c, d, (lo, hi) = axis(a)
     ys, xs = np.nonzero(a)
@@ -291,9 +294,9 @@ def tool_hold(img: Image.Image, grip_from_handle: float, head_angle: float, J, A
     R = head_angle - head_img                                     # rotate image so the head points at head_angle
     off = (img.width / 2 - g[0], -(img.height / 2 - g[1]))        # image centre relative to grip, y up
     cx, cy = rot(off, R)
-    tool_sk = to_sk(J["tool"], J)
-    reg = region(img.size, (tool_sk[0] + cx, tool_sk[1] + cy), tool_sk, A["tool"], R)
-    return reg, {"length": float(hi - lo), "grip": grip_from_handle, "head_angle": head_angle}
+    tool_sk = to_sk(J[bone], J)
+    reg = region(img.size, (tool_sk[0] + cx, tool_sk[1] + cy), tool_sk, A[bone], R)
+    return reg, {"length": float(hi - lo), "grip": grip_from_handle, "head_angle": head_angle, "bone": bone}
 
 
 class Kin:
@@ -624,6 +627,64 @@ def shovel_dig(kin: Kin, hold: dict, H: float, names: list) -> dict:
     return {"bones": bake(full, end, keys), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
 
 
+# the wrench turn, front view, in the character's right paw (picture left): the wrench pivots on a bolt low out to
+# the picture's left, the paw rides its handle (IK), the body bends into the pull and the face strains.
+# (time, wrench angle bolt->handle, torso turn, torso drop (fraction of height), torso squash, head turn, head drop,
+#  brows, jaw open, other arm's upper / fore turn)
+WRENCH = [
+    (0.0, -14, 9, 0.016, 1.0, 7, 4, -3, 0.85, 6, 10),      # set: bent over the bolt
+    (0.4, -2, 4, 0.004, 1.025, 3, -2, 3, 1.15, 12, 16),    # anticipation: rises, wrench eased back, a breath in
+    (0.75, -34, 15, 0.034, 0.95, 12, 10, -7, 0.6, 2, 6),   # pull: bends hard into it, eyes squeezed, jaw clenched
+    (1.0, -36, 16, 0.036, 0.945, 13, 11, -8, 0.55, 0, 4),  # strain
+    (1.35, -16, 9, 0.017, 1.0, 7, 4, -3, 0.85, 6, 10),     # ratchets back
+    (1.7, -14, 9, 0.016, 1.0, 7, 4, -3, 0.85, 6, 10),      # set again (loops)
+]
+WRENCH_BOLT = (-0.37, 0.40)                                 # bolt, fractions of the height
+WRENCH_SQUEEZE = (0.72, 1.05)                               # eyes shut through the pull
+
+
+def wrench_turn(kin: Kin, hold: dict, H: float, names: list) -> dict:
+    """The wrench in the gripping paw (hold["bone"]'s hand), turning a bolt with anticipation, a body bend and an
+    effort face; the paw and wrench are drawn in front of the body. The wrench's grip point sits half way along it,
+    its head end on the bolt."""
+    L, g, H0, grip = hold["length"], hold["grip"], hold["head_angle"], hold["bone"]
+    hand = PARENT[grip]
+    side = hand[-1]
+    other = "l" if side == "r" else "r"
+    s_other = 1 if other == "l" else -1                          # the free arm swings out to its own side
+    grip_rot = kin.bones[grip].get("rotation", 0.0)
+    bolt = (WRENCH_BOLT[0] * H, WRENCH_BOLT[1] * H)
+    misses = []
+
+    def pose(theta, tr, ty, tsy, hr, hy, brows, jaw, oua, ofa):
+        u = unit(theta)
+        G = (bolt[0] + (1 - g) * L * u[0], bolt[1] + (1 - g) * L * u[1])   # head (bolt) end -> grip
+        p = {"torso": {"r": tr, "y": -ty * H, "sy": tsy}, "head": {"r": hr, "y": -hy},
+             "brows": {"y": brows}, "jaw": {"sy": jaw}, "mustache": {"y": -3 * (1 - jaw)},
+             "pupils": {"x": -6, "y": -4}, f"upperarm_{other}": {"r": s_other * oua},
+             f"forearm_{other}": {"r": s_other * ofa}}
+        q = {b: {k: v for k, v in c.items() if k != "sy"} for b, c in p.items()}   # Kin has no scale
+        dua, dfa, m = kin.reach(side, G, q)
+        p[f"upperarm_{side}"], p[f"forearm_{side}"] = {"r": dua}, {"r": dfa}
+        q[f"upperarm_{side}"], q[f"forearm_{side}"] = {"r": dua}, {"r": dfa}
+        hand_w = kin.world(q)[hand][0]
+        p[grip] = {"r": wrap((theta + 180 - H0) - hand_w - grip_rot)}
+        misses.append(round(m, 1))
+        return p
+
+    poses = [(t, pose(*rest)) for t, *rest in WRENCH]
+    for i in range(1, len(poses)):                               # turns stay within 180 degrees key to key
+        for b, ch in poses[i][1].items():
+            if "r" in ch and "r" in poses[i - 1][1].get(b, {}):
+                ch["r"] = poses[i - 1][1][b]["r"] + wrap(ch["r"] - poses[i - 1][1][b]["r"])
+    if any(misses):
+        print(f"  ? doubt: wrench: the paw misses the handle by {max(misses)} units at some key pose")
+    end = WRENCH[-1][0]
+    slots = {**show("tool_wrench", end), **lids(*WRENCH_SQUEEZE)}
+    order = {f"forearm_{side}": "tool_wrench", hand: f"forearm_{side}"}   # paw over the wrench, in front of the body
+    return {"bones": bake(poses, end), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
+
+
 def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, height: float = 0.0,
                slot_names: list | None = None) -> dict:
     """Starter set for a front-facing standing character with the tool hand on the picture's right (hand_l)."""
@@ -675,15 +736,8 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
     ], 2.4)
     A["talk"] = {"bones": {**gest, **talk}, "slots": blink(1.95)}
     # tools
-    if "wrench" in tools:
-        # a ratchet: the hand cranks the wrench through a wide arc and back, the body leans into each pull
-        hold = {"upperarm_l": {"r": 55}, "forearm_l": {"r": 35}, "hand_l": {"r": 0}, "tool": {"r": 0},
-                "torso": {"r": 0}, "head": {"r": -4}, "pupils": {"x": 5, "y": -1}}
-        turn = {"upperarm_l": {"r": 40}, "forearm_l": {"r": -5}, "hand_l": {"r": -20}, "tool": {"r": -30},
-                "torso": {"r": -4}, "head": {"r": -7}, "pupils": {"x": 6, "y": -3}}
-        A["wrench"] = {"bones": bake([
-            (0.0, hold), (0.5, turn), (1.0, hold), (1.5, turn), (2.0, hold),
-        ], 2.0), "slots": {**show("tool_wrench", 2.0), **blink(1.0)}}
+    if "wrench" in tools and kin is not None:
+        A["wrench"] = wrench_turn(kin, holds["wrench"], height, slot_names)
     if "shovel" in tools and kin is not None:
         A["shovel"] = shovel_dig(kin, holds["shovel"], height, slot_names)
     if "hammer" in tools:
@@ -755,17 +809,20 @@ def main() -> int:
 
     slots, skin, images = [], {}, []
     tool_slots = []
+    # which paw holds each tool: "l" (picture right, the default) or "r" (the character's right, picture left)
+    hands = {"wrench": "r", **cfg.get("tool_hands", {})}
     for t, d in tools.items():
         att = f"tool_{t}"
+        bone = "tool_r" if hands.get(t) == "r" and "tool_r" in J else "tool"
         d["img"].save(out / "images" / f"{name}_{att}.png")
         images.append(f"{name}_{att}")
         if t in holds:                                            # a grip from the tool's shape; else its PSD place
-            reg, hold_info[t] = tool_hold(d["img"], *holds[t], J, A)
+            reg, hold_info[t] = tool_hold(d["img"], *holds[t], J, A, bone)
         else:
             x0, y0, *_ = d["bbox"]
             c = to_sk((x0 + d["img"].width / 2, y0 + d["img"].height / 2), J)
-            reg = region(d["img"].size, c, to_sk(J["tool"], J), A["tool"])
-        tool_slots.append({"name": att, "bone": "tool"})
+            reg = region(d["img"].size, c, to_sk(J[bone], J), A[bone])
+        tool_slots.append({"name": att, "bone": bone})
         skin[att] = {f"{name}_{att}": reg}
     # props that a tool animation shows (the shovel's dirt): "props": {"dirt_mound": {"image", "width"}, ...}.
     # The mound sits on the ground on a bone of its own; the clod has a root bone the dig moves.
@@ -807,12 +864,8 @@ def main() -> int:
         if p == "shadow" and "dirt_mound" in props:               # the pile lies on the ground, behind the body
             slots.append(props["dirt_mound"])
 
-    tb = next(b for b in bones if b["name"] == "tool")
-    palms = {"hand_l": (tb["x"], tb["y"])}
-    if "hand_r" in parts:
-        c = centroid(mask(parts["hand_r"], size))
-        w, j = to_sk(c, J), to_sk(J["hand_r"], J)
-        palms["hand_r"] = rot((w[0] - j[0], w[1] - j[1]), -A["hand_r"])
+    grips = {b["name"]: b for b in bones if b["name"] in ("tool", "tool_r")}   # palm = the grip bone's place
+    palms = {PARENT[g]: (b["x"], b["y"]) for g, b in grips.items()}
     kin = Kin(bones, palms)
     anims = animations(list(tools), kin, hold_info, H_est, [s["name"] for s in slots])
     for an in anims.values():                                     # drop keys for slots/bones this character lacks;
