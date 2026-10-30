@@ -1146,20 +1146,44 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
         A["paint"] = paint_wall(kin, holds["brush"], height, props, names)
     if kin is not None and {"watering_can", "flowers"} <= props.keys():
         A["water"] = water_plants(kin, height, props, names)
-    if "hammer" in tools:
-        rest = {"upperarm_l": {"r": 40}, "forearm_l": {"r": 30}, "tool": {"r": 0}, "torso": {"r": 0},
-                "head": {"r": -2}, "pupils": {"x": 4, "y": -2}}
-        A["hammer"] = {"bones": bake_ft([
-            (0.0, rest),
-            # wind up out to the side (head up and back, clear of the face), strike down and out, small rebound
-            (0.45, {"upperarm_l": {"r": 95}, "forearm_l": {"r": 40}, "tool": {"r": -80}, "torso": {"r": 4},
-                    "head": {"r": 3}, "root": {"y": 3}, "pupils": {"y": 2}}),
-            (0.72, {"upperarm_l": {"r": 10}, "forearm_l": {"r": -5}, "tool": {"r": -50}, "torso": {"r": -6, "sy": 0.97},
-                    "head": {"r": -5}, "root": {"y": -3}, "hat": {"y": 3}, "pupils": {"y": -3}}),
-            (0.9, {"upperarm_l": {"r": 18}, "tool": {"r": -44}, "torso": {"sy": 1}, "hat": {"y": 0}}),
-            (1.4, rest),
-        ], 1.4), "slots": {**show("tool_hammer", 1.4), **lids(0.7, 0.85)}}
+    if "hammer" in tools and kin is not None:
+        A["hammer"] = hammer_strike(kin, holds["hammer"], height, names)
     return A
+
+
+# the hammer in the gripping paw (the character's right by default, picture left): (time, paw x, y (fractions of the
+# height), hammer angle handle->head in world degrees, torso turn, torso drop, torso squash, face, other arm's
+# upper / fore turn). He winds up high beside his head (rises, leans back, breathes in), strikes down and out with a
+# little bend of the body into the blow (eyes squeezed, jaw clenched), rebounds, and eases back to the ready hold.
+HAMMER = [
+    (0.0, (-0.33, 0.36), 150, 0, 0.0, 1.0, (0, 0, 0, 1.05, -6, -3), (4, 6)),        # ready
+    (0.45, (-0.34, 0.60), 100, -4, -0.008, 1.03, (-3, 1, 5, 1.15, -6, 2), (10, 12)),  # anticipation: wind up
+    (0.68, (-0.42, 0.33), 185, 7, 0.03, 0.95, (6, -5, -6, 0.75, -6, -5), (0, 2)),    # strike, bent into it
+    (0.82, (-0.40, 0.37), 172, 6, 0.025, 0.96, (5, -4, -4, 0.8, -6, -5), (2, 4)),    # rebound
+    (1.2, (-0.35, 0.40), 160, 2, 0.008, 0.99, (2, -1, 0, 1.0, -6, -4), (3, 5)),      # eases back
+    (1.6, (-0.33, 0.36), 150, 0, 0.0, 1.0, (0, 0, 0, 1.05, -6, -3), (4, 6)),        # ready (loops)
+]
+HAMMER_SQUEEZE = (0.64, 0.86)                                   # eyes shut through the blow
+
+
+def hammer_strike(kin: Kin, hold: dict, H: float, names: list) -> dict:
+    """A hammer blow keyed by where the gripping paw is (IK) and where the hammer points, with anticipation, a
+    little bend into the strike and an effort face; the paw is drawn over the handle, in front of the body."""
+    grip, H0 = hold["bone"], hold["head_angle"]
+    hand = PARENT[grip]
+    side, other = hand[-1], "l" if hand[-1] == "r" else "r"
+    s_other = 1 if other == "l" else -1
+    keys = []
+    for t, paw, phi, tr, ty, tsy, fc, (oua, ofa) in HAMMER:
+        body = {"torso": {"r": tr if side == "r" else -tr, "y": -ty * H, "sy": tsy}, **face(*fc),
+                f"upperarm_{other}": {"r": s_other * oua}, f"forearm_{other}": {"r": s_other * ofa}}
+        x = paw[0] if side == "r" else -paw[0]
+        keys.append((t, body, {side: (x * H, paw[1] * H)}, {grip: (phi if side == "r" else 180 - phi) - H0}))
+    poses = chore(kin, keys, "hammer")
+    end = HAMMER[-1][0]
+    slots = {**show("tool_hammer", end), **lids(*HAMMER_SQUEEZE)}
+    order = {f"forearm_{side}": "tool_hammer", hand: f"forearm_{side}"}   # the fist round the handle, in front
+    return {"bones": bake_ft(poses, end), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
 
 
 # ------------------------------------------------------------------ main
@@ -1182,11 +1206,10 @@ def main() -> int:
     cfg = json.loads(a.config.read_text(encoding="utf-8"))
     name = cfg["character"]
     out = a.out
+    parts, master = load_parts(cfg, base)                         # read the PSD before clearing the last build
     if (out / "images").exists():
         shutil.rmtree(out / "images")
     (out / "images").mkdir(parents=True, exist_ok=True)
-
-    parts, master = load_parts(cfg, base)
     size = master.size
     J = joints(parts, size, cfg.get("joints", {}))
     A = bone_angles(J, parts, size)
@@ -1216,7 +1239,7 @@ def main() -> int:
     slots, skin, images = [], {}, []
     tool_slots = []
     # which paw holds each tool: "l" (picture right, the default) or "r" (the character's right, picture left)
-    hands = {"wrench": "r", "brush": "r", **cfg.get("tool_hands", {})}
+    hands = {"wrench": "r", "brush": "r", "hammer": "r", **cfg.get("tool_hands", {})}
     for t, d in tools.items():
         att = f"tool_{t}"
         bone = "tool_r" if hands.get(t) == "r" and "tool_r" in J else "tool"
