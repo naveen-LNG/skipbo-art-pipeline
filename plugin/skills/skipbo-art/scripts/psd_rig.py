@@ -23,7 +23,9 @@ picture's right), plus jaw (mouth), muzzle, mustache, hat, brows, lid_l/lid_r (c
 pupil_l/pupil_r, shadow. Tools ("tool": true, or extra_tools: images with a white or transparent background) hang
 on a "tool" bone in hand_l's grip, hidden at rest and shown by their animation. Long two-handed tools (the shovel)
 take both paws: Kin.reach (two-bone IK) puts each paw on the handle and the dig is keyed by where the top paw is.
-Optional "props" ({"dirt_mound": {"image", "width"}, "dirt_clod": {...}}) give the dig a pile and a thrown clod.
+Optional "props" ({"dirt_mound": {"image", "width"}, "dirt_clod": {...}}) give the dig a pile and a thrown clod;
+chore props (see PROPS: sapling + plant_soil, ladder + frame + cloth, wall + paint_a/b with a "brush" extra tool,
+watering_can + flowers + drop) add the plant, polish, paint and water animations.
 
 Joints come from where layers overlap (elbow = centre of forearm over upperarm, and so on; shoulders sit on the
 upper arm's long axis, a third in from its hidden end); override any of them under "joints".
@@ -80,24 +82,37 @@ def resolve(p: str, base: Path) -> Path:
     return q if q.is_absolute() else base / q
 
 
-def key_white(img: Image.Image) -> Image.Image:
-    """Transparent background for a tool painted on white: border-connected near-white pixels go, edges soften."""
+def key_white(img: Image.Image, holes: int = 1500) -> Image.Image:
+    """Transparent background for a tool painted on white: border-connected near-white pixels go, and so do enclosed
+    white areas larger than holes px (between a ladder's steps, inside a can's handle); edges soften."""
     a = np.asarray(img.convert("RGBA")).copy()
     if a[..., 3].min() < 250:                                   # already cut out
         return img.convert("RGBA")
     light = a[..., :3].min(2) > 232
     bg = np.zeros(light.shape, bool)
-    stack = [(y, x) for y in (0, light.shape[0] - 1) for x in range(light.shape[1])]
-    stack += [(y, x) for x in (0, light.shape[1] - 1) for y in range(light.shape[0])]
-    while stack:
-        y, x = stack.pop()
-        if bg[y, x] or not light[y, x]:
-            continue
-        bg[y, x] = True
-        for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
-            yy, xx = y + dy, x + dx
-            if 0 <= yy < bg.shape[0] and 0 <= xx < bg.shape[1] and not bg[yy, xx] and light[yy, xx]:
-                stack.append((yy, xx))
+
+    def fill(seeds, into):
+        """Flood the light pixels connected to seeds into mask into; returns them."""
+        stack, got = list(seeds), []
+        while stack:
+            y, x = stack.pop()
+            if into[y, x] or not light[y, x]:
+                continue
+            into[y, x] = True
+            got.append((y, x))
+            for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                yy, xx = y + dy, x + dx
+                if 0 <= yy < into.shape[0] and 0 <= xx < into.shape[1] and not into[yy, xx] and light[yy, xx]:
+                    stack.append((yy, xx))
+        return got
+    fill([(y, x) for y in (0, light.shape[0] - 1) for x in range(light.shape[1])]
+         + [(y, x) for x in (0, light.shape[1] - 1) for y in range(light.shape[0])], bg)
+    seen = bg.copy()
+    for y, x in zip(*np.nonzero(light & ~bg)):                  # enclosed white: big areas are background too
+        comp = fill([(y, x)], seen)
+        if len(comp) > holes:
+            ys_, xs_ = zip(*comp)
+            bg[list(ys_), list(xs_)] = True
     alpha = np.where(bg, 0, 255).astype(np.uint8)
     # one-pixel feather against the removed background
     m = Image.fromarray(alpha).filter(ImageFilter.MinFilter(3))
@@ -309,28 +324,52 @@ class Kin:
         self.palms = palms                                        # hand bone -> palm point in its local frame
 
     def world(self, pose: dict) -> dict:
-        """{bone: (angle, x, y)} in skeleton units for a pose {bone: {"r", "x", "y"}} of deltas from the setup."""
-        W = {}
+        """{bone: (angle, x, y)} in skeleton units for a pose {bone: {"r", "x", "y", "sx", "sy"}} of deltas from the
+        setup. Scale is inherited the way Spine does it (a squashed torso pulls the shoulders down), so W["__M"]
+        holds each bone's world matrix."""
+        W, M = {}, {}
         for n in self.order:
             b, d = self.bones[n], pose.get(n, {})
             lx, ly = b.get("x", 0.0) + d.get("x", 0.0), b.get("y", 0.0) + d.get("y", 0.0)
-            r = b.get("rotation", 0.0) + d.get("r", 0.0)
+            r = math.radians(b.get("rotation", 0.0) + d.get("r", 0.0))
+            sx, sy = d.get("sx", 1.0), d.get("sy", 1.0)
+            L = ((math.cos(r) * sx, -math.sin(r) * sy), (math.sin(r) * sx, math.cos(r) * sy))
             if "parent" in b:
-                pa, px, py = W[b["parent"]]
-                ox, oy = rot((lx, ly), pa)
-                W[n] = (pa + r, px + ox, py + oy)
+                P = M[b["parent"]]
+                _, px, py = W[b["parent"]]
+                x, y = px + P[0][0] * lx + P[0][1] * ly, py + P[1][0] * lx + P[1][1] * ly
+                L = ((P[0][0] * L[0][0] + P[0][1] * L[1][0], P[0][0] * L[0][1] + P[0][1] * L[1][1]),
+                     (P[1][0] * L[0][0] + P[1][1] * L[1][0], P[1][0] * L[0][1] + P[1][1] * L[1][1]))
             else:
-                W[n] = (r, lx, ly)
+                x, y = lx, ly
+            M[n] = L
+            W[n] = (math.degrees(math.atan2(L[1][0], L[0][0])), x, y)
+        W["__M"] = M
         return W
 
     def point(self, W: dict, bone: str, local) -> tuple:
-        a, x, y = W[bone]
-        ox, oy = rot(local, a)
-        return x + ox, y + oy
+        _, x, y = W[bone]
+        m = W["__M"][bone]
+        return x + m[0][0] * local[0] + m[0][1] * local[1], y + m[1][0] * local[0] + m[1][1] * local[1]
 
     def reach(self, side: str, target, pose: dict) -> tuple:
         """Upper-arm and forearm deltas that put hand_<side>'s palm on target (skeleton units) with the hand held
-        straight on the forearm and the elbow hanging below, plus the distance still missing (0 = reached)."""
+        straight on the forearm and the elbow hanging below, plus the distance still missing (0 = reached). The
+        two-bone solve is exact without scale; a squashed body is closed in on by re-aiming a few times."""
+        ua, fa, hd = f"upperarm_{side}", f"forearm_{side}", f"hand_{side}"
+        aim, err = target, 0.0
+        for _ in range(6):
+            d_ua, d_fa, miss = self._reach(side, aim, pose)
+            q = {**pose, ua: {**pose.get(ua, {}), "r": d_ua}, fa: {**pose.get(fa, {}), "r": d_fa}}
+            px, py = self.point(self.world(q), hd, self.palms[hd])
+            ex, ey = target[0] - px, target[1] - py
+            err = math.hypot(ex, ey)
+            if err < 0.3 or miss > 0:
+                break
+            aim = aim[0] + ex, aim[1] + ey
+        return d_ua, d_fa, max(miss, err if err >= 0.3 else 0.0)
+
+    def _reach(self, side: str, target, pose: dict) -> tuple:
         ua, fa, hd = f"upperarm_{side}", f"forearm_{side}", f"hand_{side}"
         W = self.world(pose)
         par = W[self.bones[ua]["parent"]][0]
@@ -378,15 +417,25 @@ def draw_order_key(names: list, moves: dict, time: float = 0.0) -> dict:
 # ------------------------------------------------------------------ animation
 
 def spline(ts: list, vs: list, t: float, loop: bool) -> float:
-    """Cubic Hermite through the keys with Catmull-Rom tangents, so motion flows through a pose instead of stopping
-    on it. The ends are at rest, or, for a loop (last key = first), share the tangent across the seam."""
+    """Cubic Hermite through the keys, so motion flows through a passing pose instead of stopping on it, and eases in
+    and out of an extreme (a key where the value turns back, or holds): its tangent is flat there, and elsewhere the
+    Catmull-Rom tangent is limited so the curve never overshoots a key (as Spine's auto curves do). The ends are at
+    rest, or, for a loop (last key = first), share the tangent across the seam."""
     n = len(ts)
     def tangent(i):
         if 0 < i < n - 1:
-            return (vs[i + 1] - vs[i - 1]) / (ts[i + 1] - ts[i - 1])
-        if loop and n > 2:                                       # wrap: neighbours are keys 1 and n-2
-            return (vs[1] - vs[n - 2]) / ((ts[1] - ts[0]) + (ts[n - 1] - ts[n - 2]))
-        return 0.0
+            a, b, c, ta, tb, tc = vs[i - 1], vs[i], vs[i + 1], ts[i - 1], ts[i], ts[i + 1]
+        elif loop and n > 2:                                     # wrap: neighbours are keys 1 and n-2
+            a, b, c = vs[n - 2], vs[0], vs[1]
+            ta, tb, tc = ts[0] - (ts[n - 1] - ts[n - 2]), ts[0], ts[1]
+        else:
+            return 0.0
+        d0, d1 = (b - a) / (tb - ta), (c - b) / (tc - tb)
+        if d0 * d1 <= 0:                                         # an extreme or a hold: ease in and out
+            return 0.0
+        m = (c - a) / (tc - ta)
+        lim = 3 * min(abs(d0), abs(d1))
+        return max(-lim, min(lim, m))
     k = 0
     while k + 1 < n and ts[k + 1] <= t + 1e-9:
         k += 1
@@ -522,6 +571,68 @@ def show(slot: str, end: float) -> dict:
     return {slot: {"attachment": [{"name": slot}, {"time": end, "name": slot}]}}
 
 
+def hide(slot: str, end: float) -> dict:
+    return {slot: {"attachment": [{"name": None}, {"time": end, "name": None}]}}
+
+
+# follow-through and overlapping action: loose parts hang on the body by a damped spring, so they trail a move,
+# swing past where it stops and settle a beat later. (part, channel, source bones summed, source channel, gain,
+# spring frequency Hz, damping ratio)
+FOLLOW = [
+    ("hat", "r", ("torso", "head"), "r", 1.0, 2.6, 0.35),
+    ("sidefur_l", "r", ("torso", "head"), "r", 0.4, 3.0, 0.4),
+    ("sidefur_r", "r", ("torso", "head"), "r", 0.4, 3.0, 0.4),
+    ("mustache", "r", ("torso", "head"), "r", 0.6, 3.0, 0.35),
+    ("hat", "y", ("root", "torso", "head"), "y", 0.6, 3.0, 0.3),
+    ("mustache", "y", ("root", "torso", "head"), "y", 0.3, 3.5, 0.35),
+]
+
+
+def follow_through(f, end: float, loop: bool | None = None):
+    """f(t) -> pose, plus FOLLOW's springs on top. A loop runs the springs round twice so the seam matches."""
+    dt = 1 / 240
+    n = int(round(end / dt))
+    F = [f(i * dt) for i in range(n + 1)]
+    if loop is None:
+        a, b = F[0], F[-1]
+        loop = all(abs(a.get(k, {}).get(c, DEFAULTS[c]) - b.get(k, {}).get(c, DEFAULTS[c])) < 1e-3
+                   for k in set(a) | set(b) for c in DEFAULTS)
+    off = {}
+    for part, ch, bones, sch, gain, hz, zeta in FOLLOW:
+        s = [sum(p.get(b, {}).get(sch, 0.0) for b in bones) for p in F]
+        if max(s) - min(s) < 1e-6:
+            continue
+        w = 2 * math.pi * hz
+        x, v, rec = s[0], 0.0, []
+        for _ in range(2 if loop else 1):
+            rec = []
+            for i in range(n + 1):
+                rec.append(gain * (x - s[i]))
+                v += (w * w * (s[i] - x) - 2 * zeta * w * v) * dt
+                x += v * dt
+        if max(abs(r) for r in rec) > 0.05:
+            off[(part, ch)] = rec
+
+    def g(t):
+        p = {b: dict(c) for b, c in f(t).items()}
+        u = min(max(t / dt, 0.0), n)
+        i = min(int(u), n - 1)
+        for (part, ch), rec in off.items():
+            d = rec[i] + (rec[i + 1] - rec[i]) * (u - i)
+            c = p.setdefault(part, {})
+            c[ch] = c.get(ch, DEFAULTS[ch]) + d
+        return p
+    return g
+
+
+def bake_ft(poses, duration: float, key_times: list | None = None) -> dict:
+    """bake with follow-through on the loose parts (see FOLLOW)."""
+    f = poses if callable(poses) else sampler(poses)
+    if key_times is None and not callable(poses):
+        key_times = [t for t, _ in poses]
+    return bake(follow_through(f, duration), duration, key_times)
+
+
 # the dig, in fractions of the skeleton's height (front view). A shovel is far longer than a cartoon arm, so it
 # is held low and flat (about 40 degrees, as the PSD paints it) with both paws at mid-chest and the blade on the
 # ground well out to the picture's left; held steep, the top paw ends up at the mouth and the arms cross the face.
@@ -624,7 +735,7 @@ def shovel_dig(kin: Kin, hold: dict, H: float, names: list) -> dict:
                                              {"time": t_land, "name": None}]}
     order = {"forearm_r": "tool_shovel", "hand_r": "forearm_r"} # the lower paw grips in front of the body
     keys = [t for t, *_ in DIG] + [DIG_SCOOP, DIG_RELEASE, t_land]  # the poses, the scoop, the throw, the landing
-    return {"bones": bake(full, end, keys), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
+    return {"bones": bake_ft(full, end, keys), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
 
 
 # the wrench turn, front view, in the character's right paw (picture left), as the artist posed it: the arm reaches
@@ -683,16 +794,302 @@ def wrench_turn(kin: Kin, hold: dict, H: float, names: list) -> dict:
     end = WRENCH[-1][0]
     slots = {**show("tool_wrench", end), **lids(*WRENCH_SQUEEZE)}
     order = {f"forearm_{side}": "tool_wrench", hand: f"forearm_{side}"}   # paw over the wrench, in front of the body
-    return {"bones": bake(poses, end), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
+    return {"bones": bake_ft(poses, end), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
+
+
+# ------------------------------------------------------------------ chores: props the character works with
+
+# where each prop sits: (parent bone, layer, anchor = the image point (fractions from its top left) on the bone,
+# the bone's place (fractions of the height, y up from the ground) or None to ride the right paw's grip, tool_r).
+# Layer "back" is drawn behind the body (just after the shadow), "held" in front of it, just behind the left paw.
+# "stage" props stand on the ground while the character is lifted onto the ladder.
+PLANT_AT = (-0.05, 0.07)            # the sapling's root ball, planted in front of the feet
+FRAME_AT = (-0.44, 1.12)             # the picture frame on the wall, up beside the ladder, clear of the head
+LADDER_STEP = 0.41                   # the feet rest on the ladder's second step: this fraction of its height
+WALL_X, PAINT_Y0, PAINT_X = -0.72, 0.42, (-0.56, -0.63)   # arm out, the paw clear of the face
+FLOWERS_X = -0.60
+PROPS = {
+    "sapling": ("root", "held", (0.58, 0.82), PLANT_AT),
+    "plant_soil": ("root", "held", (0.5, 0.93), (PLANT_AT[0], 0.0)),
+    "ladder": ("stage", "back", (0.5, 1.0), (0.0, 0.0)),
+    "frame": ("stage", "back", (0.5, 0.5), FRAME_AT),
+    "cloth": ("tool_r", "held", (0.45, 0.72), None),  # bunched over the fist
+    "wall": ("root", "back", (0.5, 1.0), (WALL_X, 0.0)),
+    "paint_a": ("root", "back", (0.5, 0.985), (PAINT_X[0], PAINT_Y0)),
+    "paint_b": ("root", "back", (0.5, 0.985), (PAINT_X[1], PAINT_Y0)),
+    "watering_can": ("tool_r", "held", (0.63, 0.05), None),   # hung from the top of its carry handle
+    "flowers": ("root", "back", (0.5, 0.95), (FLOWERS_X, 0.0)),
+    "drop": ("root", "held", (0.5, 0.6), (0.0, 0.0)),
+}
+PROP_POINTS = {"watering_can": {"rose": (0.035, 0.35)}}   # named image points the animations aim with
+
+
+def ik_pose(kin: Kin, body: dict, paws: dict | None = None, grips: dict | None = None) -> tuple:
+    """A pose from body deltas, paw targets ({side: palm point}) solved with Kin.reach, and grip bones turned to a
+    world angle ({grip bone: degrees}); plus the worst miss."""
+    p = {b: dict(c) for b, c in body.items()}
+    miss = 0.0
+    for side, tgt in (paws or {}).items():
+        dua, dfa, m = kin.reach(side, tgt, p)
+        p.setdefault(f"upperarm_{side}", {})["r"] = dua
+        p.setdefault(f"forearm_{side}", {})["r"] = dfa
+        miss = max(miss, m)
+    for g, ang in (grips or {}).items():
+        hand_w = kin.world(p)[PARENT[g]][0]
+        p.setdefault(g, {})["r"] = wrap(ang - hand_w - kin.bones[g].get("rotation", 0.0))
+    return p, miss
+
+
+def unwrap(poses: list):
+    """Each turn within 180 degrees of the pose before, so the splines never spin the long way round."""
+    for i in range(1, len(poses)):
+        for b, ch in poses[i][1].items():
+            if "r" in ch and "r" in poses[i - 1][1].get(b, {}):
+                prev = poses[i - 1][1][b]["r"]
+                ch["r"] = prev + wrap(ch["r"] - prev)
+
+
+def face(hr=0.0, hy=0.0, brows=0.0, jaw=1.0, px=0.0, py=0.0) -> dict:
+    """Head turn and drop, brows up, jaw open (1 = rest), eyes looking (pupils x, y)."""
+    return {"head": {"r": hr, "y": hy}, "brows": {"y": brows}, "jaw": {"sy": jaw}, "pupils": {"x": px, "y": py}}
+
+
+def chore(kin: Kin, keys: list, what: str) -> list:
+    """keys: [(time, body, paws, grips)] -> unwrapped poses, with a doubt printed if a paw can't reach."""
+    poses, misses = [], []
+    for t, body, paws, grips in keys:
+        p, m = ik_pose(kin, body, paws, grips)
+        poses.append((t, p))
+        misses.append(m)
+    unwrap(poses)
+    if max(misses) > 1:
+        print(f"  ? doubt: {what}: a paw misses its target by {max(misses):.1f} units at some key pose")
+    return poses
+
+
+def plant_sapling(kin: Kin, H: float, info: dict, names: list) -> dict:
+    """Both paws hold the sapling by its root ball; anticipation (rise, lift, breathe in), a deep squat that settles
+    a little further, the sapling let go into the soil (it drops in and wobbles), two pats of the soil, then up with
+    an overshoot and a proud, happy look."""
+    bw = 0.29 * info["sapling"]["w"] + 0.03 * H                  # ball centre -> each palm
+    def hold(x, y):
+        return {"r": (x * H - bw, y * H), "l": (x * H + bw, y * H)}
+    sq = {"leg_l": {"r": 8}, "leg_r": {"r": -8}}
+    up = {"leg_l": {"r": 0}, "leg_r": {"r": 0}}
+    rest_arms = {"upperarm_l": {"r": 0}, "forearm_l": {"r": 0}, "upperarm_r": {"r": 0}, "forearm_r": {"r": 0}}
+    pat_x = (PLANT_AT[0] * H - 0.14 * H, PLANT_AT[0] * H + 0.14 * H)
+    def pats(y):
+        return {"r": (pat_x[0], y * H), "l": (pat_x[1], y * H)}
+    T = lambda r, y, sy: {"torso": {"r": r, "y": y * H, "sy": sy}}
+    keys = [
+        (0.0, {**T(0, 0, 1.0), **up, **face(-4, -3, 0, 1.1, -1, -6)}, hold(-0.03, 0.30), None),     # holds it, smiles
+        (0.5, {**T(-3, 0.008, 1.03), **up, **face(2, 0, 4, 1.15, 0, -3)}, hold(-0.02, 0.34), None),  # rise, breathe in
+        (1.2, {**T(5, -0.20, 0.92), **sq, **face(-6, -6, -5, 0.85, -1, -6)}, hold(-0.05, 0.165), None),  # squat down
+        (1.5, {**T(5, -0.21, 0.91), **sq, **face(-7, -7, -6, 0.8, -1, -6)}, hold(-0.05, 0.155), None),   # settles in
+        (1.95, {**T(4, -0.20, 0.93), **sq, **face(-5, -5, 2, 1.0, -1, -6)}, pats(0.18), None),       # lets go
+        (2.2, {**T(4, -0.215, 0.91), **sq, **face(-6, -7, -2, 0.9, -1, -6)}, pats(0.085), None),   # pat
+        (2.4, {**T(4, -0.205, 0.92), **sq, **face(-5, -5, 0, 1.0, -1, -6)}, pats(0.16), None),
+        (2.6, {**T(4, -0.215, 0.91), **sq, **face(-6, -7, -2, 0.9, -1, -6)}, pats(0.085), None),   # pat
+        (2.85, {**T(3, -0.20, 0.93), **sq, **face(-5, -5, 1, 1.0, -1, -6)}, pats(0.17), None),
+        (3.25, {**T(-2, 0.012, 1.03), **up, **rest_arms, **face(3, 1, 6, 1.3, -1, -6)}, None, None),  # up, overshoot
+        (3.6, {**T(0, 0, 1.0), **up, **rest_arms, **face(-3, -2, 4, 1.25, -1, -6)}, None, None),      # settles, proud
+        (4.2, {**T(0, 0, 1.0), **up, **rest_arms, **face(-3, -2, 4, 1.25, -1, -6)}, None, None),
+    ]
+    poses = chore(kin, keys, "plant")
+    end = keys[-1][0]
+    # the sapling: carried in the paws, then let go into the soil, where it drops in and wobbles to a stop
+    S = []
+    for t, _, paws, _ in keys[:4]:
+        (xr, y), (xl, _) = paws["r"], paws["l"]
+        S.append((t, {"sapling": {"x": (xr + xl) / 2 - PLANT_AT[0] * H, "y": y - PLANT_AT[1] * H, "r": 0}}))
+    S += [(1.95, {"sapling": {**S[-1][1]["sapling"], "r": 0}}), (2.08, {"sapling": {"x": 0, "y": -0.008 * H, "r": -7}}),
+          (2.25, {"sapling": {"x": 0, "y": 0.004 * H, "r": 5}}), (2.45, {"sapling": {"x": 0, "y": 0, "r": -2}}),
+          (2.6, {"sapling": {"x": 0, "y": 0, "r": 0}}), (end, {"sapling": {"x": 0, "y": 0, "r": 0}})]
+    slots = {**show("sapling", end), **show("plant_soil", end), **lids(1.35, 1.7)}
+    slots["lid_l"]["attachment"] += [{"time": 3.35, "name": "lid_l"}, {"time": 3.8, "name": None}]   # happy eyes
+    slots["lid_r"]["attachment"] += [{"time": 3.35, "name": "lid_r"}, {"time": 3.8, "name": None}]
+    order = {"forearm_r": "plant_soil", "hand_r": "forearm_r"}     # both paws in front of the plant
+    return {"bones": {**bake_ft(poses, end), **bake(S, end)}, "slots": slots,
+            "drawOrder": [draw_order_key(names, order)]}
+
+
+def polish_frame(kin: Kin, H: float, info: dict, names: list) -> dict:
+    """On the ladder's second step, the right paw polishes a picture frame up above with a cloth: a huff on the
+    glass first (anticipation), two big circles with the body swaying into them and the free arm out for balance,
+    then the paw pulls away (follow-through) and he leans back to check it."""
+    lift = LADDER_STEP * info["ladder"]["h"]
+    F = (FRAME_AT[0] * H, FRAME_AT[1] * H)
+    R = 0.045 * H
+    stand = {"root": {"y": lift}, "stage": {"y": -lift}}
+    def k(t, paw, cloth, tr, sy, fc, free):
+        body = {**stand, "torso": {"r": tr, "sy": sy}, **fc,
+                "upperarm_l": {"r": free[0]}, "forearm_l": {"r": free[1]}}
+        return (t, body, {"r": (F[0] + paw[0] * H, F[1] + paw[1] * H)}, {"tool_r": cloth})
+    keys = [k(0.0, (0.06, -0.08), 0, 3, 1.0, face(4, 0, 2, 1.05, -5, 4), (25, 20)),
+            k(0.5, (0.08, -0.13), -8, 1, 0.97, face(9, -3, 5, 1.55, -6, 3), (20, 15)),     # huff on the glass
+            k(0.8, (0.0, 0.045), 5, 7, 1.04, face(7, 2, 3, 1.0, -6, 5), (35, 25))]         # reach up
+    for i in range(1, 9):                                         # two circles
+        a = math.radians(90 + 90 * i)
+        c = math.cos(a)
+        keys.append(k(round(0.8 + 0.28 * i, 3), (R / H * c, R / H * math.sin(a)), 6 * math.sin(a), 7 - 2.5 * c,
+                      1.04, face(7 - 1.5 * c, 2, 3, 1.0, -6, 5), (30 - 8 * c, 22)))
+    keys += [k(3.35, (0.09, -0.08), -6, 0, 0.99, face(1, 0, 6, 1.3, -4, 4), (22, 18)),     # pulls away, checks it
+             k(3.75, (0.07, -0.08), 0, 2.5, 1.0, face(3.5, 0, 2.5, 1.08, -5, 4), (25, 20))]
+    keys.append((4.1, *keys[0][1:]))
+    poses = chore(kin, keys, "polish")
+    end = 4.1
+    slots = {**show("ladder", end), **show("frame", end), **show("cloth", end), **hide("shadow", end), **blink(3.55)}
+    order = {"forearm_r": "cloth", "hand_r": "forearm_r"}          # the paw over the cloth
+    return {"bones": bake_ft(poses, end), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
+
+
+def paint_wall(kin: Kin, hold: dict, H: float, info: dict, names: list) -> dict:
+    """A small flat brush in the right paw paints two upward strokes on a wall beside him: the brush pulls back and
+    down first (anticipation), each stroke drags the bristles behind it, the second ends in a flick (follow-through),
+    then he steps back to admire it. Each paint stripe grows behind the brush tip."""
+    L, g, H0 = hold["length"], hold["grip"], hold["head_angle"]
+    reach = (1 - g) * L
+    A_, B_ = PAINT_X
+    def k(t, tip, phi, tr, ty, sy, fc):
+        u = unit(phi)
+        paw = (tip[0] * H - reach * u[0], tip[1] * H - reach * u[1])
+        body = {"torso": {"r": tr, "y": ty * H, "sy": sy}, **fc, "upperarm_l": {"r": 4}, "forearm_l": {"r": 6}}
+        return (t, body, {"r": paw}, {"tool_r": phi - H0})
+    keys = [k(0.0, (-0.40, 0.58), 150, 4, 0, 1.0, face(4, 0, 1, 1.05, -6, 0)),
+            k(0.45, (-0.38, 0.40), 140, 2, -0.012, 0.97, face(1, -2, 4, 1.15, -6, -3)),    # pulls back, loads up
+            k(0.7, (A_, 0.42), 172, 8, -0.005, 1.0, face(5, 0, 0, 0.95, -6, -3)),          # brush on the wall
+            k(1.2, (A_, 0.70), 188, 10, 0.01, 1.04, face(9, 2, -2, 0.9, -6, 4)),          # stroke up
+            k(1.6, (A_, 0.49), 168, 8, 0, 1.0, face(5, 0, 0, 0.95, -6, -2)),              # back down
+            k(1.95, (B_, 0.42), 172, 11, -0.005, 0.99, face(6, 0, 0, 0.95, -7, -3)),       # next stripe
+            k(2.45, (B_, 0.70), 190, 13, 0.01, 1.04, face(10, 2, -2, 0.9, -7, 4)),          # stroke up
+            k(2.75, (B_ + 0.015, 0.74), 195, 12, 0.012, 1.05, face(11, 2, 0, 1.0, -7, 5)),  # flick off the top
+            k(3.2, (-0.36, 0.52), 140, -3, 0, 1.0, face(-4, 0, 6, 1.3, -6, 0))]           # steps back, admires
+    keys.append((3.9, *keys[0][1:]))
+    poses = chore(kin, keys, "paint")
+    end = 3.9
+    body = sampler(poses)
+    ph = info["paint_a"]["h"]
+
+    def tip_y(t):
+        W = kin.world(body(t))
+        a, x, y = W["tool_r"]
+        return y + reach * unit(a + H0)[1]
+    frames = [i / FPS for i in range(int(round(end * FPS)) + 1)]
+    ty = {round(t, 6): tip_y(t) for t in frames}
+
+    def grown(t, t0, t1):
+        """How far a stripe has been painted by time t: the highest the tip got while stroking it."""
+        hi = max([ty[round(s, 6)] for s in frames if t0 <= s <= min(t, t1)] or [PAINT_Y0 * H])
+        return min(max((hi - PAINT_Y0 * H) / ph, 0.0), 1.0)
+    strokes = {"paint_a": (0.7, 1.25), "paint_b": (1.95, 2.75)}
+
+    def paint(t):
+        return {s: {"sy": max(grown(t, *w), 0.01) if t >= w[0] else 0.01} for s, w in strokes.items()}
+    stripe_keys = sorted({0.0, end, *[w for ws in strokes.values() for w in ws]})
+    slots = {**show("tool_brush", end), **show("wall", end), **lids(3.3, 3.6)}
+    for s, (t0, _) in strokes.items():
+        slots[s] = {"attachment": [{"name": None}, {"time": t0, "name": s}, {"time": end, "name": s}]}
+    order = {"forearm_r": "tool_brush", "hand_r": "forearm_r"}     # the paw over the brush handle
+    return {"bones": {**bake_ft(poses, end), **bake(paint, end, stripe_keys)}, "slots": slots,
+            "drawOrder": [draw_order_key(names, order)]}
+
+
+def water_plants(kin: Kin, H: float, info: dict, names: list) -> dict:
+    """The watering can hangs from the right paw by its carry handle (the artist's pose: arm relaxed at the side).
+    He swings it back (anticipation), out over the flowers and tips it, overshooting the tilt and settling; water
+    drops fall from the rose in a stream while he sways it along the bed; then the can swings back level, past it and
+    settles (follow-through), and the flowers perk up."""
+    W0 = kin.world({})
+    rest_palm = W0["tool_r"][1:]
+    def k(t, paw, tilt, tr, ty, sy, fc, free=(0, 0)):
+        body = {"torso": {"r": tr, "y": ty * H, "sy": sy}, **fc,
+                "upperarm_l": {"r": free[0]}, "forearm_l": {"r": free[1]}}
+        if paw is None:
+            return (t, {**body, "upperarm_r": {"r": 0}, "forearm_r": {"r": 0}, "tool_r": {"r": 0}}, None, None)
+        return (t, body, {"r": (paw[0] * H, paw[1] * H)}, {"tool_r": tilt})
+    keys = [k(0.0, None, 0, 0, 0, 1.0, face(3, 0, 0, 1.05, -6, -5)),
+            k(0.45, (rest_palm[0] / H + 0.03, rest_palm[1] / H + 0.04), -10, -3, 0.006, 1.02,
+              face(0, 1, 3, 1.15, -5, -3), (4, 4)),                                        # swings it back
+            k(0.9, (-0.45, 0.49), 58, 9, -0.004, 0.99, face(7, -2, 1, 1.1, -6, -6), (-4, -2)),  # out and tip, past it
+            k(1.1, (-0.455, 0.485), 50, 9.5, -0.004, 0.99, face(7.5, -2, 1, 1.1, -6, -6), (-4, -2)),
+            k(1.5, (-0.47, 0.47), 53, 10, -0.005, 0.99, face(8, -2, 2, 1.15, -7, -6), (-5, -2)),   # sways along
+            k(1.9, (-0.43, 0.49), 49, 8, -0.004, 0.99, face(6.5, -2, 2, 1.15, -6, -6), (-3, -2)),
+            k(2.2, (-0.42, 0.48), 45, 8, -0.004, 0.99, face(6, -2, 2, 1.1, -6, -6), (-3, -2)),
+            k(2.45, (-0.36, 0.42), -8, 2, 0.004, 1.01, face(2, 0, 5, 1.25, -5, -4), (2, 2)),  # level, swings past
+            k(2.8, (rest_palm[0] / H - 0.01, rest_palm[1] / H + 0.01), 4, 0.5, 0, 1.0,
+              face(3, 0, 2, 1.1, -6, -5))]
+    keys.append((3.2, *keys[0][1:]))
+    poses = chore(kin, keys, "water")
+    end = 3.2
+    body = sampler(poses)
+    can = info["watering_can"]
+    rose = can["points"]["rose"]
+    fl_top = FLOWERS_X * H, 0.13 * H
+    g_ = 2.4 * H
+
+    def spout(t):
+        W = kin.world(body(t))
+        return kin.point(W, "tool_r", rose), W["tool_r"][0]
+    drops = [n for n in names if n.startswith("drop")]
+    fly = {}
+    for i, d in enumerate(drops):                                 # each drop leaves the rose, falls on the bed,
+        fl, t0 = [], 0.95 + i * 0.09                              # and goes again
+        while t0 < 2.25:
+            (x0, y0), a = spout(t0)
+            v = unit(a + 165)
+            vx, vy = 0.25 * H * v[0], 0.25 * H * v[1]
+            tf = (vy + math.sqrt(vy * vy + 2 * g_ * max(y0 - fl_top[1], 1.0))) / g_
+            fl.append((round(t0, 3), round(t0 + tf, 3), (x0, y0), (vx, vy)))
+            t0 += 0.09 * len(drops)
+        fly[d] = fl
+
+    def drop_pose(t):
+        out = {}
+        for d, fl in fly.items():
+            pos = None
+            for j, (t0, t1, (x0, y0), (vx, vy)) in enumerate(fl):
+                if t0 <= t <= t1:
+                    s = t - t0
+                    pos = (x0 + vx * s, y0 + vy * s - 0.5 * g_ * s * s)
+                    break
+                nxt = fl[j + 1] if j + 1 < len(fl) else None
+                if t1 < t and (nxt is None or t < nxt[0]):       # hidden between flights: glide to the next start
+                    s = t1 - t0
+                    land = (x0 + vx * s, y0 + vy * s - 0.5 * g_ * s * s)
+                    to = nxt[2] if nxt else land
+                    u = (t - t1) / ((nxt[0] if nxt else end) - t1)
+                    pos = (land[0] + (to[0] - land[0]) * u, land[1] + (to[1] - land[1]) * u)
+                    break
+            if pos is None:
+                pos = fl[0][2]
+            out[d] = {"x": pos[0], "y": pos[1]}
+        return out
+    drop_keys = sorted({0.0, end, *[t for fl in fly.values() for f in fl for t in f[:2]]})
+    perk = [(0.0, {"flowers": {"sx": 1, "sy": 1}}), (2.0, {"flowers": {"sx": 1, "sy": 1}}),
+            (2.15, {"flowers": {"sx": 1.03, "sy": 0.95}}), (2.4, {"flowers": {"sx": 0.97, "sy": 1.07}}),
+            (2.65, {"flowers": {"sx": 1.01, "sy": 0.99}}), (2.9, {"flowers": {"sx": 1, "sy": 1}}),
+            (end, {"flowers": {"sx": 1, "sy": 1}})]
+    slots = {**show("watering_can", end), **show("flowers", end), **blink(2.95)}
+    for d, fl in fly.items():
+        ks = [{"name": None}]
+        for t0, t1, *_ in fl:
+            ks += [{"time": t0, "name": d}, {"time": t1, "name": None}]
+        slots[d] = {"attachment": ks}
+    order = {"forearm_r": "watering_can", "hand_r": "forearm_r"}   # the fist round the handle, in front
+    return {"bones": {**bake_ft(poses, end), **bake(drop_pose, end, drop_keys), **bake(perk, end)},
+            "slots": slots, "drawOrder": [draw_order_key(names, order)]}
 
 
 def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, height: float = 0.0,
-               slot_names: list | None = None) -> dict:
-    """Starter set for a front-facing standing character with the tool hand on the picture's right (hand_l)."""
+               slot_names: list | None = None, props: dict | None = None) -> dict:
+    """Starter set for a front-facing standing character with the tool hand on the picture's right (hand_l), plus
+    a chore per set of props: plant (sapling), polish (ladder, frame, cloth), paint (brush, wall, paint stripes),
+    water (watering can, flowers, drops)."""
+    props, names = props or {}, slot_names or []
     A = {}
     base = {}
     # idle: breathe, sway, one blink
-    A["idle"] = {"bones": bake([
+    A["idle"] = {"bones": bake_ft([
         (0.0, base),
         (1.2, {"torso": {"sy": 1.02, "sx": 1.005}, "head": {"y": 3, "r": 1.5}, "upperarm_l": {"r": 3},
                "upperarm_r": {"r": -3}, "mustache": {"r": 2}, "hat": {"r": -1}, "pupils": {"x": 2}}),
@@ -702,7 +1099,7 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
     # cheer: crouch, jump with both arms up and a big open mouth, land, settle
     up = {"upperarm_l": {"r": 125}, "forearm_l": {"r": 25}, "upperarm_r": {"r": -125}, "forearm_r": {"r": -25},
           "hand_l": {"r": 10}, "hand_r": {"r": -10}}
-    A["cheer"] = {"bones": bake([
+    A["cheer"] = {"bones": bake_ft([
         (0.0, base),
         (0.25, {"root": {"y": -10}, "torso": {"sy": 0.94, "sx": 1.03}, "head": {"y": -6},
                 "upperarm_l": {"r": 35}, "upperarm_r": {"r": -35}, "forearm_l": {"r": 10}, "forearm_r": {"r": -10}}),
@@ -713,11 +1110,11 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
         (0.95, {"root": {"y": -8}, "torso": {"sy": 0.94, "sx": 1.03}, "head": {"y": -5, "r": 0},
                 "hat": {"y": 0, "r": 0}, "leg_l": {"r": 0}, "leg_r": {"r": 0}}),
         (1.15, {"root": {"y": 0}, "torso": {"sy": 1.0, "sx": 1.0}, "head": {"y": 0}}),
-        (1.5, {"upperarm_l": {"r": 0}, "forearm_l": {"r": 0}, "upperarm_r": {"r": 0}, "forearm_r": {"r": 0},
+        (1.65, {"upperarm_l": {"r": 0}, "forearm_l": {"r": 0}, "upperarm_r": {"r": 0}, "forearm_r": {"r": 0},
                "hand_l": {"r": 0}, "hand_r": {"r": 0}, "jaw": {"sy": 1}, "brows": {"y": 0},
                "mustache": {"y": 0}}),
-        (1.8, base),
-    ], 1.8), "slots": lids(0.3, 1.3)}
+        (2.0, base),
+    ], 2.0), "slots": lids(0.3, 1.3)}
     # talk: jaw chatter with a hand gesture, raised brows, a nod and a blink
     chat = [1.55, 1.1, 1.65, 1.0, 1.45, 1.05, 1.6, 1.15, 1.5, 1.0]
     poses = [(0.0, base)]
@@ -725,7 +1122,7 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
         t = round(0.14 * (i + 1), 3)
         poses.append((t, {"jaw": {"sy": v}, "mustache": {"y": 2.5 * (v - 1)}, "muzzle": {"y": 1.2 * (v - 1)}}))
     talk = bake(poses + [(1.6, {"jaw": {"sy": 1}, "mustache": {"y": 0}, "muzzle": {"y": 0}}), (2.4, {})], 2.4)
-    gest = bake([
+    gest = bake_ft([
         (0.0, base),
         (0.45, {"upperarm_l": {"r": 28}, "forearm_l": {"r": 45}, "hand_l": {"r": 15}, "brows": {"y": 5},
                 "head": {"r": -3}}),
@@ -741,19 +1138,27 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
         A["wrench"] = wrench_turn(kin, holds["wrench"], height, slot_names)
     if "shovel" in tools and kin is not None:
         A["shovel"] = shovel_dig(kin, holds["shovel"], height, slot_names)
+    if kin is not None and {"sapling", "plant_soil"} <= props.keys():
+        A["plant"] = plant_sapling(kin, height, props, names)
+    if kin is not None and {"ladder", "frame", "cloth"} <= props.keys():
+        A["polish"] = polish_frame(kin, height, props, names)
+    if kin is not None and "brush" in tools and {"wall", "paint_a", "paint_b"} <= props.keys():
+        A["paint"] = paint_wall(kin, holds["brush"], height, props, names)
+    if kin is not None and {"watering_can", "flowers"} <= props.keys():
+        A["water"] = water_plants(kin, height, props, names)
     if "hammer" in tools:
         rest = {"upperarm_l": {"r": 40}, "forearm_l": {"r": 30}, "tool": {"r": 0}, "torso": {"r": 0},
                 "head": {"r": -2}, "pupils": {"x": 4, "y": -2}}
-        A["hammer"] = {"bones": bake([
+        A["hammer"] = {"bones": bake_ft([
             (0.0, rest),
             # wind up out to the side (head up and back, clear of the face), strike down and out, small rebound
             (0.45, {"upperarm_l": {"r": 95}, "forearm_l": {"r": 40}, "tool": {"r": -80}, "torso": {"r": 4},
                     "head": {"r": 3}, "root": {"y": 3}, "pupils": {"y": 2}}),
-            (0.65, {"upperarm_l": {"r": 10}, "forearm_l": {"r": -5}, "tool": {"r": -50}, "torso": {"r": -6, "sy": 0.97},
+            (0.72, {"upperarm_l": {"r": 10}, "forearm_l": {"r": -5}, "tool": {"r": -50}, "torso": {"r": -6, "sy": 0.97},
                     "head": {"r": -5}, "root": {"y": -3}, "hat": {"y": 3}, "pupils": {"y": -3}}),
-            (0.8, {"upperarm_l": {"r": 18}, "tool": {"r": -44}, "torso": {"sy": 1}, "hat": {"y": 0}}),
+            (0.9, {"upperarm_l": {"r": 18}, "tool": {"r": -44}, "torso": {"sy": 1}, "hat": {"y": 0}}),
             (1.4, rest),
-        ], 1.4), "slots": {**show("tool_hammer", 1.4), **lids(0.63, 0.78)}}
+        ], 1.4), "slots": {**show("tool_hammer", 1.4), **lids(0.7, 0.85)}}
     return A
 
 
@@ -795,7 +1200,7 @@ def main() -> int:
 
     # tools: PSD tool layers keep their painted place (a shovel already in hand) unless the config gives a hold;
     # extra tools get a hold from their shape
-    holds = {"wrench": (0.5, -70.0), "hammer": (0.12, 20.0), "shovel": (0.06, -146.0),
+    holds = {"wrench": (0.5, -70.0), "hammer": (0.12, 20.0), "shovel": (0.06, -146.0), "brush": (0.15, 160.0),
              **{k: tuple(v) for k, v in cfg.get("holds", {}).items()}}
     hold_info = {}
     tools = {}
@@ -811,7 +1216,7 @@ def main() -> int:
     slots, skin, images = [], {}, []
     tool_slots = []
     # which paw holds each tool: "l" (picture right, the default) or "r" (the character's right, picture left)
-    hands = {"wrench": "r", **cfg.get("tool_hands", {})}
+    hands = {"wrench": "r", "brush": "r", **cfg.get("tool_hands", {})}
     for t, d in tools.items():
         att = f"tool_{t}"
         bone = "tool_r" if hands.get(t) == "r" and "tool_r" in J else "tool"
@@ -827,21 +1232,47 @@ def main() -> int:
         skin[att] = {f"{name}_{att}": reg}
     # props that a tool animation shows (the shovel's dirt): "props": {"dirt_mound": {"image", "width"}, ...}.
     # The mound sits on the ground on a bone of its own; the clod has a root bone the dig moves.
-    props = {}
+    # Chore props (PROPS: sapling, ladder, frame, cloth, wall, paint stripes, watering can, flowers, drops) take
+    # "width" or "height" in skeleton units, and "copies" for several of one (drop -> drop1, drop2, ...).
+    props, back, held, prop_info = {}, [], [], {}
     H_est = J["root"][1] - min(p["bbox"][1] for p in parts.values() if not p["tool"])
     for pn, spec in cfg.get("props", {}).items():
         img = key_white(Image.open(resolve(spec["image"], base)))
-        k = spec.get("width", 100) / img.width
-        img = img.resize((max(1, round(img.width * k)), max(1, round(img.height * k))), Image.LANCZOS)
+        k = spec["height"] / img.height if "height" in spec else spec.get("width", 100) / img.width
+        size_ = (spec.get("width", img.width * k), spec.get("height", img.height * k))   # both: stretched
+        img = img.resize((max(1, round(size_[0])), max(1, round(size_[1]))), Image.LANCZOS)
         img.save(out / "images" / f"{name}_{pn}.png")
         images.append(f"{name}_{pn}")
+        w, h = img.size
         if pn == "dirt_mound":
             bones.append({"name": pn, "parent": "root", "x": round(MOUND_X * H_est, 2), "y": 0.0})
             skin[pn] = {f"{name}_{pn}": {"x": 0.0, "y": round(img.height / 2 - 4, 2), "width": img.width, "height": img.height}}
-        else:
+        elif pn == "dirt_clod":
             bones.append({"name": "clod", "parent": "root"})
             skin[pn] = {f"{name}_{pn}": {"x": 0.0, "y": 0.0, "width": img.width, "height": img.height}}
-        props[pn] = {"name": pn, "bone": pn if pn == "dirt_mound" else "clod"}
+        if pn in ("dirt_mound", "dirt_clod"):
+            props[pn] = {"name": pn, "bone": pn if pn == "dirt_mound" else "clod"}
+            continue
+        if pn not in PROPS:
+            raise SystemExit(f"prop {pn!r}: no place for it (known: {', '.join(PROPS)})")
+        parent, layer, (fx, fy), place = PROPS[pn]
+        local = ((0.5 - fx) * w, (fy - 0.5) * h)                  # image centre from the anchor, y up
+        prop_info[pn] = {"w": w, "h": h, "points": {n: ((px - fx) * w, (fy - py) * h)
+                                                    for n, (px, py) in PROP_POINTS.get(pn, {}).items()}}
+        copies = [pn] if spec.get("copies", 1) == 1 else [f"{pn}{i + 1}" for i in range(spec["copies"])]
+        for cn in copies:
+            if place is None:                                     # rides the right paw's grip
+                bone = "tool_r"
+                bsk = to_sk(J[bone], J)
+                skin[cn] = {f"{name}_{pn}": region(img.size, (bsk[0] + local[0], bsk[1] + local[1]), bsk, A[bone])}
+            else:
+                if parent == "stage" and not any(b["name"] == "stage" for b in bones):
+                    bones.append({"name": "stage", "parent": "root"})
+                bone = cn
+                bones.append({"name": cn, "parent": parent, "x": round(place[0] * H_est, 2),
+                              "y": round(place[1] * H_est, 2)})
+                skin[cn] = {f"{name}_{pn}": {"x": round(local[0], 2), "y": round(local[1], 2), "width": w, "height": h}}
+            (back if layer == "back" else held).append({"name": cn, "bone": bone})
     for p, d in parts.items():
         if d["tool"]:
             continue
@@ -849,6 +1280,7 @@ def main() -> int:
             slots += tool_slots
             if "dirt_clod" in props:                              # the clod rides on the blade
                 slots.append(props["dirt_clod"])
+            slots += held                                         # held props too
         att = f"{name}_{p}"
         d["img"].save(out / "images" / f"{att}.png")
         images.append(att)
@@ -862,13 +1294,15 @@ def main() -> int:
             slot["attachment"] = att
         slots.append(slot)
         skin[p] = {att: reg}                                      # attachments are named after their images
-        if p == "shadow" and "dirt_mound" in props:               # the pile lies on the ground, behind the body
-            slots.append(props["dirt_mound"])
+        if p == "shadow":                                         # the pile lies on the ground, behind the body,
+            if "dirt_mound" in props:                             # and so do the back props (ladder, wall, flowers)
+                slots.append(props["dirt_mound"])
+            slots += back
 
     grips = {b["name"]: b for b in bones if b["name"] in ("tool", "tool_r")}   # palm = the grip bone's place
     palms = {PARENT[g]: (b["x"], b["y"]) for g, b in grips.items()}
     kin = Kin(bones, palms)
-    anims = animations(list(tools), kin, hold_info, H_est, [s["name"] for s in slots])
+    anims = animations(list(tools), kin, hold_info, H_est, [s["name"] for s in slots], prop_info)
     for an in anims.values():                                     # drop keys for slots/bones this character lacks;
         an["slots"] = {k: v for k, v in an.get("slots", {}).items() if k in skin}   # slot keys name the slot's image
         for slot, tl in an["slots"].items():
