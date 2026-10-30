@@ -25,7 +25,7 @@ on a "tool" bone in hand_l's grip, hidden at rest and shown by their animation. 
 take both paws: Kin.reach (two-bone IK) puts each paw on the handle and the dig is keyed by where the top paw is.
 Optional "props" ({"dirt_mound": {"image", "width"}, "dirt_clod": {...}}) give the dig a pile and a thrown clod;
 chore props (see PROPS: sapling + plant_soil, ladder + frame + cloth, wall + paint_a/b with a "brush" extra tool,
-watering_can + flowers + drop) add the plant, polish, paint and water animations.
+watering_can + flowers + drop, pumpkin) add the plant, polish, paint, water and carry animations.
 
 Joints come from where layers overlap (elbow = centre of forearm over upperarm, and so on; shoulders sit on the
 upper arm's long axis, a third in from its hidden end); override any of them under "joints".
@@ -808,6 +808,7 @@ FRAME_AT = (-0.44, 1.12)             # the picture frame on the wall, up beside 
 LADDER_STEP = 0.41                   # the feet rest on the ladder's second step: this fraction of its height
 WALL_X, PAINT_Y0, PAINT_X = -0.72, 0.42, (-0.56, -0.63)   # arm out, the paw clear of the face
 FLOWERS_X = -0.60
+PUMPKIN_X = 0.01                     # where the pumpkin is set down, in front of the feet
 PROPS = {
     "sapling": ("root", "held", (0.58, 0.82), PLANT_AT),
     "plant_soil": ("root", "held", (0.5, 0.93), (PLANT_AT[0], 0.0)),
@@ -820,6 +821,7 @@ PROPS = {
     "watering_can": ("tool_r", "held", (0.63, 0.05), None),   # hung from the top of its carry handle
     "flowers": ("root", "back", (0.5, 0.95), (FLOWERS_X, 0.0)),
     "drop": ("root", "held", (0.5, 0.6), (0.0, 0.0)),
+    "pumpkin": ("root", "held", (0.5, 0.98), (PUMPKIN_X, 0.0)),   # bone on the ground under it
 }
 PROP_POINTS = {"watering_can": {"rose": (0.035, 0.35)}}   # named image points the animations aim with
 
@@ -994,6 +996,61 @@ def paint_wall(kin: Kin, hold: dict, H: float, info: dict, names: list) -> dict:
             "drawOrder": [draw_order_key(names, order)]}
 
 
+def carry_pumpkin(kin: Kin, H: float, info: dict, names: list) -> dict:
+    """Both paws carry a heavy pumpkin at the belly: a waddle in place (feet lift in turn, the body sways and bobs,
+    an effort face), a stop where the pumpkin swings on (follow-through), a lift and a breath in (anticipation), a
+    little bend that lowers it, a short drop to the ground that squashes it and bounces (follow-through), then he
+    straightens with an overshoot and a pleased look."""
+    w, h = info["pumpkin"]["w"], info["pumpkin"]["h"]
+    mid = 0.38 * h                                                # the pumpkin's middle above its bottom
+    side = w / 2 - 0.03 * H                                       # palm centres just inside its sides
+    x0 = PUMPKIN_X * H
+
+    def hold(x, y, out=0.0):
+        """Paws on the pumpkin's sides with its bottom at (x, y) fractions of the height; out opens them."""
+        return {"r": (x0 + x * H - side - out * H, y * H + mid), "l": (x0 + x * H + side + out * H, y * H + mid)}
+    rest_arms = {"upperarm_l": {"r": 0}, "forearm_l": {"r": 0}, "upperarm_r": {"r": 0}, "forearm_r": {"r": 0}}
+    feet = lambda l, r: {"foot_l": {"x": -l * H}, "foot_r": {"x": -r * H}}   # foot lift (the leg points down)
+    def B(tr, ty, sy, fc, fl=0.0, fr=0.0, root=0.0):
+        return {"root": {"y": root * H}, "torso": {"r": tr, "y": ty * H, "sy": sy}, **face(*fc), **feet(fl, fr)}
+    effort = lambda hr: (hr, -2, -3, 0.85, 0, -4)
+    # (time, body, pumpkin bottom x, y)
+    plan = [
+        (0.0, B(0, 0, 0.98, effort(0)), 0.0, 0.22),
+        (0.35, B(-2, 0, 0.985, effort(-1.5), fl=0.03, root=0.006), -0.004, 0.226),   # step: left foot up
+        (0.7, B(0, -0.005, 0.975, effort(0), root=-0.003), 0.0, 0.218),             # weight down
+        (1.05, B(2, 0, 0.985, effort(1.5), fr=0.03, root=0.006), 0.004, 0.226),       # step: right foot up
+        (1.4, B(0, -0.005, 0.975, effort(0), root=-0.003), 0.0, 0.218),
+        (1.75, B(-2, 0, 0.985, effort(-1.5), fl=0.03, root=0.006), -0.004, 0.226),
+        (2.1, B(1, -0.004, 0.975, effort(1)), 0.006, 0.21),                         # stops, the load swings on
+        (2.5, B(-1, 0.008, 1.02, (-2, 1, 3, 1.1, 0, -4)), 0.0, 0.25),                # lifts it, breathes in
+        (3.0, B(2, -0.11, 0.95, (4, -5, -4, 0.85, 0, -6)), 0.0, 0.11),             # a little bend, lowers it
+    ]
+    keys = [(t, body, hold(px, py), None) for t, body, px, py in plan]
+    up = B(0, 0, 1.0, (0, 0, 0, 1.0, 0, -5))
+    keys += [(3.2, B(2, -0.115, 0.945, (4, -5, -2, 0.95, 0, -6)), hold(0.0, 0.11, 0.045), None),   # lets go
+             (3.65, {**B(-1, 0.01, 1.025, (-2, 1, 6, 1.3, 0, -5)), **rest_arms}, None, None),     # up, overshoot
+             (4.0, {**B(0, 0, 1.0, (1, 0, 4, 1.25, 0, -5)), **rest_arms}, None, None),
+             (4.6, {**B(0, 0, 1.0, (1, 0, 4, 1.25, 0, -5)), **rest_arms}, None, None)]
+    poses = chore(kin, keys, "carry")
+    end = keys[-1][0]
+    # the pumpkin: in the paws until 3.2, then it drops to the ground, squashes, bounces and settles
+    P = [(t, {"pumpkin": {"x": px * H, "y": py * H, "sx": 1, "sy": 1}}) for t, _, px, py in plan]
+    P += [(3.2, {"pumpkin": {"x": 0, "y": 0.11 * H, "sx": 1, "sy": 1}}),
+          (3.36, {"pumpkin": {"x": 0, "y": 0, "sx": 1.08, "sy": 0.9}}),               # thud
+          (3.5, {"pumpkin": {"x": 0, "y": 0.012 * H, "sx": 0.97, "sy": 1.04}}),      # bounce
+          (3.65, {"pumpkin": {"x": 0, "y": 0, "sx": 1.01, "sy": 0.99}}),
+          (3.85, {"pumpkin": {"x": 0, "y": 0, "sx": 1, "sy": 1}}),
+          (end, {"pumpkin": {"x": 0, "y": 0, "sx": 1, "sy": 1}})]
+    slots = {**show("pumpkin", end), **lids(3.75, 4.2)}            # pleased, eyes closed
+    # the left paw reaches in across the belly, which swings the upper sleeve's hidden end out past the shoulder;
+    # the cuff covers the elbow at the body's edge, so that sleeve is off while he holds the pumpkin
+    slots["upperarm_l"] = {"attachment": [{"name": None}, {"time": 3.45, "name": "upperarm_l"}]}
+    order = {"forearm_r": "pumpkin", "hand_r": "forearm_r"}         # both paws in front of the pumpkin
+    return {"bones": {**bake_ft(poses, end), **bake(P, end)}, "slots": slots,
+            "drawOrder": [draw_order_key(names, order)]}
+
+
 def water_plants(kin: Kin, H: float, info: dict, names: list) -> dict:
     """The watering can hangs from the right paw by its carry handle (the artist's pose: arm relaxed at the side).
     He swings it back (anticipation), out over the flowers and tips it, overshooting the tilt and settling; water
@@ -1129,6 +1186,8 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
         A["paint"] = paint_wall(kin, holds["brush"], height, props, names)
     if kin is not None and {"watering_can", "flowers"} <= props.keys():
         A["water"] = water_plants(kin, height, props, names)
+    if kin is not None and "pumpkin" in props:
+        A["carry"] = carry_pumpkin(kin, height, props, names)
     if "hammer" in tools and kin is not None:
         A["hammer"] = hammer_strike(kin, holds["hammer"], height, names)
     return A
