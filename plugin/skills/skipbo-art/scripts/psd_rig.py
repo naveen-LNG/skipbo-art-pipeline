@@ -804,15 +804,15 @@ def wrench_turn(kin: Kin, hold: dict, H: float, names: list) -> dict:
 # Layer "back" is drawn behind the body (just after the shadow), "held" in front of it, just behind the left paw.
 # "stage" props stand on the ground while the character is lifted onto the ladder.
 PLANT_AT = (0.0, 0.255)             # the sapling's root ball in its pot, which is set down here
-FRAME_AT = (-0.44, 1.12)             # the picture frame on the wall, up beside the ladder, clear of the head
-LADDER_STEP = 0.41                   # the feet rest on the ladder's second step: this fraction of its height
+FRAME_AT = (-0.44, 1.54)             # the picture frame on the wall, up beside the ladder, clear of the head
+LADDER_STEP = 0.96                   # the feet rest on the step ladder's top step: this fraction of its height
 WALL_X, PAINT_Y0, PAINT_X = -0.72, 0.42, (-0.56, -0.63)   # arm out, the paw clear of the face
 FLOWERS_X = -0.60
 PUMPKIN_X = 0.01                     # where the pumpkin is set down, in front of the feet
 PROPS = {
     "sapling": ("root", "held", (0.58, 0.82), PLANT_AT),
     "plant_pot": ("root", "held", (0.5, 0.98), (PLANT_AT[0], 0.0)),   # soil top ~0.30 of the height
-    "ladder": ("stage", "back", (0.5, 1.0), (0.0, 0.0)),
+    "ladder": ("stage", "back", (0.49, 1.0), (0.0, 0.0)),        # an A-frame step ladder, its top step under him
     "frame": ("stage", "back", (0.5, 0.5), FRAME_AT),
     "cloth": ("tool_r", "held", (0.45, 0.72), None),  # bunched over the fist
     "wall": ("root", "back", (0.5, 1.0), (WALL_X, 0.0)),
@@ -930,7 +930,7 @@ def plant_sapling(kin: Kin, H: float, info: dict, names: list) -> dict:
 
 
 def polish_frame(kin: Kin, H: float, info: dict, names: list) -> dict:
-    """On the ladder's second step, the right paw polishes a picture frame up above with a cloth: a huff on the
+    """On the step ladder's top step, the right paw polishes a picture frame up above with a cloth: a huff on the
     glass first (anticipation), two big circles with the body swaying into them and the free arm out for balance,
     then the paw pulls away (follow-through) and he leans back to check it."""
     lift = LADDER_STEP * info["ladder"]["h"]

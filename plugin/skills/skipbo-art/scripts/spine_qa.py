@@ -613,6 +613,9 @@ def check_anim(rig: Rig, canvas: Canvas, anim: str, fps: int, outdir: Path) -> d
             slot, pslot = bone, parent.get(bone)
             if not pslot or pslot not in alphas:
                 continue
+            px_, py_ = canvas.point(world[bone][4], world[bone][5])
+            if not (0 <= px_ < canvas.W and 0 <= py_ < canvas.H):   # off the canvas (lifted onto a ladder): unseen
+                continue
             # attached: child and parent silhouettes touch
             if not (dilate(alphas[slot], 2) & alphas[pslot]).any():
                 detached.setdefault(slot, []).append(round(t, 3))
