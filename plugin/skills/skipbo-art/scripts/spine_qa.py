@@ -121,6 +121,18 @@ def apply_offsets(names: list, offsets: list) -> list:
     return [n if n is not None else next(rest) for n in out]
 
 
+def bezier(t0, v0, cx1, cy1, cx2, cy2, t1, v1, t: float) -> float:
+    """A Spine Bezier segment from (t0, v0) to (t1, v1) with handles (cx1, cy1), (cx2, cy2): the curve's parameter
+    is solved for time t, then its value read off."""
+    lo, hi = 0.0, 1.0
+    for _ in range(40):                                           # x(s) is monotone for valid Spine handles
+        s = (lo + hi) / 2
+        x = (1 - s) ** 3 * t0 + 3 * (1 - s) ** 2 * s * cx1 + 3 * (1 - s) * s * s * cx2 + s ** 3 * t1
+        lo, hi = (s, hi) if x < t else (lo, s)
+    s = (lo + hi) / 2
+    return (1 - s) ** 3 * v0 + 3 * (1 - s) ** 2 * s * cy1 + 3 * (1 - s) * s * s * cy2 + s ** 3 * v1
+
+
 def interp(keys: list, t: float, fields: tuple, defaults: tuple):
     if not keys:
         return None
@@ -133,6 +145,10 @@ def interp(keys: list, t: float, fields: tuple, defaults: tuple):
             a, b = keys[i], keys[i + 1]
             if a.get("curve") == "stepped":
                 return tuple(a.get(f, d) for f, d in zip(fields, defaults))
+            if isinstance(a.get("curve"), list):                  # Spine 4 Bezier: 4 numbers per value
+                c = a["curve"]
+                return tuple(bezier(t0, a.get(f, d), *c[4 * i:4 * i + 4], t1, b.get(f, d), t)
+                             for i, (f, d) in enumerate(zip(fields, defaults)))
             u = (t - t0) / (t1 - t0) if t1 > t0 else 0
             return tuple(a.get(f, d) + (b.get(f, d) - a.get(f, d)) * u for f, d in zip(fields, defaults))
     return tuple(keys[-1].get(f, d) for f, d in zip(fields, defaults))

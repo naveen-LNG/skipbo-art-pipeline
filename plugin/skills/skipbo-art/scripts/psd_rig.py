@@ -28,8 +28,9 @@ Optional "props" ({"dirt_mound": {"image", "width"}, "dirt_clod": {...}}) give t
 Joints come from where layers overlap (elbow = centre of forearm over upperarm, and so on; shoulders sit on the
 upper arm's long axis, a third in from its hidden end); override any of them under "joints".
 
-Writes rig/<name>.json (bones, slots, skin, animations idle, cheer, talk and one <tool> animation per tool, baked
-at 30 fps so spine_qa.py renders what the player plays), rig/<name>.atlas, rig/images/*.png, rig/preview.html,
+Writes rig/<name>.json (bones, slots, skin, animations idle, cheer, talk and one <tool> animation per tool, keyed
+only at the poses with Spine Bezier curves between them, so an animator can edit them; see bake), rig/<name>.atlas,
+rig/images/*.png, rig/preview.html,
 rig/joints.png (debug: every joint on the master), rig/master.png and rig/report.json (master_frame for spine_qa).
 Then: uv run spine_qa.py rig/<name>.json --master rig/master.png
 """
@@ -411,30 +412,93 @@ def sampler(poses: list):
                       for b, (ts, keys, loop) in track.items()}
 
 
-def bake(poses, duration: float) -> dict:
-    """Spine bone timelines baked at FPS (spine_qa and the player then agree exactly) from a pose list (see sampler)
-    or from any f(t) -> {bone: channels}."""
+# how far a keyed curve may drift from the motion it stands for before another key is added
+TOLERANCE = {"r": 0.25, "x": 0.4, "y": 0.4, "sx": 0.002, "sy": 0.002}
+
+
+def bake(poses, duration: float, key_times: list | None = None) -> dict:
+    """Spine bone timelines with keys only where an animator would put them: at the poses (key_times, or the pose
+    list's own times), each segment a Spine Bezier whose handles follow the motion's slope there, so the curve is
+    the spline itself (a cubic Hermite is exactly one Bezier). Motion that isn't a spline through the poses (a
+    clod's throw) gets a key added at its worst frame until no frame drifts past TOLERANCE. A channel that never
+    moves gets no timeline. poses: a pose list (see sampler) or any f(t) -> {bone: channels}."""
     f = poses if callable(poses) else sampler(poses)
+    if key_times is None:
+        key_times = [] if callable(poses) else [t for t, _ in poses]
     n = int(round(duration * FPS))
-    per_t = [(round(i / FPS, 4), f(i / FPS)) for i in range(n + 1)]
+    frames = [i / FPS for i in range(n + 1)]
+    cache = {}
+
+    def at(t):
+        k = round(t, 6)
+        if k not in cache:
+            cache[k] = f(t)
+        return cache[k]
+
+    h = 1e-3
     out = {}
-    for b in sorted({b for _, s in per_t for b in s}):
-        frames = [(t, {**DEFAULTS, **s.get(b, {})}) for t, s in per_t]
+    for b in sorted({b for t in frames for b in at(t)}):
+        def val(t, fields):
+            s = {**DEFAULTS, **at(t).get(b, {})}
+            return [s[c] for c in fields]
         tl = {}
-        for chan, fields, base in (("rotate", ("r",), (0,)), ("translate", ("x", "y"), (0, 0)),
-                                   ("scale", ("sx", "sy"), (1, 1))):
-            vals = [tuple(round(v[f], 3) for f in fields) for _, v in frames]
-            if all(x == base for x in vals):
+        for chan, fields, base in (("rotate", ("r",), (0.0,)), ("translate", ("x", "y"), (0.0, 0.0)),
+                                   ("scale", ("sx", "sy"), (1.0, 1.0))):
+            dense = [val(t, fields) for t in frames]
+            if all(all(abs(v - b0) < 1e-6 for v, b0 in zip(d, base)) for d in dense):
                 continue
+            keys = sorted({0.0, duration, *[t for t in key_times if 0 < t < duration]})
+
+            def slopes(t):                                       # (incoming, outgoing) slope per field
+                v = val(t, fields)
+                lo = [(a - c) / h for a, c in zip(v, val(max(t - h, 0.0), fields))] if t > 0 else None
+                hi = [(c - a) / h for a, c in zip(v, val(min(t + h, duration), fields))] if t < duration else None
+                return lo or hi, hi or lo
+
+            S, V = {}, {}
+
+            def error(keys):
+                """Worst drift (in tolerances) of the keyed curve from the motion, and the frame where it is."""
+                for t in keys:
+                    if t not in S:
+                        S[t], V[t] = slopes(t), val(t, fields)
+                worst, worst_t = 0.0, None
+                for i, t in enumerate(frames):
+                    j = max(k for k in range(len(keys) - 1) if keys[k] <= t + 1e-9) if t < duration else len(keys) - 2
+                    t0, t1 = keys[j], keys[j + 1]
+                    u, dt = (t - t0) / (t1 - t0), t1 - t0
+                    h00, h10, h01, h11 = 2*u**3 - 3*u**2 + 1, u**3 - 2*u**2 + u, -2*u**3 + 3*u**2, u**3 - u**2
+                    for fi, fld in enumerate(fields):
+                        y = (h00 * V[t0][fi] + h10 * dt * S[t0][1][fi] + h01 * V[t1][fi] + h11 * dt * S[t1][0][fi])
+                        e = abs(y - dense[i][fi]) / TOLERANCE[fld]
+                        if e > worst:
+                            worst, worst_t = e, t
+                return worst, worst_t
+
+            for _ in range(60):                                   # add keys where the curve drifts
+                worst, worst_t = error(keys)
+                if worst <= 1 or worst_t in keys:
+                    break
+                keys = sorted(keys + [round(worst_t, 4)])
+            for t in list(keys[1:-1]):                            # drop keys the curve doesn't need (a bone that
+                trial = [k for k in keys if k != t]               # holds still through a pose)
+                if error(trial)[0] <= 1:
+                    keys = trial
             ks = []
-            for i, ((t, _), val) in enumerate(zip(frames, vals)):
-                if 0 < i < len(vals) - 1 and vals[i - 1] == val == vals[i + 1]:
-                    continue                                      # a held value needs no key in between
-                k = {"time": t} if t else {}
+            for i, t in enumerate(keys):
+                v = V[t]
+                k = {"time": round(t, 4)} if t else {}
                 if chan == "rotate":
-                    k["value"] = val[0]
+                    k["value"] = round(v[0], 3)
                 else:
-                    k.update(dict(zip(("x", "y"), val)))
+                    k.update({c: round(x, 3) for c, x in zip(("x", "y"), v)})
+                if i + 1 < len(keys):                             # Bezier handles at a third of the segment
+                    t1, dt = keys[i + 1], keys[i + 1] - t
+                    curve = []
+                    for fi in range(len(fields)):
+                        curve += [round(t + dt / 3, 4), round(v[fi] + S[t][1][fi] * dt / 3, 3),
+                                  round(t1 - dt / 3, 4), round(V[t1][fi] - S[t1][0][fi] * dt / 3, 3)]
+                    k["curve"] = curve
                 ks.append(k)
             tl[chan] = ks
         if tl:
@@ -519,15 +583,14 @@ def shovel_dig(kin: Kin, hold: dict, H: float, names: list) -> dict:
         return x + d[0] * k + n[0] * 14, y + d[1] * k + n[1] * 14
 
     # the clod: on the blade from scoop to release, then a throw under gravity onto the pile
-    # (a flick: launched upward, not at the blade's own slow speed, or it seems to hover beside the blade)
+    # (a flick: launched upward, not at the blade's own slow speed, or it seems to hover beside the blade). The
+    # flight time is fixed so it lands on the pile well before the loop ends; the launch speeds follow from it.
     rel = blade(DIG_RELEASE)
-    vy = 0.9 * H                                                  # launch speed up, units / s
     pile = (MOUND_X * H, 0.035 * H)
     g_ = 2.4 * H                                                  # gravity, units / s^2
-    # time to fall onto the pile top given vy, and the sideways speed that lands it there
-    disc = vy * vy + 2 * g_ * (rel[1] - pile[1])
-    t_fly = (vy + math.sqrt(max(disc, 0))) / g_
-    vx = (pile[0] - rel[0]) / max(t_fly, 1e-3)
+    t_fly = min(0.5, end - DIG_RELEASE - 0.15)
+    vy = (pile[1] - rel[1] + 0.5 * g_ * t_fly * t_fly) / t_fly
+    vx = (pile[0] - rel[0]) / t_fly
     land = DIG_RELEASE + t_fly
 
     def clod(t):
@@ -557,7 +620,8 @@ def shovel_dig(kin: Kin, hold: dict, H: float, names: list) -> dict:
         slots["dirt_clod"] = {"attachment": [{"name": None}, {"time": DIG_SCOOP, "name": "dirt_clod"},
                                              {"time": t_land, "name": None}]}
     order = {"forearm_r": "tool_shovel", "hand_r": "forearm_r"} # the lower paw grips in front of the body
-    return {"bones": bake(full, end), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
+    keys = [t for t, *_ in DIG] + [DIG_SCOOP, DIG_RELEASE, t_land]  # the poses, the scoop, the throw, the landing
+    return {"bones": bake(full, end, keys), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
 
 
 def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, height: float = 0.0,

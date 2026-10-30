@@ -134,7 +134,9 @@ window.player = new spine.SpinePlayer("p", {jsonUrl: "{{NAME}}.json", atlasUrl: 
   animation: anim, premultipliedAlpha: false, backgroundColor: "#d6d6d6", showControls: !t,
   debug: {bones: q.has("bones"), regions: false},
   success: p => {
-    if (t !== null) { p.pause(); p.animationState.setAnimation(0, anim, true); p.animationState.update(parseFloat(t));
+    // clear first: setAnimation over the auto-played one mixes the two, leaking its attachments into the frame
+    if (t !== null) { p.pause(); p.animationState.clearTracks(); p.skeleton.setToSetupPose();
+      p.animationState.setAnimation(0, anim, true); p.animationState.update(parseFloat(t));
       p.animationState.apply(p.skeleton); p.skeleton.updateWorldTransform(spine.Physics.update); }
     window.ready = true; },
   error: (p, msg) => { window.loadError = msg; document.body.insertAdjacentText("afterbegin", msg); }});
