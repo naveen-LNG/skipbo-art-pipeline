@@ -1096,25 +1096,8 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
         (2.4, {"torso": {"sy": 1, "sx": 1}, "head": {"y": 0, "r": 0}, "upperarm_l": {"r": 0},
                "upperarm_r": {"r": 0}, "mustache": {"r": 0}, "hat": {"r": 0}, "pupils": {"x": 0}}),
     ], 2.4), "slots": blink(1.6)}
-    # cheer: crouch, jump with both arms up and a big open mouth, land, settle
-    up = {"upperarm_l": {"r": 125}, "forearm_l": {"r": 25}, "upperarm_r": {"r": -125}, "forearm_r": {"r": -25},
-          "hand_l": {"r": 10}, "hand_r": {"r": -10}}
-    A["cheer"] = {"bones": bake_ft([
-        (0.0, base),
-        (0.25, {"root": {"y": -10}, "torso": {"sy": 0.94, "sx": 1.03}, "head": {"y": -6},
-                "upperarm_l": {"r": 35}, "upperarm_r": {"r": -35}, "forearm_l": {"r": 10}, "forearm_r": {"r": -10}}),
-        (0.5, {"root": {"y": 48}, "torso": {"sy": 1.05, "sx": 0.98}, "head": {"y": 4, "r": 0},
-               **up, "jaw": {"sy": 1.7}, "brows": {"y": 8}, "hat": {"y": 8, "r": 6},
-               "leg_l": {"r": 8}, "leg_r": {"r": -8}, "mustache": {"y": 3}}),
-        (0.75, {"root": {"y": 38}, "upperarm_l": {"r": 140}, "upperarm_r": {"r": -140}, "head": {"r": 3}}),
-        (0.95, {"root": {"y": -8}, "torso": {"sy": 0.94, "sx": 1.03}, "head": {"y": -5, "r": 0},
-                "hat": {"y": 0, "r": 0}, "leg_l": {"r": 0}, "leg_r": {"r": 0}}),
-        (1.15, {"root": {"y": 0}, "torso": {"sy": 1.0, "sx": 1.0}, "head": {"y": 0}}),
-        (1.65, {"upperarm_l": {"r": 0}, "forearm_l": {"r": 0}, "upperarm_r": {"r": 0}, "forearm_r": {"r": 0},
-               "hand_l": {"r": 0}, "hand_r": {"r": 0}, "jaw": {"sy": 1}, "brows": {"y": 0},
-               "mustache": {"y": 0}}),
-        (2.0, base),
-    ], 2.0), "slots": lids(0.3, 1.3)}
+    if kin is not None:
+        A["cheer"] = cheer_wave(kin, height, "hand_open" in props)
     # talk: jaw chatter with a hand gesture, raised brows, a nod and a blink
     chat = [1.55, 1.1, 1.65, 1.0, 1.45, 1.05, 1.6, 1.15, 1.5, 1.0]
     poses = [(0.0, base)]
@@ -1149,6 +1132,35 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
     if "hammer" in tools and kin is not None:
         A["hammer"] = hammer_strike(kin, holds["hammer"], height, names)
     return A
+
+
+# cheer: no jump. Both arms are up in a V from the first frame (no raise from the sides) and wave, open paws (the
+# "open" hand variant) palm out; paws as fractions of the height, wave as paw sway and paw tilt. The two arms wave
+# in opposite phase, each paw's tilt trailing its arm's sway (follow-through), the body bobs on the beat.
+CHEER_PAWS = {"r": (-0.38, 0.83), "l": (0.40, 0.82)}
+CHEER_WAVE = 1.0                                                # seconds per wave
+CHEER_SWAY, CHEER_TILT, CHEER_LAG = 0.035, 18.0, 0.09           # paw sway (fraction of height), paw tilt, its lag
+
+
+def cheer_wave(kin: Kin, H: float, open_hands: bool) -> dict:
+    end = 2 * CHEER_WAVE
+    keys = []
+    for i in range(9):
+        t = round(end * i / 8, 4)
+        w = 2 * math.pi * t / CHEER_WAVE
+        body = {"torso": {"r": 1.5 * math.sin(w), "sy": 1.0 + 0.012 * math.cos(2 * w)},
+                **face(-2.5 * math.sin(w), 2 + 1.5 * math.cos(2 * w), 7, 1.55 + 0.1 * math.cos(2 * w), 0, 3)}
+        paws, grips = {}, {}
+        for side, (x, y) in CHEER_PAWS.items():
+            ph = w if side == "r" else w + math.pi
+            paws[side] = ((x + CHEER_SWAY * math.sin(ph)) * H, y * H)
+            grips[f"hand_{side}"] = 90 - CHEER_TILT * math.sin(ph - 2 * math.pi * CHEER_LAG / CHEER_WAVE)
+        keys.append((t, body, paws, grips))
+    poses = chore(kin, keys, "cheer")
+    slots = {}
+    for s in "lr" if open_hands else "":
+        slots[f"hand_{s}"] = {"attachment": [{"name": f"hand_{s}_open"}, {"time": end, "name": f"hand_{s}_open"}]}
+    return {"bones": bake_ft(poses, end), "slots": slots}
 
 
 # the hammer in the gripping paw (the character's right by default, picture left): (time, paw x, y (fractions of the
@@ -1322,6 +1334,22 @@ def main() -> int:
                 slots.append(props["dirt_mound"])
             slots += back
 
+    # hand variants swapped in by an animation: "hand_variants": {"open": {"image", "height"}} paints the character's
+    # right paw (picture left, thumb toward the body, fingers up); the left one is its mirror. Fingers run along the
+    # hand bone, the wrist a little inside the cuff.
+    for vn, spec in cfg.get("hand_variants", {}).items():
+        img = key_white(Image.open(resolve(spec["image"], base)))
+        k = spec.get("height", 160) / img.height
+        img = img.resize((max(1, round(img.width * k)), max(1, round(img.height * k))), Image.LANCZOS)
+        for s, im in (("r", img), ("l", img.transpose(Image.FLIP_LEFT_RIGHT))):
+            if f"hand_{s}" not in skin:
+                continue
+            att = f"{name}_hand_{s}_{vn}"
+            im.save(out / "images" / f"{att}.png")
+            images.append(att)
+            skin[f"hand_{s}"][att] = {"x": round(im.height * (0.5 - spec.get("tuck", 0.12)), 2), "y": 0.0,
+                                      "rotation": -90.0, "width": im.width, "height": im.height}
+            prop_info[f"hand_{vn}"] = True
     grips = {b["name"]: b for b in bones if b["name"] in ("tool", "tool_r")}   # palm = the grip bone's place
     palms = {PARENT[g]: (b["x"], b["y"]) for g, b in grips.items()}
     kin = Kin(bones, palms)
@@ -1330,8 +1358,8 @@ def main() -> int:
         an["slots"] = {k: v for k, v in an.get("slots", {}).items() if k in skin}   # slot keys name the slot's image
         for slot, tl in an["slots"].items():
             for k in tl["attachment"]:
-                if k["name"] is not None:
-                    k["name"] = next(iter(skin[slot]))
+                if k["name"] is not None and k["name"] not in skin[slot]:   # a variant (hand_r_open) or the slot's own
+                    k["name"] = f"{name}_{k['name']}" if f"{name}_{k['name']}" in skin[slot] else next(iter(skin[slot]))
         an["bones"] = {k: v for k, v in an["bones"].items() if k in kin.bones}
     boxes = [d["bbox"] for d in parts.values() if not d["tool"]]  # setup bounds, skeleton units (y up)
     x0, y0 = to_sk((min(b[0] for b in boxes), max(b[3] for b in boxes)), J)
