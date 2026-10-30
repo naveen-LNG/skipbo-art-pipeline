@@ -627,19 +627,20 @@ def shovel_dig(kin: Kin, hold: dict, H: float, names: list) -> dict:
     return {"bones": bake(full, end, keys), "slots": slots, "drawOrder": [draw_order_key(names, order)]}
 
 
-# the wrench turn, front view, in the character's right paw (picture left): the wrench pivots on a bolt low out to
-# the picture's left, the paw rides its handle (IK), the body bends into the pull and the face strains.
-# (time, wrench angle bolt->handle, torso turn, torso drop (fraction of height), torso squash, head turn, head drop,
-#  brows, jaw open, other arm's upper / fore turn)
+# the wrench turn, front view, in the character's right paw (picture left), as the artist posed it: the arm reaches
+# out to the side, the fist grips the wrench by its middle (a jaw either side, the paw over it) and the wrench lies
+# nearly level. It pivots on a bolt at its outer jaw, the paw rides it (IK), the body bends into the pull and the
+# face strains. (time, wrench angle bolt->handle, torso turn, torso drop (fraction of height), torso squash,
+# head turn, head drop, brows, jaw open, other arm's upper / fore turn)
 WRENCH = [
-    (0.0, -14, 9, 0.016, 1.0, 7, 4, -3, 0.85, 6, 10),      # set: bent over the bolt
-    (0.4, -2, 4, 0.004, 1.025, 3, -2, 3, 1.15, 12, 16),    # anticipation: rises, wrench eased back, a breath in
-    (0.75, -34, 15, 0.034, 0.95, 12, 10, -7, 0.6, 2, 6),   # pull: bends hard into it, eyes squeezed, jaw clenched
-    (1.0, -36, 16, 0.036, 0.945, 13, 11, -8, 0.55, 0, 4),  # strain
-    (1.35, -16, 9, 0.017, 1.0, 7, 4, -3, 0.85, 6, 10),     # ratchets back
-    (1.7, -14, 9, 0.016, 1.0, 7, 4, -3, 0.85, 6, 10),      # set again (loops)
+    (0.0, -16, 9, 0.016, 1.0, 7, 4, -3, 0.85, 6, 10),      # set: arm out, wrench on the bolt
+    (0.4, -6, 4, 0.004, 1.025, 3, -2, 3, 1.15, 12, 16),    # anticipation: rises, wrench eased back, a breath in
+    (0.75, -26, 15, 0.034, 0.95, 12, 10, -7, 0.6, 2, 6),   # pull: bends hard into it, eyes squeezed, jaw clenched
+    (1.0, -28, 16, 0.036, 0.945, 13, 11, -8, 0.55, 0, 4),  # strain
+    (1.35, -17, 9, 0.017, 1.0, 7, 4, -3, 0.85, 6, 10),     # ratchets back
+    (1.7, -16, 9, 0.016, 1.0, 7, 4, -3, 0.85, 6, 10),      # set again (loops)
 ]
-WRENCH_BOLT = (-0.37, 0.40)                                 # bolt, fractions of the height
+WRENCH_BOLT = (-0.62, 0.44)                                 # bolt (the outer jaw), fractions of the height
 WRENCH_SQUEEZE = (0.72, 1.05)                               # eyes shut through the pull
 
 
