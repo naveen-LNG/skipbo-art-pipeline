@@ -24,7 +24,7 @@ pupil_l/pupil_r, shadow. Tools ("tool": true, or extra_tools: images with a whit
 on a "tool" bone in hand_l's grip, hidden at rest and shown by their animation. Long two-handed tools (the shovel)
 take both paws: Kin.reach (two-bone IK) puts each paw on the handle and the dig is keyed by where the top paw is.
 Optional "props" ({"dirt_mound": {"image", "width"}, "dirt_clod": {...}}) give the dig a pile and a thrown clod;
-chore props (see PROPS: sapling + plant_pot, ladder + frame + cloth, wall + paint_a/b with a "brush" extra tool,
+chore props (see PROPS: sapling + plant_soil, ladder + frame + cloth, wall + paint_a/b with a "brush" extra tool,
 watering_can + flowers + drop, pumpkin, wreath + door, bowl with a "spoon" extra tool) add the plant, polish, paint, water, carry, toss (hang the wreath) and stir animations.
 
 Joints come from where layers overlap (elbow = centre of forearm over upperarm, and so on; shoulders sit on the
@@ -808,7 +808,7 @@ def wrench_turn(kin: Kin, hold: dict, H: float, names: list) -> dict:
 # the bone's place (fractions of the height, y up from the ground) or None to ride the right paw's grip, tool_r).
 # Layer "back" is drawn behind the body (just after the shadow), "held" in front of it, just behind the left paw.
 # "stage" props stand on the ground while the character is lifted onto the ladder.
-PLANT_AT = (0.0, 0.255)             # the sapling's root ball in its pot, which is set down here
+PLANT_AT = (-0.40, 0.12)            # where the sapling's stem is held, once planted at his right side
 FRAME_AT = (-0.44, 1.54)             # the picture frame on the wall, up beside the ladder, clear of the head
 LADDER_STEP = 0.96                   # the feet rest on the step ladder's top step: this fraction of its height
 WALL_X, PAINT_Y0, PAINT_X = -0.72, 0.42, (-0.56, -0.63)   # arm out, the paw clear of the face
@@ -816,8 +816,8 @@ FLOWERS_X = -0.60
 DOOR_X, DOOR_HOOK = -0.55, 0.726     # the door's middle; its hook's height as a fraction of the door's
 PUMPKIN_X = 0.01                     # where the pumpkin is set down, in front of the feet
 PROPS = {
-    "sapling": ("root", "held", (0.58, 0.82), PLANT_AT),
-    "plant_pot": ("root", "held", (0.5, 0.98), (PLANT_AT[0], 0.0)),   # soil top ~0.30 of the height
+    "sapling": ("root", "held", (0.49, 0.5), PLANT_AT),      # bare roots; the bone where the paw holds the stem
+    "plant_soil": ("root", "held", (0.5, 0.93), (PLANT_AT[0], 0.0)),  # a small mound the roots go into
     "ladder": ("stage", "back", (0.49, 1.0), (0.0, 0.0)),        # an A-frame step ladder, its top step under him
     "frame": ("stage", "back", (0.5, 0.5), FRAME_AT),
     "cloth": ("tool_r", "held", (0.45, 0.72), None),  # bunched over the fist
@@ -881,62 +881,54 @@ def chore(kin: Kin, keys: list, what: str) -> list:
 
 
 def plant_sapling(kin: Kin, H: float, info: dict, names: list) -> dict:
-    """The sapling planted in its pot, carried in both paws as the artist holds it (one paw cupping the pot's bottom
-    corner, the other on its far side): a short waddle (feet lift in turn, an eye on the plant), a stop where the
-    pot swings on (follow-through), a lift and a breath in (anticipation), a little bend that lowers it as the paws
-    move to its sides, a gentle set-down on the ground (a small settle; the sapling wobbles), then up with an
-    overshoot and a proud look. No squat: a short cartoon arm reaches low enough with a little bend."""
-    ph = info["plant_pot"]["h"]
-    half = 0.5 * info["plant_pot"]["w"] - 0.02 * H                # pot centre -> palm on its side
+    """The right paw alone holds a small bare-root sapling by its stem (the roots hang below), and plants it at his
+    side, not in front of him: a lift and a breath in (anticipation), a sideways bend that lowers the roots over a
+    small soil mound, a push that sinks them in (effort face), the paw lets go and the sapling settles into the soil
+    and sways (follow-through), a look at it, then up with an overshoot and a proud, happy look."""
+    X = PLANT_AT[0]
 
-    def held(x, y):
-        """Pot bottom at (x, y): right paw cupping its bottom corner, left paw high on its far side."""
-        return {"r": ((x - 0.03) * H - half, y * H + 0.12 * ph), "l": ((x + 0.02) * H + half, y * H + 0.6 * ph)}
-
-    def sides(x, y, out=0.0):
-        """Pot bottom at (x, y): both paws on its sides; out opens them."""
-        return {"r": (x * H - half - out * H, y * H + 0.5 * ph), "l": (x * H + half + out * H, y * H + 0.5 * ph)}
-    rest_arms = {"upperarm_l": {"r": 0}, "forearm_l": {"r": 0}, "upperarm_r": {"r": 0}, "forearm_r": {"r": 0}}
-    feet = lambda l, r: {"foot_l": {"x": -l * H}, "foot_r": {"x": -r * H}}   # foot lift (the leg points down)
-
-    def B(tr, ty, sy, fc, fl=0.0, fr=0.0, root=0.0):
-        return {"root": {"y": root * H}, "torso": {"r": tr, "y": ty * H, "sy": sy}, **face(*fc), **feet(fl, fr)}
-    look = lambda hr: (hr, -3, 2, 1.1, -1, -6)                     # eyes on the plant, a smile
-    # (time, body, paws, pot bottom x, y)
-    plan = [
-        (0.0, B(0, 0, 0.99, look(0)), held, -0.03, 0.14),
-        (0.35, B(-2, 0, 0.99, look(-1.5), fl=0.03, root=0.006), held, -0.035, 0.146),   # step: left foot up
-        (0.7, B(0, -0.005, 0.98, look(0), root=-0.003), held, -0.03, 0.136),
-        (1.05, B(2, 0, 0.99, look(1.5), fr=0.03, root=0.006), held, -0.025, 0.146),     # step: right foot up
-        (1.45, B(0.5, -0.003, 0.985, look(0.5)), held, -0.028, 0.134),                  # stops, the pot swings on
-        (1.85, B(-2, 0.008, 1.02, (-2, 0, 4, 1.15, -1, -5)), held, -0.03, 0.17),         # lifts it, breathes in
-        (2.35, B(3, -0.11, 0.95, (4, -5, -3, 0.9, 0, -6)), sides, 0.0, 0.06),           # a little bend, lowers it
-        (2.55, B(3, -0.115, 0.945, (4, -5, -4, 0.85, 0, -6)), sides, 0.0, 0.045),       # sets it down
+    def B(tr, ty, sy, fc):
+        return {"torso": {"r": tr, "y": ty * H, "sy": sy}, **face(*fc)}
+    rest_arms = {"upperarm_r": {"r": 0}, "forearm_r": {"r": 0}}
+    paw = lambda x, y: {"r": (x * H, y * H)}
+    keys = [
+        (0.0, B(0, 0, 1.0, (2, -1, 2, 1.1, -6, -2)), paw(-0.31, 0.44), None),               # holds it up, looks
+        (0.5, B(-3, 0.008, 1.02, (-1, 0, 4, 1.15, -6, 0)), paw(-0.30, 0.48), None),          # lifts it, breathes in
+        (1.25, B(24, -0.05, 0.97, (12, -4, -2, 1.0, -6, -6)), paw(X, 0.27), None),          # bends to his side
+        (1.65, B(25, -0.055, 0.965, (13, -5, -5, 0.8, -6, -6)), paw(X, 0.205), None),       # pushes the roots in
+        (1.85, B(25, -0.055, 0.965, (13, -5, -5, 0.8, -6, -6)), paw(X, 0.20), None),
+        (2.05, B(23, -0.05, 0.97, (12, -4, 2, 1.05, -6, -6)), paw(X + 0.06, 0.27), None),   # lets go
+        (2.45, B(22, -0.045, 0.97, (11, -4, 4, 1.15, -6, -6)), paw(X + 0.07, 0.30), None),  # looks at it
+        (2.95, {**B(-3, 0.01, 1.03, (3, 1, 6, 1.3, -6, -5)), **rest_arms}, None, None),     # up, overshoot
+        (3.3, {**B(0, 0, 1.0, (-2, -1, 4, 1.25, -6, -6)), **rest_arms}, None, None),        # proud
+        (4.0, {**B(0, 0, 1.0, (-2, -1, 4, 1.25, -6, -6)), **rest_arms}, None, None),
     ]
-    keys = [(t, body, paws(x, y), None) for t, body, paws, x, y in plan]
-    keys += [(2.75, B(3, -0.11, 0.95, (4, -5, 1, 1.0, 0, -6)), sides(0.0, 0.0, 0.04), None),    # lets go
-             (3.2, {**B(-2, 0.01, 1.025, (-2, 1, 6, 1.3, -1, -6)), **rest_arms}, None, None),   # up, overshoot
-             (3.55, {**B(0, 0, 1.0, (-2, -1, 4, 1.25, -2, -6)), **rest_arms}, None, None),      # proud
-             (4.2, {**B(0, 0, 1.0, (-2, -1, 4, 1.25, -2, -6)), **rest_arms}, None, None)]
     poses = chore(kin, keys, "plant")
     end = keys[-1][0]
-    # the pot (and the sapling in it): in the paws, then set on the ground with a small settle; the sapling wobbles
-    X0 = PLANT_AT[0]
-    P = [(t, {"x": x * H - X0 * H, "y": y * H, "sx": 1, "sy": 1}) for t, _, _, x, y in plan]
-    P += [(2.66, {"x": -X0 * H, "y": 0, "sx": 1.03, "sy": 0.97}), (2.8, {"x": -X0 * H, "y": 0, "sx": 0.99, "sy": 1.01}),
-          (2.95, {"x": -X0 * H, "y": 0, "sx": 1, "sy": 1}), (end, {"x": -X0 * H, "y": 0, "sx": 1, "sy": 1})]
-    wob = {2.55: 0, 2.72: -5, 2.9: 3.5, 3.1: -1.5, 3.35: 0}       # the sapling sways after the set-down
-    S = []
-    for t, c in P:
-        S.append((t, {"plant_pot": dict(c), "sapling": {"x": c["x"], "y": c["y"], "r": wob.get(t, 0)}}))
-    S += [(t, {}) for t in ()]
-    S = sorted(S + [(t, {"sapling": {"r": r}}) for t, r in wob.items() if t not in dict(S)], key=lambda k: k[0])
-    slots = {**show("sapling", end), **show("plant_pot", end), **lids(3.3, 3.75)}
-    # the left paw reaches across the chest, swinging the upper sleeve's hidden end out past the shoulder: off until
-    # the arm is back at rest
-    slots["upperarm_l"] = {"attachment": [{"name": None}, {"time": 2.95, "name": "upperarm_l"}]}
-    order = {"forearm_r": "plant_pot", "hand_r": "forearm_r"}       # both paws in front of the pot
-    return {"bones": {**bake_ft(poses, end), **bake(S, end)}, "slots": slots,
+    body = sampler(poses)
+    final = (X * H, PLANT_AT[1] * H)
+    t_go, t_in = 2.05, 2.25
+    sway = sampler([(0.0, {"s": {"r": 0}}), (0.5, {"s": {"r": 3}}), (1.25, {"s": {"r": -4}}), (1.65, {"s": {"r": 2}}),
+                    (t_go, {"s": {"r": 0}}), (2.25, {"s": {"r": -6}}), (2.45, {"s": {"r": 4}}),
+                    (2.65, {"s": {"r": -1.5}}), (2.9, {"s": {"r": 0}}), (end, {"s": {"r": 0}})])
+
+    def sapling(t):
+        """Held by the stem at the paw; once let go it sinks the last bit into the soil and sways to a stop."""
+        if t <= t_go:
+            x, y = kin.world(body(t))["tool_r"][1:]
+        else:
+            x0, y0 = kin.world(body(t_go))["tool_r"][1:]
+            u = min(1.0, (t - t_go) / (t_in - t_go))
+            u = u * u * (3 - 2 * u)
+            x, y = x0 + (final[0] - x0) * u, y0 + (final[1] - y0) * u
+        return {"sapling": {"x": x - final[0], "y": y - final[1], "r": sway(t)["s"]["r"]}}
+    skeys = [k[0] for k in keys] + [t_in, 2.65, 2.9]
+    slots = {"sapling": {"attachment": [{"name": "sapling"}, {"time": t_in, "name": "sapling_planted"}]},   # roots
+             **show("plant_soil", end), **lids(1.6, 1.88)}                                                # in the soil
+    slots["lid_l"]["attachment"] += [{"time": 3.35, "name": "lid_l"}, {"time": 3.8, "name": None}]   # happy eyes
+    slots["lid_r"]["attachment"] += [{"time": 3.35, "name": "lid_r"}, {"time": 3.8, "name": None}]
+    order = {"forearm_r": "plant_soil", "hand_r": "forearm_r"}     # the paw over the stem and the soil
+    return {"bones": {**bake_ft(poses, end), **bake(sapling, end, skeys)}, "slots": slots,
             "drawOrder": [draw_order_key(names, order)]}
 
 
@@ -1306,7 +1298,7 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
         A["wrench"] = wrench_turn(kin, holds["wrench"], height, slot_names)
     if "shovel" in tools and kin is not None:
         A["shovel"] = shovel_dig(kin, holds["shovel"], height, slot_names)
-    if kin is not None and {"sapling", "plant_pot"} <= props.keys():
+    if kin is not None and {"sapling", "plant_soil"} <= props.keys():
         A["plant"] = plant_sapling(kin, height, props, names)
     if kin is not None and {"ladder", "frame", "cloth"} <= props.keys():
         A["polish"] = polish_frame(kin, height, props, names)
@@ -1486,6 +1478,13 @@ def main() -> int:
         prop_info[pn] = {"w": w, "h": h, "points": {n: ((px - fx) * w, (fy - py) * h)
                                                     for n, (px, py) in PROP_POINTS.get(pn, {}).items()}}
         copies = [pn] if spec.get("copies", 1) == 1 else [f"{pn}{i + 1}" for i in range(spec["copies"])]
+        cut = None
+        if "cut_below" in spec:                                   # "<pn>_planted": the same image, cleared below
+            a_ = np.asarray(img).copy()                           # this fraction of its height (roots in the soil)
+            a_[int(spec["cut_below"] * h):, :, 3] = 0
+            cut = f"{name}_{pn}_planted"
+            Image.fromarray(a_).save(out / "images" / f"{cut}.png")
+            images.append(cut)
         for cn in copies:
             if place is None:                                     # rides the right paw's grip
                 bone = "tool_r"
@@ -1498,6 +1497,8 @@ def main() -> int:
                 bones.append({"name": cn, "parent": parent, "x": round(place[0] * H_est, 2),
                               "y": round(place[1] * H_est, 2)})
                 skin[cn] = {f"{name}_{pn}": {"x": round(local[0], 2), "y": round(local[1], 2), "width": w, "height": h}}
+                if cut:
+                    skin[cn][cut] = dict(skin[cn][f"{name}_{pn}"])
             (back if layer == "back" else held).append({"name": cn, "bone": bone})
     for p, d in parts.items():
         if d["tool"]:
