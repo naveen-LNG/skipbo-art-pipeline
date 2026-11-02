@@ -25,7 +25,7 @@ on a "tool" bone in hand_l's grip, hidden at rest and shown by their animation. 
 take both paws: Kin.reach (two-bone IK) puts each paw on the handle and the dig is keyed by where the top paw is.
 Optional "props" ({"dirt_mound": {"image", "width"}, "dirt_clod": {...}}) give the dig a pile and a thrown clod;
 chore props (see PROPS: sapling + plant_pot, ladder + frame + cloth, wall + paint_a/b with a "brush" extra tool,
-watering_can + flowers + drop, pumpkin, wreath + door) add the plant, polish, paint, water, carry and toss (hang the wreath) animations.
+watering_can + flowers + drop, pumpkin, wreath + door, bowl with a "spoon" extra tool) add the plant, polish, paint, water, carry, toss (hang the wreath) and stir animations.
 
 Joints come from where layers overlap (elbow = centre of forearm over upperarm, and so on; shoulders sit on the
 upper arm's long axis, a third in from its hidden end); override any of them under "joints".
@@ -352,14 +352,17 @@ class Kin:
         m = W["__M"][bone]
         return x + m[0][0] * local[0] + m[0][1] * local[1], y + m[1][0] * local[0] + m[1][1] * local[1]
 
-    def reach(self, side: str, target, pose: dict) -> tuple:
+    def reach(self, side: str, target, pose: dict, near: float | None = None) -> tuple:
         """Upper-arm and forearm deltas that put hand_<side>'s palm on target (skeleton units) with the hand held
-        straight on the forearm and the elbow hanging below, plus the distance still missing (0 = reached). The
-        two-bone solve is exact without scale; a squashed body is closed in on by re-aiming a few times."""
+        straight on the forearm and the elbow hanging below (or, when both elbows sit nearly level and near, the
+        upper-arm delta of the pose before, is given, on that pose's side, so a paw moving across the body never
+        flips its elbow), plus the
+        distance still missing (0 = reached). The two-bone solve is exact without scale; a squashed body is closed
+        in on by re-aiming a few times."""
         ua, fa, hd = f"upperarm_{side}", f"forearm_{side}", f"hand_{side}"
         aim, err = target, 0.0
         for _ in range(6):
-            d_ua, d_fa, miss = self._reach(side, aim, pose)
+            d_ua, d_fa, miss = self._reach(side, aim, pose, near)
             q = {**pose, ua: {**pose.get(ua, {}), "r": d_ua}, fa: {**pose.get(fa, {}), "r": d_fa}}
             px, py = self.point(self.world(q), hd, self.palms[hd])
             ex, ey = target[0] - px, target[1] - py
@@ -369,7 +372,7 @@ class Kin:
             aim = aim[0] + ex, aim[1] + ey
         return d_ua, d_fa, max(miss, err if err >= 0.3 else 0.0)
 
-    def _reach(self, side: str, target, pose: dict) -> tuple:
+    def _reach(self, side: str, target, pose: dict, near: float | None = None) -> tuple:
         ua, fa, hd = f"upperarm_{side}", f"forearm_{side}", f"hand_{side}"
         W = self.world(pose)
         par = W[self.bones[ua]["parent"]][0]
@@ -384,12 +387,14 @@ class Kin:
         dc = min(max(d, abs(L1 - L2) + 1e-3), L1 + L2 - 1e-3)
         alpha = math.degrees(math.acos((L1 * L1 + dc * dc - L2 * L2) / (2 * L1 * dc)))
         base = math.degrees(math.atan2(dy, dx))
-        best = None
-        for th1 in (base + alpha, base - alpha):                 # elbows hang: the lower elbow wins
+        cand = []
+        for th1 in (base + alpha, base - alpha):
             ex, ey = sx + L1 * math.cos(math.radians(th1)), sy + L1 * math.sin(math.radians(th1))
-            if best is None or ey < best[2]:
-                best = (th1, ex, ey)
-        th1, ex, ey = best
+            cand.append((th1, ex, ey, abs(wrap(th1 - par - self.bones[ua].get("rotation", 0.0) - (near or 0.0)))))
+        if near is not None and abs(cand[0][2] - cand[1][2]) < 0.35 * L1:
+            th1, ex, ey, _ = min(cand, key=lambda c: c[3])       # elbows nearly level: stay on the pose before's side
+        else:
+            th1, ex, ey, _ = min(cand, key=lambda c: c[2])       # elbows hang: the lower elbow wins
         thp = math.degrees(math.atan2(target[1] - ey, target[0] - ex))
         th2 = thp - beta
         d_ua = wrap(th1 - par - self.bones[ua].get("rotation", 0.0))
@@ -825,17 +830,20 @@ PROPS = {
     "pumpkin": ("root", "held", (0.5, 0.98), (PUMPKIN_X, 0.0)),   # bone on the ground under it
     "wreath": ("root", "held", (0.5, 0.05), (0.0, 0.0)),           # bone at the top of its rim, moved by toss
     "door": ("root", "back", (0.5, 1.0), (DOOR_X, 0.0)),
+    "bowl": ("root", "held", (0.48, 0.33), (0.0, 0.0)),            # bone at the middle of the batter
 }
 PROP_POINTS = {"watering_can": {"rose": (0.035, 0.35)}}   # named image points the animations aim with
 
 
-def ik_pose(kin: Kin, body: dict, paws: dict | None = None, grips: dict | None = None) -> tuple:
+def ik_pose(kin: Kin, body: dict, paws: dict | None = None, grips: dict | None = None,
+            prev: dict | None = None) -> tuple:
     """A pose from body deltas, paw targets ({side: palm point}) solved with Kin.reach, and grip bones turned to a
-    world angle ({grip bone: degrees}); plus the worst miss."""
+    world angle ({grip bone: degrees}); plus the worst miss. prev: the pose before, whose elbows are kept."""
     p = {b: dict(c) for b, c in body.items()}
     miss = 0.0
     for side, tgt in (paws or {}).items():
-        dua, dfa, m = kin.reach(side, tgt, p)
+        near = (prev or {}).get(f"upperarm_{side}", {}).get("r")
+        dua, dfa, m = kin.reach(side, tgt, p, near)
         p.setdefault(f"upperarm_{side}", {})["r"] = dua
         p.setdefault(f"forearm_{side}", {})["r"] = dfa
         miss = max(miss, m)
@@ -863,7 +871,7 @@ def chore(kin: Kin, keys: list, what: str) -> list:
     """keys: [(time, body, paws, grips)] -> unwrapped poses, with a doubt printed if a paw can't reach."""
     poses, misses = [], []
     for t, body, paws, grips in keys:
-        p, m = ik_pose(kin, body, paws, grips)
+        p, m = ik_pose(kin, body, paws, grips, poses[-1][1] if poses else None)
         poses.append((t, p))
         misses.append(m)
     unwrap(poses)
@@ -1122,6 +1130,55 @@ def hang_wreath(kin: Kin, H: float, info: dict, names: list) -> dict:
     return {"bones": {**bake_ft(poses, end), **bake(wreath, end, wkeys)}, "slots": slots, "drawOrder": order}
 
 
+# stirring: the bowl held out at his left (picture right) by its side in the left paw, a wooden spoon in the right
+# paw stirring round inside it. Fractions of the height; the bowl's anchor is the middle of the batter.
+STIR_BOWL = (0.20, 0.37)
+STIR_LEAN = -5.0                                                 # leans toward the bowl, so the left arm reaches it low
+STIR_R = (0.06, 0.012)                                           # the spoon tip's ellipse in the batter (front view)
+STIR_TURN = 0.8                                                  # seconds per turn
+STIR_LEVEL = -14.0                                               # turns the painted bowl so its rim is level
+
+
+def stir_bowl(kin: Kin, hold: dict, H: float, info: dict, names: list) -> dict:
+    """Smooth stirring: the spoon lifted over the bowl and a look in (anticipation), dipped in, three even turns
+    with the body, head and eyes riding the stroke and the bowl giving a little against it, then the spoon lifted
+    out past the rim and tapped on it twice (follow-through), back to the start for a seamless loop."""
+    L, g, H0 = hold["length"], hold["grip"], hold["head_angle"]
+    reach = (1 - g) * L
+    bw = info["bowl"]["w"]
+    side = (0.47 * bw / H, -0.05)                                 # the bowl's side, where the left paw holds it
+
+    def k(t, tip, phi, bowl_dx=0.0, tr=0.0, fc=(3, -2, 2, 1.1, 4, -5), sy=1.0):
+        u = unit(phi)
+        b = (STIR_BOWL[0] + bowl_dx, STIR_BOWL[1])
+        paws = {"r": (tip[0] * H - reach * u[0], tip[1] * H - reach * u[1]),
+                "l": ((b[0] + side[0]) * H, (b[1] + side[1]) * H)}
+        body = {"torso": {"r": STIR_LEAN + tr, "sy": 0.985 * sy}, **face(*fc)}
+        return (t, body, paws, {"tool_r": phi - H0}), (t, {"bowl": {"x": b[0] * H, "y": b[1] * H,
+                                                                     "r": STIR_LEVEL + 40 * bowl_dx}})
+    cx, cy = STIR_BOWL[0], STIR_BOWL[1] - 0.03                    # stir under the batter's surface
+    plan = [k(0.0, (cx + 0.01, cy + 0.04), -26, fc=(4, -2, 4, 1.15, 4, -6))]         # spoon up, a look in
+    plan.append(k(0.4, (cx + STIR_R[0], cy), -20, fc=(3, -2, 2, 1.1, 5, -5)))        # dips in
+    n = int(round(3 * STIR_TURN / 0.2))
+    for i in range(1, n + 1):                                     # three turns, a key every quarter
+        th = 2 * math.pi * i / 4
+        c, s_ = math.cos(th), math.sin(th)
+        plan.append(k(round(0.4 + 0.2 * i, 3), (cx + STIR_R[0] * c, cy + STIR_R[1] * s_), -20 + 6 * c,
+                      bowl_dx=-0.004 * c, tr=1.2 * c, fc=(3 + 1.5 * s_, -2, 2, 1.1, 4 + 2 * c, -5)))
+    t_out = 0.4 + 0.2 * n
+    plan += [k(round(t_out + 0.2, 3), (cx + 0.04, cy + 0.045), -28, fc=(4, -1, 4, 1.15, 5, -4)),       # lifts out
+             k(round(t_out + 0.42, 3), (cx + 0.08, cy + 0.03), -22, fc=(4, -2, 5, 1.2, 5, -5)),      # tap on the rim
+             k(round(t_out + 0.62, 3), (cx + 0.07, cy + 0.045), -25, fc=(4, -2, 5, 1.2, 5, -5)),
+             k(round(t_out + 0.82, 3), (cx + 0.08, cy + 0.03), -22, fc=(4, -2, 5, 1.25, 5, -5)),     # and again
+             k(round(t_out + 1.25, 3), (cx + 0.01, cy + 0.04), -26, fc=(4, -2, 4, 1.15, 4, -6))]       # = start
+    poses = chore(kin, [a for a, _ in plan], "stir")
+    end = plan[-1][0][0]
+    slots = {**show("tool_spoon", end), **show("bowl", end), **blink(1.55)}
+    order = {"forearm_r": "bowl", "hand_r": "forearm_r"}          # the spoon behind the bowl's front, the paw over
+    return {"bones": {**bake_ft(poses, end), **bake([b for _, b in plan], end)}, "slots": slots,
+            "drawOrder": [draw_order_key(names, order)]}
+
+
 def water_plants(kin: Kin, H: float, info: dict, names: list) -> dict:
     """The watering can hangs from the right paw by its carry handle (the artist's pose: arm relaxed at the side).
     He swings it back (anticipation), out over the flowers and tips it, overshooting the tilt and settling; water
@@ -1259,6 +1316,8 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
         A["water"] = water_plants(kin, height, props, names)
     if kin is not None and "pumpkin" in props:
         A["carry"] = carry_pumpkin(kin, height, props, names)
+    if kin is not None and "spoon" in tools and "bowl" in props:
+        A["stir"] = stir_bowl(kin, holds["spoon"], height, props, names)
     if kin is not None and {"wreath", "door"} <= props.keys():
         A["toss"] = hang_wreath(kin, height, props, names)
     if "hammer" in tools and kin is not None:
@@ -1367,7 +1426,7 @@ def main() -> int:
 
     # tools: PSD tool layers keep their painted place (a shovel already in hand) unless the config gives a hold;
     # extra tools get a hold from their shape
-    holds = {"wrench": (0.5, -70.0), "hammer": (0.12, 20.0), "shovel": (0.06, -146.0), "brush": (0.15, 160.0),
+    holds = {"wrench": (0.5, -70.0), "hammer": (0.12, 20.0), "shovel": (0.06, -146.0), "brush": (0.15, 160.0), "spoon": (0.2, -20.0),
              **{k: tuple(v) for k, v in cfg.get("holds", {}).items()}}
     hold_info = {}
     tools = {}
@@ -1383,7 +1442,7 @@ def main() -> int:
     slots, skin, images = [], {}, []
     tool_slots = []
     # which paw holds each tool: "l" (picture right, the default) or "r" (the character's right, picture left)
-    hands = {"wrench": "r", "brush": "r", "hammer": "r", **cfg.get("tool_hands", {})}
+    hands = {"wrench": "r", "brush": "r", "hammer": "r", "spoon": "r", **cfg.get("tool_hands", {})}
     for t, d in tools.items():
         att = f"tool_{t}"
         bone = "tool_r" if hands.get(t) == "r" and "tool_r" in J else "tool"
