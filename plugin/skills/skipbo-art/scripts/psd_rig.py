@@ -25,7 +25,7 @@ on a "tool" bone in hand_l's grip, hidden at rest and shown by their animation. 
 take both paws: Kin.reach (two-bone IK) puts each paw on the handle and the dig is keyed by where the top paw is.
 Optional "props" ({"dirt_mound": {"image", "width"}, "dirt_clod": {...}}) give the dig a pile and a thrown clod;
 chore props (see PROPS: sapling + plant_pot, ladder + frame + cloth, wall + paint_a/b with a "brush" extra tool,
-watering_can + flowers + drop, pumpkin, wreath) add the plant, polish, paint, water, carry and toss animations.
+watering_can + flowers + drop, pumpkin, wreath + door) add the plant, polish, paint, water, carry and toss (hang the wreath) animations.
 
 Joints come from where layers overlap (elbow = centre of forearm over upperarm, and so on; shoulders sit on the
 upper arm's long axis, a third in from its hidden end); override any of them under "joints".
@@ -808,6 +808,7 @@ FRAME_AT = (-0.44, 1.54)             # the picture frame on the wall, up beside 
 LADDER_STEP = 0.96                   # the feet rest on the step ladder's top step: this fraction of its height
 WALL_X, PAINT_Y0, PAINT_X = -0.72, 0.42, (-0.56, -0.63)   # arm out, the paw clear of the face
 FLOWERS_X = -0.60
+DOOR_X, DOOR_HOOK = -0.55, 0.726     # the door's middle; its hook's height as a fraction of the door's
 PUMPKIN_X = 0.01                     # where the pumpkin is set down, in front of the feet
 PROPS = {
     "sapling": ("root", "held", (0.58, 0.82), PLANT_AT),
@@ -822,7 +823,8 @@ PROPS = {
     "flowers": ("root", "back", (0.5, 0.95), (FLOWERS_X, 0.0)),
     "drop": ("root", "held", (0.5, 0.6), (0.0, 0.0)),
     "pumpkin": ("root", "held", (0.5, 0.98), (PUMPKIN_X, 0.0)),   # bone on the ground under it
-    "wreath": ("root", "held", (0.5, 0.5), (0.0, 0.0)),            # bone at its middle, moved by toss
+    "wreath": ("root", "held", (0.5, 0.05), (0.0, 0.0)),           # bone at the top of its rim, moved by toss
+    "door": ("root", "back", (0.5, 1.0), (DOOR_X, 0.0)),
 }
 PROP_POINTS = {"watering_can": {"rose": (0.035, 0.35)}}   # named image points the animations aim with
 
@@ -1066,61 +1068,58 @@ def carry_pumpkin(kin: Kin, H: float, info: dict, names: list) -> dict:
             "drawOrder": [draw_order_key(names, order)]}
 
 
-# the toss, wreath middle in fractions of the height: held at the chest, dipped (anticipation), thrown up from chest
-# height (so it never sits in front of the face), caught there and ridden down (follow-through)
-TOSS_HOLD, TOSS_DIP, TOSS_UP, TOSS_PEAK = (0.0, 0.37), (0.0, 0.30), (0.0, 0.50), 1.35
-TOSS_THROW, TOSS_CATCH = 0.62, 1.5                               # the wreath leaves the paws, and comes back
-TOSS_WAIT = {"r": (-0.35, 0.77), "l": (0.37, 0.76)}              # arms up in a V while it flies
+# hanging a wreath on a door beside him: the door stands to his right (picture left) with a hook a little above his
+# head; the wreath hangs from his right paw by the top of its rim, and is hung by that point on the hook
 
 
-def toss_wreath(kin: Kin, H: float, info: dict, names: list, open_hands: bool) -> dict:
-    """Both paws hold a flower wreath by its rim at the chest; a dip with the wreath lowered and a breath in
-    (anticipation), a throw straight up, the arms carrying on up into a V (follow-through) and the eyes following
-    it, the wreath spinning once on its way up and down while he waits with open paws, a catch at chest height that
-    rides down with a little squash, then back to the hold, happy."""
-    grip = 0.4 * info["wreath"]["w"]                              # wreath middle -> each palm, on its rim
+def hang_wreath(kin: Kin, H: float, info: dict, names: list) -> dict:
+    """At a normal pace, the right paw alone carries a flower wreath hanging by its rim: a step toward the door
+    (the wreath swings behind the paw), a small dip and breath (anticipation), a steady lift up to the hook with
+    the body stretching and leaning in, the wreath set on the hook and let go (it sways and settles: follow-through),
+    then a step back to admire it."""
+    hook = (DOOR_X * H, DOOR_HOOK * info["door"]["h"])
+    rest = kin.world({})["tool_r"][1:]
+    feet = lambda l, r: {"foot_l": {"x": -l * H}, "foot_r": {"x": -r * H}}
 
-    def rim(c, out=0.0):
-        return {"r": ((c[0] - out) * H - grip, c[1] * H), "l": ((c[0] + out) * H + grip, c[1] * H)}
-
-    def vee(dy=0.0, dx=0.0):
-        return {s_: ((x - dx if s_ == "r" else x + dx) * H, (y + dy) * H) for s_, (x, y) in TOSS_WAIT.items()}
-    B = lambda ty, sy, fc: {"torso": {"y": ty * H, "sy": sy}, **face(*fc)}
+    def B(rx, tr, sy, fc, fl=0.0, fr=0.0, free=(0, 0)):
+        return {"root": {"x": rx * H}, "torso": {"r": tr, "sy": sy}, **face(*fc), **feet(fl, fr),
+                "upperarm_l": {"r": free[0]}, "forearm_l": {"r": free[1]}}
+    at = lambda dx, dy: {"r": (rest[0] + dx * H, rest[1] + dy * H)}
+    to_hook = lambda dx, dy: {"r": (hook[0] + dx * H, hook[1] + dy * H)}
     keys = [
-        (0.0, B(0, 1.0, (-2, -2, 3, 1.15, 0, -5)), rim(TOSS_HOLD), None),                       # holds it, smiles
-        (0.4, B(-0.03, 0.95, (-3, -5, 5, 1.2, 0, -6)), rim(TOSS_DIP), None),                     # dips, breathes in
-        (TOSS_THROW, B(0.012, 1.04, (0, 3, 7, 1.5, 0, 5)), rim(TOSS_UP), None),                  # throws it up
-        (0.9, B(0.008, 1.03, (1, 4, 8, 1.55, 0, 6)), vee(0.02, 0.01), None),                     # arms on up, a V
-        (1.2, B(0.004, 1.015, (-1, 4, 8, 1.5, 0, 6)), vee(), None),                              # waits, paws open
-        (TOSS_CATCH, B(0.006, 1.02, (0, 1, 6, 1.4, 0, 0)), rim(TOSS_UP), None),                  # catch
-        (1.72, B(-0.015, 0.97, (2, -2, 5, 1.35, 0, -4)), rim((0.0, 0.40)), None),                # rides it down
-        (2.1, B(0.004, 1.01, (-2, -1, 4, 1.3, 0, -4)), rim((0.0, 0.385)), None),
-        (2.6, B(0, 1.0, (-2, -2, 3, 1.15, 0, -5)), rim(TOSS_HOLD), None),
+        (0.0, B(0, 0, 1.0, (2, 0, 2, 1.1, -6, 0)), at(0, 0), None),                               # holds it, looks
+        (0.5, B(-0.05, 3, 1.0, (3, 0, 2, 1.1, -6, 1), fr=0.03, free=(4, 4)), at(-0.01, 0.01), None),  # step to the door
+        (0.95, B(-0.10, 2, 0.99, (3, -1, 2, 1.1, -6, 1)), at(-0.005, 0), None),
+        (1.35, B(-0.10, 0, 0.97, (1, -3, 4, 1.15, -6, 2)), at(0.01, -0.03), None),                 # dips, breathes in
+        (2.15, B(-0.10, 10, 1.03, (6, 2, 5, 1.05, -6, 5), free=(8, 10)), to_hook(0.01, 0.03), None),  # lifts it up
+        (2.55, B(-0.10, 11, 1.035, (7, 2, 3, 1.0, -6, 5), free=(8, 10)), to_hook(0, 0), None),       # onto the hook
+        (2.85, B(-0.10, 8, 1.02, (5, 1, 4, 1.1, -6, 4), free=(6, 8)), to_hook(0.06, -0.08), None),   # lets go
+        (3.4, B(-0.03, -2, 1.0, (-3, 0, 6, 1.3, -6, 3), fl=0.025), at(-0.01, 0.01), None),            # steps back
+        (3.75, B(0, 0, 1.0, (-2, 0, 5, 1.25, -6, 3)), at(0, 0), None),                               # admires it
+        (4.4, B(0, 0, 1.0, (-2, 0, 5, 1.25, -6, 3)), at(0, 0), None),
     ]
-    poses = chore(kin, keys, "toss")
+    poses = chore(kin, keys, "hang")
     end = keys[-1][0]
-    held = sampler([(t, {"w": {"x": (p_["r"][0] + p_["l"][0]) / 2, "y": p_["r"][1]}}) for t, _, p_, _ in keys
-                    if not TOSS_THROW < t < TOSS_CATCH])
-    g_ = 2 * (TOSS_PEAK - TOSS_UP[1]) * H / ((TOSS_CATCH - TOSS_THROW) / 2) ** 2   # gravity for this hang time
-    vy = g_ * (TOSS_CATCH - TOSS_THROW) / 2
+    body = sampler(poses)
+    t_hung = 2.55
+    sway = sampler([(0.0, {"w": {"r": 0}}), (0.5, {"w": {"r": 5}}), (0.95, {"w": {"r": -3}}), (1.35, {"w": {"r": 1.5}}),
+                    (2.15, {"w": {"r": -2}}), (t_hung, {"w": {"r": 0}}), (2.75, {"w": {"r": 4}}),
+                    (2.95, {"w": {"r": -2.5}}), (3.15, {"w": {"r": 1}}), (3.4, {"w": {"r": 0}}), (end, {"w": {"r": 0}})])
 
     def wreath(t):
-        if TOSS_THROW < t < TOSS_CATCH:                           # in the air: up and down, one turn
-            s_ = t - TOSS_THROW
-            u = s_ / (TOSS_CATCH - TOSS_THROW)
-            return {"wreath": {"x": TOSS_UP[0] * H, "y": TOSS_UP[1] * H + vy * s_ - 0.5 * g_ * s_ * s_,
-                               "r": -360 * (3 * u * u - 2 * u ** 3)}}
-        c = held(t)["w"]
-        return {"wreath": {"x": c["x"], "y": c["y"], "r": 0 if t <= TOSS_THROW else -360}}
-    wkeys = [0.0, 0.4, TOSS_THROW, (TOSS_THROW + TOSS_CATCH) / 2, TOSS_CATCH, 1.72, 2.1, end]
-    slots = {"wreath": {"attachment": [{"name": "wreath"}, {"time": end, "name": "wreath"}]}, **lids(2.1, 2.45)}
-    if open_hands:                                                # paws open while it flies
-        for s_ in "lr":
-            slots[f"hand_{s_}"] = {"attachment": [{"name": f"hand_{s_}"}, {"time": TOSS_THROW + 0.05, "name": f"hand_{s_}_open"},
-                                                  {"time": TOSS_CATCH - 0.06, "name": f"hand_{s_}"}]}
-    order = {"forearm_r": "wreath", "hand_r": "forearm_r"}        # both paws over the rim, in front
-    return {"bones": {**bake_ft(poses, end), **bake(wreath, end, wkeys)}, "slots": slots,
-            "drawOrder": [draw_order_key(names, order)]}
+        """The wreath and the door hang on the root, which steps: both are held still in the world against it."""
+        p_ = body(t)
+        rx = p_["root"]["x"]
+        if t < t_hung:                                            # hangs from the paw by its rim, swinging behind it
+            x, y = kin.world(p_)["tool_r"][1:]
+        else:
+            x, y = hook
+        return {"wreath": {"x": x - rx, "y": y, "r": sway(t)["w"]["r"]}, "door": {"x": -rx}}
+    wkeys = [k[0] for k in keys] + [2.75, 2.95, 3.15]
+    slots = {**show("wreath", end), **show("door", end), **lids(3.85, 4.25)}
+    order = [draw_order_key(names, {"forearm_r": "wreath", "hand_r": "forearm_r"}),   # the fist over the rim
+             draw_order_key(names, {"wreath": "door"}, 2.95)]                       # hung: on the door, behind him
+    return {"bones": {**bake_ft(poses, end), **bake(wreath, end, wkeys)}, "slots": slots, "drawOrder": order}
 
 
 def water_plants(kin: Kin, H: float, info: dict, names: list) -> dict:
@@ -1260,8 +1259,8 @@ def animations(tools: list, kin: Kin | None = None, holds: dict | None = None, h
         A["water"] = water_plants(kin, height, props, names)
     if kin is not None and "pumpkin" in props:
         A["carry"] = carry_pumpkin(kin, height, props, names)
-    if kin is not None and "wreath" in props:
-        A["toss"] = toss_wreath(kin, height, props, names, "hand_open" in props)
+    if kin is not None and {"wreath", "door"} <= props.keys():
+        A["toss"] = hang_wreath(kin, height, props, names)
     if "hammer" in tools and kin is not None:
         A["hammer"] = hammer_strike(kin, holds["hammer"], height, names)
     return A
